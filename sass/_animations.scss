@@ -1,0 +1,89 @@
+
+.anim.fadeIn {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 480ms;
+  animation-timing-function: cubic-bezier(.62, .28, .23, .99);
+  animation-fill-mode: forwards;
+  &.long {
+    animation-duration: 880ms;
+    animation-name: fadeInLeft;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.anim.scaleIn {
+  opacity: 0;
+  animation-name: scaleIn;
+  animation-duration: 880ms;
+  animation-timing-function: cubic-bezier(.62, .28, .23, .99);
+  transform-origin: 0% 0%;
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0, 0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-400px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes loadingBob {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+  70% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes screenshot {
+  0% {
+      transform: translate3d(400px, 20px, 0) scale3d(0, 0, 0);
+  }
+  100% {
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
+.anim.screenshot {
+  transform-origin: 50% 50%;
+  animation-name: screenshot;
+  animation-duration: 880ms;
+  animation-delay: 0s;
+  animation-timing-function: cubic-bezier(.62, .28, .23, .99);
+}

@@ -1,0 +1,274 @@
+/*
+ * Header Styles
+ */
+
+h1 {
+  font-size: 3.625em;
+  line-height: 1.22222222em;
+  margin-top: 0.48888889em;
+  margin-bottom: 0.48888889em;
+}
+h2 {
+  font-size: 2.8275em;
+  line-height: 1.294117647em;
+  margin-top: 0.8627451em;
+  margin-bottom: 0.43137255em;
+}
+h3 {
+  font-size: 1.75em;
+  line-height: 1.571428572em;
+  margin-top: 0.78571429em;
+  margin-bottom: 0.43137255em;
+}
+h4 {
+  font-size: 1em;
+  line-height: 1.375em;
+  margin-top: 0.78571429em;
+  margin-bottom: 0.43137255em;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+  position: relative;
+  display: block;
+  color: #555;
+  .subheader {
+    display: block;
+    font-size: 0.5em;
+    line-height: 1em;
+    color: lighten($text-dark, 16%);
+  }
+}
+
+/*
+ * Link styling
+ */
+a, .link {
+  color: $primary;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color ease-in-out 80ms;
+  font-family: $text;
+  line-height: 1.6;
+  &:hover {
+    text-decoration: underline;
+    color: darken($primary, 20%);
+  }
+  i {
+    padding-right: $-s;
+  }
+  i.zmdi-hc-flip-horizontal {
+    padding-right: 0;
+    padding-left: $-s;
+  }
+}
+
+/*
+ * Other HTML Text Elements
+ */
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  border: 0;
+  background: #EAEAEA;
+  margin-bottom: $-l;
+  &.faded {
+    background-image: linear-gradient(to right, #FFF, #e3e0e0 20%, #e3e0e0 80%, #FFF);
+  }
+  &.margin-top, &.even {
+    margin-top: $-l;
+  }
+}
+
+strong, b, .bold, .strong {
+  font-weight: bold;
+  > strong, > b, > .bold, > .strong {
+    font-weight: bolder;
+  }
+}
+
+em, i, .italic {
+  font-style: italic;
+}
+
+small, p.small, span.small, .text-small {
+  font-size: 0.8em;
+  color: lighten($text-dark, 20%);
+}
+
+sup, .superscript {
+  vertical-align: super;
+  font-size: 0.8em;
+}
+
+pre {
+  font-family: monospace;
+  white-space:pre;
+  font-size: 0.8em;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0px rgba(10, 10, 10, 0.06);
+  border: 1px solid rgba(221, 221, 221, 0.66);
+  background-color: #fdf6e3;
+  padding: 0.5em;
+}
+
+blockquote {
+  display: block;
+  position: relative;
+  border-left: 4px solid $primary;
+  background-color: #F8F8F8;
+  padding: $-s $-m $-s $-xl;
+  &:before {
+    content: "\201C";
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: $-s;
+    left: $-s;
+    color: lighten($text-dark, 20%);
+  }
+}
+
+.code-base {
+    background-color: #F8F8F8;
+    font-family: monospace;
+    font-size: 0.80em;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+}
+
+code {
+  @extend .code-base;
+  display: inline;
+  padding: 1px 3px;
+  white-space:pre;
+  line-height: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+span.code {
+  @extend .code-base;
+  padding: 1px $-xs;
+}
+/*
+ * Text colors
+ */
+p.pos, p .pos, span.pos, .text-pos {
+  color: $positive;
+  &:hover {
+    color: $positive;
+  }
+}
+
+p.neg, p .neg, span.neg, .text-neg {
+  color: $negative;
+  &:hover {
+    color: $negative;
+  }
+}
+
+p.muted, p .muted, span.muted, .text-muted {
+	color: lighten($text-dark, 26%);
+    &.small, .small {
+      color: lighten($text-dark, 42%);
+    }
+}
+
+p.primary, p .primary, span.primary, .text-primary {
+	color: $primary;
+  &:hover {
+    color: $primary;
+  }
+}
+
+p.secondary, p .secondary, span.secondary, .text-secondary {
+	color: $secondary;
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.text-book {
+  color: $color-book;
+  &:hover {
+    color: $color-book;
+  }
+}
+.text-page {
+  color: $color-page;
+  &:hover {
+    color: $color-page;
+  }
+}
+.text-chapter {
+  color: $color-chapter;
+  &:hover {
+    color: $color-chapter;
+  }
+}
+
+span.highlight {
+  //background-color: rgba($primary, 0.2);
+  font-weight: bold;
+  //padding: 2px 4px;
+}
+
+/*
+ * Lists
+ */
+ul {
+  list-style: disc;
+  margin-left: $-m*1.5;
+}
+
+/*
+ * Generic text styling classes
+ */
+.underlined {
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/**
+ * Grouping
+ */
+.header-group {
+  margin: $-m 0;
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+}
+
+span.sep {
+  color: #BBB;
+  padding: 0 $-xs;
+}
+
+.list > * {
+  display: block;
+}
+
+/**
+  * Icons
+  */
+i {
+  padding-right: $-xs;
+}
+

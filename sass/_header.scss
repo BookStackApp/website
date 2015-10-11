@@ -12,6 +12,9 @@ header {
     color: #FFF;
     font-size: 3.333em;
     font-weight: 300;
+    @include smaller-than($s) {
+      font-size: 2em;
+    }
   }
   .spaced {
     margin-top: $-xxl;
@@ -48,6 +51,15 @@ header {
     margin-right: $-l;
     height: 48px;
     //padding-top: $-m;
+  }
+  @include smaller-than($s) {
+    h1 {
+      font-size: 1.8em;
+    }
+    img {
+      height: 32px;
+      margin-right: $-s;
+    }
   }
 }
 

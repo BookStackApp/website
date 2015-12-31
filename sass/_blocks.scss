@@ -69,14 +69,14 @@
 .padded-vertical, .padded-top {
   padding-top: $-m;
   &.large {
-    padding-top: $-xl;
+    padding-top: $-xxl*1.6;
   }
 }
 
 .padded-vertical, .padded-bottom {
   padding-bottom: $-m;
   &.large {
-    padding-bottom: $-xl;
+    padding-bottom: $-xxl*1.6;
   }
 }
 .padded-horizontal, .padded-left {
@@ -100,6 +100,9 @@
   &.large {
     margin: $-xl;
   }
+}
+.nomargin {
+  margin: 0;
 }
 .margins-vertical, .margin-top {
   margin-top: $-m;

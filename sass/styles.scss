@@ -9,11 +9,23 @@
 @import "animations";
 @import "header";
 @import "lists";
+@import "photoswipe";
+
+.wow {
+  visibility: hidden;
+}
 
 .md-margin-top {
   margin-top: $-xxl*1.6;
   @include smaller-than($screen-lg) {
     margin-top: $-m;
+  }
+}
+
+.md-margin-bottom {
+  margin-bottom: $-xxl*1.6;
+  @include smaller-than($screen-lg) {
+    margin-bottom: $-m;
   }
 }
 
@@ -42,8 +54,37 @@
   }
 }
 
+header .menu, footer .menu {
+  text-align: right;
+  a {
+    display: inline-block;
+    padding: $-m;
+  }
+  i.material-icons {
+    font-size: 18px;
+    vertical-align: top;
+    padding-right: 4px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+  }
+}
+
+header .menu a {
+  color: #FFF;
+}
+
 footer {
-  padding-bottom: $-s;
+  padding-top: $-l;
+  padding-bottom: $-l;
+  p {
+    padding: $-m;
+    margin: 0;
+  }
+}
+
+footer, .shaded {
+  border-top: 1px solid #DDD;
 }
 
 
@@ -56,4 +97,42 @@ h3 > i {
 
 p > i {
   vertical-align: top;
+}
+
+label {
+  display: inline-block;
+  margin-top: $-s;
+  font-weight: 500;
+}
+
+input[type=text] {
+  font-family: $text;
+  font-size: 14px;
+  padding: $-xs*1.2 $-s;
+  width: 230px;
+  border-radius: 2px;
+  border: 1px solid #DDD;
+  color: #666;
+}
+
+.demo-box {
+  display: inline-block;
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: $-xl;
+  border-radius: 3px;
+}
+
+.my-gallery {
+  figure img {
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, 0, 0);
+    transition: all cubic-bezier(.62, .28, .23, .99) 140ms;
+    &:hover {
+      transform: translate3d(0, -10px, 0);
+      box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
 }

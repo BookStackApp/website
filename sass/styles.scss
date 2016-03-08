@@ -6,14 +6,9 @@
 @import "grid";
 @import "blocks";
 @import "buttons";
-@import "animations";
 @import "header";
 @import "lists";
 @import "photoswipe";
-
-.wow {
-  visibility: hidden;
-}
 
 .md-margin-top {
   margin-top: $-xxl*1.6;
@@ -42,9 +37,9 @@
   position: absolute;
   max-width: 100%;
   transform: rotateY(0);
-  transition: all ease-in-out 200ms;
+  transition: all ease-in-out 280ms;
   &:hover {
-    transform: rotateY(-20deg);
+    transform: rotateY(-10deg);
   }
   @include smaller-than($screen-lg) {
     position: relative;
@@ -129,9 +124,9 @@ input[type=text] {
     border-radius: 4px;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
     transform: translate3d(0, 0, 0);
-    transition: all cubic-bezier(.62, .28, .23, .99) 140ms;
+    transition: all cubic-bezier(.62, .28, .23, .99) 160ms;
     &:hover {
-      transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -6px, 0);
       box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
     }
   }

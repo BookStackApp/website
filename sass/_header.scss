@@ -32,6 +32,9 @@ header {
     font-size: 1.2em;
     font-weight: 300;
   }
+  .icon svg {
+    fill: #FFF;
+  }
 }
 
 .logo {
@@ -59,62 +62,6 @@ header {
     img {
       height: 32px;
       margin-right: $-s;
-    }
-  }
-}
-
-
-.breadcrumbs span.sep {
-  color: #aaa;
-  padding: 0 $-xs;
-}
-
-.faded {
-  a, button, span {
-    color: #666;
-  }
-  .text-button {
-    opacity: 0.5;
-    transition: all ease-in-out 120ms;
-    &:hover {
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-}
-
-.faded-small {
-  color: #000;
-  font-size: 0.9em;
-  background-color: rgba(21, 101, 192, 0.15);
-}
-
-.breadcrumbs .text-button, .action-buttons .text-button {
-  display: inline-block;
-  padding: $-s;
-  &:last-child {
-    padding-right: 0;
-  }
-}
-.action-buttons {
-  text-align: right;
-  &.text-left {
-    text-align: left;
-    .text-button {
-      padding-right: $-m;
-      padding-left: 0;
-    }
-  }
-}
-
-.setting-nav {
-  text-align: center;
-  a {
-    padding: $-m;
-    display: inline-block;
-    color: #666;
-    &.selected {
-      border-bottom: 2px solid $primary;
     }
   }
 }

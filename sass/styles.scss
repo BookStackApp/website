@@ -7,7 +7,6 @@
 @import "blocks";
 @import "buttons";
 @import "header";
-@import "lists";
 @import "photoswipe";
 
 .md-margin-top {
@@ -54,8 +53,9 @@ header .menu, footer .menu {
   a {
     display: inline-block;
     padding: $-m;
+    line-height: 1.9;
   }
-  i.material-icons {
+  span.icon {
     font-size: 18px;
     vertical-align: top;
     padding-right: 4px;
@@ -67,6 +67,63 @@ header .menu, footer .menu {
 
 header .menu a {
   color: #FFF;
+}
+
+header #menu-button {
+  display: none;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  padding-top: $-m;
+}
+
+header #menu-button:focus + .inner {
+  display: block;
+}
+
+@include smaller-than($xl) {
+  body header {
+    padding-top: $-xxl*1.2;
+  }
+  header .row.fix-mobile {
+    top: 0;
+    position: fixed;
+    background-color: $primary;
+    width: 100%;
+    z-index: 99;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  header #menu-button {
+    display: inline-block;
+  }
+  header .menu .inner {
+    display: none;
+    right: $-m;
+    overflow: hidden;
+    position: fixed;
+    border-radius: 3px;
+    width: 240px;
+    background-color: #FFF;
+    z-index: 55;
+    padding: 0;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
+    &:focus, &:active {
+      display: block;
+    }
+    a {
+      color: #444;
+      display: block;
+      text-align: left;
+      border-bottom: 1px solid #EEE;
+      padding: $-m $-m*2;
+    }
+    a .icon svg {
+      fill: #444;
+    }
+  }
+  footer .menu {
+    display: none;
+  }
 }
 
 footer {

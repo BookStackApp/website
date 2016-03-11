@@ -11,9 +11,8 @@ var browserSync = require('browser-sync').create();
 
 gulp.task('browser-sync', function() {
   browserSync.init({
-    server: {
-       baseDir: "./public/"
-    }
+    proxy: "localhost",
+    startPath: 'bookstack-site/public'
   });
 });
 
@@ -36,7 +35,7 @@ gulp.task('styles', function(){
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('public/dist/'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 });
 
 gulp.task('scripts', function(){
@@ -59,7 +58,7 @@ gulp.task('scripts', function(){
 gulp.task('default', ['styles', 'scripts']);
 
 gulp.task('watch', ['browser-sync'], function(){
-  gulp.watch("public/*.html", ['bs-reload']);
+  gulp.watch(["public/*.*", "public/**/*"], ['bs-reload']);
   gulp.watch('sass/*.scss', ['styles']);
   gulp.watch('scripts/*.js', ['scripts']);
 });

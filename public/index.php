@@ -3,7 +3,7 @@
     // Get Blog articles
     $blogRss = 'https://www.bookstackapp.com/blog/rss/';
     $localRssLocation = 'dist/blog.rss';
-    $cacheTimeSeconds = '864000';
+    $cacheTimeSeconds = '86400';
 
     if (file_exists($localRssLocation)) {
         $lastModified = filemtime($localRssLocation);

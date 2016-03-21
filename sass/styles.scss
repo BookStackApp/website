@@ -77,10 +77,6 @@ header #menu-button {
   padding-top: $-m;
 }
 
-header #menu-button:focus + .inner {
-  display: block;
-}
-
 @include smaller-than($xl) {
   body header {
     padding-top: $-xxl*1.2;
@@ -99,7 +95,6 @@ header #menu-button:focus + .inner {
   header .menu .inner {
     display: none;
     right: $-m;
-    overflow: hidden;
     position: fixed;
     border-radius: 3px;
     width: 240px;
@@ -107,7 +102,7 @@ header #menu-button:focus + .inner {
     z-index: 55;
     padding: 0;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
-    &:focus, &:active {
+    &.showing {
       display: block;
     }
     a {
@@ -119,6 +114,18 @@ header #menu-button:focus + .inner {
     }
     a .icon svg {
       fill: #444;
+    }
+    &:after {
+      width: 16px;
+      height: 16px;
+      content: '';
+      display: block;
+      background-color: #FFF;
+      transform: rotate(45deg);
+      position: absolute;
+      top: -6px;
+      border-radius: 2px;
+      right: 22px;
     }
   }
   footer .menu {

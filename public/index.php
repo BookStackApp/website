@@ -50,7 +50,7 @@
 
 </head>
 
-<body>
+<body ontouchstart="">
 
     <script>
     // Standard Google Analytics Stuff
@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="col-sm-7 menu col-xs-4">
-                    <button id="menu-button" class="button muted" type="button"><?php icon('menu'); ?></button>
+                    <button ontouchstart="" tabindex="1" id="menu-button" class="button muted" type="button"><?php icon('menu'); ?></button>
                     <div class="inner">
                         <a href="#features"><span class="icon"><?php icon('star'); ?></span> Features</a>
                         <a href="#demo"><span class="icon"><?php icon('touch_app'); ?></span> Demo</a>
@@ -292,12 +292,12 @@
     <footer>
         <div class="container">
             <div class="row">
-            	<div class="col-sm-3">
+            	<div class="col-lg-3">
             		<p>
             		    BookStack - Created By <a href="https://danb.me" title="danb.me" target="_blank">Dan Brown</a>
             		</p>
             	</div>
-            	<div class="col-sm-9 menu">
+            	<div class="col-md-9 menu">
             	    <a href="#features"><span class="icon"><?php echo file_get_contents('icons/star.svg') ?></span> Features</a>
             	    <a href="#demo"><span class="icon"><?php icon('touch_app'); ?></span> Demo</a>
             	    <a href="#screenshots"><span class="icon"><?php icon('image'); ?></span> Screenshots</a>

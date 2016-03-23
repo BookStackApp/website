@@ -142,7 +142,7 @@ footer {
   }
 }
 
-footer, .shaded {
+footer, .shaded-border {
   border-top: 1px solid #DDD;
 }
 
@@ -195,3 +195,32 @@ input[type=text] {
     }
   }
 }
+
+.docs-content {
+  padding-bottom: $-xxl;
+}
+
+.sidebar, .docs-index {
+  margin-top: $-xl;
+  h4 {
+    padding-top: 0;
+    font-size: 1.2em;
+  }
+  ul {
+    list-style: none;
+    margin-left: 0;
+  }
+}
+
+.sidebar {
+  border-right: 2px dotted #E5E5E5;
+}
+
+h2.thin-margin {
+  margin-top: $-s;
+}
+
+#content {
+  min-height: 70vh;
+}
+

@@ -50,18 +50,25 @@ header {
     font-size: 2.666em;
     font-weight: 400;
   }
-  img {
+  svg {
     margin-right: $-l;
     height: 48px;
+    width: auto;
     //padding-top: $-m;
   }
   @include smaller-than($s) {
     h1 {
       font-size: 1.8em;
     }
-    img {
+    svg {
       height: 32px;
       margin-right: $-s;
     }
+  }
+  a {
+    display: inline-block;
+  }
+  a:hover {
+    text-decoration: none;
   }
 }

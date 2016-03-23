@@ -1,68 +1,22 @@
+@extends('base')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1">
-    <title>BookStack | A Simple and Free Documenation Platform</title>
-
-    <link rel="stylesheet" href="/dist/styles.min.css">
-
-</head>
-
-<body ontouchstart="">
-
-    <script>
-    // Standard Google Analytics Stuff
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-61486258-4', 'auto');
-    ga('send', 'pageview');
-    </script>
-
-    <header id="header">
-        <div class="container">
-            <div class="row fix-mobile">
-                <div class="col-sm-5 col-xs-8">
-                    <div class="logo">
-                        <img src="logo.svg" alt="BookStack">
-                        <h1>BookStack</h1>
-                    </div>
-                </div>
-                <div class="col-sm-7 menu col-xs-4">
-                    <button ontouchstart="" tabindex="1" id="menu-button" class="button muted" type="button">{!! icon('menu') !!}</button>
-                    <div class="inner">
-                        <a href="#features"><span class="icon">{!! icon('star') !!}</span> Features</a>
-                        <a href="#demo"><span class="icon">{!! icon('touch_app') !!}</span> Demo</a>
-                        <a href="#screenshots"><span class="icon">{!! icon('image') !!}</span> Screenshots</a>
-                        <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('code') !!}</span> Github</a>
-                        <a href="/blog" target="_blank"><span class="icon">{!! icon('rss_feed') !!}</span> Blog</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 spaced">
-                    <h2 >Simple &amp; Free Documentation</h2>
-                    <p>BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information.</p>
-                    <a href="https://github.com/ssddanbrown/BookStack" class="button pos "  target="_blank">View on GitHub</a>
-                </div>
-                <div class="col-md-8 screenshot-container">
-                    <img class="screenshot" src="images/bookstack-hero-screenshot.png" alt="BookStack ScreenShot">
-                </div>
-            </div>
+@section('header')
+    <div class="row">
+        <div class="col-md-4 spaced">
+            <h2 >Simple &amp; Free Documentation</h2>
+            <p>BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information.</p>
+            <a href="https://github.com/ssddanbrown/BookStack" class="button pos "  target="_blank">View on GitHub</a>
         </div>
-    </header>
+        <div class="col-md-8 screenshot-container">
+            <img class="screenshot" src="images/bookstack-hero-screenshot.png" alt="BookStack ScreenShot">
+        </div>
+    </div>
+@stop   
+
+
+@section('content')
+
+
     <div class="container md-margin-top">
         <h2 id="features">Features</h2>
         <div class="row">
@@ -114,11 +68,11 @@
             </div>
         </div>
     </div>
-    <div class="shaded md-margin-top padded-vertical large">
+    <div class="shaded shaded-border md-margin-top padded-vertical large">
     	<div class="container">
     		<div class="row">
     			<div class="col-sm-6">
-    				<h2 class="nomargin margin-bottom " id="demo">Try Out BookStack</h2>
+    				<h2 class="nomargin margin-bottom" id="demo">Try Out BookStack</h2>
     				<p>
     					You can try out BookStack right now by using the given details.
     					<strong>The demo database &amp; image storage is automatically reset every half hour.</strong>
@@ -235,7 +189,7 @@
 	</div>
 
 
-    <div class="shaded md-margin-top padded-vertical large">
+    <div class="shaded shaded-border md-margin-top padded-vertical large">
         <div class="container">
             <h2>Latest From The Blog</h2>
               @foreach($blogItems as $blogItem)
@@ -250,25 +204,6 @@
               <div class="padded-top"><a class="button" href="/blog">Read the blog &raquo;</a></div>
         </div>
     </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-            	<div class="col-lg-3">
-            		<p>
-            		    BookStack - Created By <a href="https://danb.me" title="danb.me" target="_blank">Dan Brown</a>
-            		</p>
-            	</div>
-            	<div class="col-md-9 menu">
-            	    <a href="#features"><span class="icon">{!! icon('star') !!}</span> Features</a>
-            	    <a href="#demo"><span class="icon">{!! icon('touch_app') !!}</span> Demo</a>
-            	    <a href="#screenshots"><span class="icon">{!! icon('image') !!}</span> Screenshots</a>
-            	    <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('code') !!}</span> Github</a>
-                    <a href="/blog" target="_blank"><span class="icon">{!! icon('rss_feed') !!}</span> Blog</a>
-            	</div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -308,9 +243,8 @@
 	    </div>
 	</div>
 
-    <script async src="libs/photoswipe.min.js"></script>
-    <script async src="libs/photoswipe-ui-default.min.js"></script>
-    <script async src="dist/main.min.js"></script>
-</body>
+@stop
 
-</html>
+@section('scripts')
+<script async src="libs/photoswipe.min.js"></script>
+@stop

@@ -4,8 +4,8 @@
   font-style: normal;
   font-weight: 300;
   src: local('Roboto Light'), local('Roboto-Light'),
-       url('fonts/roboto-v15-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
-       url('fonts/roboto-v15-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/roboto-v15-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
+       url('/fonts/roboto-v15-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-regular - latin */
 @font-face {
@@ -13,8 +13,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'),
-       url('fonts/roboto-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
-       url('fonts/roboto-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/roboto-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
+       url('/fonts/roboto-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-500 - latin */
 @font-face {
@@ -22,8 +22,8 @@
   font-style: normal;
   font-weight: 500;
   src: local('Roboto Medium'), local('Roboto-Medium'),
-       url('fonts/roboto-v15-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
-       url('fonts/roboto-v15-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/roboto-v15-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
+       url('/fonts/roboto-v15-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-700 - latin */
 @font-face {
@@ -31,8 +31,8 @@
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'),
-       url('fonts/roboto-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
-       url('fonts/roboto-v15-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/roboto-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
+       url('/fonts/roboto-v15-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /*
@@ -153,6 +153,7 @@ pre {
   border: 1px solid rgba(221, 221, 221, 0.66);
   background-color: #fdf6e3;
   padding: 0.5em;
+  overflow-x: auto;
 }
 
 blockquote {
@@ -192,6 +193,15 @@ code {
 span.code {
   @extend .code-base;
   padding: 1px $-xs;
+}
+
+pre code {
+  background-color: transparent;
+  font-size: 1em;
+  border: none;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 0;
 }
 /*
  * Text colors
@@ -262,6 +272,11 @@ span.highlight {
 ul {
   list-style: disc;
   margin-left: $-m*1.5;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: $-m*1.2;
 }
 
 /*

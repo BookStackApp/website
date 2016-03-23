@@ -12,3 +12,6 @@
 */
 
 $app->get('/', 'HomeController@home');
+
+$app->get('/docs', 'DocsController@index');
+$app->get('/docs/{type}/{page}', 'DocsController@showPage');

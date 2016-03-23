@@ -53,7 +53,7 @@
                         <a href="/docs"><span class="icon">{!! icon('book') !!}</span> Documentation</a>
                         <a href="/#features"><span class="icon">{!! icon('star') !!}</span> Features</a>
                         <a href="/#demo"><span class="icon">{!! icon('touch_app') !!}</span> Demo</a>
-                        <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('code') !!}</span> Github</a>
+                        <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('github') !!}</span> Github</a>
                         <a href="/blog" target="_blank"><span class="icon">{!! icon('rss_feed') !!}</span> Blog</a>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <a href="/docs"><span class="icon">{!! icon('book') !!}</span> Documentation</a>
                     <a href="/#features"><span class="icon">{!! icon('star') !!}</span> Features</a>
                     <a href="/#demo"><span class="icon">{!! icon('touch_app') !!}</span> Demo</a>
-                    <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('code') !!}</span> Github</a>
+                    <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('github') !!}</span> Github</a>
                     <a href="/blog" target="_blank"><span class="icon">{!! icon('rss_feed') !!}</span> Blog</a>
             	</div>
             </div>

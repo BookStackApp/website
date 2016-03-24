@@ -9,7 +9,7 @@
     @if(isset($title) && $title)
         <title>{{ $title }} - BookStack</title>
     @else
-        <title>BookStack | A Simple and Free Documenation Platform</title>
+        <title>BookStack | A Simple and Free Documentation Platform</title>
     @endif
     <link rel="stylesheet" href="/dist/styles.min.css">
 

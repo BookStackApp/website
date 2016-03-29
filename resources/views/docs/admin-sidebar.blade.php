@@ -11,6 +11,7 @@
 
 <h4>Configuration</h4>
 <ul>
+	<li><a href="{{ docLink('admin/cache-session-config') }}">Caching & Sessions</a></li>
 	<li><a href="{{ docLink('admin/social-auth') }}">Social Authentication</a></li>
 	<li><a href="{{ docLink('admin/ldap-auth') }}">LDAP Authentication</a></li>
 </ul>

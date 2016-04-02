@@ -8,7 +8,9 @@
         "php": ">=5.5.9",
         "laravel/lumen-framework": "5.2.*",
         "vlucas/phpdotenv": "~2.2",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "predis/predis": "^1.0",
+        "illuminate/redis": "^5.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -24,7 +26,6 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/",
             "database/"
         ]
     }

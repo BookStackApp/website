@@ -198,6 +198,19 @@ input[type=text] {
 
 .docs-content {
   padding-bottom: $-xxl;
+  .edit-link {
+    padding: $-xl 0;
+    z-index: 1;
+    position: relative;
+    .icon {
+      width: 24px;
+      vertical-align: 4px;
+    }
+    svg {
+      height: 18px;
+      width: 20px;
+    }
+  }
 }
 
 .sidebar, .docs-index {
@@ -217,7 +230,7 @@ input[type=text] {
 }
 
 h2.thin-margin {
-  margin-top: $-s;
+  margin-top: 0;
 }
 
 #content {

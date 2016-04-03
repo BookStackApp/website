@@ -42,7 +42,9 @@ class DocsController extends Controller
 
     	return view('docs/' . $type, [
     		'html' => $html,
-    		'title' => $title
+    		'title' => $title,
+			'type' => $type,
+			'page' => $page
     	]);
     }
 

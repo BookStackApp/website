@@ -10,7 +10,7 @@ header {
   color: #fff;
   h2 {
     color: #FFF;
-    font-size: 3.333em;
+    font-size: 2.666em;
     font-weight: 300;
     @include smaller-than($s) {
       font-size: 2em;

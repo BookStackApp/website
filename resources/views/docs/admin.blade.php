@@ -17,6 +17,11 @@
 	</div>
 
 	<div class="col-sm-8 col-sm-offset-1 docs-content">
+		<a class="float right edit-link" target="_blank"
+		   href="https://github.com/ssddanbrown/BookStack-Site/blob/master/resources/docs/{{ $type }}/{{ $page }}.md">
+			<span class="icon small">{!! icon('edit') !!}</span>
+			Edit page
+		</a>
 		{!! $html !!}
 	</div>
 

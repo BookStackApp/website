@@ -5,6 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1">
+    <meta name="theme-color" content="#0288D1">
+
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+
 
     @if(isset($title) && $title)
         <title>{{ $title }} - BookStack</title>

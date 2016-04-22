@@ -5,7 +5,7 @@
 BookStack has similar requirements to Laravel:
 
 * PHP >= 5.5.9, Will need to be usable from the command line.
-* PHP Extensions: `OpenSSL`, `PDO`, `MBstring`, `Tokenizer`, `GD`
+* PHP Extensions: `OpenSSL`, `PDO`, `MBstring`, `Tokenizer`, `GD`, `MySQLND`
 * MySQL >= 5.6
 * Git (Not strictly required but helps manage updates)
 * [Composer](https://getcomposer.org/)

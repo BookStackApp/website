@@ -1,6 +1,7 @@
 <h4>Setup</h4>
 <ul>
 	<li><a href="{{ docLink('admin/installation') }}">Installation</a></li>
+	<li><a href="{{ docLink('admin/visual-customisation') }}">Branding & Customisation</a></li>
 </ul>
 
 <h4>Maintenance</h4>

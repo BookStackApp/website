@@ -21,9 +21,7 @@
 		<div class="col-sm-6">
 			<div class="shaded padded">
 				<h3>User Documentation</h3>
-				<div class="text-muted">
-					Coming Soon
-				</div>
+				@include('docs/user-sidebar')	
 			</div>
 		</div>
 	</div>

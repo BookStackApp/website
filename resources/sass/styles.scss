@@ -79,7 +79,7 @@ header #menu-button {
 
 @include smaller-than($xl) {
   body header {
-    padding-top: $-xxl*1.2;
+    padding-top: $-xxl*2.2;
   }
   header .row.fix-mobile {
     top: 0;

@@ -1,11 +1,15 @@
 @extends('base')
 
 @section('header')
-    <div class="row">
+    <div class="row hero">
         <div class="col-md-4 spaced">
             <h2 >Simple &amp; Free <br>Wiki Software</h2>
             <p>BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information.</p>
-            <a href="https://github.com/ssddanbrown/BookStack" class="button pos "  target="_blank">View on GitHub</a>
+            <p>
+              <a href="https://github.com/ssddanbrown/BookStack">GitHub</a> &nbsp;-&nbsp;
+              <a href="https://demo.bookstackapp.com">Demo</a> &nbsp;-&nbsp;
+              <a href="/docs/admin/installation">Install</a>
+            </p>
         </div>
         <div class="col-md-8 screenshot-container">
             <img class="screenshot" src="images/bookstack-hero-screenshot.png" alt="BookStack ScreenShot">

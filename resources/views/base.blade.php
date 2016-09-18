@@ -24,6 +24,8 @@
     @endif
     <link rel="stylesheet" href="/dist/styles.min.css">
 
+    @yield('head')
+
 </head>
 
 <body>
@@ -49,16 +51,16 @@
     <header id="header">
         <div class="container">
             <div class="row fix-mobile">
-                <div class="col-sm-5 col-xs-8">
+                <div class="col-sm-4 col-xs-8">
                     <div class="logo">
                         <a href="/">
                             {!! icon('logo') !!}
                             <h1>BookStack</h1>
                         </a>
-                        
+
                     </div>
                 </div>
-                <div class="col-sm-7 menu col-xs-4">
+                <div class="col-sm-8 menu col-xs-4">
                     <button tabindex="1" id="menu-button" class="button muted" type="button">{!! icon('menu') !!}</button>
                     <div class="inner">
                         <a href="/docs"><span class="icon">{!! icon('book') !!}</span> Documentation</a>

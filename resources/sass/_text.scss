@@ -46,19 +46,19 @@ h1 {
   margin-bottom: 0.48888889em;
 }
 h2 {
-  font-size: 2.8275em;
+  font-size: 2.6666em;
   line-height: 1.294117647em;
   margin-top: 0.8627451em;
   margin-bottom: 0.43137255em;
 }
 h3 {
-  font-size: 1.75em;
+  font-size: 2.2222em;
   line-height: 1.571428572em;
   margin-top: 0.78571429em;
   margin-bottom: 0.43137255em;
 }
 h4 {
-  font-size: 1em;
+  font-size: 1.666em;
   line-height: 1.375em;
   margin-top: 0.78571429em;
   margin-bottom: 0.43137255em;
@@ -113,7 +113,7 @@ hr {
   height: 1px;
   border: 0;
   background: #EAEAEA;
-  margin-bottom: $-l;
+  margin: $-xl 0;
   &.faded {
     background-image: linear-gradient(to right, #FFF, #e3e0e0 20%, #e3e0e0 80%, #FFF);
   }
@@ -148,12 +148,18 @@ pre {
   white-space:pre;
   font-size: 0.8em;
   overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px 0px rgba(10, 10, 10, 0.06);
-  border: 1px solid rgba(221, 221, 221, 0.66);
-  background-color: #fdf6e3;
-  padding: 0.5em;
+  border-radius: 2px;
+  // box-shadow: inset 1px 2px 2px rgba(10, 10, 10, 0.06);
+  border: 1px solid #DDD;
+  border-top: 3px solid $primary;
+  background-color: #F8F8F8;
+  padding: 0;
   overflow-x: auto;
+}
+
+pre>code.hljs {
+  padding: $-s;
+  background: #F8F8F8;
 }
 
 blockquote {
@@ -336,4 +342,3 @@ span.icon {
 .icon.book svg { fill: $color-book; }
 .icon.chapter svg { fill: $color-chapter; }
 .icon.page svg { fill: $color-page; }
-

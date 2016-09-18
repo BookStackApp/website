@@ -11,7 +11,7 @@
             <img class="screenshot" src="images/bookstack-hero-screenshot.png" alt="BookStack ScreenShot">
         </div>
     </div>
-@stop   
+@stop
 
 
 @section('content')
@@ -21,7 +21,7 @@
         <h2 id="features">Features</h2>
         <div class="row">
             <div class="col-sm-4">
-                <h3><span class="icon">{!! icon('code') !!}</span>Free &amp; Open Source</h3>
+                <h4><span class="icon">{!! icon('code') !!}</span>Free &amp; Open Source</h4>
                 <p>BookStack is fully free and open, MIT licensed. The source is available on GitHub. There is no cost to downloading and installing your own instance of bookstack.
                 </p>
                 <p>
@@ -29,7 +29,7 @@
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h3><span class="icon">{!! icon('laptop_chromebook') !!}</span>Easy, Simple Interface</h3>
+                <h4><span class="icon">{!! icon('laptop_chromebook') !!}</span>Easy, Simple Interface</h4>
                 <p>
                     Simplicity has been the top priority when building BookStack. The page editor has a simple WYSIWYG interface and all content is broken into three simple real world groups:
                 </p>
@@ -38,7 +38,7 @@
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h3><span class="icon">{!! icon('search') !!}</span>Searchable and Connected</h3>
+                <h4><span class="icon">{!! icon('search') !!}</span>Searchable and Connected</h4>
                 <p>
                     The content in BookStack is fully searchable. You are able to search at book level or across all books, chapters &amp; pages. The ability to link directly to any paragraph allows you to keeps your documentation connected.
                 </p>
@@ -49,19 +49,19 @@
         </p>
         <div class="row">
             <div class="col-sm-4">
-                <h3><span class="icon">{!! icon('build') !!}</span>Configurable</h3>
+                <h4><span class="icon">{!! icon('build') !!}</span>Configurable</h4>
                 <p>
                     Configuration options allow you to set-up BookStack to suit your use case. You can change the name, Logo and registration options. You can also change whether the whole system is publicly viewable or not.
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h3><span class="icon">{!! icon('storage') !!}</span>Simple Requirements</h3>
+                <h4><span class="icon">{!! icon('storage') !!}</span>Simple Requirements</h4>
                 <p>
                     BookStack is built using PHP, on top of the Laravel framework and it uses MySQL to store data. Performance has been kept in mind and BookStack can run happily on a $5 Digital Ocean VPS.
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h3><span class="icon">{!! icon('directions_boat') !!}</span>Powerful Features</h3>
+                <h4><span class="icon">{!! icon('directions_boat') !!}</span>Powerful Features</h4>
                 <p>
                     On top of the powerful search and linking there is also cross-book sorting, Page revisions, Image management. Some more mega-features are planned such as static-site generation and quick exporting.
                 </p>
@@ -105,7 +105,7 @@
 			<div class="my-gallery">
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>Page View</h3>
+						<h4>Page View</h4>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/page-view.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_page-view.png" alt="Page View">
@@ -113,7 +113,7 @@
 						</figure>
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>Page Editor</h3>
+						<h4>Page Editor</h4>
 						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/page-edit.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_page-edit.png" alt="Page Editing">
@@ -121,7 +121,7 @@
 						</figure>
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>Image Manager</h3>
+						<h4>Image Manager</h4>
 						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/image-manager.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_image-manager.png" alt="Image Manager">
@@ -132,7 +132,7 @@
 
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>All Books Overview</h3>
+						<h4>All Books Overview</h4>
 						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/books-view.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_books-view.png" alt="View of all books">
@@ -140,7 +140,7 @@
 						</figure>
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>Book Overview</h3>
+						<h4>Book Overview</h4>
 						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/book-overview.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_book-overview.png" alt="Book Overview">
@@ -148,7 +148,7 @@
 						</figure>
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>Book Sorting</h3>
+						<h4>Book Sorting</h4>
 						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/book-sorting.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_book-sorting.png" alt="Book Content Sorting View">
@@ -159,7 +159,7 @@
 
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>Global Search</h3>
+						<h4>Global Search</h4>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/search.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_search.png" alt="Searching all content">
@@ -167,7 +167,7 @@
 						</figure>
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>App Settings</h3>
+						<h4>App Settings</h4>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/settings-view.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_settings-view.png" alt="Settings View">
@@ -175,7 +175,7 @@
 						</figure>
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-						<h3>Profile Update Page</h3>
+						<h4>Profile Update Page</h4>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 						    <a href="images/screenshots/profile-edit-view.png" data-size="1920x1080">
 						        <img src="images/screenshots/thumb_profile-edit-view.png" alt="Profile Editing Screen">

@@ -1,18 +1,24 @@
 # Installation
 
-### Requirements
+* [Manual](#manual)
+* [Docker](#docker)
+* [Ubuntu 16.04 Script](#ubuntu-1604)
+
+## Manual Installation <a name="manual"></a>
+
+#### Requirements
 
 BookStack has similar requirements to Laravel:
 
-* PHP >= 5.5.9, Will need to be usable from the command line.
+* PHP >= 5.6.4, Will need to be usable from the command line.
 * PHP Extensions: `OpenSSL`, `PDO`, `MBstring`, `Tokenizer`, `GD`, `MySQLND`
 * MySQL >= 5.6
 * Git (Not strictly required but helps manage updates)
 * [Composer](https://getcomposer.org/)
 
-### Installation
+#### Instructions
 
-Ensure the above requirements are met before installing. Currently BookStack requires its own domain/subdomain and will not work in a site subdirectory.
+Ensure the above requirements are met before installing.
 
 This project currently uses the `release` branch of the BookStack GitHub repository as a stable channel for providing updates. The installation is currently somewhat complicated and will be made simpler in future releases. Some PHP/Laravel experience will currently benefit.
 
@@ -31,9 +37,7 @@ This project currently uses the `release` branch of the BookStack GitHub reposit
 8. Run `php artisan migrate` to update the database.
 9. Done! You can now login using the default admin details `admin@admin.com` with a password of `password`. It is recommended to change these details directly after first logging in.
 
----
-
-### URL Rewrite rules
+#### URL Rewrite rules
 
 **Apache**
 ```
@@ -50,4 +54,36 @@ RewriteRule ^ index.php [L]
 location / {
     try_files $uri $uri/ /index.php?$query_string;
 }
+```
+
+---
+
+## Docker Image <a name="docker"></a>
+
+A community built docker image is available for those that prefer to use a containerised version of BookStack. This image runs on Apache and PHP7. A docker compose file is also available to bring up a whole BookStack environment which includes MySQL 5.7. Here are the links for the docker image:
+
+* [GitHub repository including docker compose file](https://github.com/solidnerd/docker-bookstack)
+* [Docker Hub page](https://hub.docker.com/r/solidnerd/bookstack/)
+
+---
+
+## Ubuntu 16.04 Installation Script <a name="ubuntu-1604"></a>
+
+A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. This script is ONLY FOR A FRESH OS, It will install Nginx, MySQL 5.7, & PHP7 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
+
+[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-16.04.sh)
+
+#### Running the Script
+
+``` bash
+# Ensure you have read the above information about what this script does before executing these commands.
+
+# Download the script
+wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-16.04.sh
+
+# Make it executable
+chmod a+x
+
+# Run the script with admin permissions
+sudo ./installation-ubuntu-16.04.sh
 ```

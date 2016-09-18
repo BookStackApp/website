@@ -5,7 +5,7 @@ Changing the app name will simply update the name displayed in the header and br
 Changing the logo updates the logo shown in the header. This can be removed if you only want to display the chosen name.
 Changing the app color will update the color of the header, links and the majority of buttons within the system.
 
-### Further customisation
+### Further Customisation
 
 If you need to customise BookStack further to the given controls in the settings area you can make use of the 'Custom HTML head content' setting. Using this you can add in any custom JavaScript or CSS content to override default BookStack functionality and styles.
 

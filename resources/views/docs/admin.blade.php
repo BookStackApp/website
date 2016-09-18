@@ -18,17 +18,23 @@
 
 <div class="container">
 
-	<div class="col-sm-2 sidebar">
-		@include('docs/admin-sidebar')
-	</div>
+	<div class="row">
+		<div class="col-sm-2 sidebar">
+			@include('docs/admin-sidebar')
+		</div>
 
-	<div class="col-sm-8 col-sm-offset-1 docs-content">
-		<a class="float right edit-link" target="_blank"
-		   href="https://github.com/BookStackApp/website/blob/master/resources/docs/{{ $type }}/{{ $page }}.md">
-			<span class="icon small">{!! icon('edit') !!}</span>
-			Edit page
-		</a>
-		{!! $html !!}
+		<div class="col-sm-8 col-sm-offset-1 docs-content">
+			{!! $html !!}
+
+			<div class="text-center">
+				<a class="edit-link" target="_blank"
+					 href="https://github.com/BookStackApp/website/blob/master/resources/docs/{{ $type }}/{{ $page }}.md">
+					<span class="icon small">{!! icon('edit') !!}</span>
+					Edit this Page
+				</a>
+			</div>
+
+		</div>
 	</div>
 
 </div>

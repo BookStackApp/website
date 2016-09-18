@@ -53,15 +53,19 @@ header .menu, footer .menu {
   a {
     display: inline-block;
     padding: $-m;
-    line-height: 1.9;
+    line-height: 1.9
   }
   span.icon {
-    font-size: 18px;
+    font-size: 16px;
     vertical-align: top;
     padding-right: 4px;
     display: inline-block;
     position: relative;
     top: 2px;
+    svg {
+      height: 18px;
+      margin-top: 3px;
+    }
   }
 }
 
@@ -199,16 +203,32 @@ input[type=text] {
 .docs-content {
   padding-bottom: $-xxl;
   .edit-link {
-    padding: $-xl 0;
+    margin-top: $-xxl;
+    display: inline-block;
+    padding: $-s $-xl;
+    border-radius: 24px;
     z-index: 1;
     position: relative;
+    border: 2px solid #DDD;
+    color: #888;
+    transition: all ease-in-out 120ms;
     .icon {
       width: 24px;
       vertical-align: 4px;
     }
     svg {
+      transition: all ease-in-out 120ms;
+      fill: #888;
       height: 18px;
       width: 20px;
+    }
+  }
+  .edit-link:hover {
+    border-color: $primary;
+    color: $primary;
+    text-decoration: none;
+    svg {
+      fill: $primary;
     }
   }
 }
@@ -236,4 +256,3 @@ h2.thin-margin {
 #content {
   min-height: 70vh;
 }
-

@@ -82,7 +82,7 @@ A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. 
 wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-16.04.sh
 
 # Make it executable
-chmod a+x
+chmod a+x installation-ubuntu-16.04.sh
 
 # Run the script with admin permissions
 sudo ./installation-ubuntu-16.04.sh

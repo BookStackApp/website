@@ -3,7 +3,7 @@
 @section('header')
     <div class="row hero">
         <div class="col-md-4 spaced">
-            <h2 >Simple &amp; Free <br>Wiki Software</h2>
+            <h2>Simple &amp; Free <br>Wiki Software</h2>
             <p>BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information.</p>
             <p>
               <a href="https://github.com/ssddanbrown/BookStack">GitHub</a> &nbsp;-&nbsp;

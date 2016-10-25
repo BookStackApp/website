@@ -11,7 +11,7 @@ To set up LDAP-based authentication add or modify the following variables in you
 AUTH_METHOD=ldap
 
 # The LDAP host, Adding a port is optional
-LDAP_SERVER=ldap://example.com:389
+LDAP_SERVER=example.com:389
 
 # The base DN from where users will be searched within.
 LDAP_BASE_DN=ou=People,dc=example,dc=com

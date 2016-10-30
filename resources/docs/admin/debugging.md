@@ -8,4 +8,4 @@ On top of the above, An error log can be found at the path `storage/logs/laravel
 
 ### Submitting Issues
 
-If you have found the cause of the issue and it is not an issue with your particular setup you can submit it on the [GitHub issues page](https://github.com/ssddanbrown/BookStack/issues). Please include as much information as possible when creating an issue with steps with how to replicate it so the bug can be fixed by a developer.
+If you have found the cause of the issue and it is not an issue with your particular setup you can submit it on the [GitHub issues page](https://github.com/BookStackApp/BookStack/issues). Please include as much information as possible when creating an issue with steps with how to replicate it so the bug can be fixed by a developer.

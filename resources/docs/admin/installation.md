@@ -25,7 +25,7 @@ This project currently uses the `release` branch of the BookStack GitHub reposit
 1. Clone the release branch of the BookStack GitHub repository into a folder.
 
 	```
-	git clone https://github.com/ssddanbrown/BookStack.git --branch release --single-branch
+	git clone https://github.com/BookStackApp/BookStack.git --branch release --single-branch
 	```
 
 2. `cd` into the application folder and run `composer install`.

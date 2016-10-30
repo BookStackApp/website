@@ -66,7 +66,7 @@
                         <a href="/docs"><span class="icon">{!! icon('book') !!}</span> Documentation</a>
                         <a href="/#features"><span class="icon">{!! icon('star') !!}</span> Features</a>
                         <a href="/#demo"><span class="icon">{!! icon('touch_app') !!}</span> Demo</a>
-                        <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('github') !!}</span> Github</a>
+                        <a href="https://github.com/BookStackApp/BookStack" target="_blank"><span class="icon">{!! icon('github') !!}</span> Github</a>
                         <a href="/blog" target="_blank"><span class="icon">{!! icon('rss_feed') !!}</span> Blog</a>
                     </div>
                 </div>
@@ -82,16 +82,18 @@
     <footer>
         <div class="container">
             <div class="row">
-            	<div class="col-lg-3">
-            		<p>
-            		    BookStack - Created By <a href="https://danb.me" title="danb.me" target="_blank">Dan Brown</a>
+            	<div class="col-lg-5">
+            		<p class="muted">
+            		    BookStack - Created By <a href="https://danb.me" title="danb.me" target="_blank">Dan Brown</a> and developed with the community.
+                        <br>
+                        Thanks to <a href="https://www.browserstack.com/" target="_blank">BrowserStack</a> for providing easy cross-browser testing.
             		</p>
             	</div>
-            	<div class="col-md-9 menu">
+            	<div class="col-lg-7 col-md-9 menu">
                     <a href="/docs"><span class="icon">{!! icon('book') !!}</span> Documentation</a>
                     <a href="/#features"><span class="icon">{!! icon('star') !!}</span> Features</a>
                     <a href="/#demo"><span class="icon">{!! icon('touch_app') !!}</span> Demo</a>
-                    <a href="https://github.com/ssddanbrown/BookStack" target="_blank"><span class="icon">{!! icon('github') !!}</span> Github</a>
+                    <a href="https://github.com/BookStackApp/BookStack" target="_blank"><span class="icon">{!! icon('github') !!}</span> Github</a>
                     <a href="/blog" target="_blank"><span class="icon">{!! icon('rss_feed') !!}</span> Blog</a>
             	</div>
             </div>

@@ -6,7 +6,7 @@
             <h2>Simple &amp; Free <br>Wiki Software</h2>
             <p>BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information.</p>
             <p>
-              <a href="https://github.com/ssddanbrown/BookStack">GitHub</a> &nbsp;-&nbsp;
+              <a href="https://github.com/BookStackApp/BookStack">GitHub</a> &nbsp;-&nbsp;
               <a href="https://demo.bookstackapp.com">Demo</a> &nbsp;-&nbsp;
               <a href="/docs/admin/installation">Install</a>
             </p>
@@ -29,7 +29,7 @@
                 <p>BookStack is fully free and open, MIT licensed. The source is available on GitHub. There is no cost to downloading and installing your own instance of bookstack.
                 </p>
                 <p>
-                    <a href="https://github.com/ssddanbrown/BookStack">View the source here &raquo;</a>
+                    <a href="https://github.com/BookStackApp/BookStack">View the source here &raquo;</a>
                 </p>
             </div>
             <div class="col-sm-4" >

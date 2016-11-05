@@ -92,6 +92,9 @@ mysql -u benny -p bookstack < bookstack.backup.sql
 sudo mysql -u root bookstack < bookstack.backup.sql
 ```
 
+If you are restoring to a new verion of BookStack you will have to run
+`php artisan migrate` after restore to perform any required updates to the database.
+
 #### Files
 
 To restore the files you simple need to copy them from the backup archive

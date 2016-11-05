@@ -2,7 +2,9 @@
 
 BookStack is updated regularly and the version numbering follows [semantic versioning](http://semver.org/). The latest release can be found on [GitHub here](https://github.com/BookStackApp/BookStack/releases) and detailed information on releases is posted on the [BookStack blog here](https://www.bookstackapp.com/blog/tag/releases/).
 
-**Before updating you should back up the database and any file uploads to prevent potential data loss**. Updating is currently done via Git version control. To update BookStack you can run the following command in the root directory of the application:
+**Before updating you should back up the database and any file uploads to prevent potential data loss**. Backup and restore documentation can be found [here](/docs/admin/backup-restore).
+
+ Updating is currently done via Git version control. To update BookStack you can run the following command in the root directory of the application:
 ```
 git pull origin release && composer install && php artisan migrate
 ```

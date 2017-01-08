@@ -10,7 +10,16 @@ Backup and restore documentation can be found [here](/docs/admin/backup-restore)
 git pull origin release && composer install && php artisan migrate
 ```
 This command will update the repository that was created in the installation, install the PHP dependencies using `composer` then run then update the database with any required changes.
+
+In addition, we recommend clearing the cache after an update - 
+
+```
+php artisan cache:clear
+php artisan view:clear
+```
+
 Check the below list for the version you are updating to for any additional instructions.
+
 
 ## Version Specific Instructions
 

@@ -3,6 +3,7 @@
 	<li><a href="{{ docLink('admin/installation') }}">Installation</a></li>
 	<li><a href="{{ docLink('admin/visual-customisation') }}">Branding &amp; Customisation</a></li>
 	<li><a href="{{ docLink('admin/security') }}">Security</a></li>
+	<li><a href="{{ docLink('admin/upload-limits') }}">Changing Upload Limits</a></li>
 </ul>
 
 <h4>Maintenance</h4>

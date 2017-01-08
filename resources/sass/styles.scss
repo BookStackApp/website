@@ -238,6 +238,10 @@ input[type=text] {
       fill: $primary;
     }
   }
+  img {
+    border: 1px solid $primary;
+    border-radius: 3px;
+  }
 }
 
 .sidebar, .docs-index {

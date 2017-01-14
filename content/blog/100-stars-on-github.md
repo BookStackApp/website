@@ -14,7 +14,7 @@ BookStack now has [over 100 stars on GitHub](https://github.com/ssddanbrown/Book
 
 Most of those stars have come from my [initial posting on the Reddit](https://www.reddit.com/r/selfhosted/comments/3z06rb/bookstack_a_free_wikilike_information_store/) and a tweet about the project. These events can be seen in the site analytics:
 
-![BookStack Traffic](/blog/images/2016/03/bookstack-page-traffic.png)
+![BookStack Traffic](/images/2016/03/bookstack-page-traffic.png)
 
 The initial small spike is my Reddit post and the large middle spike is the twitter post:
 

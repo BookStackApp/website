@@ -20,11 +20,11 @@ BookStack v0.12.0 has now been released bringing a range of new features and bug
 
 When editing a page you can now add a one-liner to summarise the changes you've made. This allows you to build a changelog of a page to assist with looking over revisions. The option to set a changelog summary can be found next to the save button when editing a page:
 
-![BookStack edit summary](/blog/images/2016/09/bookstack-blog-edit-summary.gif)
+![BookStack edit summary](/images/2016/09/bookstack-blog-edit-summary.gif)
 
 These summaries can then be seen on the revisions view for a page providing a full changelog that can be used to assist finding the right revision.
 
-![BookStack Summary Changelog](/blog/images/2016/09/BookStack-summary-changelog.png)
+![BookStack Summary Changelog](/images/2016/09/BookStack-summary-changelog.png)
 
 Adding a changelog is optional so if you don't want the hassle of setting a summary on every edit you don't have to but you won't get the benefits it brings.
 
@@ -32,17 +32,17 @@ Adding a changelog is optional so if you don't want the hassle of setting a summ
 
 If you ever find yourself wanting to link to another Book, Chapter or Page and then have to open a new tab to find the URL for that page you will love this new link selector. Found on both editors, WYSIWYG & Markdown, the link selector displays in a popup and allows you to search for your Book, Chapter or Page without opening a new tab or window.  The link selector can be found at the top of the markdown editor (or by pressing `Ctrl+Shift+K`). On the WYSIWYG editor you can access the link selector by clicking the browse icon in the insert/edit link menu:
 
-![BookStack WYSIWYG link selector](/blog/images/2016/09/bookstack-link-selector-wysiwyg.png)
+![BookStack WYSIWYG link selector](/images/2016/09/bookstack-link-selector-wysiwyg.png)
 
 Clicking the button will display a searchable listing of Books, Chapters & Pages. Find your item in this dialog then double click it or select it then press the 'Select' button. The URL and title of the link will be populated with the url and name of the entity you selected.
 
-![BookStack Entity Select Dialog](/blog/images/2016/09/bookstack-entity-select-dialog.png)
+![BookStack Entity Select Dialog](/images/2016/09/bookstack-entity-select-dialog.png)
 
 ### Page Save Indicator
 
 Just want to note another little nice UI change, When a page draft is saved an indicator will now display to provide feedback of a successful save. Before, When saving within the same minute no feedback was given. This just adds a little bit of assurance your content has saved without displaying a large, distracting notification.
 
-![Draft Save Indicator](/blog/images/2016/09/bookstack-save-indicator.gif)
+![Draft Save Indicator](/images/2016/09/bookstack-save-indicator.gif)
 
 ### Other Features, Changes & Bugfixes
 

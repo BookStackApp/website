@@ -20,7 +20,7 @@ BookStack v0.11 has now been released. This version is a cleanup and bugfix rele
 
 The WYSIWYG editor now supports callouts. These are styled blocks that can be used to highlight or alert specific bits of information. These are ideal for catching the attention of the user for snippets of text that are important. Here's a preview of how these look:
 
-![BookStack Callouts](/blog/images/2016/07/bookstack-callouts.png)
+![BookStack Callouts](/images/2016/07/bookstack-callouts.png)
 
 As you can see there are a few different types. There are success, info, danger & warning options. Callouts are created in the same way as headers and code blocks, Simply open the 'Formats' list on the editor toolbar and at the bottom is a new 'Callouts' menu. Open that and you will see the four options available. 
 
@@ -41,7 +41,7 @@ A small update has been made to the markdown editor to enable scroll-syncing. No
 
 Pages and Chapters have now been given a proper move interface so it's easier to change the location of a single item. Before, the only way to change the location of a page or chapter was to go to the book and go through the sort interface but that could be a bit tedious to move a single chapter or page. Now, in the toolbar dropdown menu when viewing a chapter or page, you can find a 'Move' action (As long as you have edit permissions). This will show a page where you can select a new book/chapter to move the current item to. Here's what it looks like when moving a page:
 
-![BookStack Move Page Interface](/blog/images/2016/07/bookstack-move-page.png)
+![BookStack Move Page Interface](/images/2016/07/bookstack-move-page.png)
 
 By default popular books and chapters are shown otherwise you can search for a particular item. Moving a chapter will also move all pages within that chapter. 
 

@@ -34,17 +34,17 @@ As with the entity restrictions the effect will cascade down. If a whole book is
 
 Below is a screenshot of the views of two different users. The one on the right cannot see the majority of the images since the book that contains the pages that contains the images is restricted
 
-![](/blog/images/2016/03/bookstack-image-restrictions.png)
+![](/images/2016/03/bookstack-image-restrictions.png)
 
 ### Autosaving Drafts
 
 In the era of the modern internet we now expect things to be done automatically. One of these things is saving stuff. Accidents are easy and web-server sessions are not *usually* unlimited so every so often you can end up losing a whole load of work and that can really suck and make you not want to write stuff out. To prevent this from happening BookStack will now automatically save pages periodically (30 seconds to be exact) if changes have been made.
 
-![](/blog/images/2016/03/bookstack-autosave.png)
+![](/images/2016/03/bookstack-autosave.png)
 
 A little indicator at the top of the editing screen will let you know when the draft was last saved. You can click this to manually save the draft if you don't want to wait for it to be done automatically. On the right, Next to the save button you'll find an button which will discard the draft which will update the editor with the current, live, contents of the page. When you save the draft copy will be made into the published version. Only the creator can see their drafts. Every user can have their own draft copy of a page.
 
-![](/blog/images/2016/03/bookstack-draft-notification.png)
+![](/images/2016/03/bookstack-draft-notification.png)
 
 When editing a page that you have a previous draft of you will get the notification shown in the screenshot above to let you know you're editing a draft copy, not the current live page content. If the page has been saved since you created your draft the system will let you know in the same notification.
 
@@ -52,7 +52,7 @@ When editing a page that you have a previous draft of you will get the notificat
 
 Along with saving drafts when updating a page, Drafts will now be created straight away when creating a new page. This give you the ability to work on a page, Saving it as you go, without being redirected or having the make the page visible to everyone. 
 
-![](/blog/images/2016/03/bookstack-draft-page-menu.png)
+![](/images/2016/03/bookstack-draft-page-menu.png)
 
 As with updating a page, new page drafts will save every 30 seconds or you can save it manually. You can also delete the draft page from the system entirely.
 
@@ -60,23 +60,23 @@ Draft pages will show up in the system in a similar way to normal pages except t
 
 Here are some screenshot of the new drafts in various places in BookStack:
 
-![](/blog/images/2016/03/draft-homepage.png)
+![](/images/2016/03/draft-homepage.png)
 
-![](/blog/images/2016/03/draft-book-page.png)
+![](/images/2016/03/draft-book-page.png)
 
-![](/blog/images/2016/03/draft-page-sidebar.png)
+![](/images/2016/03/draft-page-sidebar.png)
 
 ### Multiple User Edit Warnings
 
 With the new autosaving functionality in BookStack we can use that to check if users have been editing a page within the most recent x minutes. Now when you edit a page the system will look over to see if there have been any autosaves within the last hour. If there have it will notify you as the editor opens. If there's just one other user it'll let you know who they are otherwise, If there's more than one, it'll let you know how many users have been editing the page.
 
-![](/blog/images/2016/03/bookstack-user-notification.png)
+![](/images/2016/03/bookstack-user-notification.png)
 
 ### Better Default Logo
 
 The last update added the ability to set a custom primary colour theme for BookStack. In this update the logo has been updated to remove the blue outline so it fits better with the custom colours.
 
-![](/blog/images/2016/03/bookstack-themes-logo.png)
+![](/images/2016/03/bookstack-themes-logo.png)
 
 ### Bugfixes and Other Changes
 

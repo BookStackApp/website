@@ -30,7 +30,7 @@ A major benefit that this brings is `view` permissions on a role since this was 
 Upon update all current roles in the system will be given view permissions automatically to match the permissions pre-update. To change these just edit the role and you will find a new column to edit `view` permissions shown in the screenshot below:
 
 
-![View Permissions](/blog/images/2016/05/view-permissions.png)
+![View Permissions](/images/2016/05/view-permissions.png)
 
 #### Page Tagging
 
@@ -38,13 +38,13 @@ Tags have been a heavily requested feature for a while now but we wanted to ensu
 
 To add tags simply go and edit a page. You will find a new sidebar on the right-hand side of the screen. This will show up on both WYSIWYG & Markdown editor options. Click the arrow or tag icon at the top of this sidebar to expand it. You can then enter your tags, as well as re-order them. To save them just save the page. Here's a screenshot of the tag edit interface:
 
-![Page Tag Interface](/blog/images/2016/05/page-tags-interface.png)
+![Page Tag Interface](/images/2016/05/page-tags-interface.png)
 
 Once you really get into using tags on your pages BookStack will provide auto-fill suggestions when typing tag names and values.
 
 Page tags are visible when viewing a page as shown here:
 
-![Page tag display](/blog/images/2016/05/page-tag-display.png)
+![Page tag display](/images/2016/05/page-tag-display.png)
 
 Clicking the tag name will start a search of everything with that tag name. Clicking the value will search the system for only pages that have that tag with that particular value. Tagging has been fully built into the search system in this format: `[tagname=tagvalue]`. You will see this when clicking on a tag name or value then looking at the search term used. Here are some example tag search terms with descriptions:
 

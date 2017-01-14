@@ -1,0 +1,12 @@
+languageCode = "en-gb"
+title = "BookStack"
+baseurl = "https://bookstackapp.com/"
+theme="bookstack"
+disqusShortname = "bookstackblog"
+
+[permalinks]
+  post = "/blog/:slug/"
+
+[params]
+  blogCover = "/images/cover.jpg"
+  googleAnalyticsUserID = "UA-61486258-4"

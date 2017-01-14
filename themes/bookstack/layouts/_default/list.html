@@ -1,0 +1,43 @@
+{{ partial "header.html" . }}
+
+{{ $baseurl := .Site.BaseURL }}
+
+{{if .Site.Params.blogCover}}
+	<div class="blog-cover" style="background-image: url({{.Site.Params.blogCover}})">
+{{else}}
+	<div class="no-cover">
+{{end}}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h1>{{.Title}}</h1>
+				<h2 class="page-description">
+				    {{if .Params.description}}
+				        {{.Params.description}}
+				    {{end}}
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+
+		<div class="col-sm-6 col-sm-offset-3">
+
+			{{ $paginator := .Paginator }}
+
+			{{ range $paginator.Pages }}
+			   {{ partial "list-blog-post" .}}
+			{{ end }}
+
+			{{ partial "pagination" $paginator }}
+
+		</div>
+
+	</div>
+</div>
+
+{{ partial "footer.html" . }}

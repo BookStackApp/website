@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{ partial "twitter_card.html" . }}
+
+  	<meta property="og:title" content="{{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
+  	<meta property="og:site_name" content="{{ .Site.Title }}" />
+  	<meta property="og:url" content="{{ .Permalink }}" />
+
+    {{ if .IsPage }}
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
+
+    {{ range .Params.tags }}
+    <meta property="og:article:tag" content="{{ . }}" />
+    {{ end }}
+    {{ else }}
+    <meta property="og:type" content="website" />
+    {{ end }}
+
+    <title>
+      {{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
+    </title>
+
+    <meta name="description" content="{{ .Site.Params.description }}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#13557D">
+
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/apple-touch-icon-152x152.png" />
+
+    <link rel="icon" type="image/png" href="/images/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+
+    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/styles.css" />
+
+
+    {{ if .Site.Params.RSSLink}}
+        <link href="{{.Site.Params.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{else}}
+      {{ if ne .URL "/" }}
+          <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      {{ end }}
+      {{if .IsNode}}
+        <link href="{{.RSSLink}}" rel="alternate" type="application/rss+xml" title="{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
+      {{end}}
+    {{end}}
+    {{.Hugo.Generator}}
+
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    {{with  .Site.Params.googleAnalyticsUserID }}
+    <script>
+      if (window.location.href.toLowerCase().indexOf('https') !== -1) {
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{.}}', 'auto');
+        ga('send', 'pageview');
+      } 
+    </script>
+    {{end}}
+
+    {{ if .Site.Params.customHeaderPartial }}
+        {{ partial .Site.Params.customHeaderPartial . }}
+    {{ end }}
+</head>
+<body class="nav-closed">
+
+      <header id="header">
+        <div class="container">
+            <div class="row fix-mobile">
+                <div class="col-sm-4 col-xs-8">
+                    <div class="logo">
+                        <a href="{{.Site.BaseURL}}">
+                            {{partial "icon/logo.svg"}}
+                            <h1>BookStack</h1>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-8 menu col-xs-4">
+                    <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
+                    <div class="inner">
+                        <a href="/docs"><span class="icon">{{partial "icon/book.svg"}}</span> Documentation</a>
+                        <a href="/#features"><span class="icon">{{partial "icon/star.svg"}}</span> Features</a>
+                        <a href="/#demo"><span class="icon">{{partial "icon/touch_app.svg"}}</span> Demo</a>
+                        <a href="https://github.com/BookStackApp/BookStack" target="_blank"><span class="icon">{{partial "icon/github.svg"}}</span> Github</a>
+                        <a href="/blog"><span class="icon">{{partial "icon/rss_feed.svg"}}</span> Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  <div id="content">

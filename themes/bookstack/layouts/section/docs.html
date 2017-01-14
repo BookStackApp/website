@@ -1,0 +1,31 @@
+{{ partial "header.html" . }}
+
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="thin-margin">Documentation</h2>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<div class="container">
+	<div class="row docs-index">
+		<div class="col-sm-6">
+			<div class="shaded padded">
+				<h3>Admin Documentation</h3>
+				{{partial "menu_admin_docs"}}
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="shaded padded">
+				<h3>User Documentation</h3>
+				{{partial "menu_user_docs"}}	
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ partial "footer.html" . }}

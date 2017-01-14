@@ -1,13 +1,17 @@
-## BookStack Site and Documentation
+# BookStack Site, Documentation & Blog
 
-This repository contains the code for the Official [BookStack site](https://www.bookstackapp.com/) including all the documentation.
+This project holds all the data for the https://www.bookstackapp.com/
 
-The site is built on [Lumen](https://lumen.laravel.com/).
+This site is built using [Hugo](https://gohugo.io). Images are stored using `git-lfs`. 
 
-### Documentation
+### Data Locations
 
-The documentation for BookStack can be found in the resources/docs folder. The files are written in markdown then converted into HTML at runtime.
+* Blog Posts - `content/posts`
+* Docs - `content/docs`
+* Theme - `themes/bookstack`
 
-### License
+### Theme
 
-This site is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The theme is custom made with snippets taken from the [hugo capser theme](https://github.com/vjeantet/hugo-theme-casper).
+
+Scss is used for the styling and is built using gulp. Install NPM dependancies via `npm install` or `yarn` then you can use `npm run-script build` to build the css once or `npm run-script dev` to watch for changes.

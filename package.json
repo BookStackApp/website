@@ -4,7 +4,7 @@
   "description": "The front-end site for bookstack",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp",
+    "build": "gulp && hugo",
     "dev": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

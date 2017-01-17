@@ -67,6 +67,12 @@ div[class^="col-"] img {
   }
 }
 
+@include smaller-than(768px) {
+  .float.float-none-sm {
+    float: none;
+  }
+}
+
 .block {
   display: block;
   position: relative;

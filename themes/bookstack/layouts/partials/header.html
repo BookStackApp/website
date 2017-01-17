@@ -74,13 +74,18 @@
     </script>
     {{end}}
 
+    <!-- at the end of the HEAD -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- at the end of the BODY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
     {{ if .Site.Params.customHeaderPartial }}
         {{ partial .Site.Params.customHeaderPartial . }}
     {{ end }}
 </head>
 <body class="nav-closed">
 
-      <header id="header">
+      <header id="header" class="header">
         <div class="container">
             <div class="row fix-mobile">
                 <div class="col-sm-4 col-xs-8">

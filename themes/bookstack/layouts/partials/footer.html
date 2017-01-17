@@ -22,7 +22,17 @@
         </div>
     </footer>
 
-
+    
+    <script type="text/javascript">
+    if (document.querySelector('.doc-search-input') !== null) {
+        docsearch({
+                apiKey: '0401e1a1383bf8baa64b07a6eeecce0c',
+                indexName: 'bookstackapp',
+                inputSelector: '.doc-search-input',
+                debug: false // Set debug to true if you want to inspect the dropdown
+            });
+    }
+    </script>
     <script async src="{{.Site.BaseURL}}js/script.js"></script>
 </body>
 </html>

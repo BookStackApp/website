@@ -1,7 +1,7 @@
 +++
 title = "LDAP Authentication"
 description = "How to use LDAP as your primary way to register and login to BookStack"
-date = "2017-01-01"
+date = "2017-01-21"
 type = "admin-docs"
 +++
 
@@ -17,6 +17,8 @@ AUTH_METHOD=ldap
 
 # The LDAP host, Adding a port is optional
 LDAP_SERVER=example.com:389
+# If using LDAP over SSL you should also define the protocol:
+# LDAP_SERVER=ldaps://example.com:636
 
 # The base DN from where users will be searched within.
 LDAP_BASE_DN=ou=People,dc=example,dc=com

@@ -3,20 +3,23 @@ title = "Reusing Page Content"
 description = "How to use include tags to reuse pages and page content within other pages"
 date = "2017-01-22"
 type = "user-docs"
+slug = "reusing-page-content"
 +++
 
-Within BookStack you may find that you want to include the same block of content in multiple places. You could copy and paste that content into multiple pages but then, if that content need to be changed, you'd have to update it multiple times across different pages. Introduced in BookStack v0.14 is the ability to include other pages and to also include single blocks of content from other pages.
+Within BookStack you may find that you want to include the same block of content in multiple places. You could copy and paste that content into multiple pages but then, if that content needs to be changed, you'd have to update it multiple times across different pages. Introduced in BookStack v0.14 is the ability to include other pages and to also include single blocks of content from other pages.
+
+Note that the include behaviour is non-recursive so including will only work to a single level. This ensures performance and prevents users from breaking pages by creating include loops.
 
 ## Include Tags
 
 To include the content of a page within another you can used the following syntax:
 
-`{{@<page_id>}}` or `@{{<page_id>#<content_id>}}`
+`{{@page_id}}` or `@{{page_id#content_id}}`
 
 Here are some examples of this in use:
 
 * `{{@5}}` - Include all content from the page with and id of '5'.
-* `{{@10#bkmrk-copyright-year}}` - Include the content within the element with an id of `bkmrk-copyright-year` in the page with an id of '10'.
+* `{{@10#bkmrk-copyright-year}}` - Include the content within the element of id `bkmrk-copyright-year` in the page with an id of '10'.
 
 You simply enter that in the page editor and then, When the page is viewed, the content will be dynamically be fetched. This means you can update the referenced content and it will show the same changes on any page the content is included within.
 
@@ -26,9 +29,7 @@ Finding the id of a page can be difficult so a quick and easy way to find includ
 View a page with some content you want to re-use. Use your mouse to select some content and you will see a popup appear.
 By default this contains a direct link to that content. If you click the link icon on the left it will switch to show you the include tag for that content. Simply copy that and place it in another page. Remove the `#` and content id to include the whole content of the page instead of just a single block.
 
-SHOW IMAGE OF POPUP
-
-TODO: CHECK WHAT HAPPENS WHEN YOU INCLUDE THE CONTENT OF THE SAME PAGE.
+<video controls src="/images/2017/01/bookstack-includes-popover.mp4"></video>
 
 ## Forcing Content Id's
 
@@ -40,7 +41,7 @@ Due to the fact ID's can change it's recommended to force ID's on you content:
 
 In the WYSIWYG editor you can force an ID by going into the source code view and adding it manually:
 
-TODO: INSERT IMAGE
+![Forcing WYSIWYG Ids](/images/docs/user/forcing-wysiwyg-ids.png)
 
 #### Markdown Editor
 
@@ -48,9 +49,9 @@ In the markdown editor you can simply insert HTML with an ID to ensure it does n
 
 ```
 # Old Content
-Copyright BookStack enterprises 2017
+Copyright BookStack Enterprises 2017
 
 # Revised with ID
-<p id="include-copyright-text">Copytight BookStack enterprises 2017</p>
+<p id="include-copyright-text">Copyright BookStack Enterprises 2017</p>
 
 ```

@@ -19,3 +19,15 @@ document.body.onclick = function(event) {
     menuDropDown.className = menuDropDown.className.replace('showing', '');
     event.stopPropagation();
 };
+
+
+// Handle video click to play
+let videos = document.querySelectorAll('video');
+for (var i = 0; i < videos.length; i++) {
+    videos[i].addEventListener('click', videoClick)
+}
+
+function videoClick() {
+    if (typeof InstallTrigger !== 'undefined') return;
+    this.paused ? this.play() : this.pause();
+}

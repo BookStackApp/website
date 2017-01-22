@@ -91,7 +91,7 @@ header #menu-button {
 
 @include smaller-than($xl) {
   body header {
-    padding-top: $-xxl*2.2;
+    padding-top: $-xxl*1.7;
   }
   header .row.fix-mobile {
     top: 0;
@@ -239,9 +239,15 @@ input[type=text] {
       fill: $primary;
     }
   }
-  img {
+  img, video {
     border: 1px solid $primary;
     border-radius: 3px;
+  }
+  video {
+    cursor: pointer;
+    margin: $-l auto;
+    display: block;
+    max-width: 100%;
   }
 }
 

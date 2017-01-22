@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.14.0"
-date = 2017-01-22T17:00:00Z
+date = 2017-01-22T12:45:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/logs-sean-tan.jpg"
 description = "BookStack v0.14 released with multi language support, Page includes and many bugfixes"
@@ -13,7 +13,7 @@ draft = false
 The first release of 2017 is upon us with v0.14. Since the last release, back in November, focus has been put on adding support mulitple languages as was planned but a range of additional features & bugfixes have also been added. As usual, Here are the update links:
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.14.0)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.14.0)
 
 ### Language Support
 

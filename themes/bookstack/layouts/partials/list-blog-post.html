@@ -25,7 +25,7 @@
         {{else if .Site.Params.author}}
             {{.Site.Params.author}}
         {{end}}
-        {{if .Params.tags }}on
+        {{if .Params.tags }}
             {{ range $index, $tag := .Params.tags }}
                 <a href="{{$baseurl}}tags/{{ $tag | urlize }}/">#{{ $tag }}</a>,
             {{ end }}

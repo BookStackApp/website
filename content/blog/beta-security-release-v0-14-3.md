@@ -16,6 +16,9 @@ Security Bugfix release. Fixes for the following major issue:
 
 Sincere apologies for this issue.
 
+* [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.14.3)
+
 ----
 
 <span style="font-size: 0.8em;opacity:0.8;">Header Image Credits: <a href="https://unsplash.com/@cristina_gottardi" target="_blank">Cristina Gottardi</a></span>

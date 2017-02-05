@@ -16,6 +16,8 @@ Bugfix release. Fixes for the following issues:
 * Fixed book contents not showing in some instances ([#287](https://github.com/BookStackApp/BookStack/issues/287), [#294](https://github.com/BookStackApp/BookStack/issues/294))
 * Fixed possible issue with bad user thumbnails ([#292](https://github.com/BookStackApp/BookStack/issues/292))
 
+* [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.14.2)
 
 ----
 

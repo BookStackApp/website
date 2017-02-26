@@ -34,6 +34,9 @@ LDAP_USER_FILTER=(&(uid=${user}))
 
 # Set the LDAP version to use when connecting to the server.
 LDAP_VERSION=false
+
+# Set the default 'email' attribute. Defaults to 'mail'.
+LDAP_EMAIL_ATTRIBUTE=mail
 ```
 
 You will also need to have the php-ldap extension installed on your system. It's recommended to change your `APP_DEBUG` variable to `true` while setting up LDAP to make any errors visible. Remember to change this back after LDAP is functioning.

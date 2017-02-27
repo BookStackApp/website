@@ -15,6 +15,8 @@ Sneaking in before February closes we have another BookStack release. As well as
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.15.0)
 
+*Quick note: There was a bug in v0.15.0 that could cause errors when upon update. This has now been addressed and v0.15.1 has been released to cover this. Rerun the update commands if you had trouble updating previously.*
+
 ### New Login Options
 
 A new group of login options have been added to BookStack. Google and GitHub were supported before but now Slack, Twitter and Facebook have joined the party. As well as the new options the login area has been cleaned up a little with the social buttons receiving some better icons:

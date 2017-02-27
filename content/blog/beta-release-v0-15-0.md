@@ -27,15 +27,15 @@ The [social authentication](/docs/admin/social-auth/) docs page has been updated
 
 The export options that were available for pages have now made their way across to books and chapters. As with pages, The export options are currently PDF, contained HTML or text files. Book and chapter exports in the PDF or HTML formats include a simple linked table of contents.
 
-As a quick tip, The HTML export option is suprisingly useful for importing a BookStack page into Word or LibreOffice document. 
+As a quick tip, The HTML export option is surprisingly useful for importing a BookStack page into a Word or LibreOffice document. 
 
-### Update Commands
+### Updated Commands
 
 The commands available to BookStack have been updated and added to. New commands for clearing page revisions and user activity will help if your database is getting a little large. [Details on commands can be found here](/docs/admin/commands/).
 
 ### Full List of Changes
 
-* Export options for books and chapters.
+* Export options added for books and chapters.
 * Added Slack, Facebook & Twitter signin/signup options.
 * Added list checkbox support to the markdown editor.
 * Added commands to clear revisions and activity.

@@ -7,6 +7,8 @@ type = "admin-docs"
 
 BookStack currently supports login via Google, Facebook, Slack, Twitter & GitHub. Once enabled options for these services will show up in the login, registration and user profile pages. By default these services are disabled. To enable them you will have to create an application on the external services to obtain the require application id's and secrets. Here are instructions to do this for the current supported services:
 
+---
+
 ### Google
 
 1. Open the [Google Developers Console](https://console.developers.google.com/).
@@ -22,6 +24,8 @@ BookStack currently supports login via Google, Facebook, Slack, Twitter & GitHub
 9. Set the 'APP_URL' environment variable to be the same domain as you entered in step 7. So, in this example, it will be `https://example.com`.
 10. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their Google accounts.
 
+---
+
 ### GitHub
 
 1. While logged in, open up your [GitHub developer applications](https://github.com/settings/developers).
@@ -31,6 +35,7 @@ BookStack currently supports login via Google, Facebook, Slack, Twitter & GitHub
 5. Set the 'APP_URL' environment variable to be the same domain as you entered in step 3.
 6. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their Github account.
 
+---
 
 ### Twitter
 
@@ -52,6 +57,8 @@ To create a Twitter application for signing in with you may require a phone numb
 	```
 7. All done! Users should now be able to link their Twitter account in their account profile pages and also register/login using their Twitter account.
 
+---
+
 ### Facebook
 
 1. Navigate to the [Facebook developers page](https://developers.facebook.com) then go 'My Apps' -> 'Add a New App'.
@@ -70,6 +77,8 @@ To create a Twitter application for signing in with you may require a phone numb
 	APP_URL=http://mybookstackurl.com
 	```
 7. All done! Users should now be able to link their Facebook account in their account profile pages and also register/login using their Facebook account.
+
+---
 
 ### Slack
 

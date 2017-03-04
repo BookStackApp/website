@@ -5,9 +5,12 @@ date = "2017-01-01"
 type = "admin-docs"
 +++
 
+Below are some different methods of installing BookStack. If you cannot find a guide for your setup search the web for "Laravel install guides" relevant for your system as the process is mostly the same.
+
 * [Manual](#manual)
 * [Docker](#docker)
 * [Ubuntu 16.04 Script](#ubuntu-1604)
+* [Community Guides](#community)
 
 ## Manual Installation <a name="manual"></a>
 
@@ -92,3 +95,12 @@ chmod a+x installation-ubuntu-16.04.sh
 # Run the script with admin permissions
 sudo ./installation-ubuntu-16.04.sh
 ```
+
+---
+
+## Community Guides <a name="community"></a>
+
+This is a collection of guides created by awesome members of the BookStack community:
+
+* [CentOS 7 Install by Deviant Engineer](https://deviantengineer.com/2017/02/bookstack-centos7/)
+

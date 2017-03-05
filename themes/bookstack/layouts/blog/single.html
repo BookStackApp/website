@@ -9,12 +9,15 @@
 
   <div class="row">
 
-    <div class="col-md-6 col-md-offset-1 col-sm-7 docs-content">
+    <div class="col-md-6 col-md-offset-1 col-sm-7 post-content">
 
       <h1>{{.Title}}</h1>
 
       <p class="post-date text-muted" style="margin-top: -10px; " datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-          {{ .Date.Format "2 Jan 2006" }}
+          {{$author := index .Site.Data.authors (or .Params.author .Site.Params.author)}}
+          {{$authorname := or $author.name .Site.Params.author }}
+          {{$authorthumbnail := or $author.thumbnail .Site.Params.author }}
+          <img class="post-avatar" width="32" src="{{$authorthumbnail}}" alt="{{$authorname}}"> {{$authorname}} posted on the {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}
       </p>
 
       {{.Content}}

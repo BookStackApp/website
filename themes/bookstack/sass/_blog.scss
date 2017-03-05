@@ -5,6 +5,19 @@
     background-position: 50% 50%;
 }
 
+.container .post-avatar {
+	border-radius: 100%;
+	position: relative;
+	display: inline-block;
+	top: 10px;
+	margin: 0 $-xs;
+	border: 0; 
+}
+
+.post-content img {
+	border-radius: 3px;
+	border: 1px solid $primary;
+}
 
 .pagination {
 	text-align: center;

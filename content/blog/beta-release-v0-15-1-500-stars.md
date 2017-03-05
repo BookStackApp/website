@@ -14,7 +14,7 @@ draft = false
 
 BookStack now has over 500 stars on GitHub! Yeah yeah yeah, I know, GitHub stars aren't a great way to track the success of a project but it is nice as a periodical milestone and to give a relative idea of user growth.
 
-As well as stars, GitHub Issues (which include feature requests and discussions) have also been growing steadily with the count hovering about 80 which is still manageable. Something I've been seeing recently is other members now helping out on a regular basis which I'm super grateful for.
+As well as stars, GitHub Issues (which include feature requests and discussions) have also been growing steadily with the count hovering around 80 which is still manageable. Something I've been seeing recently is other members now helping out with issues on a regular basis which I'm super grateful for.
 
 ### Project Growth
 
@@ -28,7 +28,7 @@ Quite often now I'm seeing new posts & comments on reddit, in both the selfhoste
 
 ### Donations
 
-The ability to donate to the project has been requested a few times now. [Here's the current conversation about this on GitHub](https://github.com/BookStackApp/BookStack/issues/243). Personally I have no current requirement of donations but maybe something like [BountySource](https://www.bountysource.com/) could work for this project as a way to both accept donations and reward contributions. I'm a little weary of bringing money into the mix but if you have experience of BountySource or have any other ideas I'd like to hear your thoughts on the GitHub issue.
+The ability to donate to the project has been requested a few times now. [Here's the current conversation about this on GitHub](https://github.com/BookStackApp/BookStack/issues/243). Personally I have no current requirement of donations but maybe something like [BountySource](https://www.bountysource.com/) could work for this project as a way to accept donations and also reward contributions. I'm a little wary of bringing money into the mix but if you have experience of BountySource or have any other ideas I'd like to hear your thoughts on the GitHub issue.
 
 ### Minor Update v0.15.2 
 
@@ -41,8 +41,8 @@ A minor update has been released today with a few fixes and improvements.
 
 * Partial Spanish and Dutch translations implemented (Thanks to [diegoseso](https://github.com/BookStackApp/BookStack/pull/334) and [arietimmerman](https://github.com/BookStackApp/BookStack/pull/325)).
 * Updated how JavaScript translations are fetched to prevent conflicting webserver rules.
-* Updated user edit page to be more responsive and fixed 'Cancel' button for non-admin users.
-* Improved testing coverage of language system.
+* Updated the "user edit" interface to be more responsive and fixed the 'Cancel' button for non-admin users.
+* Improved testing coverage of the translations system.
 
 
 ----

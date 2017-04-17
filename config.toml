@@ -2,7 +2,6 @@ languageCode = "en-gb"
 title = "BookStack"
 baseurl = "https://bookstackapp.com/"
 theme="bookstack"
-disqusShortname = "bookstackblog"
 
 [permalinks]
   post = "/blog/:slug/"

@@ -18,7 +18,7 @@ To include the content of a page within another you can used the following synta
 
 Here are some examples of this in use:
 
-* `{{@5}}` - Include all content from the page with and id of '5'.
+* `{{@5}}` - Include all content from the page with an id of '5'.
 * `{{@10#bkmrk-copyright-year}}` - Include the content within the element of id `bkmrk-copyright-year` in the page with an id of '10'.
 
 You simply enter that in the page editor and then, When the page is viewed, the content will be dynamically be fetched. This means you can update the referenced content and it will show the same changes on any page the content is included within.

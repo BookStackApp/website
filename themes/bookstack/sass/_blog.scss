@@ -11,7 +11,7 @@
 	display: inline-block;
 	top: 10px;
 	margin: 0 $-xs;
-	border: 0; 
+	border: 0;
 }
 
 .post-content img {
@@ -103,4 +103,12 @@ article.post {
 			color: $primary;
 		}
 	}
+}
+
+p.post-date {
+  margin-top: -$-m;
+  margin-bottom: $-l;
+  .post-avatar {
+    margin-left: 0;
+  }
 }

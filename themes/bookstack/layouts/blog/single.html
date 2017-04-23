@@ -13,7 +13,7 @@
 
       <h1>{{.Title}}</h1>
 
-      <p class="post-date text-muted" style="margin-top: -10px; " datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+      <p class="post-date text-muted" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
           {{$author := index .Site.Data.authors (or .Params.author .Site.Params.author)}}
           {{$authorname := or $author.name .Site.Params.author }}
           {{$authorthumbnail := or $author.thumbnail .Site.Params.author }}

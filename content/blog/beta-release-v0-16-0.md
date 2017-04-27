@@ -52,7 +52,7 @@ found on [this new documentation page](/docs/user/searching).
 
 A spellchecker has been quite an important omission for a text-heavy based platform
 such as BookStack but I'm pleased to say that spellchecking support is now enabled
-on pages. Thanks to [@Abitjeet](https://github.com/BookStackApp/BookStack/issues/354) whom
+on pages. Thanks to [@Abijeet](https://github.com/BookStackApp/BookStack/issues/354) whom
 enabled this feature within BookStack.
 
 ![Spellchecking support](/images/2017/04/spellchecking.png)
@@ -81,7 +81,7 @@ record keeping environments.
 * New search system with new search filter system.
   * New UI for searching content.
   * Fixes issues with search terms that are short or contain accents.
-* Added spell checker support to WYSIYG page editor. (Thanks to [@Abitjeet](https://github.com/BookStackApp/BookStack/issues/354)).
+* Added spell checker support to WYSIYG page editor. (Thanks to [@Abijeet](https://github.com/BookStackApp/BookStack/issues/354)).
 * Page revision ID/Count system added.
 * Slovak translations added. (Thanks to [@jendrol](https://github.com/BookStackApp/BookStack/pull/358)).
 * Spanish translations updated. (Thanks to [@diegoseso](https://github.com/BookStackApp/BookStack/pull/357)).

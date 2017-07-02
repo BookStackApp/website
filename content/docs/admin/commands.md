@@ -5,7 +5,7 @@ date = "2017-02-26"
 type = "admin-docs"
 +++
 
-BookStack has some command line actions that can help with maintenence and common operations. There are also many commands available from the undlying Laravel framework. To list all available commands you can simply run `php artian` from your BookStack install folder. Custom BookStack commands are all under the 'bookstack' namespace.
+BookStack has some command line actions that can help with maintenence and common operations. There are also many commands available from the undlying Laravel framework. To list all available commands you can simply run `php artisan` from your BookStack install folder. Custom BookStack commands are all under the 'bookstack' namespace.
 
 ### BookStack Commands
 

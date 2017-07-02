@@ -19,6 +19,12 @@
 	border: 1px solid $primary;
 }
 
+.post-content video {
+  max-width: 100%;
+  border: 1px solid $primary;
+  border-radius: 3px;
+}
+
 .pagination {
 	text-align: center;
 	font-size: 0.8em;

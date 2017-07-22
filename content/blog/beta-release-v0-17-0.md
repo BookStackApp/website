@@ -63,8 +63,11 @@ now it should be much easier due to the features and nice API codemirror provide
 
 An issue recently appeared regarding emoji in BookStack pages. It appeared the previous default charset and collation used for
 MySQL ('utf8') has issues supporting emoji and some other characters. The defaults in BookStack have now been changed (To 'utf8mb4')
-which provides emoji support. On migration, The database and all tables within will be converted. This means that migrations
-could take some time this update (Should still be in the range of 5 seconds though) depending on database size.
+which provides emoji support. ~~On migration, The database and all tables within will be converted. This means that migrations
+could take some time this update (Should still be in the range of 5 seconds though) depending on database size.~~
+
+**22nd July Update**
+<p style="color:tomato;font-weight:bold;">As of BookStack v0.17.2 the database conversion has been made manually with an assistive command due to issues upon upgrade. Details on [performing this change can be found here](/docs/admin/ut8mb4-support/).</p>
 
 ### Language Updates 🇯🇵
 

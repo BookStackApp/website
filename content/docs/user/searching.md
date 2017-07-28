@@ -21,10 +21,10 @@ All of the above search locations within BookStack share the ability to use adva
 
 <table width="100%">
   <tr style="font-weight:bold;">
-    <td width="16%">Search Type</td>
-    <td width="20%">Syntax</td>
-    <td width="16%">Examples</td>
-    <td>Description</td>
+    <th width="16%">Search Type</th>
+    <th width="20%">Syntax</th>
+    <th width="16%">Examples</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>Normal Searches</td>
@@ -72,9 +72,9 @@ Filters are set advanced search features that can be used in your search term. T
 
 <table width="100%">
   <tr style="font-weight:bold;">
-    <td width="25%">Syntax</td>
-    <td width="25%">Examples</td>
-    <td>Description</td>
+    <th width="25%">Syntax</th>
+    <th width="25%">Examples</th>
+    <th>Description</th>
   </tr>
   <tr style="font-weight:bold;">
     <td colspan="3">Date Filters</td>

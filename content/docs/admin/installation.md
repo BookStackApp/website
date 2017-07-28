@@ -20,8 +20,8 @@ BookStack has similar requirements to Laravel:
 
 * PHP >= 5.6.4, Will need to be usable from the command line.
 * PHP Extensions: `OpenSSL`, `PDO`, `MBstring`, `Tokenizer`, `GD`, `MySQLND`, `Tidy`
-* MySQL >= 5.6
-* Git (Not strictly required but helps manage updates)
+* MySQL >= 5.6, Single DB *(All permissions advised since application manages schema)*
+* Git *(Not strictly required but helps manage updates)*
 * [Composer](https://getcomposer.org/)
 
 #### Instructions
@@ -103,4 +103,3 @@ sudo ./installation-ubuntu-16.04.sh
 This is a collection of guides created by awesome members of the BookStack community:
 
 * [CentOS 7 Install by Deviant Engineer](https://deviantengineer.com/2017/02/bookstack-centos7/)
-

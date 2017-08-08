@@ -6,6 +6,8 @@ type = "admin-docs"
 slug = "mail-config"
 +++
 
+This document has been written by referencing the file at `config/mail.php`.
+
 Bookstack supports the following mechanisms for sending mail:
 
 1. SMTP;
@@ -16,7 +18,7 @@ Bookstack supports the following mechanisms for sending mail:
 6. Amazon SES ('ses'); or
 7. Log
 
-# SMTP Configuration
+# SMTP
 
 To get up and running with SMTP, you will need the following variables - Example
 values have been provided below:
@@ -36,3 +38,55 @@ MAIL_PASSWORD=onlyifneeded
 # MAIL_FROM - The email address Bookstack uses to send emails.
 MAIL_FROM=noreply@yourdomain.tld  
 ```
+
+# mail and sendmail
+
+The `mail` and `sendmail` drivers use the variables listed in the SMTP section,
+however they use different methods to actually send the email, and connect to
+the SMTP gateway:
+
+* `mail` uses the PHP mail() function;
+* `sendmail` uses the Linux application - It calls `/usr/sbin/sendmail -bs`.
+
+# Mailgun / Mandrill / Amazon SES
+
+These web services are configured via the `config/services.php` file.
+At present Bookstack does not have environment variables support for these.
+
+## Mailgun
+
+Mailgun requires:
+
+* A domain as configured within the Mailgun configuration portal; and
+* An API secret for the domain.
+```PHP
+'mailgun'  => [
+  'domain' => '',
+  'secret' => '',
+],
+```
+
+## Mandrill
+
+At time of writing, Mandrill only requires a 'secret'.
+```PHP
+'mandrill' => [
+  'secret' => '',
+],
+```
+
+## Amazon SES
+
+SES requires three keys to be set:
+```PHP
+'ses'      => [
+    'key'    => '',
+    'secret' => '',
+    'region' => 'us-east-1',
+],
+```
+
+# The 'log' mail driver
+
+This driver outputs the mail to the application log, and is useful for local
+development instances.

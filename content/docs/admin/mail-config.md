@@ -6,8 +6,6 @@ type = "admin-docs"
 slug = "mail-config"
 +++
 
-This document has been written by referencing the file at `config/mail.php`.
-
 Bookstack supports the following mechanisms for sending mail:
 
 1. SMTP;

@@ -12,9 +12,8 @@ Bookstack supports the following mechanisms for sending mail:
 2. mail (php sendmail() function);
 3. sendmail (Linux sendmail);
 4. Mailgun (Rackspace Mailgun);
-5. Mandrill;
-6. Amazon SES ('ses'); or
-7. Log
+5. Mandrill; or
+6. Amazon SES ('ses')
 
 # SMTP
 
@@ -83,8 +82,3 @@ SES requires three keys to be set:
     'region' => 'us-east-1',
 ],
 ```
-
-# The 'log' mail driver
-
-This driver outputs the mail to the application log, and is useful for local
-development instances.

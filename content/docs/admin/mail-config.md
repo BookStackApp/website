@@ -44,7 +44,9 @@ the SMTP gateway:
 
 # Other Mechanisms
 
-These mechanisms are not fully supported, but are reported to work.
+These mechanisms are not supported, but are reported to work.
+At present they may require additional dependencies in order to function
+reliably.
 
 | Service           | Driver Name |
 |-------------------|-------------|

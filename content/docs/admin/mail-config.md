@@ -11,9 +11,6 @@ Bookstack supports the following mechanisms for sending mail:
 1. SMTP;
 2. mail (php sendmail() function);
 3. sendmail (Linux sendmail);
-4. Mailgun (Rackspace Mailgun);
-5. Mandrill; or
-6. Amazon SES ('ses')
 
 # SMTP
 
@@ -45,40 +42,14 @@ the SMTP gateway:
 * `mail` uses the PHP mail() function;
 * `sendmail` uses the Linux application - It calls `/usr/sbin/sendmail -bs`.
 
-# Mailgun / Mandrill / Amazon SES
+# Other Mechanisms
 
-These web services are configured via the `config/services.php` file.
-At present Bookstack does not have environment variables support for these.
+These mechanisms are not fully supported, but are reported to work.
 
-## Mailgun
+| Service           | Driver Name |
+|-------------------|-------------|
+| Amazon SES        | ses         |
+| Mandrill          | mandrill    |
+| Rackspace Mailgun | mailgun     |
 
-Mailgun requires:
-
-* A domain as configured within the Mailgun configuration portal; and
-* An API secret for the domain.
-```PHP
-'mailgun'  => [
-  'domain' => '',
-  'secret' => '',
-],
-```
-
-## Mandrill
-
-At time of writing, Mandrill only requires a 'secret'.
-```PHP
-'mandrill' => [
-  'secret' => '',
-],
-```
-
-## Amazon SES
-
-SES requires three keys to be set:
-```PHP
-'ses'      => [
-    'key'    => '',
-    'secret' => '',
-    'region' => 'us-east-1',
-],
-```
+Refer to `config/services.php` for configuration hints.

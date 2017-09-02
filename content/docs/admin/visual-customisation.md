@@ -43,6 +43,22 @@ body, button, input, select, label, textarea {
 
 Note that this won't change anything in the settings screen for stability purposes.
 
+### Changing Code Block Themes
+
+When inserting code into a page or when using the Markdown editor the text you enter is highlighted by default in a 'base16-light' colour scheme.
+If you'd prefer a different colour scheme for code blocks this can be overridden. BookStack uses CodeMirror to render code blocks. You can [try out different themes here](https://codemirror.net/demo/theme.html#base16-light). Once you've chosen a theme note down the name.
+
+In BookStack settings, Find the 'Custom HTML head content' setting and add the following code:
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/theme/cobalt.min.css"/>
+<script>window.codeTheme='cobalt';</script>
+```
+
+In the above example we are setting the theme to `cobalt`. Change `cobalt` to the name of your desired theme on both of the above lines.
+The first lines adds the required theme styles, Fetched from [cdnjs](https://cdnjs.com/) whom generously host all CodeMirror files.
+The second line then sets the theme name which will be picked up when code blocks are rendered.
+
 ### Further Customisation
 
 If you need to customise BookStack further to the given controls in the settings area you can make use of the 'Custom HTML head content' setting. Using this you can add in any custom JavaScript or CSS content to override default BookStack functionality and styles.

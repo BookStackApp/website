@@ -57,22 +57,22 @@ For Nginx you will need to define a server for each BookStack instance you want 
 By default, server definitions are stored in the `/etc/nginx/sites-available/` directory. Create a new file here, with a sensible name, for each BookStack instance you want to set up. Use the following configuration as a guide:
 
 
-```
+```nginx
 # /etc/nginx/sites-available/user-docs.conf
 
 server {
     listen 80;
     listen [::]:80;
-    
+
     root /var/www/user-docs/public;
     index index.php;
-    
+
     server_name user-docs.example.com;
-    
+
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
-    
+
     location ~ \.php$ {
         try_files $uri /index.php =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;

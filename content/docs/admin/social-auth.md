@@ -47,7 +47,7 @@ To create a Twitter application for signing in with you may require a phone numb
 4. If you'd like, set an icon and change any other details.
 5. Click the 'Permissions' tab and in the 'Additional Permissions' section check the box 'Request email addresses from users' then save.
 6. Go to the 'Keys and Access Tokens' tab to find your API key and secret. Add or set these to your `.env` file like so:
-	```
+	```bash
 	# Replace the below (including '{}' braces) with your twitter API_KEY and API_SECRET
 	TWITTER_APP_ID={API_KEY}
 	TWITTER_APP_SECRET={API_SECRET}
@@ -68,7 +68,7 @@ To create a Twitter application for signing in with you may require a phone numb
 5. On the left sidebar again go to 'Facebook Login' -> 'Settings'.
 6. Enter your base BookStack URL again into the 'Valid OAuth redirect URIs' input and save.
 7. Navigate back to the app 'Dashboard' in the sidebar to find your app id and secret. Add or set these to your `.env` file like so:
-	```
+	```bash
 	# Replace the below (including '{}' braces) with your facebook APP_KEY and APP_SECRET
 	FACEBOOK_APP_ID={APP_KEY}
 	FACEBOOK_APP_SECRET={APP_SECRET}
@@ -85,7 +85,7 @@ To create a Twitter application for signing in with you may require a phone numb
 1. Go to the [Slack apps page](https://api.slack.com/apps) and select 'Create New App'.
 2. Enter an app name ('BookStack login' or something custom), select your team then continue.
 3. You should see your client ID and secret. Copy these details and add them as new variables in your `.env` file like so:
-	```
+	```bash
 	# Replace the below (including '{}' braces) with your slack CLIENT_ID and CLIENT_SECRET
 	SLACK_APP_ID={CLIENT_ID}
 	SLACK_APP_SECRET={CLIENT_SECRET}

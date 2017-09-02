@@ -34,16 +34,19 @@ Due to the above it's important to ensure you disable 'directory indexes' to pre
 users from being able to navigate their way through your images. Here's the configuration
 for NGINX & Apache if your server allows directory indexes:
 
+**NGINX**
 
-```
-# NGINX
+```nginx
 # By default indexes are disabled on Nginx but if you have them enabled
 # add this to your BookStack server block
 location /uploads {
        autoindex off;
 }
+```
 
-# Apache
+**Apache**
+
+```apache
 # Add this to your Apache BookStack virtual host if Indexes are enabled.
 # If .htaccess file are enabled then the below should already be active.
 <Location "/uploads">

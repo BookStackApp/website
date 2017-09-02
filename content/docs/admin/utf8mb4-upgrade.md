@@ -15,7 +15,7 @@ to support emoji.
 
 From v0.17.2, BookStack has a helper command to generate the SQL for this change. Ensure you are on BookStack v0.17.2 or above and then run this command from root BookStack folder:
 
-```
+```bash
 php artisan bookstack:db-utf8mb4
 ```
 

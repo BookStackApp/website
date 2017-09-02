@@ -22,7 +22,7 @@ document.body.onclick = function(event) {
 
 
 // Handle video click to play
-let videos = document.querySelectorAll('video');
+var videos = document.querySelectorAll('video');
 for (var i = 0; i < videos.length; i++) {
     videos[i].addEventListener('click', videoClick)
 }
@@ -30,4 +30,36 @@ for (var i = 0; i < videos.length; i++) {
 function videoClick() {
     if (typeof InstallTrigger !== 'undefined') return;
     this.paused ? this.play() : this.pause();
+}
+
+
+// Codemirror Setup
+
+var modeMap = {
+  'language-html': 'htmlmixed',
+  'language-bash': 'shell',
+  'language-js': 'javascript',
+  'language-shell': 'bash',
+  'language-nginx': 'nginx',
+  'language-apache': 'xml'
+};
+
+var codeBlocks = document.querySelectorAll('pre');
+for (var i = 0; i < codeBlocks.length; i++) {
+  var block = codeBlocks[i];
+  var codeElem = block.querySelector('code');
+  if (codeElem === null) continue;
+
+  var langClass = codeElem.className;
+  var mode = (typeof modeMap[langClass] !== 'undefined') ? modeMap[langClass] : 'htmlmixed';
+  var content = codeElem.textContent.trim();
+  CodeMirror(function(cmElem) {
+    block.parentNode.replaceChild(cmElem, block);
+  }, {
+    theme: 'base16-light',
+    lineNumbers: true,
+    mode: mode,
+    readOnly: true,
+    value: content
+  });
 }

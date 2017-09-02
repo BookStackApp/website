@@ -31,7 +31,7 @@ After updating these values ensure you restart your webserver and also PHP if us
 
 By default NGINX has a limit of 1MB on file uploads. To change this you will need to set the `client_max_body_size` variable. You can do this either in the http block in your `nginx.conf` file or in the server block set up for BookStack. Here's an example of increasing the limit it 10MB in the http block:
 
-```
+```nginx
 http {
 	#...
         client_max_body_size 100m;
@@ -50,7 +50,7 @@ After updating you NGINX configuration don't forget to restart NGINX. You can te
 
 Apache does not have any built-in limits which you will need to change but something to note is that if you are using apache and mod_php with `.htaccess` files enabled you may be able to set the above PHP variables in your `.htaccess` file like so:
 
-```
+```apache
 php_value upload_max_filesize 10M
 php_value post_max_size 10M
 ```

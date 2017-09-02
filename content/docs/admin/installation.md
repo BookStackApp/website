@@ -32,7 +32,7 @@ This project currently uses the `release` branch of the BookStack GitHub reposit
 
 1. Clone the release branch of the BookStack GitHub repository into a folder.
 
-	```
+	```bash
 	git clone https://github.com/BookStackApp/BookStack.git --branch release --single-branch
 	```
 
@@ -48,7 +48,7 @@ This project currently uses the `release` branch of the BookStack GitHub reposit
 #### URL Rewrite rules
 
 **Apache**
-```
+```apache
 Options +FollowSymLinks
 RewriteEngine On
 
@@ -58,7 +58,7 @@ RewriteRule ^ index.php [L]
 ```
 
 **Nginx**
-```
+```nginx
 location / {
     try_files $uri $uri/ /index.php?$query_string;
 }
@@ -83,7 +83,7 @@ A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. 
 
 #### Running the Script
 
-``` bash
+```bash
 # Ensure you have read the above information about what this script does before executing these commands.
 
 # Download the script

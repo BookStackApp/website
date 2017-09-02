@@ -11,7 +11,7 @@ BookStack has some command line actions that can help with maintenence and commo
 
 Here's a listing of the BookStack specific commands:
 
-```
+```bash
 
 # Delete all activity history from the system
 php artisan bookstack:clear-activity

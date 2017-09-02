@@ -2,6 +2,7 @@
 @import "variables";
 @import "mixins";
 @import "html";
+@import "codemirror";
 @import "text";
 @import "grid";
 @import "blocks";
@@ -283,7 +284,7 @@ h2.thin-margin {
   margin-bottom: $-m;
   width: 280px;
   background-color: #FFF;
-  border: 1px solid #DDD; 
+  border: 1px solid #DDD;
   a {
     display: block;
   }

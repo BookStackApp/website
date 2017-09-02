@@ -11,14 +11,16 @@ BookStack is updated regularly and is still in beta although we do try to keep t
 Backup and restore documentation can be found [here](/docs/admin/backup-restore).
 
  Updating is currently done via Git version control. To update BookStack you can run the following command in the root directory of the application:
-```
+
+```bash
 git pull origin release && composer install && php artisan migrate
 ```
+
 This command will update the repository that was created in the installation, install the PHP dependencies using `composer` then run then update the database with any required changes.
 
-In addition, we recommend clearing the cache after an update - 
+In addition, we recommend clearing the cache after an update -
 
-```
+```bash
 php artisan cache:clear
 php artisan view:clear
 ```

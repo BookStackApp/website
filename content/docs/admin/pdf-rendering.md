@@ -13,7 +13,7 @@ As an alternative you can use [wkhtmltopdf](http://wkhtmltopdf.org/) to generate
 
 Pre-compiled binaries for wkhtmltopdf can be found on the downloads page of [their website](http://wkhtmltopdf.org/downloads.html). BookStack will check for a file named `wkhtmltopdf` at the base folder of a BookStack install. If found it will use that to render PDF's. If that does not exist it will check for a `WKHTMLTOPDF` variable in the `.env` file. You can use this variable to set an alternate location to wkhtmltopdf:
 
-```
+```bash
 # In .env file
 WKHTMLTOPDF=/home/user/bins/wkhtmltopdf
 ```

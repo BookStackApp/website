@@ -30,6 +30,10 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+#### Updating to v0.18 or higher
+
+Version v0.18 introduced a commenting system. After updating you should check the permissions for all roles if you'd like to enable comments for your users.
+
 #### Updating to v0.13 or higher
 
 The v0.13 release contained some new features and updates which change the requirements of BookStack.

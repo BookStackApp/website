@@ -93,5 +93,31 @@ To create a Twitter application for signing in with you may require a phone numb
 	# APP_URL Needs to be set to your BookStack base url
 	APP_URL=http://mybookstackurl.com
 	```
-4. In your slack app go to 'OAuth & Permissions' and enter your BookStack base url into the 'Redirect URL(s)' input then save.
+4. In your slack app go to 'OAuth & Permissions' and enter your BookStack base URL into the 'Redirect URL(s)' input then save.
 5. All done! Users should now be able to link their Slack account in their account profile pages and also register/login using their Slack account.
+
+---
+
+### AzureAD (Microsoft)
+
+1. Login to your your azure portal and navigate to the 'Azure Activity Directory' area.
+2. Under 'Manage > App registrations' select 'New application registration'.
+3. Enter a name ('BookStack'). Keep the 'Application type' as 'Web app / API'. Set the 'Sign-on URL' to be the main URL to your BookStack instance.
+4. Once created, Click on your new application and note the 'Application ID'. This is the APP_ID value for step 9.
+5. Within your application in azure, Navigate to 'Keys' under 'API access'.
+6. Enter any description you want and set a duration ('Never expires' is okay unless you specifically want it to expire). Then click 'Save'.
+7. Copy the string of characters under 'Value'. This is the APP_SECRET value for step 9 and is only shown once.
+8. Back under 'App registrations' click on 'Endpoints'. This will show a list of URL's that each contain a unique ID. For example, the OAuth2 token endpoint will look something like this: `https://login.microsoftonline.com/<UniqueID>/oauth2/token`. Copy out the unique ID. This is the TENANT value for step 9.
+9. Copy these details and add them as new variables in your `.env` file like so:
+	```bash
+	# Replace the below (including '{}' braces) with your azure APP_ID and APP_SECRET and TENANT
+	SLACK_APP_ID={CLIENT_ID}
+	SLACK_APP_SECRET={CLIENT_SECRET}
+  AZURE_APP_ID={APP_ID}
+  AZURE_APP_SECRET={APP_SECRET}
+  AZURE_TENANT={TENANT}
+
+	# APP_URL Needs to be set to your BookStack base url
+	APP_URL=http://mybookstackurl.com
+	```
+10. All done! Users should now be able to link their AzureAD account in their account profile pages and also register/login using their Slack account.

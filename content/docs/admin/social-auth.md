@@ -111,11 +111,9 @@ To create a Twitter application for signing in with you may require a phone numb
 9. Copy these details and add them as new variables in your `.env` file like so:
 	```bash
 	# Replace the below (including '{}' braces) with your azure APP_ID and APP_SECRET and TENANT
-	SLACK_APP_ID={CLIENT_ID}
-	SLACK_APP_SECRET={CLIENT_SECRET}
-  AZURE_APP_ID={APP_ID}
-  AZURE_APP_SECRET={APP_SECRET}
-  AZURE_TENANT={TENANT}
+  	AZURE_APP_ID={APP_ID}
+  	AZURE_APP_SECRET={APP_SECRET}
+  	AZURE_TENANT={TENANT}
 
 	# APP_URL Needs to be set to your BookStack base url
 	APP_URL=http://mybookstackurl.com

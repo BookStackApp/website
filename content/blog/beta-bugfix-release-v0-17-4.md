@@ -20,7 +20,7 @@ Here are some details on the changes made over the last month:
 As part of v0.17 a database change was included to add support for Emoji.
 To achieve this the encoding used in the database was changed upon upgrade.
 This upgrade caused issues for many users so has therefore now been removed. This can instead
-be done manually by [following the documentation here](/admin/ut8mb4-support/).
+be done manually by [following the documentation here](/docs/admin/ut8mb4-support/).
 
 ### Editor Shortcut Updates
 

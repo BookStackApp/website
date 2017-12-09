@@ -2,7 +2,7 @@
 title = "Default Page Editor"
 description = "Details on the standard Page editor in BookStack"
 date = "2017-07-28"
-type = "user-docs"
+type = "user-doc"
 +++
 
 The default editor in BookStack is a 'What You See Is What You Get' (WYSIWYG) editor.

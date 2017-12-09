@@ -2,7 +2,7 @@
 title = "Debugging Errors"
 description = "How to find the cause of issues in BookStack"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 When using BookStack, Especially when initially setting it up or after updating, you may come across some errors. While we try to reduce these as much as possible and make them helpful sometimes you may come across a bland and non-helpful 'An error has occurred' message. This is to prevent any potentially sensitive information being shown to all users.

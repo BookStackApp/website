@@ -5,10 +5,10 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        {{ if eq .Type "admin-docs" }}
+        {{ if eq .Type "admin-doc" }}
           <h2 class="thin-margin">Admin Documentation</h2>
         {{end}}
-        {{ if eq .Type "user-docs" }}
+        {{ if eq .Type "user-doc" }}
           <h2 class="thin-margin">User Documentation</h2>
         {{end}}
       </div>
@@ -25,10 +25,10 @@
 
   <div class="row">
     <div class="col-sm-2 sidebar">
-      {{ if eq .Type "admin-docs" }}
+      {{ if eq .Type "admin-doc" }}
         {{partial "menu_admin_docs"}}
       {{end}}
-      {{ if eq .Type "user-docs" }}
+      {{ if eq .Type "user-doc" }}
         {{partial "menu_user_docs"}}
       {{end}}
     </div>

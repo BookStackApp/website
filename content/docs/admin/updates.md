@@ -2,7 +2,7 @@
 title = "Updating BookStack"
 description = "How to update BookStack to the lastest version"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 BookStack is updated regularly and is still in beta although we do try to keep the platform and upgrade path as stable as possible. The latest release can be found on [GitHub here](https://github.com/BookStackApp/BookStack/releases) and detailed information on releases is posted on the [BookStack blog here](https://www.bookstackapp.com/blog/tag/releases/).

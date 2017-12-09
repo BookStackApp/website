@@ -2,7 +2,7 @@
 title = "Backup and Restore"
 description = "How to back up and restore your BookStack data"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 BookStack does not currently have a built-in way to backup and restore but it

@@ -4,7 +4,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">
+				{{if eq .Page.Type "admin-doc"}}
+				<h2 class="thin-margin">Admin Documentation</h2>
+				{{else if eq .Page.Type "user-doc"}}
+				<h2 class="thin-margin">User Documentation</h2>
+				{{else}}
 				<h2 class="thin-margin">Documentation</h2>
+				{{end}}
+
+				
 			</div>
 			<div class="col-sm-6">
 				<div class="float right float-none-sm">
@@ -18,19 +26,30 @@
 
 <div class="container">
 	<div class="row docs-index">
+
+		{{if ne .Page.Type "user-doc"}}
 		<div class="col-sm-6">
 			<div class="shaded padded">
+				{{if ne .Page.Type "admin-doc"}}
 				<h3>Admin Documentation</h3>
+				{{end}}
 				{{partial "menu_admin_docs"}}
 			</div>
 		</div>
+		{{end}}
+		{{if ne .Page.Type "admin-doc"}}
 		<div class="col-sm-6">
 			<div class="shaded padded">
+				{{if ne .Page.Type "user-doc"}}
 				<h3>User Documentation</h3>
+				{{end}}
 				{{partial "menu_user_docs"}}	
 			</div>
 		</div>
+		{{end}}
 	</div>
 </div>
+
+<p><br></p>
 
 {{ partial "footer.html" . }}

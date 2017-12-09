@@ -2,7 +2,7 @@
 title = "Security"
 description = "BookStack security concerns and considerations"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 Since BookStack can hold important information for users you should be aware of any potential security concerns.

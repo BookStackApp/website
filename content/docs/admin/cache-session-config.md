@@ -2,7 +2,7 @@
 title = "Cache & Session Configuration"
 description = "Cache & Session setup with details for redis and memcached"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 By default BookStack will use a file system cache that's storage in the `storage/framework` folder. This is also used to store user session data. Below are some alternative systems that can be used for caching & sessions.

@@ -2,7 +2,7 @@
 title = "Markdown Editor"
 description = "Details on using the markdown editor in BookStack"
 date = "2017-07-28"
-type = "user-docs"
+type = "user-doc"
 +++
 
 If you prefer the write in Markdown the editor in BookStack can be changed at a instance level

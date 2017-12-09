@@ -2,7 +2,7 @@
 title = "UTF8mb4/Emoji Support"
 description = "Adding UTF8mb4 support to allow use of emoji in content"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 slug = "ut8mb4-support"
 +++
 

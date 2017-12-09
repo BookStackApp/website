@@ -2,7 +2,7 @@
 title = "Customising BookStack"
 description = "Changing the colors, logo and styles of BookStack to suit your needs"
 date = "2017-08-22"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 You may find you want to customise BookStack to use custom branding or you may just not like the default blue theme. Customising the branding of BookStack is super simple and can be done through the settings interface under 'App Settings'. Here you can change the application name, logo and primary color.

@@ -2,7 +2,7 @@
 title = "Content Overview"
 description = "Overview of BookStack content objects and data types"
 date = "2017-01-01"
-type = "user-docs"
+type = "user-doc"
 +++
 
 The principles of storing information within BookStack is based of the ideas of a normal stack of books. Just like normal books, BookStack books can contain chapters and pages. You start off by creating a book which acts as the highest level of categorisation. Ideally you'd have separate books for separate topics. Within a book you can directly create pages or you can first create chapters. Chapters provide an additional level of page grouping to keep pages organised but are optional. All the information you write is held within pages. Although books and chapters do not hold information they can be given a short description to assist with searching and visibility.

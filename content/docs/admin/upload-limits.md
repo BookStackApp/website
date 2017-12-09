@@ -2,7 +2,7 @@
 title = "Changing Upload Limits"
 description = "How to increase uploads limits for images and attachments"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 BookStack allows users to upload both images for content and files as attachments. By default, a lot of server software has strict limits on upload sizes which causes errors when users upload new content. This is not configured as part of BookStack but as part of PHP and your web sever software. If you run into problems with upload size limits follow the below details for PHP and whichever web server you use:

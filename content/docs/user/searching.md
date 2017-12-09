@@ -2,7 +2,7 @@
 title = "Searching Content"
 description = "Searching for specific content within BookStack and learning the advanced search syntax"
 date = "2017-04-16"
-type = "user-docs"
+type = "user-doc"
 +++
 
 The ability to search your documentation is vital to day-to-day use.

@@ -2,7 +2,7 @@
 title = "Social Authentication"
 description = "Enabling and configuring social authentication for easier logins"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 BookStack currently supports login via Google, Facebook, Slack, Twitter & GitHub. Once enabled options for these services will show up in the login, registration and user profile pages. By default these services are disabled. To enable them you will have to create an application on the external services to obtain the require application id's and secrets. Here are instructions to do this for the current supported services:

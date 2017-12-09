@@ -2,7 +2,7 @@
 title = "PDF Rendering"
 description = "Using WKHTMLtoPDF to generate PDF's for better rendering"
 date = "2017-01-22"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 By default BookStack uses [Dompdf](https://github.com/dompdf/dompdf) to export pages as PDF documents. The benefit of using DomPDF is that it doesn't require any additional installation or setup but the rendering capabilities are somewhat limited.

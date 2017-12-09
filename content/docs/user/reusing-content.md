@@ -2,7 +2,7 @@
 title = "Reusing Page Content"
 description = "How to use include tags to reuse pages and page content within other pages"
 date = "2017-01-22"
-type = "user-docs"
+type = "user-doc"
 slug = "reusing-page-content"
 +++
 

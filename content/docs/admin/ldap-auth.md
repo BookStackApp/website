@@ -2,7 +2,7 @@
 title = "LDAP Authentication"
 description = "How to use LDAP as your primary way to register and login to BookStack"
 date = "2017-01-21"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 BookStack can be configured to allow LDAP based user login. While LDAP login is enabled you cannot log in with the standard user/password login and new user registration is disabled. BookStack will only use the LDAP server for getting user details and for authentication. Data on the LDAP server is not currently editable through BookStack.

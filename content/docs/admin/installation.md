@@ -2,7 +2,7 @@
 title = "Installation"
 description = "How to install BookStack"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 Below are some different methods of installing BookStack. If you cannot find a guide for your setup search the web for "Laravel install guides" relevant for your system as the process is mostly the same.

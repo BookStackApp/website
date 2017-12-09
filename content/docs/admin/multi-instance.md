@@ -2,7 +2,7 @@
 title = "Multiple BookStack Instances"
 description = "How to host multiple BookStack instances on Apache and Nginx"
 date = "2017-01-01"
-type = "admin-docs"
+type = "admin-doc"
 +++
 
 Currently BookStack does not support multiple instances from one installation but you can set up multiple instances on the same server by creating multiple installations and configuring your web-server appropriately.

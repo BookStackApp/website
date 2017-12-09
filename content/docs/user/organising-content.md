@@ -2,7 +2,7 @@
 title = "Organising Content"
 description = "How to organise and sort books, chapters and pages in BookStack"
 date = "2017-01-01"
-type = "user-docs"
+type = "user-doc"
 +++
 
 Once your BookStack instance starts to grow you will find that you may want to re-organise your content. Within BookStack there are two options for moving content around; Either you can move pages and chapters individually or you can sort entire books.

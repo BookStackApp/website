@@ -30,6 +30,12 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+#### Updating to v0.19 or higher
+
+Version v0.19 needs the following requirement change:
+
+* Minimum required version of PHP has changed from 5.6.4 to 7.0.0.
+
 #### Updating to v0.18 or higher
 
 Version v0.18 introduced a commenting system. After updating you should check the permissions for all roles if you'd like to enable comments for your users.

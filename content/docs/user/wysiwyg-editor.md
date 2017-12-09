@@ -25,6 +25,10 @@ The following shortcuts are available in the WYSIWYG Editor:
       <td>Save Draft</td>
     </tr>
     <tr>
+      <td><code>Ctrl+Enter</code> / <code>Cmd+Enter</code></td>
+      <td>Save Page &amp; Continue</td>
+    </tr>
+    <tr>
       <td><code>Ctrl+B</code> / <code>Cmd+B</code></td>
       <td>Bold</td>
     </tr>

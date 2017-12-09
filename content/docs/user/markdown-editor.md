@@ -6,9 +6,7 @@ type = "user-doc"
 +++
 
 If you prefer the write in Markdown the editor in BookStack can be changed at a instance level
-to use a markdown editor instead of the default WYSIWYG editor.
-
-The option to use Markdown is currently **not** a user setting but a global instance setting
+to use a markdown editor instead of the default WYSIWYG editor. The option to use Markdown is currently **not** a user setting but a global instance setting
 due to formatting differences between the two editors.
 
 ### Editor Shortcuts
@@ -26,6 +24,10 @@ The following shortcuts are available in the Markdown Editor:
     <tr>
       <td><code>Ctrl+S</code> / <code>Cmd+S</code></td>
       <td>Save Draft</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl+Enter</code> / <code>Cmd+Enter</code></td>
+      <td>Save Page &amp; Continue</td>
     </tr>
     <tr>
       <td>

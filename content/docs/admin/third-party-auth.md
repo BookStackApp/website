@@ -1,11 +1,14 @@
 +++
-title = "Social Authentication"
-description = "Enabling and configuring social authentication for easier logins"
+title = "Third Party Authentication"
+description = "Enabling and configuring third-party authentication for easier logins"
 date = "2017-01-01"
 type = "admin-doc"
+aliases = [
+    "/docs/admin/social-auth"
+]
 +++
 
-BookStack currently supports login via Google, Facebook, Slack, Twitter & GitHub. Once enabled options for these services will show up in the login, registration and user profile pages. By default these services are disabled. To enable them you will have to create an application on the external services to obtain the require application id's and secrets. Here are instructions to do this for the current supported services:
+BookStack currently supports login via Google, Facebook, Slack, Twitter, GitHub, AzureAD and Okta. Once enabled options for these services will show up in the login, registration and user profile pages. By default these services are disabled. To enable them you will have to create an application on the external services to obtain the require application id's and secrets. Here are instructions to do this for the current supported services:
 
 ---
 
@@ -126,3 +129,27 @@ To create a Twitter application for signing in with you may require a phone numb
 	APP_URL=http://mybookstackurl.com
 	```
 10. All done! Users should now be able to link their AzureAD account in their account profile pages and also register/login using their Slack account.
+
+---
+
+### Okta
+
+1. Login to Okta and, once logged in, Note the current URL. This is used for the 'BASE_URL' in step 6.
+2. Navigate to the Admin panel then 'Applications' then select 'Add Application'. Then select 'Create New App' on the left.
+3. For the 'Platform' choose 'Web'. For the 'Sign on method' choose 'OpenID Connect' then click 'Create'.
+4. Give the app a name such as 'BookStack' or 'Our documentation'. Under the 'Login redirect URIs' option add both of the below URLs, Changing `https://example.com` to the base URL of your BookStack instance:
+    - `https://example.com/login/service/okta/callback`
+    - `https://example.com/register/service/okta/callback`
+5. Save and scroll down to the 'Client Credentials' area. Copy the 'Client ID' and 'Client secret' values. These are your 'APP_ID' and 'APP_SECRET' values for step 6.
+6. Copy these details and add them as new variables in your `.env` file like so:
+	```bash
+	# Replace the below (including '{}' braces) with your okta APP_ID and APP_SECRET and BASE_URL.
+  	OKTA_APP_ID={APP_ID}
+  	OKTA_APP_SECRET={APP_SECRET}
+	# The base URL is the URL from step 1 but with everything after the domain (okta.com) removed.
+  	OKTA_BASE_URL={BASE_URL}
+
+	# APP_URL Needs to be set to your BookStack base url
+	APP_URL=http://mybookstackurl.com
+	```
+7. All set up! Remember to assign the new application you created in Okta to your Okta users otherwise they will not be able to register/login using the service.

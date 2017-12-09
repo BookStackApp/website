@@ -2,6 +2,7 @@ languageCode = "en-gb"
 title = "BookStack"
 baseurl = "https://bookstackapp.com/"
 theme="bookstack"
+enableGitInfo=true
 
 [permalinks]
   post = "/blog/:slug/"

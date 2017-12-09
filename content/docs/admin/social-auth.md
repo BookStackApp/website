@@ -20,8 +20,15 @@ BookStack currently supports login via Google, Facebook, Slack, Twitter & GitHub
 7. Choose an application type of 'Web application' and enter the following urls under 'Authorized redirect URIs', changing `https://example.com` to your own domain where BookStack is hosted:
     - `https://example.com/login/service/google/callback`
     - `https://example.com/register/service/google/callback`
-8. Click 'Create' and your app_id and secret will be displayed. Replace the false value on both the `GOOGLE_APP_ID` & `GOOGLE_APP_SECRET` variables in the '.env' file in the BookStack root directory with your own app_id and secret.
-9. Set the 'APP_URL' environment variable to be the same domain as you entered in step 7. So, in this example, it will be `https://example.com`.
+8. Add or set the following items in your `.env` file like so:
+	```bash
+	# Replace the below (including '{}' braces) with your Google API_KEY and API_SECRET
+	GOOGLE_APP_ID={google_app_id}
+	GOOGLE_APP_SECRET={google_app_secret}
+
+	# APP_URL Needs to be set to your BookStack base url
+	APP_URL=http://mybookstackurl.com
+	```
 10. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their Google accounts.
 
 ---

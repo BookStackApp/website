@@ -22,25 +22,52 @@
   margin-bottom: $-xxl*1.6;
   @include smaller-than($screen-lg) {
     margin-bottom: $-m;
+  } 
+}
+
+.screenshot-container-parent {
+  perspective: 1000px;
+  z-index: 5;
+  perspective-origin: 50% 50%; 
+}
+
+@keyframes slow-rotate {
+  from {
+      transform: rotateY(-10deg);
+  }
+  to {
+    transform: rotateY(0deg);
   }
 }
 
 .screenshot-container {
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
-}
-.screenshot {
+  animation: slow-rotate ease-in-out 1s;
   border-radius: 4px;
   display: inline-block;
   overflow: hidden;
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
-  border: 1px solid #DDD;
+  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.4);
+  border: 3px solid #DDD;
   position: absolute;
-  max-width: 100%;
   transform: rotateY(0);
+  transform-style: preserve-3d;
   transition: all ease-in-out 280ms;
+  transform-origin: 50% 50%;
+  z-index: 50;
   &:hover {
     transform: rotateY(-10deg);
+  }
+  .window-row {
+    line-height: 1;
+    background-color: #DDD;
+    padding: 2px 4px;
+    .window-option {
+      display: inline-block;
+      background-color: red;
+      width: 8px;
+      margin-right: 2px;
+      height: 8px;
+      border-radius: 50%;
+    }
   }
   @include smaller-than($screen-lg) {
     position: relative;
@@ -48,6 +75,11 @@
     display: block;
     margin-bottom: $-l;
   }
+}
+.screenshot {
+  display: block;
+  max-width: 100%;
+  border-radius: 2px;
 }
 
 header .menu, footer .menu {

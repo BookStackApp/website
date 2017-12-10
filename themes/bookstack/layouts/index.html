@@ -11,8 +11,15 @@
 		          <a href="/docs/admin/installation">Install</a>
 		        </p>
 		    </div>
-		    <div class="col-md-8 screenshot-container">
-		        <img class="screenshot" src="images/bookstack-hero-screenshot.png" alt="BookStack ScreenShot">
+		    <div class="col-md-8 screenshot-container-parent">
+		    	<div class="screenshot-container">
+		    		<div class="window-row">
+		    			<div class="window-option red"></div>
+		    			<div class="window-option" style="background-color: orange;"></div>
+		    			<div class="window-option"  style="background-color: green;"></div>
+		    		</div>
+		        	<img class="screenshot" src="images/bookstack-hero-screenshot.png" alt="BookStack ScreenShot">
+		    	</div>
 		    </div>
 		</div>
 	</div>
@@ -65,7 +72,30 @@
             <div class="col-sm-4" >
                 <h4><span class="icon">{{partial "icon/directions_boat.svg"}}</span>Powerful Features</h4>
                 <p>
-                    On top of the powerful search and linking there is also cross-book sorting, Page revisions, Image management. Some more mega-features are planned such as static-site generation and quick exporting.
+                    On top of the powerful search and linking there is also cross-book sorting, page revisions and image management. A full role and permission system allow you to lock down content and actions as required.
+                </p>
+            </div>
+        </div>
+        <p>
+            <br>
+        </p>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4><span class="icon">{{partial "icon/language.svg"}}</span>Multi-lingual</h4>
+                <p>
+                    BookStack users can set their preferred language. Thanks to great community contributors, Current languages built into BookStack include EN, FR, DE, ES, IT, JA, NL, PL, RU and more.
+                </p>
+            </div>
+            <div class="col-sm-4" >
+                <h4><span class="icon">{{partial "icon/edit.svg"}}</span>Optional Markdown Editor</h4>
+                <p>
+                   If you prefer to write in Markdown then BookStack supports you. A markdown editor is provided and includes a live-preview as you write your documentation.
+                </p>
+            </div>
+            <div class="col-sm-4" >
+                <h4><span class="icon">{{partial "icon/lock.svg"}}</span>Integrated Authentication</h4>
+                <p>
+                	As well as the default email/password login social providers such as GitHub, Google, Slack, AzureAD and more can be used. Okta and LDAP options are available for enterprise environments.
                 </p>
             </div>
         </div>

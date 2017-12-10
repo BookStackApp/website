@@ -28,6 +28,8 @@ As an early winter holiday gift we bring you BookStack v0.19. The main features 
 
 If you haven't updated since v0.18.0 it's worth reading the bugfix notes from [the last post here](/blog/beta-security-release-v0-18-5/) since there are some important changes to take notice of.
 
+For those that did update to v0.18.5 please note that I accidentially did not merge changes for that release so any updates that were meant to be in v0.18.5 won't actually take effect until you update to v0.19.0. Apologies for that. 
+
 #### Requirements Change
 
 For this release we've updated the framework that BookStack is built upon, Laravel, to version 5.5 which requires PHP 7. Therefore BookStack now requires PHP 7.0 or greater. If you are on PHP 5 then you won't be able to run or install the new version of BookStack and will need to upgrade to a newer PHP version before you update BookStack. PHP 7 brings great speed enhancements over PHP 5 as well as many new features to improve development and maintenance.

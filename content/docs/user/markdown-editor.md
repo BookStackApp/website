@@ -5,9 +5,10 @@ date = "2017-07-28"
 type = "user-doc"
 +++
 
-If you prefer the write in Markdown the editor in BookStack can be changed at a instance level
-to use a markdown editor instead of the default WYSIWYG editor. The option to use Markdown is currently **not** a user setting but a global instance setting
-due to formatting differences between the two editors.
+If you prefer the write in Markdown, the editor in BookStack can be changed at an instance level
+to use a markdown editor instead of the default WYSIWYG editor. The option to use Markdown is currently **not** a user setting but a global instance setting due to formatting differences between the two editors.
+
+> Note that shifting to the markdown editor from the WYSIWYG editor may cause unintended side effects to existing content. This is due to the differences in the way the content is stored in the database.
 
 ### Editor Shortcuts
 

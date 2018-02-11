@@ -38,4 +38,6 @@ php artisan bookstack:regenerate-search
 # Regenerate access permissions - Used mostly in development
 php artisan bookstack:regenerate-permissions
 
+# Delete all users from the system that are not "admin" or system users
+php artisan bookstack:delete-users
 ```

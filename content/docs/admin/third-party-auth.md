@@ -8,7 +8,19 @@ aliases = [
 ]
 +++
 
-BookStack currently supports login via Google, Facebook, Slack, Twitter, GitHub, AzureAD and Okta. Once enabled options for these services will show up in the login, registration and user profile pages. By default these services are disabled. To enable them you will have to create an application on the external services to obtain the require application id's and secrets. Here are instructions to do this for the current supported services:
+BookStack currently supports login via a range of third party and social applications. Once enabled options for these services will show up in the login, registration and user profile pages. By default these services are disabled. To enable them you will have to create an application on the external services to obtain the require application id's and secrets.
+
+#### Available Services
+
+* [Google](#google)
+* [GitHub](#github)
+* [Twitter](#twitter)
+* [Facebook](#facebook)
+* [Slack](#slack)
+* [AzureAD (Microsoft)](#azuread-microsoft)
+* [Okta](#okta)
+* [GitLab](#gitlab)
+* [Twitch](#twitch)
 
 ---
 
@@ -153,3 +165,55 @@ To create a Twitter application for signing in with you may require a phone numb
 	APP_URL=http://mybookstackurl.com
 	```
 7. All set up! Remember to assign the new application you created in Okta to your Okta users otherwise they will not be able to register/login using the service.
+
+---
+
+### GitLab
+
+GitLab authentication works for both [gitlab.com](https://gitlab.com) and self-hosted GitLab instances.
+
+1. Login to GitLab and go to your user settings.
+2. In the left sidebar select 'Applications'.
+3. Set a name to identify the application, such as 'BookStack Authentication', and in the 'Redirect URI' input add both of the below URLs, Changing `https://example.com` to the base URL of your BookStack instance:
+    - `https://example.com/login/service/gitlab/callback`
+    - `https://example.com/register/service/gitlab/callback`
+4. Do not select any of the 'Scopes' checkboxes.
+5. Press 'Save application'. You will be shown the application ID and secret which you'll need for the next step.  
+6. Copy the below details and add them as new variables in your `.env` file like so:
+    ```bash
+    # Replace the below (including '{}' braces) with your GitLab Application Id and Secret values.
+    GITLAB_APP_ID={APP_ID}
+    GITLAB_APP_SECRET={APP_SECRET}
+
+    # APP_URL Needs to be set to your BookStack base url
+    APP_URL=http://mybookstackurl.com
+
+
+    # ONLY REQURED FOR SELF-HOSTED GITLAB INSTANCES - REMOVE FOR GITLAB.COM
+    # Set the below URI to match the base URI of your GitLab install
+    GITLAB_BASE_URI=http://my-custom-gitlab.example.com
+    ```
+7. All set up! Users will now be able to use GitLab to sign-in and register.
+
+---
+
+### Twitch
+
+To allow twich sign-in you'll first need to create an application from the Twitch developer site. Here's the process:
+
+1. Login into the [Twitch developer website](https://dev.twitch.tv/).
+2. Navigate to your 'Dashboard' then ['Apps'](https://dev.twitch.tv/dashboard/apps) and select 'Register Your Application'.
+3. Set a name to identify the application, such as 'BookStack Authentication', and in the 'OAuth Redirect URI' input add the below URL, Changing `https://example.com` to the base URL of your BookStack instance:
+    - `https://example.com/login/service/twitch/callback`
+4. Under the 'Application Category' option select 'Website Integration' then hit 'Register'.
+5. Click the 'New Secret' button and accept the prompt that appears. You should now see both a 'Client ID' and 'Client Secret' value which you'll use in the next step.
+6. Copy the below details and add them as new variables in your `.env` file like so:
+    ```bash
+    # Replace the below (including '{}' braces) with your Twitch Application Id and Secret values.
+    TWITCH_APP_ID={APP_ID}
+    TWITCH_APP_SECRET={APP_SECRET}
+
+    # APP_URL Needs to be set to your BookStack base url
+    APP_URL=http://mybookstackurl.com
+    ```
+7. All set up! Users will now be able to use Twitch to sign-in and register.

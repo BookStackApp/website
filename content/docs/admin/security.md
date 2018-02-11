@@ -22,17 +22,28 @@ the database used for BookStack data.
 5. Review the user roles in the settings area.
 6. Read the below to further understand the security for images & attachments.
 
-### Images
+---
 
-Images are stored in a way which is publically accessible. This is done on purpose
-to ensure decent performance while using BookStack as booting the application for every
-image request caused multiple problems during testing. In the settings area of BookStack you can find
-the option 'Enable higher security image uploads?'. Enabling this will add a 16 character
-random string to the name of image files to prevent easy guessing of URLs.
+### Securing Images
 
-Due to the above it's important to ensure you disable 'directory indexes' to prevent random
-users from being able to navigate their way through your images. Here's the configuration
-for NGINX & Apache if your server allows directory indexes:
+By default, Images are stored in a way which is publicly accessible. This is done on purpose to ensure decent performance while using BookStack. Below are a couple of options to increasing image security:
+
+#### Image Authentication
+
+You can choose to store images behind authentication so only logged-in users can view images. This solution is currently still in testing you could experience performance issues. This option will only work if you have the  'Allow Public Viewing' setting disabled.
+
+***Back-up your BookStack instance before migrating to this option***
+
+To use this option simply set `STORAGE_TYPE=local_secure` in your `.env` file. Uploaded images will be stored within the `storage/uploads/images` folder.
+
+If you are migrating to this option with existing images you will need to move all content in the folder `public/uploads/images` to `storage/uploads/images`. Do not simply copy and leave content in the `public/uploads/images` as those images will still be publicly accessible.
+
+#### Complex Urls
+
+In the settings area of BookStack you can find the option 'Enable higher security image uploads?'. Enabling this will add a 16 character
+random string to the name of image files to prevent easy guessing of URLs. This increases security without potential performance concerns.
+
+It's important to ensure you disable 'directory indexes' to prevent unknown users from being able to navigate their way through your images. Here's the configuration for NGINX & Apache if your server allows directory indexes:
 
 **NGINX**
 
@@ -54,15 +65,19 @@ location /uploads {
 </Location>
 ```
 
+---
+
 ### Attachments
 
 Attachments, if not using Amazon S3, are stored in the `storage/uploads` directory.
-Unlike images these are stored behind the application authentication layer so access
+By default, unlike images, these are stored behind the application authentication layer so access
 depends on permissions you have set up at a role level and page level.
 
 If you are using Amazon S3 for file storage then access will depend on your S3 permission
 settings. Unlike images, BookStack will not automatically attempt to make uploaded attachments
 publically accessible.  
+
+---
 
 ### User Passwords
 

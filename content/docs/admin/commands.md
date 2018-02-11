@@ -9,9 +9,11 @@ BookStack has some command line actions that can help with maintenance and commo
 
 ### BookStack Commands
 
-Here's a listing of the BookStack specific commands:
+Below is a listing of the BookStack specific commands. For any you can provide a `-h` option to list details and options for the command.
 
 ```bash
+# Create a new admin user
+php artisan bookstack:create-admin
 
 # Delete all activity history from the system
 php artisan bookstack:clear-activity

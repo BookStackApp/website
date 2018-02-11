@@ -59,6 +59,18 @@ In the above example we are setting the theme to `cobalt`. Change `cobalt` to th
 The first lines adds the required theme styles, Fetched from [cdnjs](https://cdnjs.com/) whom generously host all CodeMirror files.
 The second line then sets the theme name which will be picked up when code blocks are rendered.
 
+### Default Book View
+
+By default the `/books` page displays your books as a list. Users can change this option to list or grid view but if you'd like to set the default for public viewers or new users you can add the following to your `.env` file:
+
+```
+# Show grid view by default
+APP_VIEWS_BOOKS=grid
+
+# Show list view by default
+APP_VIEWS_BOOKS=list
+``` 
+
 ### Further Customisation
 
 If you need to customise BookStack further to the given controls in the settings area you can make use of the 'Custom HTML head content' setting. Using this you can add in any custom JavaScript or CSS content to override default BookStack functionality and styles.

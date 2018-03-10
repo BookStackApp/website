@@ -65,10 +65,10 @@ By default the `/books` page displays your books as a list. Users can change thi
 
 ```
 # Show grid view by default
-APP_VIEWS_BOOKS=grid
+APP_VIEW_BOOKS=grid
 
 # Show list view by default
-APP_VIEWS_BOOKS=list
+APP_VIEW_BOOKS=list
 ``` 
 
 ### Further Customisation

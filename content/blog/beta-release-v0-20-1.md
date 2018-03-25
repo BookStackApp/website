@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.20.1"
-date = 2018-03-25T17:00:00Z
+date = 2018-03-25T16:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/books-maarten-van-den-heuvel.jpg"
 description = "Release v0.20.1 is here with a great number of fixes, updates and improvements as well as a good deal of change behind the scenes"

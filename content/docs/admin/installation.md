@@ -19,7 +19,7 @@ Below are some different methods of installing BookStack. If you cannot find a g
 BookStack has similar requirements to Laravel:
 
 * PHP >= 7.0.0, Will need to be usable from the command line.
-* PHP Extensions: `OpenSSL`, `PDO`, `MBstring`, `Tokenizer`, `GD`, `MySQLND`, `Tidy`
+* PHP Extensions: `OpenSSL`, `PDO`, `MBstring`, `Tokenizer`, `GD`, `MySQLND`, `Tidy`, `SimpleXML`, `DOM`
 * MySQL >= 5.6, Single DB *(All permissions advised since application manages schema)*
 * Git *(Not strictly required but helps manage updates)*
 * [Composer](https://getcomposer.org/)
@@ -103,3 +103,4 @@ sudo ./installation-ubuntu-16.04.sh
 This is a collection of guides created by awesome members of the BookStack community:
 
 * [CentOS 7 Install by Deviant Engineer](https://deviantengineer.com/2017/02/bookstack-centos7/)
+* [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)

@@ -36,7 +36,7 @@ You can choose to store images behind authentication so only logged-in users can
 
 To use this option simply set `STORAGE_TYPE=local_secure` in your `.env` file. Uploaded images will be stored within the `storage/uploads/images` folder.
 
-If you are migrating to this option with existing images you will need to move all content in the folder `public/uploads/images` to `storage/uploads/images`. Do not simply copy and leave content in the `public/uploads/images` as those images will still be publicly accessible.
+If you are migrating to this option with existing images you will need to move all content in the folder `public/uploads/images` to `storage/uploads/images`. Do not simply copy and leave content in the `public/uploads/images` as those images will still be publicly accessible. After doing this migration you may have to clean-up and re-upload any 'App Icon' images, found in settings, since these need to remain publicly accessible. 
 
 #### Complex Urls
 
@@ -83,3 +83,9 @@ publically accessible.
 
 User passwords, if not using an alternative authentication method, are stored in the database.
 These are hashed using the standard Laravel hashing methods which use the Bcrypt hashing algorithm.
+
+---
+
+### JavaScript in Page Content
+
+By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform it's own JavaScript escaping.

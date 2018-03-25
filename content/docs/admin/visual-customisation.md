@@ -69,7 +69,7 @@ APP_VIEWS_BOOKS=grid
 
 # Show list view by default
 APP_VIEWS_BOOKS=list
-``` 
+```
 
 ### Further Customisation
 

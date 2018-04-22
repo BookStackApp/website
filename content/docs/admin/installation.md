@@ -7,12 +7,25 @@ type = "admin-doc"
 
 Below are some different methods of installing BookStack. If you cannot find a guide for your setup search the web for "Laravel install guides" relevant for your system as the process is mostly the same.
 
+* [Shared Hosting](#shared)
 * [Manual](#manual)
 * [Docker](#docker)
 * [Ubuntu 16.04 Script](#ubuntu-1604)
 * [Community Guides](#community)
 
-## Manual Installation <a name="manual"></a>
+---
+
+<a name="shared"></a>
+
+## Shared Hosting
+
+Currently BookStack does not support shared PHP hosting. There are too many differences between shared hosting providers and too many limitations to support the current install process although we would like to make this easier in the future. You can try searching for 'Laravel Install Guides' for your hosting provider as the process would be similar. Beware that modifying the application source files or applying large work-arounds could lead to security or stability issues.
+
+---
+
+<a name="manual"></a>
+
+## Manual Installation
 
 #### Requirements
 
@@ -66,7 +79,9 @@ location / {
 
 ---
 
-## Docker Image <a name="docker"></a>
+<a name="docker"></a>
+
+## Docker Image
 
 A community built docker image is available for those that prefer to use a containerised version of BookStack. This image runs on Apache and PHP7. A docker compose file is also available to bring up a whole BookStack environment which includes MySQL 5.7. Here are the links for the docker image:
 
@@ -75,7 +90,9 @@ A community built docker image is available for those that prefer to use a conta
 
 ---
 
-## Ubuntu 16.04 Installation Script <a name="ubuntu-1604"></a>
+<a name="ubuntu-1604"></a>
+
+## Ubuntu 16.04 Installation Script
 
 A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. This script is ONLY FOR A FRESH OS, It will install Nginx, MySQL 5.7, & PHP7 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
@@ -98,7 +115,9 @@ sudo ./installation-ubuntu-16.04.sh
 
 ---
 
-## Community Guides <a name="community"></a>
+<a name="community"></a>
+
+## Community Guides
 
 This is a collection of guides created by awesome members of the BookStack community:
 

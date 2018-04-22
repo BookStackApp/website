@@ -40,7 +40,7 @@
     <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 blog-sidebar-post-list">
       <h4>Latest Posts</h4>
       <div class="recent-posts">
-        {{ range first 8 ( where .Site.Pages "Section" "blog") }}
+        {{ range first 8 ( where .Site.RegularPages "Section" "blog") }}
           <a class="blogpost-list-small" href="{{.Permalink}}">
             <h5 class="text">{{ .Title }}</h5>
             <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">

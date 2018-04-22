@@ -7,8 +7,20 @@ type = "admin-doc"
 
 Since BookStack can hold important information for users you should be aware of any potential security concerns.
 Read through the below to ensure you have secured your BookStack instance. Note, The below only
-relates to BookStack itself. The security of the server BookStack is hosted on is not
-instructed below but should be taken into account.
+relates to BookStack itself. The security of the server BookStack is hosted on is not instructed below but should be taken into account.
+
+<ul>
+    <li><a href="#initial-security-setup">Initial Security Setup</a></li>
+    <li><a href="#securing-images">Securing Images</a></li>
+    <li><a href="#attachments">Attachments</a></li>
+    <li><a href="#user-passwords">User Passwords</a></li>
+    <li><a href="#javascript-in-page-content">JavaScript in Page Content</a></li>
+    <li><a href="#web-crawler-control">Web Crawler Control</a></li>
+</ul>
+
+---
+
+<a name="initial-security-setup"></a>
 
 ### Initial Security Setup
 
@@ -23,6 +35,8 @@ the database used for BookStack data.
 6. Read the below to further understand the security for images & attachments.
 
 ---
+
+<a name="securing-images"></a>
 
 ### Securing Images
 
@@ -67,6 +81,8 @@ location /uploads {
 
 ---
 
+<a name="attachments"></a>
+
 ### Attachments
 
 Attachments, if not using Amazon S3, are stored in the `storage/uploads` directory.
@@ -79,6 +95,8 @@ publically accessible.
 
 ---
 
+<a name="user-passwords"></a>
+
 ### User Passwords
 
 User passwords, if not using an alternative authentication method, are stored in the database.
@@ -86,6 +104,16 @@ These are hashed using the standard Laravel hashing methods which use the Bcrypt
 
 ---
 
+<a name="javascript-in-page-content"></a>
+
 ### JavaScript in Page Content
 
 By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform it's own JavaScript escaping.
+
+---
+
+<a name="web-crawler-control"></a>
+
+### Web Crawler Control
+
+The rules found in the `/robots.txt` file are automatically controlled via the "Allow public viewing?" setting. This can be overridden by setting `ALLOW_ROBOTS=false` or `ALLOW_ROBOTS=true` in your `.env` file. If you'd like to customise the rules this can be done via theme overrides.

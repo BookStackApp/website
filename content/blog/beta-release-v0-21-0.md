@@ -6,7 +6,7 @@ date = 2018-04-22T17:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/bookshelf-giammarco-boscaro.jpg"
 description = "Beta Release v0.21 is here with video embed support, better tags and the ability to copy pages. There's also a new official BookStack team member!"
-slug = "beta-release-v0.21-0"
+slug = "beta-release-v0-21-0"
 draft = false
 +++
 

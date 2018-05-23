@@ -121,5 +121,5 @@ sudo ./installation-ubuntu-16.04.sh
 
 This is a collection of guides created by awesome members of the BookStack community:
 
-* [CentOS 7 Install by Deviant Engineer](https://deviantengineer.com/2017/02/bookstack-centos7/)
+* [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)

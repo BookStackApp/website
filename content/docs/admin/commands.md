@@ -27,6 +27,9 @@ php artisan bookstack:clear-revisions -a
 # Delete all page views from the system
 php artisan bookstack:clear-views
 
+# Search and remove images that are not used in page content
+php artisan bookstack:cleanup-images
+
 # Generate SQL commands that will upgrade the database to UTF8mb4
 # See https://www.bookstackapp.com/docs/admin/ut8mb4-support/
 php artisan bookstack:db-utf8mb4

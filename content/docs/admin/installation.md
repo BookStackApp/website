@@ -11,6 +11,7 @@ Below are some different methods of installing BookStack. If you cannot find a g
 * [Manual](#manual)
 * [Docker](#docker)
 * [Ubuntu 16.04 Script](#ubuntu-1604)
+* [Ubuntu 18.04 Script](#ubuntu-1804)
 * [Community Guides](#community)
 
 ---
@@ -111,6 +112,31 @@ chmod a+x installation-ubuntu-16.04.sh
 
 # Run the script with admin permissions
 sudo ./installation-ubuntu-16.04.sh
+```
+
+---
+
+<a name="ubuntu-1804"></a>
+
+## Ubuntu 18.04 Installation Script
+
+A script to install BookStack on a fresh instance of Ubuntu 18.04 is available. This script is ONLY FOR A FRESH OS, It will install Apache, MySQL 5.7, & PHP-7.2 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
+
+[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-18.04.sh)
+
+#### Running the Script
+
+```bash
+# Ensure you have read the above information about what this script does before executing these commands.
+
+# Download the script
+wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-18.04.sh
+
+# Make it executable
+chmod a+x installation-ubuntu-18.04.sh
+
+# Run the script with admin permissions
+sudo ./installation-ubuntu-18.04.sh
 ```
 
 ---

@@ -16,6 +16,7 @@ relates to BookStack itself. The security of the server BookStack is hosted on i
     <li><a href="#user-passwords">User Passwords</a></li>
     <li><a href="#javascript-in-page-content">JavaScript in Page Content</a></li>
     <li><a href="#web-crawler-control">Web Crawler Control</a></li>
+    <li><a href="#secure-cookies">Secure Cookies</a></li>
 </ul>
 
 ---
@@ -117,3 +118,11 @@ By default, JavaScript tags within page content is escaped when rendered. This c
 ### Web Crawler Control
 
 The rules found in the `/robots.txt` file are automatically controlled via the "Allow public viewing?" setting. This can be overridden by setting `ALLOW_ROBOTS=false` or `ALLOW_ROBOTS=true` in your `.env` file. If you'd like to customise the rules this can be done via theme overrides.
+
+---
+
+<a name="secure-cookies"></a>
+
+### Secure Cookies
+
+BookStack uses cookies to track sessions, remember logins and for XSRF protection. When using HTTPS you may want to ensure that cookies are only sent back to the browser if the connection is over HTTPS. This can be enabled by setting `SESSION_SECURE_COOKIE=true` in your `.env` file.

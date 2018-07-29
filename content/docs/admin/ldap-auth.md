@@ -7,11 +7,13 @@ type = "admin-doc"
 
 BookStack can be configured to allow LDAP based user login. While LDAP login is enabled you cannot log in with the standard user/password login and new user registration is disabled. BookStack will only use the LDAP server for getting user details and for authentication. Data on the LDAP server is not currently editable through BookStack.
 
+### Authentication Setup
+
 When a LDAP user logs into BookStack for the first time their BookStack profile will be created and they will be given the default role set under the 'Default user role after registration' option in the application settings.    
 
 To set up LDAP-based authentication add or modify the following variables in your `.env` file:
 
-```
+```bash
 # General auth
 AUTH_METHOD=ldap
 
@@ -44,3 +46,33 @@ You will also need to have the php-ldap extension installed on your system. It's
 A user in BookStack will be linked to a LDAP user via a 'uid'. If a LDAP user uid changes it can be updated in BookStack by an admin by changing the 'External Authentication ID' field on the user's profile.
 
 You may find that you cannot log in with your initial Admin account after changing the `AUTH_METHOD` to `ldap`. To get around this set the `AUTH_METHOD` to `standard`, login with your admin account then change it back to `ldap`. You get then edit your profile and add your LDAP uid under the 'External Authentication ID' field. You will then be able to login in with that ID.
+
+### Active Directory
+
+BookStack does work with active directory over LDAP. You will likely need to set the below settings for use with AD. Note that the user filter may need to change
+depending on your setup and how you manage users in the system. You will still need to follow the setup instructions above.
+
+```bash
+LDAP_USER_FILTER=(&(sAMAccountName=${user}))
+LDAP_VERSION=3
+```
+
+### LDAP Group Sync
+
+BookStack has the ability to sync LDAP user groups with BookStack roles. By default this will match LDAP group names with the BookStack role display names with casing ignored.
+This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while LDAP authentication is enabled. If filled, names in this field will be used and the role name will be ignored. You can match on multiple names by separating them with a comma.
+
+This feature requires the LDAP server to be able to provide user groups when queried. This is enabled by default on ActiveDirectory via the 'memberOf' attribute but other LDAP systems may need to be configured to enable such functionality. If using OpenLDAP you'll need to setup the memberof overlay.
+
+Here are the settings required to be added to your `.env` file to enable group syncing:
+
+```bash
+# Enable LDAP group sync, Set to 'true' to enable.
+LDAP_USER_TO_GROUPS=true
+
+# LDAP user attribute containing groups, Defaults to 'memberOf'.
+LDAP_GROUP_ATTRIBUTE="memberOf"
+
+# Remove users from roles that don't match LDAP groups.
+LDAP_REMOVE_FROM_GROUPS=false
+```

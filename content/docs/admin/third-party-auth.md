@@ -21,6 +21,7 @@ BookStack currently supports login via a range of third party and social applica
 * [Okta](#okta)
 * [GitLab](#gitlab)
 * [Twitch](#twitch)
+* [Discord](#discord)
 
 ---
 
@@ -217,3 +218,26 @@ To allow twich sign-in you'll first need to create an application from the Twitc
     APP_URL=http://mybookstackurl.com
     ```
 7. All set up! Users will now be able to use Twitch to sign-in and register.
+
+---
+
+### Discord
+
+To allow Discord sign-in you'll first need to create an application on the Discord developer site. Here's the process:
+
+1. Login into the [Discord developer website](https://discordapp.com/developers/applications/me).
+2. Select 'Create an application'.
+3. Set a name to identify the application, such as 'BookStack Authentication', and save.
+4. In the sidebar, Open the OAuth2 settings for your application and add a redirect. Input the below URL, Changing `https://example.com` to be the base URL of your BookStack instance then save:
+    - `https://example.com/login/service/discord/callback`
+5. Back in the 'General Information' section find the 'Client ID' and 'Client Secret' values which you'll use in the next step.
+6. Copy the below details and add them as new variables in your `.env` file like so:
+    ```bash
+    # Replace the below (including '{}' braces) with your Twitch Application Id and Secret values.
+    DISCORD_APP_ID={APP_ID}
+    DISCORD_APP_SECRET={APP_SECRET}
+
+    # APP_URL Needs to be set to your BookStack base url
+    APP_URL=http://mybookstackurl.com
+    ```
+7. All set up! Users will now be able to use Discord to sign-in and register.

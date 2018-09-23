@@ -63,12 +63,25 @@ The second line then sets the theme name which will be picked up when code block
 
 By default the `/books` page displays your books as a list. Users can change this option to list or grid view but if you'd like to set the default for public viewers or new users you can add the following to your `.env` file:
 
-```
+```bash
 # Show grid view by default
 APP_VIEWS_BOOKS=grid
 
 # Show list view by default
 APP_VIEWS_BOOKS=list
+```
+
+### Revision Limit
+
+Each time a page is saved a revision is stored to track history. To prevent your database becoming bloated BookStack will automatically remove revisions when the count, per page, exceeds 50. You can set the following option in your `.env` file to increase or remove the limit:
+
+```bash
+# Set the revision limit to 100
+# Defaults to '50' 
+REVISION_LIMIT=100
+
+# Alternatively, You can set to 'false' to disable the limit altogether. 
+REVISION_LIMIT=false
 ```
 
 ### Further Customisation

@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp && hugo",
+    "serve": "hugo -DF",
     "dev": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

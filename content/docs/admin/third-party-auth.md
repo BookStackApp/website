@@ -23,6 +23,30 @@ BookStack currently supports login via a range of third party and social applica
 * [Twitch](#twitch)
 * [Discord](#discord)
 
+#### Automatic Registration & Email Confirmation
+
+You may find that you'd like to auto-register users, from the login screen, when they use a social authentication option. To do this add the following `.env` option, altering the `{SERVICE}` to match the login service you are using:
+
+```bash
+{SERVICE}_AUTO_REGISTER=true
+
+# Examples
+GOOGLE_AUTO_REGISTER=true
+TWITCH_AUTO_REGISTER=true
+```
+
+This will allow registration using these services even if registrations are disabled. It also allows registration if using LDAP as you main authentication option.
+
+If you trust a third-party login service you can enable automatic email confirmation. This skips the 'Confirm Email' setting, even if domain restrictions are enabled although the domain of the email address provided by the social service will still be checked. To do this add the following `.env` option, altering the `{SERVICE}` to match the login service you are using and trust:
+
+```bash
+{SERVICE}_AUTO_CONFIRM_EMAIL=true
+
+# Examples
+GOOGLE_AUTO_CONFIRM_EMAIL=true
+TWITCH_AUTO_CONFIRM_EMAIL=true
+```
+
 ---
 
 ### Google

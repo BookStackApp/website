@@ -18,7 +18,7 @@ git pull origin release && composer install && php artisan migrate
 
 This command will update the repository that was created in the installation, install the PHP dependencies using `composer` then run then update the database with any required changes.
 
-In addition, we recommend clearing the cache after an update -
+In addition, Clearing the cache is also recommended:
 
 ```bash
 php artisan cache:clear
@@ -29,6 +29,17 @@ Check the below list for the version you are updating to for any additional inst
 
 
 ## Version Specific Instructions
+
+#### Updating to v0.24 or higher
+
+Version v0.24 changes the way the homepage option is stored. After updating, You may need to re-configure this setting.
+
+If updating from a much older BookStack version (Pre v0.20) you may need to update the permission and search indexes. You can do this by running the following commands from your BookStack install folder:
+
+```bash
+php artisan bookstack:regenerate-search
+php artisan bookstack:regenerate-permissions
+```
 
 #### Updating to v0.19 or higher
 

@@ -10,9 +10,9 @@ slug = "beta-release-v0-24-0"
 draft = false
 +++
 
-Intro
+Need a way to categorise your Books? Well BookStack v0.24 is the release for you bringing Bookshelves along with a host of other notable features such as revision removals, social authentication auto-registration and Arabic support.
 
--- Note loss of homepage option
+**Please Note, Due to some required re-working of some settings you may have to re-apply any homepage options you've previsouly set after updating. See the update instructions page linked below for further info.**
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.24.0)
@@ -31,10 +31,28 @@ Intro
 
 ### Social Auth Updates
 
+-- Auto-registration & auto-email-confirm
 
+### Arabic and Right-to-Left Text Support
 
-### Language Support
+This release brings quite a notable addition to BookStack's language support. Thanks to [@kmoj86](https://github.com/BookStackApp/BookStack/pull/945) Arabic is now a language choice. This is the first right-to-left language in BookStack so some functionality has been added to support right-to-left text.
 
+The WYSIWYG editor will now default it's text direction based on your language setting. In addition, If a right-to-left language is in use then additional toolbar options will show to provide control over text direction:
+
+![wysiwyg_rtl_support.png](/images/2018/09/wysiwyg_rtl_support.png)
+
+Styles to bullet-points have been updated to ensure they display correctly when displayed in a RTL manner and page content should show in the correct direction depending on the text detected within.
+
+Note, Right-to-left text support is in its early stages so there's likely to be further updates needed. Please feel free to raise any issues found on GitHub.
+
+### Additional Language Updates
+
+Once again, We've recieved a whole load of translations by wonderful people. Here are the languages that have recieved updates and their contributors:
+
+🇪🇸 &nbsp; Spanish - Thanks to [@moucho](https://github.com/BookStackApp/BookStack/pull/1025). <br>
+🇩🇪 &nbsp; German - Thanks to [@vriic](https://github.com/BookStackApp/BookStack/pull/983). <br>
+🇷🇺 &nbsp; Russian - Thanks to [@mullinsmikey](https://github.com/BookStackApp/BookStack/pull/1002). <br>
+🇧🇷 &nbsp; Brazilian Portuguese - Thanks to [@DeehSlash](https://github.com/BookStackApp/BookStack/pull/986). <br>
 
 
 ### Full List of Changes
@@ -63,7 +81,11 @@ Intro
 
 ### Next Steps
 
-Todo
+As mentoined above, The Bookshelves implementation has been functionality focused for this release so I'll be thinking about how to bring in a unique Bookshelf design to make them more effective in use. I'm sure we'll also see some further thoughts and requests as people start to use Bookshelves.  
+
+To support the implemented, but not documented, themeing system I'd like to revamp and clean-up all views used by the system. This would probably tie in with fleshing-out the Bookshelf design work as part of a bigger design update which also enhances mobile support.
+
+To support future back-end features such as notifications, exports and API support I'd like to refactor a chunk of the existing code that deals with shelves, books, pages & chapters to make such future developments easier. This will probably be my own focus for the next couple of weeks. 
 
 ----
 

@@ -125,7 +125,8 @@ To create a Twitter application for signing in with you may require a phone numb
 
 1. Login to your your azure portal and navigate to the 'Azure Activity Directory' area.
 2. Under 'Manage > App registrations' select 'New application registration'.
-3. Enter a name ('BookStack'). Keep the 'Application type' as 'Web app / API'. Set the 'Sign-on URL' to be the main URL to your BookStack instance.
+3. Enter a name ('BookStack'). Keep the 'Application type' as 'Web app / API'. Set the 'Sign-on URL' to be the following, replacing 'https://example.com/' with your base BookStack url: 
+    - `https://example.com/login/service/azure/callback`
 4. Once created, Click on your new application and note the 'Application ID'. This is the APP_ID value for step 9.
 5. Within your application in azure, Navigate to 'Keys' under 'API access'.
 6. Enter any description you want and set a duration ('Never expires' is okay unless you specifically want it to expire). Then click 'Save'.

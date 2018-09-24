@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.24.0"
-date = 2018-09-24T12:00:00Z
+date = 2018-09-24T11:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/shelves-michael-d-beckwith.jpg"
 description = "Bookshelves arrive in BookStack v0.24 along with a treasure chest of other features, fixes and updates"

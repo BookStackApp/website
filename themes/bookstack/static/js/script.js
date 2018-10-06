@@ -41,7 +41,7 @@ var modeMap = {
   'language-js': 'javascript',
   'language-shell': 'bash',
   'language-nginx': 'nginx',
-  'language-apache': 'xml'
+  'language-apache': 'apache'
 };
 
 var codeBlocks = document.querySelectorAll('pre');
@@ -52,6 +52,7 @@ for (var i = 0; i < codeBlocks.length; i++) {
 
   var langClass = codeElem.className;
   var mode = (typeof modeMap[langClass] !== 'undefined') ? modeMap[langClass] : 'htmlmixed';
+  console.log(mode);
   var content = codeElem.textContent.trim();
   CodeMirror(function(cmElem) {
     block.parentNode.replaceChild(cmElem, block);

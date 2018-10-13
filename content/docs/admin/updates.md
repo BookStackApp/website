@@ -23,6 +23,7 @@ In addition, Clearing the cache is also recommended:
 ```bash
 php artisan cache:clear
 php artisan view:clear
+php artisan route:cache
 ```
 
 Check the below list for the version you are updating to for any additional instructions.

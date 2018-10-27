@@ -21,6 +21,8 @@ AUTH_METHOD=ldap
 LDAP_SERVER=example.com:389
 # If using LDAP over SSL you should also define the protocol:
 # LDAP_SERVER=ldaps://example.com:636
+# To allow untrusted LDAPS certificates, define the following:
+# LDAP_TLS_INSECURE=true
 
 # The base DN from where users will be searched within.
 LDAP_BASE_DN=ou=People,dc=example,dc=com

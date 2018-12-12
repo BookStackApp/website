@@ -149,3 +149,4 @@ This is a collection of guides created by awesome members of the BookStack commu
 
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)
+* [Uberspace Install by Daniel Kratz](https://lab.uberspace.de/guide_bookstack.html)

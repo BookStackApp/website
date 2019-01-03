@@ -90,7 +90,7 @@ File uploads in BookStack use a plugin called DropzoneJS. DropzoneJS is configur
 To modify this timeout, in BookStack settings, Find the 'Custom HTML head content' setting and add the following code:
 
 ```js
-window.dropZoneTimeout = 30000 // To se the timeout to 30 seconds
+window.uploadTimeout = 30000 // To set the timeout to 30 seconds
 ```
 
 ### Further Customisation

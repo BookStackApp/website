@@ -52,7 +52,6 @@ for (var i = 0; i < codeBlocks.length; i++) {
 
   var langClass = codeElem.className;
   var mode = (typeof modeMap[langClass] !== 'undefined') ? modeMap[langClass] : 'htmlmixed';
-  console.log(mode);
   var content = codeElem.textContent.trim();
   CodeMirror(function(cmElem) {
     block.parentNode.replaceChild(cmElem, block);

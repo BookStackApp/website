@@ -60,7 +60,7 @@ LDAP_VERSION=3
 ### LDAP Group Sync
 
 BookStack has the ability to sync LDAP user groups with BookStack roles. By default this will match LDAP group names with the BookStack role display names with casing ignored.
-This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while LDAP authentication is enabled. If filled, names in this field will be used and the role name will be ignored. You can match on multiple names by separating them with a comma.
+This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while LDAP authentication is enabled. This field can be populated with common names (CNs) of accounts *or* groups. If filled, CNs in this field will be used and the role name will be ignored. You can match on multiple CNs by separating them with a comma.
 
 This feature requires the LDAP server to be able to provide user groups when queried. This is enabled by default on ActiveDirectory via the 'memberOf' attribute but other LDAP systems may need to be configured to enable such functionality. If using OpenLDAP you'll need to setup the memberof overlay.
 

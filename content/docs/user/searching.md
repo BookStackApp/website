@@ -30,7 +30,7 @@ All of the above search locations within BookStack share the ability to use adva
     <td>Normal Searches</td>
     <td>&lt;term_a&gt; &lt;term_b&gt;</td>
     <td>london meeting</td>
-    <td>Normal word searchs across the name and description or body of your content. When mulitple terms are searched only one term has to match your content but content containing both terms will be higher in the results.</td>
+    <td>Normal word searches across the name and description or body of your content. When mulitple terms are searched only one term has to match your content but content containing both terms will be higher in the results.</td>
   </tr>
   <tr>
     <td>Exact Searches</td>

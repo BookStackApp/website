@@ -9,7 +9,7 @@ The ability to search your documentation is vital to day-to-day use.
 There are a few locations within BookStack where you can search for your content.
 Below is a list of search functions within BookStack:
 
-* **Header Search Bar** - The search bar/link in the header of every page allows you to search from anywhere. This search is a global search which will look across all books, chapters and pages in your system. This page contains an interface to help you build a more advanced search. This interface simply generates a more advanced search term using the syntax described below.
+* **Header Search Bar** - The search bar/link in the header of every page allows you to search from anywhere. This search is a global search which will look across all books, chapters and pages in your system. After performing a search in this box you'll be led to a search page that includes options and features that can help you build a more advanced search.
 * **Book/Chapter Search Bar** - When viewing a book or chapter a search bar can be found in the top of the left sidebar. These searches will look across all child items.
 * **Move & Link Selection** - When choosing to move a page/chapter or when selecting a page/chapter/book to link to within the editor the most popular items are shown but you also have the ability to search.
 

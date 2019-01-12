@@ -83,6 +83,15 @@ REVISION_LIMIT=100
 # Alternatively, You can set to 'false' to disable the limit altogether. 
 REVISION_LIMIT=false
 ```
+### File upload timeout
+
+File uploads in BookStack use a plugin called DropzoneJS. DropzoneJS is configured with a default upload timeout of 60 seconds. This means that if the file that you are uploading does not upload completely to the server within 60 seconds, the system will timeout. 
+
+To modify this timeout, in BookStack settings, Find the 'Custom HTML head content' setting and add the following code:
+
+```js
+window.uploadTimeout = 30000 // To set the timeout to 30 seconds
+```
 
 ### Further Customisation
 

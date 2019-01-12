@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.25.0"
-date = 2019-01-13T21:00:00Z
+date = 2019-01-12T22:45:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/flat-books-patrick-tomasso.jpg"
 description = "BookStack in 2019 starts with v0.25 which a chunk of improvements. BookStack now has over 2000 stars on GitHub!"

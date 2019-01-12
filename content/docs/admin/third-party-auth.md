@@ -113,7 +113,9 @@ To create a Twitter application for signing in with you may require a phone numb
 3. In your new app select 'Add Product' on the left sidebar then choose 'Facebook Login' by clicking the 'Get Started' button. Select the 'Web' option if asked to choose a platform.
 4. Enter the your base BookStack url into the 'Site URL' box and save.
 5. On the left sidebar again go to 'Facebook Login' -> 'Settings'.
-6. Enter your base BookStack URL again into the 'Valid OAuth redirect URIs' input and save.
+6. Enter the following URLs under 'Valid OAuth Redirect URIs', changing `https://example.com` to your own domain where BookStack is hosted:
+    - `https://example.com/login/service/facebook/callback`
+    - `https://example.com/register/service/facebook/callback`
 7. Navigate back to the app 'Dashboard' in the sidebar to find your app id and secret. Add or set these to your `.env` file like so:
 	```bash
 	# Replace the below (including '{}' braces) with your facebook APP_KEY and APP_SECRET

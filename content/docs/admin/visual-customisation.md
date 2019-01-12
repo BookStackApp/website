@@ -1,5 +1,5 @@
 +++
-title = "Customising BookStack"
+title = "Customising Visuals"
 description = "Changing the colors, logo and styles of BookStack to suit your needs"
 date = "2017-08-22"
 type = "admin-doc"
@@ -69,28 +69,6 @@ APP_VIEWS_BOOKS=grid
 
 # Show list view by default
 APP_VIEWS_BOOKS=list
-```
-
-### Revision Limit
-
-Each time a page is saved a revision is stored to track history. To prevent your database becoming bloated BookStack will automatically remove revisions when the count, per page, exceeds 50. You can set the following option in your `.env` file to increase or remove the limit:
-
-```bash
-# Set the revision limit to 100
-# Defaults to '50' 
-REVISION_LIMIT=100
-
-# Alternatively, You can set to 'false' to disable the limit altogether. 
-REVISION_LIMIT=false
-```
-### File upload timeout
-
-File uploads in BookStack use a plugin called DropzoneJS. DropzoneJS is configured with a default upload timeout of 60 seconds. This means that if the file that you are uploading does not upload completely to the server within 60 seconds, the system will timeout. 
-
-To modify this timeout, in BookStack settings, Find the 'Custom HTML head content' setting and add the following code:
-
-```js
-window.uploadTimeout = 30000 // To set the timeout to 30 seconds
 ```
 
 ### Further Customisation

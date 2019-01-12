@@ -21,10 +21,8 @@ AUTH_METHOD=ldap
 LDAP_SERVER=example.com:389
 # If using LDAP over SSL you should also define the protocol:
 # LDAP_SERVER=ldaps://example.com:636
-# To allow untrusted LDAPS certificates, define the following:
-# LDAP_TLS_INSECURE=true
 
-# The base DN from where users will be searched within.
+# The base DN from where users will be searched within
 LDAP_BASE_DN=ou=People,dc=example,dc=com
 
 # The full DN and password of the user used to search the server
@@ -36,11 +34,15 @@ LDAP_PASS=false
 # The user-provided user-name used to replace any occurrences of '${user}'
 LDAP_USER_FILTER=(&(uid=${user}))
 
-# Set the LDAP version to use when connecting to the server.
+# Set the LDAP version to use when connecting to the server
 LDAP_VERSION=false
 
-# Set the default 'email' attribute. Defaults to 'mail'.
+# Set the default 'email' attribute. Defaults to 'mail'
 LDAP_EMAIL_ATTRIBUTE=mail
+
+# If you need to allow untrusted LDAPS certificates, add the below and uncomment (remove the #)
+# Only set this option if debugging or you're absolutely sure it's required for your setup.
+#LDAP_TLS_INSECURE=true
 ```
 
 You will also need to have the php-ldap extension installed on your system. It's recommended to change your `APP_DEBUG` variable to `true` while setting up LDAP to make any errors visible. Remember to change this back after LDAP is functioning.

@@ -294,11 +294,23 @@ input[type=text] {
     list-style: none;
     margin-left: 0;
   }
+  li {
+    padding: 2px 0;
+  }
 }
 
 .sidebar {
   border-right: 2px dotted #E5E5E5;
 }
+
+@include larger-than($xl) {
+  .sidebar {
+    position: sticky;
+    top: $-m;
+  }
+}
+
+
 
 h2.thin-margin {
   margin-top: 0;

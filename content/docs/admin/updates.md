@@ -30,6 +30,15 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+#### Updating to v0.25 or higher
+
+**Security** - During the release cycle for Version v0.25 it was found that page content includes could leak their content as preview text to users that don’t have permission to view the included content. It’s recommended to re-save any pages that included other page content that’s restricted to ensure included text is not shown in page preview text.
+
+**Requirements Change** - Minimum required version of PHP has changed from 7.0.0 to 7.0.5.
+
+**Configuration Change** - The .env option `GRAVATAR_URL=false` has been replaced by `AVATAR_URL=false`. 
+
+
 #### Updating to v0.24 or higher
 
 Version v0.24 changes the way the homepage option is stored. After updating, You may need to re-configure this setting.

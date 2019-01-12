@@ -23,21 +23,24 @@ APP_LANG=fr
 
 The value of the `APP_LANG` variable must be a valid locale code matching one of the following options:
 
-* English - `en`
-* German - `de`
-* Spanish - `es`
-* Spanish, Argentinian - `es_AR`
-* French - `fr`
-* Dutch - `nl`
 * Brazilian Portuguese - `pt_BR`
-* Slovakian - `sk`
-* Swedish - `sv`
-* Japanese - `ja`
-* Polish - `pl`
-* Italian - `it`
-* Russian - `ru`
 * Chinese (Simplified) - `zh_CN`
 * Chinese (Traditional) - `zh_TW`
+* Dutch - `nl`
+* English - `en`
+* French - `fr`
+* German (Formal) - `de`
+* German (Informal) - `de_informal`
+* Italian - `it`
+* Japanese - `ja`
+* Korean - `kr`
+* Polish - `pl`
+* Russian - `ru`
+* Slovakian - `sk`
+* Spanish - `es`
+* Spanish, Argentinian - `es_AR`
+* Swedish - `sv`
+* Ukrainian - `uk`
 
 ### Public User Locale Autodetection
 

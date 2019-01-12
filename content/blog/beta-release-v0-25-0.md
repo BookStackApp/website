@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.25.0"
-date = 2019-01-06T18:00:00Z
+date = 2019-01-13T21:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/flat-books-patrick-tomasso.jpg"
 description = "BookStack in 2019 starts with v0.25 which a chunk of improvements. BookStack now has over 2000 stars on GitHub!"
@@ -32,10 +32,12 @@ to alter system settings, a link to the Users admin area will now show instead o
 
 ![Header Users Link](/images/2019/01/header_users_link.png)
 
+Thanks to [@qianmengnet](https://github.com/BookStackApp/BookStack/pull/1146) & [@cw1998](https://github.com/BookStackApp/BookStack/pull/1119) for these improvements. 
+
 ### Example Environment File Changes
 
 The default `.env.example` file has received some changes. It has been cut down from 89 lines
-to only 31 lines which includes some better comments. It now only contains common configuration
+to only 31 lines and that includes some better comments. It now only contains common configuration
 that's needed to get initially set-up.
 
 A `.env.example.complete` file is now included as a reference to all the possible options that
@@ -43,7 +45,23 @@ are available along with their default settings. Options can be copied from this
 
 ### Custom Avatar Service
 
-// TODO
+BookStack has had built-in [Gravatar](https://en.gravatar.com/) support for a while to enable 
+unique user profile images upon user creation. This system has been revamped so the URL used to 
+fetch an avatar can be customized as required. This allows you to customize the URL used for gravatar
+or you can instead use a different avatar service altogether. For example, By setting the below option 
+in your `.env` file you can instead use libravatar:
+
+```bash
+AVATAR_URL=https://seccdn.libravatar.org/avatar/${hash}?s=${size}&d=identicon
+```
+
+The following variables can be used in this setting which will be populated by BookStack when used:
+
+* `${email}` - The user's email address, URL encoded.
+* `${hash}` - MD5 hashed copy of the user's email address.
+* `${size}` - BookStack's ideal requested image size in pixels.
+
+Thanks to [@Vinrobot](https://github.com/BookStackApp/BookStack/pull/1111) for working to implement this feature.
 
 ### Language Updates
 
@@ -85,11 +103,12 @@ Additionally, included in BookStack v0.24.1 & v0.24.2 we had:
 * Re-enabled missing plaintext copies on system-generated emails. ([#1182](https://github.com/BookStackApp/BookStack/issues/1182))
 * Improved 'SQL' code block highlighting. ([#1181](https://github.com/BookStackApp/BookStack/issues/1181))
 * Simplified ".env.example" file and created full example version. ([#1205](https://github.com/BookStackApp/BookStack/pull/1205))
+* Fixed WYSIWYG editor issue that could reset cursor position on code block click. ([#1162](https://github.com/BookStackApp/BookStack/issues/1162)).
 
 ### Next Steps
 
 Throughout this last release cycle I've been playing with a new design based upon a lot of feedback
-provided via issues on GitHub. You can see preview along with the goals of this design update [on the pull request](https://github.com/BookStackApp/BookStack/pull/1153). This will be my personal focus for the time being.
+provided via issues on GitHub. You can see preview along with the goals of this design update [on the pull request](https://github.com/BookStackApp/BookStack/pull/1153). This will be my personal primary focus for the time being.
 
 ----
 

@@ -52,3 +52,19 @@ in your `.env` file:
 ```bash
 APP_AUTO_LANG_PUBLIC=false
 ```
+
+### Localised Date Formatting
+
+BookStack does support the localisation of date formats but it does depend on the intended locales being installed
+on the host system. If using ubuntu, you can manage installed locales via the command:
+
+```bash
+sudo dpkg-reconfigure locales
+```
+
+For other operating systems this may be different. After installing new locales you may need to restart any running PHP processes.
+For example, On Ubuntu, running PHP7.2:
+
+```bash
+sudo systemctl restart php7.2-fpm.service 
+```

@@ -75,6 +75,27 @@ By default BookStack will generate a valid Amazon S3 URL for uploaded images. If
 STORAGE_URL=https://images.example.com
 ```
 
+#### Non-Amazon, S3 Compatible Services
+
+Via the s3 connection BookStack does support s3-compatible services such as [Minio](https://www.minio.io/). Read the above S3 details to get an idea of general setup.
+For non-Amazon services the configuration, to be placed in the `.env` file, is a little different:
+
+```bash
+STORAGE_TYPE=s3
+STORAGE_S3_KEY=your-service-key
+STORAGE_S3_SECRET=your-service-secret-key
+STORAGE_S3_BUCKET=your-service-bucket-name
+
+STORAGE_S3_ENDPOINT=https://your-service-base-endpoint.com:8080
+STORAGE_URL=https://your-service-base-endpoint.com:8080/your-service-bucket-name
+```
+
+Take note of how the first part of the `STORAGE_URL` path is the bucket name. This is important to ensure image URLs are set correctly.
+
+BookStack's functionality to set image URL's as publicly accessible will likely not work for third-party services so you'll need to ensure files under the `<your_bucket>/uploads/images` path have policy or permissions to be publicly accessible. If using Minio you can add the following to the bucket policy:
+
+![Minio Bucket Policy](/images/2019/01/minio_s3_policy.png)
+
 ---
 
 ### Changing Upload Limits

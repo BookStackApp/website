@@ -53,14 +53,12 @@ TWITCH_AUTO_CONFIRM_EMAIL=true
 
 1. Open the [Google Developers Console](https://console.developers.google.com/).
 2. Create a new project (May have to wait a short while for it to be created).
-3. Select 'Enable and manage APIs'.
-4. Enable the 'Google+ API'.
-5. In 'Credentials' choose the 'OAuth consent screen' tab and enter a product name ('BookStack' or your custom set name).
-6. Back in the 'Credentials' tab click 'New credentials' > 'OAuth client ID'.
-7. Choose an application type of 'Web application' and enter the following urls under 'Authorized redirect URIs', changing `https://example.com` to your own domain where BookStack is hosted:
+3. In 'Credentials' choose the 'OAuth consent screen' tab and enter a product name ('BookStack' or your custom set name).
+4. Back in the 'Credentials' tab click 'New credentials' > 'OAuth client ID'.
+5. Choose an application type of 'Web application' and enter the following urls under 'Authorized redirect URIs', changing `https://example.com` to your own domain where BookStack is hosted:
     - `https://example.com/login/service/google/callback`
     - `https://example.com/register/service/google/callback`
-8. Add or set the following items in your `.env` file like so:
+6. Add or set the following items in your `.env` file like so:
 	```bash
 	# Replace the below (including '{}' braces) with your Google API_KEY and API_SECRET
 	GOOGLE_APP_ID={google_app_id}
@@ -69,7 +67,7 @@ TWITCH_AUTO_CONFIRM_EMAIL=true
 	# APP_URL Needs to be set to your BookStack base url
 	APP_URL=http://mybookstackurl.com
 	```
-10. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their Google accounts.
+7. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their Google accounts.
 
 ---
 

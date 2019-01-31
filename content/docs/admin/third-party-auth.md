@@ -258,7 +258,7 @@ To allow Discord sign-in you'll first need to create an application on the Disco
 5. Back in the 'General Information' section find the 'Client ID' and 'Client Secret' values which you'll use in the next step.
 6. Copy the below details and add them as new variables in your `.env` file like so:
     ```bash
-    # Replace the below (including '{}' braces) with your Twitch Application Id and Secret values.
+    # Replace the below (including '{}' braces) with your Discord Application Id and Secret values.
     DISCORD_APP_ID={APP_ID}
     DISCORD_APP_SECRET={APP_SECRET}
 

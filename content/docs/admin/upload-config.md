@@ -116,6 +116,14 @@ post_max_size = 10M
 upload_max_filesize = 10M
 ```
 
+If you run into trouble with large images when using the insert image or image select tool you may need to increase the `memory_limit` variable to something like:
+
+```
+memory_limit = 256M
+```
+
+Be careful not to set this too high as it may cause issues.
+
 After updating these values ensure you restart your webserver and also PHP if using PHP-FPM or something similar.
 
 #### NGINX
@@ -125,7 +133,7 @@ By default NGINX has a limit of 1MB on file uploads. To change this you will nee
 ```nginx
 http {
 	#...
-        client_max_body_size 100m;
+        client_max_body_size 10m;
         client_body_timeout 120s; # Default is 60, May need to be increased for very large uploads
 	#...
 }

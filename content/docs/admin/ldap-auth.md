@@ -40,6 +40,9 @@ LDAP_VERSION=false
 # Set the default 'email' attribute. Defaults to 'mail'
 LDAP_EMAIL_ATTRIBUTE=mail
 
+# Set the property to use for a user's display name. Defaults to 'cn'
+LDAP_DISPLAY_NAME_ATTRIBUTE=cn
+
 # If you need to allow untrusted LDAPS certificates, add the below and uncomment (remove the #)
 # Only set this option if debugging or you're absolutely sure it's required for your setup.
 #LDAP_TLS_INSECURE=true

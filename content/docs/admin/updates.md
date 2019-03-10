@@ -27,8 +27,13 @@ php artisan view:clear
 
 Check the below list for the version you are updating to for any additional instructions.
 
+---
 
 ## Version Specific Instructions
+
+#### Updating to v0.25.2 or higher
+
+**Configuration Change** - The .env option `REDIS_CLUSTER` has now been removed. If more than one redis server is provided they will automatically be clustered by BookStack.
 
 #### Updating to v0.25 or higher
 

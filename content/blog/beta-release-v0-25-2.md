@@ -40,19 +40,20 @@ Code blocks in BookStack have been updated to provide syntax highlighting for tw
 
 ### Full List of Changes
 
-* Added LDAP option to set a custom "Display Name" property. Thanks to [@dfanara](https://github.com/BookStackApp/BookStack/pull/1317). ([#1317](https://github.com/BookStackApp/BookStack/pull/1317), [#1306](https://github.com/BookStackApp/BookStack/issues/1306))
-* Fixed issue where default system language would not be reflected when viewing another user's profile. ([#1316](https://github.com/BookStackApp/BookStack/issues/1316))
-* Updated Dutch translations for the password hint. Thanks to [@maantje](https://github.com/BookStackApp/BookStack/pull/1314). ([#1314](https://github.com/BookStackApp/BookStack/pull/1314))
-* Updated front-end file upload size limit to be configurable. ([#1293](https://github.com/BookStackApp/BookStack/issues/1293))
-* Updated image paste/drop uploads to properly set page relations so image permissions are active. ([#1287](https://github.com/BookStackApp/BookStack/issues/1287))
-* Fixed bug where using alignment properties could break tables. ([#1284](https://github.com/BookStackApp/BookStack/issues/1284))
-* Added possibility to set a password for Redis connections. ([#1283](https://github.com/BookStackApp/BookStack/issues/1283))
-* Updated German translations to include translations for shelves. Thanks to [@Xiphoseer](https://github.com/BookStackApp/BookStack/pull/1272). ([#1272](https://github.com/BookStackApp/BookStack/pull/1272))
 * Added PowerShell code highlighting to code blocks. Thanks to [@christophert](https://github.com/BookStackApp/BookStack/pull/1263). ([#1263](https://github.com/BookStackApp/BookStack/pull/1263), [#1040](https://github.com/BookStackApp/BookStack/issues/1040))
-* Fixed issue where image-manager tooltips could be cut-off. Thanks to [@Abijeet](https://github.com/BookStackApp/BookStack/pull/1238). ([#1238](https://github.com/BookStackApp/BookStack/pull/1238), [#1186](https://github.com/BookStackApp/BookStack/issues/1186))
 * Added LUA code highlighting to code blocks. ([#1223](https://github.com/BookStackApp/BookStack/issues/1223))
+* Added LDAP option to set a custom "Display Name" property. Thanks to [@dfanara](https://github.com/BookStackApp/BookStack/pull/1317). ([#1317](https://github.com/BookStackApp/BookStack/pull/1317), [#1306](https://github.com/BookStackApp/BookStack/issues/1306))
+* Added possibility to set a password for Redis connections. ([#1283](https://github.com/BookStackApp/BookStack/issues/1283))
+* Updated front-end file upload size limit to be configurable. ([#1293](https://github.com/BookStackApp/BookStack/issues/1293))
+* Updated Dutch translations for the password hint. Thanks to [@maantje](https://github.com/BookStackApp/BookStack/pull/1314). ([#1314](https://github.com/BookStackApp/BookStack/pull/1314))
+* Updated image paste/drop uploads to properly set page relations so image permissions are active. ([#1287](https://github.com/BookStackApp/BookStack/issues/1287))
+* Updated German translations to include translations for shelves. Thanks to [@Xiphoseer](https://github.com/BookStackApp/BookStack/pull/1272). ([#1272](https://github.com/BookStackApp/BookStack/pull/1272))
 * Updated permissions checked for "Page Copy" function to be more accurate to what permissions are actually required. Thanks to [@mark-james](https://github.com/BookStackApp/BookStack/pull/1202). ([#1202](https://github.com/BookStackApp/BookStack/pull/1202), [#1199](https://github.com/BookStackApp/BookStack/issues/1199))
 * Updated permissions checked for the "Shelves" header item to be visible. Now takes into account custom shelve-level permissions. ([#1201](https://github.com/BookStackApp/BookStack/issues/1201))
+* Fixed bug where using alignment properties could break tables. ([#1284](https://github.com/BookStackApp/BookStack/issues/1284))
+* Fixed issue where default system language would not be reflected when viewing another user's profile. ([#1316](https://github.com/BookStackApp/BookStack/issues/1316))
+* Fixed issue where image-manager tooltips could be cut-off. Thanks to [@Abijeet](https://github.com/BookStackApp/BookStack/pull/1238). ([#1238](https://github.com/BookStackApp/BookStack/pull/1238), [#1186](https://github.com/BookStackApp/BookStack/issues/1186))
+
 
 
 ----

@@ -31,6 +31,10 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+#### Updating to v0.25.3 or higher
+
+**Security** - On previous versions of BookStack it was possible to upload PHP files via the image upload endpoints. If you have a BookStack instance where untrusted users could upload image files, and you were using the default file storage option, It would have been possible for the user to access anything that the PHP process could. This would likely include, at minimum, any credentials stored in the `.env` file.
+
 #### Updating to v0.25.2 or higher
 
 **Configuration Change** - The .env option `REDIS_CLUSTER` has now been removed. If more than one redis server is provided they will automatically be clustered by BookStack.

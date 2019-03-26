@@ -40,6 +40,9 @@ LDAP_VERSION=false
 # Set the default 'email' attribute. Defaults to 'mail'
 LDAP_EMAIL_ATTRIBUTE=mail
 
+# Set the property to use for a user's display name. Defaults to 'cn'
+LDAP_DISPLAY_NAME_ATTRIBUTE=cn
+
 # If you need to allow untrusted LDAPS certificates, add the below and uncomment (remove the #)
 # Only set this option if debugging or you're absolutely sure it's required for your setup.
 #LDAP_TLS_INSECURE=true
@@ -65,6 +68,8 @@ LDAP_VERSION=3
 
 BookStack has the ability to sync LDAP user groups with BookStack roles. By default this will match LDAP group names with the BookStack role display names with casing ignored.
 This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while LDAP authentication is enabled. This field can be populated with common names (CNs) of accounts *or* groups. If filled, CNs in this field will be used and the role name will be ignored. You can match on multiple CNs by separating them with a comma.
+
+When matching LDAP groups with role names or 'External Authentication IDs' values, BookStack will standardise the names of ldap groups to be lower-cased and spaces will be replaced with hypens. For example, to match a LDAP group named "United Kingdom" an 'External Authentication IDs' value of "united-kingdom" could be used.
 
 This feature requires the LDAP server to be able to provide user groups when queried. This is enabled by default on ActiveDirectory via the 'memberOf' attribute but other LDAP systems may need to be configured to enable such functionality. If using OpenLDAP you'll need to setup the memberof overlay.
 

@@ -102,6 +102,11 @@ Community docker setups are available for those that would prefer to use a conta
 * [GitHub Repository](https://github.com/solidnerd/docker-bookstack)
 * [Docker Hub page](https://hub.docker.com/r/solidnerd/bookstack/)
 
+#### Zeigren
+
+* [GitHub Repository](https://github.com/Zeigren/docker-swarm-bookstack)
+* [Docker Hub page](https://hub.docker.com/r/zeigren/bookstack)
+
 ---
 
 <a name="ubuntu-1604"></a>

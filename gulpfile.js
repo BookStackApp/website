@@ -1,8 +1,7 @@
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
-const autoprefixer = require('gulp-autoprefixer');
-const minifycss = require('gulp-minify-css');
+const cleanCss = require('gulp-clean-css');
 const sass = require('gulp-sass');
 
 gulp.task('styles', function() {
@@ -13,10 +12,9 @@ gulp.task('styles', function() {
         this.emit('end');
     }}))
     .pipe(sass())
-    .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest('themes/bookstack/static/css/'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
+    .pipe(cleanCss())
     .pipe(gulp.dest('themes/bookstack/static/css/'));
 });
 

@@ -31,6 +31,16 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+#### Updating to v0.26 or higher
+
+**Internet Explorer Support** - IE11 Support has now been dropped. We *may* support any critical issues for view-only scenarios otherwise please use a modern browser.
+
+**Translations** - Since many interfaces and lines of text have been updated, It may take a little while for some translations to catch-up. Expect to see more English text than usual if you're using a non-English language option.
+
+**Images** - Due to changes how images are handled, as detailed below, some types of images may become inaccessible. Old logo images will be deleted when changed. Unused Book/Shelf cover images & User profile images will be become inaccessible after the update so you may want to delete them before upgrade.
+
+**Security** - On previous versions of BookStack it was possible for users to insert JavaScript via the Markdown editor using `on*` html attributes. These will now be removed on page render unless you have set `ALLOW_CONTENT_SCRIPTS=true`. If untrusted users has access to your BookStack you may want to scan for `<<space_char>>on` in the HTML column of the pages table to identify any malicious intent.
+
 #### Updating to v0.25.3 or higher
 
 **Security** - On previous versions of BookStack it was possible to upload PHP files via the image upload endpoints. If you have a BookStack instance where untrusted users could upload image files, and you were using the default file storage option, It would have been possible for the user to access anything that the PHP process could. This would likely include, at minimum, any credentials stored in the `.env` file.
@@ -45,7 +55,7 @@ Check the below list for the version you are updating to for any additional inst
 
 **Requirements Change** - Minimum required version of PHP has changed from 7.0.0 to 7.0.5.
 
-**Configuration Change** - The .env option `GRAVATAR_URL=false` has been replaced by `AVATAR_URL=false`. 
+**Configuration Change** - The .env option `GRAVATAR_URL=false` has been replaced by `AVATAR_URL=false`.
 
 
 #### Updating to v0.24 or higher

@@ -14,9 +14,9 @@
 	border: 0;
 }
 
-.post-content img {
+.post-content img:not(.no-border) {
 	border-radius: 3px;
-	border: 1px solid $primary;
+	border: 1px solid #DDD;
 }
 
 .post-content video {

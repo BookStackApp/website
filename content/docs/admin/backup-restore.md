@@ -158,4 +158,7 @@ tar -czf "$TODAY_BACKUP_DIR"files.tar.gz .env public/uploads storage/uploads
 
 cd $BACKUP_DIR
 tar -czf $ARTIFACT $TODAY_BACKUP_DIR
+
+# Do what ever you need with the backup artifact.
+
 ```

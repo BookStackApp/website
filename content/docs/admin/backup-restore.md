@@ -118,3 +118,44 @@ After a backup of the files you should re-set the permissions to ensure any writ
 locations are writable by the server. The locations required for this can be
 found in the [installation](/docs/admin/installation)
 instructions.
+
+## Backup script
+
+Alternatively, you can use a script to automate the backup in the cronjob.
+
+Example crontab line: `0 1 * * * /root/book-stack-backup.sh >> /dev/null 2>&1`
+
+File: `bookstack-backup.sh`
+
+```bash
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -o pipefail
+
+BOOK_STACK_DIR=/home/websites/book-stack/
+ENV_FILE=$BOOK_STACK_DIR.env
+BACKUP_DIR=/root/book-stack-backups/
+DATE=$(date +\%F)
+TODAY_BACKUP_DIR=$BACKUP_DIR$DATE/
+ARTIFACT=$BACKUP_DIR$DATE.book-strap.tar.gz
+
+echo $BACKUP_DIR
+
+eval "$(grep ^DB_HOST $ENV_FILE)"
+eval "$(grep ^DB_DATABASE $ENV_FILE)"
+eval "$(grep ^DB_USERNAME $ENV_FILE)"
+eval "$(grep ^DB_PASSWORD $ENV_FILE)"
+
+mkdir -p $TODAY_BACKUP_DIR
+
+mysqldump -u$DB_USERNAME -p$DB_PASSWORD -h$DB_HOST $DB_DATABASE > "$TODAY_BACKUP_DIR"database.sql
+
+cd $BOOK_STACK_DIR
+tar -czf "$TODAY_BACKUP_DIR"files.tar.gz .env public/uploads storage/uploads
+
+cd $BACKUP_DIR
+tar -czf $ARTIFACT $TODAY_BACKUP_DIR
+```

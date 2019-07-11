@@ -17,6 +17,7 @@ relates to BookStack itself. The security of the server BookStack is hosted on i
     <li><a href="#javascript-in-page-content">JavaScript in Page Content</a></li>
     <li><a href="#web-crawler-control">Web Crawler Control</a></li>
     <li><a href="#secure-cookies">Secure Cookies</a></li>
+    <li><a href="#disable-export">Disable Export function</a></li>
 </ul>
 
 ---
@@ -126,3 +127,16 @@ The rules found in the `/robots.txt` file are automatically controlled via the "
 ### Secure Cookies
 
 BookStack uses cookies to track sessions, remember logins and for XSRF protection. When using HTTPS you may want to ensure that cookies are only sent back to the browser if the connection is over HTTPS. This can be enabled by setting `SESSION_SECURE_COOKIE=true` in your `.env` file.
+
+<a name="disable-export"></a>
+
+### Disable Export function
+
+You may want to prevent that users can export books with a single click. Then paste this into the 'Custom HTML head content' box
+in the admin settings of BookStack.
+
+```html
+<style>
+.tri-layout-right-contents a[href$="/delete"] + hr, .tri-layout-right-contents a[href$="/delete"] + hr + .dropdown-container { display: none; }
+</style>
+```

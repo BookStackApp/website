@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.27.0"
-date = 2019-08-28T21:00:00Z
+date = 2019-08-29T21:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/books-eugenio-mazzone.jpg"
 description = "BookStack v0.27 brings faster building with Page Templates, A more accessible interface, a new user invitation flow and much more "
@@ -10,25 +10,38 @@ slug = "beta-release-v0-27-0"
 draft = false
 +++
 
-// TODO
+BookStack v0.27 is now available which adds page templates, a new user invitation flow, a more accessible interface and a bunch of under-the-hood changes to provide a better user and developer experience. 
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.27.0)
 
-
-Before jumping into all the changes, there's a few things to note before upgrading:
-
-// TODO
-
-~~ ~~
-
 ### Page Templating
 
-// TODO
+It's now possible to define page templates that can be used to speed up and standardise the creation & modification of page content:
+
+<video src="/images/2019/08/page_templates.mp4" muted="true" controls onclick="this.paused ? this.play() : this.pause()"></video>
+
+Templates are simply pages that have been marked as a template in the editor sidebar. Once marked as a template it will show as an available template to any other users that have view permissions of that page template. Simply clicking the template will replace the your existing editor contents, if any, with the page templates. There are also buttons to insert the template content at the top or bottom of your page. Alternatively, It is possible to drag the template into the editor to specify where the template content is inserted. This works in both the default WYSIWYG editor and markdown editor. 
+
+![Page Templates](/images/2019/08/page_templates.png)
+
+Since templates are essentially just specially-marked pages, templates can be organised within books and chapters like any other page. An approch many admins may want to take is to create a new "Templates" book with restriced permissions so anyone can view, and therefore use them as templates, but only certain members can edit. A new "Manage page templates" role permission is now available to designate which roles have the ability to mark a page as a template.
 
 ### Accessibility
 
-// TODO
+Accessibility (A11y) on the web is important but is often something that is unfortunately overlooked; It definately was something I overlooked in BookStack. For this release I have invested some time learning how we can make BookStack easier to use for those with disabilities. Here's an overview of what's changed:
+
+- Default colors in BookStack have become darker, now meeting WCAG Level A standards, for better readability.
+- Interactive components such as dropdowns, modals & slide-downs can now used properly without a mouse.
+
+<video src="/images/2019/08/header_accessibility.mp4" muted="true" controls onclick="this.paused ? this.play() : this.pause()"></video>
+
+- Descriptions have been set for many elements where context relies up sight.
+- Main layout HTML tags have been updated to better indicate the purpose of various sections of the page.
+- Styles have been updated to ensure it remains clear which element on the page has focus.
+- Icons have been tagged so they're not mistaken for content. 
+
+There's still some work to be done, especially when it comes to the page editors, but this release marks a good start in making the project acessible to all. The project [readme on GitHub](https://github.com/BookStackApp/BookStack/#-accessibility) has been updated with the accessibility standards we're aiming for along with some details to confirm we're open to issues regarding accessibility.
 
 ### New User Invitation Flow
 
@@ -37,6 +50,10 @@ Before jumping into all the changes, there's a few things to note before upgradi
 ### Docker Development Environment
 
 // TODO
+
+### Under-the-Hood Changes
+
+jQuery, Theme color customization etc...
 
 ### Discord
 

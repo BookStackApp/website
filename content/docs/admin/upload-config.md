@@ -97,6 +97,22 @@ BookStack's functionality to set image URL's as publicly accessible will likely 
 
 ![Minio Bucket Policy](/images/2019/01/minio_s3_policy.png)
 
+#### Separate Image and Attachment Storage
+
+If you'd prefer to store images and attachments via different storage options, you can use the below `.env` options to do so:
+
+```bash
+# Image storage system to use 
+# Defaults to the value of STORAGE_TYPE if unset. 
+# Accepts the same values as STORAGE_TYPE. 
+STORAGE_IMAGE_TYPE=local 
+  
+# Attachment storage system to use 
+# Defaults to the value of STORAGE_TYPE if unset. 
+# Accepts the same values as STORAGE_TYPE although 'local' will be forced to 'local_secure'. 
+STORAGE_ATTACHMENT_TYPE=local_secure 
+ ```
+
 ---
 
 ### Changing Upload Limits

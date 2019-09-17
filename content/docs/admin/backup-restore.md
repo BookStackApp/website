@@ -114,6 +114,8 @@ tar -xvzf bookstack-files-backup.tar.gz
 If you get errors during the above command it may be due to permissions.
 Change permissions so you can write to the restore locations.
 
+Make sure the restored `.env` file contains the correctly database credentials. If you using Ubuntu Scripts to install it might be the case the DB password is randomly generated and the older `.env` file contains an old credential which will need to be replace for the currently DB credentials.
+
 After a backup of the files you should re-set the permissions to ensure any write-required
 locations are writable by the server. The locations required for this can be
 found in the [installation](/docs/admin/installation)

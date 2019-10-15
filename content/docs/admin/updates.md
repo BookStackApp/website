@@ -31,6 +31,10 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+#### Updating to v0.28 or higher
+
+**Framework Update** - BookStack now uses Laravel 6 which itself requires PHP 7.2 or higher. Make sure your PHP version matches that requirement before updating!
+
 #### Updating to v0.26 or higher
 
 **Internet Explorer Support** - IE11 Support has now been dropped. We *may* support any critical issues for view-only scenarios otherwise please use a modern browser.

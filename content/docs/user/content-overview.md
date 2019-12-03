@@ -13,7 +13,7 @@ Once you start to stack-up books you can start to use Bookshelves to organise yo
 
 ### Default Colour Coding
 
-Bookshelves, Books, chapters and pages have set colour coding in BookStack to ensure they are easily identifiable. The below examples show the default color scheme. Note that this may be overridden by your administrator.
+Bookshelves, Pages, chapters and pages have set colour coding in BookStack to ensure they are easily identifiable. The below examples show the default color scheme. Note that this may be overridden by your administrator.
 
 <span style="color:#009688;line-height:12px;"><svg fill="#009688" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"></path></svg> <span style="position:relative;top:-6px;">Books</span></span>
 &nbsp;

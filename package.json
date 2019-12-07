@@ -16,7 +16,7 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-plumber": "1.2.1",
     "gulp-rename": "1.4.0",
-    "gulp-sass": "4.0.2"
+    "gulp-sass": "^4.0.2"
   },
   "dependencies": {}
 }

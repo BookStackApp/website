@@ -238,7 +238,7 @@
         <div class="container">
             <h2>Latest From The Blog</h2>
 
-			{{ range first 4 ( where .Data.Pages "Section" "blog") }}
+			{{ range first 4 ( where .Site.Pages "Section" "blog") }}
 				<div class="blogpost-card">
 					<a href="{{.Permalink}}">
 						{{ if .Params.image }}

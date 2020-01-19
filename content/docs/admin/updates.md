@@ -40,7 +40,7 @@ If you installed BookStack on Ubuntu 16.04 using the install script, You should 
 ```bash
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt update
-sudo apt install -y php7.4-fpm php7.4-curl php7.4-mbstring php7.4-ldap php7.4-tidy php7.4-xml php7.4-zip php7.4-gd php7.4-mysql
+sudo apt install -y php7.4 php7.4-fpm php7.4-curl php7.4-mbstring php7.4-ldap php7.4-tidy php7.4-xml php7.4-zip php7.4-gd php7.4-mysql
 sudo sed -i.bak 's/php7\.0-fpm/php7.4-fpm/' /etc/nginx/sites-available/bookstack
 sudo systemctl restart nginx.service
 ```

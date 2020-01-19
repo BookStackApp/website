@@ -33,7 +33,17 @@ Check the below list for the version you are updating to for any additional inst
 
 #### Updating to v0.28 or higher
 
-**Framework Update** - BookStack now uses Laravel 6 which itself requires PHP 7.2 or higher. Make sure your PHP version matches that requirement before updating!
+**Requirements Change** - Minimum PHP version has increased from 7.0.5 to 7.2.
+
+If you installed BookStack on Ubuntu 16.04 using the install script, You should be able to upgrade your PHP version to 7.4 by doing the following:
+
+```bash
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt update
+sudo apt install -y php7.4-fpm php7.4-curl php7.4-mbstring php7.4-ldap php7.4-tidy php7.4-xml php7.4-zip php7.4-gd php7.4-mysql
+sudo sed -i.bak 's/php7\.0-fpm/php7.4-fpm/' /etc/nginx/sites-available/bookstack
+sudo systemctl restart nginx.service
+```
 
 #### Updating to v0.26 or higher
 

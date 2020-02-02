@@ -37,6 +37,11 @@ LDAP_USER_FILTER=(&(uid=${user}))
 # Set the LDAP version to use when connecting to the server
 LDAP_VERSION=false
 
+# Set the property to use as a unique identifier for this user.
+# Stored and used to match LDAP users with existing BookStack users.
+# Defaults to 'uid'.
+LDAP_ID_ATTRIBUTE=uid
+
 # Set the default 'email' attribute. Defaults to 'mail'
 LDAP_EMAIL_ATTRIBUTE=mail
 
@@ -62,6 +67,7 @@ depending on your setup and how you manage users in the system. You will still n
 ```bash
 LDAP_USER_FILTER=(&(sAMAccountName=${user}))
 LDAP_VERSION=3
+LDAP_ID_ATTRIBUTE=objectGUID
 ```
 
 ### LDAP Group Sync

@@ -78,6 +78,14 @@ The foundations for the API have been laid within this release. This includes a 
 
 // TODO
 
+### Copy Shelf Permissions Command
+
+// TODO
+
+### Editor Event Hooks
+
+// TODO
+
 ### Full List of Changes
 
 // TODO

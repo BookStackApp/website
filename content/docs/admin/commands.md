@@ -43,4 +43,8 @@ php artisan bookstack:regenerate-permissions
 
 # Delete all users from the system that are not "admin" or system users
 php artisan bookstack:delete-users
+
+# Copy the permission settings of a specified, or all, shelf to their child books
+php artisan bookstack:copy-shelf-permissions --all
+php artisan bookstack:copy-shelf-permissions --slug=my_shelf_slug
 ```

@@ -41,7 +41,8 @@ var modeMap = {
   'language-js': 'javascript',
   'language-shell': 'bash',
   'language-nginx': 'nginx',
-  'language-apache': 'apache'
+  'language-apache': 'apache',
+  'language-php': 'php',
 };
 
 var codeBlocks = document.querySelectorAll('pre');

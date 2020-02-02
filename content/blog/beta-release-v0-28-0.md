@@ -21,17 +21,35 @@ Our first 2020 release arrives with some great new features such as an initial A
 
 The foundations for the API have been laid within this release. This includes a limited set of endpoints that covers basic "book" CRUD operations.
 
+![API User Tokens](/images/2020/02/api-user-tokens.png)
+
+![API Token Generation](/images/2020/02/api-token-generation.png)
+
+![API Docs](/images/2020/02/api-docs.png)
+
+
 // TODO
 
 ### SAML2 Authentication
+
+![BookStack SAML2 Authentication](/images/2020/02/bookstack-saml.png)
 
 // TODO
 
 ### Theme Color Customization
 
+![BookStack theme color customization](/images/2020/02/theme-colors.png)
+
 // TODO
 
 ### Test Email Sending
+
+![BookStack Test Email Sending](/images/2020/02/test-emails.png)
+
+![BookStack Test Email Example](/images/2020/02/bookstack-test-email.png)
+
+
+
 
 // TODO
 
@@ -39,9 +57,12 @@ The foundations for the API have been laid within this release. This includes a 
 
 // TODO
 
+![BookStack Translation Text Overrides](/images/2020/02/text-overrides.png)
+
+
 ### Under-the-Hood Changes
 
-// TODO - Laravel, Refactor
+// TODO - Laravel, Refactor, Auth
 
 ### Translations
 
@@ -50,6 +71,8 @@ The foundations for the API have been laid within this release. This includes a 
 #### New Translation Management
 
 // Crowdin
+
+![BookStack Translation Text Overrides](/images/2020/02/crowdin-overview.png)
 
 #### Translation Updates
 

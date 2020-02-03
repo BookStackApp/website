@@ -35,7 +35,7 @@ Check the below list for the version you are updating to for any additional inst
 
 **Requirements Change** - Minimum PHP version has increased from 7.0.5 to 7.2.
 
-If you installed BookStack on Ubuntu 16.04 using the install script, You should be able to upgrade your PHP version to 7.4 by doing the following:
+If you installed BookStack on Ubuntu 16.04 using the install script, You should be able to upgrade your PHP version to 7.4 by running the following commands:
 
 ```bash
 sudo add-apt-repository -y ppa:ondrej/php

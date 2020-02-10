@@ -5,7 +5,7 @@ date = "2017-01-01"
 type = "admin-doc"
 +++
 
-BookStack is updated regularly and is still in beta although we do try to keep the platform and upgrade path as stable as possible. The latest release can be found on [GitHub here](https://github.com/BookStackApp/BookStack/releases) and detailed information on releases is posted on the [BookStack blog here](https://www.bookstackapp.com/blog/tag/releases/).
+BookStack is updated regularly and is still in beta although we do try to keep the platform and upgrade path as stable as possible. The latest release can be found on [GitHub here](https://github.com/BookStackApp/BookStack/releases) and detailed information on releases is posted on the [BookStack blog here](/tags/releases/).
 
 **Before updating you should back up the database and any file uploads to prevent potential data loss**. <br>
 Backup and restore documentation can be found [here](/docs/admin/backup-restore).

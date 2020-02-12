@@ -89,7 +89,10 @@ TWITCH_AUTO_CONFIRM_EMAIL=true
 To create a Twitter application for signing in with you may require a phone number linked to your Twitter account.
 
 1. Go to your [Twitter apps page](https://apps.twitter.com/) and click 'Create New App'.
-2. Enter an application name and description. The website and callback URL can just be your BookStack homepage urls. Then submit the form.
+2. Enter an application name and description. The website can just be your BookStack homepage url. 
+3. Enter these as callback URLs, then submit the form.
+    - `https://example.com/login/service/twitter/callback`
+    - `https://example.com/register/service/twitter/callback`
 3. Click into your new application and go the the settings tab and ensure 'Allow this application to be used to Sign in with Twitter' is checked.
 4. If you'd like, set an icon and change any other details.
 5. Click the 'Permissions' tab and in the 'Additional Permissions' section check the box 'Request email addresses from users' then save.

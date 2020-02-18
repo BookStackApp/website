@@ -39,6 +39,8 @@ LDAP_VERSION=false
 
 # Set the property to use as a unique identifier for this user.
 # Stored and used to match LDAP users with existing BookStack users.
+# Prefixing the value with 'BIN;' will assume the LDAP service provides the attribute value as
+# binary data and BookStack will convert the value to a hexidecimal representation.
 # Defaults to 'uid'.
 LDAP_ID_ATTRIBUTE=uid
 
@@ -51,6 +53,10 @@ LDAP_DISPLAY_NAME_ATTRIBUTE=cn
 # If you need to allow untrusted LDAPS certificates, add the below and uncomment (remove the #)
 # Only set this option if debugging or you're absolutely sure it's required for your setup.
 #LDAP_TLS_INSECURE=true
+
+# If you need to debug the details coming from your LDAP server, add the below and uncomment (remove the #)
+# Only set this option if debugging since it will block logins and potentially show private details.
+#LDAP_DUMP_USER_DETAILS=true
 ```
 
 You will also need to have the php-ldap extension installed on your system. It's recommended to change your `APP_DEBUG` variable to `true` while setting up LDAP to make any errors visible. Remember to change this back after LDAP is functioning.
@@ -67,7 +73,7 @@ depending on your setup and how you manage users in the system. You will still n
 ```bash
 LDAP_USER_FILTER=(&(sAMAccountName=${user}))
 LDAP_VERSION=3
-LDAP_ID_ATTRIBUTE=objectGUID
+LDAP_ID_ATTRIBUTE=BIN;objectGUID
 ```
 
 ### LDAP Group Sync

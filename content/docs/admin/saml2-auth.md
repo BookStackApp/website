@@ -60,7 +60,7 @@ A user in BookStack will be linked to a SAML user via the `SAML2_EXTERNAL_ID_ATT
 You'll likely need to provide some details of your BookStack service-provider to your identity provider. Below are the URL paths you'll likely need. Only the relative paths are shown below so you'll need to append them to your BookStack base URL.
 
 * `/saml2/metadata` - Metadata endpoint *(GET)*
-* `/saml2/asc` - Assertion Consumer Service endpoint *(POST)*
+* `/saml2/acs` - Assertion Consumer Service endpoint *(POST)*
 * `/saml2/sls` - Single Logout Service endpoint *(GET)*
 
 BookStack uses the following formats/bindings for communication with the IdP:

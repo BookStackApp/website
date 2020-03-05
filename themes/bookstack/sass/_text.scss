@@ -298,6 +298,9 @@ ul {
 ol {
   list-style-type: decimal;
   padding-left: $-m*1.2;
+  li {
+    margin-bottom: 3px;
+  }
 }
 
 /*

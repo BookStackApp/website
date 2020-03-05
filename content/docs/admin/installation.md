@@ -51,12 +51,10 @@ Ensure the above requirements are met before installing.
 This project currently uses the `release` branch of the BookStack GitHub repository as a stable channel for providing updates. The installation is currently somewhat complicated and will be made simpler in future releases. Some PHP or Laravel experience will make this easier.
 
 1. Clone the release branch of the BookStack GitHub repository into a folder.
-
-	```bash
-	git clone https://github.com/BookStackApp/BookStack.git --branch release --single-branch
-	```
-
-2. `cd` into the application folder and run `composer install`.
+```bash
+git clone https://github.com/BookStackApp/BookStack.git --branch release --single-branch
+```
+2. `cd` into the application folder and run `composer install --no-dev`.
 3. Copy the `.env.example` file to `.env` and fill with your own database and mail details.
 4. Ensure the `storage`, `bootstrap/cache` & `public/uploads` folders are writable by the web server.
 5. In the application root, Run `php artisan key:generate` to generate a unique application key.

@@ -43,6 +43,12 @@ To enable this option you can set the following in your `.env` file:
 
 ```bash
 MAIL_DRIVER=sendmail
+
+# The "from" email address for outgoing email
+MAIL_FROM=noreply@yourdomain.tld  
+
+# The "from" name used for outgoing email
+MAIL_FROM_NAME=BookStack
 ```
 
 ## Debugging

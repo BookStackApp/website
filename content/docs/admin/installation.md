@@ -158,5 +158,6 @@ sudo ./installation-ubuntu-18.04.sh
 
 This is a collection of guides created by awesome members of the BookStack community:
 
+* [CentOS 8 Install by Xhark](https://github.com/blogmotion/bm-bookstack-install/blob/master/bookstack-install-centos8.sh) - [french guide](http://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)

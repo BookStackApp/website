@@ -166,6 +166,7 @@ from the below languages by the below great Crowdin & GitHub members:
 * Updated code-block insert to handle focus, so code blocks can be inserted smoothly via keyboard alone. ([#1972](https://github.com/BookStackApp/BookStack/issues/1972))
 * Updated namespacing used in tests to avoid warnings on recent versions of composer. ([#1924](https://github.com/BookStackApp/BookStack/issues/1924))
 * Updated Chinese translations. Thanks to [@jzoy](https://github.com/BookStackApp/BookStack/pull/2023). ([#2023](https://github.com/BookStackApp/BookStack/pull/2023))
+* Updated translations for Turkish, Slovenian, Swedish, Spanish, Italian, Russian, German Informal, German, French, Chinese Simplified, Portuguese, Brazilian & Hungarian. Thanks to [Crowdin Users](https://github.com/BookStackApp/BookStack/blob/master/.github/translators.txt).
 * Updated default .htaccess to allow Authorization header for API usage. Thanks to [@osmansorkar](https://github.com/BookStackApp/BookStack/pull/1908). ([#1908](https://github.com/BookStackApp/BookStack/pull/1908))
 * Updated GitHub authorization library to avoid use of deprecated auth methods. ([#1879](https://github.com/BookStackApp/BookStack/issues/1879))
 * Fixed issue where ordered list numbers could be cut-off. This was most apparent on Safari.([#1978](https://github.com/BookStackApp/BookStack/issues/1978))

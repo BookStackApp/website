@@ -15,6 +15,7 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Ubuntu 18.04 Script](#ubuntu-1804)
 * [Ubuntu 16.04 Script](#ubuntu-1604)
 * [Community Guides](#community)
+* [Other hosting options](#other)
 
 ---
 
@@ -188,3 +189,14 @@ This is a collection of guides created by awesome members of the BookStack commu
 * [CentOS 8 Install by Xhark](https://github.com/blogmotion/bm-bookstack-install/blob/master/bookstack-install-centos8.sh) - [french guide](http://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)
+
+## Other
+
+### Cloudron
+
+BookStack is available as a 1-click install on Cloudron. The BookStack package is integrated with Cloudron user management.
+
+[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=com.bookstackapp.cloudronapp)
+
+The source code for BookStack Cloudron package (based on Docker) is available at [GitLab](https://git.cloudron.io/cloudron/bookstack-app).
+

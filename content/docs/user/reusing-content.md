@@ -29,7 +29,10 @@ Finding the id of a page can be difficult so a quick and easy way to find includ
 View a page with some content you want to re-use. Use your mouse to select some content and you will see a popup appear.
 By default this contains a direct link to that content. If you click the link icon on the left it will switch to show you the include tag for that content. Simply copy that and place it in another page. Remove the `#` and content id to include the whole content of the page instead of just a single block.
 
-<video controls src="/images/2017/01/bookstack-includes-popover.mp4"></video>
+<video controls>
+    <source src="/images/2017/01/bookstack-includes-popover.webm" type="video/webm">
+    <source src="/images/2017/01/bookstack-includes-popover.mp4" type="video/mp4">
+</video>
 
 ## Forcing Content IDs
 

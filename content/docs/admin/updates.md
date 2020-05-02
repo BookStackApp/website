@@ -31,6 +31,11 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+
+#### Updating to v0.29.2 or higher
+
+**Security** - v0.29.2 fixes a XSS security vulnerability in the comment system, that was introduced in BookStack v0.18. Upon updating the command `php artisan bookstack:regenerate-comment-content` should be ran to regenerate comment content to ensure that it is safe.
+
 #### Updating to v0.28 or higher
 
 **Requirements Change** - Minimum PHP version has increased from 7.0.5 to 7.2.

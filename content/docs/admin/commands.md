@@ -54,4 +54,6 @@ php artisan bookstack:update-url <oldUrl> <newUrl>
 # Example:
 php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
 
+# Regenerate the stored HTML content for comments from their original text content
+php artisan bookstack:regenerate-comment-content
 ```

@@ -11,8 +11,9 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Shared Hosting](#shared)
 * [Manual](#manual)
 * [Docker](#docker)
-* [Ubuntu 16.04 Script](#ubuntu-1604)
+* [Ubuntu 20.04 Script](#ubuntu-2004)
 * [Ubuntu 18.04 Script](#ubuntu-1804)
+* [Ubuntu 16.04 Script](#ubuntu-1604)
 * [Community Guides](#community)
 
 ---
@@ -102,13 +103,13 @@ Community docker setups are available for those that would prefer to use a conta
 
 ---
 
-<a name="ubuntu-1604"></a>
+<a name="ubuntu-2004"></a>
 
-## Ubuntu 16.04 Installation Script
+## Ubuntu 20.04 Installation Script
 
-A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. This script is ONLY FOR A FRESH OS, It will install Nginx, MySQL 5.7 & PHP7 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
+A script to install BookStack on a fresh instance of Ubuntu 20.04 is available. This script is ONLY FOR A FRESH OS, It will install Apache, MySQL 8.0 & PHP-7.4 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
-[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-16.04.sh)
+[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-20.04.sh)
 
 #### Running the Script
 
@@ -116,14 +117,15 @@ A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. 
 # Ensure you have read the above information about what this script does before executing these commands.
 
 # Download the script
-wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-16.04.sh
+wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-20.04.sh
 
 # Make it executable
-chmod a+x installation-ubuntu-16.04.sh
+chmod a+x installation-ubuntu-20.04.sh
 
 # Run the script with admin permissions
-sudo ./installation-ubuntu-16.04.sh
+sudo ./installation-ubuntu-20.04.sh
 ```
+
 
 ---
 
@@ -152,11 +154,37 @@ sudo ./installation-ubuntu-18.04.sh
 
 ---
 
+<a name="ubuntu-1604"></a>
+
+## Ubuntu 16.04 Installation Script
+
+A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. This script is ONLY FOR A FRESH OS, It will install Nginx, MySQL 5.7 & PHP7 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
+
+[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-16.04.sh)
+
+#### Running the Script
+
+```bash
+# Ensure you have read the above information about what this script does before executing these commands.
+
+# Download the script
+wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-16.04.sh
+
+# Make it executable
+chmod a+x installation-ubuntu-16.04.sh
+
+# Run the script with admin permissions
+sudo ./installation-ubuntu-16.04.sh
+```
+
+---
+
 <a name="community"></a>
 
 ## Community Guides
 
 This is a collection of guides created by awesome members of the BookStack community:
 
+* [CentOS 8 Install by Xhark](https://github.com/blogmotion/bm-bookstack-install/blob/master/bookstack-install-centos8.sh) - [french guide](http://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)

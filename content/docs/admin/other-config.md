@@ -9,6 +9,7 @@ type = "admin-doc"
 * [.env Options](#env-options)
 * [Revision Limit](#revision-limit)
 * [Custom User Avatar Fetching](#custom-user-avatar-fetching)
+* [Custom Draw.io URL](#custom-drawio-url)
 
 ---
 
@@ -58,3 +59,26 @@ The following variables can be used in this setting which will be populated by B
 * `${email}` - The user's email address, URL encoded.
 * `${hash}` - MD5 hashed copy of the user's email address.
 * `${size}` - BookStack's ideal requested image size in pixels.
+
+---
+
+### Custom Draw.io URL
+
+BookStack uses [draw.io](https://www.diagrams.net/) to provide users with the ability to create & edit drawings.
+By default BookStack embeds the draw.io interface using the following URL:
+
+```php
+https://www.draw.io/?embed=1&proto=json&spin=1
+```
+
+You can instead define your own URL to customise this embed or even use a self-hosted
+instance of draw.io. This can be done by defining an option in your `.env` file like so:
+
+```bash
+DRAWIO=https://drawing.example.com/?embed=1&proto=json&spin=1
+```
+
+**The `embed=1&proto=json&spin=1` query string parameters are required for the integration with BookStack to function. <br> Remember to include these when defining a custom URL.**
+
+Refer to this draw.io guide to see what options are supported: [draw.io embed URL parameters](https://desk.draw.io/support/solutions/articles/16000042546-what-url-parameters-are-supported-). In particular, the `stealth=1` option might be of interest if you 
+don't want other external services to be used. 

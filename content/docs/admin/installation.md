@@ -47,7 +47,7 @@ BookStack does not currently support shared PHP hosting. There are too many diff
 
 ## Manual Installation
 
-Ensure the above requirements are met before installing.
+>**ATTENTION** <br> Ensure the above [requirements](#requirements) are met before installing. This includes required PHP extensions.
 
 This project currently uses the `release` branch of the BookStack GitHub repository as a stable channel for providing updates. The installation is currently somewhat complicated and will be made simpler in future releases. Some PHP or Laravel experience will make this easier.
 

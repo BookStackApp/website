@@ -25,6 +25,10 @@
   border-radius: 3px;
 }
 
+.post-content iframe {
+  max-width: 100%;
+}
+
 .pagination {
 	text-align: center;
 	font-size: 0.8em;

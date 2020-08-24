@@ -56,7 +56,7 @@ This project currently uses the `release` branch of the BookStack GitHub reposit
 git clone https://github.com/BookStackApp/BookStack.git --branch release --single-branch
 ```
 2. `cd` into the application folder and run `composer install --no-dev`.
-3. Copy the `.env.example` file to `.env` and fill with your own database and mail details.
+3. Copy the `.env.example` file to `.env` and fill with your own database and mail details. NOTE: if any of your strings contain the '#' character, the whole string must be wrapped in quotation marks. e.g. `DB_PASSWORD='eXamPle#Pa55w0rd'`
 4. Ensure the `storage`, `bootstrap/cache` & `public/uploads` folders are writable by the web server.
 5. In the application root, Run `php artisan key:generate` to generate a unique application key.
 6. If not using Apache or if `.htaccess` files are disabled you will have to create some URL rewrite rules as shown below.

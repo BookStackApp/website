@@ -22,7 +22,7 @@ A new BookStack bug-fix release has now been released to resolve a few issues fo
 Update instructions can be found in the links below. If you're having issues running the update commands you may have to run `composer dump-autoload` followed by `php artisan clear-compiled` from the root BookStack directory.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.11.1)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.11.1)
 
 #### BookStack in a URL 'Sub-directory'
 
@@ -30,7 +30,7 @@ Due to the changes to links within BookStack the application can now be placed o
 
 Due to the many potentially sensitive application files & scripts within a BookStack instance's folder it should not be installed traditionally in an actual folder subdirectory of another website due to many security concerns. Instead the web server should proxy requests to a BookStack instance.
 
-This will be documented soon but if you're eager to set this up and you have some Nginx knowledge you can follow the posts on [the issue request](https://github.com/ssddanbrown/BookStack/issues/40#issuecomment-238538445) to get going.
+This will be documented soon but if you're eager to set this up and you have some Nginx knowledge you can follow the posts on [the issue request](https://github.com/BookStackApp/BookStack/issues/40#issuecomment-238538445) to get going.
 
 ----
 

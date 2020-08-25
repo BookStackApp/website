@@ -10,7 +10,7 @@ slug = "100-stars-on-github"
 
 +++
 
-BookStack now has [over 100 stars on GitHub](https://github.com/ssddanbrown/BookStack/stargazers)! It's a minor milestone but I'm very happy about it. Since July of last year I've put a fair amount of effort into the project and it's awesome to see other people find value in BookStack. 
+BookStack now has [over 100 stars on GitHub](https://github.com/BookStackApp/BookStack/stargazers)! It's a minor milestone but I'm very happy about it. Since July of last year I've put a fair amount of effort into the project and it's awesome to see other people find value in BookStack. 
 
 Most of those stars have come from my [initial posting on the Reddit](https://www.reddit.com/r/selfhosted/comments/3z06rb/bookstack_a_free_wikilike_information_store/) and a tweet about the project. These events can be seen in the site analytics:
 

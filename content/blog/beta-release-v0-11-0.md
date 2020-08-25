@@ -13,7 +13,7 @@ description = ""
 BookStack v0.11 has now been released. This version is a cleanup and bugfix release with a few new handy features to make nicer pages and to help organise books easier. Here are the useful links for this release:
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.11.0)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.11.0)
 
 #### Editor Updates
 ###### Callouts

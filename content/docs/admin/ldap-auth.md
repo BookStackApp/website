@@ -105,7 +105,7 @@ To avoid suffering from a MITM Attack via DNS Cache Poisoning or likewise, it is
 #Firstly get the Domain Controllers IP (DCIP)
 dig DCIP
 #Next get the SSL Cert from the DC
-openssl s_client -connect DCIP
+openssl s_client -connect DCIP:636
 #Finally copy it over to your Bookstack Servers's CA Cert list
 sudo vi /etc/ssl/certs/ca-certificates.crt
 

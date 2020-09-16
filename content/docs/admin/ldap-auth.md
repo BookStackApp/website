@@ -97,3 +97,17 @@ LDAP_GROUP_ATTRIBUTE="memberOf"
 # Remove users from roles that don't match LDAP groups.
 LDAP_REMOVE_FROM_GROUPS=false
 ```
+### LDAP_TLS_INSECURE=false Configuration
+
+To avoid suffering from a MITM Attack via DNS Cache Poisoning or likewise, it is recommended to ensure that the Bookstack server verifies the Domain Controlers identity.
+
+```bash
+#Firstly get the Domain Controlers IP (DCIP)
+dig DCIP
+#Next get the SSL Cert from the DC
+openssl s_client -connect DCIP
+#Finally copy it over to your Bookstack Servers's CA Cert list
+sudo vi /etc/ssl/certs/ca-certificates.crt
+
+
+

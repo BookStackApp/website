@@ -19,38 +19,130 @@ Although intended to be a quick release cycle, v0.30 is now here 5 months after 
 
 ### Audit Log
 
-//
+User activity within BookStack is shown across various locations of the system but it's
+always shown to a limited length. Additionally, there are some activities havn't been
+visible without database access such as item deletions.
+
+As of v0.30 you can now see an audit log interface if you have permission to both manage
+system settings and manage users. This is an unfiltered list of the activities that are 
+currently logged to the database by BookStack. Here's how this looks:
+
+![BookStack Audit Log](/images/2020/09/bookstack_audit_log.png)
+
+In this interface you're able to set a date range for activities in addition to being able to filter by activity type.
+In future releases we'll look to track more activity types and bring them into this interface.
 
 ### Code Block Editing Session History
 
-//
+Many people use BookStack to display and store code snippets so the code block editor can be core to many
+user's workflows within the platform. Unfortunately, since the code block editor opened in a popup,
+it was fairly easy to lose changes by clicking the popup close button or by accidentally clicking
+outside the popup.
+
+In v0.30 we've added session history to the code block editor:
+
+![BookStack Code Block Code Session Saving](/images/2020/09/code_block_session_saving.png)
+
+Any event that causes the popup to close will now save a copy of the contents into the browser's session
+history. Within the editor you'll see a "Session History" link, if anything is in the store, with a dropdown
+of times showing when code was saved. Clicking one of those times will update the editor with the code saved
+at that time. Note, This store is temporary intended for short-term recovery where needed; In most browsers
+this data will be cleared as soon as the browser tab is closed.
+
 
 ### Attachment Link Insertion
 
-//
+The process of inserting attachments into your page content has now been streamlined.
+A new link button found on the attachment list, when editing a page, allows you to 
+insert an attachment link, with the correct attachment name, into the page content with a single click.
+
+![BookStack Attachment Link Insert](/images/2020/09/attachment_link_insert.png)
+
+
+On FireFox, or any browser when using the MarkDown editor, you can also drag the attachment card directly 
+into your page content. Unfortunately chromium based browsers drag+drop handling, combined with the WYSIWYG edtitor's
+own event handling, proved too troublesome to implement this reliably for that environment.
+
 
 ### API Update - Chapters
 
-//
+Work continues on the API to bring us chapter endpoints in this release.
+As with the book endpoints, this includes API endpoints for exporting in the same
+formats we support via the standard UI.
+
+![BookStack API Chapters](/images/2020/09/api_chapters.png)
+
+Next up, we'll be looking to implement endpoints for pages.
+If you've played with the API I'd love to hear your feedback in this [GitHub issue](https://github.com/BookStackApp/BookStack/issues/1852).
 
 ### Dark Mode Tweaks
 
-//
+Since releasing dark mode in v0.29 we've had feedback regarding some choices
+made in addition to a good set of bugs being reported and fixed.
 
-### Removal of Vue.JS & Webpack
+When implementing dark mode I made the choice to use CSS filters to alter the saturation
+and brightness of imagery in the hopes it would make content sit within the theme better.
+After feedback I realise this was a bad decision; It's effectively altering core user-content
+which should remain in control of the user/editor. In addition, these filters could massively
+affect the legibility of screenshots and similar text-based imagery. Use of these filters on
+images has been removed in v0.30.
 
-//
+### Removal of Vue.js
+
+I absolutely love Vue.js, I've been a heavy user of the library with it being my go-to JS framework
+since version 1.0 after jumping ship from Angular 1. Therefore I used it to drive a some of the more
+dynamic elements of BookStack such as the image manager and attachments interface. Within BookStack, I 
+try to limit JS usage where possible, looking at native back-end solutions before jumping to JS solutions.
+Therefore I've slowly built up small little "components" written in fairly basic plain JS for elements such as 
+dropdowns and complex select menus. 
+
+The trouble with frameworks such as Vue is that they ideally need to own the DOM from the point they're attached to downwards. 
+That leads to friction with the little JS "components" we had elsewhere as they'd either need to be we-written as a
+vue component or an adapter would need to be created to "wire" the component into Vue.
+
+As much as I love Vue, it wasn't really needed in BookStack and we were not really using the full power of the framework.
+In v0.30 I've converted the existing vue usages to combined usages of back-end driven logic and extended the plain JS
+components we already had. The removal of Vue brings a small reduction in the initial JS bundle download size in addition
+to a bigger reducing of code being ran on each page load, leading to a more responsive interface overall.
+
+As part of these changes I've also spent some time trying to document and standardise
+and approach for these plain JS components [which can be seen here](https://github.com/BookStackApp/BookStack/blob/9e11fc33fa6cf657b35af97a268210ec447c59a7/dev/docs/components.md). I'm slowly updating the older components
+in the system to conform to this approach.
+
+### Removal of Webpack
+
+Unlike Vue.js, I've never really liked webpack due to the many hours I've wasted trying to integrate
+webpack based build systems into existing projects. That said, I've always respected webpack for it's 
+developed ecosystem and the sheer amount it is able to do.
+
+As of v0.30 we have removed webpack from the development flow of BookStack. Instead we're now using
+sass directly for CSS builds (Thanks [@timoschwarzer](https://github.com/BookStackApp/BookStack/pull/2166) for swapping
+this to the newer dart-sass during this release cycle) and using [esbuild](https://github.com/evanw/esbuild) for JS building & bundling. Our build systems 
+are all simply [npm scripts which can be seen here](https://github.com/BookStackApp/BookStack/blob/9e11fc33fa6cf657b35af97a268210ec447c59a7/package.json#L4-L9).
+
+In addition to a simpler setup, these changes bring some good performance imrpovements; As a rough example, These changes bring the development build time of both JS & CSS down from about 2.7 seconds to about 1.5 seconds on my development system.
 
 ### Failed Access Logging
 
-//
+Thanks to [@benrubson](https://github.com/BookStackApp/BookStack/pull/1881) it's now possible for failed login events
+to be logged to a log file. This will function for both the standard email & password login aswell as LDAP logins.
+
+To enable this you simple need to define the `LOG_FAILED_LOGIN_MESSAGE` option in your `.env` file like so:
+
+```bash
+LOG_FAILED_LOGIN_MESSAGE="Failed login for %u"
+```
+
+The optional "%u" element of the message will be replaced with the username or email provided in the login attempt
+when the message is logged. By default messages will be logged via the php `error_log` function which, in most
+cases, will log to your webserver error log files.
 
 ### Translations
 
 As always our teriffic translating tribe continue to provide their awesome efforts as this release brings updates
 from the below languages by the below great Crowdin & GitHub members:
 
-!!BELOW OUTDATED!
+# !!BELOW OUTDATED!
 
 * Hasan Özbey (the-turk) - *Turkish*
 * mrjaboozy - *Slovenian*

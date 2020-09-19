@@ -32,6 +32,24 @@ Check the below list for the version you are updating to for any additional inst
 ## Version Specific Instructions
 
 
+#### Updated to v0.30 or higher
+
+**Security** - Possible Privilege Escalation. During the v0.30 release cycle
+it was advised that current privilege escalation situations are not made clear when applying role permissions.
+Any user with a "Manage app settings", "Manage users" or "Manage roles & role permissions" system permission 
+assigned to one of their roles could technically alter their own permissions to gain wider access.
+A clear advisory of these cases has been added in the UI in v0.30
+but admins are advised to review which users have these permissions with the above in mind.
+
+
+**LDAP & SAML Group Matching** - During the v0.30 release cycle it was found that 
+BookStack roles would be matched to LDAP/SAML groups based upon the role display name, which is expected,
+but only those roles with a matching "name" value would be considered. This "name" field was redundant, 
+and has now been removed, but it would store a cleaned version the first-set name of the role.
+All roles will now be considered before being matched on name which may mean that roles which did not sync before, 
+that would have been expected to based on their name, may now start to sync.
+
+
 #### Updating to v0.29.3 or higher
 
 **Security** - v0.29.3 fixes an issue where the names of restricted/private books could seen by those without permission, if added to a shelf. This issue was introduced in BookStack v0.28.0.

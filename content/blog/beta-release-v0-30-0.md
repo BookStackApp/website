@@ -17,6 +17,29 @@ Although intended to be a quick release cycle, v0.30 is now here 5 months after 
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.30.0)
 
 
+Before we get into the features, just a couple of important advisories:
+
+
+**Security Notice** - Possible Privilege Escalation
+
+Thanks to [@Defelo](https://github.com/BookStackApp/BookStack/issues/2105)
+it was advised that current privilege escalation situations are not made clear when applying role permissions.
+Any user with a "Manage app settings", "Manage users" or "Manage roles & role permissions" system permission 
+assigned to one of their roles could technically alter their own permissions to gain wider access.
+A clear advisory of these cases has been added in the UI in v0.30
+but admins are advised to review which users have these permissions with the above in mind.
+
+
+**LDAP & SAML Group Matching** - Potential Change
+
+Thanks to [@nem1989](https://github.com/BookStackApp/BookStack/issues/2032) it was found that 
+BookStack roles would be matched to LDAP/SAML groups based upon the role display name, which is expected,
+but only those roles with a matching "name" value would be considered. This "name" field was redundant, 
+and has now been removed, but it would store a cleaned version the first-set name of the role.
+All roles will now be considered before being matched on name which may mean that roles which did not sync before, 
+that would have been expected to based on their name, may now start to sync.
+
+
 ### Audit Log
 
 User activity within BookStack is shown across various locations of the system but it's

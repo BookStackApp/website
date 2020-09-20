@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.30.0"
-date = 2020-09-20T10:00:00Z
+date = 2020-09-20T09:30:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/library-priscilla-du-preez.jpg"
 description = "The v0.30 release introduces the audit log, adds chapters to the API, improves code editing and more"

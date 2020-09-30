@@ -1,4 +1,4 @@
 ---
-title: "BookStack Blog"
-type: "User-Doc"
+Title: "BookStack Blog"
+Type: "User-Doc"
 ---

@@ -10,7 +10,7 @@ This site is built using [Hugo](https://gohugo.io). Images are stored using `git
 * Docs - `content/docs`
 * Theme - `themes/bookstack`
 
-### Theme
+### Themes
 
 The theme is custom made with snippets taken from the [hugo capser theme](https://github.com/vjeantet/hugo-theme-casper).
 

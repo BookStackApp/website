@@ -1,4 +1,4 @@
-# BookStack Site, Documentation & Blog
+# BookStack Site, Documentation , Blog and an Amazing Projects
 
 This project holds all the data for the https://www.bookstackapp.com/
 

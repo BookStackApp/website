@@ -4,13 +4,13 @@ This project holds all the data for the https://www.bookstackapp.com/
 
 This site is built using [Hugo](https://gohugo.io). Images are stored using `git-lfs`.
 
-### Data Locations
+### Data Locations neccessary
 
 * Blog Posts - `content/posts`
 * Docs - `content/docs`
 * Theme - `themes/bookstack`
 
-### Theme
+### Theme to learn
 
 The theme is custom made with snippets taken from the [hugo capser theme](https://github.com/vjeantet/hugo-theme-casper).
 

@@ -1,3 +1,8 @@
+<p align="center">
+  <img width="80" alt="The BookStackApp Logo" src="https://avatars0.githubusercontent.com/u/20912696?s=88&v=4">
+</p>
+</br>
+
 # BookStack Site, Documentation & Blog
 
 This project holds all the data for the https://www.bookstackapp.com/

@@ -43,6 +43,7 @@ var modeMap = {
   'language-nginx': 'nginx',
   'language-apache': 'apache',
   'language-php': 'php',
+  'language-sql': 'text/x-mysql',
 };
 
 var codeBlocks = document.querySelectorAll('pre');

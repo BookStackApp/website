@@ -32,7 +32,11 @@ Check the below list for the version you are updating to for any additional inst
 ## Version Specific Instructions
 
 
-#### Updated to v0.30 or higher
+#### Updating to v0.30.4 or higher
+
+**Security** - v0.30.4 fixes a couple of XSS vulnerabilities that could be exploited by untrusted users via page content and page link attachments. Please see the [blog release page for more details](/blog/beta-release-v0-30-4/).
+
+#### Updating to v0.30 or higher
 
 **Security** - Possible Privilege Escalation. During the v0.30 release cycle
 it was advised that current privilege escalation situations are not made clear when applying role permissions.

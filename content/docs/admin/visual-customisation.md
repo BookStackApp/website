@@ -21,7 +21,7 @@ in the admin settings of BookStack.
 body, button, input, select, label, textarea {
   font-family: "Roboto", sans-serif;
 }
-.Codemirror, pre, #markdown-editor-input, .editor-toolbar, .code-base {
+.CodeMirror, pre, #markdown-editor-input, .editor-toolbar, .code-base {
   font-family: monospace;
 }
 </style>
@@ -35,7 +35,7 @@ Here's an example of using the 'Lato' font from [Google Web Fonts](https://fonts
 body, button, input, select, label, textarea {
   font-family: 'Lato', sans-serif;
 }
-.Codemirror, pre, #markdown-editor-input, .editor-toolbar, .code-base {
+.CodeMirror, pre, #markdown-editor-input, .editor-toolbar, .code-base {
   font-family: monospace;
 }
 </style>

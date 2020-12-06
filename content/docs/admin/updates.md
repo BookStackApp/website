@@ -31,6 +31,11 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
+The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
+
+#### Updating to v0.30.5 or higher
+
+**Security** - v0.30.5 fixes an potential vulnerability where a user with edit permissions could perform server-side requests using the export system. Additionally it was found that, if using standard email/password authentication, the system host URL could be manipulated on the forgot password form which could allow for email phishing attempts. Ensure you have set the `APP_URL` option in your `.env` file to help prevent this. Please see the [blog release page for more details](/blog/beta-release-v0-30-5/).
 
 #### Updating to v0.30.4 or higher
 

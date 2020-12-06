@@ -9,6 +9,9 @@ Since BookStack can hold important information for users you should be aware of 
 Read through the below to ensure you have secured your BookStack instance. Note, The below only
 relates to BookStack itself. The security of the server BookStack is hosted on is not instructed below but should be taken into account.
 
+If you'd like to be notified of new potential security concerns you can sign-up to the [BookStack security mailing list](http://eepurl.com/glIh8z). For reporting security vulnerabilities, please see the ["Security" section](https://github.com/BookStackApp/BookStack/blob/master/readme.md#-security) of the project readme on GitHub.
+
+
 <ul>
     <li><a href="#initial-security-setup">Initial Security Setup</a></li>
     <li><a href="#securing-images">Securing Images</a></li>
@@ -32,9 +35,10 @@ opens up a lot of code that does not need to be public. Triple check this if you
 BookStack within the commonly used `/var/www` folder.
 3. Ensure the database user you've used for BookStack has limited permissions for only accessing
 the database used for BookStack data.
-4. Within BookStack, go through the settings to ensure registration and public access settings are as you expect.
-5. Review the user roles in the settings area.
-6. Read the below to further understand the security for images & attachments.
+4. Check that you've set the `APP_URL` option in your `.env` file so that system generated URLs cannot be manipulated.
+5. Within BookStack, go through the settings to ensure registration and public access settings are as you expect.
+6. Review the user roles in the settings area.
+7. Read the below to further understand the security for images & attachments.
 
 ---
 

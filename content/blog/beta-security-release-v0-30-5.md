@@ -11,7 +11,7 @@ draft = false
 +++
 
 
-Phishing and and server-side request forgery vulnerabilities have been found within BookStack. Release v0.30.5 will remove this server-side request forgery issue while bringing updating wording and advisories to prevent the potential phishing vulnerability.
+Phishing and and server-side request forgery vulnerabilities have been found within BookStack. Release v0.30.5 will remove this server-side request forgery issue while bringing updated wording and advisories to prevent the potential phishing vulnerability.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.30.5)

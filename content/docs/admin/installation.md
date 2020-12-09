@@ -67,6 +67,9 @@ git clone https://github.com/BookStackApp/BookStack.git --branch release --singl
 #### URL Rewrite rules
 
 **Apache**
+
+Ensure `mod_rewrite` is enabled.
+
 ```apache
 Options +FollowSymLinks
 RewriteEngine On
@@ -77,6 +80,8 @@ RewriteRule ^ index.php [L]
 ```
 
 **Nginx**
+
+
 ```nginx
 location / {
     try_files $uri $uri/ /index.php?$query_string;

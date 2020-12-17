@@ -33,6 +33,10 @@ Check the below list for the version you are updating to for any additional inst
 
 The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
 
+#### Updating to v0.30.6 or higher
+
+**Security** - v0.30.6 addresses an issue where page content could be visible to those without permission. If a chapter was visible to a user, but all of it's pages were made not visible, then the details of these pages could be visible. Within the BookStack interface, the names of the pages and preview content could be seen. If the parent book was exported then this would include the content of the pages that had been restricted. Please see the [blog release page for more details](/blog/beta-release-v0-30-6/).
+
 #### Updating to v0.30.5 or higher
 
 **Security** - v0.30.5 fixes an potential vulnerability where a user with edit permissions could perform server-side requests using the export system. Additionally it was found that, if using standard email/password authentication, the system host URL could be manipulated on the forgot password form which could allow for email phishing attempts. Ensure you have set the `APP_URL` option in your `.env` file to help prevent this. Please see the [blog release page for more details](/blog/beta-release-v0-30-5/).
@@ -83,7 +87,7 @@ sudo systemctl restart nginx.service
 
 #### Updating to v0.26 or higher
 
-**Internet Explorer Support** - IE11 Support has now been dropped. We *may* support any critical issues for view-only scenarios otherwise please use a modern browser.
+**Internet Explorer Support** - IE11 Support has now been dropped. Please use a modern browser.
 
 **Translations** - Since many interfaces and lines of text have been updated, It may take a little while for some translations to catch-up. Expect to see more English text than usual if you're using a non-English language option.
 

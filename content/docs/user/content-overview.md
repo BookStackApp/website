@@ -32,7 +32,7 @@ Bookshelves, Books, chapters and pages have set colour coding in BookStack to en
 
 ### Starting Out
 
-When you start out with your new BookStack instance you can organise things in two ways; You can plan out your book/chapter/page structure or you can let things grow naturally over time. If you know or already have the content which will be going into BookStack then it's probably best to plan early otherwise, if you're starting from scratch, you'll want to let everything find it's own place.
+When you start out with your new BookStack instance you can organise things in two ways; You can plan out your book/chapter/page structure or you can let things grow naturally over time. If you know or already have the content which will be going into BookStack then it's probably best to plan early otherwise, if you're starting from scratch, you'll want to let everything find its own place.
 
 If you decide to grow naturally then you'll likely start with a book for each major category and add pages directly into those books. As you start getting a lot of pages in each book you'll start to use chapters to group those pages. Once a chapter gets too large you may find it better to split it out into it's own book. Within BookStack you can easily move chapters and pages between books and chapters so you shouldn't worry about having to move things around in the future.
 

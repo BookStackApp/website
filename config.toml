@@ -10,6 +10,18 @@ enableGitInfo=true
     [markup.goldmark.renderer]
       unsafe = true
       xHTML = true
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = "vs"
+    tabWidth = 4
 
 [permalinks]
   post = "/blog/:slug/"

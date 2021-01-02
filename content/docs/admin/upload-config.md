@@ -128,9 +128,15 @@ PHP has two main variables which effect upload limits. Find your `php.ini` file 
 
 If the values of these variables are low increase them to something sensible that's not too high to cause issues. Unless you need something higher 10MB is a sensible value to enter for these values:
 
-```
+```ini
 post_max_size = 10M
 upload_max_filesize = 10M
+```
+
+If wanting to upload files over 128MB, you may also need to adjust your PHP memory limit like so:
+
+```ini
+memory_limit = 256M
 ```
 
 After updating these values ensure you restart your webserver and also PHP if using PHP-FPM or something similar.

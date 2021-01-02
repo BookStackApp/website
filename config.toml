@@ -1,6 +1,6 @@
 languageCode = "en-gb"
 title = "BookStack"
-baseurl = "https://bookstackapp.com/"
+baseurl = "https://www.bookstackapp.com/"
 theme="bookstack"
 enableGitInfo=true
 

@@ -20,6 +20,7 @@ If you'd like to be notified of new potential security concerns you can sign-up 
     <li><a href="#javascript-in-page-content">JavaScript in Page Content</a></li>
     <li><a href="#web-crawler-control">Web Crawler Control</a></li>
     <li><a href="#secure-cookies">Secure Cookies</a></li>
+    <li><a href="#iframe-control">Host IFrame Control</a></li>
     <li><a href="#failed-access-logging">Failed Access Logging</a></li>
 </ul>
 
@@ -130,7 +131,26 @@ The rules found in the `/robots.txt` file are automatically controlled via the "
 
 ### Secure Cookies
 
-BookStack uses cookies to track sessions, remember logins and for XSRF protection. When using HTTPS you may want to ensure that cookies are only sent back to the browser if the connection is over HTTPS. This can be enabled by setting `SESSION_SECURE_COOKIE=true` in your `.env` file.
+BookStack uses cookies to track sessions, remember logins and for XSRF protection. When using HTTPS you may want to ensure that cookies are only sent back to the browser if the connection is over HTTPS. If you have set a https `APP_URL` option in your `.env` this will enabled automatically but it can also be forced on by setting `SESSION_SECURE_COOKIE=true` in your `.env` file.
+
+---
+
+<a name="iframe-control"></a>
+
+### Host Iframe Control
+
+By default BookStack will only allow itself to be embedded within iframes on the same domain as you're hosting on. This is done through a [CSP: frame-ancestors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) header. You can add additional trusted hosts by setting a `ALLOWED_IFRAME_HOSTS` option in your `.env` file like the example below:
+
+```bash
+# Adding a single host
+ALLOWED_IFRAME_HOSTS="https://example.com"
+
+# Mulitple hosts can be separated with a space
+ALLOWED_IFRAME_HOSTS="https://a.example.com https://b.example.com"
+```
+
+Note, when this option is used then all cookies will served with `SameSite=None` [(info)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#None) set so that
+a user session can persist within the iframe.
 
 ---
 

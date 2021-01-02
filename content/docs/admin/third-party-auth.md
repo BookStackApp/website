@@ -205,7 +205,7 @@ GitLab authentication works for both [gitlab.com](https://gitlab.com) and self-h
 3. Set a name to identify the application, such as 'BookStack Authentication', and in the 'Redirect URI' input add both of the below URLs, Changing `https://example.com` to the base URL of your BookStack instance:
     - `https://example.com/login/service/gitlab/callback`
     - `https://example.com/register/service/gitlab/callback`
-4. Do not select any of the 'Scopes' checkboxes.
+4. Select the checkbox for the `read_user` scope.
 5. Press 'Save application'. You will be shown the application ID and secret which you'll need for the next step.  
 6. Copy the below details and add them as new variables in your `.env` file like so:
     ```bash

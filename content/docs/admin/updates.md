@@ -33,6 +33,13 @@ Check the below list for the version you are updating to for any additional inst
 
 The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
 
+#### Updating to v0.31.0 or higher
+
+**Requirements Change** - The minimum required PHP version has changed from 7.2 to 7.2.5. Additionally, the `Tidy` PHP extension is no longer required.
+
+**GitLab Authentication** - The `read_user` scope will now be passed and will be required on the "Application" setup within GitLab. Not having this scope may lead to errors when users attempt to authenticate via GitLab.
+
+**Security & IFrame Usage** - By default BookStack will set headers to prevent usage within an iframe. You can set trusted iframe hosts through the `ALLOWED_IFRAME_HOSTS`. See the [security page](/docs/admin/security#iframe-control) for more information on this option.
 
 #### Updating to v0.30.6, v0.30.7 or higher
 

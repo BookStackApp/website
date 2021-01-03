@@ -29,7 +29,7 @@ without having to restore a database backup, using the new recycle bin system.
 When you delete a shelf, book, chapter or page they'll now be sent to the recycle bin:
 
 
-RECYCLE BIN LIST IMAGE
+![Recycle Bin Listing](/images/2021/01/recycle_bin.png)
 
 
 On each item you can choose to restore or permenantly delete it as required. By default, Items deleted
@@ -37,7 +37,7 @@ over 30 days ago may be automatically permenantly deleted from the recycle bin.
 
 The recycle bin can be accessed via the maintenance page:
 
-MAINTENANCE PAGE IMAGE
+![Recycle Bin Maintenance Overview](/images/2021/01/recycle_bin_maintenance.png)
 
 The inclusion of the recycle bin also introduces a change into how chapter deletion works. Previously deleting
 a chapter would cause all child pages to be moved to the parent book. From v0.31, deleting a chapter will send
@@ -53,7 +53,7 @@ use in practice since the owner would always simply be the creator.
 In v0.31 the owner is now a separately tracked user, defaulting to the creator. The owner can be changed
 on the permissions page of a shelf, book, chapter or page as shown below:
 
-OWNER PERMISSIONS PAGE IMAGE
+![Page OwnerShip Change](/images/2021/01/ownership_change.png)
 
 When you delete a user, you'll now be given the option to transfer ownership to another user if required.
 
@@ -65,7 +65,7 @@ they can only create, edit and delete within their own book.
 With v0.30 introducing the audit log, time has been spent this release cycle on expanding the tracked activities
 to include many more events such as logins, user-management actions and settings update actions.
 
-AUDIT LOG WITH MORE ACTIVITIES IMAGE
+![New Audit Log Activities](/images/2021/01/audit_log_updates.png)
 
 ### User List Changes
 
@@ -73,7 +73,7 @@ A common requirement when managing users is to see who's inactive and therefore 
 This was previously tricky to do without direct database queries or careful manual monitoring but now in v0.31
 the latest activity will now be shown on the users list within a sortable column:
 
-USER LIST IMAGE
+![User List with Latest Activity](/images/2021/01/user_list_activity.png)
 
 Since you can sort by this column you can quickly find inactive users. Note, the latest activity date
 reflected is based on the activity tracked in the audit-log, so does not include view/read only events but should 
@@ -90,7 +90,7 @@ In v0.31 we've now switched to [ssddanbrown/htmldiff](https://github.com/ssddanb
 from a [c# implementation found here](https://github.com/Rohland/htmldiff.net) which is a port of a [ruby implementation found here](https://github.com/myobie/htmldiff).  Major credit to [@Rohland](https://github.com/Rohland) and [@myobie](https://github.com/myobie) for their original work which I
 have simply ported.
 
-CHANGES SCREENSHOT
+![Revision Changes View](/images/2021/01/changes_view.png)
 
 This new library does not have the PHP Tidy extension requirement so should make installation & maintenance
 easier for some. From my testing this new library has appeared to work without issue but we will have to see
@@ -101,7 +101,7 @@ how it performs in wider use.
 This release brings page endpoints to the REST API. This completes the initial phase
 of the API now that we have CRUD endpoints for shelves, books, chapters and pages.
 
-API DOCS FOR PAGES SCREENSHOT
+![Pages API Documentation](/images/2021/01/pages_api.png)
 
 Now the core content parts are in place, I'm open to GitHub issues being created to request
 specific features or endpoints so further actions can be performed. 

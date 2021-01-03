@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "Beta Release v0.31.0"
-date = 2021-01-03T19:30:00Z
+date = 2021-01-03T21:30:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/winter-fox-birger-strahl.jpg"
 description = "We begin 2021 with BookStack v0.31 which comes with recycle bin functionality, the page REST API endpoints and much more"
@@ -10,8 +10,8 @@ slug = "beta-release-v0-31-0"
 draft = false
 +++
 
-We kick of this optimistic year with BookStack v0.31 which includes some great additions and updates to existing functionality including
-a new recycle bin system, controllable item ownership, audit log changes, pages API and much more.
+We kick of this optimistic year with BookStack v0.31 which includes some great additions & updates to existing functionality including
+a new recycle bin system, controllable item ownership, audit log changes, page API endpoints and much more.
 
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
@@ -24,7 +24,7 @@ read through the version specific notes on the [updates page](https://www.bookst
 
 ### Recycle Bin
 
-Every had an accidental deletion in your instance that you needed to undo? Now you can,
+Ever had an accidental deletion in your instance that you needed to undo? Now you can,
 without having to restore a database backup, using the new recycle bin system. 
 When you delete a shelf, book, chapter or page they'll now be sent to the recycle bin:
 
@@ -32,26 +32,27 @@ When you delete a shelf, book, chapter or page they'll now be sent to the recycl
 ![Recycle Bin Listing](/images/2021/01/recycle_bin.png)
 
 
-On each item you can choose to restore or permenantly delete it as required. By default, Items deleted
-over 30 days ago may be automatically permenantly deleted from the recycle bin.
+On each item you can choose to restore or permanently delete it as required. By default, Items deleted
+over 30 days ago may be automatically permanently deleted from the recycle bin.
 
-The recycle bin can be accessed via the maintenance page:
+The recycle bin can be accessed via the maintenance page where you'll also be provided with an overview of what is 
+currently in the bin:
 
 ![Recycle Bin Maintenance Overview](/images/2021/01/recycle_bin_maintenance.png)
 
 The inclusion of the recycle bin also introduces a change into how chapter deletion works. Previously deleting
 a chapter would cause all child pages to be moved to the parent book. From v0.31, deleting a chapter will send
-the chapter and all child pages to the recycle bin. This aligns the deletion behaviour with that of books.
+the chapter and all child pages to the recycle bin. This aligns with the deletion behaviour of books.
 
 
 ### Item Ownership
 
-BookStack has long had permissions available that permit the owner of content to make certain actions, Things like
-user is able to create pages witihn their own books. While potentially useful, these permissions were hard to 
+Since March in 2016 BookStack has had permissions available that permit the owner of content to make certain actions, For scenarios
+such as "user is able to create pages within their own books". While potentially useful, these permissions were hard to 
 use in practice since the owner would always simply be the creator.
 
 In v0.31 the owner is now a separately tracked user, defaulting to the creator. The owner can be changed
-on the permissions page of a shelf, book, chapter or page as shown below:
+on the permissions view of a shelf, book, chapter or page as shown below:
 
 ![Page OwnerShip Change](/images/2021/01/ownership_change.png)
 
@@ -62,7 +63,7 @@ they can only create, edit and delete within their own book.
 
 ### Audit Log Updates
 
-With v0.30 introducing the audit log, time has been spent this release cycle on expanding the tracked activities
+With the last feature release introducing the audit log, time has been spent this release cycle on expanding the tracked activities
 to include many more events such as logins, user-management actions and settings update actions.
 
 ![New Audit Log Activities](/images/2021/01/audit_log_updates.png)
@@ -114,8 +115,8 @@ create other scripts.
 
 ### Iframe & Cookie Security Updates
 
-Over the last 6 months some of the mainstream browsers has added addition protections for cookies
-restricting the default usage within a third-part context. For BookStack, this meant that access
+Over the last 6 months some of the mainstream browsers have added additional protections for cookies,
+restricting the default usage within a third-party context. For BookStack, this meant that access
 through an iframe may not fully work due to cookies being blocked.
 
 In v0.31, we've added additional controls to prevent usage within an iframe. [CSP frame-ancestors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) headers will now be set, and used by modern browsers, to ensure it will only load within an iframe 
@@ -138,13 +139,43 @@ Details of this have been added to the [security page of the docs](/docs/admin/s
 
 ### Translations
 
+Big thanks to [@Swoy](https://github.com/BookStackApp/BookStack/pull/2336) who as provided Norwegian translations to BookStack for this release.
+In addition, the below list shows the fantastic translators that have made changes since v0.30 and the languages they've updated:
+
+* [@Swoy](https://github.com/BookStackApp/BookStack/pull/2336) - *Norwegian*
+* Andrej Močan (andrejm) - *Slovenian*
+* gilane9_ - *Arabic*
+* Jakub Bouček (jakubboucek) - *Czech*
+* Raed alnahdi (raednahdi) - *Arabic*
+* rcy - *Swedish*
+* Mykola Ronik (Mantikor) - *Ukrainian*
+* m0uch0 - *Spanish*
+* Xiphoseer - *German*
+* 10935336 - *Chinese Simplified*
+* MerlinSVK (merlinsvk) - *Slovak*
+* nutsflag - *French*
+* Kauê Sena (kaue.sena.ks) - *Portuguese, Brazilian*
+* Leonardo Mario Martinez (leonardo.m.martinez) - *Spanish, Argentina*
+* Vuong Trung Hieu (fpooon) - *Vietnamese*
+* milesteg - *Hungarian*
+* Statium - *Russian*
+* Ghost_chu (dbguichu) - *Chinese Simplified*
+* Ikhwan Koo (Ikhwan.Koo) - *Korean*
+* Marco (cdrfun) - *German*
+* MatthieuParis - *French*
+* Douradinho - *Portuguese, Brazilian*
+* Lowkey (v587ygq) - *Chinese Simplified*
+* Beenbag - *German*
+* ReadySystems - *Arabic*
+* Gaku Yaguchi (tama11) - *Japanese*
+* 孟繁阳 (FanyangMeng) - *Chinese Simplified*
+
 
 
 ### Full List of Changes
 
-* Translation Updates. ([#2439](https://github.com/BookStackApp/BookStack/pull/2439), [#2327](https://github.com/BookStackApp/BookStack/pull/2327))
 * Added recycle bin implementation. ([#2283](https://github.com/BookStackApp/BookStack/pull/2283), [#2183](https://github.com/BookStackApp/BookStack/issues/2183), [#280](https://github.com/BookStackApp/BookStack/issues/280))
-* Added Norwegian translation to BookStack. Thanks to [@Swoy](https://github.com/BookStackApp/BookStack/pull/2336). ([#2336](https://github.com/BookStackApp/BookStack/pull/2336))
+* Added Norwegian translations to BookStack. Thanks to [@Swoy](https://github.com/BookStackApp/BookStack/pull/2336). ([#2336](https://github.com/BookStackApp/BookStack/pull/2336))
 * Added ownership system for pages, chapters, books and shelves. ([#2436](https://github.com/BookStackApp/BookStack/pull/2436), [#2246](https://github.com/BookStackApp/BookStack/issues/2246))
 * Added host iframe control with cookie security management. ([#2427](https://github.com/BookStackApp/BookStack/issues/2427), [#2207](https://github.com/BookStackApp/BookStack/issues/2207))
 * Added API endpoints for pages. ([#2382](https://github.com/BookStackApp/BookStack/pull/2382))
@@ -153,10 +184,11 @@ Details of this have been added to the [security page of the docs](/docs/admin/s
 * Replaced revision diff library so that the php tidy extension is no longer required. ([#2347](https://github.com/BookStackApp/BookStack/issues/2347), [#1553](https://github.com/BookStackApp/BookStack/issues/1553))
 * Updated GitLab authentication to use the `read_user` scope. ([#2359](https://github.com/BookStackApp/BookStack/issues/2359))
 * Updated revision restore to add sensible default change summary text. Thanks to [@rondaa](https://github.com/BookStackApp/BookStack/pull/2353). ([#2353](https://github.com/BookStackApp/BookStack/pull/2353), [#2349](https://github.com/BookStackApp/BookStack/issues/2349))
-* Updated "Cleanup Images" maintenance option wording for clarity. ([#2352](https://github.com/BookStackApp/BookStack/issues/2352))
+* Updated the "Cleanup Images" maintenance option wording for clarity. ([#2352](https://github.com/BookStackApp/BookStack/issues/2352))
 * Updated dev docker setup to install composer dependencies in Docker entrypoint. Thanks to [@timoschwarzer](https://github.com/BookStackApp/BookStack/pull/2298). ([#2298](https://github.com/BookStackApp/BookStack/pull/2298))
 * Updated chapter delete behaviour so pages are removed instead of being moved to the parent book. ([#2164](https://github.com/BookStackApp/BookStack/issues/2164))
 * Updated grid-layout book/shelf item names to better fit into two lines. ([#1469](https://github.com/BookStackApp/BookStack/issues/1469))
+* Updated translations. ([#2439](https://github.com/BookStackApp/BookStack/pull/2439), [#2327](https://github.com/BookStackApp/BookStack/pull/2327))
 * Fixed issue where the export dropdown may show cut-off with options hidden. Thanks to [@shubhamosmosys](https://github.com/BookStackApp/BookStack/pull/2416). ([#2416](https://github.com/BookStackApp/BookStack/pull/2416))
 
 
@@ -167,7 +199,7 @@ look to spend some time reviewing a few of those.
 
 Now we have the core elements of the API integrated we'll now see what other features people may need. I'm imagining we'd add a few endpoints each future release for a while.
 
-With the API base down and the activity system fleshed out, now may be a good time to implement an outbound webook system.
+With the API base down and the activity system fleshed out, now may be a good time to implement an outbound web-hook system.
 I'll likely create an implementation proposal so I can ensure we'd be covering the main use-cases required.
 
 PHP 8 support is another thing I'll look to work on over the next release cycle. Some work has been put into this but, due to 

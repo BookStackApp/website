@@ -149,7 +149,7 @@ ALLOWED_IFRAME_HOSTS="https://example.com"
 ALLOWED_IFRAME_HOSTS="https://a.example.com https://b.example.com"
 ```
 
-Note, when this option is used then all cookies will served with `SameSite=None` [(info)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#None) set so that
+Note: when this option is used, all cookies will served with `SameSite=None` [(info)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#None) set so that
 a user session can persist within the iframe.
 
 ---

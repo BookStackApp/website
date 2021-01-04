@@ -241,7 +241,14 @@ input[type=text] {
       box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
     }
   }
+  figcaption {
+    margin-bottom: .5rem;
+  }
+  h4 {
+    margin-bottom: 0;
+  }
 }
+
 
 .docs-content {
   padding-bottom: $-xxl;

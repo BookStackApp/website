@@ -11,6 +11,10 @@
   &:active {
     background-color: darken($backgroundColor, 8%);
   }
+  &:focus {
+    outline: 1px solid $primary;
+    outline-offset: 3px;
+  }
 }
 
 // Button Specific Variables
@@ -31,51 +35,13 @@ $button-border-radius: 2px;
   cursor: pointer;
   transition: all ease-in-out 120ms;
   box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.21);
-  @include generate-button-colors(#EEE, $primary);
+  @include generate-button-colors(#FFF, $primary);
 }
 
 .button, input[type="button"], input[type="submit"]  {
   @extend .button-base;
-  &.pos {
-    @include generate-button-colors(#EEE, $positive);
-  }
-  &.neg {
-    @include generate-button-colors(#EEE, $negative);
-  }
-  &.secondary {
-    @include generate-button-colors(#EEE, $secondary);
-  }
   &.muted {
-    @include generate-button-colors(#EEE, #888);
-  }
-}
-
-.text-button {
-  @extend .link;
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
-  border: none;
-  &:focus, &:active {
-    outline: 0;
-  }
-  &.neg {
-    color: $negative;
-  }
-}
-
-.button-group {
-  @include clearfix;
-  .button, button[type="button"] {
-    margin: $-xs 0 $-xs 0;
-    float: left;
-    border-radius: 0;
-    &:first-child {
-      border-radius: $button-border-radius 0 0 $button-border-radius;
-    }
-    &:last-child {
-      border-radius: 0 $button-border-radius $button-border-radius 0;
-    }
+    @include generate-button-colors(#FFF, #888);
   }
 }
 

@@ -30,7 +30,7 @@
         <h2 id="features">Features</h2>
         <div class="row">
             <div class="col-sm-4">
-                <h4><span class="icon">{{partial "icon/code.svg"}}</span>Free &amp; Open Source</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/code.svg"}}</span>Free &amp; Open Source</h4>
                 <p>BookStack is fully free and open, MIT licensed. The source is available on GitHub. There is no cost to downloading and installing your own instance of bookstack.
                 </p>
                 <p>
@@ -38,16 +38,18 @@
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h4><span class="icon">{{partial "icon/laptop_chromebook.svg"}}</span>Easy, Simple Interface</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/laptop_chromebook.svg"}}</span>Easy, Simple Interface</h4>
                 <p>
                     Simplicity has been the top priority when building BookStack. The page editor has a simple WYSIWYG interface and all content is broken into three simple real world groups:
                 </p>
                 <p>
-                    <span class="icon book">{{partial "icon/book.svg"}}</span>Books &nbsp;&nbsp;<span class="icon chapter">{{partial "icon/collections_bookmark.svg"}}</span>Chapters&nbsp;&nbsp; <span class="icon page">{{partial "icon/description.svg"}}</span>Pages
+					<span class="icon book" aria-hidden="true">{{partial "icon/book.svg"}}</span>Books
+					&nbsp;&nbsp;<span class="icon chapter" aria-hidden="true">{{partial "icon/collections_bookmark.svg"}}</span>Chapters&nbsp;&nbsp;
+					<span class="icon page" aria-hidden="true">{{partial "icon/description.svg"}}</span>Pages
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h4><span class="icon">{{partial "icon/search.svg"}}</span>Searchable and Connected</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/search.svg"}}</span>Searchable and Connected</h4>
                 <p>
                     The content in BookStack is fully searchable. You are able to search at book level or across all books, chapters &amp; pages. The ability to link directly to any paragraph allows you to keep your documentation connected.
                 </p>
@@ -58,19 +60,19 @@
         </p>
         <div class="row">
             <div class="col-sm-4">
-                <h4><span class="icon">{{partial "icon/build.svg"}}</span>Configurable</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/build.svg"}}</span>Configurable</h4>
                 <p>
                     Configuration options allow you to set-up BookStack to suit your use case. You can change the name, Logo and registration options. You can also change whether the whole system is publicly viewable or not.
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h4><span class="icon">{{partial "icon/storage.svg"}}</span>Simple Requirements</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/storage.svg"}}</span>Simple Requirements</h4>
                 <p>
                     BookStack is built using PHP, on top of the Laravel framework and it uses MySQL to store data. Performance has been kept in mind and BookStack can run happily on a $5 Digital Ocean VPS.
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h4><span class="icon">{{partial "icon/directions_boat.svg"}}</span>Powerful Features</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/directions_boat.svg"}}</span>Powerful Features</h4>
                 <p>
                     On top of the powerful search and linking there is also cross-book sorting, page revisions and image management. A full role and permission system allow you to lock down content and actions as required.
                 </p>
@@ -81,19 +83,19 @@
         </p>
         <div class="row">
             <div class="col-sm-4">
-                <h4><span class="icon">{{partial "icon/language.svg"}}</span>Multi-lingual</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/language.svg"}}</span>Multi-lingual</h4>
                 <p>
                     BookStack users can set their preferred language. Thanks to great community contributors, Current languages built into BookStack include EN, FR, DE, ES, IT, JA, NL, PL, RU and more.
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h4><span class="icon">{{partial "icon/edit.svg"}}</span>Optional Markdown Editor</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/edit.svg"}}</span>Optional Markdown Editor</h4>
                 <p>
                    If you prefer to write in Markdown then BookStack supports you. A markdown editor is provided and includes a live-preview as you write your documentation.
                 </p>
             </div>
             <div class="col-sm-4" >
-                <h4><span class="icon">{{partial "icon/lock.svg"}}</span>Integrated Authentication</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/lock.svg"}}</span>Integrated Authentication</h4>
                 <p>
                 	As well as the default email/password login social providers such as GitHub, Google, Slack, AzureAD and more can be used. Okta and LDAP options are available for enterprise environments.
                 </p>
@@ -122,8 +124,8 @@
     			<div class="col-sm-6 text-center">
 					<div class="demo-box text-left " >
 						<label>Demo site url</label> <br><a href="https://demo.bookstackapp.com" target="_blank">https://demo.bookstackapp.com</a> <br>
-						<label>Admin email</label> <br><input type="text" onclick="this.select();" value="admin@example.com" readonly="true"><br>
-						<label>Admin password</label> <br><input type="text" onclick="this.select();" value="password" readonly="true"> <br><br>
+						<label for="demo-email">Admin email</label> <br><input id="demo-email" type="text" onclick="this.select();" value="admin@example.com" readonly="true"><br>
+						<label for="demo-password">Admin password</label> <br><input id="demo-password" type="text" onclick="this.select();" value="password" readonly="true"> <br><br>
 						<a href="https://demo.bookstackapp.com/login?email=admin@example.com&password=password" class="button" target="_blank">Open demo site</a>
 					</div>
     			</div>
@@ -138,8 +140,8 @@
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>Page View</h4>
-						<p>How core content is viewed in BookStack</p>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>How core content is viewed in BookStack</figcaption>
 						    <a href="images/screenshots/page-view.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_page-view.png" alt="Page View" loading="lazy">
 						    </a>
@@ -147,8 +149,8 @@
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>Page Editor</h4>
-						<p>The WYSIWYG interface for editing pages</p>
-						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>The WYSIWYG interface for editing pages</figcaption>
 						    <a href="images/screenshots/page-edit.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_page-edit.png" alt="Page Editing" loading="lazy">
 						    </a>
@@ -156,8 +158,8 @@
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>Image Manager</h4>
-						<p>How images are uploaded and managed</p>
-						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>How images are uploaded and managed</figcaption>
 						    <a href="images/screenshots/image-manager.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_image-manager.png" alt="Image Manager" loading="lazy">
 						    </a>
@@ -170,8 +172,8 @@
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>All Books Overview</h4>
-						<p>An overview of the top-level categorisation</p>
-						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>An overview of the top-level categorisation</figcaption>
 						    <a href="images/screenshots/books-view.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_books-view.png" alt="View of all books" loading="lazy">
 						    </a>
@@ -179,8 +181,8 @@
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>Book Overview</h4>
-						<p>A view of the main content container: A book</p>
-						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>A view of the main content container: A book</figcaption>
 						    <a href="images/screenshots/book-overview.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_book-overview.png" alt="Book Overview" loading="lazy">
 						    </a>
@@ -188,8 +190,8 @@
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>Book Sorting</h4>
-						<p>How created content can be sorted within a book</p>
-						<figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>How created content can be sorted within a book</figcaption>
 						    <a href="images/screenshots/book-sorting.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_book-sorting.png" alt="Book Content Sorting View" loading="lazy">
 						    </a>
@@ -202,8 +204,8 @@
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>Global Search</h4>
-						<p>The main interface for searching created content</p>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>The main interface for searching created content</figcaption>
 						    <a href="images/screenshots/search.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_search.png" alt="Searching all content" loading="lazy">
 						    </a>
@@ -211,8 +213,8 @@
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>App Settings</h4>
-						<p>A view the of application system settings</p>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>A view the of application system settings</figcaption>
 						    <a href="images/screenshots/settings-view.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_settings-view.png" alt="Settings View" loading="lazy">
 						    </a>
@@ -220,8 +222,8 @@
 					</div>
 					<div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 						<h4>Profile Page</h4>
-						<p>A user profile page, showing their activity and content</p>
 						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+							<figcaption>A user profile page, showing their activity and content</figcaption>
 						    <a href="images/screenshots/profile-page.png" data-size="1666x910">
 						        <img src="images/screenshots/thumb_profile-page.png" alt="Profile Editing Screen" loading="lazy">
 						    </a>

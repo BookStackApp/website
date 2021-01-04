@@ -337,7 +337,9 @@ h2.thin-margin {
   margin-bottom: $-m;
   width: 280px;
   background-color: #FFF;
-  border: 1px solid #DDD;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
   a {
     display: block;
   }
@@ -348,6 +350,9 @@ h2.thin-margin {
   .text {
     padding: $-m;
     min-height: 80px;
+  }
+  &:hover {
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);
   }
 }
 

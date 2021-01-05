@@ -14,6 +14,11 @@
 	border: 0;
 }
 
+.post-content {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
 .post-content img:not(.no-border) {
 	border-radius: 3px;
 	border: 1px solid #DDD;
@@ -69,10 +74,11 @@ article.post {
 
 #mc_embed_signup {
 	background: #F8F8F8;
-	padding: $-m;
+	padding: $-l;
 	border: 1px solid #DDD;
 	margin-bottom: $-xl;
 	margin-top: $-l;
+	border-radius: 4px;
 	h4 {
 		margin-top: 0;
 	}

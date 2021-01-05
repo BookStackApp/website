@@ -9,35 +9,37 @@
 
   <div class="row">
 
-    <div class="col-md-6 col-md-offset-1 col-sm-7 post-content">
+    <div class="col-md-9">
 
-      <h1>{{.Title}}</h1>
+      <div class="post-content">
+        <h1>{{.Title}}</h1>
 
-      <p class="post-date text-muted" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-          {{$author := index .Site.Data.authors (or .Params.author .Site.Params.author)}}
-          {{$authorname := or $author.name .Site.Params.author }}
-          {{$authorthumbnail := or $author.thumbnail .Site.Params.author }}
-          <img class="post-avatar no-border" width="32" src="{{$authorthumbnail}}" alt="{{$authorname}}"> {{$authorname}} posted on the {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}
-      </p>
-
-      {{.Content}}
-
-      <div class="footer-content">
-        {{ partial "signup.html" . }}
-
-        <div class="text-muted">
-          Want to let me know what you think of BookStack or this post? <br>
-          You find me on twitter <a href="https://twitter.com/ssddanbrown">@ssddanbrown</a>. <br>
-          You can <a href="https://github.com/BookStackApp/BookStack/issues">open a suggestion or issue on GitHub</a>.
+        <p class="post-date text-muted" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+            {{$author := index .Site.Data.authors (or .Params.author .Site.Params.author)}}
+            {{$authorname := or $author.name .Site.Params.author }}
+            {{$authorthumbnail := or $author.thumbnail .Site.Params.author }}
+            <img class="post-avatar no-border" width="32" src="{{$authorthumbnail}}" alt="{{$authorname}}"> {{$authorname}} posted on the {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}
+        </p>
+  
+        {{.Content}}
+  
+        <div class="footer-content">
+          {{ partial "signup.html" . }}
+  
+          <div class="text-muted">
+            Want to let me know what you think of BookStack or this post? <br>
+            You find me on twitter <a href="https://twitter.com/ssddanbrown">@ssddanbrown</a>. <br>
+            You can <a href="https://github.com/BookStackApp/BookStack/issues">open a suggestion or issue on GitHub</a>.
+          </div>
+  
+          <br>
+          <br>
+  
         </div>
-
-        <br>
-        <br>
-
       </div>
     </div>
 
-    <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 blog-sidebar-post-list">
+    <div class="col-md-3 blog-sidebar-post-list">
       <h4>Latest Posts</h4>
       <div class="recent-posts">
         {{ range first 8 ( where .Site.RegularPages "Section" "blog") }}

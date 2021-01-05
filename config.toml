@@ -3,6 +3,7 @@ title = "BookStack"
 baseurl = "https://www.bookstackapp.com/"
 theme="bookstack"
 enableGitInfo=true
+paginate=50
 
 [markup]
   defaultMarkdownHandler = "goldmark"

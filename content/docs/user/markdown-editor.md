@@ -6,9 +6,18 @@ type = "user-doc"
 +++
 
 If you prefer to write in Markdown, the editor in BookStack can be changed at an instance level
-to use a markdown editor instead of the default WYSIWYG editor. The option to use Markdown is currently **not** a user setting but a global instance setting due to formatting differences between the two editors.
+to use a Markdown editor instead of the default WYSIWYG editor. The option to use Markdown is currently **not** a user setting but a global instance setting due to formatting differences between the two editors.
 
-> Note that shifting to the markdown editor from the WYSIWYG editor may cause unintended side effects to existing content. This is due to the differences in the way the content is stored in the database.
+> Note that shifting to the Markdown editor from the WYSIWYG editor may cause unintended side effects to existing content. This is due to the differences in the way the content is stored in the database.
+
+
+### Change to Markdown Editor
+To change the editor to Markdown follow the steps below:
+1. In your running BookStack on the navbar click on **Settings**
+1. Scroll down to the **Customization** section
+1. On **Page Editor** select `Markdown` from the dropdown menu
+1. Save settings
+
 
 ### Editor Shortcuts
 

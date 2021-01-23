@@ -14,7 +14,7 @@ slug = "beta-release-v0-12-0"
 BookStack v0.12.0 has now been released bringing a range of new features and bug fixes. Let's get to it:
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.12.0)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.12.0)
 
 ### Edit Summaries
 

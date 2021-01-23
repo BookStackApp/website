@@ -14,7 +14,7 @@ draft = false
 BookStack v0.13.0 has now been released. This release has taken a while but it did require some large under-the-hood updates and brings a few chunky features. Here are the update links:
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.13.0)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.13.0)
 
 **Please read the additional information** at the bottom of the update instructions page as there are some changes in v0.13 that will likely require some manual intervention due to new system requirements.
 

@@ -11,12 +11,14 @@ to use a Markdown editor instead of the default WYSIWYG editor. The option to us
 > Note that shifting to the Markdown editor from the WYSIWYG editor may cause unintended side effects to existing content. This is due to the differences in the way the content is stored in the database.
 
 
-### Change to Markdown Editor
-To change the editor to Markdown follow the steps below:
-1. In your running BookStack on the navbar click on **Settings**
-1. Scroll down to the **Customization** section
-1. On **Page Editor** select `Markdown` from the dropdown menu
-1. Save settings
+### Switching to the Markdown Editor
+
+To change the editor to Markdown follow the steps below. You'll need to have the "Manage app settings" role permission to be able to follow these steps:
+
+1. Within your BookStack instance, find and click on **Settings** in the navbar.
+2. Scroll down to the **Customization** section.
+3. Find the **Page Editor** setting and select `Markdown` from the dropdown menu.
+4. Save settings.
 
 
 ### Editor Shortcuts

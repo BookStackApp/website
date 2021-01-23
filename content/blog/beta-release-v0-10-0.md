@@ -13,12 +13,12 @@ tags = ["Releases"]
 It's been a short while since the last release *(43 days to be exact)* but BookStack v0.10 is finally here. Here are some handy links:
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.10.0)
-* [GitHub milestone](https://github.com/ssddanbrown/BookStack/issues?utf8=%E2%9C%93&q=milestone%3A%22BookStack+Beta+v0.10.0%22+)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.10.0)
+* [GitHub milestone](https://github.com/BookStackApp/BookStack/issues?utf8=%E2%9C%93&q=milestone%3A%22BookStack+Beta+v0.10.0%22+)
 * v0.9 Bugfixes:
-    - [v0.9.1](https://github.com/ssddanbrown/BookStack/releases/tag/v0.9.1)
-    - [v0.9.2](https://github.com/ssddanbrown/BookStack/releases/tag/v0.9.2)
-    - [v0.9.3](https://github.com/ssddanbrown/BookStack/releases/tag/v0.9.3)
+    - [v0.9.1](https://github.com/BookStackApp/BookStack/releases/tag/v0.9.1)
+    - [v0.9.2](https://github.com/BookStackApp/BookStack/releases/tag/v0.9.2)
+    - [v0.9.3](https://github.com/BookStackApp/BookStack/releases/tag/v0.9.3)
 
 Most of the development time for this release was spent implementing a tagging system and overhauling the permissions systems which, although mainly for internal purposes, brings some useful extra functionality.
 

@@ -14,7 +14,7 @@ slug = "beta-bugfix-release-v0-12-1"
 A new bugfix has been released to patch up a few issues found in v0.12.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.12.1)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.12.1)
 
 It was found that I had accidentally set two shortcuts on the same keys, The draft quick save and inline-code format were both mapped to `ctrl+s`. This has now been updated so that inline code is mapped to `Ctrl+Shift+E`. Also, as part of this bugfix the WYSIWYG editor shortcuts on mac will use the command key instead of the ctrl key to better fit with other Mac shortcuts.
 

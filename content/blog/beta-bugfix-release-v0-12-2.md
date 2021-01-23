@@ -14,7 +14,7 @@ description = ""
 A second bugfix release has been put together to patch up a some issues found in v0.12.1.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/ssddanbrown/BookStack/releases/tag/v0.12.2)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v0.12.2)
 
 #### Fixes & Changes
 

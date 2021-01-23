@@ -15,6 +15,7 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Ubuntu 18.04 Script](#ubuntu-1804)
 * [Ubuntu 16.04 Script](#ubuntu-1604)
 * [Community Guides](#community)
+* [Other Hosting Options](#other)
 
 ---
 
@@ -193,3 +194,16 @@ This is a collection of guides created by awesome members of the BookStack commu
 * [CentOS 8 Install by Xhark](https://github.com/blogmotion/bm-bookstack-install/blob/master/bookstack-install-centos8.sh) - [french guide](http://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)
+
+
+---
+
+<a name="other"></a>
+
+## Other Hosting Options
+
+Below are some alternative platforms and services that can be used to host BookStack. <br>
+_**Note: These are not tested, vetted nor supported by the official BookStack project in any manner**_.
+
+- [Cloudron](https://www.cloudron.io/store/com.bookstackapp.cloudronapp.html) - A solution for running apps on your own server.
+- [Uberspace](https://lab.uberspace.de/guide_bookstack.html) - A European based hosting provider.

@@ -89,11 +89,10 @@ TWITCH_AUTO_CONFIRM_EMAIL=true
 To create a Twitter application for signing in with you may require a phone number linked to your Twitter account.
 
 1. Go to your [Twitter apps page](https://apps.twitter.com/) and click 'Create New App'.
-2. Enter an application name and description. The website and callback URL can just be your BookStack homepage urls. Then submit the form.
-3. Click into your new application and go the the settings tab and ensure 'Allow this application to be used to Sign in with Twitter' is checked.
-4. If you'd like, set an icon and change any other details.
-5. Click the 'Permissions' tab and in the 'Additional Permissions' section check the box 'Request email addresses from users' then save.
-6. Go to the 'Keys and Access Tokens' tab to find your API key and secret. Add or set these to your `.env` file like so:
+2. Enter an application name and description. Twitter would like to know how you are going to use the app and requires a minimum 200 character description. You can uncheck all the add-on APIs for using their data since all you are interested in is the OAuth login part.
+3. After you submit your application, Twitter will approve or deny your API application. 
+4. Once approved you will receive an email. Click on the link to gain access to your API keys. 
+5. Go to the 'Keys and Tokens' tab to find your API key and secret. Add or set these to your `.env` file like so:
 	```bash
 	# Replace the below (including '{}' braces) with your twitter API_KEY and API_SECRET
 	TWITTER_APP_ID={API_KEY}
@@ -102,7 +101,14 @@ To create a Twitter application for signing in with you may require a phone numb
 	# APP_URL Needs to be set to your BookStack base url
 	APP_URL=http://mybookstackurl.com
 	```
-7. All done! Users should now be able to link their Twitter account in their account profile pages and also register/login using their Twitter account.
+6. Go back to the developer dashboard and click on 'App Settings' and then click on edit the 'Authentication settings'.
+7. Enable '3-legged OAuth' and 'Request email address from users'.
+8. Enter the following URLs under 'Callback URLs', changing `https://example.com` to your own domain where BookStack is hosted:
+    - `https://example.com/login/service/twitter/callback`
+    - `https://example.com/register/service/twitter/callback`
+9. Enter your 'Website URL', 'Terms of service', and 'Privacy policy' URLs and click save.
+10. You can also change the app logo if you would like. 
+11. All done! Users should now be able to link their Twitter account in their account profile pages and also register/login using their Twitter account.
 
 ---
 

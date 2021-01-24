@@ -32,6 +32,8 @@ LDAP_PASS=false
 
 # A filter to use when searching for users
 # The user-provided user-name used to replace any occurrences of '${user}'
+# If you're setting this option via other means, such as within a docker-compose.yml,
+# you may need escape the $, often using $$ or \$ instead. 
 LDAP_USER_FILTER=(&(uid=${user}))
 
 # Set the LDAP version to use when connecting to the server

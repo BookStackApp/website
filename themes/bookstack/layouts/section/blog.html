@@ -19,7 +19,14 @@
 <div class="container">
 	<div class="row">
 
-		<div class="col-sm-6 col-sm-offset-3">
+
+		<div class="col-sm-6 col-sm-offset-3 padded-top">
+
+			<div class="margin-top large text-left">
+				<a href="{{.Site.BaseURL}}blog/index.xml" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/rss_feed.svg"}}</span>RSS Feed</a>
+				<span class="inline block margins-horizontal muted">|</span>
+				<a href="https://updates.bookstackapp.com/signup/bookstack-news-and-updates" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/email.svg"}}</span>Email Updates</a>
+			</div>
 
 			{{ $paginator := .Paginator }}
 

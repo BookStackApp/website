@@ -61,14 +61,14 @@ TWITCH_AUTO_CONFIRM_EMAIL=true
     - `https://example.com/login/service/google/callback`
     - `https://example.com/register/service/google/callback`
 6. Add or set the following items in your `.env` file like so:
-	```bash
-	# Replace the below (including '{}' braces) with your Google API_KEY and API_SECRET
-	GOOGLE_APP_ID={google_app_id}
-	GOOGLE_APP_SECRET={google_app_secret}
+```bash
+# Replace the below (including '{}' braces) with your Google API_KEY and API_SECRET
+GOOGLE_APP_ID={google_app_id}
+GOOGLE_APP_SECRET={google_app_secret}
 
-	# APP_URL Needs to be set to your BookStack base url
-	APP_URL=http://mybookstackurl.com
-	```
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
 7. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their Google accounts.
 
 ---
@@ -86,23 +86,27 @@ TWITCH_AUTO_CONFIRM_EMAIL=true
 
 ### Twitter
 
-To create a Twitter application for signing in with you may require a phone number linked to your Twitter account.
+Before creating a Twitter application for signing in, you will need to have signed up and be approved on the [Twitter Developer](https://developer.twitter.com/) site. Part of this will require describing your use of the API. 
 
-1. Go to your [Twitter apps page](https://apps.twitter.com/) and click 'Create New App'.
-2. Enter an application name and description. The website and callback URL can just be your BookStack homepage urls. Then submit the form.
-3. Click into your new application and go the the settings tab and ensure 'Allow this application to be used to Sign in with Twitter' is checked.
-4. If you'd like, set an icon and change any other details.
-5. Click the 'Permissions' tab and in the 'Additional Permissions' section check the box 'Request email addresses from users' then save.
-6. Go to the 'Keys and Access Tokens' tab to find your API key and secret. Add or set these to your `.env` file like so:
-	```bash
-	# Replace the below (including '{}' braces) with your twitter API_KEY and API_SECRET
-	TWITTER_APP_ID={API_KEY}
-	TWITTER_APP_SECRET={API_SECRET}
+1. Go to your [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard), after being approved by twitter as described above. Navigate to 'Projects and Apps' > 'Overview'  and under 'Standalone Apps' click 'Create App'.
+2. Enter an application name and save/continue to the next step.
+3. You'll now be shown some keys and tokens. Copy out the shown 'API key' and 'API secret key' values for the next step.
+4. Within your BookStack `.env` add in extra options for your token and secret like so:
+```bash
+# Replace the below (including '{}' braces) with your twitter API_KEY and API_SECRET
+TWITTER_APP_ID={API_KEY}
+TWITTER_APP_SECRET={API_SECRET}
 
-	# APP_URL Needs to be set to your BookStack base url
-	APP_URL=http://mybookstackurl.com
-	```
-7. All done! Users should now be able to link their Twitter account in their account profile pages and also register/login using their Twitter account.
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
+5. Back within the Twitter developer dashboard, find your new standalone app and click on 'App Settings'  then click on edit within the 'Authentication settings' section.
+6. Enable the '3-legged OAuth' and 'Request email address from users' options.
+7. Enter the following URLs under 'Callback URLs', changing `https://example.com` to your own domain where BookStack is hosted:
+    - `https://example.com/login/service/twitter/callback`
+    - `https://example.com/register/service/twitter/callback`
+8. Fill in any remaining required URLs then click save.
+9. All done! Users should now be able to link their Twitter account in their account profile pages and also register/login using their Twitter account. You may want to review the other options for the Twitter Standalone app such as setting a logo and description.
 
 ---
 
@@ -117,14 +121,14 @@ To create a Twitter application for signing in with you may require a phone numb
     - `https://example.com/login/service/facebook/callback`
     - `https://example.com/register/service/facebook/callback`
 7. Navigate back to the app 'Dashboard' in the sidebar to find your app id and secret. Add or set these to your `.env` file like so:
-	```bash
-	# Replace the below (including '{}' braces) with your facebook APP_KEY and APP_SECRET
-	FACEBOOK_APP_ID={APP_KEY}
-	FACEBOOK_APP_SECRET={APP_SECRET}
+```bash
+# Replace the below (including '{}' braces) with your facebook APP_KEY and APP_SECRET
+FACEBOOK_APP_ID={APP_KEY}
+FACEBOOK_APP_SECRET={APP_SECRET}
 
-	# APP_URL Needs to be set to your BookStack base url
-	APP_URL=http://mybookstackurl.com
-	```
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
 7. All done! Users should now be able to link their Facebook account in their account profile pages and also register/login using their Facebook account.
 
 ---
@@ -134,14 +138,14 @@ To create a Twitter application for signing in with you may require a phone numb
 1. Go to the [Slack apps page](https://api.slack.com/apps) and select 'Create New App'.
 2. Enter an app name ('BookStack login' or something custom), select your team then continue.
 3. You should see your client ID and secret. Copy these details and add them as new variables in your `.env` file like so:
-	```bash
-	# Replace the below (including '{}' braces) with your slack CLIENT_ID and CLIENT_SECRET
-	SLACK_APP_ID={CLIENT_ID}
-	SLACK_APP_SECRET={CLIENT_SECRET}
+```bash
+# Replace the below (including '{}' braces) with your slack CLIENT_ID and CLIENT_SECRET
+SLACK_APP_ID={CLIENT_ID}
+SLACK_APP_SECRET={CLIENT_SECRET}
 
-	# APP_URL Needs to be set to your BookStack base url
-	APP_URL=http://mybookstackurl.com
-	```
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
 4. In your slack app go to 'OAuth & Permissions' and enter your BookStack base URL into the 'Redirect URL(s)' input then save.
 5. All done! Users should now be able to link their Slack account in their account profile pages and also register/login using their Slack account.
 
@@ -159,15 +163,15 @@ To create a Twitter application for signing in with you may require a phone numb
 7. Copy the string of characters under 'Value'. This is the APP_SECRET value for step 9 and is only shown once.
 8. Back under 'App registrations' click on 'Endpoints'. This will show a list of URL's that each contain a unique ID. For example, the OAuth2 token endpoint will look something like this: `https://login.microsoftonline.com/<UniqueID>/oauth2/token`. Copy out the unique ID. This is the TENANT value for step 9.
 9. Copy these details and add them as new variables in your `.env` file like so:
-	```bash
-	# Replace the below (including '{}' braces) with your azure APP_ID and APP_SECRET and TENANT
-  	AZURE_APP_ID={APP_ID}
-  	AZURE_APP_SECRET={APP_SECRET}
-  	AZURE_TENANT={TENANT}
+```bash
+# Replace the below (including '{}' braces) with your azure APP_ID and APP_SECRET and TENANT
+AZURE_APP_ID={APP_ID}
+AZURE_APP_SECRET={APP_SECRET}
+AZURE_TENANT={TENANT}
 
-	# APP_URL Needs to be set to your BookStack base url
-	APP_URL=http://mybookstackurl.com
-	```
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
 10. All done! Users should now be able to link their AzureAD account in their account profile pages and also register/login using their AzureAD account.
 
 ---
@@ -182,16 +186,16 @@ To create a Twitter application for signing in with you may require a phone numb
     - `https://example.com/register/service/okta/callback`
 5. Save and scroll down to the 'Client Credentials' area. Copy the 'Client ID' and 'Client secret' values. These are your 'APP_ID' and 'APP_SECRET' values for step 6.
 6. Copy these details and add them as new variables in your `.env` file like so:
-	```bash
-	# Replace the below (including '{}' braces) with your okta APP_ID and APP_SECRET and BASE_URL.
-  	OKTA_APP_ID={APP_ID}
-  	OKTA_APP_SECRET={APP_SECRET}
-	# The base URL is the URL from step 1 but with everything after the domain (okta.com) removed.
-  	OKTA_BASE_URL={BASE_URL}
+```bash
+# Replace the below (including '{}' braces) with your okta APP_ID and APP_SECRET and BASE_URL.
+OKTA_APP_ID={APP_ID}
+OKTA_APP_SECRET={APP_SECRET}
+# The base URL is the URL from step 1 but with everything after the domain (okta.com) removed.
+OKTA_BASE_URL={BASE_URL}
 
-	# APP_URL Needs to be set to your BookStack base url
-	APP_URL=http://mybookstackurl.com
-	```
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
 7. All set up! Remember to assign the new application you created in Okta to your Okta users otherwise they will not be able to register/login using the service.
 
 ---
@@ -208,19 +212,19 @@ GitLab authentication works for both [gitlab.com](https://gitlab.com) and self-h
 4. Select the checkbox for the `read_user` scope.
 5. Press 'Save application'. You will be shown the application ID and secret which you'll need for the next step.  
 6. Copy the below details and add them as new variables in your `.env` file like so:
-    ```bash
-    # Replace the below (including '{}' braces) with your GitLab Application Id and Secret values.
-    GITLAB_APP_ID={APP_ID}
-    GITLAB_APP_SECRET={APP_SECRET}
+```bash
+# Replace the below (including '{}' braces) with your GitLab Application Id and Secret values.
+GITLAB_APP_ID={APP_ID}
+GITLAB_APP_SECRET={APP_SECRET}
 
-    # APP_URL Needs to be set to your BookStack base url
-    APP_URL=http://mybookstackurl.com
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
 
 
-    # ONLY REQURED FOR SELF-HOSTED GITLAB INSTANCES - REMOVE FOR GITLAB.COM
-    # Set the below URI to match the base URI of your GitLab install
-    GITLAB_BASE_URI=http://my-custom-gitlab.example.com
-    ```
+# ONLY REQURED FOR SELF-HOSTED GITLAB INSTANCES - REMOVE FOR GITLAB.COM
+# Set the below URI to match the base URI of your GitLab install
+GITLAB_BASE_URI=http://my-custom-gitlab.example.com
+```
 7. All set up! Users will now be able to use GitLab to sign-in and register.
 
 ---
@@ -236,14 +240,14 @@ To allow twich sign-in you'll first need to create an application from the Twitc
 4. Under the 'Application Category' option select 'Website Integration' then hit 'Register'.
 5. Click the 'New Secret' button and accept the prompt that appears. You should now see both a 'Client ID' and 'Client Secret' value which you'll use in the next step.
 6. Copy the below details and add them as new variables in your `.env` file like so:
-    ```bash
-    # Replace the below (including '{}' braces) with your Twitch Application Id and Secret values.
-    TWITCH_APP_ID={APP_ID}
-    TWITCH_APP_SECRET={APP_SECRET}
+```bash
+# Replace the below (including '{}' braces) with your Twitch Application Id and Secret values.
+TWITCH_APP_ID={APP_ID}
+TWITCH_APP_SECRET={APP_SECRET}
 
-    # APP_URL Needs to be set to your BookStack base url
-    APP_URL=http://mybookstackurl.com
-    ```
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
 7. All set up! Users will now be able to use Twitch to sign-in and register.
 
 ---
@@ -259,12 +263,12 @@ To allow Discord sign-in you'll first need to create an application on the Disco
     - `https://example.com/login/service/discord/callback`
 5. Back in the 'General Information' section find the 'Client ID' and 'Client Secret' values which you'll use in the next step.
 6. Copy the below details and add them as new variables in your `.env` file like so:
-    ```bash
-    # Replace the below (including '{}' braces) with your Discord Application Id and Secret values.
-    DISCORD_APP_ID={APP_ID}
-    DISCORD_APP_SECRET={APP_SECRET}
+```bash
+# Replace the below (including '{}' braces) with your Discord Application Id and Secret values.
+DISCORD_APP_ID={APP_ID}
+DISCORD_APP_SECRET={APP_SECRET}
 
-    # APP_URL Needs to be set to your BookStack base url
-    APP_URL=http://mybookstackurl.com
-    ```
+# APP_URL Needs to be set to your BookStack base url
+APP_URL=http://mybookstackurl.com
+```
 7. All set up! Users will now be able to use Discord to sign-in and register.

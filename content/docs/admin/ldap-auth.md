@@ -32,6 +32,8 @@ LDAP_PASS=false
 
 # A filter to use when searching for users
 # The user-provided user-name used to replace any occurrences of '${user}'
+# If you're setting this option via other means, such as within a docker-compose.yml,
+# you may need escape the $, often using $$ or \$ instead. 
 LDAP_USER_FILTER=(&(uid=${user}))
 
 # Set the LDAP version to use when connecting to the server
@@ -83,7 +85,7 @@ This can be overridden by via the 'External Authentication IDs' field which can 
 
 When matching LDAP groups with role names or 'External Authentication IDs' values, BookStack will standardise the names of ldap groups to be lower-cased and spaces will be replaced with hypens. For example, to match a LDAP group named "United Kingdom" an 'External Authentication IDs' value of "united-kingdom" could be used.
 
-This feature requires the LDAP server to be able to provide user groups when queried. This is enabled by default on ActiveDirectory via the 'memberOf' attribute but other LDAP systems may need to be configured to enable such functionality. If using OpenLDAP you'll need to setup the memberof overlay.
+This feature requires the LDAP server to be able to provide user groups when queried. This is enabled by default on ActiveDirectory via the 'memberOf' attribute but other LDAP systems may need to be configured to enable such functionality. Be aware that the 'memberOf' attribute does not include the user's primary group. If using OpenLDAP you'll need to setup the memberof overlay.
 
 Here are the settings required to be added to your `.env` file to enable group syncing:
 

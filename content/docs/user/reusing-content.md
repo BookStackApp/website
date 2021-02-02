@@ -6,7 +6,7 @@ type = "user-doc"
 slug = "reusing-page-content"
 +++
 
-Within BookStack you may find that you want to include the same block of content in multiple places. You could copy and paste that content into multiple pages but then, if that content needs to be changed, you'd have to update it multiple times across different pages. Introduced in BookStack v0.14 is the ability to include other pages and to also include single blocks of content from other pages.
+Within BookStack you may find that you want to include the same block of content in multiple places. You could copy and paste that content into multiple pages but then, if that content needs to be changed, you'd have to update it multiple times across different pages. By using include tags you can include entire other pages and also include single blocks of content from other pages.
 
 Note that the include behaviour is non-recursive so including will only work to a single level. This ensures performance and prevents users from breaking pages by creating include loops.
 

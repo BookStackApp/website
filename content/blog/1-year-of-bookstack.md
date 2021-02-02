@@ -11,7 +11,7 @@ date = 2016-07-11T15:37:51Z
 
 +++
 
-BookStack is now 1 year old! The first commit can be found on [GitHub here](https://github.com/ssddanbrown/BookStack/commit/eaa1765c7a68cd671bcb37a666203210bf05d217). BookStack also now has over 200 stars GitHub stars! It's absolutely awesome to see BookStack grow into something worked on and shaped by a community.
+BookStack is now 1 year old! The first commit can be found on [GitHub here](https://github.com/BookStackApp/BookStack/commit/eaa1765c7a68cd671bcb37a666203210bf05d217). BookStack also now has over 200 stars GitHub stars! It's absolutely awesome to see BookStack grow into something worked on and shaped by a community.
 
 ## Back in Time
 

@@ -11,83 +11,124 @@ BookStack has some command line actions that can help with maintenance and commo
 
 Below is a listing of the BookStack specific commands. For any you can provide a `-h` option to list details and options for the command.
 
-### Create admin
+#### Create an Admin User
+
+Create a new admin user via the command line. Can offer a good last resort if you ever get locked out the system.
+Will use the details provided as options otherwise will request them interactively.
+
 ```bash
-# Create a new admin user
+# Interactive usage
 php artisan bookstack:create-admin
+
+# Non-interactive usage example
+php artisan bookstack:create-admin --email="barry@example.com" --name="Bazza" --password="hunter2"
 ```
 
-### Delete activity history
+#### Copy Shelf Permission
+
+By default shelf permissions will not auto-cascade since a book can be in many shelves.
+This command will copy the permissions of a shelf to all child books.
+This can be done for a single shelf or for all shelves in the system:
+
 ```bash
-# Delete all activity history from the system
+# Run for all shelves
+php artisan bookstack:copy-shelf-permissions --all
+
+# Run for a single shelf
+php artisan bookstack:copy-shelf-permissions --slug=my_shelf_slug
+```
+
+#### Update System URL
+
+BookStack will store absolute URL paths for some content, such as images, in the database.
+If you change your base URL for BookStack this can be problematic.
+This command will essentially run a find & replace operation on all relevant tables in the database.
+Be sure to take a database backup for running this command.
+
+```bash
+# Searches for <oldUrl> and replaces it with <newUrl>
+php artisan bookstack:update-url <oldUrl> <newUrl>
+
+# Example:
+php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
+```
+
+#### Delete All Activity History
+
+This will clear all tracked activities in the system. Note: Some areas of the interface rely on this data, including the Audit Log and any "Recent Activity" lists.
+
+```bash
 php artisan bookstack:clear-activity
 ```
 
-### Delete page revisions
+#### Delete Page Revisions
+
+By default this deletes all page revisions apart from page update drafts which share the same system.
+A `-a` flag can be used to also delete these update drafts.
+
 ```bash
-# Delete all page revisions from the system
+# Delete just the page revisions
 php artisan bookstack:clear-revisions
 
 # Delete all page revisions from the system including update drafts
 php artisan bookstack:clear-revisions -a
 ```
 
-### Delete page views
+#### Delete Page Views
+
+Delete tracked content views from the system. These are primarily used to populate any "Recently Used" lists.
+
 ```bash
-# Delete all page views from the system
 php artisan bookstack:clear-views
 ```
 
-### Remove images
+#### Cleanup Unused Images
+
+Searches and removes images that are not used in page content.
+While this can be done in the "Maintenance" section of the interface, running this via the command-line is often safer to avoid timeouts.
+
 ```bash
-# Search and remove images that are not used in page content
 php artisan bookstack:cleanup-images
 ```
 
-### UTF8mb4
-```bash
-# Generate SQL commands that will upgrade the database to UTF8mb4
-# See https://www.bookstackapp.com/docs/admin/ut8mb4-support/
-php artisan bookstack:db-utf8mb4
-```
+#### Regenerate the Search Index
 
-### Rebuild search index
+This can be useful if manually inserting pages into the system.
+
 ```bash
-# Rebuild the search index
-# Useful if manually inserting pages into the system
 php artisan bookstack:regenerate-search
 ```
 
-### Regenerate access permissions
+#### Regenerate Access Permissions
+
+This is primarily used in development but can be useful if manually adding content via the database.
+
 ```bash
-# Regenerate access permissions - Used mostly in development
 php artisan bookstack:regenerate-permissions
 ```
 
-### Delete all not system users
+#### Regenerate Comment Content
+
+Comments are created and stored in Markdown but also rendered to HTML on save.
+This command will regenerate the stored HTML content for all comments using the original Markdown content.
+
 ```bash
-# Delete all users from the system that are not "admin" or system users
+php artisan bookstack:regenerate-comment-content
+```
+
+#### Delete Users
+
+Delete all users from the system that are not original "admin" or system-level users.
+
+```bash
 php artisan bookstack:delete-users
 ```
 
-### Copy permission
-```bash
-# Copy the permission settings of a specified, or all, shelf to their child books
-php artisan bookstack:copy-shelf-permissions --all
-php artisan bookstack:copy-shelf-permissions --slug=my_shelf_slug
-```
+#### Generate UTF8mb4 SQL Upgrade Commands
 
-### Rewrite URL in database
-```bash
-# Update a URL in the database content of your BookStack instance.
-# Searches for <oldUrl> and replaces it with <newUrl>
-php artisan bookstack:update-url <oldUrl> <newUrl>
-# Example:
-php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
-```
+Generates out the SQL which can be used to upgrade the database to UTF8mb4.
+See [UTF8mb4/Emoji Support](/docs/admin/ut8mb4-support/) for further details.
 
-### Regenerate content for comments
 ```bash
-# Regenerate the stored HTML content for comments from their original text content
-php artisan bookstack:regenerate-comment-content
+php artisan bookstack:db-utf8mb4
 ```

@@ -37,7 +37,8 @@ LDAP_PASS=false
 LDAP_USER_FILTER=(&(uid=${user}))
 
 # Set the LDAP version to use when connecting to the server
-LDAP_VERSION=false
+# Should be set to 3 in most cases.
+LDAP_VERSION=3
 
 # Set the property to use as a unique identifier for this user.
 # Stored and used to match LDAP users with existing BookStack users.
@@ -54,6 +55,7 @@ LDAP_DISPLAY_NAME_ATTRIBUTE=cn
 
 # If you need to allow untrusted LDAPS certificates, add the below and uncomment (remove the #)
 # Only set this option if debugging or you're absolutely sure it's required for your setup.
+# If using php-fpm, you may want to restart it after changing this option to avoid instability.
 #LDAP_TLS_INSECURE=true
 
 # If you need to debug the details coming from your LDAP server, add the below and uncomment (remove the #)
@@ -61,7 +63,7 @@ LDAP_DISPLAY_NAME_ATTRIBUTE=cn
 #LDAP_DUMP_USER_DETAILS=true
 ```
 
-You will also need to have the php-ldap extension installed on your system. It's recommended to change your `APP_DEBUG` variable to `true` while setting up LDAP to make any errors visible. Remember to change this back after LDAP is functioning.
+You will also need to have the php-ldap extension installed on your system. You can change your `APP_DEBUG` variable to `true` while setting up LDAP to make any errors visible. Note that debug mode can expose sensitive details to visitors so you may want to limit access while configuring and you should remember to change this back after LDAP is functioning.
 
 A user in BookStack will be linked to a LDAP user via a 'uid'. If a LDAP user uid changes it can be updated in BookStack by an admin by changing the 'External Authentication ID' field on the user's profile.
 

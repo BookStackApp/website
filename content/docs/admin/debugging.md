@@ -43,6 +43,21 @@ or those files do not exist.
 - Check that the `APP_URL` option is set in your `.env` file and ensure it matches the URL you're accessing BookStack on (Including the "https://" or "http://" component).
 - Check that you're using the `release` code branch. If you cloned the project without a branch flag, or downloaded the files from GitHub, you may be using the development branch files which does not include some of these required files.
 
+##### After changing the `APP_URL` option no images are shown
+
+BookStack will store absolute URL paths for some content, such as images, in the database.
+If you change your base URL for BookStack this can be problematic.
+This command will essentially run a find & replace operation on all relevant tables in the database.
+Be sure to take a database backup for running this command.
+
+```bash
+# Searches for <oldUrl> and replaces it with <newUrl>
+php artisan bookstack:update-url <oldUrl> <newUrl>
+
+# Example:
+php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
+```
+
 ### Submitting Issues
 
 If you have found the cause of the issue, and it is not an issue with your particular setup, you can submit it on the [GitHub issues page](https://github.com/BookStackApp/BookStack/issues). Please include as much information as possible when creating an issue along with steps detailing how to replicate it so the bug can be fixed by a developer.

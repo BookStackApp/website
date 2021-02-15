@@ -11,6 +11,7 @@ This page details how you can find out more information about errors you may fac
 - [Common Issues & Resolutions](#common-issues--resolutions)
     - [Blank White Screen on Access](#blank-white-screen-on-access)
     - [No Styles and Large Icons on Access](#no-styles-and-large-icons-on-access)
+    - [Broken Links or No Images After APP_URL Change](#broken-links-or-no-images-after-app_url-change)
 - [Submitting Issues](#submitting-issues)
 
 ### Showing Error Details
@@ -43,7 +44,7 @@ or those files do not exist.
 - Check that the `APP_URL` option is set in your `.env` file and ensure it matches the URL you're accessing BookStack on (Including the "https://" or "http://" component).
 - Check that you're using the `release` code branch. If you cloned the project without a branch flag, or downloaded the files from GitHub, you may be using the development branch files which does not include some of these required files.
 
-##### After changing the `APP_URL` option no images are shown
+##### Broken Links or No Images After APP_URL Change
 
 BookStack will store absolute URL paths for some content, such as images, in the database.
 If you change your base URL for BookStack this can be problematic.

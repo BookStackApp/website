@@ -33,7 +33,7 @@ The value of the `APP_LANG` variable must be a valid locale code matching one of
 * German (Informal) - `de_informal`
 * Italian - `it`
 * Japanese - `ja`
-* Korean - `kr`
+* Korean - `ko`
 * Polish - `pl`
 * Russian - `ru`
 * Slovakian - `sk`

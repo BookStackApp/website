@@ -9,9 +9,9 @@ Once your BookStack instance starts to grow you will find that you may want to r
 
 Note that to move content you will need to have 'edit' permission for both the content being moved and the parent it's being moved into.
 
-### Moving Single Books & Chapters
+### Moving Single Pages & Chapters
 
-Books and chapters can be moved directly to a new chapter or book. To move a chapter or page in this way go to a page or chapter and select 'Move' in the overflow menu, found on the right-hand side of the top toolbar:
+Pages and chapters can be moved directly to a new chapter or book. To move a chapter or page in this way go to a page or chapter and select 'Move' in the overflow menu, found on the right-hand side of the top toolbar:
 
 ![Page Move Menu](/images/docs/page-move-menu.png)
 

@@ -103,20 +103,28 @@ Filters are set advanced search features that can be used in your search term. T
     <td colspan="3">User Filters</td>
   </tr>
   <tr>
-    <td>{updated_by:&lt;user_id|me&gt;}</td>
+    <td>{updated_by:&lt;user_slug|me&gt;}</td>
     <td>
-      {updated_by:10} <br>
+      {updated_by:barry} <br>
       {updated_by:me} <br>
     </td>
-    <td>Adds the condition that the content must have been last updated by the user of the given numeric ID. If 'me' is used in place of a numeric ID then it will find content that was last updated by the current logged-in user.</td>
+    <td>Adds the condition that the content must have been last updated by the user of the given slug. If 'me' is used in place of a slug then it will find content that was last updated by the current logged-in user.</td>
   </tr>
   <tr>
-    <td>{created_by:&lt;user_id|me&gt;}</td>
+    <td>{created_by:&lt;user_slug|me&gt;}</td>
     <td>
-      {created_by:10} <br>
+      {created_by:barry} <br>
       {created_by:me} <br>
     </td>
-    <td>Adds the condition that the content must have been created by the user of the given numeric ID. If 'me' is used in place of a numeric ID then it will find content that was created by the current logged-in user.</td>
+    <td>Adds the condition that the content must have been created by the user of the given slug. If 'me' is used in place of a slug then it will find content that was created by the current logged-in user.</td>
+  </tr>
+  <tr>
+    <td>{owned_by:&lt;user_slug|me&gt;}</td>
+    <td>
+      {owned_by:barry} <br>
+      {owned_by:me} <br>
+    </td>
+    <td>Adds the condition that the content must have be actively owned by the user of the given slug. If 'me' is used in place of a slug then it will find content that is owned by the current logged-in user.</td>
   </tr>
   <tr style="font-weight:bold;">
     <td colspan="3">Content Filters</td>

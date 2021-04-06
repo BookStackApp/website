@@ -53,6 +53,12 @@ LDAP_EMAIL_ATTRIBUTE=mail
 # Set the property to use for a user's display name. Defaults to 'cn'
 LDAP_DISPLAY_NAME_ATTRIBUTE=cn
 
+# Force TLS to be used for LDAP communication.
+# Use this if you can but your LDAP support will need to support it and
+# you may need to import your certificate to the BookStack host machine.
+# Defaults to 'false'.
+LDAP_START_TLS=false
+
 # If you need to allow untrusted LDAPS certificates, add the below and uncomment (remove the #)
 # Only set this option if debugging or you're absolutely sure it's required for your setup.
 # If using php-fpm, you may want to restart it after changing this option to avoid instability.
@@ -78,6 +84,9 @@ depending on your setup and how you manage users in the system. You will still n
 LDAP_USER_FILTER=(&(sAMAccountName=${user}))
 LDAP_VERSION=3
 LDAP_ID_ATTRIBUTE=BIN;objectGUID
+# Change the below to true if your AD server supports TLS and if your
+# BookStack host system will accept the AD provided certificate.
+LDAP_START_TLS=false
 ```
 
 ### LDAP Group Sync

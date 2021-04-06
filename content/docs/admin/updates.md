@@ -33,6 +33,22 @@ Check the below list for the version you are updating to for any additional inst
 
 The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
 
+
+#### Updating to v20.04 or higher
+
+**Requirements Change** - The minimum required PHP version has changed from 7.2 to 7.3. If you originally updated using the Ubuntu 18.04 installation script, the below commands should help you to upgrade to PHP8:
+
+```bash
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install -y php8.0 php8.0-fpm php8.0-curl php8.0-mbstring php8.0-ldap php8.0-xml php8.0-zip php8.0-gd php8.0-mysql libapache2-mod-php8.0
+sudo a2dismod php7.2
+sudo a2enmod php8.0
+systemctl restart apache2
+```
+
+**User Reference Changes** - References to users in URLs of profile pages, and within search filters, has been changed to be name (Slugified) based instead of ID based. Old links or saved search filters may no longer work as expected.
+
 #### Updating to v0.31.0 or higher
 
 **Requirements Change** - The minimum required PHP version has changed from 7.2 to 7.2.5. Additionally, the `Tidy` PHP extension is no longer required.

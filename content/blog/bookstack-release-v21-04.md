@@ -42,13 +42,26 @@ BookStack versions will now be in the format of v`<2 DIGIT YEAR>`.`<2 DIGIT MONT
 That change is technically compatible with the old versioning, while now providing context about the release date within the version. 
 This can be extremely useful when people reference their BookStack version as it'll instantly provide context of release date without needing to look that up.
 
-### Footer Links Support
+### Support for Custom Footer Links
 
+Some scenarios, such as those for GDPR compliance, require links to be shown on every page.
+To support these cases, You can now add custom footer links to your BookStack instance via the settings page:
 
+![BookStack Footer Settings Interface](/images/2021/04/footer_settings.png)
 
-### Search by Owner
+Once set, these will be shown at the bottom of almost every view including public pages such as the login & register pages.
 
+![BookStack Footer Display Example](/images/2021/04/footer_display.png)
 
+Thanks to [@james-geiger](https://github.com/BookStackApp/BookStack/pull/1973) for pushing this forward and providing an intial implementation of this feature.
+
+### Search Content by Owner
+
+Within search inputs, and on the search page, it's now possible to search by content belonging to a specific owner:
+
+![BookStack Owner Search Example View](/images/2021/04/search_owned_by.png)
+
+Thanks to [@benediktvolke](https://github.com/BookStackApp/BookStack/pull/2561) for implementing this feature.
 
 ### Backend Theme System
 
@@ -74,11 +87,22 @@ The intention of this system is provide a mechanism to people to implement back-
 
 ### Sort Control within Shelves
 
+Sort options have been previously available within the books & shelves listings.
+This update brings sort options for viewing books within a shelf.
+
+![BookStack Shelf Sort Display Example](/images/2021/04/shelf_sort.png)
+
+This defaults to the user-defined order, managed via editing a shelf but this allows custom ordering by name, updated date or created date.
+Sort ordering changes is saved to the current user session.
+
+Thanks to [@guillaumehanotel](https://github.com/BookStackApp/BookStack/pull/2515) for providing the initial implementation for this feature.
 
 
 ### User Filter in Audit Log
 
+The audit log has been updated with the ability to search for activities created by a specific user in the system:
 
+![BookStack Audit Log User Filter Preview](/images/2021/04/audit_log_filter.png)
 
 ### Healthcheck Endpoint
 
@@ -91,7 +115,11 @@ This endpoint will perform some simple checks on the database, cache & session, 
 
 ### LDAP TLS Support
 
+Proper TLS support has now been added to BookStack. This can be enabled by adding `LDAP_START_TLS=true` to your `.env` file.
+When enabled, BookStack will ensure a TLS connection is made. 
+If the TLS connection fails for any reason then an error will be thrown.
 
+Thanks to [@Body4](https://github.com/BookStackApp/BookStack/pull/2376) for pushing this forward with a contributed implementation.
 
 ### PHP 8.0 Support
 

@@ -9,7 +9,7 @@ The principles of storing information within BookStack is based of the ideas of 
 
 Within a book you can directly create pages or you can first create chapters. Chapters provide an additional level of page grouping to keep pages organised but are optional. All the information you write is held within pages. Although books and chapters do not hold information they can be given a short description to assist with searching and visibility.
 
-Once you start to stack-up books you can start to use Bookshelves to organise your Books. Bookshelves can contain mulitple books and a single book could be placed on multiple Bookshelves. 
+Once you start to stack-up books you can start to use Bookshelves to organise your Books. Bookshelves can contain multiple books and a single book could be placed on multiple Bookshelves. 
 
 ### Default Colour Coding
 

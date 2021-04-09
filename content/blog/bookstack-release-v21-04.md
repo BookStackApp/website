@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v21.04"
-date = 2021-04-29T20:00:00Z
+date = 2021-04-09T20:20:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/spring-arno-smit.jpg"
 slug = "bookstack-release-v21-04"

@@ -9,7 +9,7 @@ slug = "bookstack-release-v21-04"
 draft = false
 +++
 
-Today is the launch of BookStack v21.04. This is our next feature release after Beta v0.31.
+Today is the launch of BookStack v21.04 which is our next feature release after Beta v0.31.
 For this release we're dropping the beta and changing our version scheme as detailed below. 
 This release has no single major feature but is instead focused on a range of fixes, improvements and community contributions.
 
@@ -20,7 +20,7 @@ This release has no single major feature but is instead focused on a range of fi
 **Upgrade Notices**
 
 - PHP 7.3 or greater is now required to run BookStack. If you previously installed BookStack using the 18.04 script, please see the details of this release in our [update notes](/docs/admin/updates/#updating-to-v2004-or-higher) for the commands that should help you upgrade to PHP 8.
-- User profile pages, and user-based search filters, now use name-based "slugs" rather than being ID based. Any old links or instuctions you may have for these elements may need to be updated.
+- User profile pages, and user-based search filters, now use name-based "slugs" rather than being ID based. Any old links or instructions you may have for these elements may need to be updated.
 
 ### Dropping the Beta Status & Changing our Version Scheme
 

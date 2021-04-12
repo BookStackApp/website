@@ -22,6 +22,7 @@ In addition, Clearing the cache is also recommended:
 
 ```bash
 php artisan cache:clear
+php artisan config:clear
 php artisan view:clear
 ```
 

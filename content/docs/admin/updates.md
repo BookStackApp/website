@@ -34,7 +34,7 @@ Check the below list for the version you are updating to for any additional inst
 The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
 
 
-#### Updating to v20.04 or higher
+#### Updating to v21.04 or higher
 
 **Requirements Change** - The minimum required PHP version has changed from 7.2 to 7.3. If you originally updated using the Ubuntu 18.04 installation script, the below commands should help you to upgrade to PHP8:
 

@@ -222,8 +222,8 @@ APP_URL=http://mybookstackurl.com
 
 
 # ONLY REQURED FOR SELF-HOSTED GITLAB INSTANCES - REMOVE FOR GITLAB.COM
-# Set the below URI to match the base URI of your GitLab install
-GITLAB_BASE_URI=http://my-custom-gitlab.example.com
+# The below needs to match the base URI of your GitLab install, including the trailing slash.
+GITLAB_BASE_URI=http://my-custom-gitlab.example.com/
 ```
 7. All set up! Users will now be able to use GitLab to sign-in and register.
 

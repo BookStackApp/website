@@ -51,6 +51,14 @@ SAML2_IDP_SLO=https://example.com/saml2/idp/SingleLogoutService.php
 # Identity Provider x509 public certificate data.
 # Not required if using the autoload option above.
 SAML2_IDP_x509=<cert_data>
+
+# Identity Provider AuthnContext
+# Setting this to true (The default) and exact AuthnContext of 
+# 'urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport' will be used.
+# Setting this to false will provide no AuthnContext to the IDP.
+# Alternatively you can set this to a space separated list of values. For example:
+# SAML2_IDP_AUTHNCONTEXT="urn:oasis:names:tc:SAML:2.0:ac:classes:Password urn:federation:authentication:windows"
+SAML2_IDP_AUTHNCONTEXT=true
 ```
 
 A user in BookStack will be linked to a SAML user via the `SAML2_EXTERNAL_ID_ATTRIBUTE`. If the value of this id changes in the identity provider it can be updated in BookStack by an admin by changing the 'External Authentication ID' field on the user's profile.

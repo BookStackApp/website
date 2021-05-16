@@ -27,7 +27,7 @@ BookStack has the following requirements:
 
 * **PHP** >= 7.3
     * For installation and maintenence, you'll need to be able to run `php` from the command line.
-    * Required Extensions: *OpenSSL, PDO, MBstring, Tokenizer, GD, MySQL, SimpleXML & DOM*
+    * Required Extensions: *OpenSSL, PDO, MBstring, Tokenizer, GD (with jpeg), MySQL, SimpleXML & DOM*
 * **MySQL** >= 5.6
     *  Single Database *(All permissions advised since application manages schema)*
 * **Git Version Control**

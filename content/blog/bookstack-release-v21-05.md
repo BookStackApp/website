@@ -9,12 +9,12 @@ slug = "bookstack-release-v21-05"
 draft = false
 +++
 
-The BookStack v21.05 has now been released which brings us a few new user interface
-features and enhancements which include marking items as favourites and easier in-book
+BookStack v21.05 has now been released which brings along new user interface
+features & enhancements including a favourites system and easier in-book
 navigation.
 
-The previous release, BookStack v21.04, also recieved a bunch of fixes & enhancements during
-the last couple of months so we'll also be delving into a few of those changes within this post.
+The previous release, BookStack v21.04, also received a bunch of fixes & enhancements during
+the last couple of months so we'll also delve into a few of those changes within this post.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v21.05)
@@ -22,11 +22,12 @@ the last couple of months so we'll also be delving into a few of those changes w
 
 ### Favourites System
 
-For quite a while I've wanted to be able to favourite select content within BookStack for easier future location.
+For quite a while I've wanted to be able to favourite specific items within BookStack for easier future location.
 For this release cycle I decided to be a bit selfish and spend a couple of nights getting this implemented.
-Thanks to all those that provded feedback in regards to the naming in [GitHub issue 2053](https://github.com/BookStackApp/BookStack/issues/2053).
+Thanks to all those that provided feedback in regards to the naming in [GitHub issue 2053](https://github.com/BookStackApp/BookStack/issues/2053).
 
-When viewing a shelf, book, chapter or page while logged in you'll see a new available "Favourite" action:
+When viewing a shelf, book, chapter or page while logged in you'll see a new "Favourite" action
+situated next to the export action.
 
 ![BookStack Favourites Action Link](/images/2021/05/favourites-action.png)
 
@@ -44,20 +45,18 @@ a link within the profile dropdown menu in the header bar:
 ![BookStack Favourites Link in Profile Menu](/images/2021/05/favourites-profile-menu.png)
 
 This new feature makes it really easy to curate a personal collection of items within the system.
-In the future we may able to use this system for other uses; For example, for watching/notification control.
+In the future we may able to use this for other purposes; For example, for watching/notification control.
 
 ### Next/Previous Page & Chapter Navigation
 
-Much like a physical book, you'll often want to move to the next or previous page when the get to the
+Much like a physical book, you'll often want to move to the next or previous page when you get to the
 bottom of the current one. To support this we now have actions below the page content to move to the 
-next chapter or page from the current one, within the ordering of the current Book:
+next, or previous, chapter or page from the current one within the ordering of the current book.
 
 ![BookStack Next & Previous Content Navigation Preview](/images/2021/05/next-prev-nav.png)
 
 The links are designed to not be distracting by default, like the other non-content interface, but will
-become more apparent upon interaction.
-
-Thanks to [@shubhamosmosys](https://github.com/BookStackApp/BookStack/pull/2511) for providing an initial
+become more apparent upon interaction. Thanks to [@shubhamosmosys](https://github.com/BookStackApp/BookStack/pull/2511) for providing an initial
 implementation of this and also a thanks to [@james-geiger](https://github.com/BookStackApp/BookStack/issues/1381#issuecomment-540105003)
 for supporting a work-around for this in the mean time.
 
@@ -67,21 +66,21 @@ Tags applied to content will now be shown within search results:
 
 ![Tags in Search Example](/images/2021/05/tags-in-search.png)
 
-They are shown below the content preview, with a more muted design to prevent them from being to distracting when 
+They are shown below the content preview, with a more muted design to prevent them from being too distracting when 
 parsing the search results. Thanks to [@burnoutberni](https://github.com/BookStackApp/BookStack/pull/2487) for an 
 initial implementation of this feature.
 
 ### LDAP User Avatar Import
 
 When using LDAP for authentication, you can now specify an attribute for fetching
-a JPEG user avatar. This is done via a `LDAP_THUMBNAIL_ATTRIBUTE` in your `.env` like so:
+a JPEG user avatar image. This is done via a `LDAP_THUMBNAIL_ATTRIBUTE` in your `.env` like so:
 
 ```bash
 LDAP_THUMBNAIL_ATTRIBUTE=jpegphoto
 ```
 
 BookStack will import and use this thumbnail data as the user avatar upon login or registration
-if that user doesn't have an exsiting avatar image set.
+if that user doesn't have an existing avatar image set.
 Thanks to [@jasonhoule](https://github.com/BookStackApp/BookStack/pull/2320) for providing
 the pull request with the initial implementation of this feature.
 
@@ -100,7 +99,7 @@ the previous limitations.
 
 ### Dark Mode Updates
 
-Within the v21.04.3 & v21.04.4 patch releases we address a good few oustanding 
+Within the v21.04.3 & v21.04.4 patch releases we addressed a good few outstanding 
 issues with dark mode. This included the leftover layout control light styles showing in 
 dark mode.
 
@@ -190,34 +189,35 @@ the original v21.04 release:
 
 ### Next Steps
 
-As planned for this release cycle, I've talked a good chunk of the outstanding pull requests on GitHub. I'll look to continue this for another release
-cycle as I'd ideally want to address most of these before updating the Laravel framework version, which will soon be due.
+As planned for this release cycle, I've been through a good chunk of the outstanding pull requests on GitHub.
+I'll look to continue this for another release cycle as I'd ideally want to address most of these before
+updating the Laravel framework version, which will soon be due.
 
 To start thinking about our next "Editor Review" roadmap stage, I've [opened a scoping issue on GitHub](https://github.com/BookStackApp/BookStack/issues/2738) to gain feedback on potential options. If you have experience on developing with any of the options posted then feedback is appreciated. I'll be looking to dig a little deeper into this within the next release cycle or two.
 
 
 ### Donating to BookStack
 
-Donations are always something I used to stay away from. I always thought that people should spend their money
+Donations are always something I stayed away from. I always thought that people should spend their money
 on more worthy causes, since I didn't really need the money myself nor would I expect it to have a 
-significant impact on the project. That said, people really wanted to provide dontations and it was raised
-mulitple times. Ideas like bug-bounties were floated but I never wanted money to be a core motivator
+significant impact on the project. That said, people really wanted to provide donations and it was raised
+multiple times. Ideas like bug-bounties were floated but I never wanted money to be a core motivator
 for BookStack features and efforts.
 
 After thinking it through over the last few years, I realised that donations could be used for the following:
 
-1. Support & forward on the donations to the projects & people that BookStack is built upon.
+1. Support the projects & people that BookStack is built upon by forwarding donations onwards.
 2. Gauge the feasibility of using the income to potentially one day work on open source full time.
 
-The second idea is a bit of a pipe-dream but for now I'll focus on the first, supporting other projects. Since the end of last year I've been testing out utlising GitHub sponsors:
+The second idea is a bit of a pipe-dream but for now I'll focus on the first, supporting other projects.
+Since the end of last year I've been testing out utilising GitHub sponsors:
 
 <iframe src="https://github.com/sponsors/ssddanbrown/button" title="Sponsor ssddanbrown" height="35" width="116" style="border: 0;" loading="lazy"></iframe>
 
-Within GitHub sponsors are mulittude of options for one-off and monthly donations.
-As my donations build up I'll look to support other projects and people.
+GitHub sponsors provides a multitude of options for one-off and monthly donations.
+As my donations build up I'll look to support additional projects and people.
 If the donations ever get to a point where they could support me working on open source full time, I'll likely change focus and only support myself
-until I could get to a point of stable sustainability to be able to then support other projects again.
-
+until I could get to a point of stable sustainability to be able to then support others again.
 
 ----
 

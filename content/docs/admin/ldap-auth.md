@@ -55,6 +55,8 @@ LDAP_DISPLAY_NAME_ATTRIBUTE=cn
 
 # Set the attribute to use for the user's avatar image.
 # Must provide JPEG binary image data.
+# Will be used upon login or registration when the user doesn't
+# already have an avatar image set.
 # Remove this option or set to 'null' to disable LDAP avatar import.
 LDAP_THUMBNAIL_ATTRIBUTE=jpegphoto
 

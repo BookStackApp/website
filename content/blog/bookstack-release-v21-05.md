@@ -1,15 +1,15 @@
 +++
 categories = ["Releases"]
 tags = ["Releases"]
-title = "BookStack Release v21.06"
-date = 2021-05-30T10:32:33Z
+title = "BookStack Release v21.05"
+date = 2021-05-30T14:32:33Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/book-collection-fredmarriage.jpg"
-slug = "bookstack-release-v21-06"
+slug = "bookstack-release-v21-05"
 draft = false
 +++
 
-The BookStack v21.06 has now been released which brings us a few new user interface
+The BookStack v21.05 has now been released which brings us a few new user interface
 features and enhancements which include marking items as favourites and easier in-book
 navigation.
 
@@ -17,31 +17,31 @@ The previous release, BookStack v21.04, also recieved a bunch of fixes & enhance
 the last couple of months so we'll also be delving into a few of those changes within this post.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
-* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v21.06)
+* [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v21.05)
 
 
 ### Favourites System
 
 For quite a while I've wanted to be able to favourite select content within BookStack for easier future location.
 For this release cycle I decided to be a bit selfish and spend a couple of nights getting this implemented.
-Thanks to all those that provded feedback in regards to the naming in [GitHub issue 2063](https://github.com/BookStackApp/BookStack/issues/2063).
+Thanks to all those that provded feedback in regards to the naming in [GitHub issue 2053](https://github.com/BookStackApp/BookStack/issues/2053).
 
 When viewing a shelf, book, chapter or page while logged in you'll see a new available "Favourite" action:
 
-![BookStack Favourites Action Link](/images/2021/06/favourites-action.png)
+![BookStack Favourites Action Link](/images/2021/05/favourites-action.png)
 
 
 Clicking this will add the item to your personal favourites.
 Now when you're on the homepage you'll see a list of your most viewed favourites:
 
 
-![BookStack Favourites Home List](/images/2021/06/favourites-home-list.png)
+![BookStack Favourites Home List](/images/2021/05/favourites-home-list.png)
 
 You can view all your favourites by clicking the header of the homepage list shown above or via
 a link within the profile dropdown menu in the header bar:
 
 
-![BookStack Favourites Link in Profile Menu](/images/2021/06/favourites-profile-menu.png)
+![BookStack Favourites Link in Profile Menu](/images/2021/05/favourites-profile-menu.png)
 
 This new feature makes it really easy to curate a personal collection of items within the system.
 In the future we may able to use this system for other uses; For example, for watching/notification control.
@@ -52,7 +52,7 @@ Much like a physical book, you'll often want to move to the next or previous pag
 bottom of the current one. To support this we now have actions below the page content to move to the 
 next chapter or page from the current one, within the ordering of the current Book:
 
-![BookStack Next & Previous Content Navigation Preview](/images/2021/06/next-prev-nav.png)
+![BookStack Next & Previous Content Navigation Preview](/images/2021/05/next-prev-nav.png)
 
 The links are designed to not be distracting by default, like the other non-content interface, but will
 become more apparent upon interaction.
@@ -63,26 +63,89 @@ for supporting a work-around for this in the mean time.
 
 ### Tags Within Search Results
 
+Tags applied to content will now be shown within search results:
 
+![Tags in Search Example](/images/2021/05/tags-in-search.png)
+
+They are shown below the content preview, with a more muted design to prevent them from being to distracting when 
+parsing the search results. Thanks to [@burnoutberni](https://github.com/BookStackApp/BookStack/pull/2487) for an 
+initial implementation of this feature.
 
 ### LDAP User Avatar Import
 
+When using LDAP for authentication, you can now specify an attribute for fetching
+a JPEG user avatar. This is done via a `LDAP_THUMBNAIL_ATTRIBUTE` in your `.env` like so:
 
+```bash
+LDAP_THUMBNAIL_ATTRIBUTE=jpegphoto
+```
+
+BookStack will import and use this thumbnail data as the user avatar upon login or registration
+if that user doesn't have an exsiting avatar image set.
+Thanks to [@jasonhoule](https://github.com/BookStackApp/BookStack/pull/2320) for providing
+the pull request with the initial implementation of this feature.
 
 ### Improved Header Accessibility
 
-At mobile screen sizes, v21.04.1
+In BookStack patch release v21.04.1, the accessibility of the mobile-style header
+controls was significantly improved. Previously you could not use the dropdown menu
+nor the Info/Content layout controls via keyboard alone. These issues
+have now been addressed providing a much more accessible experience at smaller
+screen sizes.
+
+![Improved Header Accessibility Example](/images/2021/05/header-a11y.png)
+
+A big thanks to [@Flameborn and @tspivey for reporting and verifying](https://github.com/BookStackApp/BookStack/issues/2681) 
+the previous limitations.
 
 ### Dark Mode Updates
 
-v21.04.3 &  v21.04.4
+Within the v21.04.3 & v21.04.4 patch releases we address a good few oustanding 
+issues with dark mode. This included the leftover layout control light styles showing in 
+dark mode.
+
+<table>
+<tr>
+	<td>
+		<h4>v21.04</h4>
+		<img src="/images/2021/05/dark-mode-header-2104.png" alt="Dark mode interface controls in v21.04">
+	</td>
+	<td>
+		<h4>v21.05</h4>
+		<img src="/images/2021/05/dark-mode-header-2105.png" alt="Dark mode interface controls in v21.05">
+	</td>
+</tr>
+</table>
+
 
 ### Translations
+
+As usual, our terrific translating team have been at work to bring the following language updates since
+the original v21.04 release:
+
+- Gerwin de Keijzer (gdekeijzer) - *Dutch; German; German Informal*
+- Jonas Anker Rasmussen (jonasanker) - *Danish*
+- Francesco Franchina (ffranchina) - *Italian*
+- Leonardo Mario Martinez (leonardo.m.martinez) - *Spanish, Argentina*
+- Aimrane Kds (aimrane.kds) - *Arabic*
+- kometchtech - *Japanese*
+- Martins Pilsetnieks (pilsetnieks) - *Latvian*
+- nutsflag - *French*
+- Auri (Atalonica) - *Catalan*
+- m0uch0 - *Spanish*
+- 10935336 - *Chinese Simplified*
+- Statium - *Russian*
+- Luís Tiago Favas (starkyller) - *Portuguese*
+- Rodrigo Saczuk Niz (rodrigoniz) - *Portuguese, Brazilian*
+- whenwesober - *Indonesian*
+- aarchijs - *Latvian*
+- Mykola Ronik (Mantikor) - *Ukrainian*
+- [@Jokuna](https://github.com/BookStackApp/BookStack/pull/2716) - *Korean*
 
 
 ### Full List of Changes
 
-**Released in v21.06**
+**Released in v21.05**
 
 * Added shelf/book/chapter/page favourite system. ([#2748](https://github.com/BookStackApp/BookStack/pull/2748))
 * Added previous/next navigation to chapters and pages. Thanks to [@shubhamosmosys](https://github.com/BookStackApp/BookStack/pull/2511). ([#2511](https://github.com/BookStackApp/BookStack/pull/2511), [#1381](https://github.com/BookStackApp/BookStack/issues/1381))
@@ -94,6 +157,7 @@ v21.04.3 &  v21.04.4
 * Updated drawing upload error handling to better advise when images are too large for the server. ([#2740](https://github.com/BookStackApp/BookStack/issues/2740))
 * Updated page deletions to also delete related revisions. ([#2668](https://github.com/BookStackApp/BookStack/issues/2668))
 * Updated shelf, book & chapter creation/edit views to autofocus on the name input. ([#1956](https://github.com/BookStackApp/BookStack/issues/1956))
+* Updated translations with latest Crowdin changes. ([#2764](https://github.com/BookStackApp/BookStack/pull/2764))
 * Fixed issue where user search field could stack too early in certain languages. ([#2147](https://github.com/BookStackApp/BookStack/issues/2147))
 
 **Released in v21.04.1 through v21.04.6**

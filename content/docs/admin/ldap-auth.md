@@ -53,6 +53,11 @@ LDAP_EMAIL_ATTRIBUTE=mail
 # Set the property to use for a user's display name. Defaults to 'cn'
 LDAP_DISPLAY_NAME_ATTRIBUTE=cn
 
+# Set the attribute to use for the user's avatar image.
+# Must provide JPEG binary image data.
+# Remove this option or set to 'null' to disable LDAP avatar import.
+LDAP_THUMBNAIL_ATTRIBUTE=jpegphoto
+
 # Force TLS to be used for LDAP communication.
 # Use this if you can but your LDAP support will need to support it and
 # you may need to import your certificate to the BookStack host machine.
@@ -87,6 +92,7 @@ LDAP_ID_ATTRIBUTE=BIN;objectGUID
 # Change the below to true if your AD server supports TLS and if your
 # BookStack host system will accept the AD provided certificate.
 LDAP_START_TLS=false
+LDAP_THUMBNAIL_ATTRIBUTE=thumbnailPhoto
 ```
 
 ### LDAP Group Sync

@@ -168,3 +168,20 @@ The v0.13 release contained some new features and updates which change the requi
   - On Ubuntu 16.04 this can be installed via `sudo apt install php7.0-tidy`.
   - On Ubuntu 14.04 (Using the defauly PHP option) this can be installed via `sudo apt-get install php5-tidy`.
 * Page attachments will be stored in the `storage/uploads` folder (Unless you use Amazon S3). This folder will be created on update. Ensure your webserver has write permissions for this folder.
+
+
+#### Updating bookstack to 21.05 in CentOS 7
+
+```
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sudo yum install yum-utils
+sudo yum-config-manager --enable remi-php73
+sudo yum update
+# update composer (mandatory)
+sudo composer selfupdate
+# update bookstack
+sudo git pull origin release && composer install --no-dev && php artisan migrate
+sudo systemctl stop php-fpm.service
+sudo systemctl start php-fpm.service
+```

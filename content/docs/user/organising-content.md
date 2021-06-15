@@ -19,8 +19,8 @@ Clicking the 'Move' action will take you to a screen where you can select a new 
 
 ### Sorting Books
 
-The 'Book Sort' interface allows you to move multiple pages and chapters with ease in a simple drag and drop interface. To sort a book simply go to the book and select 'Sort' in the overflow menu (3 vertical dots found next to the edit button) at the top right of the page and you will be directed to the sort view:
+The 'Book Sort' interface allows you to move multiple pages and chapters with ease in a simple drag and drop interface. To sort a Book's content, open the Book, along the right side you'll see the  '≡ Sort' in the overflow menu along the right of the page.
 
-![Book Sort](/images/docs/book-sort.png)
+![msedge_g3iJz66bLX](https://user-images.githubusercontent.com/14837699/122050778-d2888580-cdb1-11eb-8c0a-bda82e29274d.png)
 
 Initially, just the book you came from will show on the left. You can add extra books into the sort interface by selecting them on the right. Here you can simply drag and drop chapters and pages around and also between different books. Once you have organised your content press 'Save' and all included books will be re-organised.

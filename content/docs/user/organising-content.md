@@ -11,16 +11,16 @@ Note that to move content you will need to have 'edit' permission for both the c
 
 ### Moving Single Pages & Chapters
 
-Pages and chapters can be moved directly to a new chapter or book. To move a chapter or page in this way go to a page or chapter and select 'Move' in the overflow menu, found on the right-hand side of the top toolbar:
+Pages and chapters can be moved directly to a new chapter or book. To move a chapter or page in this way, go to a page or chapter and select 'Move' in the actions list:
 
-![Page Move Menu](/images/docs/page-move-menu.png)
+<img alt="Page Move Action" src="/images/docs/page-move.png" width="240">
 
 Clicking the 'Move' action will take you to a screen where you can select a new location for your chapter or page. Here you can search for a particular book or chapter using the search bar at the top of the selection screen. Once you select a new parent for your chapter or page press 'Move Page' or 'Move Chapter' and your chapter or page will be moved to the new chapter or book. If you move a chapter all child pages will remain in that chapter and any related activity will now show up under the new parent book.
 
 ### Sorting Books
 
-The 'Book Sort' interface allows you to move multiple pages and chapters with ease in a simple drag and drop interface. To sort a Book's content, open the Book, along the right side you'll see the  '≡ Sort' icon in the overflow menu along the right of the page.
+The 'Book Sort' interface allows you to move multiple pages and chapters with ease in a simple drag and drop interface. To sort the content of a Book content, open the Book and find the "Sort" option within the actions list.
 
-![msedge_g3iJz66bLX](https://user-images.githubusercontent.com/14837699/122050778-d2888580-cdb1-11eb-8c0a-bda82e29274d.png)
+![Book Sort](/images/docs/book-sort.png)
 
 Initially, just the book you came from will show on the left. You can add extra books into the sort interface by selecting them on the right. Here you can simply drag and drop chapters and pages around and also between different books. Once you have organised your content press 'Save' and all included books will be re-organised.

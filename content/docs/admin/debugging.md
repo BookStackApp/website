@@ -16,7 +16,7 @@ This page details how you can find out more information about errors you may fac
 
 ### Showing Error Details
 
-When using BookStack, Especially when initially setting it up or after updating, you may come across some errors. While we try to reduce these as much as possible and make them helpful sometimes you may come across a bland, non-helpful 'An error has occurred' message. This is to prevent any potentially sensitive information being shown to all users.
+When using BookStack, especially when initially setting it up or after updating, you may come across some errors. While we try to reduce these as much as possible and make them helpful sometimes you may come across a bland, non-helpful 'An error has occurred' message. This is to prevent any potentially sensitive information being shown to all users.
 
 _**NOTE: While debugging is enabled it's possible for users to be able to see private credentials used in the BookStack or server configuration. Ensure debugging is only enabled when your instance is not accessible by others. Remember to disable debugging before restoring user access.**_
 

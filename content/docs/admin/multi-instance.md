@@ -11,7 +11,7 @@ Currently BookStack does not support multiple instances from one installation bu
 
 To start off you will need to create a database for each BookStack instance. You could share a database between instances using table prefixes but using separate databases allows you to handle them separately when it comes to other operations such as backing up.
 
-For the purposes of continuity in below examples this documentation will detail setting up two instances at the domains `admin-docs.example.com` and `user-docs.example.com`. Before proceeding, Ensure you have your domains set up for all instances you want to create.
+For the purposes of continuity in below examples this documentation will detail setting up two instances at the domains `admin-docs.example.com` and `user-docs.example.com`. Before proceeding, ensure you have your domains set up for all instances you want to create.
 
 Once you have created your databases find somewhere to install BookStack to. Create a folder for each installation. Here are the locations I will use:
 ```
@@ -19,7 +19,7 @@ Once you have created your databases find somewhere to install BookStack to. Cre
 /var/www/admin-docs/
 ```
 
-Follow the standard [installation instructions](/docs/admin/installation) for each instance, Starting by cloning BookStack into each folder you created above.
+Follow the standard [installation instructions](/docs/admin/installation) for each instance, starting by cloning BookStack into each folder you created above.
 
 Once you have setup an installation in each folder you will need to configure your webserver. Follow the instructions for your webserver below:
 
@@ -46,7 +46,7 @@ Virtual host configuration is kept in the `/etc/apache2/sites-available` folder.
 
 Change the `/var/www/user-docs` locations in the configuration above to the location you have installed BookStack at. Also change the `user-docs.example.com` domain to the domain you want this instance to be available at. It should be noted that the above configuration enabled `.htaccess` files so be careful on what you add to the `public/.htaccess` file within you BookStack install.
 
-Once created, You will need to enable each site with the command `sudo a2ensite <config-file-name>`. For example: `sudo a2ensite user-docs.conf`. This simply creates a symbolic link to the configuration file in the `/etc/apache/sites-enabled/` folder which is where apache actually reads from.
+Once created, you will need to enable each site with the command `sudo a2ensite <config-file-name>`. For example: `sudo a2ensite user-docs.conf`. This simply creates a symbolic link to the configuration file in the `/etc/apache/sites-enabled/` folder which is where apache actually reads from.
 
 Once this is done restart apache to reload the configuration. `sudo service apache2 restart`. Both instances should now be accessible at the domains you set up.
 

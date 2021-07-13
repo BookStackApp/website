@@ -69,7 +69,7 @@ SVG files placed in a `themes/<theme_name>/icons` folder will override any icons
 
 Folders with PHP translation files placed in a `themes/<theme_name>/lang` folder will override translations defined within the `resources/lang` folder. Custom translations are merged with the original files so you only need to override the select translations you want to override, you don't need to copy the whole original file. Note that you'll need to include the language folder.
 
-As an example, Say I wanted to change 'Search' to 'Find'; Within a `themes/<theme_name>/lang/en/common.php` file I'd set the following:
+As an example, say I wanted to change 'Search' to 'Find'; Within a `themes/<theme_name>/lang/en/common.php` file I'd set the following:
 
 ```php
 <?php

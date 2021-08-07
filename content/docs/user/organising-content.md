@@ -24,3 +24,9 @@ The 'Book Sort' interface allows you to move multiple pages and chapters with ea
 ![Book Sort](/images/docs/book-sort.png)
 
 Initially, just the book you came from will show on the left. You can add extra books into the sort interface by selecting them on the right. Here you can simply drag and drop chapters and pages around and also between different books. Once you have organised your content press 'Save' and all included books will be re-organised.
+
+### Moving Books to Other Shelves
+
+A bookshelf can contain multiple books and a book can be in multiple shelves. To move an existing book to a different shelf start by opening the Shelf you wish to move the book to and then click "Edit". Under the "Add books to this shelf" section click on the book that you wish to move to the shelf you are currently editing and then choose "Save Shelf".
+
+Your book will now be organised in to the new shelf, but remember that if your book was previously added to a different shelf then it will still appear on the original shelf until it is removed.

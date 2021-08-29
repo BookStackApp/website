@@ -9,7 +9,7 @@ slug = "bookstack-release-v21-08"
 draft = false
 +++
 
-Today we release BookStack v21.08, which brings along mulit-factor authentication support in addition to a
+Today we release BookStack v21.08, which brings along multi-factor authentication support in addition to a
 number of other nice features. Within this post we'll dive into some of the biggest new changes since the v21.05 release.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
@@ -21,37 +21,98 @@ Important Notes
 
 ### Multi-Factor Authentication
 
+Multi-factor authentication (MFA) can now be enabled for user accounts in BookStack.
+Two different methods MFA are available in this inital release of the feature:
 
+1. TOTP, Labelled as "Mobile App" (Google/Microsoft Authenticator etc...)
+2. Backup Codes (A list of single-use codes)
+
+MFA can be enabled by any user accounts in the system. It can be enforced at a per-role level
+via a new "Required Multi-Factor Authentication" checkbox found when editing a role:
+
+!!INSERT ROLE VIEW HERE!!
+
+When enforced, users will be forced to setup at least one MFA method upon next login.
+For those with at least one method configured, the system will require an MFA method to be used
+upon login:
+
+!!INSERT MFA USAGE HERE!!
+
+To help in the scenario where someone may lose their MFA credentials, a new system command
+has been added which will clear all MFA methods for the given user:
+
+```bash
+php artisan bookstack:reset-mfa --email=john@example.com
+```
+
+This feature was more effort than expected, partially due to needing to refactor how
+authentication is performed within BookStack, but it should provide a significant 
+benefit to instances that house sensitive content.
 
 ### Markdown Export
 
+In addition to the PDF, plaintext and HTML export options, you can now export pages,
+chapters and books as markdown:
 
+!!INSERT EXPORT OPTIONS LIST HERE!!
 
-### Role Export Permissions
+For pages that have not been written in the markdown editor, we'll attempt to convert
+the underlying HTML content to markdown. 
+This new markdown export option has also been added to the API. Note: This format does
+not contain the image data like the HTML option since readability and cleanliness have taken
+priority.
 
+### Role-Based Export Permissions
 
+A new "Export content" role permission has been added to BookStack. This will be given to
+all roles by default upon upgrade. This new permission allows admins to control who can 
+see and use the "Export" option that's available via the API and on any page, chapter and book.
+
+### "Skip to content" Link
+
+A new accessibility feature was added in v21.05.3, providing a "Skip to main content" link on the
+first element of focus on the page. This link is not visible by default but will appear when focused
+upon, typically by hitting tab when landing on the page.
+
+!! INSERT IMAGE OF LINKY DOO-DAA HERE !!
 
 ### Upload Images in Page Content via API
 
+As of v21.05.1 it's now possible to upload images via a page's HTML content.
+To utilise this, the image just needs to be provided as a base64 encoded data URI within the
+src of an img tag like so:
 
+```json
+{
+	"html": "<p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQAB\"></p>"
+}
+```
 
-### "Skip to content" Accessibility Link
-
-
+Upon POST/PUT of this data, BookStack will extract these images out to their own files, as if they had 
+been uploaded via the UI. This is not yet available for markdown content.
 
 ### Non-Download Attachment Links
 
+Within BookStack v21.05.2 we added the ability to open/reference attachments without
+forcing the file to be downloaded. This can be useful for files that your browser may support
+like images and pdfs, where they would then open in their own tab instead of being downloaded.
+
+!! INSERT IMAGE OF ATTACHMENT AND LINK HOVER THING? !!
+
+This feature is fairly hidden. You can either Ctrl/Cmd+Click the attachment link or add `?open=true` 
+to the end of any current attachment link. I'd like to build this option into the interface at some
+point to make this easier to find & use where desired.
 
 
 ### Translations
 
-
+TODO
 
 ### Full List of Changes
 
 **Released in v21.08**
 
-* Added mulit-factor authentication system. ([#2827](https://github.com/BookStackApp/BookStack/pull/2827), [#1118](https://github.com/BookStackApp/BookStack/issues/1118))
+* Added multi-factor authentication system. ([#2827](https://github.com/BookStackApp/BookStack/pull/2827), [#1118](https://github.com/BookStackApp/BookStack/issues/1118))
 * Added the ability to export content as Markdown. Thanks to [@nikhiljha](https://github.com/BookStackApp/BookStack/pull/2115). ([#2115](https://github.com/BookStackApp/BookStack/pull/2115), [#1717](https://github.com/BookStackApp/BookStack/issues/1717))
 * Added role permissions for exporting content. ([#2899](https://github.com/BookStackApp/BookStack/pull/2899), [#1251](https://github.com/BookStackApp/BookStack/issues/1251))
 * Added an advisory notice on the shelf permissions page regarding the lack of cascade. ([#2876](https://github.com/BookStackApp/BookStack/issues/2876))
@@ -86,9 +147,14 @@ Important Notes
 
 ### Next Steps
 
-- Last release before leaving job
-- Focus on Laravel 8 upgrade
-- Spend some time on the little bits.
+This will likely be my last feature release before [I leave my current job](https://danb.me/blog/posts/leaving-my-job-to-focus-on-open-source/)
+and start focusing on BookStack for a while. For the next month or so I'll just be sneaking in bugfixes and minor improvements as patch releases.
+
+Over the last couple of releases I've made good progress in merging in pending pull requests, so I'll now look to upgrade
+the framework of BookStack from Laravel 6 to Laravel 8. As part of this I'll probably do some more cleanup of the codebase.
+
+I'm not sure what I'll be starting with once I'm working on BookStack full time. The search system is in much need of improvement
+so that may be the first challenge I tackle.
 
 ----
 

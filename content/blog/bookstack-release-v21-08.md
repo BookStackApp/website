@@ -16,7 +16,16 @@ number of other nice features. Within this post we'll dive into some of the bigg
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v21.08)
 
 
-Important Notes
+**Upgrade Notices**
+
+- **Config & Administration** - The introduction of multi-factor authentication brings the first use of encryption in the platform.
+  This uses the `APP_KEY` value in your `.env` file. Ensure you have this stored safely since it would be required if you ever
+  restore/migrate your instance to another system.
+- **Security/Exports** - During this release cycle it was highlighted that server-side request forgery could be achieved via the 
+  PDF export system. This would need to be a very targeted attack, due to the blind nature of the vulnerability, and the use of this is limited due to how responses are handled.
+  In this release we've added permissions that allow disabling of exports per role. You may want to limit exports to only those roles which you trust.
+- **Security/Authentication** - A slight change was made in relation to how email addresses are confirmed. Email confirmations are now checked at point-of-login rather
+  than being checked on every request. If you allowed sign-up with email confirmation or email domain restrictions, It's advised you [invalidate existing user sessions](/link/to/invalidate) upon upgrade.
 
 
 ### Multi-Factor Authentication
@@ -30,13 +39,13 @@ Two different methods MFA are available in this inital release of the feature:
 MFA can be enabled by any user accounts in the system. It can be enforced at a per-role level
 via a new "Required Multi-Factor Authentication" checkbox found when editing a role:
 
-!!INSERT ROLE VIEW HERE!!
+![View of MFA required checkbox on role edit page](/images/2021/08/mfa-role-permission.png)
 
 When enforced, users will be forced to setup at least one MFA method upon next login.
 For those with at least one method configured, the system will require an MFA method to be used
 upon login:
 
-!!INSERT MFA USAGE HERE!!
+![MFA Verificiation View](/images/2021/08/mfa-verify-view.png)
 
 To help in the scenario where someone may lose their MFA credentials, a new system command
 has been added which will clear all MFA methods for the given user:
@@ -54,7 +63,7 @@ benefit to instances that house sensitive content.
 In addition to the PDF, plaintext and HTML export options, you can now export pages,
 chapters and books as markdown:
 
-!!INSERT EXPORT OPTIONS LIST HERE!!
+![List of page export options including markdown](/images/2021/08/export-options-with-markdown.png)
 
 For pages that have not been written in the markdown editor, we'll attempt to convert
 the underlying HTML content to markdown. 
@@ -74,7 +83,7 @@ A new accessibility feature was added in v21.05.3, providing a "Skip to main con
 first element of focus on the page. This link is not visible by default but will appear when focused
 upon, typically by hitting tab when landing on the page.
 
-!! INSERT IMAGE OF LINKY DOO-DAA HERE !!
+![View of the Skip to content link](/images/2021/08/skip-to-content-link.png)
 
 ### Upload Images in Page Content via API
 
@@ -84,7 +93,7 @@ src of an img tag like so:
 
 ```json
 {
-	"html": "<p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQAB\"></p>"
+	"html": "<p><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQAB'></p>"
 }
 ```
 
@@ -97,7 +106,7 @@ Within BookStack v21.05.2 we added the ability to open/reference attachments wit
 forcing the file to be downloaded. This can be useful for files that your browser may support
 like images and pdfs, where they would then open in their own tab instead of being downloaded.
 
-!! INSERT IMAGE OF ATTACHMENT AND LINK HOVER THING? !!
+![Preview of a non-download attachment link](/images/2021/08/non-download-attachment-link.png)
 
 This feature is fairly hidden. You can either Ctrl/Cmd+Click the attachment link or add `?open=true` 
 to the end of any current attachment link. I'd like to build this option into the interface at some
@@ -106,7 +115,45 @@ point to make this easier to find & use where desired.
 
 ### Translations
 
-TODO
+This release brings a new language option of Lithuanian!
+Big thanks to [@ffranchina](https://github.com/BookStackApp/BookStack/pull/2868) and their translators
+for providing this new language.
+
+Upon that, the below wonderful people have provided translation updates to the shown languages
+since the initial v21.05 release:
+
+- Behzad HosseinPoor (behzad.hp) - *Persian*
+- Jakub Bouček (jakubboucek) - *Czech*
+- syn7ax69 - *Bulgarian; Turkish*
+- Ole Aldric (Swoy) - *Norwegian Bokmal*
+- whenwesober - *Indonesian*
+- m0uch0 - *Spanish*
+- Alexander Predl (Harveyhase68) - *German*
+- scureza - *Italian*
+- Gustav Kånåhols (Kurbitz) - *Swedish*
+- 10 935 336 - *Chinese Simplified*
+- Michał Stelmach (stelmach-web) - *Polish*
+- Francesco Franchina (ffranchina) - *Italian*
+- arniom - *French*
+- 林祖年 (contagion) - *Chinese Traditional*
+- nutsflag - *French*
+- Leonardo Mario Martinez (leonardo.m.martinez) - *Spanish, Argentina*
+- Vuong Trung Hieu (fpooon) - *Vietnamese*
+- Irfan Hukama Arsyad (IrfanArsyad) - *Indonesian*
+- semirte - *Bosnian*
+- Luís Tiago Favas (starkyller) - *Portuguese*
+- Statium - *Russian*
+- Gerwin de Keijzer (gdekeijzer) - *German; Dutch*
+- aarchijs - *Latvian*
+- Lis Maestrelo (lismtrl) - *Portuguese, Brazilian*
+- Nathanaël (nathanaelhoun) - *French*
+- A Ibnu Hibban (abd.ibnuhibban) - *Indonesian*
+- Martins Pilsetnieks (pilsetnieks) - *Latvian*
+- Frost-ZX - *Chinese Simplified*
+- Kuzma Simonov (ovmach) - *Russian*
+- Vojtěch Krystek (acantophis) - *Czech*
+- Blaade - *French*
+
 
 ### Full List of Changes
 

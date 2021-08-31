@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v21.08"
-date = 2021-08-31T21:05:23Z
+date = 2021-08-31T21:01:23Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/lighthouse-dimitry_b.jpg"
 slug = "bookstack-release-v21-08"

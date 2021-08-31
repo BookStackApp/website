@@ -34,6 +34,20 @@ Check the below list for the version you are updating to for any additional inst
 
 The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
 
+#### Updating to v21.08 or higher
+
+**Config & Administration** - The introduction of multi-factor authentication brings the first use of encryption in the platform.
+  This uses the `APP_KEY` value in your `.env` file. Ensure you have this stored safely since it would be required if you ever
+  restore/migrate your instance to another system.
+
+**Security/Exports** - During this release cycle it was highlighted that server-side request forgery could be achieved via the 
+  PDF export system. External fetching in the default PDF renderer has been disabled by default. The WKHTMLtoPDF renderer will now 
+  not be used if active. Either of these changes can be overridden by setting `ALLOW_UNTRUSTED_SERVER_FETCHING=true` in your `.env` file.
+  This should only be used were only trusted users can create and export content. To support this we've added permissions that allow disabling of exports per role.
+  
+**Security/Authentication** - A slight change was made in relation to how email addresses are confirmed. Email confirmations are now primarily checked at point-of-login rather
+  than being checked on every request. Enabling email confirmation, or email domain restrictions, may no longer take action on unconfirmed users right away in the future.
+
 
 #### Updating to v21.04 or higher
 

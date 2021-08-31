@@ -14,6 +14,7 @@ If you'd like to be notified of new potential security concerns you can sign-up 
 
 <ul>
     <li><a href="#initial-security-setup">Initial Security Setup</a></li>
+    <li><a href="#mfa">Multi-Factor Authentication</a></li>
     <li><a href="#securing-images">Securing Images</a></li>
     <li><a href="#attachments">Attachments</a></li>
     <li><a href="#user-passwords">User Passwords</a></li>
@@ -22,6 +23,7 @@ If you'd like to be notified of new potential security concerns you can sign-up 
     <li><a href="#secure-cookies">Secure Cookies</a></li>
     <li><a href="#iframe-control">Host IFrame Control</a></li>
     <li><a href="#failed-access-logging">Failed Access Logging</a></li>
+    <li><a href="#server-side-requests">Untrusted Server Side Requests</a></li>
 </ul>
 
 ---
@@ -40,6 +42,29 @@ the database used for BookStack data.
 5. Within BookStack, go through the settings to ensure registration and public access settings are as you expect.
 6. Review the user roles in the settings area.
 7. Read the below to further understand the security for images & attachments.
+
+---
+
+<a name="mfa"></a>
+
+### Multi-Factor Authentication
+
+Any user can enable multi-factor authentication (MFA) on their account. Upon login they would then need to use an extra proof of identity
+to gain access. BookStack currently supports the following mechanisms:
+
+- TOTP (Time-based One-Time Passwords)
+  - Labelled as "Mobile App" (Google/Microsoft Authenticator etc...).
+  - Uses a SHA1 algorithm internally (Greater algorithms have poor cross-app compatibility).
+- Backup Codes
+  - These are a list of 16 one-time-use codes.
+  - Users will be warned once they have less than 5 codes remaining.
+
+Secrets and values for these options are stored encrypted within the database.
+
+Where required, MFA can be forced upon users via their roles. This can be found via
+a "Requires Multi-Factor Authentication" checkbox seen when editing a role.
+If a user does not already have an MFA method configured, they will be forced to set one up
+upon next login.
 
 ---
 
@@ -160,7 +185,7 @@ a user session can persist within the iframe.
 
 An option is available to log failed login events to a log file which is useful to identify users having trouble logging in, track malicious login attempts or to use with tools such as Fail2Ban. This works with login attempts using the default email & password login mechanism or attempts via LDAP login. Failed attempts are **not logged** for "one-click" social or SAML2 options.
 
-To enable this you simple need to define the `LOG_FAILED_LOGIN_MESSAGE` option in your `.env` file like so:
+To enable this you simply need to define the `LOG_FAILED_LOGIN_MESSAGE` option in your `.env` file like so:
 
 ```bash
 LOG_FAILED_LOGIN_MESSAGE="Failed login for %u"
@@ -169,3 +194,19 @@ LOG_FAILED_LOGIN_MESSAGE="Failed login for %u"
 The optional "%u" element of the message will be replaced with the username or email provided in the login attempt
 when the message is logged. By default messages will be logged via the php `error_log` function which, in most
 cases, will log to your webserver error log files.
+
+---
+
+<a name="server-side-requests"></a>
+
+### Untrusted Server Side Requests
+
+Some features, such as the PDF exporting, have the option to make http calls to external user-defined locations to do things
+such as load images or styles. This is disabled by default but can be enabled if desired. This is required for using 
+WKHTMLtoPDF as your PDF export renderer.
+
+To enable untrusted server side requests, you need to define the `ALLOW_UNTRUSTED_SERVER_FETCHING` option in your `.env` file like so:
+
+```bash
+ALLOW_UNTRUSTED_SERVER_FETCHING=true
+```

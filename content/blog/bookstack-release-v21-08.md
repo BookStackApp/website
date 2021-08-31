@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v21.08"
-date = 2021-08-30T21:05:23Z
+date = 2021-08-31T21:05:23Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/lighthouse-dimitry_b.jpg"
 slug = "bookstack-release-v21-08"
@@ -22,26 +22,27 @@ number of other nice features. Within this post we'll dive into some of the bigg
   This uses the `APP_KEY` value in your `.env` file. Ensure you have this stored safely since it would be required if you ever
   restore/migrate your instance to another system.
 - **Security/Exports** - During this release cycle it was highlighted that server-side request forgery could be achieved via the 
-  PDF export system. This would need to be a very targeted attack, due to the blind nature of the vulnerability, and the use of this is limited due to how responses are handled.
-  In this release we've added permissions that allow disabling of exports per role. You may want to limit exports to only those roles which you trust.
-- **Security/Authentication** - A slight change was made in relation to how email addresses are confirmed. Email confirmations are now checked at point-of-login rather
-  than being checked on every request. If you allowed sign-up with email confirmation or email domain restrictions, It's advised you [invalidate existing user sessions](/link/to/invalidate) upon upgrade.
+  PDF export system. External fetching in the default PDF renderer has been disabled by default. The WKHTMLtoPDF renderer will now 
+  not be used if active. Either of these changes can be overridden by setting `ALLOW_UNTRUSTED_SERVER_FETCHING=true` in your `.env` file.
+  This should only be used were only trusted users can create and export content. To support this we've added permissions that allow disabling of exports per role.
+- **Security/Authentication** - A slight change was made in relation to how email addresses are confirmed. Email confirmations are now primarily checked at point-of-login rather
+  than being checked on every request. Enabling email confirmation, or email domain restrictions, may no longer take action on unconfirmed users right away in the future.
 
 
 ### Multi-Factor Authentication
 
 Multi-factor authentication (MFA) can now be enabled for user accounts in BookStack.
-Two different methods MFA are available in this inital release of the feature:
+Two different MFA methods are available in this initial release of the feature:
 
 1. TOTP, Labelled as "Mobile App" (Google/Microsoft Authenticator etc...)
 2. Backup Codes (A list of single-use codes)
 
 MFA can be enabled by any user accounts in the system. It can be enforced at a per-role level
-via a new "Required Multi-Factor Authentication" checkbox found when editing a role:
+via a new "Requires Multi-Factor Authentication" checkbox found when editing a role:
 
 ![View of MFA required checkbox on role edit page](/images/2021/08/mfa-role-permission.png)
 
-When enforced, users will be forced to setup at least one MFA method upon next login.
+When required, users will be forced to setup at least one MFA method upon next login.
 For those with at least one method configured, the system will require an MFA method to be used
 upon login:
 
@@ -75,13 +76,13 @@ priority.
 
 A new "Export content" role permission has been added to BookStack. This will be given to
 all roles by default upon upgrade. This new permission allows admins to control who can 
-see and use the "Export" option that's available via the API and on any page, chapter and book.
+see and use the "Export" option that's available via the API or on any page, chapter or book.
 
 ### "Skip to content" Link
 
 A new accessibility feature was added in v21.05.3, providing a "Skip to main content" link on the
 first element of focus on the page. This link is not visible by default but will appear when focused
-upon, typically by hitting tab when landing on the page.
+upon, typically by hitting tab after landing on a page.
 
 ![View of the Skip to content link](/images/2021/08/skip-to-content-link.png)
 
@@ -104,13 +105,13 @@ been uploaded via the UI. This is not yet available for markdown content.
 
 Within BookStack v21.05.2 we added the ability to open/reference attachments without
 forcing the file to be downloaded. This can be useful for files that your browser may support
-like images and pdfs, where they would then open in their own tab instead of being downloaded.
+like images and PDFs, where they could then open in their own tab instead of being downloaded.
 
 ![Preview of a non-download attachment link](/images/2021/08/non-download-attachment-link.png)
 
 This feature is fairly hidden. You can either Ctrl/Cmd+Click the attachment link or add `?open=true` 
 to the end of any current attachment link. I'd like to build this option into the interface at some
-point to make this easier to find & use where desired.
+point to make it easier to find & use where desired.
 
 
 ### Translations
@@ -153,6 +154,7 @@ since the initial v21.05 release:
 - Kuzma Simonov (ovmach) - *Russian*
 - Vojtěch Krystek (acantophis) - *Czech*
 - Blaade - *French*
+- Siamak Guodarzi (siamakgoudarzi88) - *Persian*
 
 
 ### Full List of Changes
@@ -168,7 +170,7 @@ since the initial v21.05 release:
 * Added some core opengraph tags to content. Thanks to [@james-geiger](https://github.com/BookStackApp/BookStack/pull/2393). ([#2393](https://github.com/BookStackApp/BookStack/pull/2393), [#2348](https://github.com/BookStackApp/BookStack/issues/2348))
 * Updated blade views to be more consistent and follow a documented convention. ([#2805](https://github.com/BookStackApp/BookStack/issues/2805))
 * Fixed markdown blockquotes not rendering correctly in preview. ([#2858](https://github.com/BookStackApp/BookStack/issues/2858), [#2837](https://github.com/BookStackApp/BookStack/issues/2837))
-* Fixed issue on API where page update removes HTML. ([#2856](https://github.com/BookStackApp/BookStack/issues/2856))
+* Fixed issue on API where page updates can remove HTML. ([#2856](https://github.com/BookStackApp/BookStack/issues/2856))
 * Fixed inconsistency in list display and nesting. ([#2854](https://github.com/BookStackApp/BookStack/issues/2854))
 * Standardised styling of the codebase. ([#2820](https://github.com/BookStackApp/BookStack/pull/2820))
 
@@ -187,7 +189,7 @@ since the initial v21.05 release:
 * Improved audit log user select list stability. ([#2863](https://github.com/BookStackApp/BookStack/issues/2863))
 * Fixed incorrect styling of favourites sidebar when using a non-default homepage option. ([#2783](https://github.com/BookStackApp/BookStack/issues/2783))
 * Fixed issue where empty HTML comments could cause errors. ([#2804](https://github.com/BookStackApp/BookStack/issues/2804))
-* Extracted not found text into it's own view for easier overriding ([58117bc](https://github.com/BookStackApp/BookStack/commit/58117bcf2d91b72620de3e34b0daa705da519f5e))
+* Extracted not found text into it's own view for easier overridding ([58117bc](https://github.com/BookStackApp/BookStack/commit/58117bcf2d91b72620de3e34b0daa705da519f5e))
 * Fixed issue where translations system may attempt to load from the root directory when a theme was not in use. ([#2836](https://github.com/BookStackApp/BookStack/issues/2836))
 * Fixed issue where user profile pages item "View All" links used ids hence did not link to proper searches. ([#2857](https://github.com/BookStackApp/BookStack/issues/2857))
 

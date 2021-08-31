@@ -19,3 +19,11 @@ WKHTMLTOPDF=/home/user/bins/wkhtmltopdf
 ```
 
 If neither of those exist Dompdf will be used instead.
+
+**Note:** as of BookStack v21.08 you'll need to also enable untrusted server fetching in your `.env` file like below. 
+This change was made for security since, in many cases, wkhtmltopdf will perform fetches to external URLs which may be defined by users.
+You should only enable the below option in environments where only trusted users can export content.
+
+```bash
+ALLOW_UNTRUSTED_SERVER_FETCHING=true
+```

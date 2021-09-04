@@ -34,6 +34,13 @@ Check the below list for the version you are updating to for any additional inst
 
 The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
 
+
+#### Updating to v21.08.2 or higher
+
+**Security** - v21.08.2 fixes a couple of XSS security vulnerability scenarios that could be achieved by malicious users that had permission to edit pages.
+  In addition, v21.08.2 introduces more [CSP rules](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to help prevent any future XSS vulnerabilities from taking affect.
+  If you've performed some more advanced customizations on your instance, they may need to be altered to work with the built-in CSP system.
+
 #### Updating to v21.08 or higher
 
 **Config & Administration** - The introduction of multi-factor authentication brings the first use of encryption in the platform.

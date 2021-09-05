@@ -24,6 +24,7 @@ If you'd like to be notified of new potential security concerns you can sign-up 
     <li><a href="#iframe-control">Host IFrame Control</a></li>
     <li><a href="#failed-access-logging">Failed Access Logging</a></li>
     <li><a href="#server-side-requests">Untrusted Server Side Requests</a></li>
+    <li><a href="#csp">Content Security Policy (CSP)</a></li>
 </ul>
 
 ---
@@ -140,7 +141,9 @@ These are hashed using the standard Laravel hashing methods which use the Bcrypt
 
 ### JavaScript in Page Content
 
-By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform it's own JavaScript escaping.
+By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform it's own JavaScript escaping. This option will also alter the [CSP rules](#csp) set by BookStack.
+
+***This option disables some fundemental cross-site-scripting protections. Only use this option on secure instances, where only very trusted users can edit content***
 
 ---
 
@@ -210,3 +213,30 @@ To enable untrusted server side requests, you need to define the `ALLOW_UNTRUSTE
 ```bash
 ALLOW_UNTRUSTED_SERVER_FETCHING=true
 ```
+
+---
+
+<a name="csp"></a>
+
+### Content Security Policy (CSP)
+
+BookStack serves responses with multiple CSP headers to increase protection again malicious content.
+This is especially important in a system such as BookStack where users can create a variety of HTML content, 
+especially so if you allow untrusted users to create content in your instance.
+The CSP headers set by BookStack are as follows:
+
+- `frame-ancestors 'self'`
+  - Restricts what websites can embed BookStack pages via iframes.
+  - See the "[Host Iframe Control](#iframe-control)" section above for details on expanding this rule to other hosts.
+- `script-src http: https: 'nonce-abc123' 'strict-dynamic'`
+  - Restricts what scripts can be ran on a BookStack-served page.
+  - Will not be set if the `ALLOW_CONTENT_SCRIPTS` .env option is active.
+  - The nonce value used is randomly generated upon each request. It is automatically applied to any "Custom HTML Head Content" scripts.
+- `object-src 'self'`
+  - Restricts which embeddable content can be loaded onto a BookStack-served page.
+  - Will not be set if the `ALLOW_CONTENT_SCRIPTS` .env option is active.
+- `base-uri 'self'`
+  - Restricts what `<base>` tags can be added to a BookStack-served page.
+
+If needed you should be able to set additional CSP headers via your webserver.
+If there's a clash with an existing BookStack CSP header then browsers will generally favour the most restrictive policy.

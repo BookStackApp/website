@@ -33,6 +33,7 @@ The value of the `APP_LANG` variable must be a valid locale code matching one of
 * Czech - `cs`
 * Danish - `da`
 * Dutch - `nl`
+* English - `en`
 * French - `fr`
 * German (Formal) - `de`
 * German (Informal) - `de_informal`

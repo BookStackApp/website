@@ -1,6 +1,7 @@
 /* roboto-300 - latin */
 @font-face {
   font-family: 'Roboto';
+  font-display: swap;
   font-style: normal;
   font-weight: 300;
   src: local('Roboto Light'), local('Roboto-Light'),
@@ -10,6 +11,7 @@
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'),
@@ -19,6 +21,7 @@
 /* roboto-500 - latin */
 @font-face {
   font-family: 'Roboto';
+  font-display: swap;
   font-style: normal;
   font-weight: 500;
   src: local('Roboto Medium'), local('Roboto-Medium'),
@@ -28,6 +31,7 @@
 /* roboto-700 - latin */
 @font-face {
   font-family: 'Roboto';
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'),
@@ -106,6 +110,21 @@ a, .link {
   i.zmdi-hc-flip-horizontal {
     padding-right: 0;
     padding-left: $-s;
+  }
+}
+
+@include smaller-than($m) {
+  h1 {
+    font-size: 2.666em;
+  }
+  h2 {
+    font-size: 2.2222em;
+  }
+  h3 {
+    font-size: 1.6666em;
+  }
+  h4 {
+    font-size: 1.3333em;
   }
 }
 

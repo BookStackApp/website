@@ -37,6 +37,9 @@
   }
   .menu {
     padding-top: 8px;
+    @include smaller-than($m) {
+      padding-top: 0;
+    }
   }
 }
 
@@ -59,7 +62,9 @@
     height: 43px;
     width: auto;
   }
+
   @include smaller-than($s) {
+    margin: $-s 0;
     h1 {
       font-size: 1.8em;
     }
@@ -68,8 +73,10 @@
       margin-right: $-s;
     }
   }
+
   a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
   }
   a:hover {
     text-decoration: none;

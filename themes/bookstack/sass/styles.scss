@@ -319,6 +319,13 @@ input[type=text] {
   }
 }
 
+@include smaller-than($m) {
+  .sidebar li a {
+    padding: $-xs 0;
+    display: block;
+  }
+}
+
 
 
 h2.thin-margin {

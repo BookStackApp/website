@@ -81,8 +81,8 @@ sudo dpkg-reconfigure locales
 ```
 
 For other operating systems this may be different. After installing new locales you may need to restart any running PHP processes.
-For example, On Ubuntu, running PHP7.2:
+For example, On Ubuntu, running PHP 7.4:
 
 ```bash
-sudo systemctl restart php7.2-fpm.service 
+sudo systemctl restart php7.4-fpm.service 
 ```

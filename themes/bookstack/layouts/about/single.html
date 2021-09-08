@@ -1,0 +1,29 @@
+{{ partial "header.html" . }}
+
+<div class="header">
+  <div class="container">
+    <div class="row hero">
+        <div class="col-md-4 spaced">
+            <h1>{{.Title}}</h1>
+        </div>
+        <div class="col-md-8 screenshot-container-parent">
+          <div class="screenshot-container">
+            <div class="window-row">
+              <div class="window-option red"></div>
+              <div class="window-option" style="background-color: orange;"></div>
+              <div class="window-option"  style="background-color: green;"></div>
+            </div>
+            {{ if .Params.image }}
+              <img class="screenshot" src="{{.Params.image}}" alt="{{.Title}}">
+            {{ end }}
+              
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+  {{.Content}}
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,37 @@
+{{ partial "header.html" . }}
+
+{{ $baseurl := .Site.BaseURL }}
+
+<div class="no-cover">	
+
+	<div class="container">
+		<h1>"About BookStack" Pages</h1>
+		<h2 class="page-description">
+		    {{if .Params.description}}
+		        {{.Params.description}}
+		    {{end}}
+		</h2>
+	</div>
+</div>
+
+<div class="container">
+	{{ $paginator := .Paginator }}
+
+	{{ range $paginator.Pages }}
+	{{ $baseurl := .Site.BaseURL }}
+	<article class="post {{ .Section }}">
+	    <div class="post-header">
+	        <h5 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+	    </div>
+	</article>
+
+	{{ end }}
+
+	<div class="row">
+		<div class="col-md-4">
+			{{ partial "pagination" $paginator }}
+		</div>
+	</div>
+</div>
+
+{{ partial "footer.html" . }}

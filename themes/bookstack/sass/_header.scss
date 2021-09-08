@@ -8,9 +8,9 @@
   top: 0;
   background-color: $primary-dark;
   color: #fff;
-  h2 {
+  h1 {
     color: #FFF;
-    font-size: 2.666em;
+    font-size: 2.666rem;
     font-weight: 300;
     @include smaller-than($s) {
       font-size: 2em;
@@ -19,7 +19,7 @@
   .spaced {
     margin-top: $-xxl;
     margin-bottom: $-l*2;
-    h2, p {
+    h1, p {
       max-width: 420px;
     }
     @include smaller-than($screen-lg) {
@@ -46,12 +46,12 @@
 .logo {
   text-align: left;
   margin: $-m 0;
-  h1, img {
+  div, img {
     vertical-align: top;
     display: inline-block;
     margin: 0;
   }
-  h1 {
+  div {
     color: #FFF;
     font-size: 1.8em;
     font-weight: 400;
@@ -65,7 +65,7 @@
 
   @include smaller-than($s) {
     margin: $-s 0;
-    h1 {
+    div {
       font-size: 1.8em;
     }
     svg {

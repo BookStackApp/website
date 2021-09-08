@@ -23,16 +23,24 @@
             <div class="row">
                 <div class="col-md-6">
                     <p class="text-small">
-                        This website uses a self-hosted instance of <a href="https://plausible.io/" target="_blank" rel="noreferrer">Plausible</a> for analytics.
-                        Our site stats can <a href="https://analytics.bookstackapp.com/bookstackapp.com" target="_blank" rel="noreferrer">be viewed here</a>. 
-                        <br>
-                        We also use <a href="https://docsearch.algolia.com/" target="_blank" rel="noreferrer">Algolia</a> for providing better search.
+                        Latest Blog Post: 
+                        {{ range first 1 ( where .Site.Pages "Section" "blog") }}
+                                <a href="{{.Permalink}}">{{ .Title }}</a>
+                        {{ end }}
+                        &nbsp;|&nbsp;
+                        <a href="/about/confluence-alternative">BookStack: A Confluence Alternative</a>
                     </p>
                 </div>
                 <div class="col-md-6 text-right">
                     <iframe src="https://github.com/sponsors/ssddanbrown/button" title="Sponsor ssddanbrown" height="35" width="116" style="border: 0;margin-top: 1rem;" loading="lazy"></iframe>
                 </div>
             </div>
+            <p class="text-small">
+                This website uses a self-hosted instance of <a href="https://plausible.io/" target="_blank" rel="noreferrer">Plausible</a> for analytics.
+                Our site stats can <a href="https://analytics.bookstackapp.com/bookstackapp.com" target="_blank" rel="noreferrer">be viewed here</a>. 
+
+                We also use <a href="https://docsearch.algolia.com/" target="_blank" rel="noreferrer">Algolia</a> for providing better search.
+            </p>
         </div>
     </footer>
 

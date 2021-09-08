@@ -13,7 +13,7 @@
 
 
     {{ $baseURL := .Site.BaseURL }}
-    {{ if .IsPage }}
+    {{ if and (.IsPage) (ne .Type "about")  }}
 
     {{ with .Params.image }}
         <!-- Twitter summary card with large image must be at least 280x150px -->
@@ -87,7 +87,7 @@
                     <div class="logo">
                         <a href="{{.Site.BaseURL}}">
                             {{partial "icon/logo.svg"}}
-                            <h1>BookStack</h1>
+                            <div>BookStack</div>
                         </a>
 
                     </div>

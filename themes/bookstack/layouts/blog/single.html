@@ -11,7 +11,7 @@
 
     <div class="col-md-9">
 
-      <div class="post-content">
+      <main class="post-content">
         <h1>{{.Title}}</h1>
 
         <p class="post-date text-muted" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
@@ -36,10 +36,10 @@
           <br>
   
         </div>
-      </div>
+      </main>
     </div>
 
-    <div class="col-md-3 blog-sidebar-post-list">
+    <aside class="col-md-3 blog-sidebar-post-list">
       <h4>Latest Posts</h4>
       <div class="recent-posts">
         {{ range first 8 ( where .Site.RegularPages "Section" "blog") }}
@@ -51,7 +51,7 @@
           </a>
         {{ end }}
       </div>
-    </div>
+    </aside>
 
   </div>
 

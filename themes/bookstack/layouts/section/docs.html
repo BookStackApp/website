@@ -1,26 +1,24 @@
 {{ partial "header.html" . }}
 
-<div class="header">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6">
-				{{if eq .Page.Type "admin-doc"}}
-				<h1 class="thin-margin">Admin Documentation</h1>
-				{{else if eq .Page.Type "user-doc"}}
-				<h1 class="thin-margin">User Documentation</h1>
-				{{else}}
-				<h1 class="thin-margin">Documentation</h1>
-				{{end}}
-
-				
-			</div>
-			<div class="col-sm-6">
-				<div class="float right float-none-sm">
-					<input type="text" placeholder="Search docs" class="doc-search-input">
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="header padded-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        {{ if eq .Type "admin-doc" }}
+          <div class="docs-section-title">Admin Documentation</div>
+        {{ else if eq .Type "user-doc" }}
+          <div class="docs-section-title">User Documentation</div>
+        {{else}}
+          <div class="docs-section-title">Documentation</div>
+        {{end}}
+      </div>
+      <div class="col-sm-6">
+        <div class="float right float-none-sm">
+          <input type="text" placeholder="Search docs" class="doc-search-input">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

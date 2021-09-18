@@ -4,6 +4,7 @@ baseurl = "https://www.bookstackapp.com/"
 theme="bookstack"
 enableGitInfo=true
 paginate=50
+summarylength=20
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -29,3 +30,4 @@ paginate=50
 
 [params]
   blogCover = "/images/cover.jpg"
+  description = "BookStack is a simple, open-source, self-hosted, easy-to-use platform for organising and storing information."

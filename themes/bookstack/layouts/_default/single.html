@@ -1,15 +1,15 @@
 {{ partial "header.html" . }}
 
-
-<div class="header">
+<div class="header padded-bottom">
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
         {{ if eq .Type "admin-doc" }}
-          <h1 class="thin-margin">Admin Documentation</h1>
-        {{end}}
-        {{ if eq .Type "user-doc" }}
-          <h1 class="thin-margin">User Documentation</h1>
+          <div class="docs-section-title">Admin Documentation</div>
+        {{ else if eq .Type "user-doc" }}
+          <div class="docs-section-title">User Documentation</div>
+        {{else}}
+          <div class="docs-section-title">Documentation</div>
         {{end}}
       </div>
       <div class="col-sm-6">
@@ -24,7 +24,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-sm-2 sidebar">
+    <aside class="col-sm-2 sidebar">
       <div class="sidebar-inner">
         {{ if eq .Type "admin-doc" }}
         {{partial "menu_admin_docs"}}
@@ -33,9 +33,9 @@
         {{partial "menu_user_docs"}}
         {{end}}
       </div>
-    </div>
+    </aside>
 
-    <div class="col-sm-8 col-sm-offset-1 docs-content">
+    <main class="col-sm-8 col-sm-offset-1 docs-content">
 
       <h1>{{.Title}}</h1>
 
@@ -49,7 +49,7 @@
         </a>
       </div>
 
-    </div>
+    </main>
   </div>
 
 </div>

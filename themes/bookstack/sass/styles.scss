@@ -293,6 +293,11 @@ input[type=text] {
   }
 }
 
+.docs-section-title {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
 .sidebar, .docs-index {
   margin-top: $-xl;
   h4 {

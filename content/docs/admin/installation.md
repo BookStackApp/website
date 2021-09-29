@@ -13,7 +13,6 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Docker](#docker)
 * [Ubuntu 20.04 Script](#ubuntu-2004)
 * [Ubuntu 18.04 Script](#ubuntu-1804)
-* [Ubuntu 16.04 Script](#ubuntu-1604)
 * [Community Guides](#community)
 * [Other Hosting Options](#other)
 
@@ -65,42 +64,10 @@ git clone https://github.com/BookStackApp/BookStack.git --branch release --singl
 8. Run `php artisan migrate` to update the database.
 9. Done! You can now login using the default admin details `admin@admin.com` with a password of `password`. You should change these details immediately after logging in for the first time.
 
-#### URL Rewrite rules
+#### Webserver Configuration
 
-**Apache**
-
-Ensure `mod_rewrite` is enabled.
-
-```xml
-<IfModule mod_negotiation.c>
-    Options -MultiViews -Indexes
-</IfModule>
-
-RewriteEngine On
-
-# Handle Authorization Header
-RewriteCond %{HTTP:Authorization} .
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-# Redirect Trailing Slashes If Not A Folder...
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [L,R=301]
-
-# Send Requests To Front Controller...
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [L]
-```
-
-**Nginx**
-
-
-```nginx
-location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
-```
+- [Example Apache VirtualHost configuration](https://github.com/BookStackApp/devops/blob/master/config/apache/bookstack.conf)
+- [Example Nginx Server block](https://github.com/BookStackApp/devops/blob/master/config/nginx)
 
 ---
 
@@ -113,7 +80,7 @@ Community docker setups are available for those that would prefer to use a conta
 #### LinuxServer.io
 
 * [GitHub Repository](https://github.com/linuxserver/docker-bookstack)
-* [Docker Hub page](https://hub.docker.com/r/linuxserver/bookstack)
+* [GitHub container package](https://github.com/linuxserver/docker-bookstack/pkgs/container/bookstack)
 
 #### solidnerd
 
@@ -152,7 +119,7 @@ sudo ./installation-ubuntu-20.04.sh
 
 ## Ubuntu 18.04 Installation Script
 
-A script to install BookStack on a fresh instance of Ubuntu 18.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 5.7 & PHP-7.2 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
+A script to install BookStack on a fresh instance of Ubuntu 18.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 5.7 & PHP-7.4 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
 [Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-18.04.sh)
 
@@ -169,31 +136,6 @@ chmod a+x installation-ubuntu-18.04.sh
 
 # Run the script with admin permissions
 sudo ./installation-ubuntu-18.04.sh
-```
-
----
-
-<a name="ubuntu-1604"></a>
-
-## Ubuntu 16.04 Installation Script
-
-A script to install BookStack on a fresh instance of Ubuntu 16.04 is available. This script is ONLY FOR A FRESH OS, it will install Nginx, MySQL 5.7 & PHP7 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
-
-[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-16.04.sh)
-
-#### Running the Script
-
-```bash
-# Ensure you have read the above information about what this script does before executing these commands.
-
-# Download the script
-wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-16.04.sh
-
-# Make it executable
-chmod a+x installation-ubuntu-16.04.sh
-
-# Run the script with admin permissions
-sudo ./installation-ubuntu-16.04.sh
 ```
 
 ---
@@ -220,3 +162,4 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 
 - [Cloudron](https://www.cloudron.io/store/com.bookstackapp.cloudronapp.html) - A solution for running apps on your own server.
 - [Uberspace](https://lab.uberspace.de/guide_bookstack.html) - A European based hosting provider.
+- [Home Assistant Community Add-on](https://github.com/hassio-addons/addon-bookstack) - For [Home Assistant](https://www.home-assistant.io/) users.

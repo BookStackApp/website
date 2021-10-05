@@ -53,6 +53,19 @@ php artisan bookstack:update-url <oldUrl> <newUrl>
 php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
 ```
 
+#### Reset User MFA Methods
+
+This will reset/clear any existing multi-factor-authentication methods for the given user. If MFA 
+is enforced for one of their roles they'll be prompted to reconfigure MFA upon next login.
+
+```bash
+# Via email address:
+php artisan bookstack:reset-mfa --email=john@example.com
+
+# Via system ID:
+php artisan bookstack:reset-mfa --id=5
+```
+
 #### Delete All Activity History
 
 This will clear all tracked activities in the system. Note: Some areas of the interface rely on this data, including the Audit Log and any "Recent Activity" lists.

@@ -284,12 +284,12 @@ input[type=text] {
   img, video {
     border: 1px solid $primary;
     border-radius: 3px;
+    max-width: 100%;
   }
   video {
     cursor: pointer;
     margin: $-l auto;
     display: block;
-    max-width: 100%;
   }
 }
 
@@ -317,20 +317,26 @@ input[type=text] {
   border-right: 2px dotted #E5E5E5;
 }
 
-@include larger-than($xl) {
+.sidebar-inner {
+  display: none;
+}
+.sidebar-inner.mobile {
+  display: block;
+}
+
+
+@include larger-than($l) {
   .sidebar {
     position: sticky;
     top: $-m;
   }
-}
-
-@include smaller-than($m) {
-  .sidebar li a {
-    padding: $-xs 0;
+  .sidebar-inner {
     display: block;
   }
+  .sidebar-inner.mobile {
+    display: none;
+  }
 }
-
 
 
 h2.thin-margin {

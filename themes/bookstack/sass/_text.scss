@@ -314,6 +314,14 @@ ul {
   }
 }
 
+@include smaller-than($l) {
+  ul li a, ol li a {
+    display: inline-block;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+}
+
 ol {
   list-style-type: decimal;
   padding-left: $-m*1.2;

@@ -32,8 +32,18 @@ Check the below list for the version you are updating to for any additional inst
 
 ## Version Specific Instructions
 
-The below lists things you may need to be aware of when upgrading to a newer version of BookStack.
+The below lists things you may need to be aware of when upgrading to a newer version of BookStack. 
+This is primarily a list of breaking changes & security notices.
+Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
+the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v21.08.5 or higher
+
+**Security** - v21.08.5 fixes a a vulnerability which would allow malicious users, who have 
+permission to update or create pages, to load content from files stored within
+the `storage/` or `public/` directories (Such as application logs) via the
+page HTML export system. In addition, this release adds stricter cache-control headers to http 
+responses while logged in to prevent back navigation to authorized resources after logout.
 
 #### Updating to v21.08.2 or higher
 

@@ -13,7 +13,7 @@ Now that [I've got a bit more time](https://danb.me/blog/posts/leaving-my-job-to
 to work on BookStack, I thought it'd be good to
 do something a little different on the blog and pay tribute to the services we use
 to help manage the project. Keep in mind that this is not a complete listing
-of projects that we within BookStack itself, but instead a listing of the services
+of projects that we use within BookStack itself, but instead a listing of the services
 and projects that we use from a project & code management point of view. 
 
 

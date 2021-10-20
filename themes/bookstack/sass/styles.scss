@@ -348,12 +348,19 @@ h2.thin-margin {
 }
 
 
+.blogpost-cards {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: $-xl;
+}
+
 .blogpost-card {
   display: block;
-  float: left;
-  margin-right: $-m;
   margin-bottom: $-m;
-  width: 280px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
   background-color: #FFF;
   border-radius: 4px;
   overflow: hidden;
@@ -367,7 +374,8 @@ h2.thin-margin {
   }
   .text {
     padding: $-m;
-    min-height: 80px;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   &:hover {
     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);

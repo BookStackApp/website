@@ -62,7 +62,7 @@
             <div class="col-sm-4">
                 <h4><span class="icon" aria-hidden="true">{{partial "icon/build.svg"}}</span>Configurable</h4>
                 <p>
-                    Configuration options allow you to set-up BookStack to suit your use case. You can change the name, Logo and registration options. You can also change whether the whole system is publicly viewable or not.
+                    Configuration options allow you to set-up BookStack to suit your use case. You can change the name, logo and registration options. You can also change whether the whole system is publicly viewable or not.
                 </p>
             </div>
             <div class="col-sm-4" >
@@ -71,10 +71,11 @@
                     BookStack is built using PHP, on top of the Laravel framework and it uses MySQL to store data. Performance has been kept in mind and BookStack can run happily on a $5 Digital Ocean VPS.
                 </p>
             </div>
-            <div class="col-sm-4" >
-                <h4><span class="icon" aria-hidden="true">{{partial "icon/directions_boat.svg"}}</span>Powerful Features</h4>
+            <div class="col-sm-4">
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/drawing.svg"}}</span>Built-In diagrams.net</h4>
                 <p>
-                    On top of the powerful search and linking there is also cross-book sorting, page revisions and image management. A full role and permission system allow you to lock down content and actions as required.
+                    The page editor within BookStack has <a href="https://www.diagrams.net/" target="_blank">diagrams.net</a> 
+                    drawing capability built-in, allowing the quick and easy creation of diagrams within your documentation.
                 </p>
             </div>
         </div>
@@ -83,9 +84,9 @@
         </p>
         <div class="row">
             <div class="col-sm-4">
-                <h4><span class="icon" aria-hidden="true">{{partial "icon/language.svg"}}</span>Multi-lingual</h4>
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/language.svg"}}</span>Multi-Lingual</h4>
                 <p>
-                    BookStack users can set their preferred language. Thanks to great community contributors, Current languages built into BookStack include EN, FR, DE, ES, IT, JA, NL, PL, RU and more.
+                    BookStack users can set their preferred language. Thanks to great community contributors, current languages built into BookStack include EN, FR, DE, ES, IT, JA, NL, PL, RU and <a href="https://crowdin.com/project/bookstack" target="_blank">many more</a>.
                 </p>
             </div>
             <div class="col-sm-4" >
@@ -97,7 +98,32 @@
             <div class="col-sm-4" >
                 <h4><span class="icon" aria-hidden="true">{{partial "icon/lock.svg"}}</span>Integrated Authentication</h4>
                 <p>
-                	As well as the default email/password login social providers such as GitHub, Google, Slack, AzureAD and more can be used. Okta and LDAP options are available for enterprise environments.
+                	As well as the default email/password login social providers such as GitHub, Google, Slack, AzureAD and more can be used. Okta, SAML2 and LDAP options are available for enterprise environments.
+                </p>
+            </div>
+        </div>
+        <p>
+            <br>
+        </p>
+        <div class="row">
+        	<div class="col-sm-4" >
+        	    <h4><span class="icon" aria-hidden="true">{{partial "icon/directions_boat.svg"}}</span>Powerful Features</h4>
+        	    <p>
+        	        On top of the powerful search and linking there is also cross-book sorting, page revisions and image management. A full role and permission system allow you to lock down content and actions as required.
+        	    </p>
+        	</div>
+            <div class="col-sm-4" >
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/mfa.svg"}}</span>Multi-Factor Authentication</h4>
+                <p>
+                	MFA is built in & can be enforced at a per-role level where desired.
+                	MFA options include TOTP (Google/Microsoft Authenticator, Authy, etc...) and static backup codes.
+                </p>
+            </div>
+            <div class="col-sm-4" >
+                <h4><span class="icon" aria-hidden="true">{{partial "icon/dark-mode.svg"}}</span>Dark & Light Modes</h4>
+                <p>
+                   BookStack provides it's user interface in both a light theme and a dark theme, saving the eyes
+                   of those that prefer to work in the shadows. This is configurable at a user level.
                 </p>
             </div>
         </div>
@@ -240,16 +266,18 @@
         <div class="container">
             <h2>Latest From The Blog</h2>
 
-			{{ range first 4 ( where .Site.Pages "Section" "blog") }}
-				<div class="blogpost-card">
-					<a href="{{.Permalink}}">
-						{{ if .Params.image }}
-							<div class="image" style="background-image: url({{.Params.image}});"></div>
-						{{ end }}
-						<div class="text">{{ .Title }}</div>
-					</a>
-				</div>
-			{{ end }}
+			<div class="blogpost-cards">
+				{{ range first 4 ( where .Site.Pages "Section" "blog") }}
+					<div class="blogpost-card">
+						<a href="{{.Permalink}}">
+							{{ if .Params.image }}
+								<div class="image" style="background-image: url({{.Params.image}});"></div>
+							{{ end }}
+							<div class="text">{{ .Title }}</div>
+						</a>
+					</div>
+				{{ end }}
+			</div>
 
 			<div class="clearfix"></div>
 

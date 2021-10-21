@@ -26,7 +26,7 @@ SAML2_EMAIL_ATTRIBUTE=email
 SAML2_EXTERNAL_ID_ATTRIBUTE=uid
 
 # Name of the attribute(s) to use for the user's display name
-# Can have mulitple attributes listed, separated with a '|' in which 
+# Can have multiple attributes listed, separated with a '|' in which 
 # case those values will be joined with a space.
 # Example: SAML2_DISPLAY_NAME_ATTRIBUTES=firstName|lastName
 # Defaults to the ID value if not found.
@@ -35,7 +35,7 @@ SAML2_DISPLAY_NAME_ATTRIBUTES=username
 # Identity Provider entityID URL
 SAML2_IDP_ENTITYID=https://example.com/saml2/idp/metadata.php
 
-# Auto-load metatadata from the IDP
+# Auto-load metadata from the IDP
 # Setting this to true negates the need to specify the next three options
 SAML2_AUTOLOAD_METADATA=false
 

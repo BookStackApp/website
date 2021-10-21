@@ -15,8 +15,6 @@ auto-register that user to provide a seamless access experience. They will be gi
 default role set under the "Default user role after registration" option in the
 application settings. 
 
-sdfsdfsdf
-
 ### Requirements & Limitations
 
 Listed below are some considerations to keep in mind in regard to BookStack's OIDC implementation:

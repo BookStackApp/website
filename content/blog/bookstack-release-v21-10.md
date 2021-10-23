@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v21.10"
-date = 2021-10-23T14:00:00Z
+date = 2021-10-24T14:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/gate-benofthenorth.jpg"
 slug = "bookstack-release-v21-10"
@@ -12,6 +12,8 @@ draft = false
 October brings us BookStack v21.10. This release is primarily intended to wrap up some 
 loose ends before we make some more substantial framework changes, but it does bring with
 it a new authentication option in addition to some new API endpoints.
+In the below we'll dive into many of the new features and improvements added
+since [v21.08](/blog/bookstack-release-v21-08/).
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v21.10)
@@ -30,41 +32,99 @@ it a new authentication option in addition to some new API endpoints.
 
 Notes
 
+![BookStack OpenID Connect Login View](/images/2021/10/oidc.png)
+
 ### API Updates
 
 #### Attachment Endpoints
 
-Notes
+A new set of API endpoints have been introduced to support the management of attachments. 
+Full CRUD & listing operations are supported for both file-upload and external-link style
+attachments.
+
+![Attachment API Endpoints View in API docs](/images/2021/10/attachment-api-endpoints.png)
 
 #### Image Upload via Markdown Content
 
-Notes
+Since v21.05.1 it has been possible to upload images as part of an API page update or creation, via
+embedding the image as a data-uri within HTML content. This release builds upon this and brings 
+the same functionality to markdown content on the same API endpoints; For example:
+
+```markdown
+![My image](data:image/png;base64,ABC123...)
+```
 
 ### TOTP URL During MFA Setup
 
-v21.08.1
-Notes
+Since the TOTP MFA system was added to BookStack in the last feature release, it was reported
+that some TOTP-handling services require a URL or secret code instead of a QR code. To support
+this, as of v21.08.1, we now show the TOTP URL below the QR code, which the secret code can be copied out of 
+if needed.
+
+![Preview of TOTP URL input within MFA TOTP Setup process](/images/2021/10/totp-url.png)
 
 ### IP Address in Audit Log
 
 v21.08.4
 Notes, mention `APP_PROXIES` env option if needed
 
+![IP Address shown in Audit Log View](/images/2021/10/audit-log-ip.png)
+
 ### Smarter Concurrent Editing Detection & Warnings
 
 v21.08.5
 
+![Preview of warning message shown on editor conflict detection](/images/2021/10/editor-conflicts.png)
+
 ### New Debug View
 
-v21.08.6
+In v21.08.6 a new BookStack specific debug view was introduced:
+
+![Preview of the page BookStack error debug view](/images/2021/10/debug-view.png)
+
+This was introduced to limit the accidental sharing of errors and confidential details, while
+providing important details and potentially helpful BookStack specific resources to the admin
+attempting to debug the problem at hand.
 
 ### Introduction of Content Security Policy
 
-v21.08.2
+Within v21.08.2 [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+headers were added to the responses served by BookStack.
+This massively helps reduce the impact of a wide range of potential XSS vulnerabilities by restricting
+the types of scripts that can run within the content of a page.
+
+Content within the "Custom HTML Head Content" is automatically parsed to be correctly tagged so it adheres
+to the fairly strict policy set. Any custom script additions you've made may need adjustment.
+
+Details of headers set can be found in the [CSP section of our security page](/docs/admin/security/#csp).
 
 ### Translations
 
 TODO
+
+
+### SAML 2 Enhancements
+
+The SAML 2.0 has received some attention in this release. It has recently been found that logging in via
+SAML could lose the original intended location context of a user, leading to them being redirect to the 
+homepage after login instead of the page they actually wanted to read. This was due to a change in cookies
+causing the user's session to be lost during the SAML flow. This release tweaks the flow so the session
+is kept for correct expected redirection.
+
+Upon the above, A couple of new `.env` options have been introduced to allow the configuring of service
+provider certificate and key:
+
+```bash
+# Service Provider Certificate & Key (Optional)
+# Providing these will provide key data within BookStack's metadata endpoint
+# while implicitly enabling signing on Authn and Logout requests.
+SAML2_SP_x509=<cert_data>
+SAML2_SP_x509_KEY=<key_data>
+```
+
+These options were primarily intended to help allow single-logout-service requests when using 
+ADFS.Thanks to [@theodor-franke](https://github.com/BookStackApp/BookStack/pull/2902) for helping by doing the initial work to implement these changes.
+
 
 ### Full List of Changes
 

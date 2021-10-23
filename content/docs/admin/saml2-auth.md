@@ -59,6 +59,13 @@ SAML2_IDP_x509=<cert_data>
 # Alternatively you can set this to a space separated list of values. For example:
 # SAML2_IDP_AUTHNCONTEXT="urn:oasis:names:tc:SAML:2.0:ac:classes:Password urn:federation:authentication:windows"
 SAML2_IDP_AUTHNCONTEXT=true
+
+# Service Provider Certificate & Key (Optional)
+# Providing these will provide key data within BookStack's metadata endpoint
+# while implicitly enabling signing on Authn and Logout requests.
+# This is often required to support Single Logout Service in an ADFS environment.
+SAML2_SP_x509=<cert_data>
+SAML2_SP_x509_KEY=<key_data>
 ```
 
 A user in BookStack will be linked to a SAML user via the `SAML2_EXTERNAL_ID_ATTRIBUTE`. If the value of this id changes in the identity provider it can be updated in BookStack by an admin by changing the 'External Authentication ID' field on the user's profile.

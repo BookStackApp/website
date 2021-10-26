@@ -163,3 +163,4 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [Cloudron](https://www.cloudron.io/store/com.bookstackapp.cloudronapp.html) - A solution for running apps on your own server.
 - [Uberspace](https://lab.uberspace.de/guide_bookstack.html) - A European based hosting provider.
 - [Home Assistant Community Add-on](https://github.com/hassio-addons/addon-bookstack) - For [Home Assistant](https://www.home-assistant.io/) users.
+- [Stellar Hosted](https://www.stellarhosted.com/bookstack/) - A European based managed hosting provider.

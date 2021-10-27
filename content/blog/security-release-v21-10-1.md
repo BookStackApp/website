@@ -9,7 +9,7 @@ slug = "bookstack-release-v21-10-1"
 draft = false
 +++
 
-BookStack v21.08.1 has been released. This is a security release that covers a vulnerability
+BookStack v21.10.1 has been released. This is a security release that covers a vulnerability
 which would allow malicious users, who have permission to update or create pages, to upload
 content that could then be utilized for phishing or other general malicious intent.
 

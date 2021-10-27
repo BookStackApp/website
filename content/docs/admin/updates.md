@@ -37,9 +37,15 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v21.10.1 or higher
+
+**Security** - v21.10.1 fixes a vulnerability
+which would allow malicious users, who have permission to update or create pages, to upload
+content that could then be utilized for phishing or other general malicious intent.
+
 #### Updating to v21.08.5 or higher
 
-**Security** - v21.08.5 fixes a a vulnerability which would allow malicious users, who have 
+**Security** - v21.08.5 fixes a vulnerability which would allow malicious users, who have 
 permission to update or create pages, to load content from files stored within
 the `storage/` or `public/` directories (Such as application logs) via the
 page HTML export system. In addition, this release adds stricter cache-control headers to http 

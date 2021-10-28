@@ -35,7 +35,8 @@ GOOGLE_AUTO_REGISTER=true
 TWITCH_AUTO_REGISTER=true
 ```
 
-This will allow registration using these services even if registrations are disabled. It also allows registration if using LDAP as you main authentication option.
+This will allow registration using these services even if registrations are disabled.
+It also allows registration if using LDAP as your main authentication option.
 
 #### Automatic Email Confirmation
 

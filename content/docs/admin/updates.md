@@ -37,9 +37,9 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
-#### Updating to v21.10.1 or higher
+#### Updating to v21.10.1/v21.10.2 or higher
 
-**Security** - v21.10.1 fixes a vulnerability
+**Security** - Both v21.10.1 and v21.10.2 were released to address a vulnerability
 which would allow malicious users, who have permission to update or create pages, to upload
 content that could then be utilized for phishing or other general malicious intent.
 
@@ -203,5 +203,5 @@ The v0.13 release contained some new features and updates which change the requi
   Upgrade your PHP version if below 5.6.4.
 * PHP-Tidy extension is now required.
   - On Ubuntu 16.04 this can be installed via `sudo apt install php7.0-tidy`.
-  - On Ubuntu 14.04 (Using the defauly PHP option) this can be installed via `sudo apt-get install php5-tidy`.
+  - On Ubuntu 14.04 (Using the default PHP option) this can be installed via `sudo apt-get install php5-tidy`.
 * Page attachments will be stored in the `storage/uploads` folder (Unless you use Amazon S3). This folder will be created on update. Ensure your webserver has write permissions for this folder.

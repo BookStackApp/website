@@ -22,7 +22,7 @@ If you allow untrusted users to edit page content you should update as soon as p
 
 ### Full List of Changes
 
-* Made further fixes to address image upload vulnerability. Thanks to again @haxatron ([#3019](https://github.com/BookStackApp/BookStack/issues/3019))
+* Made further fixes to address image upload vulnerability. Thanks again to @haxatron ([#3019](https://github.com/BookStackApp/BookStack/issues/3019))
 * Updated translations with latest changes from Crowdin. ([#3014](https://github.com/BookStackApp/BookStack/pull/3014))
 
 

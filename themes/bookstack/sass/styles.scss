@@ -13,14 +13,14 @@
 @import "photoswipe";
 
 .md-margin-top {
-  margin-top: $-xxl*1.6;
+  margin-top: $-xxl*1.4;
   @include smaller-than($screen-lg) {
     margin-top: $-m;
   }
 }
 
 .md-margin-bottom {
-  margin-bottom: $-xxl*1.6;
+  margin-bottom: $-xxl*1.4;
   @include smaller-than($screen-lg) {
     margin-bottom: $-m;
   }
@@ -82,6 +82,19 @@
   display: block;
   max-width: 100%;
   border-radius: 2px;
+}
+
+.sponsor-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  a {
+    display: block;
+    flex: 1;
+    margin: $-s $-xl;
+    min-width: 140px;
+  }
 }
 
 header .menu, footer .menu {

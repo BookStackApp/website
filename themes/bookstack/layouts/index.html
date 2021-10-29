@@ -10,6 +10,14 @@
 		          <a href="https://demo.bookstackapp.com">Demo</a> &nbsp;-&nbsp;
 		          <a href="/docs/admin/installation">Install</a>
 		        </p>
+
+				<p class="nomargin">
+					<br>
+					Latest Blog Post: <br>
+					{{ range first 1 ( where .Site.Pages "Section" "blog") }}
+							<a href="{{.Permalink}}">{{ .Title }}</a>
+					{{ end }}
+				</p>
 		    </div>
 		    <div class="col-md-8 screenshot-container-parent">
 		    	<div class="screenshot-container">
@@ -27,7 +35,7 @@
 
 
   <div class="container md-margin-top">
-        <h2 id="features">Features</h2>
+        <h2 id="features" class="nomargin margin-bottom">Features</h2>
         <div class="row">
             <div class="col-sm-4">
                 <h4><span class="icon" aria-hidden="true">{{partial "icon/code.svg"}}</span>Free &amp; Open Source</h4>
@@ -128,6 +136,45 @@
             </div>
         </div>
     </div>
+
+
+	<div class="shaded-border md-margin-top">
+		<div class="container md-margin-top">
+			<div class="row">
+				<div class="col-sm-4">
+					<h2 id="sponsors" class="nomargin margin-bottom">Project Sponsors</h2>
+					<p>
+						Shown are our bronze, silver and gold project sponsors. <br>
+						Big thanks to these companies for supporting the project. <br>
+						Note: Listed services are not tested, vetted nor supported by the official BookStack project in any manner. <br>
+						<br>
+						<a target="_blank" href="https://github.com/sponsors/ssddanbrown">View all sponsors &raquo;</a>
+					</p>
+				</div>
+				<div class="col-sm-8 text-center">
+					<p><br></p>
+					<h5>Our Bronze Sponsors</h5>
+
+					<div class="sponsor-list">
+
+						<a href="https://www.diagrams.net/" target="_blank">
+							<img width="280" src="/images/sponsors/diagramsnet.png" alt="Diagrams.net logo">
+						</a>
+
+						<a href="https://www.stellarhosted.com/" target="_blank">
+							<img width="280" src="/images/sponsors/stellarhosted.png" alt="Stellar Hosted Logo">
+						</a>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
     <div class="shaded shaded-border md-margin-top padded-vertical large">
     	<div class="container">
     		<div class="row">

@@ -66,8 +66,8 @@ git clone https://github.com/BookStackApp/BookStack.git --branch release --singl
 
 #### Webserver Configuration
 
-- [Example Apache VirtualHost configuration](https://github.com/BookStackApp/devops/blob/master/config/apache/bookstack.conf)
-- [Example Nginx Server block](https://github.com/BookStackApp/devops/blob/master/config/nginx)
+- [Example Apache VirtualHost configuration](https://github.com/BookStackApp/devops/blob/main/config/apache/bookstack.conf)
+- [Example Nginx Server block](https://github.com/BookStackApp/devops/blob/main/config/nginx)
 
 ---
 
@@ -95,7 +95,7 @@ Community docker setups are available for those that would prefer to use a conta
 
 A script to install BookStack on a fresh instance of Ubuntu 20.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 8.0 & PHP-7.4 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
-[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-20.04.sh)
+[Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-20.04.sh)
 
 #### Running the Script
 
@@ -103,7 +103,7 @@ A script to install BookStack on a fresh instance of Ubuntu 20.04 is available. 
 # Ensure you have read the above information about what this script does before executing these commands.
 
 # Download the script
-wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-20.04.sh
+wget https://raw.githubusercontent.com/BookStackApp/devops/main/scripts/installation-ubuntu-20.04.sh
 
 # Make it executable
 chmod a+x installation-ubuntu-20.04.sh
@@ -121,7 +121,7 @@ sudo ./installation-ubuntu-20.04.sh
 
 A script to install BookStack on a fresh instance of Ubuntu 18.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 5.7 & PHP-7.4 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
-[Link to installation script](https://github.com/BookStackApp/devops/blob/master/scripts/installation-ubuntu-18.04.sh)
+[Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-18.04.sh)
 
 #### Running the Script
 
@@ -129,7 +129,7 @@ A script to install BookStack on a fresh instance of Ubuntu 18.04 is available. 
 # Ensure you have read the above information about what this script does before executing these commands.
 
 # Download the script
-wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-18.04.sh
+wget https://raw.githubusercontent.com/BookStackApp/devops/main/scripts/installation-ubuntu-18.04.sh
 
 # Make it executable
 chmod a+x installation-ubuntu-18.04.sh

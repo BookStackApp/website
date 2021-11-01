@@ -31,3 +31,5 @@ summarylength=20
 [params]
   blogCover = "/images/cover.jpg"
   description = "BookStack is a simple, open-source, self-hosted, easy-to-use platform for organising and storing information."
+  [params.social]
+    twitter = "bookstack_app"

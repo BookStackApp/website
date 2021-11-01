@@ -162,7 +162,7 @@ APP_URL=http://mybookstackurl.com
 5. Within your application in azure, Navigate to 'Certificates & secrets' then choose 'New client secret'.
 6. Enter any description you want and set an expiry duration. Then click 'Save'.
 7. Copy the string of characters under 'Value'. This is the APP_SECRET value for step 9 and is only shown once.
-8. Navigate to 'API permissions' for your app and choose 'Add a permission'. Find the 'Azure Active Directory Graph' option within this, Then select 'Delegated permissions' then find & select the 'User.Read' permission. Then select 'Add permissions' at the bottom of the page.
+8. Navigate to 'API permissions' for your app. You should already have a "Microsoft Graph" > "User.Read" permission assigned. If not choose 'Add a permission'. Find the 'Microsoft Graph' option within this, then select 'Delegated permissions' then find & select the 'User.Read' permission. Then select 'Add permissions' at the bottom of the page.
 9. Copy these details and add them as new variables in your `.env` file like so:
 ```bash
 # Replace the below (including '{}' braces) with your azure APP_ID and APP_SECRET and TENANT

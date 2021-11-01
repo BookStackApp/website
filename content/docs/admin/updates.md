@@ -37,6 +37,14 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+
+#### Updating to v21.10.3 or higher
+
+**Security** - v21.10.3 looks to address a couple of vulnerabilities within the attachment and image
+serving mechanisms. The attachment vulnerability could result in users uploading content to be served
+in a way that can be utilized for phishing. The image serving vulnerability could result in unintended
+file access within your BookStack storage folder.
+
 #### Updating to v21.10.1/v21.10.2 or higher
 
 **Security** - Both v21.10.1 and v21.10.2 were released to address a vulnerability

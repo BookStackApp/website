@@ -10,7 +10,6 @@ BookStack allows users to upload both images for content and files as attachment
 * [Storage Options](#storage-options)
 * [Changing Upload Limits](#changing-upload-limits)
 * [File Upload Timeout](#file-upload-timeout)
-* [File Upload Limit](#file-upload-limit)
 
 **For information relating to security for file uploads please refer to the [Security Page](/docs/admin/security).**
 
@@ -117,7 +116,18 @@ STORAGE_ATTACHMENT_TYPE=local_secure
 
 ### Changing Upload Limits
 
-By default, a lot of server software has strict limits on upload sizes which causes errors when users upload new content. This is not configured as part of BookStack but as part of PHP and your web sever software. If you run into problems with upload size limits follow the below details for PHP and whichever web server you use:
+By default, a lot of server software has strict limits on upload sizes which causes errors when users upload new content. BookStack enforces its own limit but there may also be limits configured as part of PHP and your web sever software. If you run into problems with upload size limits follow the below details for BookStack, PHP and whichever web server you use.
+
+#### BookStack
+
+The upload limit in BookStack is configured through an option in your `.env` file. 
+Find or add the follow option then configure to your requirements.
+
+```bash
+# File Upload Limit
+# Maximum file size, in megabytes, that can be uploaded to the system.
+FILE_UPLOAD_SIZE_LIMIT=50
+```
 
 #### PHP
 
@@ -180,19 +190,5 @@ To modify this timeout, in BookStack settings, Find the 'Custom HTML head conten
     // Set the file upload timeout to 120 seconds.
     // You can change '120' to be the number of seconds you want the timeout to be. 
     window.uploadTimeout = 120 * 1000;
-</script>
-```
-
----
-
-### File Upload Limit
-
-File uploads in BookStack use a JavaScript library which has a default upload size limit of 256MB. To modify this timeout, in BookStack settings, Find the 'Custom HTML head content' setting and add the below code. Note that this does not change any server-side upload limits, Your websever may still impose an upload limit.
-
-```html
-<script>
-    // Set the file upload limit to 1.5GB.
-    // The value is defined in MB. 
-    window.uploadLimit = 1500;
 </script>
 ```

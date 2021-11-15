@@ -38,6 +38,20 @@ Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 
+#### Updating to v21.11 or higher
+
+**API Changes** - As of v21.11 any dates in API responses will be formatted as per ISO-8601, with `2019-12-02T20:01:00.283041Z` reflecting an example of this format. You may need to review any of your scripts that utilise dates from API responses.
+
+**Upload Limit** - System file upload limits are now configured using a `FILE_UPLOAD_SIZE_LIMIT` option in your 
+  `.env` file. This value is specified as an integer and represents the max upload size in MegaBytes. This defaults to 50MB. This replaces the old `window.uploadLimit` header option that could be set.
+
+**Search Index Changes** - Changes to search indexing and scoring changes were made in this release. 
+  It's recommended to run `php artisan bookstack:regenerate-search` to ensure a consistent search experience and take
+  advantage of these changes.
+
+**Logout Endpoints** - Logout endpoints have now changed to be CSRF protected POST endpoints instead of GET endpoints. If you were using these for any external purposes you may now need to implement an alternative workflow.
+
+
 #### Updating to v21.10.3 or higher
 
 **Security** - v21.10.3 looks to address a couple of vulnerabilities within the attachment and image

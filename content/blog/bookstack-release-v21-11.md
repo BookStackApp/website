@@ -10,7 +10,7 @@ draft = false
 +++
 
 Today we release BookStack v21.11 which focuses on a couple of areas that have gone
-untouched for a while; Those areas tags and the site-wide search system. These changes
+untouched for a while; Those areas being tags and the site-wide search system. These changes
 sit upon more substantial framework upgrade work that has occurred this release cycle.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
@@ -24,7 +24,7 @@ sit upon more substantial framework upgrade work that has occurred this release 
   [v21.10.3](/blog/bookstack-release-v21-10-3/) posts for more details.
 - **API Changes** - As of v21.11 any dates in API responses will be formatted as per ISO-8601, with `2019-12-02T20:01:00.283041Z` reflecting an example of this format. You may need to review any of your scripts that utilise dates from API responses.
 - **Upload Limit** - System file upload limits are now configured using a `FILE_UPLOAD_SIZE_LIMIT` option in your 
-  `.env` file. This value is specified as an integer and represents the max upload size in MegaBytes. This defaults to 50MB. This replaces the old `window.uploadLimit` header option that could be set.
+  `.env` file. This value is specified as an integer and represents the max upload size in MegaBytes. This defaults to 50MB. This replaces the old `window.uploadLimit` HTML head option that could be set.
 - **Search Index Changes** - As detailed below, there have been search indexing and scoring changes in v21.11. 
   It's recommended to run `php artisan bookstack:regenerate-search` to ensure a consistent search experience and take
   advantage of these changes.
@@ -39,10 +39,10 @@ tag names along with counts of usage, broken down by item type (Total, page, cha
 ![Tags Overview Page Preview](/images/2021/11/tags-page.png)
 
 Clicking the tag name, or the counts, will start a search for that particular tag and item type.
-Show on the right is the count of unique values used against the tag name. Clicking this will take
+Shown on the right is the count of unique values used against the tag name. Clicking this will take
 you to a similar view for that specific tag name, displaying all the values used for that tag.
 
-This view can be access via the actions menu when viewing all books or shelves in the system.
+This view can be accessed via the actions menu when viewing all books or shelves in the system.
 
 ### Search System Enhancements
 
@@ -53,39 +53,39 @@ with some surrounding context:
 
 ![Search Enhancements Preview](/images/2021/11/search-results.png)
 
-Upon this visual change, which should help visual parsing of results, the following
+Upon this aesthetic change, which should help visual parsing of results, the following
 improvements have been made to the search indexing and scoring system:
 
 - Terms searched will now have their scores relatively adjusted based upon frequency
   in the database. This should help prevent common, smaller terms causing so much noise in results.
-- Page content is now parsed so that a score boost if given to terms within content headings.
+- Page content is now parsed so that a score boost is given to terms within content headings.
 - The score boost for terms in item titles has been significantly increased.
-- Standard terms will now match against the names and values of tags assigned to an item.
-- Search terms that had issues due to containing certain delimiters (For example IP addresses) will
-  now be auto-converted to be an "exact" search term to allow it to match without user intervention.
+- Standard terms will now match against the names and values of tags.
+- Search terms that had issues, due to containing certain delimiters (For example IP addresses), will
+  now be auto-converted to become an "exact" search term.
 - The regenerate-search command will now report some level of progress to the user as it runs.
 
-Put together, these changes should result in a big overall improvement to the search system to provide
+Put together, these changes should result in a big overall improvement to the search system and provide
 much more accurate results in a format that's easier to read.
 
 ### Search API Endpoints
 
-As is common, the API has receive new functionality. A "Search" endpoint has been added which allows
+As is common, the API has received new functionality. A "Search" endpoint has been added which allows
 you to run queries against items within BookStack using [the same filters and options](/docs/user/searching/)
-available when using the search bar within BookStack. 
+available when using the main search bar within the interface. 
 
 ![Search API Preview](/images/2021/11/search-api.png)
 
-The behavior of this endpoint is a bit quirky compared to our other API endpoints so ensure you
-read the documentation carefully if intended to use this.
+The behavior of this endpoint is a bit quirky compared to others so ensure you
+read the documentation carefully if intending to use this.
 
 ### Framework Upgrades
 
 As an early part of this release I worked to upgrade our framework from Laravel 6 to Laravel 8.
 To help this upgrade I used [Laravel shift](https://laravelshift.com/) to automate much of the busy 
 work. Moving to Laravel 8 puts us on the latest release for the first time in quite a while, and means
-that we can take advantage of the latests framework features where needed. There won't really be a
-noticeable impact to users but it should be development more pleasant while setting us up
+that we can take advantage of the latest framework features where needed. There won't really be a
+noticeable impact to users but it should make development more pleasant while setting us up
 to eventually move to the next Laravel long-term-support release.
 
 A big thanks to the Laravel team, especially for their support on the LTS releases which has allowed
@@ -102,8 +102,8 @@ Over the last month I've spent a bit of time focusing on some of the higher-leve
 As part of this I've set-up an official Twitter account for BookStack: [@bookstack_app](https://twitter.com/bookstack_app). This means you can follow project updates and progress without having to also scroll 
 past pictures of my cat.
 
-Additionally, I've also setup a [BookStack YouTube channel](https://www.youtube.com/channel/UCH66RFWfw6CSm2T1EM4ik1g). I mentioned wanting to record some project videos in the "[A Year of BookStack](/blog/1-year-of-bookstack/)" blogpost; Just 5 years later I've finally started on these.
-Currently there's just two videos now but more should be coming with improved audio quality.
+I've also created a [BookStack YouTube channel](https://www.youtube.com/channel/UCH66RFWfw6CSm2T1EM4ik1g). I mentioned wanting to record some project videos in the "[A Year of BookStack](/blog/1-year-of-bookstack/)" blogpost; 5 years later I've finally started on these.
+Currently there's just two videos to guide installation options but more should be coming with improved audio quality.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ShqUjt33uOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -145,10 +145,10 @@ Currently there's just two videos now but more should be coming with improved au
 ### Next Steps
 
 Within the latter stage of the v21.11 I went through some of the older issues in the project
-to address them if still relevant. I'll likely look to continue that to produce a few 
+to address them if still relevant. I'll probably continue that work to produce a few 
 patch releases.
 
-As mentioned above I'm intending to produce more videos for the BookStack YouTube channel.
+As mentioned above I'm intending to produce more videos for [the BookStack YouTube channel](https://www.youtube.com/channel/UCH66RFWfw6CSm2T1EM4ik1g).
 Will work on these in times when I want to do something a bit more creative.
 
 In terms of larger features, I'll start getting deeper into

@@ -43,9 +43,9 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 **API Changes** - As of v21.11 any dates in API responses will be formatted as per ISO-8601, with `2019-12-02T20:01:00.283041Z` reflecting an example of this format. You may need to review any of your scripts that utilise dates from API responses.
 
 **Upload Limit** - System file upload limits are now configured using a `FILE_UPLOAD_SIZE_LIMIT` option in your 
-  `.env` file. This value is specified as an integer and represents the max upload size in MegaBytes. This defaults to 50MB. This replaces the old `window.uploadLimit` header option that could be set.
+  `.env` file. This value is specified as an integer and represents the max upload size in MegaBytes. This defaults to 50MB. This replaces the old `window.uploadLimit` HTML head option that could be set.
 
-**Search Index Changes** - Changes to search indexing and scoring changes were made in this release. 
+**Search Index Changes** - Changes to search indexing and scoring were made in this release. 
   It's recommended to run `php artisan bookstack:regenerate-search` to ensure a consistent search experience and take
   advantage of these changes.
 

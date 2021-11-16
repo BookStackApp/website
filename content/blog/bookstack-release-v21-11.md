@@ -93,7 +93,22 @@ us to retain a steady and feasible upgrade path for users in terms of system req
 
 ### Translations
 
-// TODO
+Thanks once again to our transcendent translating team. Since the last feature release the 
+below members have been doing fantastic work on Crowdin to keep text translated and up-to-date:
+
+- jozefrebjak - *Slovak*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Martins Pilsetnieks (pilsetnieks) - *Latvian*
+- na3shkw - *Japanese*
+- Gerwin de Keijzer (gdekeijzer) - *Dutch*
+- m0uch0 - *Spanish*
+- nutsflag - *French*
+- sulfo - *Danish*
+- Michał Lipok (mLipok) - *Polish*
+- Raukze - *German*
+- Nicolas Pawlak (Mikolajek) - *French; German; Polish*
+- zygimantus - *Lithuanian*
+- aarchijs - *Latvian*
 
 
 ### Official Twitter & YouTube Channel
@@ -105,9 +120,9 @@ past pictures of my cat.
 I've also created a [BookStack YouTube channel](https://www.youtube.com/channel/UCH66RFWfw6CSm2T1EM4ik1g). I mentioned wanting to record some project videos in the "[A Year of BookStack](/blog/1-year-of-bookstack/)" blogpost; 5 years later I've finally started on these.
 Currently there's just two videos to guide installation options but more should be coming with improved audio quality.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ShqUjt33uOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ShqUjt33uOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dbDzPIv8Cf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dbDzPIv8Cf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Full List of Changes
 

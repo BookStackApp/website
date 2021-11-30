@@ -13,7 +13,7 @@ BookStack v21.11.2 has been released.
 This is a security release that address a couple of vulnerabilities relating to API access
 and page draft related content visibility:
 
-- If the "Public" role was provided API access then the API could be accessed, in certain scenarios
+- If the "Public" role was provided API access then the API could be accessed, in certain scenarios,
   by non-authenticated users even if the "Allow public access" setting was disabled.
 - In some specific scenarios, content related to page drafts (Such as attachments) could be visible
   to non-owners (Whom would have permission to view the page if saved  as a non-draft at that point).

@@ -38,6 +38,14 @@ Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 
+#### Updating to v21.11.2 or higher
+
+**Security** - v21.11.2 addresses a couple of vulnerabilities relating to API access
+and page draft related content visibility. If the "Public" role was provided API access then the API could
+be accessed, in certain scenarios, by non-authenticated users even if the "Allow public access" setting was disabled.
+In some specific scenarios, content related to page drafts (Such as attachments) could be visible to non-owners 
+(Whom would have permission to view the page if saved  as a non-draft at that point).
+
 #### Updating to v21.11 or higher
 
 **API Changes** - As of v21.11 any dates in API responses will be formatted as per ISO-8601, with `2019-12-02T20:01:00.283041Z` reflecting an example of this format. You may need to review any of your scripts that utilise dates from API responses.

@@ -78,7 +78,9 @@ If the value of this ID changes in the identity provider it can be updated in Bo
 by an admin, by changing the "External Authentication ID" field on the user's profile.
 
 ### Callback URL
-Should your OIDC provider require a callback URL, use the following redirect_uri: `https://example.com/oidc/callback` and change https://example.com to your own domain where BookStack is hosted.
+
+Should your OIDC provider require a callback URL, the following can be used: `https://example.com/oidc/callback`.
+Change https://example.com to be the base URL of your BookStack instance.
 
 ### Debugging
 

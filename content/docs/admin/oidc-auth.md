@@ -77,6 +77,9 @@ A user in BookStack will be linked to an OIDC provided account via the `sub` cla
 If the value of this ID changes in the identity provider it can be updated in BookStack, 
 by an admin, by changing the "External Authentication ID" field on the user's profile.
 
+### Callback URL
+Should your OIDC provider require a callback URL, use the following redirect_uri: `https://example.com/oidc/callback` and change https://example.com to your own domain where BookStack is hosted.
+
 ### Debugging
 
 To help when setting up or configuring BookStack to use your OIDC system, the below

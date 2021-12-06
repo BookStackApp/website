@@ -80,7 +80,7 @@ by an admin, by changing the "External Authentication ID" field on the user's pr
 ### Callback URL
 
 Should your OIDC provider require a callback URL, the following can be used: `https://example.com/oidc/callback`.
-Change https://example.com to be the base URL of your BookStack instance.
+Change `https://example.com` to be the base URL of your BookStack instance.
 
 ### Debugging
 

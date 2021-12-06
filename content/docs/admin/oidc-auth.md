@@ -10,7 +10,7 @@ This replaces the default email & password authentication mechanism.
 BookStack supports a simple level of auto-discovery to ease endpoint and key management.
 
 When used, BookStack will attempt to match the OIDC user to an existing BookStack user
-based on a stored external id value otherwise, if not found, BookStack will effectively
+based on the *external id* value stored with your Bookstack user. If this match cannot be made, BookStack will effectively
 auto-register that user to provide a seamless access experience. They will be given the
 default role set under the "Default user role after registration" option in the
 application settings. 

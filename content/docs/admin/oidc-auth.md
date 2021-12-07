@@ -82,6 +82,14 @@ by an admin, by changing the "External Authentication ID" field on the user's pr
 Should your OIDC provider require a callback URL, the following can be used: `https://example.com/oidc/callback`.
 Change `https://example.com` to be the base URL of your BookStack instance.
 
+### Managing existing users
+When switching authentication method from `AUTH_METHOD=standard` to `AUTH_METHOD=oidc`, Bookstack cannot make a match with existing users, because the External Authentication ID of the existing user is unknown. Because of this missing ID, the system will think it needs to create a new user with 'guest' rights, but will fail because the e-mail address of the user already exists.
+
+One can overcome this situation by logging into Bookstack with admin rights and standard authentication. While logged in, change the authentication method to `oidc` in the `.env` file. This'hot' switch will make an entry field available where you can enter the External Authentication ID of your OIDC provider.
+
+![image](https://user-images.githubusercontent.com/1189058/145019644-b8dac7e5-a256-4564-bc74-767cfdb51219.png)
+
+
 ### Debugging
 
 To help when setting up or configuring BookStack to use your OIDC system, the below

@@ -37,6 +37,9 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v21.11.3 or higher
+
+**Security** - v21.11.3 helps prevent potential discovery and harvesting of user details including name and email address.
 
 #### Updating to v21.11.2 or higher
 

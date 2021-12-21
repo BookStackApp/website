@@ -29,12 +29,12 @@ BookStack can now emit webhooks! These are web requests that are emitted by Book
 when someone performs an action in the system (Updates page, Creates book etc..).
 Webhooks can be found by an administrator in the application settings.
 
-!! Image of webhooks list
+![Webhook list in settings](/images/2021/12/webhooks_list.png)
 
 Webhooks can be triggered by any event that's tracked in the audit log. You can choose
 specific events to trigger your webhooks or you can trigger upon any event.
 
-!! Image of webhook create view
+![Webhook from view](/images/2021/12/webhook_form.png)
 
 When triggered, BookStack will send a HTTP POST JSON request to the provided endpoint
 with a common set of details regarding the event. The general data format is shown when creating
@@ -87,9 +87,7 @@ The possibilities are pretty endless.
 
 Since webhooks need to make external HTTP requests, they have potential to slow down a system.
 If you're introducing webhooks that'd be triggered we have a way to run these in the background to
-prevent user experience slowdowns. Details about this can be found in the docs here.
-
-!! TODO - Update above with link
+prevent user experience slowdowns. [Details about this can be found here](/docs/admin/email-webhooks/#async-action-handling).
 
 ### Copy Entire Chapters & Books
 
@@ -98,7 +96,7 @@ copy entire chapters or even books. Performing this action will also copy all ch
 and/or pages in a single smooth action. Copy views will now show warnings to confirm
 copy behavior within BookStack so the necessary considerations can be made.
 
-!! IMAGE OF COPY VIEW
+![Book copy view](/images/2021/12/copy_book.png)
 
 These new abilities bring some great potential new workflow advancements, such as being
 able to create "templated" books pre-configured with the right chapter & page structure
@@ -109,7 +107,18 @@ ready to be copied out.
 When creating or updating a role there are a lot of permissions to configure.
 Creating a set of similar roles could be a time consuming experience. 
 As of v21.12 there's now a "Copy" action when viewing an existing role which
-will take you to the role create view with all fields filled as per the copied role:
+will take you to the role create view with all fields filled as per the copied role.
+
+![Role copy button](/images/2021/12/copy_role.png)
+
+### Audit Log IP Address Search
+
+The audit log has received another update thanks to [@johnroyer](https://github.com/BookStackApp/BookStack/pull/3081).
+It's now possible to search the audit log by IP address. 
+The search is a prefix-match so you can search using just the starting 
+portion if needing to search a range.
+
+![IP address search in audit log](/images/2021/12/audit_log_search.png)
 
 ### Search API Updates
 
@@ -140,7 +149,7 @@ run on command line via `php artisan bookstack:<command>`.
 I recently produced a getting started guide for the local theme system which includes
 registering custom commands:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YVbpm_35crQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="360" src="https://www.youtube.com/embed/YVbpm_35crQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ### Translations
@@ -153,7 +162,12 @@ content up-to-date. The below are the great contributions since v21.11:
 
 **Released in v21.12**
 
-
+* Added webhooks. ([#147](https://github.com/BookStackApp/BookStack/pull/147), [#3099](https://github.com/BookStackApp/BookStack/pull/3099))
+* Added ability to copy books, chapters & roles. ([#3118](https://github.com/BookStackApp/BookStack/pull/3118), [#1123](https://github.com/BookStackApp/BookStack/issues/1123))
+* Added audit log IP address search. Thanks to [@johnroyer](https://github.com/BookStackApp/BookStack/pull/3081). ([#3081](https://github.com/BookStackApp/BookStack/pull/3081))
+* Updated translations with latest Crowdin changes. ([#3117](https://github.com/BookStackApp/BookStack/pull/3117))
+* Fixed issue where non-ascii content could break search result previews. Thanks to [@Kristian-Krastev](https://github.com/BookStackApp/BookStack/pull/3113). ([#3113](https://github.com/BookStackApp/BookStack/pull/3113))
+* Fixed mismatched password validation rules across the application. ([#2237](https://github.com/BookStackApp/BookStack/issues/2237))
 
 **Released in v21.11.1 through v21.11.3**
 

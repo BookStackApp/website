@@ -9,9 +9,9 @@ slug = "bookstack-release-v21-12"
 draft = false
 +++
 
-To end 2021 I'm pleased to announce BookStack v21.12 has now been released.
+As our last feature release of the year BookStack v21.12 is now available.
 Upon a bunch of fixes & improvements, this release features outgoing webhooks in
-addition to new abilities which allow copying entire chapters and books.
+addition to the ability of copying entire chapters and books.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v21.12)
@@ -25,20 +25,20 @@ addition to new abilities which allow copying entire chapters and books.
 
 ### Outgoing Webhooks
 
-BookStack can now emit webhooks! These are web requests that are emitted by BookStack
+BookStack can now send out webhooks! These are web requests that are emitted by BookStack
 when someone performs an action in the system (Updates page, Creates book etc..).
-Webhooks can be found by an administrator in the application settings.
+Webhooks can be created by an administrator in the application "Settings > Webhooks" view.
 
 ![Webhook list in settings](/images/2021/12/webhooks_list.png)
 
 Webhooks can be triggered by any event that's tracked in the audit log. You can choose
-specific events to trigger your webhooks or you can trigger upon any event.
+specific events to trigger your webhooks or you can trigger upon any available system event.
 
 ![Webhook from view](/images/2021/12/webhook_form.png)
 
 When triggered, BookStack will send a HTTP POST JSON request to the provided endpoint
 with a common set of details regarding the event. The general data format is shown when creating
-or editing a webhook, but the below is an example of a "page_update" event:
+or editing a webhook, but the below is an example of a `page_update` event:
 
 ```json
 {
@@ -76,18 +76,16 @@ or editing a webhook, but the below is an example of a "page_update" event:
 Webhooks have a `text` property (Populated where possible, depending on event) which allows them to 
 be used directly in slack or slack-compatible services. If you wanted to get more advanced
 you could build your own middleware or use a service like [Zapier](https://zapier.com/) or [n8n](https://n8n.io/)
-to build more advanced event based integrations. For example:
+to glue actions & services together. Some possibilities could be:
 
 - Email an admin when application settings are changed.
 - Post in slack when a book is deleted.
-- Log page changes to a Google doc.
+- Log page change occurrences to a Google doc.
 - Update a BookStack page via the REST API when new users register.
 
-The possibilities are pretty endless.
-
 Since webhooks need to make external HTTP requests, they have potential to slow down a system.
-If you're introducing webhooks that'd be triggered we have a way to run these in the background to
-prevent user experience slowdowns. [Details about this can be found here](/docs/admin/email-webhooks/#async-action-handling).
+If you're creating a large amount of webhooks, that'd be triggered frequently, we have a way to run these in the background to
+prevent user experience slowdowns; [Details can be found here](/docs/admin/email-webhooks/#async-action-handling).
 
 ### Copy Entire Chapters & Books
 
@@ -98,13 +96,13 @@ copy behavior within BookStack so the necessary considerations can be made.
 
 ![Book copy view](/images/2021/12/copy_book.png)
 
-These new abilities bring some great potential new workflow advancements, such as being
-able to create "templated" books pre-configured with the right chapter & page structure
+These new abilities bring some great potential new workflow advancements such as being
+able to create "templated" books, pre-configured with the right chapter & page structure,
 ready to be copied out.
 
 ### Copy Roles
 
-When creating or updating a role there are a lot of permissions to configure.
+When creating or updating a role there can be a lot of permissions to configure.
 Creating a set of similar roles could be a time consuming experience. 
 As of v21.12 there's now a "Copy" action when viewing an existing role which
 will take you to the role create view with all fields filled as per the copied role.
@@ -115,8 +113,8 @@ will take you to the role create view with all fields filled as per the copied r
 
 The audit log has received another update thanks to [@johnroyer](https://github.com/BookStackApp/BookStack/pull/3081).
 It's now possible to search the audit log by IP address. 
-The search is a prefix-match so you can search using just the starting 
-portion if needing to search a range.
+The search is a prefix-match so you can filter using just the starting 
+portion if needing to match an IP range.
 
 ![IP address search in audit log](/images/2021/12/audit_log_search.png)
 
@@ -143,7 +141,7 @@ item URL or preview content.
 ### Logical Theme System Custom Commands
 
 The [logical theme system](https://github.com/BookStackApp/BookStack/blob/master/dev/docs/logical-theme-system.md)
-has been extended to allow registration of custom commands. These are actions you'd typically
+has been updated to allow registration of custom commands. These are actions you'd typically
 run on command line via `php artisan bookstack:<command>`.
 
 I recently produced a getting started guide for the local theme system which includes
@@ -185,7 +183,7 @@ content up-to-date. The below are the great contributions since v21.11:
 
 ### Next Steps
 
-Focus going into next year will be on the editor. I've started assessing new options but found it difficult to focus
+Focus going into next year will be on the editor. I've started assessing new options but found it difficult to harness
 the time needed this year, so it will be my priority going into 2022.
 
 I have continued to produce more videos on the [BookStack YouTube channel](https://www.youtube.com/channel/UCH66RFWfw6CSm2T1EM4ik1g).

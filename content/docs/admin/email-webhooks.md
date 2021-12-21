@@ -82,7 +82,7 @@ in a background process to improve performance.
 
 ### Async Action Handling
 
-Actions like sending email or triggering webhooks are done synchronously by default within BookStack which can
+Actions like sending email or triggering webhooks are performed synchronously by default which can
 slow down page loading when those actions are triggered. These actions can instead be processed asynchronously
 so they're handled in the background to prevent slowing down the request. This requires a config change 
 and a queue worker process to handle these background jobs:
@@ -130,4 +130,5 @@ To configure systemd (On a Ubuntu 20.04 system) with the above unit you'd typica
 - Run `systemctl start bookstack-queue.service` to start the queue service.
 
 Note: you may need to run the above commands with `sudo` if not acting as a privileged user. 
+
 You can then use `systemctl status bookstack-queue.service` to check the status of the queue worker. 

@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v21.12"
-date = 2021-12-22T18:00:00Z
+date = 2021-12-22T16:45:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/reindeer-joe-green.jpg"
 slug = "bookstack-release-v21-12"
@@ -154,6 +154,23 @@ registering custom commands:
 
 As always our awesome translators have been doing their work to keep language
 content up-to-date. The below are the great contributions since v21.11:
+
+- Vitaliy (gviabcua) - *Ukrainian*
+- Marco (cdrfun) - *German; German Informal*
+- mannycarreiro - *Portuguese*
+- m0uch0 - *Spanish*
+- na3shkw - *Japanese*
+- marinkaberg - *Russian*
+- 10935336 - *Chinese Simplified*
+- Luís Tiago Favas (starkyller) - *Portuguese*
+- Leonardo Mario Martinez (leonardo.m.martinez) - *Spanish, Argentina*
+- nutsflag - *French*
+- Thiago Rafael Pereira de Carvalho (thiago.rafael) - *Portuguese, Brazilian*
+- scureza - *Italian*
+- Ken Roger Bolgnes (kenbo124) - *Norwegian Bokmal*
+- Nguyen Hung Phuong (hnwolf) - *Vietnamese*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Umut ERGENE (umutergene67) - *Turkish*
 
 
 ### Full List of Changes

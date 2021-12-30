@@ -10,10 +10,10 @@ This replaces the default email & password authentication mechanism.
 BookStack supports a simple level of auto-discovery to ease endpoint and key management.
 
 When used, BookStack will attempt to match the OIDC user to an existing BookStack user
-based on a stored external id value otherwise, if not found, BookStack will effectively
-auto-register that user to provide a seamless access experience. They will be given the
-default role set under the "Default user role after registration" option in the
-application settings. 
+based on the "External Authentication ID" value stored against the Bookstack user. 
+If this match cannot be made, BookStack will effectively auto-register that user to 
+provide a seamless access experience. They will be given the default role set under the
+"Default user role after registration" option in the application settings. 
 
 ### Requirements & Limitations
 
@@ -81,6 +81,24 @@ by an admin, by changing the "External Authentication ID" field on the user's pr
 
 Should your OIDC provider require a callback URL, the following can be used: `https://example.com/oidc/callback`.
 Change `https://example.com` to be the base URL of your BookStack instance.
+
+### Switching to OIDC with Existing Users
+
+When switching `AUTH_METHOD` from `standard` to `oidc`, BookStack will not 
+link OIDC user accounts to existing BookStack users, where the email address is 
+matching, since the "External Authentication ID" value of the existing BookStack user does 
+not match the unique user ID provided by the OIDC system.
+
+You can overcome this situation by logging into BookStack with an admin account while `AUTH_METHOD=standard`.
+While logged in, change `AUTH_METHOD` to `oidc`.
+This change of authentication method will show an "External Authentication ID" text
+field, below the name and email inputs, when viewing a user account in BookStack.
+Here you can enter the unique user ID that would be provided by your OIDC provider.
+Once saved BookStack will then use this value to match OIDC and BookStack user 
+accounts upon next login attempt.
+
+If you need to update accounts in bulk, you could instead directly update the 
+`external_auth_id` field of the `users` table within your BookStack database.
 
 ### Debugging
 

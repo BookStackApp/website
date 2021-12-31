@@ -82,22 +82,22 @@ Filters are set advanced search features that can be used in your search term. T
   <tr>
     <td>{updated_after:&lt;date&gt;}</td>
     <td>{updated_after:2016-12-30}</td>
-    <td>Adds the condition that the content must have been last updated after the given date. <br> The date should be in the format YYYY-MM-DD</td>
+    <td>Adds the condition that the content must have been last updated after the given date. <br> The date should be in the format YYYY-MM-DD<br>Relative dates are supported, for example `-1year` will be one year ago.</td>
   </tr>
   <tr>
     <td>{updated_before:&lt;date&gt;}</td>
     <td>{updated_before:2016-12-30}</td>
-    <td>Adds the condition that the content must have been last updated before the given date. <br> The date should be in the format YYYY-MM-DD</td>
+    <td>Adds the condition that the content must have been last updated before the given date. <br> The date should be in the format YYYY-MM-DD<br>Relative dates are supported, for example `-1year` will be one year ago.</td>
   </tr>
   <tr>
     <td>{created_after:&lt;date&gt;}</td>
     <td>{created_after:2016-12-30}</td>
-    <td>Adds the condition that the content must have been created after the given date. <br> The date should be in the format YYYY-MM-DD</td>
+    <td>Adds the condition that the content must have been created after the given date. <br> The date should be in the format YYYY-MM-DD<br>Relative dates are supported, for example `-1year` will be one year ago.</td>
   </tr>
   <tr>
     <td>{created_before:&lt;date&gt;}</td>
     <td>{created_before:2016-12-30}</td>
-    <td>Adds the condition that the content must have been created before the given date. <br> The date should be in the format YYYY-MM-DD</td>
+    <td>Adds the condition that the content must have been created before the given date. <br> The date should be in the format YYYY-MM-DD<br>Relative dates are supported, for example `-1year` will be one year ago.</td>
   </tr>
   <tr style="font-weight:bold;">
     <td colspan="3">User Filters</td>

@@ -423,3 +423,12 @@ input[type="text"].doc-search-input {
     outline: none;
   }
 }
+
+.meilisearch-autocomplete .docs-searchbar-footer-logo,
+.meilisearch-autocomplete .docs-searchbar-footer {
+  vertical-align: top !important;
+}
+
+.meilisearch-autocomplete .docs-searchbar-suggestion--subcategory-column {
+  color: #53555a !important;
+}

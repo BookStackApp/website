@@ -37,6 +37,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v21.12.1 or higher
+
+**Security** - v21.12.1 better enforces permissions on book-sort & chapter-move operations to address scenarios where content could be moved to non-permissible locations.
+
 #### Updating to v21.11.3 or higher
 
 **Security** - v21.11.3 helps prevent potential discovery and harvesting of user details including name and email address.

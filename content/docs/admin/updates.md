@@ -37,6 +37,13 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v21.12.3 or higher
+
+**Composer Version Requirement Change** - Composer v2.0 or greater is now required to install or update BookStack. 
+You can check your composer version by running `composer -V`. 
+You can often update composer by running `sudo composer self-update` (Or you may be prompted to run `sudo composer self-update --2`).
+If you're using a system-supplied composer package you may need to first uninstall that (eg. `sudo apt remove composer`) then follow the [composer download documentation](https://getcomposer.org/download/) to get the latest version. Take notice of the `sudo mv composer.phar /usr/local/bin/composer` command shown in the documentation to install composer globally for easier usage.
+
 #### Updating to v21.12.1 or higher
 
 **Security** - v21.12.1 better enforces permissions on book-sort & chapter-move operations to address scenarios where content could be moved to non-permissible locations.

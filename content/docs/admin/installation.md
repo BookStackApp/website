@@ -15,6 +15,7 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Ubuntu 18.04 Script](#ubuntu-1804)
 * [Community Guides](#community)
 * [Other Hosting Options](#other)
+* [High Availability](#ha)
 
 ---
 
@@ -165,3 +166,27 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [Home Assistant Community Add-on](https://github.com/hassio-addons/addon-bookstack) - For [Home Assistant](https://www.home-assistant.io/) users.
 - [Stellar Hosted](https://www.stellarhosted.com/bookstack/) - A European based managed hosting provider.
 - [alwaysdata](https://www.alwaysdata.com/en/marketplace/bookstack/?tags=referrer:bookstack) - A European based managed hosting provider.
+
+---
+
+<a name="ha"></a>
+
+## High Availability
+
+Some enterprise environments may need to configure a "High Availability" setup of BookStack to include some operational redundancy.
+**This type of setup is not needed for the vast majority of BookStack instances.**
+For a "High Availability" BookStack setup you'll likely need to consider the following:
+
+- High availability is not something we assure to support. There may be scenarios that will not allow availability.
+  - For example: The BookStack upgrade process does not assure availability when ran.
+- Sessions and Cache use the local filesystem by default. 
+  - The database/memcached/redis options allow sharing across instances.
+  - [Cache and session options are documented here](/docs/admin/cache-session-config/).
+- Uploaded files use the local filesystem by default.
+  - You could instead use S3 or an S3 like storage system for these files.
+  - Alternatively you could mount/link the used directories to shared locations.
+  - [Directory locations and storage options are documented here](/docs/admin/upload-config/).
+- The [theme system](/docs/admin/hacking-bookstack/#theme-system) and [error log](/docs/admin/debugging/) also use the local filesystem.
+- A simplistic health-check endpoint can be found at the `/status` URI.
+  - This performs basic checks on subsystems.
+  - This should return a HTTP error status code (>=400) on any failure otherwise a 200 status code.

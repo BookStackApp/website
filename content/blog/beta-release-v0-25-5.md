@@ -32,7 +32,7 @@ Please consider that malicious exploitation of this vulnerability may have allow
 
 ### Security Process Updates
 
-When enacting upon the above security issues I noticed that the processes for security concerns could be improved. Details of how to report a sensitive security issue can now be found in the [project readme](https://github.com/BookStackApp/BookStack/tree/master#security).
+When enacting upon the above security issues I noticed that the processes for security concerns could be improved. Details of how to report a sensitive security issue can now be found in the [project readme](https://github.com/BookStackApp/BookStack/tree/development#-security).
 
 For the purpose of notifying admins on security issues, A new mailing list has been created which you can [subscribe to here](https://updates.bookstackapp.com/signup/bookstack-security-updates). 
 

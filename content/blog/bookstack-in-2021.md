@@ -83,7 +83,7 @@ beneficial to learn some new web standards but the effort and time required, whi
 limited existing BookStack audience usage, can be demoralizing. Going into 2022 I'll be even more defensive
 when it comes to implementing further authentication features.
 
-Gaining an extra 8 languages is pretty incredible. I can't thank [the translating community](https://github.com/BookStackApp/BookStack/blob/master/.github/translators.txt)
+Gaining an extra 8 languages is pretty incredible. I can't thank [the translating community](https://github.com/BookStackApp/BookStack/blob/development/.github/translators.txt)
 enough for the work they do to add and update language content.
 
 ### Version Numbering Change

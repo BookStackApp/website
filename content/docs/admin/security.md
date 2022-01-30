@@ -9,7 +9,7 @@ Since BookStack can hold important information for users you should be aware of 
 Read through the below to ensure you have secured your BookStack instance. Note, The below only
 relates to BookStack itself. The security of the server BookStack is hosted on is not instructed below but should be taken into account.
 
-If you'd like to be notified of new potential security concerns you can sign-up to the [BookStack security mailing list](https://updates.bookstackapp.com/signup/bookstack-security-updates). For reporting security vulnerabilities, please see the ["Security" section](https://github.com/BookStackApp/BookStack/blob/master/readme.md#-security) of the project readme on GitHub.
+If you'd like to be notified of new potential security concerns you can sign-up to the [BookStack security mailing list](https://updates.bookstackapp.com/signup/bookstack-security-updates). For reporting security vulnerabilities, please see the ["Security" section](https://github.com/BookStackApp/BookStack/blob/development/readme.md#-security) of the project readme on GitHub.
 
 
 <ul>

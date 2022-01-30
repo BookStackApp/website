@@ -62,7 +62,7 @@ updates from the great mentioned Crowdin members:
 * Added multi-item select to the book-sort interface. ([#2067](https://github.com/BookStackApp/BookStack/issues/2067))
 * Updated authentication system to prevent admins being logged out when changing authentication type, useful when setting up LDAP or SAML. ([#2031](https://github.com/BookStackApp/BookStack/issues/2031))
 * Updated editor focus so that the title is ready-selected if the default, otherwise the editor is focused. ([#2036](https://github.com/BookStackApp/BookStack/issues/2036))
-* Updated translations for Dutch, Korean, French, Turkish, Spanish. Thanks to [Crowdin Users](https://github.com/BookStackApp/BookStack/blob/master/.github/translators.txt). ([#2028](https://github.com/BookStackApp/BookStack/pull/2028), [#2071](https://github.com/BookStackApp/BookStack/pull/2071))
+* Updated translations for Dutch, Korean, French, Turkish, Spanish. Thanks to [Crowdin Users](https://github.com/BookStackApp/BookStack/blob/development/.github/translators.txt). ([#2028](https://github.com/BookStackApp/BookStack/pull/2028), [#2071](https://github.com/BookStackApp/BookStack/pull/2071))
 * Fixed issue where callout styles could not be cycled through via shortcut when in-callout formatting was selected in the editor. ([#2061](https://github.com/BookStackApp/BookStack/issues/2061))
 * Fixed issue where the selection area was not visible in code blocks or the markdown editor when using dark mode. ([#2060](https://github.com/BookStackApp/BookStack/issues/2060))
 * Fixed issue where callouts and code blocks would overlap floated images. ([#2055](https://github.com/BookStackApp/BookStack/issues/2055))

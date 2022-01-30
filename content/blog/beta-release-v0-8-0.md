@@ -16,7 +16,7 @@ author = "Dan Brown"
 
 ----
 
-BookStack v0.8.0 has now been released!. The release can be found [here on GitHub](https://github.com/BookStackApp/BookStack/releases/tag/v0.8.0) and [update/install instructions can be found here](https://github.com/BookStackApp/BookStack/blob/master/readme.md#updating-bookstack). 
+BookStack v0.8.0 has now been released!. The release can be found [here on GitHub](https://github.com/BookStackApp/BookStack/releases/tag/v0.8.0) and [update/install instructions can be found here](https://github.com/BookStackApp/BookStack/blob/development/readme.md#updating-bookstack). 
 
 We realised that we have pretty much been randomly creating the release numbers so far so but from now on we are going to stick to [Semantic Versioning 2.0.0](http://semver.org/) as much as possible. Since this release has some large new features that are upgrade-compatible we're jumping off v0.7.x and going direct to v0.8.0.
 

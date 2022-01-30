@@ -140,7 +140,7 @@ item URL or preview content.
 
 ### Logical Theme System Custom Commands
 
-The [logical theme system](https://github.com/BookStackApp/BookStack/blob/master/dev/docs/logical-theme-system.md)
+The [logical theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md)
 has been updated to allow registration of custom commands. These are actions you'd typically
 run on command line via `php artisan bookstack:<command>`.
 

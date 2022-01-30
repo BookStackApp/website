@@ -29,7 +29,7 @@ At the time of writing *(28th July)*:
 
 #### Code Repository Stats
 
-- [2,200 commits](https://github.com/BookStackApp/BookStack/commits/master)
+- [2,200 commits](https://github.com/BookStackApp/BookStack/commits/development)
 - 127 direct git contributors
 - 51,814 lines of code across 1112 files
     - PHP 82.9%

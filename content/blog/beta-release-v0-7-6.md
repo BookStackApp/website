@@ -10,7 +10,7 @@ tags = ["Releases"]
 
 +++
 
-BookStack Beta v0.7.6 has now been released. The release can be found [here on GitHub](https://github.com/BookStackApp/BookStack/releases/tag/v0.7.6) and [update instructions can be found here](https://github.com/BookStackApp/BookStack/blob/master/readme.md#updating-bookstack).
+BookStack Beta v0.7.6 has now been released. The release can be found [here on GitHub](https://github.com/BookStackApp/BookStack/releases/tag/v0.7.6) and [update instructions can be found here](https://github.com/BookStackApp/BookStack/blob/development/readme.md#updating-bookstack).
 
 **Here are some important things to note with this update:**
 

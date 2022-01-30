@@ -39,7 +39,7 @@ At the time of writing *(13th July)*:
 
 #### Code Repository Stats
 
-- [2,658 commits](https://github.com/BookStackApp/BookStack/commits/master) <strong style="color: green;">+458</strong>
+- [2,658 commits](https://github.com/BookStackApp/BookStack/commits/development) <strong style="color: green;">+458</strong>
 - 136 direct git contributors <strong style="color: green;">+9</strong>
 
 #### Social & Docker

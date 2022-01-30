@@ -40,7 +40,7 @@ Thanks again to @haxatron for discovering and reporting this vulnerability via h
 If you have any questions or comments about this advisory:
 * Open an issue in [the BookStack GitHub repository](BookStackApp/BookStack/issues).
 * Ask on the [BookStack Discord chat](https://discord.gg/ztkBqR2).
-* Follow the [BookStack security policy](https://github.com/BookStackApp/BookStack/blob/master/.github/SECURITY.md) to contact someone privately.
+* Follow the [BookStack security policy](https://github.com/BookStackApp/BookStack/blob/development/.github/SECURITY.md) to contact someone privately.
 
 ----
 

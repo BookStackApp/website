@@ -216,7 +216,7 @@ This new command provides a way to semi-emulate that scenario. If desired, you c
 * Updated Turkish translations. Thanks to [@oykenfurkan](https://github.com/BookStackApp/BookStack/pull/1660). ([#1660](https://github.com/BookStackApp/BookStack/pull/1660))
 * Updated Russian translations. Thanks to [@kostefun](https://github.com/BookStackApp/BookStack/pull/1646). ([#1646](https://github.com/BookStackApp/BookStack/pull/1646))
 * Updated German translations. Thanks to [@ezzra](https://github.com/BookStackApp/BookStack/pull/1503). ([#1503](https://github.com/BookStackApp/BookStack/pull/1503))
-* Updated translations for: Portuguese, Brazilian; Chinese Traditional; Chinese Simplified; Dutch; Italian; Ukrainian; Polish; Spanish; Hungarian; German; Turkish; French; Danish; German Informal; Russian; Korean; Spanish, Argentina. Thanks to [Crowdin Users](https://github.com/BookStackApp/BookStack/blob/master/.github/translators.txt).
+* Updated translations for: Portuguese, Brazilian; Chinese Traditional; Chinese Simplified; Dutch; Italian; Ukrainian; Polish; Spanish; Hungarian; German; Turkish; French; Danish; German Informal; Russian; Korean; Spanish, Argentina. Thanks to [Crowdin Users](https://github.com/BookStackApp/BookStack/blob/development/.github/translators.txt).
 
 ##### Maintenance
 

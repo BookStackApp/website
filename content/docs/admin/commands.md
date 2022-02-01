@@ -22,6 +22,9 @@ php artisan bookstack:create-admin
 
 # Non-interactive usage example
 php artisan bookstack:create-admin --email="barry@example.com" --name="Bazza" --password="hunter2"
+
+# Defining "External Authentication ID" instead of password for LDAP/SAML2/OIDC environments
+php artisan bookstack:create-admin --email="barry.booker@example.com" --name="Bazza" --external-auth-id="bbooker"
 ```
 
 #### Copy Shelf Permission

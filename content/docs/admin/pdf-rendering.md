@@ -1,6 +1,6 @@
 +++
 title = "PDF Rendering"
-description = "Using WKHTMLtoPDF to generate PDF's for better rendering"
+description = "Options to configure PDF rendering within BookStack"
 date = "2017-01-22"
 type = "admin-doc"
 +++
@@ -26,4 +26,14 @@ You should only enable the below option in environments where only trusted users
 
 ```bash
 ALLOW_UNTRUSTED_SERVER_FETCHING=true
+```
+
+### Export Page Size
+
+By default PDF exports are generated at an A4 size. If you'd prefer exports to be generated at "US Letter" standard sizes
+you can specify this within your `.env` like so:
+
+```bash
+# US Letter
+EXPORT_PAGE_SIZE=letter
 ```

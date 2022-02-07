@@ -5,24 +5,40 @@ date = "2017-01-01"
 type = "admin-doc"
 +++
 
+
+When using BookStack, especially when initially setting it up or after updating, you may come across some errors. While we try to reduce these as much as possible and make them helpful sometimes you may come across a bland "An error has occurred" message. This is to prevent any potentially sensitive information being shown to all users.
+
 This page details how you can find out more information about errors you may face and the resolutions to common problems we often see.
 
-- [Showing Error Details](#showing-error-details)
+- [Error Log File](#error-log-file)
+- [Debug View](#debug-view)
 - [Common Issues & Resolutions](#common-issues--resolutions)
     - [Blank White Screen on Access](#blank-white-screen-on-access)
     - [No Styles and Large Icons on Access](#no-styles-and-large-icons-on-access)
     - [Broken Links or No Images After APP_URL Change](#broken-links-or-no-images-after-app_url-change)
 - [Submitting Issues](#submitting-issues)
 
-### Showing Error Details
+### Error Log File
 
-When using BookStack, especially when initially setting it up or after updating, you may come across some errors. While we try to reduce these as much as possible and make them helpful sometimes you may come across a bland, non-helpful 'An error has occurred' message. This is to prevent any potentially sensitive information being shown to all users.
+On a common installation, an error log can be found at the path `storage/logs/laravel.log`, relative to the top-level folder of your BookStack installation files. 
+For instances installed using our Ubuntu installation scripts, this is commonly located at `/var/www/bookstack/storage/logs/laravel.log`.
+If the `laravel.log` file does not exist the `storage/logs` directory may not be writable by the server.
 
-_**NOTE: While debugging is enabled it's possible for users to be able to see private credentials used in the BookStack or server configuration. Ensure debugging is only enabled when your instance is not accessible by others. Remember to disable debugging before restoring user access.**_
+In some cases an error may be thrown before or after BookStack handles a request. These will typically show as very plain error pages
+without any BookStack header bar or styling. In these cases you'll want to refer to your webserver error logs instead.
 
-To enable full error displaying edit the `.env` file, in the application root directory, and find the line `APP_DEBUG=false`. Change this to `APP_DEBUG=true` and the errors will be displayed in full with details of where it occurred. Remember to revert this change once you have found the issue so that the detailed error information is hidden from everyone.
+- Common Apache error log path on Ubuntu: `/var/log/apache2/error.log`
+- Common Nginx error log path on Ubuntu: `/var/log/nginx/error.log`
 
-On top of the above, An error log can be found at the path `storage/logs/laravel.log`. If the `laravel.log` file does not exist the `storage/logs` directory may not be writable by the server.
+You will likely need privileged access to read these files. For example `sudo tail -n 100 /var/log/apache2/error.log`.
+
+If using an alternative hosting method, such as docker container, please refer to the documentation provided by that method/container.
+
+### Debug View
+
+_**NOTE: When debugging is enabled it's possible for visitors to see private credentials used in the BookStack or server configuration. Ensure debugging is only enabled when your instance is not accessible by others. Remember to disable debugging before restoring access.**_
+
+To enable full error displaying edit the `.env` file, in the application root directory, and find the line `APP_DEBUG=false`. Change this to `APP_DEBUG=true` and the errors will be displayed in full with details of where it occurred. Remember to revert this change once you have found the issue so that the detailed error information is hidden from visitors.
 
 ### Common Issues & Resolutions
 

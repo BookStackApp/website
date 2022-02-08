@@ -16,6 +16,7 @@ This page details how you can find out more information about errors you may fac
     - [Blank White Screen on Access](#blank-white-screen-on-access)
     - [No Styles and Large Icons on Access](#no-styles-and-large-icons-on-access)
     - [Broken Links or No Images After APP_URL Change](#broken-links-or-no-images-after-app_url-change)
+    - [Failing Database or Auth System Credentials](#failing-database-or-auth-system-credentials)
 - [Submitting Issues](#submitting-issues)
 
 ### Error Log File
@@ -59,6 +60,15 @@ or those files do not exist.
 
 - Check that the `APP_URL` option is set in your `.env` file and ensure it matches the URL you're accessing BookStack on (Including the "https://" or "http://" component).
 - Check that you're using the `release` code branch. If you cloned the project without a branch flag, or downloaded the files from GitHub, you may be using the development branch files which does not include some of these required files.
+
+##### Failing Database or Auth System Credentials
+
+If you've used a password in the `.env` file which you are sure is correct, but authentication fails for that service, it may be due to 
+special characters being handled different in the `.env` configuration. Ensure that any such passwords or config options are wrapped in quotes. For example:
+
+```txt
+DB_PASSWORD="hunter#2@"
+```
 
 ##### Broken Links or No Images After APP_URL Change
 

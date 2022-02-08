@@ -15,8 +15,8 @@ This page details how you can find out more information about errors you may fac
 - [Common Issues & Resolutions](#common-issues--resolutions)
     - [Blank White Screen on Access](#blank-white-screen-on-access)
     - [No Styles and Large Icons on Access](#no-styles-and-large-icons-on-access)
-    - [Broken Links or No Images After APP_URL Change](#broken-links-or-no-images-after-app_url-change)
     - [Failing Database or Auth System Credentials](#failing-database-or-auth-system-credentials)
+    - [Broken Links or No Images After APP_URL Change](#broken-links-or-no-images-after-app_url-change)
 - [Submitting Issues](#submitting-issues)
 
 ### Error Log File

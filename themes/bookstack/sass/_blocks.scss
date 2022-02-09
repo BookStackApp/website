@@ -17,7 +17,7 @@
     background-color: lighten($negative, 20%);
   }
   &.primary {
-    background-color: lighten($primary, 40%);
+    background-color: rgba($primary, 10%);
   }
   &.secondary {
     background-color: lighten($secondary, 30%);

@@ -5,43 +5,48 @@
             <div class="row">
             	<div class="col-lg-4">
             		<p class="text-small">
+                        <iframe src="https://github.com/sponsors/ssddanbrown/button" title="Sponsor ssddanbrown" height="35" width="116" style="border: 0;" loading="lazy"></iframe>
+                        <br><br>
             		    BookStack - Created By <a href="https://danb.me" title="danb.me" target="_blank" rel="noopener">Dan Brown</a> and developed with the <a href="https://github.com/BookStackApp/BookStack/graphs/contributors" target="_blank" rel="noopener">community</a>.
-                        <br>
-                        <!-- Thanks to <a href="https://www.browserstack.com/" target="_blank">BrowserStack</a> for providing easy cross-browser testing. <br> -->
                         Page generated with <a href="https://gohugo.io">hugo</a>, Site source can be found <a href="https://github.com/BookStackApp/website" rel="noopener" target="_blank">here on GitHub</a>.
-            		</p>
-            	</div>
-            	<div class="col-lg-8 col-md-9 menu">
-                    <a href="{{.Site.BaseURL}}docs"><span class="icon" aria-hidden="true">{{partial "icon/book.svg"}}</span>Documentation</a>
-                    <a href="{{.Site.BaseURL}}#features"><span class="icon" aria-hidden="true">{{partial "icon/star.svg"}}</span>Features</a>
-                    <a href="{{.Site.BaseURL}}#demo"><span class="icon" aria-hidden="true">{{partial "icon/touch_app.svg"}}</span>Demo</a>
-                    <a href="https://github.com/BookStackApp/BookStack" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/github.svg"}}</span>Github</a>
-                    <a href="https://discord.gg/ztkBqR2" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/discord.svg"}}</span>Discord</a>
-                    <a href="https://twitter.com/bookstack_app" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/twitter.svg"}}</span>Twitter</a>
-                    <a href="{{.Site.BaseURL}}blog" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/rss_feed.svg"}}</span>Blog</a>
-            	</div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="text-small">
+                        <br><br>
+                        This website uses a self-hosted instance of <a href="https://plausible.io/" target="_blank" rel="noreferrer">Plausible</a> for analytics.
+                        Our site stats can <a href="https://analytics.bookstackapp.com/bookstackapp.com" target="_blank" rel="noreferrer">be viewed here</a>. 
+                        We also use <a href="https://www.meilisearch.com/" target="_blank" rel="noreferrer">MeiliSearch</a> for providing better search.
+                        <br><br>
                         Latest Blog Post: 
                         {{ range first 1 ( where .Site.Pages "Section" "blog") }}
                                 <a href="{{.Permalink}}">{{ .Title }}</a>
                         {{ end }}
-                        &nbsp;|&nbsp;
-                        <a href="/about/confluence-alternative">BookStack: A Confluence Alternative</a>
                     </p>
-                </div>
-                <div class="col-md-6 text-right">
-                    <iframe src="https://github.com/sponsors/ssddanbrown/button" title="Sponsor ssddanbrown" height="35" width="116" style="border: 0;margin-top: 1rem;" loading="lazy"></iframe>
-                </div>
+            	</div>
+                <div class="col-lg-1"></div>
+            	<div class="col-xs-6 col-sm-4 col-lg-2">
+                    <h5>On the site</h5>
+                    <ul class="nav-list">
+                        <li><a href="{{.Site.BaseURL}}docs">Documentation</a></li>
+                        <li><a href="{{.Site.BaseURL}}#features">Our Features</a></li>
+                        <li><a href="{{.Site.BaseURL}}#demo">View the Demo</a></li>
+                        <li><a href="{{.Site.BaseURL}}blog" target="_blank">Read our Blog</a></li>
+                    </ul>
+            	</div>
+                <div class="col-xs-6 col-sm-4 col-lg-2">
+                    <h5>Follow Us</h5>
+                    <ul class="nav-list">
+                        <li><a href="https://github.com/BookStackApp/BookStack" target="_blank">Github</a></li>
+                        <li><a href="https://discord.gg/ztkBqR2" target="_blank">Discord</a></li>
+                        <li><a href="https://twitter.com/bookstack_app" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCH66RFWfw6CSm2T1EM4ik1g" target="_blank">YouTube</a></li>
+                    </ul>
+            	</div>
+                <div class="col-6 col-sm-4 col-lg-3">
+                    <h5>Information</h5>
+                    <ul class="nav-list">
+                        <li><a href="/about/confluence-alternative">A Confluence Alternative</a></li>
+                    </ul>
+            	</div>
             </div>
-            <p class="text-small">
-                This website uses a self-hosted instance of <a href="https://plausible.io/" target="_blank" rel="noreferrer">Plausible</a> for analytics.
-                Our site stats can <a href="https://analytics.bookstackapp.com/bookstackapp.com" target="_blank" rel="noreferrer">be viewed here</a>. 
 
-                We also use <a href="https://www.meilisearch.com/" target="_blank" rel="noreferrer">MeiliSearch</a> for providing better search.
-            </p>
         </div>
     </footer>
 

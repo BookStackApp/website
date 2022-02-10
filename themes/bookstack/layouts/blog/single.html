@@ -39,6 +39,7 @@
     </div>
 
     <aside class="col-md-3 blog-sidebar-post-list">
+      <input type="text" placeholder="Search the site" class="blog-search-input">
       <h4>Latest Posts</h4>
       <div class="recent-posts">
         {{ range first 8 ( where .Site.RegularPages "Section" "blog") }}

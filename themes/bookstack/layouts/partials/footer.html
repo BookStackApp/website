@@ -54,12 +54,13 @@
 
     <script src="{{.Site.BaseURL}}libs/docs-searchbar.min.js"></script>
     <script>
-        if (document.querySelector('.doc-search-input') !== null) {
+        const searchInputSelector = '.doc-search-input,.blog-search-input';
+        if (document.querySelector(searchInputSelector) !== null) {
             docsSearchBar({
                 hostUrl: 'https://search.bookstackapp.com',
                 apiKey: '9ea2b6fd2a41f5243f741746d5281b7ff85451d51f4d50a270426a6dd430156d',
                 indexUid: 'docs',
-                inputSelector: '.doc-search-input',
+                inputSelector: searchInputSelector,
                 debug: false, // Set debug to true if you want to inspect the dropdown
             })
         }

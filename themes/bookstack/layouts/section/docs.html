@@ -1,53 +1,72 @@
 {{ partial "header.html" . }}
 
 <div class="header padded-bottom">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        {{ if eq .Type "admin-doc" }}
-          <div class="docs-section-title">Admin Documentation</div>
-        {{ else if eq .Type "user-doc" }}
-          <div class="docs-section-title">User Documentation</div>
-        {{else}}
-          <div class="docs-section-title">Documentation</div>
-        {{end}}
-      </div>
-      <div class="col-sm-6">
-        <div class="float right float-none-sm">
-          <input type="text" placeholder="Search docs" class="doc-search-input">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container">
-	<div class="row docs-index">
-
-		{{if ne .Page.Type "user-doc"}}
-		<div class="col-sm-6">
-			<div class="shaded padded">
-				{{if ne .Page.Type "admin-doc"}}
-				<h3>Admin Documentation</h3>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				{{ if eq .Type "admin-doc" }}
+				<div class="docs-section-title">Admin Documentation</div>
+				{{ else if eq .Type "user-doc" }}
+				<div class="docs-section-title">User Documentation</div>
+				{{else}}
+				<div class="docs-section-title">Documentation</div>
 				{{end}}
-				{{partial "menu_admin_docs"}}
+			</div>
+			<div class="col-sm-6">
+				<div class="float right float-none-sm">
+					<input type="text" placeholder="Search docs" class="doc-search-input">
+				</div>
 			</div>
 		</div>
-		{{end}}
-		{{if ne .Page.Type "admin-doc"}}
-		<div class="col-sm-6">
-			<div class="shaded padded">
-				{{if ne .Page.Type "user-doc"}}
-				<h3>User Documentation</h3>
-				{{end}}
-				{{partial "menu_user_docs"}}	
-			</div>
-		</div>
-		{{end}}
 	</div>
 </div>
 
-<p><br></p>
+
+<div class="container docs-index">
+	{{if ne .Page.Type "user-doc"}}
+	<div class="padded margin-bottom">
+		{{if ne .Page.Type "admin-doc"}}
+		<h3>Admin Documentation</h3>
+		{{end}}
+		<div class="docs-index-row">
+			{{partial "menu_admin_docs"}}
+		</div>
+	</div>
+	<hr class="nomargin margin-bottom">
+	{{end}}
+
+	{{if ne .Page.Type "admin-doc"}}
+	<div class="padded margin-bottom">
+		{{if ne .Page.Type "user-doc"}}
+		<h3>User Documentation</h3>
+		{{end}}
+		<div class="docs-index-row">
+			{{partial "menu_user_docs"}}
+		</div>
+	</div>
+	{{end}}
+</div>
+
+<div class="shaded shaded-border padded-vertical large">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Our Guides on YouTube</h3>
+				<p>
+					If you prefer videos to text, or need a bit of visual guidance,
+					our YouTube channel hosts a series of videos that cover installation,
+					configuration, maintenance and usage.
+				</p>
+				<p>
+					<a href="https://www.youtube.com/channel/UCH66RFWfw6CSm2T1EM4ik1g" target="_blank"
+						rel="noopener">View our channel here &raquo;</a>
+				</p>
+			</div>
+			<div class="col-md-6">
+				<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/tSaDVduc3uI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
 
 {{ partial "footer.html" . }}

@@ -325,6 +325,21 @@ input[type=text] {
   }
 }
 
+.sidebar .col-md-6 {
+  width: 100%;
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.docs-index-row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 6rem;
+  row-gap: .5rem;
+  justify-content: left;
+}
+
 .sidebar {
   border-right: 2px dotted #E5E5E5;
 }
@@ -428,6 +443,25 @@ input[type="text"].doc-search-input {
   &:focus, &:active {
     outline: none;
   }
+}
+
+iframe[src^="https://www.youtube-nocookie.com"] {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+  background-color: #222;
+}
+
+input[type="text"].blog-search-input {
+  border: 2px solid #BBB;
+  color: #222;
+  width: 300px;
+  margin-bottom: $-s;
+  margin-top: $-m;
+  border-radius: 4px;
 }
 
 .meilisearch-autocomplete .docs-searchbar-footer-logo,

@@ -25,6 +25,7 @@ If you'd like to be notified of new potential security concerns you can sign-up 
     <li><a href="#failed-access-logging">Failed Access Logging</a></li>
     <li><a href="#server-side-requests">Untrusted Server Side Requests</a></li>
     <li><a href="#csp">Content Security Policy (CSP)</a></li>
+    <li><a href="#mysql-ssl-connection">MySQL SSL connection</a></li>
 </ul>
 
 ---
@@ -240,3 +241,17 @@ The CSP headers set by BookStack are as follows:
 
 If needed you should be able to set additional CSP headers via your webserver.
 If there's a clash with an existing BookStack CSP header then browsers will generally favour the most restrictive policy.
+
+---
+
+<a name="mysql-ssl-connection"></a>
+
+### MySQL SSL Connection
+
+If your bookstack database is not on the same host as your web server, you may want to enable encrypted connection 
+via SSL between your web server and your MySQL server.
+Assuming SSL is configured correctly on your MySQL server, you can enable this by defining the `MYSQL_ATTR_SSL_CA` option in your `.env` file like so:
+
+```bash
+MYSQL_ATTR_SSL_CA="/path/to/ca.pem"
+```

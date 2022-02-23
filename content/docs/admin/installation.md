@@ -165,7 +165,7 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [Uberspace](https://lab.uberspace.de/guide_bookstack.html) - A European based hosting provider.
 - [Home Assistant Community Add-on](https://github.com/hassio-addons/addon-bookstack) - For [Home Assistant](https://www.home-assistant.io/) users.
 - [Stellar Hosted](https://www.stellarhosted.com/bookstack/) - A European based managed hosting provider.
-- [alwaysdata](https://www.alwaysdata.com/en/marketplace/bookstack/?tags=referrer:bookstack) - A European based managed hosting provider.
+- [alwaysdata](https://www.alwaysdata.com/en/marketplace/bookstack/) - A European based managed hosting provider.
 
 ---
 

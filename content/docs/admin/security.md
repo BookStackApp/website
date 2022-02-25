@@ -207,6 +207,7 @@ cases, will log to your webserver error log files.
 Some features, such as the PDF exporting, have the option to make http calls to external user-defined locations to do things
 such as load images or styles. This is disabled by default but can be enabled if desired. This is required for using 
 WKHTMLtoPDF as your PDF export renderer.
+This should only be enabled in BookStack environments where BookStack users and viewers are fully trusted.
 
 To enable untrusted server side requests, you need to define the `ALLOW_UNTRUSTED_SERVER_FETCHING` option in your `.env` file like so:
 

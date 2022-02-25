@@ -2,62 +2,131 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v22.02"
-date = 2022-02-24T17:21:57Z
+date = 2022-02-26T12:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/blossom-tegethoff.jpg"
 slug = "bookstack-release-v22-02"
 draft = false
 +++
 
-Intro TODO
+Today we announce the first BookStack feature release of 2022.
+This brings updates and features to the WYSIWYG editor, user management API endpoints and much more. In this post we cover features added in this release
+in addition to some notable changes in the v21.12 patch releases.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.02)
 
 
-Important Notes
-TODO PHP version change, 7.3 to 7.4
-TODO composer version requirement change from v21.12.3
-TODO v21.12.1 security release
+**Upgrade Notices**
 
+- **PHP Requirements Change** - The minimum required version of PHP has changed from 7.3 to 7.4.
+- **Composer Requirements Change** - As of release v21.12.3 composer version 2.0 or greater is required. See our [v21.12.3 update notes](/docs/admin/updates/#updating-to-v21123-or-higher) for details of upgrading this.
+- **Security Releases** - During the last release cycle there was a security update. See the [v21.12.1 blog post](/blog/bookstack-release-v21-12-1/) for more detail.
 
 ### WYSIWYG Editor Updates
 
+The main work for this release has been focused on the WYSIWYG editor.
+The library used by BookStack, TinyMCE, has been updated to a much newer version and we've reorganized the connected BookStack codebase.
+
+In terms of usage, everything should remain familiar. The most apparent changes are to the toolbar:
+
+TODO - IMAGE OF TOOLBAR
+
+The styling and size of the buttons have changed to be a little more modern and easier to use. The positioning of some buttons has changed with lesser-used controls being placed behind overflow menus to keep the default toolbar focused & simple. Code formatting options have been moved out from the block formats dropdown to instead be inline & insert options. A new help "(?)" toolbar button has been added to show editor license information in addition providing a listing of available shortcuts.
+
+For those using BookStack in a language other than English, the editor is now linked to our translation system meaning that, where language files have been updated, controls within the editor should now be in your preferred language:
+
+TODO - IMAGE OF EDITOR LANGUAGE
+
+You'll probably notice other usability and speed improvements gained by the more modern underlying library, otherwise all existing features and abilities should remain the same.
+
+Within this release cycle I did spend some time exploring alternative options but [I found](https://github.com/BookStackApp/BookStack/issues/2738#issuecomment-1022683101) that moving away from TinyMCE would be quite a painful process for us so instead I chose a more stable path for now.
 
 ### Collapsible Content Block WYSIWYG Editor Support
 
+For the first time in while we've added a new content type to the WYSIWYG editor: The collapsible content block. These blocks allow the grouping of multiple other blocks of content into container that can be toggled by a viewer. 
 
-TODO: Note about markdown syntax
+TODO - IMAGE OF COLLAPSIBLE
+
+These blocks are open within the editor and closed when viewed on a page. They can be toggled closed within the editor for cleaner editing or previewing purposes. The label used on the toggle bar can be edited as desired. When page content is exported these sections are still represented although in an open state so that content is visible. 
+
+Behind the scenes these blocks use the HTML standard `<details>`/`<summary>` elements as described on [MDN here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details). Markdown users have been able to use these within BookStack, using the HTML representation, but the inclusion in the WYSIWYG editor helps align abilities. 
+
+The addition of these blocks adds some great potential use-cases to empower your documentation; From cleaning up large details sections or code-blocks, to being able to provide spoiler-free question and answer style content:
+
+TODO - Image of QA using collapisble blocks
+
 
 ### User Management API Endpoints
 
-TODO
+In this release the API receives another set of abilities. There are new endpoints for 
+user listing, creation, updating and deletion:
+
+TODO IMAGE OF ENDPOINTS
+
+All of these actions require "Manage Users" role permissions by the API client user.
+
+These new endpoints unlock a whole new avenue for automated and programmatic user management 
+in addition to allowing bulk operations to be script-able. Need to migrate thousands
+of users into BookStack? Now it's possible!
+
+You can find more detail for these endpoints via our [demo site API docs](https://demo.bookstackapp.com/api/docs#users-list).
 
 ### Webhook Improvements
 
-TODO v21.12.1 - Timeout and debugging statuses
-TODO v21.12.1 - webhook_call_before logical theme system event
+BookStack v21.12 added support for outgoing webhooks. In v.21.12.1 this system was enhanced with the following additions/changes:
+
+- Webhook network errors will now be caught as to not break next page loading.
+- Webhook "Last Called" time, "Last Errored" time and "Last Error" messages are now recorded against the webhook and shown in the webhook edit page for easier debugging.
+- The HTTP webhook call timeout is now configurable per-webhook.
+
+TODO - IMAGE OF DEBUG INFO
+
+These changes should greatly improve the debugging process, if needed, when setting up webhooks while allowing them to be used in a much more reliable manner.
 
 ### Language Selection on User Creation
 
-TODO - v21.12.4
+As of v21.12.4 you can now select a preferred language when creating a new user in the system:
+
+TODO - IMAGE OF SELECT CONTROL
+
+Upon showing the correct language upon first login, this means that the new user can now receive the invitation email in the most suitable language, instead of it being based on the language of the admin creating the user, which was not very intuitive. 
 
 ### PDF Export Page Size Option
 
-TODO - v21.12.4
+A new `.env` option was added in v21.12.4 to provide control over PDF export page size.
+By default Bookstack will use an A4 page size but this can be changed to "US Letter" size by
+adding the following to your `.env` file:
+
+```bash
+# US Letter PDF export size
+EXPORT_PAGE_SIZE=letter
+```
 
 ### Enhancements to the "Recently Updated Pages" List
 
-TODO v21.12.3 Updated-by, updated at details, Thanks to [@Julesdevops](https://github.com/BookStackApp/BookStack/pull/3177)
-TODO v21.12.3 Parent context visibility
+In BookStack v21.12.3 the "Recently Updated Pages" view, accessed via the homepage card of the same name,
+was enhanced with some additional context-specific details:
+
+- Last update author and last update time are now shown.
+- The parent book/chapter chain are displayed for each item.
+
+TODO - IMAGE OF THIS  LIST
+
+Special thanks to [@Julesdevops](https://github.com/BookStackApp/BookStack/pull/3177) for helping to evolve this area of the application.
 
 ### Translations
 
-TODO
+As is common, our remarkable translators have continued their great work to keep the language strings up to date. 
+This release added a bulk-load of new terms, for use within the editor, so a particularly big thanks from me to those that have translated all those extra terms since inclusion. The contributors and updates made, since the initial v21.12 release, are as follows:
 
-### Development Branch Changes
+TODO - ADD TRANSLATIONS
 
-TODO
+### Development Git Branch Changes
+
+For those closer to the BookStack code, within the last release we've changed the default development branch name from `master` to `development`. This was to add clarity to the branch's purpose while avoiding any potential concerns of offence.
+
+If you have any existing links or branch references, GitHub should redirect and/or warn about this change upon interaction.
 
 ### Full List of Changes
 
@@ -111,7 +180,10 @@ TODO
 
 ### Next Steps
 
-TODO
+This release was the first in working upon our "Editor Alignment & Review" [road-map](https://github.com/BookStackApp/BookStack#%EF%B8%8F-road-map) item. 
+For this next feature release I'll be looking to get deeper into this road-map item to align markdown/wysiwyg feature-sets and potential offer easier traversal between these editor options.
+
+With the updates made to the WYSIWYG editor I think it's likely we'll have a flurry of patch releases to enhance features and patch issues that pop up from wider usage.
 
 ----
 

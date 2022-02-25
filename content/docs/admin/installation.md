@@ -25,14 +25,18 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 
 BookStack has the following requirements:
 
-* **PHP** >= 7.3
+* **PHP** >= 7.4
     * For installation and maintenance, you'll need to be able to run `php` from the command line.
     * Required Extensions: *OpenSSL, PDO, MBstring, Tokenizer, GD, MySQL, SimpleXML & DOM*
 * **MySQL** >= 5.6 or **MariaDB** >= 10.0
-    *  Single Database *(All permissions advised since application manages schema)*
+    * For the storage of BookStack content and data.
+    * Single Database *(All permissions advised since application manages schema)*
 * **Git Version Control**
-    * (Not strictly required but helps manage updates)
+    * For application of updates when following our standard process.
 * **[Composer](https://getcomposer.org/)** >= v2.0
+    * For installation and management of our PHP dependencies.
+* **A PHP Compatible Webserver**
+    * For usage with PHP and for serving static files.
 
 ---
 

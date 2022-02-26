@@ -37,6 +37,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v22.02 or higher
+
+**PHP Version Requirement Change** - The minimum required version of PHP has changed from 7.3 to 7.4. This should not be a concern for those that are using common containers or for those that have installed using our install scripts.
+
 #### Updating to v21.12.3 or higher
 
 **Composer Version Requirement Change** - Composer v2.0 or greater is now required to install or update BookStack. 

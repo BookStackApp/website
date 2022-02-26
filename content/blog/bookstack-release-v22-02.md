@@ -119,7 +119,41 @@ Special thanks to [@Julesdevops](https://github.com/BookStackApp/BookStack/pull/
 As is common, our remarkable translators have continued their great work to keep the language strings up to date. 
 This release added a bulk-load of new terms, for use within the editor, so a particularly big thanks from me to those that have translated all those extra terms since inclusion. The contributors and their updates made, since the initial v21.12 release, are as follows:
 
-TODO - ADD TRANSLATIONS
+- Saeed (saeed205) - *Persian*
+- SmokingCrop - *Dutch*
+- Dan Brown (ssddanbrown) - *Korean*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- DiscordDigital - *German; German Informal*
+- 10935336 - *Chinese Simplified*
+- scureza - *Italian*
+- Gábor Marton (dodver) - *Hungarian*
+- Jasell - *Swedish*
+- Tomáš Batelka (Vofy) - *Czech*
+- Martins Pilsetnieks (pilsetnieks) - *Latvian*
+- na3shkw - *Japanese*
+- m0uch0 - *Spanish*
+- Mundo Racional (ismael.mesquita) - *Portuguese, Brazilian*
+- Leonardo Mario Martinez (leonardo.m.martinez) - *Spanish, Argentina*
+- Zarik (3apuk) - *Russian*
+- nutsflag - *French*
+- Ravid Shachar (ravidshachar) - *Hebrew*
+- Helga Guchshenskaya (guchshenskaya) - *Russian*
+- Gerwin de Keijzer (gdekeijzer) - *German Informal; Dutch*
+- daniel chou (chou0214) - *Chinese Traditional*
+- Julesdevops - *French*
+- Nicolas Pawlak (Mikolajek) - *French*
+- ChacMaster - *Portuguese, Brazilian*
+- Manolis PATRIARCHE (m.patriarche) - *French*
+- Mohammed Haboubi (haboubi92) - *Arabic*
+- peter cerny (posli.to.semka) - *Slovak*
+- roncallyt - *Portuguese, Brazilian*
+- goegol - *Dutch*
+- Pavel Karlin (pavelkarlin) - *Russian*
+- Khroners - *French*
+- msevgen - *Turkish*
+- Ali Shaatani (a.shaatani) - *Arabic*
+- @ististyle - *Korean*
 
 ### Development Git Branch Changes
 
@@ -135,7 +169,7 @@ If you have any existing links or branch references, GitHub should redirect and/
 * Added translation support to the WYSIWYG editor. ([#1838](https://github.com/BookStackApp/BookStack/issues/1838))
 * Added user management API endpoints. ([#3238](https://github.com/BookStackApp/BookStack/pull/3238), [#1363](https://github.com/BookStackApp/BookStack/issues/1363), [#2701](https://github.com/BookStackApp/BookStack/issues/2701))
 * Changed minimum PHP version from 7.3 to 7.4. ([#3245](https://github.com/BookStackApp/BookStack/pull/3245), [#3152](https://github.com/BookStackApp/BookStack/issues/3152))
-* Updated translations with latest Crowdin changes. ([#3258](https://github.com/BookStackApp/BookStack/pull/3258), [#3251](https://github.com/BookStackApp/BookStack/pull/3251))
+* Updated translations with latest Crowdin changes. ([#3258](https://github.com/BookStackApp/BookStack/pull/3258), [#3251](https://github.com/BookStackApp/BookStack/pull/3251), [#3259](https://github.com/BookStackApp/BookStack/pull/3259))
 * Updated Korean translations. Thanks to [@ististyle](https://github.com/BookStackApp/BookStack/pull/3256). ([#3256](https://github.com/BookStackApp/BookStack/pull/3256))
 * Updated TinyMCE WYSIWYG editor to the latest version. ([#3247](https://github.com/BookStackApp/BookStack/pull/3247))
 * Improved PDF export rendering of images within tables. ([#3190](https://github.com/BookStackApp/BookStack/issues/3190))

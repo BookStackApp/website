@@ -5,7 +5,9 @@ date = "2017-01-21"
 type = "admin-doc"
 +++
 
-BookStack can be configured to allow LDAP based user login. While LDAP login is enabled you cannot log in with the standard user/password login and new user registration is disabled. BookStack will only use the LDAP server for getting user details and for authentication. Data on the LDAP server is not currently editable through BookStack.
+BookStack can be configured to allow LDAP based user login. While LDAP login is enabled you cannot log in with the standard user/password login and new user registration is disabled. BookStack will only use the LDAP server for getting user details and for authentication. Data on the LDAP server is not editable through BookStack.
+
+[A video guide for setting up LDAP can be found here](https://www.youtube.com/watch?v=50qw_LkhwoM).
 
 ### Authentication Setup
 
@@ -78,7 +80,7 @@ LDAP_START_TLS=false
 
 You will also need to have the php-ldap extension installed on your system. You can change your `APP_DEBUG` variable to `true` while setting up LDAP to make any errors visible. Note that debug mode can expose sensitive details to visitors so you may want to limit access while configuring and you should remember to change this back after LDAP is functioning.
 
-A user in BookStack will be linked to a LDAP user via a 'uid'. If a LDAP user uid changes it can be updated in BookStack by an admin by changing the 'External Authentication ID' field on the user's profile.
+A user in BookStack will be linked to a LDAP user via a 'uid'. If an LDAP user uid changes it can be updated in BookStack by an admin by changing the 'External Authentication ID' field on the user's profile.
 
 You may find that you cannot log in with your initial Admin account after changing the `AUTH_METHOD` to `ldap`. To get around this set the `AUTH_METHOD` to `standard`, login with your admin account then change it back to `ldap`. You get then edit your profile and add your LDAP uid under the 'External Authentication ID' field. You will then be able to login in with that ID.
 
@@ -116,5 +118,7 @@ LDAP_USER_TO_GROUPS=true
 LDAP_GROUP_ATTRIBUTE="memberOf"
 
 # Remove users from roles that don't match LDAP groups.
+# Note: While this is enabled the "Default Registration Role", editable within the 
+# BookStack settings view, will be considered a matched role and assigned to the user.
 LDAP_REMOVE_FROM_GROUPS=false
 ```

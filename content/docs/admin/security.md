@@ -248,10 +248,13 @@ If there's a clash with an existing BookStack CSP header then browsers will gene
 
 ### MySQL SSL Connection
 
-If your bookstack database is not on the same host as your web server, you may want to enable encrypted connection 
-via SSL between your web server and your MySQL server.
+If your BookStack database is not on the same host as your web server, you may want to ensure the connection is encrypted using SSL between these systems.
 Assuming SSL is configured correctly on your MySQL server, you can enable this by defining the `MYSQL_ATTR_SSL_CA` option in your `.env` file like so:
 
 ```bash
+# Path to Certificate Authority (CA) certificate file for your MySQL instance.
+# When this option is used host name identity verification will be performed
+# which checks the hostname, used by the client, against names within the
+# certificate itself (Common Name or Subject Alternative Name).
 MYSQL_ATTR_SSL_CA="/path/to/ca.pem"
 ```

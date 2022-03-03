@@ -16,7 +16,10 @@ _**Note: Customisation options on this page are not deemed to be stable or offic
 
 BookStack has a built-in REST API for external interaction and consumption of your BookStack data. API documentation can be found within your BookStack instance at the `/api/docs` URL path. You'll need to have the 'Access system API' role permission to access the API.
 
-For quick reference of the current API abilities, you can [view the API documentation of our demo instance](https://demo.bookstackapp.com/api/docs).
+**Reference Links**
+
+- [API documentation of our demo instance](https://demo.bookstackapp.com/api/docs).
+- [Our "BookStack API Scripts" repo containing examples](https://github.com/BookStackApp/api-scripts).
 
 ---
 

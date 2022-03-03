@@ -14,9 +14,9 @@ _**Note: Customisation options on this page are not deemed to be stable or offic
 
 ### BookStack API
 
-_**Note: The API is currently in a limited preview stage to ensure the foundations are correct, It will be expanded upon in future releases.**_
+BookStack has a built-in REST API for external interaction and consumption of your BookStack data. API documentation can be found within your BookStack instance at the `/api/docs` URL path. You'll need to have the 'Access system API' role permission to access the API.
 
-BookStack has a built-in REST API for external interaction and consumption of your BookStack data. API documentation can be found within your BookStack instance at the `/api/docs` URL path. You'll need to have the 'Access system API' role permission to access the API or view the API documentation page.
+For quick reference of the current API abilities, you can [view the API documentation of our demo instance](https://demo.bookstackapp.com/api/docs).
 
 ---
 
@@ -44,36 +44,20 @@ Both the TinyMCE based WYSIWYG editor and the CodeMirror based Markdown editor e
 
 ---
 
-### Theme System
+### Visual Theme System
+
+BookStack allows visual customization via the theme system which enables you to extensively customize views, translation text & icons.
+Documentation for this system is contained within [the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/visual-theme-system.md).
 
 _**Note: The files that can be override using the theme system are not deemed to be stable. BookStack core files may change on any release causing changes in behaviour to your overrides. Theme overrides are not officially supported in any way.**_
 
-The theme system provides additional customisation options for those that are a bit more adventurous. The theme system enables you to selectively override BookStack UI resources without having to alter the original BookStack code. To get started create a new folder in the `themes` folder of your BookStack install. Edit your `.env` file and add the following:
 
-```bash
-# Change the value below to match the name of your created folder
-APP_THEME=<theme_folder_name>
-```
+---
 
-Files can now be placed in your theme folder to override the following resources:
+### Logical Theme System
 
-##### View Files
+BookStack allows PHP code-based extension via what we call the "Logical Theme System". 
+This works by hooking into specific events where you can then perform custom actions or extension of the underlying framework.
+Documentation for this system is contained within [the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md).
 
-Content placed in your `themes/<theme_name>/` folder will override the original view files found in the `resources/views` folder. These files are typically [Laravel Blade](https://laravel.com/docs/6.x/blade) files.
-
-##### Icons
-
-SVG files placed in a `themes/<theme_name>/icons` folder will override any icons of the same name within `resources/icons`. You'd typically want to follow the format convention of the existing icons, where no XML deceleration is included and no width & height attributes are set, to ensure optimal compatibility. 
-
-##### Text Content
-
-Folders with PHP translation files placed in a `themes/<theme_name>/lang` folder will override translations defined within the `resources/lang` folder. Custom translations are merged with the original files so you only need to override the select translations you want to override, you don't need to copy the whole original file. Note that you'll need to include the language folder.
-
-As an example, say I wanted to change 'Search' to 'Find'; Within a `themes/<theme_name>/lang/en/common.php` file I'd set the following:
-
-```php
-<?php
-return [
-    'search' => 'find',
-];
-```
+_**Note: Only the API described in the logical-theme-system document is considered stable & supported. Any usage of other application classes is regarded as unstable and unsupported.**_

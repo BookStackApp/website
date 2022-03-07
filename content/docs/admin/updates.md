@@ -37,6 +37,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v22.02.3 or higher
+
+**Security** - v22.02.3 adds controls to limit external/iframe content on BookStack pages to prevent potential malicious sources being used. See [the added "Iframe Source Control" section on our security page](/docs/admin/security/#iframe-src-control) for more detail regarding the added controls.
+
 #### Updating to v22.02 or higher
 
 **PHP Version Requirement Change** - The minimum required version of PHP has changed from 7.3 to 7.4. This should not be a concern for those that are using common containers or for those that have installed using our install scripts.

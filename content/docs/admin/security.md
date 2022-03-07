@@ -21,7 +21,8 @@ If you'd like to be notified of new potential security concerns you can sign-up 
     <li><a href="#javascript-in-page-content">JavaScript in Page Content</a></li>
     <li><a href="#web-crawler-control">Web Crawler Control</a></li>
     <li><a href="#secure-cookies">Secure Cookies</a></li>
-    <li><a href="#iframe-control">Host IFrame Control</a></li>
+    <li><a href="#iframe-control">Host Iframe Control</a></li>
+    <li><a href="#iframe-src-control">Iframe Source Control</a></li>
     <li><a href="#failed-access-logging">Failed Access Logging</a></li>
     <li><a href="#server-side-requests">Untrusted Server Side Requests</a></li>
     <li><a href="#csp">Content Security Policy (CSP)</a></li>
@@ -174,12 +175,40 @@ By default BookStack will only allow itself to be embedded within iframes on the
 # Adding a single host
 ALLOWED_IFRAME_HOSTS="https://example.com"
 
-# Mulitple hosts can be separated with a space
+# Multiple hosts can be separated with a space
 ALLOWED_IFRAME_HOSTS="https://a.example.com https://b.example.com"
 ```
 
 Note: when this option is used, all cookies will served with `SameSite=None` [(info)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#None) set so that
 a user session can persist within the iframe.
+
+---
+
+<a name="iframe-src-control"></a>
+
+### Iframe Source Control
+
+By default BookStack will only allow certain other hosts to be used as `src` values for embededd iframe/frame content within the application. This is done through a [CSP: frame-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src) header. You can configure the list of trusted sources by setting a `ALLOWED_IFRAME_SOURCES` option in your `.env` file like the examples below:
+
+```bash
+# Adding a single host
+ALLOWED_IFRAME_SOURCES="https://example.com"
+
+# Multiple hosts can be separated with a space
+ALLOWED_IFRAME_SOURCES="https://a.example.com https://b.example.com"
+
+# Allow all sources
+# This opens vulnerability risk and should only be done in secure & trusted environments.
+ALLOWED_IFRAME_SOURCES="*"
+```
+
+By default this option is configured as follows:
+
+```bash
+ALLOWED_IFRAME_SOURCES="https://*.draw.io https://*.youtube.com https://*.youtube-nocookie.com https://*.vimeo.com"
+```
+
+Note: The source of 'self' will always be automatically added to this CSP rule. In addition, the host used for the diagrams.net integration (If enabled) will be automatically appended to the lists of hosts.
 
 ---
 
@@ -222,14 +251,18 @@ ALLOW_UNTRUSTED_SERVER_FETCHING=true
 
 ### Content Security Policy (CSP)
 
-BookStack serves responses with multiple CSP headers to increase protection again malicious content.
+BookStack serves responses with a CSP header to increase protection again malicious content.
 This is especially important in a system such as BookStack where users can create a variety of HTML content, 
 especially so if you allow untrusted users to create content in your instance.
-The CSP headers set by BookStack are as follows:
+The CSP rules set by BookStack are as follows:
 
 - `frame-ancestors 'self'`
   - Restricts what websites can embed BookStack pages via iframes.
   - See the "[Host Iframe Control](#iframe-control)" section above for details on expanding this rule to other hosts.
+- `frame-source 'self' https://*.diagrams.net https://*.draw.io https://*.youtube.com https://*.youtube-nocookie.com https://*.vimeo.com https://embed.diagrams.net`
+  - Restricts what sources are allowed to load for frames/iframes.
+  - Can be configured via a `ALLOWED_IFRAME_SOURCES` .env option.
+  - May be different depending on other configuration set.
 - `script-src http: https: 'nonce-abc123' 'strict-dynamic'`
   - Restricts what scripts can be ran on a BookStack-served page.
   - Will not be set if the `ALLOW_CONTENT_SCRIPTS` .env option is active.

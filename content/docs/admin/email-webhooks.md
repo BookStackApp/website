@@ -77,6 +77,13 @@ The running on webhooks can slow down a system due to the required additional pr
 See the [async action handling](#async-action-handling) section below to details on running webhooks
 in a background process to improve performance.
 
+#### Bookstack Webhooks to Discord/Slack
+Bookstack is compatible with webhooks for Discord and Slack, since they both use a similar webhook format. To set this up, copy the Webhook url from the platform of choice into the "Webhook Endpoint" text box, and then append `/slack` onto the end of the URL. 
+
+Once done, the URL should look like `https://discord.com/api/webhooks/[Webhook ID]/slack`, where `[Webhook ID]` is the unique ID assigned to your specific Webhook.
+
+For a more in depth tutorial, see [this video](https://www.youtube.com/watch?v=_zIp1ruGpoI&t=60s)
+
 ---
 
 

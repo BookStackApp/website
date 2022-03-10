@@ -1,23 +1,14 @@
 {{ partial "header.html" . }}
 
-<div class="header padded-bottom">
+<div class="shaded primary padded-vertical">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        {{ if eq .Type "admin-doc" }}
-          <div class="docs-section-title">Admin Documentation</div>
-        {{ else if eq .Type "user-doc" }}
-          <div class="docs-section-title">User Documentation</div>
-        {{else}}
-          <div class="docs-section-title">Documentation</div>
-        {{end}}
-      </div>
-      <div class="col-sm-6">
-        <div class="float right float-none-sm">
-          <input type="text" placeholder="Search docs" class="doc-search-input">
-        </div>
-      </div>
-    </div>
+    {{ if eq .Type "admin-doc" }}
+      <div class="docs-section-title">Admin Documentation</div>
+    {{ else if eq .Type "user-doc" }}
+      <div class="docs-section-title">User Documentation</div>
+    {{else}}
+      <div class="docs-section-title">Documentation</div>
+    {{end}}
   </div>
 </div>
 

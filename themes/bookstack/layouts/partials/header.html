@@ -84,32 +84,134 @@
 </head>
 <body class="nav-closed">
 
-      <header id="header" class="header">
-        <div class="container">
-            <div class="row fix-mobile">
-                <div class="col-md-3 col-sm-6 col-xs-8">
-                    <div class="logo">
-                        <a href="{{.Site.BaseURL}}">
-                            {{partial "icon/logo.svg"}}
-                            <div>BookStack</div>
-                        </a>
-
-                    </div>
+  <header id="header" class="header">
+    <div class="container">
+      <div class="logo">
+          <a href="{{.Site.BaseURL}}">
+              {{partial "icon/logo.svg"}}
+              <div>BookStack</div>
+          </a>
+      </div>
+      <div>
+        <input type="text" placeholder="Search site" class="doc-search-input">
+      </div>
+      <div class="main-nav">
+          <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
+          <div class="nav-dropdown-wrap">
+            <a href="#"  onclick="event.preventDefault()" class="nav-dropdown-trigger">Platform</a>
+            <div class="nav-dropdown-menu">
+              <a href="/#features" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/features.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Features</div>
+                  <p>An overview of the core features of BookStack</p>
                 </div>
-                <div class="col-md-9 col-sm-6 menu col-xs-4">
-                    <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
-                    <div class="inner">
-                        <a href="/docs"><span class="icon" aria-hidden="true">{{partial "icon/book.svg"}}</span>Documentation</a>
-                        <a href="/#features"><span class="icon" aria-hidden="true">{{partial "icon/star.svg"}}</span>Features</a>
-                        <a href="/#demo"><span class="icon" aria-hidden="true">{{partial "icon/touch_app.svg"}}</span>Demo</a>
-                        <a href="https://github.com/BookStackApp/BookStack" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/github.svg"}}</span>Github</a>
-                        <a href="https://discord.gg/ztkBqR2" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/discord.svg"}}</span>Discord</a>
-                        <a href="https://twitter.com/bookstack_app" target="_blank"><span class="icon" aria-hidden="true">{{partial "icon/twitter.svg"}}</span>Twitter</a>
-                        <a href="/blog"><span class="icon" aria-hidden="true">{{partial "icon/rss_feed.svg"}}</span>Blog</a>
-                    </div>
+              </a>
+              <a href="/#demo" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/demo.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Demo</div>
+                  <p>Give BookStack a test drive on our demo instance</p>
                 </div>
+              </a>
+              <a href="/docs" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/book.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Documentation</div>
+                  <p>Guidance for managing and using BookStack</p>
+                </div>
+              </a>
+              <a href="/blog" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/rss_feed.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Our Blog</div>
+                  <p>Get the latest project news from our blog</p>
+                </div>
+              </a>
             </div>
-        </div>
-    </header>
+          </div>
+          <div class="nav-dropdown-wrap">
+            <a href="/support"  onclick="event.preventDefault()" class="nav-dropdown-trigger">Support</a>
+            <div class="nav-dropdown-menu">
+              <a href="/docs" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/book.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Documentation</div>
+                  <p>Get support from our user and admin documentation</p>
+                </div>
+              </a>
+              <a href="/support" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/support.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Support Plans</div>
+                  <p>See our range of support plans for BookStack</p>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/c/BookStackApp" target="_blank" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/youtube.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Video Guides</div>
+                  <p>Watch our video guides on YouTube</p>
+                </div>
+              </a>
+              <a href="https://github.com/BookStackApp/BookStack/issues" target="_blank" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/github.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">GitHub Issues</div>
+                  <p>Find or report issues on the GitHub project</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="nav-dropdown-wrap">
+            <a href="#" onclick="event.preventDefault()" class="nav-dropdown-trigger">Community</a>
+            <div class="nav-dropdown-menu">
+              <a href="https://github.com/BookStackApp/BookStack" target="_blank" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/github.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">GitHub</div>
+                  <p>Star the project on GitHub and follow us</p>
+                </div>
+              </a>
+              <a href="https://discord.gg/ztkBqR2" target="_blank" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/discord.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Discord</div>
+                  <p>Chat with the development team and other users</p>
+                </div>
+              </a>
+              <a href="https://twitter.com/bookstack_app" target="_blank" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/twitter.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Twitter</div>
+                  <p>See updates and shout us out on Twitter</p>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/c/BookStackApp" target="_blank" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/youtube.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">YouTube</div>
+                  <p>Watch and comment on our YouTube videos</p>
+                </div>
+              </a>
+              <a href="https://www.reddit.com/r/bookstack" target="_blank" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/reddit.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Reddit</div>
+                  <p>Join our community on the BookStack subreddit</p>
+                </div>
+              </a>
+              <a href="/blog" class="nav-dropdown-item">
+                <div class="nav-dropdown-item-icon" aria-hidden="true">{{partial "icon/rss_feed.svg"}}</div>
+                <div>
+                  <div class="nav-dropdown-item-title">Our Blog</div>
+                  <p>Keep up with the latest developments via our blog</p>
+                </div>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </header>
 
   <div id="content">

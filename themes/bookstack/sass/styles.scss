@@ -472,3 +472,78 @@ input[type="text"].blog-search-input {
 .meilisearch-autocomplete .docs-searchbar-suggestion--subcategory-column {
   color: #53555a !important;
 }
+
+.price-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: $-xl;
+  justify-content: center;
+  margin-left: -20vw;
+  margin-right: -20vw;
+  // align-items: flex-start;
+}
+@include smaller-than(1200px) {
+  .price-table {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.price-table-offer {
+  box-shadow: 0 1px 4px 0 rgba(94, 94, 94, 0.26);
+  border-radius: 3px;
+  min-width: 280px;
+  flex-basis: 360px;
+  display: flex;
+  flex-direction: column;
+}
+.price-table-item, .price-table-header, .price-table-action {
+  padding: .5rem 1rem;
+}
+.price-table-item {
+  border-bottom: 1px solid #EEE;
+  position: relative;
+  padding-left: 3rem;
+}
+.price-table-item:before {
+  content: '';
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23329f71"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  left: 1rem;
+  top: .8rem;
+}
+.price-table-item.price-table-item-negative:before {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23888888"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z"/></svg>');
+}
+.price-table-item-highlight {
+  font-weight: 700;
+}
+.price-table-item-highlight small {
+  font-weight: 400;
+}
+.price-table-header {
+  background-color: rgba($primary, 0.1);
+}
+.price-table-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: .2em;
+}
+.price-table-header .price {
+  font-weight: 700;
+  color: #666;
+  margin-bottom: .5rem;
+}
+.price-table-action {
+  font-weight: 700;
+  background-color: rgba($primary, 0.1);
+  text-align: center;
+  margin-top: auto;
+}
+.price-table-action a {
+  display: block;
+}

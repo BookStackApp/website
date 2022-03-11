@@ -8,6 +8,7 @@
   top: 0;
   background-color: $primary-dark;
   color: #fff;
+  position: relative;
   h1 {
     color: #FFF;
     font-size: 2.666rem;
@@ -31,12 +32,10 @@
   .icon svg {
     fill: #FFF
   }
-  .menu {
-    padding: 12px 0;
-    @include smaller-than($m) {
-      padding-top: 0;
-    }
-  }
+}
+
+#header.header {
+  z-index: 5;
 }
 
 #header .container {
@@ -95,7 +94,7 @@
 
 
 /** Header Menu **/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $l) {
   .main-nav {
     display: flex;
     justify-content: flex-end;
@@ -180,10 +179,38 @@
     opacity: .8;
     font-size: .8rem;
   }
+  header #menu-button {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: $l) {
+  header #menu-button {
+    display: inline-block;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: $-m;
+    line-height: 0;
+  }
+  header #menu-button svg {
+    margin-right: 0;
+  }
+  .header .logo {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header-search-section {
+    display: none;
+  }
   #header > .container {
+    display: block;
+  }
+  #header .main-nav {
+    display: none;
+    margin-top: -1rem;
+  }
+  #header .main-nav.showing {
     display: block;
   }
   .nav-dropdown-trigger {

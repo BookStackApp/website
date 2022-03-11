@@ -124,65 +124,7 @@ footer .menu {
   text-decoration: underline;
 }
 
-header #menu-button {
-  display: none;
-  background-color: transparent;
-  border: 0;
-  box-shadow: none;
-  padding-top: $-m;
-}
-
-@include smaller-than($xl) {
-  body header {
-    padding-top: $-xxl*1.7;
-  }
-  header .row.fix-mobile {
-    top: 0;
-    position: fixed;
-    background-color: $primary;
-    width: 100%;
-    z-index: 99;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  header #menu-button {
-    display: inline-block;
-  }
-  header .menu .inner {
-    display: none;
-    right: $-m;
-    position: fixed;
-    border-radius: 3px;
-    width: 240px;
-    background-color: #FFF;
-    z-index: 55;
-    padding: 0;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
-    &.showing {
-      display: block;
-    }
-    a {
-      color: #444;
-      display: block;
-      text-align: left;
-      border-bottom: 1px solid #EEE;
-      padding: $-m $-m*2;
-    }
-    a .icon svg {
-      fill: #444;
-    }
-    &:after {
-      width: 16px;
-      height: 16px;
-      content: '';
-      display: block;
-      background-color: #FFF;
-      transform: rotate(45deg);
-      position: absolute;
-      top: -6px;
-      border-radius: 2px;
-      right: 22px;
-    }
-  }
+@include smaller-than($xl) {  
   footer .menu {
     display: none;
   }
@@ -447,15 +389,6 @@ iframe[src^="https://www.youtube-nocookie.com"] {
   border-radius: 3px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
   background-color: #222;
-}
-
-input[type="text"].blog-search-input {
-  border: 2px solid #BBB;
-  color: #222;
-  width: 300px;
-  margin-bottom: $-s;
-  margin-top: $-m;
-  border-radius: 4px;
 }
 
 .meilisearch-autocomplete .docs-searchbar-footer-logo,

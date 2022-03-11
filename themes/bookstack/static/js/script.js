@@ -1,29 +1,23 @@
 
 // Mobile menu
 
-var menuButton = document.getElementById('menu-button');
-var menuDropDown = document.querySelector('header div.inner');
+const menuButton = document.getElementById('menu-button');
+const menuDropDown = document.querySelector('#header .main-nav');
 
-menuButton.onclick = function(event) {
-    var menuClass = menuDropDown.className;
-    var visible = menuClass.indexOf('showing') !== -1;
-    if (visible) {
-        menuDropDown.className = menuClass.replace('showing', '');
-    } else {
-        menuDropDown.className += ' showing';
-    }
-    event.stopPropagation();
-};
+menuButton.addEventListener('click', function(event) {
+  menuDropDown.classList.toggle('showing');
+  event.stopPropagation();
+});
 
-document.body.onclick = function(event) {
-    menuDropDown.className = menuDropDown.className.replace('showing', '');
-    event.stopPropagation();
-};
+document.body.addEventListener('click', function(event) {
+  menuDropDown.classList.remove('showing');
+  event.stopPropagation();  
+});
 
 
 // Handle video click to play
-var videos = document.querySelectorAll('video');
-for (var i = 0; i < videos.length; i++) {
+const videos = document.querySelectorAll('video');
+for (let i = 0; i < videos.length; i++) {
     videos[i].addEventListener('click', videoClick)
 }
 
@@ -35,7 +29,7 @@ function videoClick() {
 
 // Codemirror Setup
 
-var modeMap = {
+const modeMap = {
   'language-html': 'htmlmixed',
   'language-bash': 'shell',
   'language-js': 'javascript',
@@ -46,15 +40,15 @@ var modeMap = {
   'language-sql': 'text/x-mysql',
 };
 
-var codeBlocks = document.querySelectorAll('pre');
-for (var i = 0; i < codeBlocks.length; i++) {
-  var block = codeBlocks[i];
-  var codeElem = block.querySelector('code');
+const codeBlocks = document.querySelectorAll('pre');
+for (let i = 0; i < codeBlocks.length; i++) {
+  const block = codeBlocks[i];
+  const codeElem = block.querySelector('code');
   if (codeElem === null) continue;
 
-  var langClass = codeElem.className;
-  var mode = (typeof modeMap[langClass] !== 'undefined') ? modeMap[langClass] : 'htmlmixed';
-  var content = codeElem.textContent.trim();
+  const langClass = codeElem.className;
+  const mode = (typeof modeMap[langClass] !== 'undefined') ? modeMap[langClass] : 'htmlmixed';
+  const content = codeElem.textContent.trim();
   CodeMirror(function(cmElem) {
     block.parentNode.replaceChild(cmElem, block);
   }, {

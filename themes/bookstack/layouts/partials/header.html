@@ -84,19 +84,19 @@
 </head>
 <body class="nav-closed">
 
-  <header id="header" class="header">
+  <header id="header" class="header clearfix">
     <div class="container">
       <div class="logo">
           <a href="{{.Site.BaseURL}}">
               {{partial "icon/logo.svg"}}
               <div>BookStack</div>
           </a>
+          <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
       </div>
-      <div>
+      <div class="header-search-section">
         <input type="text" placeholder="Search site" class="doc-search-input">
       </div>
       <div class="main-nav">
-          <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
           <div class="nav-dropdown-wrap">
             <a href="#"  onclick="event.preventDefault()" class="nav-dropdown-trigger">Platform</a>
             <div class="nav-dropdown-menu">

@@ -7,7 +7,7 @@
 
     {{ partial "twitter_card.html" . }}
 
-  	<meta property="og:title" content="{{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
+  	<meta property="og:title" content="{{ if ne .RelPermalink "/" }}{{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
   	<meta property="og:site_name" content="{{ .Site.Title }}" />
   	<meta property="og:url" content="{{ .Permalink }}" />
 
@@ -18,7 +18,7 @@
     {{ with .Params.image }}
         <!-- Twitter summary card with large image must be at least 280x150px -->
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="og:image" content="{{ $baseURL }}{{ . }}"/>
+        <meta name="og:image" content="{{ . | absURL }}"/>
     {{ end }}
 
   	<meta property="og:type" content="article" />

@@ -6,7 +6,7 @@ image = "/images/blog-cover-images/dog-woods-jamie-street.jpg"
 author = "Dan Brown"
 slug = "bookstack-support-services"
 draft = false
-date = 2022-03-21T12:00:00Z
+date = 2022-03-21T10:30:00Z
 +++
 
 Today I'm happy to announce availability of official BookStack support services!

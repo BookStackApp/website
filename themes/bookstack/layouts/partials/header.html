@@ -18,7 +18,7 @@
     {{ with .Params.image }}
         <!-- Twitter summary card with large image must be at least 280x150px -->
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="og:image" content="{{ . | absURL }}"/>
+        <meta  name="image" property="og:image" content="{{ . | absURL }}"/>
     {{ end }}
 
   	<meta property="og:type" content="article" />

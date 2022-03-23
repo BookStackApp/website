@@ -85,12 +85,13 @@ STORAGE_TYPE=s3
 STORAGE_S3_KEY=your-service-key
 STORAGE_S3_SECRET=your-service-secret-key
 STORAGE_S3_BUCKET=your-service-bucket-name
+STORAGE_S3_REGION=your-region-or-some-non-falsey-string
 
 STORAGE_S3_ENDPOINT=https://your-service-base-endpoint.com:8080
 STORAGE_URL=https://your-service-base-endpoint.com:8080/your-service-bucket-name
 ```
 
-Take note of how the first part of the `STORAGE_URL` path is the bucket name. This is important to ensure image URLs are set correctly.
+Take note of how the first part of the `STORAGE_URL` path is the bucket name. This is important to ensure image URLs are set correctly. Also note that a non-`false`y value is required for `STORAGE_S3_REGION`; the underlying library used to interact with S3-equivalent platforms requires the region to be set.
 
 BookStack's functionality to set image URL's as publicly accessible will likely not work for third-party services so you'll need to ensure files under the `<your_bucket>/uploads/images` path have policy or permissions to be publicly accessible. If using Minio you can add the following to the bucket policy:
 

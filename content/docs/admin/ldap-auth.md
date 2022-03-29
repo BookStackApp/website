@@ -121,4 +121,8 @@ LDAP_GROUP_ATTRIBUTE="memberOf"
 # Note: While this is enabled the "Default Registration Role", editable within the 
 # BookStack settings view, will be considered a matched role and assigned to the user.
 LDAP_REMOVE_FROM_GROUPS=false
+
+# If you need to debug the group details coming from your LDAP server, add the below and uncomment (remove the #).
+# Only set this option if debugging since it will block logins and potentially show private details.
+#LDAP_DUMP_USER_GROUPS=true
 ```

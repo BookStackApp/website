@@ -37,6 +37,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v22.03 or higher
+
+**Webhook Data Changes** - Properties found at the `related_item -> created_by/updated_by/owned_by` path of the webhook data will now be an object instead of an ID integer. If you were using these ids you'd now need to access them within the relevant objects. (For example `related_item.created_by.id`).
+
 #### Updating to v22.02.3 or higher
 
 **Security** - v22.02.3 adds controls to limit external/iframe content on BookStack pages to prevent potential malicious sources being used. See [the added "Iframe Source Control" section on our security page](/docs/admin/security/#iframe-src-control) for more detail regarding the added controls.

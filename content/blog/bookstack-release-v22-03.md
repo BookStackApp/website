@@ -10,14 +10,17 @@ draft = false
 +++
 
 
-TODO - Update docs and upgrade notes/notices based upon issues.
+Today we release BookStack v22.03 which features some further additions to the WYSIWYG editor
+to align its feature-set with our markdown editor. We also see some changes to the settings 
+view and LDAP users get a useful new debugging option.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.03)
 
 **Upgrade Notices**
 
-- **Info** - Detail.
+- **Webhook Data Changes** - Properties found at the `related_item -> created_by/updated_by/owned_by` path of the webhook data will now be an object instead of an ID integer. If you were using these ids you'd now need to access them within the relevant objects. (For example `related_item.created_by.id`).
+- **Security Releases** - During this last release cycle there was a security update. See the [v22.02.3 blog post](/blog/bookstack-release-v22-02-3/) for more detail.
 
 ### Official Support Services & Website Updates
 
@@ -46,7 +49,7 @@ has been added to the center, mimicking the header style of BookStack itself.
 ### Webhook Updates
 
 
-
+### LDAP Group Debugging
 
 
 ### Translations

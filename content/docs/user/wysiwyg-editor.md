@@ -74,5 +74,9 @@ The following shortcuts are available in the WYSIWYG Editor:
       <td><code>Ctrl+9</code> / <code>Cmd+9</code></td>
       <td>Callout <br>(Keep pressing to toggle through styles)</td>
     </tr>
+    <tr>
+      <td><code>Ctrl+Shift+K</code> / <code>Cmd+Shift+K</code></td>
+      <td>Link to BookStack content</td>
+    </tr>
   </tbody>
 </table>

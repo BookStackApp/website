@@ -9,7 +9,6 @@ slug = "bookstack-release-v22-03"
 draft = false
 +++
 
-
 Today we release BookStack v22.03 which features some further additions to the WYSIWYG editor
 to align its feature-set with our markdown editor. We also see some changes to the settings 
 view and LDAP users get a useful new debugging option.
@@ -37,25 +36,163 @@ has been added to the center, mimicking the header style of BookStack itself.
 
 ### WYSIWYG Editor Task-Lists
 
+You can now have checkbox task-lists within the WYSIWYG editor. 
+Such lists have been part of the BookStack Markdown editor's capabilities
+for a long time but now the editors are aligned on supporting this option.
+Task-lists can be found in the list section overflow in the WYSIWYG toolbar:
+
+![WYSIWYG Editor Task List Example](/images/2022/03/task_lists.png)
+
+Checked status can be controlled when editing the page by simply clicking the checkbox.
+This checked status will then be reflected when the page is viewed, with the checkbox
+in a non-editable state.
 
 ### Link Control in WYSIWYG Editor
 
-- Popup control to edit/remove
-- New entity selector shortcut
+Links within the WYSIWYG editor are now easier to manage.
+Previously, removing a link would be a non-obvious chore of editing the link
+then emptying the link input. Now, when you're focused on a link, you'll 
+see a toolbar to allow easy and quick link editing, removal or opening:
+
+![WYSIWYG Editor Toolbar Link with three buttons: Edit link, Remove link & Open link in new tab](/images/2022/03/link_toolbar.png)
+
+In addition, a new shortcut has been added to the editor. 
+You can press `Ctrl+Shift+K` (Or `Cmd+Shift+K` on mac) to instantly show a popup
+for quick linking to existing BookStack content:
+
+![Link Selector Popup Modal Window Preview](/images/2022/03/link_selector.png)
 
 ### Settings Interface Changes
 
+Within the settings view we would previously show three categories of settings,
+each in their own panel with their own "Save" button. 
+In some cases, this could prove frustrating as a user may click the save button of
+section "A", which would not save their settings changed within section "B".
+To avoid this the settings view has been split out to a page-per-category with
+a navigation bar on the side:
+
+![Example of new settings view, categorised via a left sidebar menu](/images/2022/03/settings_view.png)
 
 ### Webhook Updates
 
+There have been some further changes to webhooks based upon community feedback.
+`created_by`/`updated_by`/`owned_by` details on the sent `related_item` property
+will now be objects instead of ids, which themselves contain a few addition details
+such as `id`, `name` and `slug`.
+
+In addition, Page creation and update events will now include revision details
+within the `related_item` content. 
+
+Put all together, the POST data will now look something like this:
+
+```json
+{
+    "event": "page_update",
+    "...",
+    "related_item": {
+        "id": 2432,
+        "...",
+        "created_by": {
+            "id": 1,
+            "name": "Benny",
+            "slug": "benny"
+        },
+        "updated_by": {
+            "id": 1,
+            "name": "Benny",
+            "slug": "benny"
+        },
+        "owned_by": {
+            "id": 1,
+            "name": "Benny",
+            "slug": "benny"
+        },
+       "current_revision": {
+            "id": 597,
+            "page_id": 2598,
+            "name": "My wonderful updated page",
+            "created_by": 1,
+            "created_at": "2021-12-11T21:53:24.000000Z",
+            "updated_at": "2021-12-11T21:53:24.000000Z",
+            "slug": "my-wonderful-updated-page",
+            "book_slug": "my-awesome-book",
+            "type": "version",
+            "summary": "Updated the title and fixed some spelling",
+            "revision_number": 2
+        }
+    }
+}
+```
+
+For those customizing the webhook data via our [logical theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md), it may be useful
+to know I've extracted out the default webhook formatting to it's own [class which can be seen here](https://github.com/BookStackApp/BookStack/blob/0887c396940b99b37cd1bec4387dc7e112f171cf/app/Actions/WebhookFormatter.php). If needed, you could use this to emulate the base default webhook data as a starting point.
 
 ### LDAP Group Debugging
 
+When configuring LDAP authentication, enabling and configuring the group
+would be a common pain-point. We do have a `LDAP_DUMP_USER_DETAILS` debugging 
+option but this did not contain and group, or "memberOf" details.
+Instead you'd have to run manual external LDAP searches, out of BookStack, to emulate
+what might be happening.
+
+In this release, we've now added a new `LDAP_DUMP_USER_GROUPS` option.
+Setting this to true will stop login requests, at the point of parsing group details,
+and dump the found details out to the browser as JSON. You'll see the raw
+data fetched from the LDAP system in addition to how BookStack has parsed that and any
+fetching of nested groups:
+
+```json
+{
+  "details_from_ldap": {
+    "0": "memberof",
+    "memberof": {
+      "0": "cn=Editor,ou=Users,o=abc123,dc=jumpcloud,dc=com",
+      "1": "cn=Wizards,ou=Users,o=abc123,dc=jumpcloud,dc=com",
+      "2": "cn=All Users,ou=Users,o=abc123,dc=jumpcloud,dc=com",
+      "count": 3
+    },
+    "count": 1,
+    "dn": "uid=bjacobs,ou=Users,o=abc123,dc=jumpcloud,dc=com"
+  },
+  "parsed_direct_user_groups": [
+    "Editor",
+    "Wizards",
+    "All Users"
+  ],
+  "parsed_recursive_user_groups": [
+    "Editor",
+    "Wizards",
+    "All Users"
+  ]
+}
+```
+
+More details can be found in [our LDAP documentation](/docs/admin/ldap-auth/).
 
 ### Translations
 
-- Name (username) - *language*
+We have a new language in this release, Basque! This language is still in progress
+but a big thanks to "Xabi" on Crowdin for starting work on this language!
 
+Upon that, we've had lots of updates since the last feature release provided 
+by the wonderful contributors listed below:
+
+- metaarch - *Bulgarian*
+- Xabi (xabikip) - *Basque*
+- Vitaliy (gviabcua) - *Ukrainian*
+- pedromcsousa - *Portuguese*
+- na3shkw - *Japanese*
+- Nir Louk (looknear) - *Hebrew*
+- Statium - *Russian*
+- scureza - *Italian*
+- MASOUD HOSSEINY (masoudme) - *Persian*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- stothew - *German*
+- m0uch0 - *Spanish*
+- SmokingCrop - *Dutch*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- Martins Pilsetnieks (pilsetnieks) - *Latvian*
+- 10935336 - *Chinese Simplified*
 
 ### Full List of Changes
 

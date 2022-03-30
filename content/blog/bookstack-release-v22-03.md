@@ -9,9 +9,9 @@ slug = "bookstack-release-v22-03"
 draft = false
 +++
 
-Today we release BookStack v22.03 which features some further additions to the WYSIWYG editor
-to align its feature-set with our markdown editor. We also see some changes to the settings 
-view and LDAP users get a useful new debugging option.
+Today we release BookStack v22.03 which features some further additions to the WYSIWYG editor,
+aiming to align its feature-set with our markdown editor. We also see some changes to the settings 
+view while LDAP users get a useful new debugging option.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.03)
@@ -25,7 +25,7 @@ view and LDAP users get a useful new debugging option.
 
 While not a particular feature for this release, I've been spending time this release
 cycle putting together some official support services. These services are primarily targeted at
-business that require assured support.
+business that require an assured level of support.
 
 Details regarding the launch of this service can be [found in this blogpost](/blog/bookstack-support-services/)
 and details of the available plans can be seen on [our new support page](/support/).
@@ -37,7 +37,7 @@ has been added to the center, mimicking the header style of BookStack itself.
 ### WYSIWYG Editor Task-Lists
 
 You can now have checkbox task-lists within the WYSIWYG editor. 
-Such lists have been part of the BookStack Markdown editor's capabilities
+Such lists have been part of BookStack's markdown editor capabilities
 for a long time but now the editors are aligned on supporting this option.
 Task-lists can be found in the list section overflow in the WYSIWYG toolbar:
 
@@ -51,13 +51,14 @@ in a non-editable state.
 
 Links within the WYSIWYG editor are now easier to manage.
 Previously, removing a link would be a non-obvious chore of editing the link
-then emptying the link input. Now, when you're focused on a link, you'll 
-see a toolbar to allow easy and quick link editing, removal or opening:
+via the main toolbar then emptying the link input before pressing save.
+Now, when you're focused on a link, you'll 
+see a toolbar to allow quick and easy link editing, removal or opening:
 
 ![WYSIWYG Editor Toolbar Link with three buttons: Edit link, Remove link & Open link in new tab](/images/2022/03/link_toolbar.png)
 
 In addition, a new shortcut has been added to the editor. 
-You can press `Ctrl+Shift+K` (Or `Cmd+Shift+K` on mac) to instantly show a popup
+You can press `Ctrl+Shift+K` (Or `Cmd+Shift+K` on MacOS) to instantly show a popup
 for quick linking to existing BookStack content:
 
 ![Link Selector Popup Modal Window Preview](/images/2022/03/link_selector.png)
@@ -67,7 +68,7 @@ for quick linking to existing BookStack content:
 Within the settings view we would previously show three categories of settings,
 each in their own panel with their own "Save" button. 
 In some cases, this could prove frustrating as a user may click the save button of
-section "A", which would not save their settings changed within section "B".
+section "A", which would loose any settings changed within section "B".
 To avoid this the settings view has been split out to a page-per-category with
 a navigation bar on the side:
 
@@ -77,13 +78,13 @@ a navigation bar on the side:
 
 There have been some further changes to webhooks based upon community feedback.
 `created_by`/`updated_by`/`owned_by` details on the sent `related_item` property
-will now be objects instead of ids, which themselves contain a few addition details
+will now be objects instead of ids, which themselves contain a few details
 such as `id`, `name` and `slug`.
 
 In addition, Page creation and update events will now include revision details
 within the `related_item` content. 
 
-Put all together, the POST data will now look something like this:
+Put all together, the POST data will now look something like this for a page update event:
 
 ```json
 {
@@ -129,16 +130,16 @@ to know I've extracted out the default webhook formatting to it's own [class whi
 
 ### LDAP Group Debugging
 
-When configuring LDAP authentication, enabling and configuring the group
+When configuring LDAP authentication, enabling and configuring the group syncing
 would be a common pain-point. We do have a `LDAP_DUMP_USER_DETAILS` debugging 
-option but this did not contain and group, or "memberOf" details.
+option but this did not contain any group, or "memberOf" details.
 Instead you'd have to run manual external LDAP searches, out of BookStack, to emulate
 what might be happening.
 
 In this release, we've now added a new `LDAP_DUMP_USER_GROUPS` option.
 Setting this to true will stop login requests, at the point of parsing group details,
 and dump the found details out to the browser as JSON. You'll see the raw
-data fetched from the LDAP system in addition to how BookStack has parsed that and any
+data fetched from the LDAP system in addition to how BookStack has parsed that data, upon any
 fetching of nested groups:
 
 ```json
@@ -171,8 +172,8 @@ More details can be found in [our LDAP documentation](/docs/admin/ldap-auth/).
 
 ### Translations
 
-We have a new language in this release, Basque! This language is still in progress
-but a big thanks to "Xabi" on Crowdin for starting work on this language!
+We have a new language in this release, Basque! Work on this language is still in progress
+but a big thanks to "Xabi" on Crowdin for starting work on these translations!
 
 Upon that, we've had lots of updates since the last feature release provided 
 by the wonderful contributors listed below:
@@ -210,7 +211,7 @@ by the wonderful contributors listed below:
 * Updated webhook data to include revision details on page_update and page_create events. ([#3218](https://github.com/BookStackApp/BookStack/issues/3218))
 * Fixed lack of translation support for some editor buttons. ([#3342](https://github.com/BookStackApp/BookStack/issues/3342))
 * Fixed incorrect page concatenation in book markdown export. ([#3341](https://github.com/BookStackApp/BookStack/issues/3341))
-* Fixed existence of `<br>` tags within code blocks instead of newlines. ([#3327](https://github.com/BookStackApp/BookStack/issues/3327))
+* Fixed usage of `<br>` tags within code blocks instead of newlines when using the WYSIWYG editor. ([#3327](https://github.com/BookStackApp/BookStack/issues/3327))
 * Fixed image thumbnail generation not taking EXIF rotation data into account. ([#1854](https://github.com/BookStackApp/BookStack/issues/1854))
 
 

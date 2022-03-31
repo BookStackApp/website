@@ -73,7 +73,12 @@ after changing your configuration. This action will also attempt to capture any 
 Webhooks can be configured in the "Settings > Webhooks" area of your BookStack instance.
 An example of the POST data format is shown when creating or editing a webhook.
 
-The running on webhooks can slow down a system due to the required additional processing time.
+The webhook data is "Slack Compatible" in respect to having a `text` property containing a human-readable description
+of the event. Services such as [Discord](https://discord.com/developers/docs/resources/webhook#execute-slackcompatible-webhook), [Zulip](https://zulip.com/integrations/doc/slack_incoming) and Teams, upon many others, have options to support this format.
+
+A video guide on BookStack webhooks, including usage with Discord and HomeAssistant, [can be found here](https://www.youtube.com/watch?v=_zIp1ruGpoI).
+
+The running of webhooks can slow down a system due to the required additional processing time.
 See the [async action handling](#async-action-handling) section below to details on running webhooks
 in a background process to improve performance.
 

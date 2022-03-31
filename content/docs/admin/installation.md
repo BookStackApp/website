@@ -154,7 +154,7 @@ This is a collection of guides created by awesome members of the BookStack commu
 * [CentOS 8 Install by Xhark](https://github.com/blogmotion/bm-bookstack-install/blob/master/bookstack-install-centos8.sh) - [french guide](http://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)
-
+* [Debian 11 Install by Othman Alikhan](https://gist.github.com/OthmanEmpire/322f83a77c15dfd1c91a2afe0b6a6fc2)
 
 ---
 

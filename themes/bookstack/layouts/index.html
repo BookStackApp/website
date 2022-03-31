@@ -26,7 +26,7 @@
 		    			<div class="window-option" style="background-color: orange;"></div>
 		    			<div class="window-option"  style="background-color: green;"></div>
 		    		</div>
-		        	<img class="screenshot" src="images/bookstack-hero-screenshot.jpg" alt="BookStack ScreenShot">
+		        	<img class="screenshot" src="images/bookstack-hero-screenshot.webp" alt="BookStack ScreenShot">
 		    	</div>
 		    </div>
 		</div>
@@ -320,7 +320,7 @@
 	</div>
 
 
-    <div class="shaded shaded-border md-margin-top padded-vertical large">
+    <div class="shaded shaded-border md-margin-top padded-vertical large" id="blog-list">
         <div class="container">
             <h2>Latest From The Blog</h2>
 
@@ -329,7 +329,11 @@
 					<div class="blogpost-card">
 						<a href="{{.Permalink}}">
 							{{ if .Params.image }}
-								<div class="image" style="background-image: url({{.Params.image}});"></div>
+							    {{ $image := resources.Get .Params.image }}
+								{{ $sized := $image.Resize "604x q90" }}
+								<div class="image">
+									<img src="{{$sized.RelPermalink}}" loading="lazy" width="302" height="160" alt="{{ .Title }}">
+								</div>
 							{{ end }}
 							<div class="text">{{ .Title }}</div>
 						</a>

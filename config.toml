@@ -5,6 +5,7 @@ theme="bookstack"
 enableGitInfo=true
 paginate=50
 summarylength=20
+assetDir = "static"
 
 [markup]
   defaultMarkdownHandler = "goldmark"

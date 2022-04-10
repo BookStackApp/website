@@ -68,7 +68,7 @@ BookStack uses [draw.io](https://www.diagrams.net/) to provide users with the ab
 By default BookStack embeds the draw.io interface using the following URL:
 
 ```php
-https://www.draw.io/?embed=1&proto=json&spin=1
+https://embed.diagrams.net/?embed=1&proto=json&spin=1
 ```
 
 You can instead define your own URL to customise this embed or even use a self-hosted

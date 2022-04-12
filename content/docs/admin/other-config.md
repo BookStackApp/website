@@ -9,17 +9,17 @@ type = "admin-doc"
 * [.env Options](#env-options)
 * [Revision Limit](#revision-limit)
 * [Custom User Avatar Fetching](#custom-user-avatar-fetching)
-* [Custom Draw.io URL](#custom-drawio-url)
+* [Custom diagrams.net URL](#custom-diagramsnet-url)
 
 ---
 
 ### .env Options
 
 As part of the installation of BookStack you will have a `.env` file containing system options. By default this only contains a few options.
-Within your BookStack install directory you should also have a `.env.example.complete` file which contains every support option available alongside the default value for each.
+Within your BookStack install directory you should also have a `.env.example.complete` file which contains every supported option available alongside the default value for each.
 You can copy options in this file to your own `.env` file as required. Many of the options in the `.env.example.complete` file are detailed in-depth in this documentation.
 
-The `.env` file essential sets environment variables for BookStack to read. Environment variables will be checked if an option is not in the `.env` file which can be useful
+The `.env` file essentially sets environment variables for BookStack to read. Environment variables will be checked if an option is not in the `.env` file which can be useful
 in the creation and use of docker containers.
 
 ---
@@ -62,23 +62,23 @@ The following variables can be used in this setting which will be populated by B
 
 ---
 
-### Custom Draw.io URL
+### Custom diagrams.net URL
 
-BookStack uses [draw.io](https://www.diagrams.net/) to provide users with the ability to create & edit drawings.
-By default BookStack embeds the draw.io interface using the following URL:
+BookStack uses [diagrams.net](https://www.diagrams.net/) (formerly draw.io) to provide users with the ability to create & edit drawings.
+By default BookStack embeds the diagrams.net interface using the following URL:
 
 ```php
 https://embed.diagrams.net/?embed=1&proto=json&spin=1
 ```
 
 You can instead define your own URL to customise this embed or even use a self-hosted
-instance of draw.io. This can be done by defining an option in your `.env` file like so:
+instance of diagrams.net. This can be done by defining an option in your `.env` file like so:
 
 ```bash
 DRAWIO=https://drawing.example.com/?embed=1&proto=json&spin=1
 ```
 
-**The `embed=1&proto=json&spin=1` query string parameters are required for the integration with BookStack to function. <br> Remember to include these when defining a custom URL.**
+**The `embed=1&proto=json&spin=1` query string parameters are required for the integration with BookStack to function. Remember to include these when defining a custom URL.**
 
-Refer to this draw.io guide to see what options are supported: [draw.io embed URL parameters](https://desk.draw.io/support/solutions/articles/16000042546-what-url-parameters-are-supported-). In particular, the `stealth=1` option might be of interest if you 
+Refer to this diagrams.net guide to see what options are supported: [diagrams.net embed URL parameters](https://www.diagrams.net/doc/faq/supported-url-parameters). In particular, the `stealth=1` option might be of interest if you 
 don't want other external services to be used. 

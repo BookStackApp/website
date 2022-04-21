@@ -11,6 +11,7 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Shared Hosting](#shared)
 * [Manual](#manual)
 * [Docker](#docker)
+* [Ubuntu 22.04 Script](#ubuntu-2204)
 * [Ubuntu 20.04 Script](#ubuntu-2004)
 * [Ubuntu 18.04 Script](#ubuntu-1804)
 * [Community Guides](#community)
@@ -28,7 +29,7 @@ BookStack has the following requirements:
 * **PHP** >= 7.4
     * For installation and maintenance, you'll need to be able to run `php` from the command line.
     * Required Extensions: *OpenSSL, PDO, MBstring, Tokenizer, GD, MySQL, SimpleXML & DOM*
-* **MySQL** >= 5.6 or **MariaDB** >= 10.0
+* **MySQL** >= 5.7 or **MariaDB** >= 10.2
     * For the storage of BookStack content and data.
     * Single Database *(All permissions advised since application manages schema)*
 * **Git Version Control**
@@ -91,6 +92,34 @@ Community docker setups are available for those that would prefer to use a conta
 
 * [GitHub Repository](https://github.com/solidnerd/docker-bookstack)
 * [Docker Hub page](https://hub.docker.com/r/solidnerd/bookstack/)
+
+---
+
+<a name="ubuntu-2204"></a>
+
+## Ubuntu 22.04 Installation Script
+
+A script to install BookStack on a fresh instance of Ubuntu 22.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 8.0 & PHP-8.1 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
+
+[Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-22.04.sh)
+
+#### Running the Script
+
+```bash
+# Ensure you have read the above information about what this script does before executing these commands.
+
+# Download the script
+wget https://raw.githubusercontent.com/BookStackApp/devops/main/scripts/installation-ubuntu-22.04.sh
+
+# Make it executable
+chmod a+x installation-ubuntu-22.04.sh
+
+# Run the script with admin permissions
+sudo ./installation-ubuntu-22.04.sh
+```
+
+The script will output a log file for debugging within your current working directory when running the script.
+Permissions for the BookStack installation files & folders will be set based upon the user used to run the script.
 
 ---
 

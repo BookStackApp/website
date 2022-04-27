@@ -26,11 +26,47 @@ of easier editing switching, in addition to a bunch of other additions and impro
 
 ### Switch Between WYSIWYG & Markdown While Editing
 
-TODO
+VIDEO OF SWITCHING HERE?
+
+It's now possible to switch between the WYSIWYG editor and Markdown while editing!
+This has been a much requested feature, since the Markdown editor was introduced. 
+When editing a page you can use the central dropdown menu at the top to show options to change editor.
+There are two options when changing from WYSIWYG to Markdown:
+
+TODO_IMAGE_OF_OPTIONS_HERE
+
+These two options exist to offer different conversion handling of your page content:
+
+- Stable - This retains existing HTML content in Markdown to avoid any potential functionality breakages or loss of formatting. This is similar to switching the global option now then re-opening a page for edit.
+- Clean - This is a system-cleaned markdown output, which is much nicer but has potential for formatting loss and potential functionality breaks (Things depending on HTML attributes/IDs for example).
+
+When you chose to change editor, a modal warning will show to emphasise the potential side-affects of changing the content.
+The current page being edited will be saved as a draft at this stage. 
+Choosing to continue will then reload the page with the new chosen editor.
+The editor used is essentially saved against the page itself, to prevent un-intentional conversion of page content.
+
+TODO: IMAGE OF MODAL HERE
+
+We envisioned that this functionality may not be desirable in all environments, so a new "Change page editor" role permission
+now exists to control who has the ability to change the editor for a page. This will be provided only to the default "Admin" role upon upgrade.
+
+TODO: IMAGE OF ROLE PERMISSION AND DEFAULT OPTION SIDE_BY_SIDE?
+
+The existing "Page Editor" customization setting now indicates the default editor to use for new content, instead of which editor will always be seen before this new functionality.
+Keep in mind that users, without the  "Change page editor" permission, may still see an editor that's not configured as the system default if it has been changed by a user with permission.
+
 
 ### Recycle Bin API Endpoints
 
-TODO
+The rollout of additional API endpoints continue with this release adding recycle bin API endpoints:
+
+TODO_IMAGE_OF_ENDPOINTS_HERE
+
+These allow external integration for listing, restoring and destroying recycle bin contents. 
+The listing endpoint contains a little detail regarding the deleted item and its parent/child content to help
+cover most use-cases you might have for this data.
+
+A big thanks to [@Julesdevops](https://github.com/BookStackApp/BookStack/pull/3377) for thier work to implement this functionality.
 
 ### New Editor Event to Configure Diagrams.net
 
@@ -53,7 +89,9 @@ This event provides loads of abilities of customization.
 
 ### File Handling Efficiency Improvements
 
-TODO
+In this release we've reviewed all the main actions of uploading and downloading files to make things much more efficient.
+Now, where possible, such file handling will be dealt with by streaming data instead of reading and writing the entire contents. 
+This uses much less system memory while helping to avoid hitting limits such as PHP's `memory_limit`. In turn, this allows uploading and downloading of attachments that are far larger than the PHP memory limit.
 
 ### Translations
 

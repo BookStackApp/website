@@ -68,14 +68,14 @@ BookStack uses [diagrams.net](https://www.diagrams.net/) (formerly draw.io) to p
 By default BookStack embeds the diagrams.net interface using the following URL:
 
 ```php
-https://embed.diagrams.net/?embed=1&proto=json&spin=1
+https://embed.diagrams.net/?embed=1&proto=json&spin=1&configure=1
 ```
 
 You can instead define your own URL to customise this embed or even use a self-hosted
 instance of diagrams.net. This can be done by defining an option in your `.env` file like so:
 
 ```bash
-DRAWIO=https://drawing.example.com/?embed=1&proto=json&spin=1
+DRAWIO=https://drawing.example.com/?embed=1&proto=json&spin=1&configure=1
 ```
 
 **The `embed=1&proto=json&spin=1` query string parameters are required for the integration with BookStack to function. Remember to include these when defining a custom URL.**

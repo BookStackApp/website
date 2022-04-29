@@ -31,7 +31,9 @@ Within the settings area you'll find a 'Custom HTML head content' setting. You c
 
 ### BookStack Editor Events
 
-Both the TinyMCE based WYSIWYG editor and the CodeMirror based Markdown editor emit events as part of their lifecycle. You can listen for these hook in and alter their configs or to gain a reference to the underlying editor instance. The below code sample shows the events available; Log out the `detail` property of events, as per the below example, to understand what is passed with the events:
+For the core underlying libraries, used in the BookStack page editors, we emit some custom events as part of their lifecycle.
+You can listen for these events to hook in and alter their configs or to gain a reference to the underlying editor instance.
+The below code sample shows the events available; Log out the `detail` property of events, as per the below example, to understand what is passed with the events:
 
 ```html
 <script>
@@ -42,6 +44,12 @@ Both the TinyMCE based WYSIWYG editor and the CodeMirror based Markdown editor e
 	// CodeMirror / Markdown-it Markdown editor events
 	window.addEventListener('editor-markdown-cm::pre-init', event => console.log('MARKDOWN-CODEMIRROR-PRE_INIT', event.detail));
 	window.addEventListener('editor-markdown::setup', event => console.log('MARKDOWN-EDITOR-SETUP', event.detail));
+
+	// Diagrams.net configure event
+	// Reference: https://www.diagrams.net/doc/faq/configure-diagram-editor
+	// If using a custom diagrams.net instance, via the `DRAWIO` option, you will need to ensure
+	// this your URL has the `configure=1` query parameter.
+	window.addEventListener('editor-drawio::configure', event => console.log('DIAGRAMS.NET-CONFIGURE', event.detail));
 </script>
 ```
 

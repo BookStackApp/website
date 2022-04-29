@@ -1,24 +1,26 @@
 +++
 title = "Updating BookStack"
-description = "How to update BookStack to the lastest version"
+description = "How to update BookStack to the latest version"
 date = "2017-01-01"
 type = "admin-doc"
 +++
 
-BookStack is updated regularly and is still in beta although we do try to keep the platform and upgrade path as stable as possible. The latest release can be found on [GitHub here](https://github.com/BookStackApp/BookStack/releases) and detailed information on releases is posted on the [BookStack blog here](/tags/releases/).
+BookStack is updated regularly. We try our best to keep the platform and upgrade path as stable as possible. The latest release can be found on [GitHub here](https://github.com/BookStackApp/BookStack/releases) and detailed information on releases is posted on the [BookStack blog here](/tags/releases/).
 
 **Before updating you should back up the database and any file uploads to prevent potential data loss**. <br>
 Backup and restore documentation can be found [here](/docs/admin/backup-restore).
 
- Updating is currently done via Git version control. To update BookStack you can run the following command in the root directory of the application:
+ Updating is currently done via Git version control. To update BookStack you can run the three following commands in the root directory of the application:
 
 ```bash
-git pull origin release && composer install --no-dev && php artisan migrate
+git pull origin release
+composer install --no-dev
+php artisan migrate
 ```
 
-This command will update the repository that was created in the installation, install the PHP dependencies using `composer` then run then update the database with any required changes.
+This first command will update the repository that was created in the installation. The second will install the PHP dependencies using `composer`. The third will then update the database with any required changes.
 
-In addition, Clearing the cache is also recommended:
+In addition, Clearing the system caches is also recommended:
 
 ```bash
 php artisan cache:clear
@@ -36,6 +38,14 @@ The below lists things you may need to be aware of when upgrading to a newer ver
 This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
+
+#### Updating to v22.04 or higher
+
+**Database Changes** - This release makes some significant changes to data within the database which may cause the update to take a little longer than usual to run. Please give the update extra time to complete.
+
+**REST API Page Create/Update Changes** - Create & update page requests now have the potential to change the current editor type for that page, depending on the content type sent in the request, if the API user has permission to change the page editor.
+
+**URL Handling** - The way we handle URLs has changed this release to hopefully address some issues in specific scenarios. These changes have been tested and should not affect existing working environments but there's an increased risk this release for setups with more complex URL handling. Please [raise an issue](https://github.com/BookStackApp/BookStack/issues/new/choose) or jump into our Discord server if you have any issues with URLs after upgrading.
 
 #### Updating to v22.03 or higher
 

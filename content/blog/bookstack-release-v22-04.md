@@ -99,13 +99,30 @@ The wonderful wizards of language within our community have continued their effo
 to keep the BookStack translations up-to-date. 
 A big thanks to the following translators for their efforts since the last feature release:
 
-- Username - *language*
+- Xabi (xabikip) - *Basque*
+- sgenc - *Turkish*
+- Shukrullo (vodiylik) - *Uzbek*
+- na3shkw - *Japanese*
+- William W. (Nevnt) - *Chinese Traditional*
+- 10935336 - *Chinese Simplified*
+- m0uch0 - *Spanish*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Irfan Hukama Arsyad (IrfanArsyad) - *Indonesian*
+- Helga Guchshenskaya (guchshenskaya) - *Russian*
+- pedromcsousa - *Portuguese*
+- eamaro - *Portuguese*
+- SmokingCrop - *Dutch*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- syn7ax69 - *German*
+- Jasell - *Swedish*
+- @evandroamaro - *Portuguese*
+
 
 ### Full List of Changes
 
 **Released in v22.04**
 
-* Added ability to switch editor types on a per-page basis. ([#3387](https://github.com/BookStackApp/BookStack/pull/3387), [#458](https://github.com/BookStackApp/BookStack/issues/458))
+* Added ability to switch editor types on a per-page basis. ([#3387](https://github.com/BookStackApp/BookStack/pull/3387), [#458](https://github.com/BookStackApp/BookStack/issues/458), [#369](https://github.com/BookStackApp/BookStack/issues/369))
 * Added new recycle bin API endpoints. Thanks to [@Julesdevops](https://github.com/BookStackApp/BookStack/pull/3377). ([#3377](https://github.com/BookStackApp/BookStack/pull/3377), [#3372](https://github.com/BookStackApp/BookStack/issues/3372))
 * Added ability to pass diagrams.net configuration options. ([#3391](https://github.com/BookStackApp/BookStack/pull/3391))
 * Added Uzbek language option to allow translation, not yet active in the interface. ([#3383](https://github.com/BookStackApp/BookStack/issues/3383))

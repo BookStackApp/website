@@ -59,3 +59,11 @@ for (let i = 0; i < codeBlocks.length; i++) {
     value: content
   });
 }
+
+// Header double click URL reference
+document.body.addEventListener('dblclick', event => {
+  const isHeader = event.target.matches('h1, h2, h3, h4, h5, h6');
+  if (isHeader && event.target.id) {
+    window.location.hash = event.target.id;
+  }
+});

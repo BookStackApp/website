@@ -103,7 +103,7 @@ LDAP_THUMBNAIL_ATTRIBUTE=thumbnailPhoto
 ### LDAP Group Sync
 
 BookStack has the ability to sync LDAP user groups with BookStack roles. By default this will match LDAP group names with the BookStack role display names with casing ignored.
-This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while LDAP authentication is enabled. This field can be populated with common names (CNs) of accounts *or* groups. If filled, CNs in this field will be used and the role name will be ignored. You can match on multiple CNs by separating them with a comma.
+This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while LDAP authentication is enabled. This field can be populated with common names (CNs) of accounts *or* groups. If filled, CNs in this field will be used and the role name will be ignored. You can match on multiple CNs by separating them with a comma.  Commas can be escaped with a backslash (`/,`) if you need to map to a CN using a literal comma character.
 
 When matching LDAP groups with role names or 'External Authentication IDs' values, BookStack will standardise the names of ldap groups to be lower-cased and spaces will be replaced with hyphens. For example, to match a LDAP group named "United Kingdom" an 'External Authentication IDs' value of "united-kingdom" could be used.
 

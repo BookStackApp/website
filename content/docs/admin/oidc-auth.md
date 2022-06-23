@@ -33,6 +33,12 @@ To set up OIDC based authentication add or modify the following variables in you
 # Set OIDC to be the authentication method
 AUTH_METHOD=oidc
 
+# Control if BookStack automatically initiates login via your OIDC system 
+# if it's the only authentication method. Prevents the need for the
+# user to click the "Login with x" button on the login page.
+# Setting this to true enables auto-initiation.
+AUTH_AUTO_INITIATE=false
+
 # Set the display name to be shown on the login button.
 # (Login with <name>)
 OIDC_NAME=SSO

@@ -17,6 +17,11 @@ To set up SAML 2.0 based authentication add or modify the following variables in
 # Set authentication method to be saml2
 AUTH_METHOD=saml2
 
+# Control if BookStack automatically initiates login via your SAML system if it's the only authentication method.
+# Prevents the need for the user to click the "Login with x" button on the login page.
+# Setting this to true enables auto-initiation.
+AUTH_AUTO_INITIATE=false
+
 # Set the display name to be shown on the login button.
 # (Login with <name>)
 SAML2_NAME=SSO
@@ -118,7 +123,7 @@ SAML2_ONELOGIN_OVERRIDES=<json_format_data>
 ### SAML Group Sync
 
 BookStack has the ability to sync SAML user groups with BookStack roles. By default this will match SAML group names with the BookStack role display names with casing ignored.
-This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while SAML authentication is enabled. If filled, the names in this field will be used and the role display name will be ignored. You can match on multiple names by separating them with a comma.
+This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while SAML authentication is enabled. If filled, the names in this field will be used and the role display name will be ignored. You can match on multiple names by separating them with a comma. Commas can be escaped with a backslash (`/,`) if you need to map using a literal comma character.
 
 When matching SAML groups with role names or 'External Authentication IDs' values, BookStack will standardise the names of SAML groups to be lower-cased and spaces will be replaced with hyphens. For example, to match a SAML group named "United Kingdom" an 'External Authentication IDs' value of "united-kingdom" could be used.
 

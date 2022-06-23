@@ -9,6 +9,8 @@ slug = "bookstack-release-v22-06"
 draft = false
 +++
 
+BookStack v22.06 is now here! This release was primarily refinement focused but it does include
+some great new features that may streamline your usage of the platform.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.06)
@@ -19,37 +21,111 @@ draft = false
 
 ### Convert Chapters to Books, Books to Shelves
 
-TODO
+To help with organisation, you can now convert chapters and books up within the content hierarchy.
+The option to do this can be found when editing a chapter or book, where you'll also find some considerations
+in regards to how this may affect content:
+
+TODO - Image of book promote view
+
+Converting a book to a shelf will also convert chapters, within the book, to become new books themselves. 
+If pages previously existed in the book, without being in a chapter, they will form their own new book with a name matching that of the original parent book but with " Pages" append onto it.
 
 ### Auto-Initiate SAML/OIDC Login
 
-TODO
+For instances that only use SAML2 or OIDC authentication, it's now possible to make the login flow
+automatically start, instead of users needing to click the "Login with x" button.
+This can be enabled via the following setting in your `.env` file:
+
+```bash
+AUTH_AUTO_INITIATE=false
+```
+
+With this enabled, BookStack will automatically start the authentication redirect process upon access
+to the standard login endpoint. Users will see a loading view while this occurs:
+
+TODO - IMAGE OF AUTO_INIT VIEW
+
+Thanks to [@rjmidau](https://github.com/BookStackApp/BookStack/pull/3406) for building out this feature.
 
 ### WYSIWYG Code Editor Updates
 
-TODO - Design
-TODO - Language option list
+The WYSIWYG code editor design has been refactored in this release to provide a cleaner look that makes more efficient use of space for easier editing. The language list is now an easier-to-parse single column that will auto-scroll and highlight based on language input.
 
-### More Efficient Markdown Preview Display
+TODO - Image of code editor
 
-TODO
-
-### Visual Theme System Template Updates
-
-TODO - Export & CSS helper classes
-TODO - Body start/end templates
+Upon the visual changes, the code language list has been updated with some requested options including TypeScript, Diffs, Julia, OCaml and Rust.
 
 ### UI Fixes & Improvements
 
-TODO - Intro, Overview of small bits
+Some time this release was focused to bring a slew of UI fixes and enhancements. 
+Most of this was tightening of margins, paddings, hover-states & animations, improving consistency where possible. A couple of these are explained below but a [full list can be found here](https://github.com/BookStackApp/BookStack/pull/3433).
 
 #### "Custom HTML Head Content" Setting
 
-TODO
+The "Custom HTML Head Content" setting, shown in the "Customization" category, is now rendered using a codemirror block which provides syntax highlighting, which should help indicate errors, and is generally more pleasant to edit code within.
+
+TODO - Image of setting
 
 #### Attachment Link Dropdown
 
-TODO
+Attachments, when viewed on a page, will now show a dropdown when hovered over.
+This allows you to select the method of opening, providing a choice between:
+
+- Download (The default) - Forced browser download as file.
+- Open in Tab - Will display the file in-browser if the file-type is safe and if the browser supports viewing that file type.
+
+TODO - Image of dropdown
+
+Previously the "Open in Tab" option was fairly hidden, requiring URL manipulation or a keyboard shortcut to access, so this change should make this much more accessible.
+
+### More Efficient Markdown Preview Display
+
+The markdown editor preview display has received some behind-the-scenes changes to provide a more performant and provide a smoother experience. The display now receives changes via a virtual DOM diffing implementation which means only changed parts of the display will be updated, instead of the previous method of replacing the whole content code upon each update. This should especially improve scenarios where external embedded content is shown.
+
+TODO - Image of markdown display?
+
+### Visual Theme System Template Updates
+
+In this release cycle we've made some changes that should provide an easier and more maintainable experience using [the visual theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/visual-theme-system.md) to customize a few specific areas:
+
+#### Export Customisation
+
+Significant improvements have been made to the way export templates files and styles are managed.
+Templates have been [organised into an exports-specific directory](https://github.com/BookStackApp/BookStack/tree/development/resources/views/exports) and the contents has been split into much more modular parts.
+
+```
+resources/views/exports
+├── book.blade.php
+├── chapter.blade.php
+├── page.blade.php
+└── parts
+    ├── book-contents-menu.blade.php
+    ├── chapter-contents-menu.blade.php
+    ├── chapter-item.blade.php
+    ├── custom-head.blade.php
+    ├── meta.blade.php
+    ├── page-item.blade.php
+    └── styles.blade.php
+```
+
+Included with these changes is some new helper classes, used in the based export layout, allowing easy CSS targeting of export-specific content. For example, you could target `<p>` tags in only DOMPDF-generated PDF exports like so:
+
+```css
+.export.export-format-pdf.export-engine-dompdf p {
+  color: tomato;
+}
+```
+
+#### Body Start & End Templates
+
+It's quite common that, when performing customizations, you'd need to add custom code at the start and 
+end of the HTML `<body>` element. The only way to do this before was to override the entire `base.blade.php` layout template. We've now added a few extra placeholder partial templates, located at the start and end of the body in the base template, to allow easier access for customization.
+
+```
+resources/views/layouts/parts
+├── base-body-end.blade.php
+└── base-body-start.blade.php
+```
 
 ### Translations
 
@@ -99,7 +175,11 @@ TODO
 
 ### Next Steps
 
-TODO
+My attention for the next release cycle will likely be focused on the next stage of [the road-map](https://github.com/BookStackApp/BookStack#%EF%B8%8F-road-map), the permissions system review. This review will assess changes to make the system more performant & scalable while taking into account requests and feedback provided over the last 6 years. If this goes ahead, it will likely be complex and require a lot of testing and therefore it may extend the release cycle timeline.
+
+New versions of some of our core front-end libraries, TinyMCE and CodeMirror, have recently been release so I've targeted upgrade of those for our next feature release, which should bring some improvements to the editors.
+
+Thinking longer-term, I've recently [opened a new proposal on GitHub](https://github.com/BookStackApp/BookStack/issues/3520) to set out a potential new URL scheme for core content (shelves, books, chapters, pages) within BookStack. I'd appreciate any feedback or commentary you may have on this.
 
 ----
 

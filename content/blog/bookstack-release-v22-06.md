@@ -25,7 +25,7 @@ To help with organisation, you can now convert chapters and books up within the 
 The option to do this can be found when editing a chapter or book, where you'll also find some considerations
 in regards to how this may affect content:
 
-TODO - Image of book promote view
+![View of the "Convert to Shelf" option when editing a book](/images/2022/06/convert_book_to_shelf.png)
 
 Converting a book to a shelf will also convert chapters, within the book, to become new books themselves. 
 If pages previously existed in the book, without being in a chapter, they will form their own new book with a name matching that of the original parent book but with " Pages" append onto it.
@@ -43,7 +43,7 @@ AUTH_AUTO_INITIATE=false
 With this enabled, BookStack will automatically start the authentication redirect process upon access
 to the standard login endpoint. Users will see a loading view while this occurs:
 
-TODO - IMAGE OF AUTO_INIT VIEW
+![View showing "Attempting Login" with a loading spinner and help text](/images/2022/06/auth_auto_initiate.png)
 
 Thanks to [@rjmidau](https://github.com/BookStackApp/BookStack/pull/3406) for building out this feature.
 
@@ -51,7 +51,7 @@ Thanks to [@rjmidau](https://github.com/BookStackApp/BookStack/pull/3406) for bu
 
 The WYSIWYG code editor design has been refactored in this release to provide a cleaner look that makes more efficient use of space for easier editing. The language list is now an easier-to-parse single column that will auto-scroll and highlight based on language input.
 
-TODO - Image of code editor
+![Screenshot of the code editor popup window, with code languages listed down the left](/images/2022/06/code_editor_redesign.png)
 
 Upon the visual changes, the code language list has been updated with some requested options including TypeScript, Diffs, Julia, OCaml and Rust.
 
@@ -64,7 +64,7 @@ Most of this was tightening of margins, paddings, hover-states & animations, imp
 
 The "Custom HTML Head Content" setting, shown in the "Customization" category, is now rendered using a codemirror block which provides syntax highlighting, which should help indicate errors, and is generally more pleasant to edit code within.
 
-TODO - Image of setting
+![Screenshot of the "Custom HTML Head Content" setting rendered using a code editor](/images/2022/06/custom_head_html_setting.png)
 
 #### Attachment Link Dropdown
 
@@ -74,15 +74,13 @@ This allows you to select the method of opening, providing a choice between:
 - Download (The default) - Forced browser download as file.
 - Open in Tab - Will display the file in-browser if the file-type is safe and if the browser supports viewing that file type.
 
-TODO - Image of dropdown
+![Example of a page attachment dropdown in BookStack](/images/2022/06/attachment_dropdown.png)
 
 Previously the "Open in Tab" option was fairly hidden, requiring URL manipulation or a keyboard shortcut to access, so this change should make this much more accessible.
 
 ### More Efficient Markdown Preview Display
 
 The markdown editor preview display has received some behind-the-scenes changes to provide a more performant and provide a smoother experience. The display now receives changes via a virtual DOM diffing implementation which means only changed parts of the display will be updated, instead of the previous method of replacing the whole content code upon each update. This should especially improve scenarios where external embedded content is shown.
-
-TODO - Image of markdown display?
 
 ### Visual Theme System Template Updates
 

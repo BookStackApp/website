@@ -37,7 +37,7 @@ automatically start, instead of users needing to click the "Login with x" button
 This can be enabled via the following setting in your `.env` file:
 
 ```bash
-AUTH_AUTO_INITIATE=false
+AUTH_AUTO_INITIATE=true
 ```
 
 With this enabled, BookStack will automatically start the authentication redirect process upon access
@@ -72,7 +72,7 @@ Attachments, when viewed on a page, will now show a dropdown when hovered over.
 This allows you to select the method of opening, providing a choice between:
 
 - Download (The default) - Forced browser download as file.
-- Open in Tab - Will display the file in-browser if the file-type is safe and if the browser supports viewing that file type.
+- Open in Tab - Displays the file in-browser if the file type is safe & supported by the browser.
 
 ![Example of a page attachment dropdown in BookStack](/images/2022/06/attachment_dropdown.png)
 
@@ -89,7 +89,7 @@ In this release cycle we've made some changes that should provide an easier and 
 #### Export Customisation
 
 Significant improvements have been made to the way export templates files and styles are managed.
-Templates have been [organised into an exports-specific directory](https://github.com/BookStackApp/BookStack/tree/development/resources/views/exports) and the contents has been split into much more modular parts.
+Templates have been [organised into an exports-specific directory](https://github.com/BookStackApp/BookStack/tree/development/resources/views/exports) and the contents have been split into much more modular parts.
 
 ```
 resources/views/exports
@@ -127,9 +127,39 @@ resources/views/layouts/parts
 
 ### Translations
 
-TODO
+A big thanks again to the below wonderful translators that have contributed text since the original v22.04 release:
 
-- Name - *Language*
+- David Clubb (davidoclubb) - *Welsh*
+- welles freire (wellesximenes) - *Portuguese, Brazilian*
+- Magnus Jensen (MagnusHJensen) - *Danish*
+- Martins Pilsetnieks (pilsetnieks) - *Latvian*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- Hieu Vuong Trung (vuongtrunghieu) - *Vietnamese*
+- m0uch0 - *Spanish*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Hesley Magno (hesleymagno) - *Portuguese, Brazilian*
+- Éric Gaspar (erga) - *French*
+- na3shkw - *Japanese*
+- scureza - *Italian*
+- SmokingCrop - *Dutch*
+- Fr3shlama - *German*
+- 10935336 - *Chinese Simplified*
+- DSR - *Spanish, Argentina*
+- Statium - *Russian*
+- Saeed (saeed205) - *Persian*
+- Ypsilon-dev - *Arabic*
+- sgenc - *Turkish*
+- Mykola Ronik (Mantikor) - *Ukrainian*
+- Andrii Bodnar (andrii-bodnar) - *Ukrainian*
+- Xabi (xabikip) - *Basque*
+- Jakub Bouček (jakubboucek) - *Czech*
+- Helga Guchshenskaya (guchshenskaya) - *Russian*
+- Younes el Anjri (younesea28) - *Dutch*
+- Guclu Ozturk (gucluoz) - *Turkish*
+- Atmis - *French*
+- redjack666 - *Chinese Traditional*
+- lihaorr - *Chinese Simplified*
+- Ashita007 - *Russian*
 
 
 ### Full List of Changes
@@ -175,7 +205,7 @@ TODO
 
 My attention for the next release cycle will likely be focused on the next stage of [the road-map](https://github.com/BookStackApp/BookStack#%EF%B8%8F-road-map), the permissions system review. This review will assess changes to make the system more performant & scalable while taking into account requests and feedback provided over the last 6 years. If this goes ahead, it will likely be complex and require a lot of testing and therefore it may extend the release cycle timeline.
 
-New versions of some of our core front-end libraries, TinyMCE and CodeMirror, have recently been release so I've targeted upgrade of those for our next feature release, which should bring some improvements to the editors.
+New versions of some of our core front-end libraries, TinyMCE and CodeMirror, have recently been released so I've targeted upgrade of those for our next feature release, which should bring some improvements to the editors.
 
 Thinking longer-term, I've recently [opened a new proposal on GitHub](https://github.com/BookStackApp/BookStack/issues/3520) to set out a potential new URL scheme for core content (shelves, books, chapters, pages) within BookStack. I'd appreciate any feedback or commentary you may have on this.
 

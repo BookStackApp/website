@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v22.06"
-date = 2022-06-23T12:00:00Z
+date = 2022-06-24T11:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/bluebells-dan-brown.jpg"
 slug = "bookstack-release-v22-06"

@@ -12,6 +12,7 @@ draft = false
 BookStack v22.06 is now here! This release was primarily refinement focused but it does include
 some great new features that may streamline your usage of the platform.
 
+* [Release video overview](https://www.youtube.com/watch?v=fUUg66Zypgg)
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.06)
 

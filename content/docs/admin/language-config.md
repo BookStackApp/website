@@ -5,8 +5,8 @@ date = "2018-08-11"
 type = "admin-doc"
 +++
 
-By default the BookStack interface is shown in English. Additional languages are supported
-by the wider BookStack community. English translations may show as a fallback if a chosen
+By default the BookStack interface is shown in English. Additional languages are [supported
+by the wider BookStack community](https://github.com/BookStackApp/BookStack#-translations). English translations may show as a fallback if a chosen
 alternative language does not have fully up-to-date translations.  
 
 ### Setting the Default Language

@@ -101,7 +101,8 @@ Community docker setups are available for those that would prefer to use a conta
 
 A script to install BookStack on a fresh instance of Ubuntu 22.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 8.0 & PHP-8.1 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
-[Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-22.04.sh)
+- [Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-22.04.sh)
+- [Video guide](https://www.youtube.com/watch?v=wq78komr9rs)
 
 #### Running the Script
 
@@ -129,7 +130,8 @@ Permissions for the BookStack installation files & folders will be set based upo
 
 A script to install BookStack on a fresh instance of Ubuntu 20.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 8.0 & PHP-7.4 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
-[Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-20.04.sh)
+- [Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-20.04.sh)
+- [Video guide](https://www.youtube.com/watch?v=ShqUjt33uOs)
 
 #### Running the Script
 

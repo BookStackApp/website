@@ -6,7 +6,7 @@ image = "/images/blog-cover-images/mountain-river-hendrik-cornelissen.jpg"
 author = "Dan Brown"
 slug = "7-years-of-bookstack"
 draft = false
-date = 2022-07-12T12:00:00Z
+date = 2022-07-12T14:25:00Z
 +++
 
 Another year goes by with BookStack now being 7 years in development from it's

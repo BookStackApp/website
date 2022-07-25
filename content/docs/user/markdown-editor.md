@@ -5,21 +5,24 @@ date = "2017-07-28"
 type = "user-doc"
 +++
 
-If you prefer to write in Markdown, the editor in BookStack can be changed at an instance level
-to use a Markdown editor instead of the default WYSIWYG editor. The option to use Markdown is currently **not** a user setting but a global instance setting due to formatting differences between the two editors.
-
-> Note that shifting to the Markdown editor from the WYSIWYG editor may cause unintended side effects to existing content. This is due to the differences in the way the content is stored in the database.
+If you prefer to write in a simpler format, a Markdown editor is available in BookStack. Markdown compatibility generally follows that of [CommonMark](https://commonmark.org/), along with a few extensions including tables and task-lists.
 
 
 ### Switching to the Markdown Editor
 
-To change the editor to Markdown follow the steps below. You'll need to have the "Manage app settings" role permission to be able to follow these steps:
+The default editor option, for when creating a new page, can be configured by an admin within the "Settings > Customization" area of BookStack.
 
-1. Within your BookStack instance, find and click on **Settings** in the navbar.
-2. Scroll down to the **Customization** section.
-3. Find the **Page Editor** setting and select `Markdown` from the dropdown menu.
-4. Save settings.
+You can change to the markdown editor at a page-level while within the page editor.
+Simply click the draft status, located above the page name input, and you'll be presented a dropdown with options which include those to change the editor. If you don't see these options, you may not have the relevent "Change page editor" system permission on one of your assigned system roles.
 
+![Editor Switch Menu Options](/images/docs/user/editor-switch-dropdown.png)
+
+For switching to Markdown, from the WYSIWYG editor, you'll see a couple of options:
+
+- **Clean Content** - This is a system-cleaned markdown output, which is much nicer but has potential for formatting loss and potential functionality breaks (Things depending on HTML attributes/IDs for example).
+- **Stable Content** - This retains existing HTML content in Markdown to avoid any potential functionality breakages or loss of formatting.
+
+When you choose either option, there is risk of losing certain content details or formatting. BookStack will warn you of this when switching.
 
 ### Editor Shortcuts
 

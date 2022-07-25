@@ -13,7 +13,7 @@ If you prefer to write in a simpler format, a Markdown editor is available in Bo
 The default editor option, for when creating a new page, can be configured by an admin within the "Settings > Customization" area of BookStack.
 
 You can change to the markdown editor at a page-level while within the page editor.
-Simply click the draft status, located above the page name input, and you'll be presented a dropdown with options which include those to change the editor. If you don't see these options, you may not have the relevent "Change page editor" system permission on one of your assigned system roles.
+Simply click the draft status, located above the page name input, and you'll be presented a drop-down with options which include those to change the editor. If you don't see these options, you may not have the relevant "Change page editor" system permission on one of your assigned system roles.
 
 ![Editor Switch Menu Options](/images/docs/user/editor-switch-dropdown.png)
 

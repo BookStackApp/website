@@ -10,6 +10,7 @@ type = "admin-doc"
 * [Revision Limit](#revision-limit)
 * [Custom User Avatar Fetching](#custom-user-avatar-fetching)
 * [Custom diagrams.net URL](#custom-diagramsnet-url)
+* [IP Address Storage Precision](#ip-address-storage-precision)
 
 ---
 
@@ -82,3 +83,20 @@ DRAWIO=https://drawing.example.com/?embed=1&proto=json&spin=1&configure=1
 
 Refer to this diagrams.net guide to see what options are supported: [diagrams.net embed URL parameters](https://www.diagrams.net/doc/faq/supported-url-parameters). In particular, the `stealth=1` option might be of interest if you 
 don't want other external services to be used. 
+
+---
+
+### IP Address Storage Precision
+
+Some areas of BookStack, such as the activity audit log, store and show IP address of users.
+By default, the entire IP address will be stored but you can adjust with the following `.env` option:
+
+```bash
+# Alter the precision of IP addresses stored by BookStack.
+# Should be a number between 0 and 4, where 4 retains the full IP address
+# and 0 completely hides the IP address. As an example, a value of 2 for the
+# IP address '146.191.42.4' would result in '146.191.x.x' being logged.
+# For the IPv6 address '2001:db8:85a3:8d3:1319:8a2e:370:7348' this would result as:
+# '2001:db8:85a3:8d3:x:x:x:x'
+IP_ADDRESS_PRECISION=2
+```

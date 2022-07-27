@@ -27,6 +27,27 @@ BookStack has a built-in REST API for external interaction and consumption of yo
 
 Within the settings area you'll find a 'Custom HTML head content' setting. You can use this to add in any custom JavaScript or CSS content which enables you to override default BookStack functionality and styles.
 
+
+---
+
+### Visual Theme System
+
+BookStack allows visual customization via the theme system which enables you to extensively customize views, translation text & icons.
+Documentation for this system is contained within [the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/visual-theme-system.md).
+
+_**Note: The files that can be override using the theme system are not deemed to be stable. BookStack core files may change on any release causing changes in behaviour to your overrides. Theme overrides are not officially supported in any way.**_
+
+
+---
+
+### Logical Theme System
+
+BookStack allows PHP code-based extension via what we call the "Logical Theme System". 
+This works by hooking into specific events where you can then perform custom actions or extension of the underlying framework.
+Documentation for this system is contained within [the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md).
+
+_**Note: Only the API described in the logical-theme-system document is considered stable & supported. Any usage of other application classes is regarded as unstable and unsupported.**_
+
 ---
 
 ### BookStack Editor Events
@@ -55,20 +76,26 @@ The below code sample shows the events available; Log out the `detail` property 
 
 ---
 
-### Visual Theme System
+### Tag Classes
 
-BookStack allows visual customization via the theme system which enables you to extensively customize views, translation text & icons.
-Documentation for this system is contained within [the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/visual-theme-system.md).
+While primarily for categorization, tags within BookStack can also provide opportunities for customization.
+When viewing an item with tags applied, those tags will be normalized to CSS classes and applied to the `<body>` element of the page. As an example, a tag name/value pair of `Priority: Critical` will apply the following classes to the body:
 
-_**Note: The files that can be override using the theme system are not deemed to be stable. BookStack core files may change on any release causing changes in behaviour to your overrides. Theme overrides are not officially supported in any way.**_
+- tag-name-priority
+- tag-value-critical
+- tag-pair-priority-critical
 
+For the normalization to classes, the following is done to both the name and value of the tag:
 
----
+- Text is lower-cased
+- Spaces and hyphens are stripped
 
-### Logical Theme System
+This normalization provides relatively stable class naming for CSS targeting, but note it does mean that two tags, of different values, could be normalized to the same CSS class names in some scenarios.
 
-BookStack allows PHP code-based extension via what we call the "Logical Theme System". 
-This works by hooking into specific events where you can then perform custom actions or extension of the underlying framework.
-Documentation for this system is contained within [the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md).
+As an example of usage, pages with the tag `Priority: Critical` could have their text made red with the following "Custom HTML Head Content" setting value:
 
-_**Note: Only the API described in the logical-theme-system document is considered stable & supported. Any usage of other application classes is regarded as unstable and unsupported.**_
+```html
+<style>
+.tag-pair-priority-critical .page-content { color: red; }
+</style>
+```

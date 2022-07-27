@@ -9,8 +9,6 @@ slug = "bookstack-release-v22-07"
 draft = false
 +++
 
-TODO - Update docs
-
 For July we have what could be considered a "stepping-stone" release since it marks the start of some underlying 
 permission system changes while bundling in a rich set of system enhancements & minor features. Let's jump right in.
 
@@ -109,9 +107,7 @@ of the page. As an example, a tag name/value pair of `Priority: Critical` will a
 
 This can then allow very easy content-level customization through the use of tags, with only the addition of some custom CSS in the "Custom HTML Head Content" setting. For example, you could apply a `Layout: dual` tag, only with some `.tag-pair-layout-dual .page-content p {columns: 2}` rule to make paragraphs dual-column on those tagged pages.
 
-TODO - Link to docs below
-
-Some normalisation is applied to generate the classes but see our docs section about this for full details and considerations using this advanced customization feature.
+Some normalization is applied to generate the classes. See our [docs section about tag classes](/docs/admin/hacking-bookstack/#tag-classes) for full details.
 
 ### New "Activity Logged" Logical Theme System Event
 

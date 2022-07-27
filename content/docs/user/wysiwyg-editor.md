@@ -75,6 +75,13 @@ The following shortcuts are available in the WYSIWYG Editor:
       <td>Callout <br>(Keep pressing to toggle through styles)</td>
     </tr>
     <tr>
+      <td>
+        <code>Ctrl+O</code> / <code>Cmd+O</code> <br>
+        <code>Ctrl+P</code> / <code>Cmd+P</code>
+      </td>
+      <td>Ordered List <br> Bullet List</td>
+    </tr>
+    <tr>
       <td><code>Ctrl+Shift+K</code> / <code>Cmd+Shift+K</code></td>
       <td>Link to BookStack content</td>
     </tr>

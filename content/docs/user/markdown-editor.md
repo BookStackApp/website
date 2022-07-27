@@ -79,6 +79,13 @@ The following shortcuts are available in the Markdown Editor:
       <td>Callout (Info)</td>
     </tr>
     <tr>
+      <td>
+        <code>Ctrl+O</code> / <code>Cmd+O</code> <br>
+        <code>Ctrl+P</code> / <code>Cmd+P</code>
+      </td>
+      <td>Ordered List <br> Bullet List</td>
+    </tr>
+    <tr>
       <td><code>Ctrl+K</code> / <code>Cmd+K</code></td>
       <td>Insert Link</td>
     </tr>

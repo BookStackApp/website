@@ -183,11 +183,6 @@ pre {
   overflow-x: auto;
 }
 
-pre>code.hljs {
-  padding: $-s;
-  background: #F8F8F8;
-}
-
 blockquote {
   display: block;
   position: relative;
@@ -237,6 +232,7 @@ pre code {
   display: block;
   margin-bottom: 0;
   padding: .5rem 1rem;
+  white-space: pre;
 }
 /*
  * Text colors

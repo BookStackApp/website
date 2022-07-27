@@ -20,11 +20,12 @@ assetDir = "static"
     hl_Lines = ""
     lineAnchors = ""
     lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = false
+    lineNos = true
+    lineNumbersInTable = true
     noClasses = false
-    style = "vs"
+    style = "pygments"
     tabWidth = 4
+    wrapLongLines = false
 
 [permalinks]
   post = "/blog/:slug/"

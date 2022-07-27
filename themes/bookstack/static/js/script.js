@@ -26,40 +26,6 @@ function videoClick() {
     this.paused ? this.play() : this.pause();
 }
 
-
-// Codemirror Setup
-
-const modeMap = {
-  'language-html': 'htmlmixed',
-  'language-bash': 'shell',
-  'language-js': 'javascript',
-  'language-shell': 'bash',
-  'language-nginx': 'nginx',
-  'language-apache': 'apache',
-  'language-php': 'php',
-  'language-sql': 'text/x-mysql',
-};
-
-const codeBlocks = document.querySelectorAll('pre');
-for (let i = 0; i < codeBlocks.length; i++) {
-  const block = codeBlocks[i];
-  const codeElem = block.querySelector('code');
-  if (codeElem === null) continue;
-
-  const langClass = codeElem.className;
-  const mode = (typeof modeMap[langClass] !== 'undefined') ? modeMap[langClass] : 'htmlmixed';
-  const content = codeElem.textContent.trim();
-  CodeMirror(function(cmElem) {
-    block.parentNode.replaceChild(cmElem, block);
-  }, {
-    theme: 'base16-light',
-    lineNumbers: true,
-    mode: mode,
-    readOnly: true,
-    value: content
-  });
-}
-
 // Header double click URL reference
 document.body.addEventListener('dblclick', event => {
   const isHeader = event.target.matches('h1, h2, h3, h4, h5, h6');

@@ -38,7 +38,7 @@ These changes have meant that some views have had to change slightly.
 In some areas, such as the move-page view, we'd only display chapters and books that the user would have permission to move into.
 Now, we'll show all visible chapters & books but add a warning where permission is lacking:
 
-TODO - IMAGE Move page permission display
+![Move page view with a parent book option showing a warning about lacking permission](/images/2022/07/move-permission-warning.png)
 
 There's a high chance that the future desired permissions features will negatively impact performance so we'll continue to look for performance increasing opportunities to level out these impacts where possible.
 
@@ -48,7 +48,7 @@ A little attention has be given to shelf-edit/create view to slightly enhance ma
 Book list items now have nicer hover and cursor interaction styles, and a drag handle is shown to make it clearer
 that the books can be dragged around and re-ordered as desired. 
 
-TODO - Image of shelf edit
+![View of the books management UI for a shelf, with an active search in use](/images/2022/07/shelf-book-manage.png)
 
 A search bar has been added to the available-books-list so you can quickly find a specific book, especially handy
 in larger instances with many pre-existing books you'd have to search through. This list is now also sorted by name
@@ -63,7 +63,7 @@ especially when the desired language is in the latter part of the code list, and
 To remedy this, and to hopefully achieve a more efficient experience than ever before, we've added the ability to
 favourite code languages:
 
-TODO - IMAGE OF CODE FAVOURITES
+![Preview of the code editor with a filled-star symbol next to 5 code language options](/images/2022/07/code-editor-favourites.png)
 
 Favourite languages will be automatically sorted to the top of the list, and these preference will be stored against your BookStack user account so the favourites remain personal to you, and consistent across browsing devices.
 
@@ -73,7 +73,7 @@ Within our BookStack Discord server it was noticeably common for users to ask "H
 An past attempt was made to add a specific chapter-sort view but this never progressed to completion. 
 As a user-experience-focused workaround, a "Sort Book" action will now show when viewing a chapter, where permission permits:
 
-TODO - Image of sort book action
+![Screenshot of a "Sort Book" button within a list of other actions](/images/2022/07/sort-book-from-chapter.png)
 
 ### Adjustable IP Address Storage Precision
 
@@ -84,7 +84,7 @@ To address such cases, You can now set a `IP_ADDRESS_PRECISION` option in your `
 This is a numeric option, defaulting to `4` (Show entire IP address), which effectively states how many octets of an IPv4 address should be shown, or how many pairs-of-chomps of an IPv6 address should show.
 As an example, the audit log preview below reflects usage of `IP_ADDRESS_PRECISION=3`:
 
-TODO - Image with IP MASKING
+![Table view of activity, with an IP address column showing 127.0.x.x](/images/2022/07/audit-log-ip-masking.png)
 
 ### Editor List Shortcuts
 

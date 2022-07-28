@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v22.07"
-date = 2022-07-28T11:00:00Z
+date = 2022-07-28T13:30:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/library-chaojie-ni.jpg"
 slug = "bookstack-release-v22-07"
@@ -152,9 +152,30 @@ Hopefully these should have little impact to usage while providing some enhancem
 
 A usual shout-out again  to our wonderful wordsmiths of different languages that have provided translation content since the  original v22.06 release:
 
-
-TODO
-- User - *languages*
+- Leonardo Mario Martinez (leonardo.m.martinez) - *Spanish, Argentina*
+- pedromcsousa - *Portuguese*
+- Vitaliy (gviabcua) - *Ukrainian*
+- scureza - *Italian*
+- SmokingCrop - *Dutch*
+- 10935336 - *Chinese Simplified*
+- Statium - *Russian*
+- Éric Gaspar (erga) - *French*
+- na3shkw - *Japanese*
+- Marcus Silber (marcus.silber82) - *German*
+- PellNet - *Croatian*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- Ole Aldric (Swoy) - *Norwegian Bokmal*
+- Winetradr - *German*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- m0uch0 - *Spanish*
+- Sebastian Klaus (sebklaus) - *German*
+- Filip Antala (AntalaFilip) - *Slovak*
+- nutsflag - *French*
+- Nicolas Pawlak (Mikolajek) - *French*
+- mcgong (GongMingCai) - *Chinese Simplified; Chinese Traditional*
+- Nanang Setia Budi (sefidananang) - *Indonesian*
+- Андрей Павлов (andrei.pavlov) - *Russian*
+- @smartshogu - *German*
 
 
 ### Next Steps

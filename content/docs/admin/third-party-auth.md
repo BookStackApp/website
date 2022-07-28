@@ -156,7 +156,7 @@ APP_URL=http://mybookstackurl.com
 
 1. Login to your your azure portal and navigate to the 'Azure Activity Directory' area.
 2. Under 'Manage > App registrations' select 'New application registration'.
-3. Enter a name ('BookStack'). Set the 'Redirect URI' to be the following, replacing 'https://example.com/' with your base BookStack url: 
+3. Enter a name ('BookStack'). Set the 'Redirect URI' to the "Web" platform with the value set to the following, replacing 'https://example.com/' with your base BookStack url: 
     - `https://example.com/login/service/azure/callback`
 4. Once created, View the application 'Overview' page and note the 'Application (client) ID' and 'Directory (tenant) ID' values. These are the APP_ID and TENANT values for step 9.
 5. Within your application in azure, Navigate to 'Certificates & secrets' then choose 'New client secret'.

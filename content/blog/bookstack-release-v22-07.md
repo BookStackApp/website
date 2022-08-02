@@ -12,6 +12,7 @@ draft = false
 For July we have what could be considered a "stepping-stone" release since it marks the start of some underlying 
 permission system changes but it does bundle in a rich set of system enhancements & minor features. Let's jump right in.
 
+* [Release video overview](https://youtu.be/m0iCq2MFynI)
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.07)
 

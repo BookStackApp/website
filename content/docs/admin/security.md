@@ -27,6 +27,7 @@ If you'd like to be notified of new potential security concerns you can sign-up 
     <li><a href="#server-side-requests">Untrusted Server Side Requests</a></li>
     <li><a href="#csp">Content Security Policy (CSP)</a></li>
     <li><a href="#mysql-ssl-connection">MySQL SSL connection</a></li>
+    <li><a href="#using-content-externally">Using BookStack Content Externally</a></li>
 </ul>
 
 ---
@@ -292,3 +293,13 @@ Assuming SSL is configured correctly on your MySQL server, you can enable this b
 # certificate itself (Common Name or Subject Alternative Name).
 MYSQL_ATTR_SSL_CA="/path/to/ca.pem"
 ```
+
+---
+
+<a name="using-content-externally"></a>
+
+### Using BookStack Content Externally
+
+In some scenarios you may use BookStack user-provided content externally (Accessed via the database or API). Such content is not guaranteed to be safe so keep security in mind when dealing with such content. In some cases, the system will apply some filtering to content in an attempt to prevent certain vulnerabilities, but this is not assured to be a bullet-proof defence.
+
+Within its own interfaces, unless disabled, BookStack makes use of Content Security Policy (CSP) rules to heavily negate cross-site scripting vulnerabilities from user content. If displaying user content externally, it's advised you also use defences such as CSP or other techniques such as disabling of JavaScript entirely.

@@ -39,6 +39,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v22.07.3 or higher
+
+**Security** - v22.07.3 added a "Content Security" section to the API docs and [BookStack documentation](/docs/admin/security/#using-content-externally) with security considerations for using BookStack content externally. Read this new section if you are using BookStack user content externally.
+
 #### Updating to v22.06 or higher
 
 **SAML/LDAP Group Mapping** - Within the "External Authentication Ids" field for a BookStack role, a backslash followed by a comma (`\,`) will now cause the comma to be treated as a literal comma within the mapping name, instead of acting as a value separator to define multiple mappings.

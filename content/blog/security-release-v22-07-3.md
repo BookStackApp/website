@@ -29,8 +29,8 @@ Those using BookStack content externally (API-based app developers) should read 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.07.3)
 
-Thanks to the "JPCERT/CC Vulnerability Coordination Group" contact and original reporter
-(names currently withheld in the interest of privacy) for disclosing their report of the relevant vulnerability scenarios.
+Thanks to the "JPCERT/CC Vulnerability Coordination Group" contact and the original reporter,
+Kenichi Okuno of Mitsui Bussan Secure Directions, Inc, for disclosing their report of the relevant vulnerability scenarios.
 
 ### Full List of Changes
 

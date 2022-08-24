@@ -42,7 +42,7 @@ A big thanks to [@cdrfun](https://github.com/cdrfun) for [discovering and report
 ### For more information
 
 If you have any questions or comments about this advisory:
-* Open an issue in [the BookStack GitHub repository](BookStackApp/BookStack/issues).
+* Open an issue in [the BookStack GitHub repository](https://github.com/BookStackApp/BookStack/issues).
 * Ask on the [BookStack Discord chat](https://discord.gg/ztkBqR2).
 * Follow the [BookStack Security Advice](https://github.com/BookStackApp/BookStack#-security) to contact someone privately.
 

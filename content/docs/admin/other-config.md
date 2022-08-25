@@ -8,6 +8,7 @@ type = "admin-doc"
 
 * [.env Options](#env-options)
 * [Revision Limit](#revision-limit)
+* [Recycle Bin Lifetime](#recycle-bin-lifetime )
 * [Custom User Avatar Fetching](#custom-user-avatar-fetching)
 * [Custom diagrams.net URL](#custom-diagramsnet-url)
 * [IP Address Storage Precision](#ip-address-storage-precision)
@@ -40,14 +41,37 @@ REVISION_LIMIT=false
 
 ---
 
+### Recycle Bin Lifetime
+
+Instead of deleting pages completely, it is possible to move them to a recycle bin. 
+The lifespan of pages in the recycle bin can be controlled by passing an option in the `.env` file.
+
+Three modes are available :
+
+- `RECYCLE_BIN_LIFETIME=0` : disable the recycle bin : 
+- `RECYCLE_BIN_LIFETIME=-1` : do not auto-remove pages from the recycle bin
+- `RECYCLE_BIN_LIFETIME=n` : try to remove pages after `n` days<sup>*</sup>
+
+<sup>*</sup> the pages' auto-removal might be delayed.
+
+```bash
+# Recycle Bin Lifetime 
+# The number of days that content will remain in the recycle bin before 
+# being considered for auto-removal. It is not a guarantee that content will 
+# be removed after this time. 
+# Set to 0 for no recycle bin functionality. 
+# Set to -1 for unlimited recycle bin lifetime. 
+RECYCLE_BIN_LIFETIME=30 
+```
+
+---
+
 ### Custom User Avatar Fetching
 
-When a user is created BookStack will, by default, fetch an avatar image from [Gravatar](https://en.gravatar.com/). This functionality can be disabled or the URL can be customized 
+When a user is created BookStack will, by default, fetch an avatar image from [Gravatar](https://en.gravatar.com/). This functionality can be disabled in the `.env` file or the URL can be customized 
 which allows you to use a different avatar service altogether. Examples of this can be seen below:
 
 ```bash
-# In your .env file
-
 # Use libravatar instead of gravatar
 AVATAR_URL=https://seccdn.libravatar.org/avatar/${hash}?s=${size}&d=identicon
 

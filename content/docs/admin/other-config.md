@@ -43,33 +43,31 @@ REVISION_LIMIT=false
 
 ### Recycle Bin Lifetime
 
-Instead of deleting pages completely, it is possible to move them to a recycle bin. 
-The lifespan of pages in the recycle bin can be controlled by passing an option in the `.env` file.
+By default BookStack content in the recycle bin has a lifetime of 30 days before being considered for auto-removal.
+Content won't specifically be deleted after this time, but BookStack will check the recycle bin on certain events 
+(New items sent to the recycle bin) and it will auto-remove items older than this length of time.
 
-Three modes are available :
-
-- `RECYCLE_BIN_LIFETIME=0` : disable the recycle bin : 
-- `RECYCLE_BIN_LIFETIME=-1` : do not auto-remove pages from the recycle bin
-- `RECYCLE_BIN_LIFETIME=n` : try to remove pages after `n` days<sup>*</sup>
-
-<sup>*</sup> the pages' auto-removal might be delayed.
+This lifetime is configurable, and you can alternatively tell BookStack to never auto-remove recycle bin items, 
+or to instead not use the recycle bin at all. This is controlled by a `RECYCLE_BIN_LIFETIME` option in the `.env` file like so:
 
 ```bash
-# Recycle Bin Lifetime 
-# The number of days that content will remain in the recycle bin before 
-# being considered for auto-removal. It is not a guarantee that content will 
-# be removed after this time. 
-# Set to 0 for no recycle bin functionality. 
-# Set to -1 for unlimited recycle bin lifetime. 
-RECYCLE_BIN_LIFETIME=30 
+# Set a recycle bin item lifetime of 100 days
+RECYCLE_BIN_LIFETIME=100
+
+# Never auto-remove recycle bin content
+RECYCLE_BIN_LIFETIME=-1
+
+# Disable use of the recycle bin (Auto-removes instantly)
+RECYCLE_BIN_LIFETIME=0
 ```
 
 ---
 
 ### Custom User Avatar Fetching
 
-When a user is created BookStack will, by default, fetch an avatar image from [Gravatar](https://en.gravatar.com/). This functionality can be disabled in the `.env` file or the URL can be customized 
-which allows you to use a different avatar service altogether. Examples of this can be seen below:
+When a user is created BookStack will, by default, fetch an avatar image from [Gravatar](https://en.gravatar.com/).
+This functionality can be disabled, or the URL can be customized, which allows you to use a different avatar service altogether.
+This is handled by defining an `AVATAR_URL` option in your `.env` as can be seen below:
 
 ```bash
 # Use libravatar instead of gravatar

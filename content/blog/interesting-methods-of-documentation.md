@@ -9,7 +9,7 @@ slug = "interesting-methods-of-documentation"
 draft = false
 +++
 
-As the maintainer of a documentation platform, I find myself taking a particular interest into the exact methods of how people go about creating documentation. 
+As the maintainer of a documentation platform, I find myself taking note of methods of how people go about creating documentation. 
 I strongly believe that there's no "single best method" when it comes to documentation, and that any option that'd actually be used is a value gain.
 
 In this post I'd like to step out the specific context of BookStack and take a look at some less common forms of documentation that have piqued my interest.
@@ -39,7 +39,7 @@ Comparatively, I think posting within a forum in this manner has a double benefi
 The value of video for documentation is well established, with both of my previous examples featuring great examples of video-based documenters. 
 It's only since I've been [making videos myself for BookStack](https://www.youtube.com/c/BookStackApp) that I've come to understand their value from an author's perspective. The ability to send someone a timestamped video link, showing the steps or process they need to follow, has been extremely handy for me, especially for more complicated subjects. 
 
-I think a lot of the value I've found in video has been in its ability to visually provide a lot of context very quickly, which you'd have to otherwise establish in writing, either within documentation or alongside providing a link to the documentation upon a specific request.
+I believe a lot of the value I've found in video has been in its ability to visually provide a lot of context very quickly, which you'd have to otherwise establish in writing, either within documentation or alongside providing a link to the documentation upon a specific request.
 
 Being able to look back on a full end-to-end process, with every detail included, provides the entire picture compared to which is essentially a second-hand abstraction with written content. For example, If a user interface has changed since the documentation has been made, that's instantly visible within a video whereas, unless that has been specifically screen-shotted or verbosely described, such a scenario can add a significant point of confusion in written content.
 

@@ -23,7 +23,6 @@ Listed below are some considerations to keep in mind in regard to BookStack's OI
 - Discovery covers fetching the auth & token endpoints, in addition to parsing any keys at the JWKS URI,
   from the `<issuer>/.well-known/openid-configuration` endpoint.
   - Issuer discovery is not supported.
-- Group/Role handling is not currently supported but feedback, in the form of IDP-provided group examples, is welcome to help future implementation.
 
 ### BookStack Configuration
 
@@ -120,3 +119,66 @@ OIDC_DUMP_USER_DETAILS=false
 
 Further to this, details of any BookStack errors encountered can be found by following
 our [general debugging documentation](/docs/admin/debugging/).
+
+
+### Group Sync
+
+BookStack has the ability to sync OIDC user groups with BookStack roles.
+By default this will match OIDC group names with the BookStack role display names with casing ignored.
+This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while OIDC authentication is enabled.
+If filled, the names in this field will be used and the BookStack role display name will be ignored.
+You can match on multiple names by separating them with a comma.
+Commas can be escaped with a backslash (`/,`) if you need to map using a literal comma character.
+
+When matching OIDC groups with role names or 'External Authentication IDs' values, BookStack will standardise the names of OIDC groups to be lower-cased and spaces will be replaced with hyphens. For example, to match a OIDC group named "United Kingdom" an 'External Authentication IDs' value of "united-kingdom" could be used.
+
+This feature requires the OIDC server to provide a claim in the ID token with an array of group names.
+You'll need to specify the attribute using the `OIDC_GROUPS_CLAIM` to tell BookStack what claim it can find groups on. This value can use dot-notation to access nested properties in the ID token JSON data, an example of which can be [found below](#nested-groups-claim-example).
+
+Keep in mind you can use the `OIDC_DUMP_USER_DETAILS` option, as shown in the above [debugging](#debugging) section to dump out claim values provided by your authentication system to help understand what is being provided by your authentication system.
+
+Here are the settings required to be added to your `.env` file to enable group syncing:
+
+```bash
+# Enable OIDC group sync.
+OIDC_USER_TO_GROUPS=true
+
+# Set the attribute from which BookStack will read groups names from.
+OIDC_GROUPS_CLAIM=groups
+
+# Additional scopes to send with the authentication request.
+# By default BookStack only sends the 'openid', 'profile' & 'email' scopes.
+# Many platforms require specific scopes to be requested for group data.
+# Multiple scopes can be added via comma separation.
+OIDC_ADDITIONAL_SCOPES=groups
+
+# Remove the user from roles that don't match OIDC groups upon login.
+# Note: While this is enabled the "Default Registration Role", editable within the 
+# BookStack settings view, will be considered a matched role and assigned to the user.
+OIDC_REMOVE_FROM_GROUPS=true
+```
+
+#### Nested Groups Claim Example
+
+The below shows a reduced example of JSON data for an ID token, that has group data within a nested property,
+along with the `OIDC_GROUPS_CLAIM` value that would be used for this structure to detect the provided "Editor" and "Admin" roles.
+
+```bash
+OIDC_GROUPS_CLAIM=resource_access.bookstack.roles
+```
+
+```json
+{
+  ...
+  "resource_access": {
+    "bookstack": {
+      "roles": [
+        "Editor",
+        "Admin"
+      ]
+    }
+  },
+  "email": "email@example.com"
+  ...
+}
+```

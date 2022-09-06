@@ -26,6 +26,9 @@ assetDir = "static"
     style = "pygments"
     tabWidth = 4
     wrapLongLines = false
+  [markup.tableOfContents]
+    startLevel = 3
+    endLevel = 3
 
 [permalinks]
   post = "/blog/:slug/"

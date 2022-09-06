@@ -7,11 +7,11 @@ type = "admin-doc"
 
 BookStack has some command line actions that can help with maintenance and common operations. There are also many commands available from the underlying Laravel framework. To list all available commands you can simply run `php artisan` from your BookStack install folder. Custom BookStack commands are all under the 'bookstack' namespace.
 
-## BookStack Commands
-
 Below is a listing of the BookStack specific commands. For any you can provide a `-h` option to list details and options for the command.
 
-#### Create an Admin User
+{{<toc>}}
+
+### Create an Admin User
 
 Create a new admin user via the command line. Can offer a good last resort if you ever get locked out the system.
 Will use the details provided as options otherwise will request them interactively.
@@ -27,7 +27,7 @@ php artisan bookstack:create-admin --email="barry@example.com" --name="Bazza" --
 php artisan bookstack:create-admin --email="barry.booker@example.com" --name="Bazza" --external-auth-id="bbooker"
 ```
 
-#### Copy Shelf Permission
+### Copy Shelf Permission
 
 By default shelf permissions will not auto-cascade since a book can be in many shelves.
 This command will copy the permissions of a shelf to all child books.
@@ -41,7 +41,7 @@ php artisan bookstack:copy-shelf-permissions --all
 php artisan bookstack:copy-shelf-permissions --slug=my_shelf_slug
 ```
 
-#### Update System URL
+### Update System URL
 
 BookStack will store absolute URL paths for some content, such as images, in the database.
 If you change your base URL for BookStack this can be problematic.
@@ -56,7 +56,7 @@ php artisan bookstack:update-url <oldUrl> <newUrl>
 php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
 ```
 
-#### Reset User MFA Methods
+### Reset User MFA Methods
 
 This will reset/clear any existing multi-factor-authentication methods for the given user. If MFA 
 is enforced for one of their roles they'll be prompted to reconfigure MFA upon next login.
@@ -69,7 +69,7 @@ php artisan bookstack:reset-mfa --email=john@example.com
 php artisan bookstack:reset-mfa --id=5
 ```
 
-#### Delete All Activity History
+### Delete All Activity History
 
 This will clear all tracked activities in the system. Note: Some areas of the interface rely on this data, including the Audit Log and any "Recent Activity" lists.
 
@@ -77,7 +77,7 @@ This will clear all tracked activities in the system. Note: Some areas of the in
 php artisan bookstack:clear-activity
 ```
 
-#### Delete Page Revisions
+### Delete Page Revisions
 
 By default this deletes all page revisions apart from page update drafts which share the same system.
 A `-a` flag can be used to also delete these update drafts.
@@ -90,7 +90,7 @@ php artisan bookstack:clear-revisions
 php artisan bookstack:clear-revisions -a
 ```
 
-#### Delete Page Views
+### Delete Page Views
 
 Delete tracked content views from the system. These are primarily used to populate any "Recently Used" lists.
 
@@ -98,7 +98,7 @@ Delete tracked content views from the system. These are primarily used to popula
 php artisan bookstack:clear-views
 ```
 
-#### Cleanup Unused Images
+### Cleanup Unused Images
 
 Searches and removes images that are not used in page content.
 While this can be done in the "Maintenance" section of the interface, running this via the command-line is often safer to avoid timeouts.
@@ -107,23 +107,40 @@ While this can be done in the "Maintenance" section of the interface, running th
 php artisan bookstack:cleanup-images
 ```
 
-#### Regenerate the Search Index
+### Regenerate the Search Index
 
-This can be useful if manually inserting pages into the system.
+BookStack uses a custom database-based search index system for efficient
+querying within the system. The command below re-builds this search index.
+This does not usually need to be manually ran, but it can be useful if manually inserting pages into the system or to pick-up BookStack indexing changes.
 
 ```bash
 php artisan bookstack:regenerate-search
 ```
 
-#### Regenerate Access Permissions
+### Regenerate Access Permissions
 
+BookStack pre-calculates and stores certain access permissions in the database
+so that access can be calculated in a performant manner.
+The below command will regenerate these permissions.
 This is primarily used in development but can be useful if manually adding content via the database.
 
 ```bash
 php artisan bookstack:regenerate-permissions
 ```
 
-#### Regenerate Comment Content
+### Regenerate Reference Index
+
+BookStack stores references between content within the system to track how
+content is interlinked. Such references are generally managed by BookStack
+upon certain actions, such as when saving a page, but in some cases the 
+below command may help to re-index these references. 
+This can be useful upon upgrade of old content, or when manually adding content via the database.
+
+```bash
+php artisan bookstack:regenerate-references
+```
+
+### Regenerate Comment Content
 
 Comments are created and stored in Markdown but also rendered to HTML on save.
 This command will regenerate the stored HTML content for all comments using the original Markdown content.
@@ -132,7 +149,7 @@ This command will regenerate the stored HTML content for all comments using the 
 php artisan bookstack:regenerate-comment-content
 ```
 
-#### Delete Users
+### Delete Users
 
 Delete all users from the system that are not original "admin" or system-level users.
 
@@ -140,7 +157,7 @@ Delete all users from the system that are not original "admin" or system-level u
 php artisan bookstack:delete-users
 ```
 
-#### Generate UTF8mb4 SQL Upgrade Commands
+### Generate UTF8mb4 SQL Upgrade Commands
 
 Generates out the SQL which can be used to upgrade the database to UTF8mb4.
 See [UTF8mb4/Emoji Support](/docs/admin/ut8mb4-support/) for further details.

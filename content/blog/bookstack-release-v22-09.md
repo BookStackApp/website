@@ -22,17 +22,10 @@ TODO - Update video link
 
 - **Security** - This release cycle contained a security release that added detail that's important to consider when BookStack content is used externally. See the [v22.07.3 post](/blog/bookstack-release-v22-07-3/) for more detail.
 - **Revision Visibility** - This update fixes a permission disparity with revisions. Revision content has always been accessible to those with page-view permissions, but the links to the revisions list previously required page-edit permission to show. This has been aligned, which may mean page revision links may now show to those that did not previously see them.
-- **Revision Limit Change** - The default, per-page, revision limit has been doubled from 50 to 100, to account for new system-content updates that may occur. If desired, you can [configure this to a custom value](https://www.bookstackapp.com/docs/admin/other-config/#revision-limit).
-- **Reference Index** - New features have been added to track links between content in BookStack, which uses an internal reference index. Upon upgrade from an older BookStack version, this index will need to be rebuilt. This can be done with the "Regenerate References" command or via the "Regenerate References" maintenance action within BookStack.
+- **Revision Limit Change** - The default, per-page, revision limit has been doubled from 50 to 100, to account for new system-content updates that may occur. If desired, you can [configure this to a custom value](/docs/admin/other-config/#revision-limit).
+- **Reference Index** - New features have been added to track links between content in BookStack, which uses an internal reference index. Upon upgrade from an older BookStack version, this index will need to be rebuilt. This can be done with the ["Regenerate References" command](/docs/admin/commands/#regenerate-reference-index) or via the "Regenerate References" maintenance action within BookStack.
 
-TODO - Link above command mention.
 TODO - Notices on updates page.
-
-TODO - `bookstack:regenerate-references` command docs
-
-TODO - OIDC - Need to document group syncing completely.
-TODO - OIDC - Need to document the use of OIDC_ADDITIONAL_SCOPES, and it's format (comma separated string).
-TODO - OIDC - Need to document behaviour of default registration role (Used when remove_from_groups option is active). Same as OIDC/LDAP behaviour.
 
 
 TODO - image local_secure_restricted - New option on security page.

@@ -26,7 +26,7 @@ In the below we'll dive into many of the new features and improvements added
   [v21.08.5](/blog/bookstack-release-v21-08-5/) posts for more details.
 - **Content Security Policy** - v21.08.2 introduced the use of BookStack-applied CSP headers. These
   could potentially conflict with any CSP headers set a server-level. The use of these are detailed
-  in the post below and details of the headers can be found on the [security page here](/docs/admin/security/#csp).
+  in the post below and details of the headers can be found on the [security page here](/docs/admin/security/#content-security-policy-csp).
 
 ### OpenID Connect Authentication
 

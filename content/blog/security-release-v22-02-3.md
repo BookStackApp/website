@@ -19,7 +19,7 @@ allowed embed/iframe sources within BookStack pages, and this defaults to a coup
 of popular services such as YouTube and Vimeo.
 
 Please see this link for more detail regarding this option:
-- https://www.bookstackapp.com/docs/admin/security/#iframe-src-control
+- https://www.bookstackapp.com/docs/admin/security/#iframe-source-control
   - ("Iframe Source Control" section)
 
 It's advised to upgrade as soon as possible if untrusted users can create or update 

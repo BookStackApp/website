@@ -20,7 +20,7 @@ to explain the security techniques BookStack uses by default, and to relay consi
 BookStack content in an external system. The security page of our documentation has also been 
 updated with such considerations: 
 
-https://www.bookstackapp.com/docs/admin/security/#using-content-externally
+https://www.bookstackapp.com/docs/admin/security/#using-bookstack-content-externally
 
 Upgrade is advised where BookStack content, accessible to edit by untrusted users, is used externally.
 Those using BookStack content externally (API-based app developers) should read the new documentation

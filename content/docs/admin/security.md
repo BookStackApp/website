@@ -12,27 +12,9 @@ relates to BookStack itself. The security of the server BookStack is hosted on i
 If you'd like to be notified of new potential security concerns you can sign-up to the [BookStack security mailing list](https://updates.bookstackapp.com/signup/bookstack-security-updates). For reporting security vulnerabilities, please see the ["Security" section](https://github.com/BookStackApp/BookStack/blob/development/readme.md#-security) of the project readme on GitHub.
 
 
-<ul>
-    <li><a href="#initial-security-setup">Initial Security Setup</a></li>
-    <li><a href="#mfa">Multi-Factor Authentication</a></li>
-    <li><a href="#securing-images">Securing Images</a></li>
-    <li><a href="#attachments">Attachments</a></li>
-    <li><a href="#user-passwords">User Passwords</a></li>
-    <li><a href="#javascript-in-page-content">JavaScript in Page Content</a></li>
-    <li><a href="#web-crawler-control">Web Crawler Control</a></li>
-    <li><a href="#secure-cookies">Secure Cookies</a></li>
-    <li><a href="#iframe-control">Host Iframe Control</a></li>
-    <li><a href="#iframe-src-control">Iframe Source Control</a></li>
-    <li><a href="#failed-access-logging">Failed Access Logging</a></li>
-    <li><a href="#server-side-requests">Untrusted Server Side Requests</a></li>
-    <li><a href="#csp">Content Security Policy (CSP)</a></li>
-    <li><a href="#mysql-ssl-connection">MySQL SSL connection</a></li>
-    <li><a href="#using-content-externally">Using BookStack Content Externally</a></li>
-</ul>
+{{<toc>}}
 
 ---
-
-<a name="initial-security-setup"></a>
 
 ### Initial Security Setup
 
@@ -48,8 +30,6 @@ the database used for BookStack data.
 7. Read the below to further understand the security for images & attachments.
 
 ---
-
-<a name="mfa"></a>
 
 ### Multi-Factor Authentication
 
@@ -71,8 +51,6 @@ If a user does not already have an MFA method configured, they will be forced to
 upon next login.
 
 ---
-
-<a name="securing-images"></a>
 
 ### Securing Images
 
@@ -117,8 +95,6 @@ location /uploads {
 
 ---
 
-<a name="attachments"></a>
-
 ### Attachments
 
 Attachments, if not using Amazon S3, are stored in the `storage/uploads` directory.
@@ -131,8 +107,6 @@ publically accessible.
 
 ---
 
-<a name="user-passwords"></a>
-
 ### User Passwords
 
 User passwords, if not using an alternative authentication method, are stored in the database.
@@ -140,17 +114,13 @@ These are hashed using the standard Laravel hashing methods which use the Bcrypt
 
 ---
 
-<a name="javascript-in-page-content"></a>
-
 ### JavaScript in Page Content
 
-By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform it's own JavaScript escaping. This option will also alter the [CSP rules](#csp) set by BookStack.
+By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform it's own JavaScript escaping. This option will also alter the [CSP rules](#content-security-policy-csp) set by BookStack.
 
-***This option disables some fundemental cross-site-scripting protections. Only use this option on secure instances, where only very trusted users can edit content***
+***This option disables some fundamental cross-site-scripting protections. Only use this option on secure instances, where only very trusted users can edit content***
 
 ---
-
-<a name="web-crawler-control"></a>
 
 ### Web Crawler Control
 
@@ -158,15 +128,11 @@ The rules found in the `/robots.txt` file are automatically controlled via the "
 
 ---
 
-<a name="secure-cookies"></a>
-
 ### Secure Cookies
 
 BookStack uses cookies to track sessions, remember logins and for XSRF protection. When using HTTPS you may want to ensure that cookies are only sent back to the browser if the connection is over HTTPS. If you have set a https `APP_URL` option in your `.env` this will enabled automatically but it can also be forced on by setting `SESSION_SECURE_COOKIE=true` in your `.env` file.
 
 ---
-
-<a name="iframe-control"></a>
 
 ### Host Iframe Control
 
@@ -189,7 +155,7 @@ a user session can persist within the iframe.
 
 ### Iframe Source Control
 
-By default BookStack will only allow certain other hosts to be used as `src` values for embededd iframe/frame content within the application. This is done through a [CSP: frame-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src) header. You can configure the list of trusted sources by setting a `ALLOWED_IFRAME_SOURCES` option in your `.env` file like the examples below:
+By default BookStack will only allow certain other hosts to be used as `src` values for embedded iframe/frame content within the application. This is done through a [CSP: frame-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src) header. You can configure the list of trusted sources by setting a `ALLOWED_IFRAME_SOURCES` option in your `.env` file like the examples below:
 
 ```bash
 # Adding a single host
@@ -213,8 +179,6 @@ Note: The source of 'self' will always be automatically added to this CSP rule. 
 
 ---
 
-<a name="failed-access-logging"></a>
-
 ### Failed Access Logging
 
 An option is available to log failed login events to a log file which is useful to identify users having trouble logging in, track malicious login attempts or to use with tools such as Fail2Ban. This works with login attempts using the default email & password login mechanism or attempts via LDAP login. Failed attempts are **not logged** for "one-click" social or SAML2 options.
@@ -231,8 +195,6 @@ cases, will log to your webserver error log files.
 
 ---
 
-<a name="server-side-requests"></a>
-
 ### Untrusted Server Side Requests
 
 Some features, such as the PDF exporting, have the option to make http calls to external user-defined locations to do things
@@ -247,8 +209,6 @@ ALLOW_UNTRUSTED_SERVER_FETCHING=true
 ```
 
 ---
-
-<a name="csp"></a>
 
 ### Content Security Policy (CSP)
 
@@ -279,8 +239,6 @@ If there's a clash with an existing BookStack CSP header then browsers will gene
 
 ---
 
-<a name="mysql-ssl-connection"></a>
-
 ### MySQL SSL Connection
 
 If your BookStack database is not on the same host as your web server, you may want to ensure the connection is encrypted using SSL between these systems.
@@ -295,8 +253,6 @@ MYSQL_ATTR_SSL_CA="/path/to/ca.pem"
 ```
 
 ---
-
-<a name="using-content-externally"></a>
 
 ### Using BookStack Content Externally
 

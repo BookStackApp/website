@@ -41,7 +41,7 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 #### Updating to v22.07.3 or higher
 
-**Security** - v22.07.3 added a "Content Security" section to the API docs and [BookStack documentation](/docs/admin/security/#using-content-externally) with security considerations for using BookStack content externally. Read this new section if you are using BookStack user content externally.
+**Security** - v22.07.3 added a "Content Security" section to the API docs and [BookStack documentation](/docs/admin/security/#using-bookstack-content-externally) with security considerations for using BookStack content externally. Read this new section if you are using BookStack user content externally.
 
 #### Updating to v22.06 or higher
 
@@ -61,7 +61,7 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 #### Updating to v22.02.3 or higher
 
-**Security** - v22.02.3 adds controls to limit external/iframe content on BookStack pages to prevent potential malicious sources being used. See [the added "Iframe Source Control" section on our security page](/docs/admin/security/#iframe-src-control) for more detail regarding the added controls.
+**Security** - v22.02.3 adds controls to limit external/iframe content on BookStack pages to prevent potential malicious sources being used. See [the added "Iframe Source Control" section on our security page](/docs/admin/security/#iframe-source-control) for more detail regarding the added controls.
 
 #### Updating to v22.02 or higher
 

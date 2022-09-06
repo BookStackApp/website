@@ -54,22 +54,20 @@ upon next login.
 
 ### Securing Images
 
-By default, Images are stored in a way which is publicly accessible. This is done on purpose to ensure decent performance while using BookStack. Below are a couple of options to increasing image security:
+By default, Images are stored in a way which is publicly accessible which ensures performance while using BookStack.
+Listed below are a few options for increasing image security.
 
-#### Image Authentication
+#### Alternative Storage Options
 
-You can choose to store images behind authentication so only logged-in users can view images. This solution is currently still in testing you could experience performance issues. This option will only work if you have the  'Allow Public Viewing' setting disabled.
-
-***Back-up your BookStack instance before migrating to this option***
-
-To use this option simply set `STORAGE_TYPE=local_secure` in your `.env` file. Uploaded images will be stored within the `storage/uploads/images` folder.
-
-If you are migrating to this option with existing images you will need to move all content in the folder `public/uploads/images` to `storage/uploads/images`. Do not simply copy and leave content in the `public/uploads/images` as those images will still be publicly accessible. After doing this migration you may have to clean-up and re-upload any 'App Icon' images, found in settings, since these need to remain publicly accessible. 
+Review our [file upload storage options](/docs/admin/upload-config/#storage-options) documentation for image storage options that add addition access or permission control
+to image requests.
 
 #### Complex Urls
 
 In the settings area of BookStack you can find the option 'Enable higher security image uploads?'. Enabling this will add a 16 character
 random string to the name of image files to prevent easy guessing of URLs. This increases security without potential performance concerns.
+
+#### Prevent Directory Indexes
 
 It's important to ensure you disable 'directory indexes' to prevent unknown users from being able to navigate their way through your images. Here's the configuration for NGINX & Apache if your server allows directory indexes:
 
@@ -92,6 +90,10 @@ location /uploads {
     Options -Indexes
 </Location>
 ```
+
+You can test that indexes are disabled by attempting to navigate to 
+`<your_bookstack_url>/uploads/images` in the browser after having uploaded at least one image.
+You should not see a list of files but instead a BookStack "Not Found" page.
 
 ---
 

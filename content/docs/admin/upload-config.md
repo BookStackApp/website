@@ -7,9 +7,7 @@ type = "admin-doc"
 
 BookStack allows users to upload both images for content and files as attachments.
 
-* [Storage Options](#storage-options)
-* [Changing Upload Limits](#changing-upload-limits)
-* [File Upload Timeout](#file-upload-timeout)
+{{<toc>}}
 
 **For information relating to security for file uploads please refer to the [Security Page](/docs/admin/security).**
 
@@ -19,15 +17,31 @@ BookStack allows users to upload both images for content and files as attachment
 
 Within BookStack there are a few different options for storing files:
 
-* **local** (Default) - Files are stored on the server running BookStack. Images are publically accessible, served by your websever, but attachments are secured behind BookStack's authentication.
-* **local_secure** - Same as local option but images are served by BookStack, enabling authentication on image requests. Provides higher security but is more system resource intensive and could induce performance issues.
-* **s3** - Store files externally on Amazon S3. Images are made publically accessible on upload.
+* [**local**](#local) (Default) 
+  - Files are stored on the server running BookStack.
+  - Images are publicly accessible, served by your web-sever.
+  - Attachments are secured behind BookStack's permission control.
+* [**local_secure**](#local-secure) 
+  - Same as local option but images are served by BookStack, with authentication (login required) on image requests.
+  - Is only useful while the BookStack "Public Access" setting is disabled.
+  - More system resource intensive than the default "local" option thus could induce performance issues.
+  - Attachments are secured behind BookStack's permission control.
+* [**local_secure_restricted**](#local-secure---restricted)
+  - Same as local option but image access is controlled by user access permission to the item an image is uploaded to. 
+  - Is the most system resource intensive and could induce performance issues.
+  - Has logical side-affects that can hinder ease-of-use.
+  - Attachments are secured behind BookStack's permission control.
+* [**s3**](#s3)
+  - Store files externally on Amazon S3 (or [S3 compatible system](#non-amazon-s3-compatible-services)). 
+  - Images are made publicly accessible on upload.
+  - Attachments are secured behind BookStack's permission control, as long as files are not exposed via other means.
 
 For all options you can use the 'Enable higher security image uploads' in-app admin setting which appends a random string to each uploaded image name to make URL's hard to guess.
 
 #### Local
 
-This is the default storage mechanism in BookStack. It can be forced by setting the following in your `.env` file:
+This is the default storage mechanism in BookStack that stores uploads on the local filesystem.
+It can be forced by setting the following in your `.env` file:
 
 ```bash
 STORAGE_TYPE=local
@@ -38,23 +52,51 @@ STORAGE_TYPE=local
 
 #### Local (Secure)
 
+This storage option stores uploads on the local filesystem but does so in a non-publicly exposed folder, 
+where images are only served from if the user is logged-in to BookStack.
 The local secure option can be enabled by setting the following in your `.env` file:
 
 ```bash
 STORAGE_TYPE=local_secure
 ```
 
-After setting this option ensure you test system performance creating a page with many images and reload on that page multiple times to ensure your server can keep with the 
+After setting this option ensure you test system performance creating a page with many images and reload on that page multiple times to ensure your server can keep up with the 
 multitude of image requests.
 
 * Image uploads location: `<bookstack_install_dir>/storage/uploads/images`.
 * Attachment uploads location: `<bookstack_install_dir>/storage/uploads/files`.
 
-If you'd like to switch to this option from the default `local` storage system you'll first need to migrate existing image uploads to the image folder listed above.
+Refer to the [Migrating to “Secure” Images](#migrating-to-secure-images) for details about switching to this with existing file uploads.
+
+#### Local (Secure - Restricted)
+
+This option stores uploads on the local filesystem but controls access to image files based upon the
+user having permission to view the content that the image has been uploaded to.
+
+**Note:** This option is relatively new to BookStack and currently considered somewhat experimental.
+
+Due to the rather restrictive & granular permission control enforced by this option, various logical scenarios can be encountered
+that cause image visibility anomalies. For example if a page, with images uploaded to it, is copied to a new page with different 
+visibility permissions, you could have users that are able to see that page but the images within may not load, since their 
+visibility will remain controlled by the original source page. Another example is that deleting a page, where images were uploaded to, will prevent any user access to the related images.
+
+This option can be enabled by setting the following in your `.env` file:
+
+```bash
+STORAGE_TYPE=local_secure_restricted
+```
+
+After setting this option ensure you test system performance creating a page with many images and reload on that page 
+multiple times to ensure your server can keep up with the multitude of image requests.
+
+* Image uploads location: `<bookstack_install_dir>/storage/uploads/images`.
+* Attachment uploads location: `<bookstack_install_dir>/storage/uploads/files`.
+
+Refer to the [Migrating to “Secure” Images](#migrating-to-secure-images) for details about switching to this with existing file uploads.
 
 #### S3
 
-The Amazon s3 option can be enabled by setting the following in your `.env` file:
+The Amazon S3 option can be enabled by setting the following in your `.env` file:
 
 ```bash
 STORAGE_TYPE=s3
@@ -64,7 +106,7 @@ STORAGE_S3_BUCKET=s3-bucket-name
 STORAGE_S3_REGION=s3-bucket-region
 ```
 
-For performance reasons uploaded images are made public upon upload to your s3 bucket and fetched directly by the end user when viewing an image on BookStack. Attachments are not made public and are instead fetched by BookStack upon request. Exact security will depend on the configuration and policies of your bucket.
+For performance reasons uploaded images are made public upon upload to your S3 bucket and fetched directly by the end user when viewing an image on BookStack. Attachments are not made public and are instead fetched by BookStack upon request. Exact security will depend on the configuration and policies of your bucket.
 
 * Image uploads location: `<your_bucket>/uploads/images`.
 * Attachment uploads location: `<your_bucket>/uploads/files`.
@@ -77,7 +119,7 @@ STORAGE_URL=https://images.example.com
 
 #### Non-Amazon, S3 Compatible Services
 
-Via the s3 connection BookStack does support s3-compatible services such as [Minio](https://www.minio.io/). Read the above S3 details to get an idea of general setup.
+Via the `s3` connection BookStack does support S3-compatible services such as [Minio](https://www.minio.io/). Read the above S3 details to get an idea of general setup.
 For non-Amazon services the configuration, to be placed in the `.env` file, is a little different:
 
 ```bash
@@ -111,6 +153,14 @@ STORAGE_IMAGE_TYPE=local
 # Accepts the same values as STORAGE_TYPE although 'local' will be forced to 'local_secure'. 
 STORAGE_ATTACHMENT_TYPE=local_secure 
  ```
+
+---
+
+### Migrating to "Secure" Images
+
+If you are migrating to the `STORAGE_TYPE=local_secure` or `STORAGE_TYPE=local_secure_restricted` options, with existing images, you will need to move all content from your previous image storage location (see above) to the  `storage/uploads/images` folder within your BookStack instance. 
+
+**Do not simply copy and leave content** in the `public/uploads/images` as those images will still be publicly accessible. After doing this migration you may have to clean-up and re-upload any 'App Icon' images, found in settings, since these need to remain publicly accessible.
 
 ---
 

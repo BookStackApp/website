@@ -27,14 +27,6 @@ TODO - Update video link
 
 TODO - Notices on updates page.
 
-
-TODO - image local_secure_restricted - New option on security page.
-TODO - image local_secure_restricted - Might be worth marking as beta/experimental initially.
-TODO - image local_secure_restricted - Clarify detail on security page.
-TODO - image local_secure_restricted - New option on file uploads page.
-TODO - image local_secure_restricted - Clarify detail on file uploads page.
-TODO - image local_secure_restricted - Advise of option caveats somewhere in doc (Performance, Copying page to different permission scenarios etc...)
-
 ### Cross-Item Reference Tracking
 
 TODO - Intro

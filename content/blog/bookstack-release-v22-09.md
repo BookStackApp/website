@@ -29,15 +29,62 @@ TODO - Update/remove video link
 
 TODO - Notices on updates page.
 
-### Cross-Item Reference Tracking
+### Page Content References
 
-TODO - Intro
-- Auto-link updating
-- Reference view
+When you edit and save pages within the system, BookStack will now attempt to identify links 
+to other pages, chapters, books and shelves in the system.
+A new item will show when viewing one of those items, reflecting a count of pages that link
+to the currently viewed item:
+
+![Text within a "Details" section showing "Referenced on 3 pages"](TODO)
+
+When clicked, this will take you to a new references view which lists the all pages
+leading to the this current item:
+
+![Screenshot of a "Reference" view with a list of page items](TODO)
+
+This new feature should help provide some insight to how content is interlinked within the system, 
+while also providing an indexed that we can use within BookStack's systems to make some operating more efficient.
+
+When upgrading an existing BookStack instance no references will be indexed until you start saving content.
+To index and detect existing cross-content links, you can use the new "Regenerate References"
+admin maintenance action:
+
+![A card within the interface showing a "Regenerate References" section and action button](TODO)
+
+Alternatively, this action has also been added as a terminal command which 
+you can [find in our documentation here](/docs/admin/commands/#regenerate-reference-index).
+
+### Auto Link Updating
+
+Making use of our new reference indexing system, as detailed above, BookStack will now
+auto-update internal page links to shelves, books, chapter and other pages when those 
+items experience a change in URL.
+
+BookStack already had a system to handle some changes, it would attempt to find pages using 
+their old URLs by looking up against page revisions, but this would not work for books, chapters & shelves
+or for pages if revisions were deleted.
+Now, upon changes to an item's URL, BookStack will lookup pages referencing that item and auto-update
+such links to be current. This will be done in a fully transparent manner, with a revision
+being logged for the change with a "System auto-update of internal links" changelog message.
+To support this addition, the default per-page revision limit has increased from 50 to 100 entries.
+
+There may still be some logical gaps that will produce old links, such as restoring old page revision, 
+but this should handle most costs to ensure internal links stay current.
 
 ### OIDC Group Sync Support
 
-TODO
+OIDC authentication was added to BookStack almost a year ago, as part of v21.10.
+Since then I've been [taking feedback](https://github.com/BookStackApp/BookStack/issues/3004)
+to understand how group syncing would operate. Within v22.09 we're putting that feedback
+into action with the addition of OIDC group sync support.
+
+To work with BookStack, your OIDC system will need to provide groups within the OIDC ID token
+it provides back to BookStack. To support this in BookStack, we've added options to
+define custom authentication request scopes (Needed for groups in some scenarios)
+while also supporting accessing nested properties in the ID token JSON data.
+
+Read the new ["Group Sync" section](/docs/admin/oidc-auth/#group-sync) of our OIDC documentation for more details.
 
 ### New "local_secure_restricted" Image Storage Option
 

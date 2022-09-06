@@ -9,9 +9,11 @@ slug = "bookstack-release-v22-09"
 draft = false
 +++
 
-TODO - Intro
+The BookStack September release is here with a variety of desired features that build upon,
+and enhance, existing BookStack systems. As usual, it also includes language updates
+and a bunch of tweaks & fixes.
 
-TODO - Update video link
+TODO - Update/remove video link
 
 * [Release video overview](https://youtu.be/m0iCq2MFynI)
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
@@ -51,13 +53,25 @@ TODO, released in v22.07.2, link to export video.
 
 ### Translations
 
-TODO - Intro
+This release of BookStack adds Romanian as an available language. 
+A massive thanks to Mihai Ochian (soulstorm19) on Crowdin for their amazing effort
+of translating of 6k words in this release cycle to add this language.
+
+As usual, a range of our existing languages have received updates from our terrific translators
+since v22.07, so a big thanks to all listed below:
+
+TODO - language list
 
 - User - *Language*
 
 ### Next Steps
 
-TODO
+For the next release cycle I'll probably re-focus back on the permission system, to start
+development of the features intended on the related road-map item, such as an overhaul of
+item-level permission management to be more intuitive.
+
+We're approaching a milestone of 10k GitHub stars so there may be a minor detour to 
+celebrate that little achievement. 
 
 ### Full List of Changes
 
@@ -72,12 +86,14 @@ TODO
 * Updated revision link visibility to show to users. ([#2946](https://github.com/BookStackApp/BookStack/issues/2946))
 * Updated shelf naming to be consistent across system. ([#3553](https://github.com/BookStackApp/BookStack/issues/3553))
 * Updated translations with latest Crowdin changes. ([#3643](https://github.com/BookStackApp/BookStack/pull/3643), [#3701](https://github.com/BookStackApp/BookStack/pull/3701))
+* Updated role edit/create form with clarification upon image access permissions. ([#3688](https://github.com/BookStackApp/BookStack/issues/3688))
 * Fixed dates not using the correct encoding on some systems. ([#3590](https://github.com/BookStackApp/BookStack/issues/3590))
 * Fixed image delete button showing to those without permission to delete. ([#3697](https://github.com/BookStackApp/BookStack/issues/3697))
 * Fixed incorrect comment counts on Chinese language options. ([#3554](https://github.com/BookStackApp/BookStack/issues/3554))
 * Fixed list indentation when next to floated images. ([#3672](https://github.com/BookStackApp/BookStack/issues/3672))
 * Fixed various RTL text interface issues. ([#3702](https://github.com/BookStackApp/BookStack/issues/3702))
 * Fixed WYSIWYG drawing update not triggering draft save. ([#3682](https://github.com/BookStackApp/BookStack/issues/3682))
+* Fixed some additional SVG-based script cases not being filtered. ([#3705](https://github.com/BookStackApp/BookStack/issues/3705))
 
 **Released in v22.07.3**
 

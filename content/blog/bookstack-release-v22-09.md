@@ -20,13 +20,49 @@ TODO - Update video link
 
 **Upgrade Notices**
 
+- **Security** - This release cycle contained a security release that added detail that's important to consider when BookStack content is used externally. See the [v22.07.3 post](/blog/bookstack-release-v22-07-3/) for more detail.
+- **Revision Visibility** - This update fixes a permission disparity with revisions. Revision content has always been accessible to those with page-view permissions, but the links to the revisions list previously required page-edit permission to show. This has been aligned, which may mean page revision links may now show to those that did not previously see them.
+- **Revision Limit Change** - The default, per-page, revision limit has been doubled from 50 to 100, to account for new system-content updates that may occur. If desired, you can [configure this to a custom value](https://www.bookstackapp.com/docs/admin/other-config/#revision-limit).
+- **Reference Index** - New features have been added to track links between content in BookStack, which uses an internal reference index. Upon upgrade from an older BookStack version, this index will need to be rebuilt. This can be done with the "Regenerate References" command or via the "Regenerate References" maintenance action within BookStack.
+
+TODO - Link above command mention.
+TODO - Notices on updates page.
+
+TODO - `bookstack:regenerate-references` command docs
+
+TODO - OIDC - Need to document group syncing completely.
+TODO - OIDC - Need to document the use of OIDC_ADDITIONAL_SCOPES, and it's format (comma separated string).
+TODO - OIDC - Need to document behaviour of default registration role (Used when remove_from_groups option is active). Same as OIDC/LDAP behaviour.
+
+
+TODO - image local_secure_restricted - New option on security page.
+TODO - image local_secure_restricted - Might be worth marking as beta/experimental initially.
+TODO - image local_secure_restricted - Clarify detail on security page.
+TODO - image local_secure_restricted - New option on file uploads page.
+TODO - image local_secure_restricted - Clarify detail on file uploads page.
+TODO - image local_secure_restricted - Advise of option caveats somewhere in doc (Performance, Copying page to different permission scenarios etc...)
+
+### Cross-Item Reference Tracking
+
+TODO - Intro
+- Auto-link updating
+- Reference view
+
+### OIDC Group Sync Support
+
 TODO
 
-- **Category** - Description
+### New "local_secure_restricted" Image Storage Option
 
-### Feature
+TODO
 
-TODO - Info
+### "Page Include Parse" Logical Theme Event
+
+TODO
+
+### Visual Theme System - Export Template Partials
+
+TODO, released in v22.07.2, link to export video.
 
 ### Translations
 
@@ -42,7 +78,21 @@ TODO
 
 **Released in v22.09**
 
-TODO
+* Added cross-item link reference tracking & updating. ([#3656](https://github.com/BookStackApp/BookStack/pull/3656), [#3683](https://github.com/BookStackApp/BookStack/issues/3683), [#1969](https://github.com/BookStackApp/BookStack/issues/1969))
+* Added OIDC group sync functionality. ([#3616](https://github.com/BookStackApp/BookStack/pull/3616), [#3004](https://github.com/BookStackApp/BookStack/issues/3004))
+* Added reference view to shelves, chapters, books & pages. ([#2864](https://github.com/BookStackApp/BookStack/issues/2864))
+* Added new `local_secure_restricted` image storage option. ([#3693](https://github.com/BookStackApp/BookStack/pull/3693))
+* Added "page_include_parse" theme event. ([#3698](https://github.com/BookStackApp/BookStack/pull/3698))
+* Updated API docs to add detail for the request format. ([#3652](https://github.com/BookStackApp/BookStack/issues/3652))
+* Updated revision link visibility to show to users. ([#2946](https://github.com/BookStackApp/BookStack/issues/2946))
+* Updated shelf naming to be consistent across system. ([#3553](https://github.com/BookStackApp/BookStack/issues/3553))
+* Updated translations with latest Crowdin changes. ([#3643](https://github.com/BookStackApp/BookStack/pull/3643), [#3701](https://github.com/BookStackApp/BookStack/pull/3701))
+* Fixed dates not using the correct encoding on some systems. ([#3590](https://github.com/BookStackApp/BookStack/issues/3590))
+* Fixed image delete button showing to those without permission to delete. ([#3697](https://github.com/BookStackApp/BookStack/issues/3697))
+* Fixed incorrect comment counts on Chinese language options. ([#3554](https://github.com/BookStackApp/BookStack/issues/3554))
+* Fixed list indentation when next to floated images. ([#3672](https://github.com/BookStackApp/BookStack/issues/3672))
+* Fixed various RTL text interface issues. ([#3702](https://github.com/BookStackApp/BookStack/issues/3702))
+* Fixed WYSIWYG drawing update not triggering draft save. ([#3682](https://github.com/BookStackApp/BookStack/issues/3682))
 
 **Released in v22.07.3**
 
@@ -65,7 +115,7 @@ TODO
 
 **Released in v22.07.1**
 
-* Fixed issue where old WYSWYG editor code would be cached, preventing the editor from showing. ([#3611](https://github.com/BookStackApp/BookStack/issues/3611))
+* Fixed issue where old WYSIWYG editor code would be cached, preventing the editor from showing. ([#3611](https://github.com/BookStackApp/BookStack/issues/3611))
 * Updated translations with latest Crowdin changes. ([#3605](https://github.com/BookStackApp/BookStack/pull/3605))
 
 ----

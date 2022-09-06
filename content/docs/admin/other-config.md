@@ -28,16 +28,18 @@ in the creation and use of docker containers.
 
 ### Revision Limit
 
-Each time a page is saved a revision is stored to track history. To prevent your database becoming bloated BookStack will automatically remove revisions when the count, per page, exceeds 50. You can set the following option in your `.env` file to increase or remove the limit:
+Each time a page is saved a revision is stored to track history. To prevent your database becoming bloated BookStack will automatically remove revisions when the count, per page, exceeds 100. You can set the following option in your `.env` file to increase or remove the limit:
 
 ```bash
-# Set the revision limit to 100
-# Defaults to '50'
-REVISION_LIMIT=100
+# Set the revision limit to 200
+# Defaults to '100'
+REVISION_LIMIT=200
 
 # Alternatively, You can set to 'false' to disable the limit altogether.
 REVISION_LIMIT=false
 ```
+
+Keep in mind that BookStack itself may automatically update pages and create revisions in certain circumstances (Auto-updating of links for example).
 
 ---
 

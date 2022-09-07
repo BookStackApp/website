@@ -86,17 +86,61 @@ while also supporting accessing nested properties in the ID token JSON data.
 
 Read the new ["Group Sync" section](/docs/admin/oidc-auth/#group-sync) of our OIDC documentation for more details.
 
-### New "local_secure_restricted" Image Storage Option
+### New "Local (Secure - Restricted)" Image Storage Option
 
-TODO
+A long while ago we added a `local_secure` storage option for images which required user login
+before serving an image, as a layer of access control.
+This release takes this further with a `local_secure_restricted` storage option which
+will check the user's permissions to access the item that an image was uploaded to.
+This means that image file access for page images can be controlled by the page they're uploaded to, providing
+a whole new layer of control for environments that need it.
+
+This new option does have some caveats, mainly that it can introduce various logical scenarios
+that cause image visibility anomalies, in cases where an images are re-used across different permissions contexts.
+
+Full details of this permission option can be found [in our docs here](/docs/admin/upload-config/#local-secure---restricted).
 
 ### "Page Include Parse" Logical Theme Event
 
-TODO
+Our [logical theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md)
+has received a new event to customise handling of the [page include system](/docs/user/reusing-page-content).
+The page include system allows dynamic import of page content into the body of a page.
+Using this event, you can now extensively customize the handling of page includes.
+
+As an example, the below `functions.php` code would replace "dog" with "cat" in included content:
+
+```php
+<?php
+
+use BookStack\Entities\Models\Page;
+use BookStack\Facades\Theme;
+use BookStack\Theming\ThemeEvents;
+
+Theme::listen(ThemeEvents::PAGE_INCLUDE_PARSE, function(string $tagReference, string $replacementHTML, Page $currentPage, ?Page $referencedPage) {
+    return str_replace('dog', 'cat', $replacementHTML);
+});
+```
+
+Of course there are much more practical examples for this, such as defining fallback content or adding extra permission control.
+
+Find the details of the event [in the source code here](https://github.com/BookStackApp/BookStack/blob/98aed794cc7272687720c4f4c42a4f540390c0af/app/Theming/ThemeEvents.php#L73-L86).
 
 ### Visual Theme System - Export Template Partials
 
-TODO, released in v22.07.2, link to export video.
+As part of v22.07.2 we added a couple of export-specific template files
+that could be used with the [visual theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/visual-theme-system.md), found at:
+
+- `layouts/parts/export-body-start.blade.php`
+- `layouts/parts/export-body-end.blade.php`
+
+These can be used to add custom HTML code to the start & end of the HTML content used for
+HTML and PDF exports within BookStack.
+
+As a usage example I published a video on the BookStack YouTube channel showing 
+how to leverage these new templates to add a custom header and footer
+to PDF exports:
+
+{{< youtube 5bZ7zlNEphc >}}
 
 ### Translations
 

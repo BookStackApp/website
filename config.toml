@@ -38,3 +38,7 @@ assetDir = "static"
   description = "BookStack is a simple, open-source, self-hosted, easy-to-use platform for organising and storing information."
   [params.social]
     twitter = "bookstack_app"
+
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true

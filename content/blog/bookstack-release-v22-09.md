@@ -140,7 +140,7 @@ As a usage example I published a video on the BookStack YouTube channel showing
 how to leverage these new templates to add a custom header and footer
 to PDF exports:
 
-{{< youtube 5bZ7zlNEphc >}}
+{{< yt 5bZ7zlNEphc >}}
 
 ### Translations
 

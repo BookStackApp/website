@@ -384,7 +384,8 @@ input[type="text"].doc-search-input {
   }
 }
 
-iframe[src^="https://www.youtube-nocookie.com"] {
+iframe[src^="https://www.youtube-nocookie.com"],
+.youtube-embed-wrap a {
   max-width: 100%;
   aspect-ratio: 16/9;
   height: auto;
@@ -392,6 +393,40 @@ iframe[src^="https://www.youtube-nocookie.com"] {
   border-radius: 3px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
   background-color: #222;
+}
+
+.youtube-embed-wrap a {
+  display: block;
+  position: relative;
+}
+.youtube-embed-wrap a::before,
+.youtube-embed-wrap a::after {
+  content: '';
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity ease-in-out 120ms;
+}
+.youtube-embed-wrap a::before {
+  background-color: $primary;
+  opacity: 0.3;
+}
+.youtube-embed-wrap a::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48' fill='%23FFFFFF'%3E%3Cpath d='M19.15 32.5 32.5 24l-13.35-8.5ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 24q0-4.15 1.575-7.8 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24 4q4.15 0 7.8 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm0-3q7.1 0 12.05-4.975Q41 31.05 41 24q0-7.1-4.95-12.05Q31.1 7 24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24 41Zm0-17Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  background-position: 50% 50%;
+  background-size: 100px 100px;
+}
+.youtube-embed-wrap a:hover::before {
+  opacity: 0.4;
+}
+.youtube-embed-wrap a:hover::after {
+  opacity: 1;
+}
+.youtube-embed-wrap a img {
+  object-fit: cover;
 }
 
 .meilisearch-autocomplete .docs-searchbar-footer-logo,

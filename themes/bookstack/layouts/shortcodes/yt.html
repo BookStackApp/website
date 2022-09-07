@@ -1,0 +1,6 @@
+{{ $vidId := .Get 0 }}
+<div class="youtube-embed-wrap">
+    <a href="https://www.youtube.com/watch?v={{ $vidId }}" target="_blank" title="View Video" rel="noreferrer noopener">
+        <img src="/images/yt/{{ $vidId }}.webp" alt="YouTube Video Thumbnail">
+    </a>
+</div>

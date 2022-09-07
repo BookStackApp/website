@@ -27,8 +27,6 @@ TODO - Update/remove video link
 - **Revision Limit Change** - The default, per-page, revision limit has been doubled from 50 to 100, to account for new system-content updates that may occur. If desired, you can [configure this to a custom value](/docs/admin/other-config/#revision-limit).
 - **Reference Index** - New features have been added to track links between content in BookStack, which uses an internal reference index. Upon upgrade from an older BookStack version, this index will need to be rebuilt. This can be done with the ["Regenerate References" command](/docs/admin/commands/#regenerate-reference-index) or via the "Regenerate References" maintenance action within BookStack.
 
-TODO - Notices on updates page.
-
 ### Page Content References
 
 When you edit and save pages within the system, BookStack will now attempt to identify links 
@@ -36,12 +34,12 @@ to other pages, chapters, books and shelves in the system.
 A new item will show when viewing one of those items, reflecting a count of pages that link
 to the currently viewed item:
 
-![Text within a "Details" section showing "Referenced on 3 pages"](TODO)
+![Text within a "Details" section showing "Referenced on 3 pages"](/images/2022/09/references_link.png)
 
 When clicked, this will take you to a new references view which lists the all pages
 leading to the this current item:
 
-![Screenshot of a "Reference" view with a list of page items](TODO)
+![Screenshot of a "Reference" view with a list of page items](/images/2022/09/references_view.png)
 
 This new feature should help provide some insight to how content is interlinked within the system, 
 while also providing an indexed that we can use within BookStack's systems to make some operating more efficient.
@@ -50,7 +48,7 @@ When upgrading an existing BookStack instance no references will be indexed unti
 To index and detect existing cross-content links, you can use the new "Regenerate References"
 admin maintenance action:
 
-![A card within the interface showing a "Regenerate References" section and action button](TODO)
+![A card within the interface showing a "Regenerate References" section and action button](/images/2022/09/regen_references_action.png)
 
 Alternatively, this action has also been added as a terminal command which 
 you can [find in our documentation here](/docs/admin/commands/#regenerate-reference-index).

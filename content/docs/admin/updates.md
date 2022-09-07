@@ -39,6 +39,15 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+
+#### Updating to v22.09 or higher
+
+**Revision Visibility** - This update fixes a permission disparity with revisions. Revision content has always been accessible to those with page-view permissions, but the links to the revisions list previously required page-edit permission to show. This has been aligned, which may mean page revision links may now show to those that did not previously see them.
+
+**Revision Limit Change** - The default, per-page, revision limit has been doubled from 50 to 100, to account for new system-content updates that may occur. If desired, you can [configure this to a custom value](/docs/admin/other-config/#revision-limit).
+
+**Reference Index** - New features have been added to track links between content in BookStack, which uses an internal reference index. Upon upgrade from an older BookStack version, this index will need to be rebuilt. This can be done with the ["Regenerate References" command](/docs/admin/commands/#regenerate-reference-index) or via the "Regenerate References" maintenance action within BookStack.
+
 #### Updating to v22.07.3 or higher
 
 **Security** - v22.07.3 added a "Content Security" section to the API docs and [BookStack documentation](/docs/admin/security/#using-bookstack-content-externally) with security considerations for using BookStack content externally. Read this new section if you are using BookStack user content externally.

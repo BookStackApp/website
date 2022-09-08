@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v22.09"
-date = 2022-09-08T13:30:00Z
+date = 2022-09-08T11:30:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/sheep-mountain-luke-ellis-craven.jpg"
 slug = "bookstack-release-v22-09"
@@ -29,20 +29,20 @@ and a bunch of tweaks & fixes.
 
 When you edit and save pages within the system, BookStack will now attempt to identify links 
 to other pages, chapters, books and shelves in the system.
-A new item will show when viewing one of those items, reflecting a count of pages that link
+A new element will show when viewing one of those items, reflecting a count of pages that link
 to the currently viewed item:
 
 ![Text within a "Details" section showing "Referenced on 3 pages"](/images/2022/09/references_link.png)
 
-When clicked, this will take you to a new references view which lists the all pages
+When clicked, this will take you to a new "References" view which lists the all pages
 leading to the this current item:
 
-![Screenshot of a "Reference" view with a list of page items](/images/2022/09/references_view.png)
+![Screenshot of a "References" view with a list of page items](/images/2022/09/references_view.png)
 
 This new feature should help provide some insight to how content is interlinked within the system, 
-while also providing an indexed that we can use within BookStack's systems to make some operating more efficient.
+while also providing an index that we can use within BookStack's systems to make some operations more efficient.
 
-When upgrading an existing BookStack instance no references will be indexed until you start saving content.
+When upgrading an existing BookStack instance, no references will be indexed until you start saving content.
 To index and detect existing cross-content links, you can use the new "Regenerate References"
 admin maintenance action:
 
@@ -54,7 +54,7 @@ you can [find in our documentation here](/docs/admin/commands/#regenerate-refere
 ### Auto Link Updating
 
 Making use of our new reference indexing system, as detailed above, BookStack will now
-auto-update internal page links to shelves, books, chapter and other pages when those 
+auto-update internal page links to shelves, books, chapters and other pages when those 
 items experience a change in URL.
 
 BookStack already had a system to handle some changes, it would attempt to find pages using 
@@ -65,8 +65,8 @@ such links to be current. This will be done in a fully transparent manner, with 
 being logged for the change with a "System auto-update of internal links" changelog message.
 To support this addition, the default per-page revision limit has increased from 50 to 100 entries.
 
-There may still be some logical gaps that will produce old links, such as restoring old page revision, 
-but this should handle most costs to ensure internal links stay current.
+There may still be some logical gaps that will produce old links, such as restoring an old page revision, 
+but this should handle most cases to ensure internal links stay current.
 
 ### OIDC Group Sync Support
 
@@ -92,9 +92,9 @@ This means that image file access for page images can be controlled by the page 
 a whole new layer of control for environments that need it.
 
 This new option does have some caveats, mainly that it can introduce various logical scenarios
-that cause image visibility anomalies, in cases where an images are re-used across different permissions contexts.
+that cause image visibility anomalies, in cases where images are re-used across different permissions contexts.
 
-Full details of this permission option can be found [in our docs here](/docs/admin/upload-config/#local-secure---restricted).
+[Find full details of this option in our docs](/docs/admin/upload-config/#local-secure---restricted).
 
 ### "Page Include Parse" Logical Theme Event
 
@@ -142,7 +142,7 @@ to PDF exports:
 
 This release of BookStack adds Romanian as an available language. 
 A massive thanks to Mihai Ochian (soulstorm19) on Crowdin for their amazing effort
-of translating of 6k words in this release cycle to add this language.
+of translating over 6k words in this release cycle to add this language.
 
 As usual, a range of our existing languages have received updates from our terrific translators
 since v22.07, so a big thanks to all listed below:

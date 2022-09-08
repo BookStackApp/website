@@ -158,6 +158,8 @@ STORAGE_ATTACHMENT_TYPE=local_secure
 
 ### Migrating to "Secure" Images
 
+***Back-up your BookStack instance before attempting any migration***
+
 If you are migrating to the `STORAGE_TYPE=local_secure` or `STORAGE_TYPE=local_secure_restricted` options, with existing images, you will need to move all content from your previous image storage location (see above) to the  `storage/uploads/images` folder within your BookStack instance. 
 
 **Do not simply copy and leave content** in the `public/uploads/images` as those images will still be publicly accessible. After doing this migration you may have to clean-up and re-upload any 'App Icon' images, found in settings, since these need to remain publicly accessible.

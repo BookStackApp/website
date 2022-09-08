@@ -13,9 +13,7 @@ The BookStack September release is here with a variety of desired features that 
 and enhance, existing BookStack systems. As usual, it also includes language updates
 and a bunch of tweaks & fixes.
 
-TODO - Update/remove video link
-
-* [Release video overview](https://youtu.be/m0iCq2MFynI)
+* [Release video overview](https://youtu.be/nK2FqQCP-Ms)
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.09)
 
@@ -149,9 +147,22 @@ of translating of 6k words in this release cycle to add this language.
 As usual, a range of our existing languages have received updates from our terrific translators
 since v22.07, so a big thanks to all listed below:
 
-TODO - language list
-
-- User - *Language*
+- Mihai Ochian (soulstorm19) - *Romanian*
+- 10935336 - *Chinese Simplified*
+- HeartCore - *German Informal; German*
+- Ji-Hyeon Gim (PotatoGim) - *Korean*
+- SmokingCrop - *Dutch*
+- m0uch0 - *Spanish*
+- scureza - *Italian*
+- pedromcsousa - *Portuguese*
+- Statium - *Russian*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- Alex Navarro (alex.n.navarro) - *Portuguese, Brazilian*
+- Douradinho - *Portuguese*
+- na3shkw - *Japanese*
+- Éric Gaspar (erga) - *French*
+- mcgong (GongMingCai) - *Chinese Simplified; Chinese Traditional*
+- okaeiz - *Persian*
 
 ### Next Steps
 

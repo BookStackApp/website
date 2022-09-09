@@ -128,7 +128,7 @@ By default this will match OIDC group names with the BookStack role display name
 This can be overridden by via the 'External Authentication IDs' field which can be seen when editing a role while OIDC authentication is enabled.
 If filled, the names in this field will be used and the BookStack role display name will be ignored.
 You can match on multiple names by separating them with a comma.
-Commas can be escaped with a backslash (`/,`) if you need to map using a literal comma character.
+Commas can be escaped with a backslash (`\,`) if you need to map using a literal comma character.
 
 When matching OIDC groups with role names or 'External Authentication IDs' values, BookStack will standardise the names of OIDC groups to be lower-cased and spaces will be replaced with hyphens. For example, to match a OIDC group named "United Kingdom" an 'External Authentication IDs' value of "united-kingdom" could be used.
 

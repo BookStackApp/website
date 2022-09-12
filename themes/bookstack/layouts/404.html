@@ -1,5 +1,115 @@
 {{ partial "header.html" . }}
 
-<h1>404 :: Page Not Found </h1>
+<div class="shaded primary">
+    <div class="container hero padded-vertical">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1>Page Not Found</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container padded-vertical">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 padded-top">
+            <p>
+                Sorry, we couldn't find a page at the current URL path. <br>
+                If you got here from a link on this site, feel free to 
+                <a href="https://github.com/bookstackapp/website">raise an issue</a>
+                on GitHub. <br>
+                Otherwise you may be able to find what you need at one of these
+                handy links:
+            </p>
+
+            <div class="content-card-grid">
+                <a href="/#features" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/features.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Features</div>
+                      <p>An overview of the core features of BookStack</p>
+                    </div>
+                  </a>
+                  <a href="/#demo" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/demo.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Demo</div>
+                      <p>Give BookStack a test drive on our demo instance</p>
+                    </div>
+                  </a>
+                  <a href="/docs" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/book.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Documentation</div>
+                      <p>Guidance for managing and using BookStack</p>
+                    </div>
+                  </a>
+                  <a href="/blog" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/rss_feed.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Our Blog</div>
+                      <p>Get the latest project news from our blog</p>
+                    </div>
+                  </a>
+                  <a href="/support" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/support.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Support Plans</div>
+                      <p>See our range of support plans for BookStack</p>
+                    </div>
+                  </a>
+                  <a href="/donate" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/donate.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Donate</div>
+                      <p>Provide financial support to the project</p>
+                    </div>
+                  </a>
+                  <a href="https://www.youtube.com/c/BookStackApp" target="_blank" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/youtube.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Video Guides</div>
+                      <p>Watch our video guides on YouTube</p>
+                    </div>
+                  </a>
+                  <a href="https://github.com/BookStackApp/BookStack/issues" target="_blank" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/github.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">GitHub Issues</div>
+                      <p>Find or report issues on the GitHub project</p>
+                    </div>
+                  </a>
+                  <a href="https://github.com/BookStackApp/BookStack" target="_blank" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/github.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">GitHub</div>
+                      <p>Star the project on GitHub and follow us</p>
+                    </div>
+                  </a>
+                  <a href="https://discord.gg/ztkBqR2" target="_blank" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/discord.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Discord</div>
+                      <p>Chat with the development team and other users</p>
+                    </div>
+                  </a>
+                  <a href="https://twitter.com/bookstack_app" target="_blank" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/twitter.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Twitter</div>
+                      <p>See updates and shout us out on Twitter</p>
+                    </div>
+                  </a>
+                  <a href="https://www.reddit.com/r/bookstack" target="_blank" class="content-card-item">
+                    <div class="content-card-item-icon" aria-hidden="true">{{partial "icon/reddit.svg"}}</div>
+                    <div>
+                      <div class="content-card-item-title">Reddit</div>
+                      <p>Join our community on the BookStack subreddit</p>
+                    </div>
+                  </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {{ partial "footer.html" . }}

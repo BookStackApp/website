@@ -512,3 +512,38 @@ iframe[src^="https://www.youtube-nocookie.com"],
 .price-table-action a {
   display: block;
 }
+
+.content-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.content-card-item {
+  padding: 1rem;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  display: flex;
+  gap: 1rem;
+  color: #222;
+  svg {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: rgba($primary, 0.1);
+    fill: $primary;
+  }
+  &:hover {
+    background-color: rgba($primary, 0.1);
+    text-decoration: none;
+    border-color: #e5f1f8;
+  }
+  .content-card-item-title {
+    font-weight: 700;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: .9rem;
+    color: #666;
+  }
+}

@@ -5,20 +5,12 @@ date = "2017-01-01"
 type = "admin-doc"
 +++
 
-### Cookie Configuration
+Within BookStack specific data is cached server-side to increase performance in certain areas.
+Sessions are used for storing visitor-specific details, to allow things such as persisting user logins.
+Both of these mechanisms have various control options, and both use the local filesystem by default.
 
-Browser cookies are used to track sessions when using BookStack. The following session cookie options can be set in your .env file:
+{{<toc>}}
 
-```bash
-# Only send cookies over a HTTPS connection.
-# Ensure you have BookStack served over HTTPS before enabling.
-# Defaults to 'false'
-SESSION_SECURE_COOKIE=true
-
-# Set the name of the cookie used by BookStack to track sessions.
-# Defaults to 'bookstack_session'
-SESSION_COOKIE_NAME=custom_cookie_name
-```
 
 ### Cache & Session Storage
 
@@ -71,4 +63,33 @@ REDIS_SERVERS=127.0.0.1:6379:0
 
 # Example of using two non-local Redis servers clustered together
 REDIS_SERVERS=8.8.8.8:6379:0,8.8.4.4:6379:0
+```
+
+### Session Cookie Configuration
+
+Browser cookies are used to track sessions when using BookStack. The following session cookie options can be set in your `.env` file:
+
+```bash
+# Only send cookies over a HTTPS connection.
+# Ensure you have BookStack served over HTTPS before enabling.
+# Defaults to 'false'
+SESSION_SECURE_COOKIE=true
+
+# Set the name of the cookie used by BookStack to track sessions.
+# Defaults to 'bookstack_session'
+SESSION_COOKIE_NAME=custom_cookie_name
+```
+
+### Session Timeouts
+
+Sessions, and therefore user logins, have a pre-set timeout before they expire.
+If there's no activity during this timeout period, the session will no longer be active, and the user may need to log in again.
+This timeout period resets upon most system activities where the browse URL changes.
+
+This timeout is set to 2 hours by default, but can be configured in your `.env` file as shown below:
+
+```bash
+# Session lifetime in minutes.
+# Defaults to 120
+SESSION_LIFETIME=240
 ```

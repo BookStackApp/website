@@ -12,10 +12,8 @@
                         Our site stats can <a href="https://analytics.bookstackapp.com/bookstackapp.com" target="_blank" rel="noreferrer">be viewed here</a>. 
                         We also use <a href="https://www.meilisearch.com/" target="_blank" rel="noreferrer">MeiliSearch</a> for providing better search.
                         <br><br>
-                        Latest Blog Post: 
-                        {{ range first 1 ( where .Site.Pages "Section" "blog") }}
-                                <a href="{{.Permalink}}">{{ .Title }}</a>
-                        {{ end }}
+                        BookStack&reg; is a registered trade mark of Daniel Brown. <br>
+                        Copyright 2015-{{ now.Year }} Dan Brown.
                     </p>
             	</div>
                 <div class="col-lg-1"></div>

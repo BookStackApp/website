@@ -15,6 +15,8 @@ If this match cannot be made, BookStack will effectively auto-register that user
 provide a seamless access experience. They will be given the default role set under the
 "Default user role after registration" option in the application settings. 
 
+[A video guide for setting up OIDC can be found here](https://www.youtube.com/watch?v=TJQ4NJrMvkw).
+
 ### Requirements & Limitations
 
 Listed below are some considerations to keep in mind in regard to BookStack's OIDC implementation:

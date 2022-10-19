@@ -9,7 +9,8 @@ slug = "bookstack-release-v22-10"
 draft = false
 +++
 
-TODO
+This spooky season supplies us with BookStack v22.10, which continues our work to improve permission control
+while bringing along some extra treats, without the tricks.
 
 * [Release video overview]() TODO!!!
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
@@ -18,15 +19,14 @@ TODO
 
 **Upgrade Notices**
 
-TODO
+TODO - Copy the below to update notes
 
-- **Category** - Detail
+- **Permission Management Changes** - The interface and logic for managing shelf, book, chapter & page permissions has changed significantly in this release. The following should be noted:
+  - Content permissions that were not active (where the "Enable Custom Permissions" checkbox was not checked) will be removed upon upgrade to v22.10.
+  - Content permission role entries, that had no permissions provided, will not be reflected/shown as a row in the permissions interface immediately upon upgrade. Instead such cases will be reflected has the "Everyone Else" permission entry being active, in a non-inheriting state, with no permissions set.
+  - There should be no functional change to active permission upon upgrade. Care has been taken to ensure existing permissions are migrated upon upgrade so that access control remains the same as pre-upgrade.
 
 ### Redesigned Content Permission Control
-
-TODO
-
-### Updated WYSIWYG Table Control Icons
 
 TODO
 
@@ -36,29 +36,102 @@ TODO - https://github.com/BookStackApp/BookStack/issues/3699
 
 ### Book Read API Endpoint Detail
 
-TODO - https://github.com/BookStackApp/BookStack/issues/3734
+While the REST API provided book detail via the `/api/books/<id>` book read endpoint, you'd have to also call two other endpoints to form a view
+of the chapters & pages within the book, and even then you'd need to apply additional logic to build the content structure and ordering aligned
+with the BookStack interface. 
+
+To ease this, the book read endpoint will now return its child chapters and pages, ready ordered and nested as what be seen within the BookStack UI, on a `contents` property like so:
+
+```json
+{
+  "id": 16,
+  "name": "My own book",
+  ...
+  "contents": [
+    {
+      "id": 50,
+      "name": "Bridge Structures",
+      ...
+      "url": "https://example.com/books/my-own-book/chapter/bridge-structures",
+      "type": "chapter",
+      "pages": [
+        {
+          "id": 42,
+          "name": "Building Bridges",
+          ...
+          "url": "https://example.com/books/my-own-book/page/building-bridges"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Cool Animals",
+      ...
+      "url": "https://example.com/books/my-own-book/page/cool-animals",
+      "type": "page"
+    }
+  ],
+  ...
+}
+```
 
 ### System Back-end Maintenance
 
-TODO
+During this release cycle I spent a little extra time on cleaning up some existing parts of the codebase, specifically:
 
-- Testing cleanup
-- Auth system cleanup
-- Parallel testing
-- Fixes and tweaks
+- Updated our tests to use standardised helper methods for common operations.
+- Clean up authentication routes, removing old entwined Laravel framework auth logic that was barely used. 
+- Added support for parallel PHPUnit testing for quicker dev environment test runs.
 
-### Code Block Toolbar
+Gotta keep that codebase clean 🧹🧹🧹
 
-TODO
+### Updated WYSIWYG Table Control Icons
+
+I'm highlighting this rather subtle change as an example of spending time to make the little things better for users.
+Upon our upgrade to TinyMCE 5 for the main WYSIWYG editor, it was reported that the new table toolbar icons could be hard to read at a glance.
+After [some discussion to explore the issues](https://github.com/BookStackApp/BookStack/issues/3397), and some trialling of options, 
+I spent an hour or two tweaking the original icons to tweak spacing and sizing to boost legibility where possible.
+Here's the result, with the old icons on the top, and the tweaked icons below:
+
+![Table toolbar icons comparison, original icons on top, new icons below](/images/2022/10/table-toolbar-icons.png)
+
+While quite subtle, hopefully this should be notable improvement when glancing at them during editing.
+
+### Code Block WYSIWYG Toolbar
+
+Within the WYSIWYG editor it's always been tricky to edit code blocks on mobile, since it's usually done via a double-click
+which is often not possible on mobile browsers. This wasn't much of a problem before since the code editor popup was 
+very mobile unfriendly anyway but, with recent improvements to editing code its now more likely that users may edit code 
+on such devices.
+
+To help access code blocks for edit, a toolbar will now show when a code block is selected with an action that will 
+open the block for editing:
+
+![View of a select code block in the editor with a tooltip above it with a pencil icon button](/images/2022/10/code-block-toolbar.png)
+
+
+### MATLAB/Octave Code Block Highlighting
+
+Highlighting support has been added for MATLAB, or GNU Octave, syntax:
+
+![View of the BookStack code editor with the "Octave" language selected, with octave language code showing](/images/2022/10/octave-code-highlighting.png)
 
 ### Translations
 
+This release adds the language of Greek! A massive thanks to [@Gr-DigiLady](https://github.com/BookStackApp/BookStack/issues/3732) for their great effort in providing the language addition.
+
+Our usual splendid super scribes have continued their solid work to provide us with the 
+below translation updates since the original v22.09 release:
 
 - User - *Language*
 
+TODO - Build list
+
 ### Next Steps
 
-TODO
+Since this release cycle was consumed by permissions management, I feel like taking a break from permissions
+for a month to focus on something else. I'll dig into the issues list and maybe check in with those in Discord to
+find something fun to work on. May result in a release comprised of smaller-scope improvements. 
 
 ### Full List of Changes
 

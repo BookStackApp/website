@@ -3,6 +3,7 @@
 This project holds all the data for the https://www.bookstackapp.com/
 
 This site is built using [Hugo](https://gohugo.io). Images are stored using `git-lfs`.
+The "extended" version of hugo must be used (Has support for certain features like WebP resize).
 
 ### Data Locations
 

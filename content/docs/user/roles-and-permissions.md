@@ -27,14 +27,22 @@ Keep in mind that certain mechanisms within BookStack do have the ability to alt
 
 Permissions can be overridden at a Shelf, Book, Chapter or Page level where required.
 This can be done using the "Permissions" action when viewing such content, by any user that has a role permission to "Manage all/own permissions".
-When overriding at content-level, an "Enable Custom Permissions" checkbox toggles the custom override on or off. When enabled, a table of roles and their permissions will be shown (Excluding the default "Admin" role which always retains all permissions). Within this table, you can then select the individual permissions you want each role to receive instead of their default role permissions. These custom permissions need to be configured for all roles as desired, permissions cannot currently be overridden on a singular role or per-user basis.
 
-![A view of the page permissions screen showing custom permissions being selected](/images/docs/user/page-permissions.png)
+![A view of the page permissions screen showing custom permissions being selected](/images/docs/user/book-permissions.png)
 
-Content level permissions within BookStack have the following behavior:
+Within the permissions view you can use the "Override permissions for role" dropdown to select a role to set permissions for.
+When saved, these custom permissions will override the default permissions provided by roles for the configured content item.
+
+An "Everyone Else" option is available to allow permission override/control for any roles that are not specifically overridden. 
+By default, "Inherit defaults" will be selected for this item, which means that normal role permissions are used unless override.
+Deselecting this checkbox will use the permissions configured, in the same row, instead.
+
+Content level permissions within BookStack have the following behaviour:
 
 - Custom permissions applied to books or chapters will auto-cascade to all child content within, unless that content has its own custom permissions.
-- Custom permissions applied to shelves _**will not**_ auto-cascade, due to the many-to-many relation to books, but they can be copied to all child books in a single action where required. 
+- Custom permissions applied to shelves _**will not**_ auto-cascade, due to the many-to-many relation to books, but they can be copied to all child books 
+in a single action where required. 
+- The default admin role always retains all permissions for ultimate control, and this role will not be configurable in permission views.
 
 When custom content level permissions are active and affecting the currently viewed item, you'll see an indicator within the details sidebar section. If you have permission to edit the active content level permissions, this acts as a link which will take you to the relevant permissions view, even if applied to a parent chapter or book.
 

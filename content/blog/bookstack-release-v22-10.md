@@ -10,7 +10,7 @@ draft = false
 +++
 
 This spooky season supplies us with BookStack v22.10, which continues our work to improve permission control
-while bringing along some extra treats, without the tricks.
+while bringing along some extra treats, without any tricks.
 
 * [Release video overview]() TODO!!!
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
@@ -19,22 +19,25 @@ while bringing along some extra treats, without the tricks.
 
 **Upgrade Notices**
 
-TODO - Copy the below to update notes
-
 - **Permission Management Changes** - The interface and logic for managing shelf, book, chapter & page permissions has changed significantly in this release. The following should be noted:
   - Content permissions that were not active (where the "Enable Custom Permissions" checkbox was not checked) will be removed upon upgrade to v22.10.
   - Content permission role entries, that had no permissions provided, will not be reflected/shown as a row in the permissions interface immediately upon upgrade. Instead such cases will be reflected has the "Everyone Else" permission entry being active, in a non-inheriting state, with no permissions set.
-  - There should be no functional change to active permission upon upgrade. Care has been taken to ensure existing permissions are migrated upon upgrade so that access control remains the same as pre-upgrade.
+  - There should be no functional change to active permissions upon upgrade. Care has been taken to ensure existing permissions are migrated upon upgrade so that access control remains the same as pre-upgrade.
 
 ### Redesigned Content Permission Control
 
-TODO
+Since content-level (Shelf, Book, Chapter, Page) permissions were added to BookStack they've required, when enabled, a user to manage permissions for all roles in the system. This can often be unintuitive, since a common use-case would be to permit or restrict a single role, but you'd be forced to manage all other roles at the same time. 
 
-### Book Copy Behaviour
+This release looks to address that with a significant revision to how permissions are implemented and managed. 
+This is what the new revision view looks like:
 
-TODO - https://github.com/BookStackApp/BookStack/issues/3699
+![Screenshot of the new revisions view, with permission set for two roles, with a "Everyone else" option show with permission controls](/images/2022/10/item-permissions.png)
 
-### Book Read API Endpoint Detail
+Content permissions are no longer an "all roles or nothing" scenario. You can now add individual roles to override, so you can manage just the roles you need to work with. Any roles without specific permissions defined can be managed by the "Everyone Else" option shown towards the bottom of the view. By default this will be set to inherit default role permissions, but you can override this to set new baseline permissions. 
+
+Overall these changes should make permission management much simpler for existing use-cases, while making possible some new useful permission configurations.  
+
+### Added Book Read API Endpoint Detail
 
 While the REST API provided book detail via the `/api/books/<id>` book read endpoint, you'd have to also call two other endpoints to form a view
 of the chapters & pages within the book, and even then you'd need to apply additional logic to build the content structure and ordering aligned
@@ -97,6 +100,13 @@ Here's the result, with the old icons on the top, and the tweaked icons below:
 
 While quite subtle, hopefully this should be notable improvement when glancing at them during editing.
 
+### Handling Related Shelves on Book Copy
+
+We added the ability to copy books late last year in BookStack v21.12. 
+Something missing from the copy would be any relations to shelves that the original book sat upon.
+As of this release, copying a book will now also copy its shelf relations, as long as the user has permission
+to edit those shelves (Since they'd effectively be altering its content).
+
 ### Code Block WYSIWYG Toolbar
 
 Within the WYSIWYG editor it's always been tricky to edit code blocks on mobile, since it's usually done via a double-click
@@ -112,7 +122,8 @@ open the block for editing:
 
 ### MATLAB/Octave Code Block Highlighting
 
-Highlighting support has been added for MATLAB, or GNU Octave, syntax:
+Code block highlighting support has been added for MATLAB, or GNU Octave, syntax.
+Along with this, both "MATLAB" and "Octave" are now selectable languages in the WYSIWYG code editor:
 
 ![View of the BookStack code editor with the "Octave" language selected, with octave language code showing](/images/2022/10/octave-code-highlighting.png)
 

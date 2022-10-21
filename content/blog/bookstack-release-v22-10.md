@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v22.10"
-date = 2022-10-21T11:30:00Z
+date = 2022-10-21T10:15:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/brambles-dan-brown.webp"
 slug = "bookstack-release-v22-10"
@@ -12,7 +12,7 @@ draft = false
 This spooky season supplies us with BookStack v22.10, which continues our work to improve permission control
 while bringing along some extra treats, without any tricks.
 
-* [Release video overview]() TODO!!!
+* [Release video overview](https://www.youtube.com/watch?v=8kAhZAIV5MM)
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.10)
 
@@ -20,9 +20,9 @@ while bringing along some extra treats, without any tricks.
 **Upgrade Notices**
 
 - **Permission Management Changes** - The interface and logic for managing shelf, book, chapter & page permissions has changed significantly in this release. The following should be noted:
-  - Content permissions that were not active (where the "Enable Custom Permissions" checkbox was not checked) will be removed upon upgrade to v22.10.
-  - Content permission role entries, that had no permissions provided, will not be reflected/shown as a row in the permissions interface immediately upon upgrade. Instead such cases will be reflected has the "Everyone Else" permission entry being active, in a non-inheriting state, with no permissions set.
-  - There should be no functional change to active permissions upon upgrade. Care has been taken to ensure existing permissions are migrated upon upgrade so that access control remains the same as pre-upgrade.
+  - Content permissions that were not active (where the "Enable Custom Permissions" checkbox was unchecked) will be removed upon upgrade to v22.10.
+  - Content permission role entries, that had no permissions provided, will not be reflected/shown as a row in the permissions interface immediately upon upgrade. Instead such cases will be reflected via the "Everyone Else" permission entry being active, in a non-inheriting state, with no permissions set.
+  - There should be no functional change to active permissions upon upgrade. Care has been taken to ensure existing permissions are migrated so that access control remains the same as pre-upgrade.
 
 ### Redesigned Content Permission Control
 
@@ -93,7 +93,7 @@ Gotta keep that codebase clean 🧹🧹🧹
 I'm highlighting this rather subtle change as an example of spending time to make the little things better for users.
 Upon our upgrade to TinyMCE 5 for the main WYSIWYG editor, it was reported that the new table toolbar icons could be hard to read at a glance.
 After [some discussion to explore the issues](https://github.com/BookStackApp/BookStack/issues/3397), and some trialling of options, 
-I spent an hour or two tweaking the original icons to tweak spacing and sizing to boost legibility where possible.
+I spent an hour or two playing with the original icons to tweak spacing and sizing to boost legibility where possible.
 Here's the result, with the old icons on the top, and the tweaked icons below:
 
 ![Table toolbar icons comparison, original icons on top, new icons below](/images/2022/10/table-toolbar-icons.png)
@@ -104,8 +104,8 @@ While quite subtle, hopefully this should be notable improvement when glancing a
 
 We added the ability to copy books late last year in BookStack v21.12. 
 Something missing from the copy would be any relations to shelves that the original book sat upon.
-As of this release, copying a book will now also copy its shelf relations, as long as the user has permission
-to edit those shelves (Since they'd effectively be altering its content).
+As of this release, copying a book will now also copy its shelf relations, as long as the user
+performing the copy has permission to edit those shelves (Since they'd effectively be altering its content).
 
 ### Code Block WYSIWYG Toolbar
 
@@ -134,9 +134,31 @@ This release adds the language of Greek! A massive thanks to [@Gr-DigiLady](http
 Our usual splendid super scribes have continued their solid work to provide us with the 
 below translation updates since the original v22.09 release:
 
-- User - *Language*
-
-TODO - Build list
+- digilady - *Greek*
+- Linus (LinusOP) - *Swedish*
+- HeartCore - *German Informal; German*
+- Felipe Cardoso (felipecardosoruff) - *Portuguese, Brazilian*
+- RandomUser0815 - *German*
+- Vitaliy (gviabcua) - *Ukrainian*
+- Naoto Ishikawa (na3shkw) - *Japanese*
+- Leonardo Mario Martinez (leonardo.m.martinez) - *Spanish, Argentina*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- Statium - *Russian*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Éric Gaspar (erga) - *French*
+- sdhadi - *Persian*
+- pedromcsousa - *Portuguese*
+- DerLinkman (derlinkman) - *German; German Informal*
+- 구인회 (laskdjlaskdj12) - *Korean*
+- LiZerui (CNLiZerui) - *Chinese Traditional*
+- Mihai Ochian (soulstorm19) - *Romanian*
+- scureza - *Italian*
+- m0uch0 - *Spanish*
+- TurnArabic - *Arabic*
+- SmokingCrop - *Dutch*
+- 10935336 - *Chinese Simplified*
+- Fabrice Boyer (FabriceBoyer) - *French*
+- Martin Sebek (sebekmartin) - *Czech*
 
 ### Next Steps
 

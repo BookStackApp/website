@@ -43,9 +43,9 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 #### Updating to v22.10 or higher
 
 **Permission Management Changes** - The interface and logic for managing shelf, book, chapter & page permissions has changed significantly in this release. The following should be noted:
-  - Content permissions that were not active (where the "Enable Custom Permissions" checkbox was not checked) will be removed upon upgrade to v22.10.
-  - Content permission role entries, that had no permissions provided, will not be reflected/shown as a row in the permissions interface immediately upon upgrade. Instead such cases will be reflected has the "Everyone Else" permission entry being active, in a non-inheriting state, with no permissions set.
-  - There should be no functional change to active permissions upon upgrade. Care has been taken to ensure existing permissions are migrated upon upgrade so that access control remains the same as pre-upgrade.
+  - Content permissions that were not active (where the "Enable Custom Permissions" checkbox was unchecked) will be removed upon upgrade to v22.10.
+  - Content permission role entries, that had no permissions provided, will not be reflected/shown as a row in the permissions interface immediately upon upgrade. Instead such cases will be reflected via the "Everyone Else" permission entry being active, in a non-inheriting state, with no permissions set.
+  - There should be no functional change to active permissions upon upgrade. Care has been taken to ensure existing permissions are migrated so that access control remains the same as pre-upgrade.
 
 #### Updating to v22.09 or higher
 

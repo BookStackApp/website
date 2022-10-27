@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  search:
+    image: getmeili/meilisearch:latest
+    restart: always
+    volumes:
+      - ./data:/home/meili/data.ms
+    ports:
+      - 7700:7700
+    environment:
+      - MEILI_ENV=production
+      - MEILI_MASTER_KEY=abc123
+volumes:
+  data:
+    driver: local

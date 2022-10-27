@@ -16,3 +16,9 @@ The "extended" version of hugo must be used (Has support for certain features li
 The theme is custom made with snippets taken from the [hugo capser theme](https://github.com/vjeantet/hugo-theme-casper).
 
 SCSS is used for the styling. Install NPM dependencies via `npm install` or `yarn` then you can use `npm run build` to build the css and site once or `npm run dev` to watch for changes.
+
+
+### Search
+
+Search is handled via [Meilisearch](https://www.meilisearch.com/). A nightly scrape runs to index the site pages for search.
+This is all docker-based, and the configuration used can be found in the `search/` directory of this repo.

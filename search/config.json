@@ -1,0 +1,79 @@
+{
+    "index_uid": "docs",
+    "start_urls": [
+        {
+            "url": "https://www.bookstackapp.com/docs/",
+            "page_rank": 5,
+            "selectors_key": "docs"
+        },
+        {
+            "url": "https://www.bookstackapp.com/blog/",
+            "page_rank": 1,
+            "selectors_key": "blog"
+        },
+        "https://www.bookstackapp.com/"
+    ],
+    "sitemap_urls": [
+        "https://www.bookstackapp.com/sitemap.xml"
+    ],
+    "stop_urls": [
+        "https://www.bookstackapp.com/categories/",
+        "https://www.bookstackapp.com/tags/",
+        "https://www.bookstackapp.com/blog/page/"
+    ],
+    "selectors": {
+        "default": {
+            "lvl0": {
+                "selector": ".homepage h1",
+                "global": true,
+                "default_value": "Website"
+            },
+            "lvl1": {
+                "selector": ".homepage  h1",
+                "global": true,
+                "default_value": "Homepage"
+            },
+            "lvl2": ".homepage h2",
+            "lvl3": ".homepage h3",
+            "lvl4": ".homepage h4",
+            "text": ".homepage p"
+        },
+        "docs": {
+            "lvl0": {
+                "selector": ".docs-section-title",
+                "global": true,
+                "default_value": "Documentation"
+            },
+            "lvl1": {
+                "selector": "main h1",
+                "global": true,
+                "default_value": "Topic"
+            },
+            "lvl2": "main h2",
+            "lvl3": "main h3",
+            "lvl4": "main h4",
+            "text": "main > *"
+        },
+        "blog": {
+            "lvl0": {
+                "selector": "a[href=\"/blog\"]",
+                "global": true,
+                "default_value": "Blogpost"
+            },
+            "lvl1": {
+                "selector": "main h1",
+                "global": true,
+                "default_value": "Topic"
+            },
+            "lvl2": "main h2",
+            "lvl3": "main h3",
+            "lvl4": "main h4",
+            "text": "main > *"
+        }
+    },
+    "selectors_exclude": [
+        ".footer-content",
+        ".edit-link",
+        ".icon"
+    ]
+}

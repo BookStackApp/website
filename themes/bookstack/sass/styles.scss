@@ -429,6 +429,9 @@ iframe[src^="https://www.youtube-nocookie.com"],
   object-fit: cover;
 }
 
+.meilisearch-autocomplete .docs-searchbar-footer {
+  font-size: 0.8rem;
+}
 .meilisearch-autocomplete .docs-searchbar-footer-logo,
 .meilisearch-autocomplete .docs-searchbar-footer {
   vertical-align: top !important;

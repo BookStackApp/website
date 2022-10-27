@@ -1,5 +1,6 @@
 {
     "index_uid": "docs",
+    "allowed_domains": ["bookstackapp.com"],
     "start_urls": [
         {
             "url": "https://www.bookstackapp.com/docs/",
@@ -11,7 +12,26 @@
             "page_rank": 1,
             "selectors_key": "blog"
         },
-        "https://www.bookstackapp.com/"
+        {
+            "url": "https://www.bookstackapp.com/about/",
+            "page_rank": 1,
+            "selectors_key": "default"
+        },
+        {
+            "url": "https://www.bookstackapp.com/support/",
+            "page_rank": 1,
+            "selectors_key": "default"
+        },
+        {
+            "url": "https://www.bookstackapp.com/donate/",
+            "page_rank": 1,
+            "selectors_key": "default"
+        },
+        {
+            "url": "https://www.bookstackapp.com/",
+            "page_rank": 1,
+            "selectors_key": "home"
+        }
     ],
     "sitemap_urls": [
         "https://www.bookstackapp.com/sitemap.xml"
@@ -23,19 +43,25 @@
     ],
     "selectors": {
         "default": {
+            "lvl0": "#content h1",
+            "lvl1": "#content h2",
+            "lvl2": "#content h3",
+            "lvl3": "#content h4",
+            "lvl4": "#content h5",
+            "text": "#content p, #content ul, #content ol, #content blockquote, #content pre, #content table"
+        },
+        "home": {
             "lvl0": {
-                "selector": ".homepage h1",
-                "global": true,
-                "default_value": "Website"
-            },
-            "lvl1": {
-                "selector": ".homepage  h1",
+                "selector": "#nothing",
                 "global": true,
                 "default_value": "Homepage"
             },
-            "lvl2": ".homepage h2",
-            "lvl3": ".homepage h3",
-            "lvl4": ".homepage h4",
+            "lvl1": {
+                "selector": ".homepage  h2"
+            },
+            "lvl2": ".homepage h3",
+            "lvl3": ".homepage h4",
+            "lvl4": ".homepage h5",
             "text": ".homepage p"
         },
         "docs": {
@@ -56,23 +82,23 @@
         },
         "blog": {
             "lvl0": {
-                "selector": "a[href=\"/blog\"]",
+                "selector": "#nothing",
                 "global": true,
-                "default_value": "Blogpost"
+                "default_value": "On Our Blog"
             },
             "lvl1": {
                 "selector": "main h1",
                 "global": true,
                 "default_value": "Topic"
             },
-            "lvl2": "main h2",
-            "lvl3": "main h3",
-            "lvl4": "main h4",
-            "text": "main > *"
+            "lvl2": "main h3",
+            "lvl3": "main h4",
+            "lvl4": "main h5",
+            "text": "main > p, main > ul, main > ol, main > blockquote, main > pre, main > table"
         }
     },
     "selectors_exclude": [
-        ".footer-content",
+        "footer > .container",
         ".edit-link",
         ".icon"
     ]

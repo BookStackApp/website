@@ -22,3 +22,12 @@ SCSS is used for the styling. Install NPM dependencies via `npm install` or `yar
 
 Search is handled via [Meilisearch](https://www.meilisearch.com/). A nightly scrape runs to index the site pages for search.
 This is all docker-based, and the configuration used can be found in the `search/` directory of this repo.
+Note, for localhost usage with a port, `"allowed_domains": ["localhost"],` should be added to the scraper config.json. [[ref](https://github.com/meilisearch/docs-scraper/issues/103#issuecomment-810736674)].
+
+Relevant Projects:
+
+- [Meilisearch](https://github.com/meilisearch/meilisearch) - The search engine used.
+- [docs-scraper](https://github.com/meilisearch/docs-scraper) - Used to scrape the site to index.
+- [docs-searchbar.js](https://github.com/meilisearch/docs-searchbar.js) - The JS implementation used for the site search bar.
+  - I copy in the latest CDN dist files into this project.
+  - I edit the JS file to remove the "Powered by Meilisearch" logo to prevent external requests.

@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v22.11"
-date = 2022-11-30T10:15:00Z
+date = 2022-11-30T12:30:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/autumn-leaves-dan-brown.webp"
 slug = "bookstack-release-v22-11"
@@ -13,11 +13,10 @@ Just sneaking into November is BookStack v22.11 which comes with a splendid spre
 intended to enhance many existing interfaces and features of BookStack. 
 There's no upgrade notices for this one, so let's jump right in.
 
-TODO - Add video inline here?
-
-* [Release video overview](https://www.youtube.com/watch?v=8kAhZAIV5MM)
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v22.11)
+
+{{<yt 9Oz6-YOeiuU>}}
 
 ### User Interface Shortcuts
 
@@ -145,6 +144,7 @@ Listed below are those that have provided translations since the original v22.10
 - dina davoudi (dina.davoudi) - *Persian*
 - Irfan Hukama Arsyad (IrfanArsyad) - *Indonesian*
 - Ufuk Ayyıldız (ufukayyildiz) - *Turkish*
+- bdewoop - *German*
 
 ### Next Steps
 

@@ -204,7 +204,7 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [alwaysdata](https://www.alwaysdata.com/en/marketplace/bookstack/) - A European based managed hosting provider.
 - [PikaPods](https://www.pikapods.com/pods?run=bookstack) - Managed open source hosting, EU and US regions available.
 - [YunoHost](https://install-app.yunohost.org/?app=bookstack) - A Debian-based distribution that automates personal web server installation.
-
+- [Elestio](https://elest.io/open-source/bookstack) - Fully managed hosting in 85 regions on dedicated VMs or on-premise.
 ---
 
 <a name="ha"></a>

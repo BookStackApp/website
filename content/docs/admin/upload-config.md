@@ -127,7 +127,7 @@ STORAGE_TYPE=s3
 STORAGE_S3_KEY=your-service-key
 STORAGE_S3_SECRET=your-service-secret-key
 STORAGE_S3_BUCKET=your-service-bucket-name
-
+STORAGE_S3_REGION=s3-bucket-region #for Wasabi
 STORAGE_S3_ENDPOINT=https://your-service-base-endpoint.com:8080
 STORAGE_URL=https://your-service-base-endpoint.com:8080/your-service-bucket-name
 ```

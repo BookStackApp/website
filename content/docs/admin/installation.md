@@ -205,6 +205,7 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [PikaPods](https://www.pikapods.com/pods?run=bookstack) - Managed open source hosting, EU and US regions available.
 - [YunoHost](https://install-app.yunohost.org/?app=bookstack) - A Debian-based distribution that automates personal web server installation.
 - [Elestio](https://elest.io/open-source/bookstack) - Managed hosting in common cloud services or on-premise.
+- [Nexxwave](https://www.nexxwave.eu/app-hosting/bookstack) - Managed application hosting in the EU.
 ---
 
 <a name="ha"></a>

@@ -9,6 +9,8 @@ Sometimes you may want to perform deeper customisation to BookStack or extend th
 
 _**Note: Customisation options on this page are not deemed to be stable or officially supported. BookStack core files may change on any release causing changes in behaviour to your hacks.**_
 
+{{<toc>}}
+
 ---
 
 

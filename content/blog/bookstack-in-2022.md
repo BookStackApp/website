@@ -6,7 +6,7 @@ image = "/images/blog-cover-images/winter-atle-mo.jpg"
 author = "Dan Brown"
 slug = "bookstack-in-2022"
 draft = false
-date = 2022-01-05T23:00:00Z
+date = 2023-01-05T23:00:00Z
 +++
 
 Well 2022 is now in the past. During the year BookStack had a few milestones which included

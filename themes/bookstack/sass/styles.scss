@@ -430,6 +430,7 @@ iframe[src^="https://www.youtube-nocookie.com"],
 }
 .youtube-embed-wrap a img {
   object-fit: cover;
+  width: 100%;
 }
 
 .meilisearch-autocomplete .docs-searchbar-footer {

@@ -55,7 +55,7 @@ generosity and help in working towards a sustainably funded project.
 
 ### New Features & Enhancements
 
-Throughout 2023 we've had 8 feature releases and 20 patch releases.
+Throughout 2022 we've had 8 feature releases and 20 patch releases.
 The below lists many of the major additions and changes made within these:
 
 - Page content references

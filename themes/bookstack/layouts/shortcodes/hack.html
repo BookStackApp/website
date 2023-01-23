@@ -1,0 +1,25 @@
+{{ $filename := .Get "file" }}
+{{ $file := path.Join (path.Dir $.Page.File) $filename }}
+{{ $ext := strings.TrimLeft "." (path.Ext $file) }}
+{{ $type := .Get "type" }}
+{{ $md := printf "```%s\n%s\n```" $ext (readFile $file) }}
+
+
+<div class="hack-file-block">
+    <div class="hack-file-block-filename">{{ $filename }}</div>
+
+    <div class="hack-file-block-type">
+        {{ if eq $type "logical"}}
+        Logical Theme System
+        {{ else if eq $type "visual"}}
+        Logical Theme System
+        {{ else if eq $type "head"}}
+        Head Code
+        {{ end }}
+    </div>
+</div>
+
+<details>
+    <summary>View Code</summary>
+{{ $md | markdownify }}
+</details>

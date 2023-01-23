@@ -1,0 +1,52 @@
+{{ partial "header.html" . }}
+
+<div class="shaded primary padded-vertical">
+  <div class="container">
+    <div class="docs-section-title">Hacks</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <aside class="col-md-2 sidebar">
+      <div class="sidebar-inner">
+        <ul>
+          <li><a href="/hacks">All Hacks</a></li>
+        </ul>
+        <ul>
+            <li>
+                TODO - Links to things like customization type docs.
+                Contributing details (For hacks)?
+            </li>
+            <li>
+                TODO - List of latest hacks?
+            </li>
+        </ul>
+      </div>
+      <div class="sidebar-inner mobile">
+        <ul>
+          <li><a href="/docs">&laquo; All Documentation</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="col-md-8 col-md-offset-1 docs-content">
+
+      <h1>{{.Title}}</h1>
+
+      <ul>
+        <li><strong>Author:</strong> {{ .Params.Author }}</li>
+        <li><strong>Created:</strong> {{ .Params.Date }}</li>
+        <li><strong>Updated:</strong> {{ .Params.Updated }}</li>
+        <li><strong>Last Tested On:</strong> {{ .Params.Tested }}</li>
+      </ul>
+
+      {{.Content}}
+
+    </main>
+  </div>
+
+</div>
+
+{{ partial "footer.html" . }}

@@ -31,14 +31,15 @@
       </div>
     </aside>
 
-    <main class="col-md-8 col-md-offset-1 docs-content">
+    <main class="col-md-8 col-md-offset-1 hacks-content">
 
       <h1>{{.Title}}</h1>
 
-      <ul>
-        <li><strong>Author:</strong> {{ .Params.Author }}</li>
-        <li><strong>Created:</strong> {{ .Params.Date }}</li>
-        <li><strong>Updated:</strong> {{ .Params.Updated }}</li>
+      <ul class="hack-meta">
+        {{ $author := .Params.Author }}
+        <li><strong>Author:</strong> <a href="https://github.com/{{ strings.TrimLeft "@" $author }}" target="_blank">{{ $author }}</a></li>
+        <li><strong>Created:</strong> {{ .Date.Format "2" | humanize }} {{ .Date.Format "Jan 2006" }}</li>
+        <li><strong>Updated:</strong> {{ .Params.Updated.Format "2" | humanize }} {{ .Params.Updated.Format "Jan 2006" }}</li>
         <li><strong>Last Tested On:</strong> {{ .Params.Tested }}</li>
       </ul>
 

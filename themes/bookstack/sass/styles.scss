@@ -554,3 +554,67 @@ iframe[src^="https://www.youtube-nocookie.com"],
     color: #666;
   }
 }
+
+.hack-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  margin-bottom: 1.2rem;
+  li {
+    display: inline-block;
+    color: #888;
+    font-size: .9rem;
+  }
+}
+
+.hacks-content {
+  margin-bottom: 3rem;
+  h1 {
+    margin-bottom: .5rem;
+  }
+}
+
+.hack-file-wrapper {
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  .chroma {
+    margin: -1px;
+  }
+  summary {
+    list-style: none;
+    font-size: .9rem;
+    cursor: pointer;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.hack-file-block {
+  display: flex;
+  justify-content: space-between;
+}
+.hack-file-block-filename {
+  padding: .4rem 1rem;
+  font-weight: bold;
+  font-size: .9rem;
+  &:before {
+    display: inline-block;
+    width: 1rem;
+    content: "▸ ";
+  }
+}
+details[open] .hack-file-block-filename:before {
+  content: "▾ ";
+}
+.hack-file-block-type a {
+  display: inline-flex;
+  gap: .2em;
+  align-items: center;
+  padding: .4rem 1rem;
+  font-size: .9rem;
+  font-weight: 400;
+}

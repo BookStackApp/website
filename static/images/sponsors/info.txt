@@ -1,0 +1,1 @@
+Sponsors logos should be about 1200px wide, with 40px white border (To look presentable on GitHub dark mode), on a white background.

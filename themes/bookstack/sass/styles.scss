@@ -565,7 +565,7 @@ iframe[src^="https://www.youtube-nocookie.com"],
   margin-bottom: 1.2rem;
   li {
     display: inline-block;
-    color: #888;
+    color: #666;
     font-size: .9rem;
   }
 }
@@ -575,11 +575,16 @@ iframe[src^="https://www.youtube-nocookie.com"],
   h1 {
     margin-bottom: .5rem;
   }
+  h1 + p {
+    margin-top: 1rem;
+  }
 }
 
 .hack-file-wrapper {
-  background-color: #EEE;
-  border: 1px solid #DDD;
+  background-color: #FFF;
+  border: 1.5px solid #e2e2e2;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
+  border-radius: 4px;
   .chroma {
     margin: -1px;
   }
@@ -596,11 +601,12 @@ iframe[src^="https://www.youtube-nocookie.com"],
 .hack-file-block {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .hack-file-block-filename {
-  padding: .4rem 1rem;
+  padding: .5rem 1rem;
   font-weight: bold;
-  font-size: .9rem;
+  font-size: 1rem;
   &:before {
     display: inline-block;
     width: 1rem;
@@ -610,11 +616,30 @@ iframe[src^="https://www.youtube-nocookie.com"],
 details[open] .hack-file-block-filename:before {
   content: "▾ ";
 }
+.hack-file-block-type {
+  padding: 0 .5rem;
+}
 .hack-file-block-type a {
   display: inline-flex;
   gap: .2em;
   align-items: center;
-  padding: .4rem 1rem;
+  padding: .4rem .5rem;
   font-size: .9rem;
   font-weight: 400;
+}
+
+.hack-warning {
+  color: #b7560f;
+  background-color: #fce7d8;
+  border: 1px solid #ed7721;
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  gap: 1rem;
+  line-height: 1.3;
+  font-size: .9rem;
+  svg {
+    width: 1.6em;
+  }
 }

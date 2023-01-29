@@ -9,7 +9,8 @@ slug = "bookstack-release-v23-01"
 draft = false
 +++
 
-TODO - Intro
+To start off our releases for the year we have v23.01 which adds many user experience enhancements and 
+options while also making subtle back-end further changes to permissions.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v23.01)
@@ -24,37 +25,145 @@ TODO - YouTube
 
 ### App Icon Control
 
-TODO
+We have a new customization setting!
+This addition allows the upload and easy setting of a custom application icon that will be used
+by browsers as the icon for a tab, or often by mobile devices to use as an "App" icon when creating a
+webpage shortcut.
+
+TODO - Image of new control
+
+This is a separate option to the application logo since they're used in different areas in different ways,
+and the icon is expected to be a fixed-square size whereas the logo may vary in aspect ratio.
+Upon upload BookStack resizes the provided image into a range of sizes for good general compatibility
+across different browsers, devices and platforms. 
+
+TODO - Image of icon on mobile device?
+
+While you could already hack-in a custom icon via various means, this should it much easier and accessible
+to those that don't want to hack about with code or web-servers.
 
 ### New Color Scheme Controls
 
-TODO
+Continuing the theme of customization settings, the provided color options have had a significant revamp.
+The main addition is that different controls are now available for light and dark mode, meaning you can
+set different colors to best suit the mode and theme.
+
+TODO - Image of color scheme block
+
+To support choosing good colors, the interface will jump between light or dark mode as you select the relevant tabs.
+It was always tricky to select colors that worked well cross-theme, while ensuring good contrast and legibility,
+so hopefully this will be quite a welcome addition to address that concern.
+
+A more subtle addition to the color controls is a new "Default Link Color" option.
+Links and actions within the interface would previously use the primary color, but this could be problematic
+since the primary color was also used for many non-text focused use-cases such as the header banner and other decorations
+which made choosing a color, which worked across all these areas, difficult to achieve.
+Splitting these out now provides a little more control to get the right look with great usability.
+
+TODO - Link color usage?
+
+BookStack has set new defaults for the dark-mode colors, but those upgrading will find their color settings 
+auto-copied across to ensure minimal change upon system update, although you can just then change these settings thereafter.
+
 
 ### Book Sorting Experience Upgrades
 
-TODO
+The book sort interface has received a fair bit of attention to make the experience more pleasant than ever.
+The changes here were primary to ensure usability via screen-reader and keyboard-only-use, but such changes can
+have a positive impact to all users. Changes include:
+
+- Sort items will now show up & down buttons to allow quick sorting without drag+drag.
+- A new menu on sort-items provides a range contextual actions such as "Move to Next Book" or "Move to Previous Chapter".
+- Multi-select and drag, once previously available, has now been fixed.
+- The "Other books" sidebar is now sticky on desktop, meaning you don't need to scroll back up to find this box when sorting long books.
+- The book sort boxes are now collapsible, which can useful when sorting multiple large books. 
+- Some intro text has been added to help guide users. 
+
+TODO - Image of sort with a collapsed and non-collapsed book, showing expanded menu controls for a page.
 
 ### Code Block Additions
 
-TODO - Scheme and SQL variants, twig/smarty in patch release
+Since v22.11 a few new code languages have been added for code-highlighting and code-editor support:
+
+- Scheme
+- SQL variants:
+   - MySQL
+   - MSSQL
+   - PostgreSQL
+   - SQLite
+- Twig
+- Smarty
+
+TODO - Image of code editor with one of these used?
 
 ### OIDC Auth ID Configuration Option
 
-TODO
+When Open ID Connect (OIDC) is used BookStack will store the unique ID of a user for later BookStack-to-identity-provider
+user matching. It would do this using the `sub` ID Token claim as per the OIDC standards.
+OIDC is a pretty good, modern, and well-defined standard, so this works absolutely fine for the majority of use-cases.
+
+Unfortunately, as I have learnt from our other auth systems, Active Directory never likes to make life simple.
+By default AzureAD will use a `sub` claim value that's per-application-per-user unique, which makes it hard to predict
+ahead-of-use by admins that may want to manually connect up existing users.
+That said, AzureAD will also provide a `upn` claim that's just per-user unique, but this is a non-standard claim.
+
+To support such  a scenario, we've added an option to set the claim name to be used as the ID:
+
+```bash
+OIDC_EXTERNAL_ID_CLAIM=upn
+```
+
+A [section has been added](/docs/admin/oidc-auth/#using-a-different-id-claim) to the docs to detail its use.
+
 
 ### Permission System Changes
 
-TODO
+A large amount of time over the last two months was spent on revamping permissions in an effort to allow user-specific content permissions.
+Unfortunately, this hit some performance & complexity blockers so is not something to be included at this time but it did lead me to discover
+a range of complex permission scenarios for which the logic was inconsistent or could be based on assumption.
+Such problematic scenarios were primarily [introduced as of BookStack v22.10](/blog/bookstack-release-v22-10/#redesigned-content-permission-control)
+since this added the ability to combine role permissions with other permission controls.
+
+Diving into this, I decided to spend time defining exactly how permissions should interplay to ensure consistency.
+This was developed alongside a range of [scenario definitions](https://github.com/BookStackApp/BookStack/blob/8367a94e90e5e1bf7d06defe30d570ade2f00599/dev/docs/permission-scenario-testing.md), 
+each of which is backed by automated functional application tests of our permission systems.
+
+Our "Roles and Permissions" documentation page has been updated with [a new section](/docs/user/roles-and-permissions/#advanced-permission-logic) 
+to provide a functional overview of how permissions are applied in more complex cases.
+
+These changes do mean that, upon upgrade, permissions resolution for content may differ to that of previous versions of BookStack
+although this should only be in very complex cases that have only been possible since BookStack v22.10.
+I very much don't like to introduce changes to permissions & existing access control, since providing a stable upgrade path is very important to me,
+but the changes here were required due to current inconsistent handling.
 
 ### Translations
 
-TODO
+A humongous heap of thanks once again to all the below people that have helped translate BookStack 
+text since the original v22.11 release:
 
 - user - *language*
 
 ### Next Steps
 
-TODO
+The next release will be relatively boring. I'm dedicating the slightly shorter month to updating our framework 
+and some libraries used so we're not falling too far behind. 
+As part of this, the minimum version of PHP will be increased to PHP 8.0, so some work will be going into supporting
+our main installation routes & scripts with upgrade path guidance.
+
+As touched upon in the v22.11 release post, I've started building a "Hacks" area of the site to centrally store and share 
+various customizations that I've provided using the theme systems and other methods. 
+I'll likely soon write another blogpost to specific detail this once ready.
+
+### BookStack on Mastodon
+
+On a somewhat unrelated note, I recently set-up an official Mastodon account for BookStack
+which can be found at [@bookstack@fosstodon.org](https://fosstodon.org/@bookstack).
+
+I was originally quite stubborn on setting this up, after users requested we move from Twitter, since I was instead hoping that Twitter would at least meet its downfall first
+so it wouldn't add yet another social channel to manage.
+After begrudgingly setting up the account, i've quickly become quite fond of Mastodon due to the user control provided
+and lack of algorithm so have since also [personally moved across](https://fosstodon.org/@danb).
+The BookStack Twitter account will remain active and used, at least for now.
 
 ### Full List of Changes
 

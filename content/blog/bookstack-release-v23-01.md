@@ -30,14 +30,14 @@ This addition allows the upload and easy setting of a custom application icon th
 by browsers as the icon for a tab, or often by mobile devices to use as an "App" icon when creating a
 webpage shortcut.
 
-TODO - Image of new control
+![Screenshot of an "Application Icon" setting with a preview image showing a cat](/images/2023/01/app_icon_setting.png)
 
 This is a separate option to the application logo since they're used in different areas in different ways,
 and the icon is expected to be a fixed-square size whereas the logo may vary in aspect ratio.
 Upon upload BookStack resizes the provided image into a range of sizes for good general compatibility
 across different browsers, devices and platforms. 
 
-TODO - Image of icon on mobile device?
+![A row of mobile app icons, with a BookStack-labelled cat icon in the centre](/images/2023/01/mobile_app_icon.webp)
 
 While you could already hack-in a custom icon via various means, this should it much easier and accessible
 to those that don't want to hack about with code or web-servers.
@@ -48,7 +48,7 @@ Continuing the theme of customization settings, the provided color options have 
 The main addition is that different controls are now available for light and dark mode, meaning you can
 set different colors to best suit the mode and theme.
 
-TODO - Image of color scheme block
+![View of a "Application Color Scheme" panel with color controls and separate dark & light mode sections](/images/2023/01/app_color_scheme.png)
 
 To support choosing good colors, the interface will jump between light or dark mode as you select the relevant tabs.
 It was always tricky to select colors that worked well cross-theme, while ensuring good contrast and legibility,
@@ -60,7 +60,7 @@ since the primary color was also used for many non-text focused use-cases such a
 which made choosing a color, which worked across all these areas, difficult to achieve.
 Splitting these out now provides a little more control to get the right look with great usability.
 
-TODO - Link color usage?
+![Screenshot of a page view in BookStack, showing different colors between the actions sidebar and header banner](/images/2023/01/app_link_color_usage.png)
 
 BookStack has set new defaults for the dark-mode colors, but those upgrading will find their color settings 
 auto-copied across to ensure minimal change upon system update, although you can just then change these settings thereafter.
@@ -77,24 +77,21 @@ have a positive impact to all users. Changes include:
 - Multi-select and drag, once previously available, has now been fixed.
 - The "Other books" sidebar is now sticky on desktop, meaning you don't need to scroll back up to find this box when sorting long books.
 - The book sort boxes are now collapsible, which can useful when sorting multiple large books. 
+- Sort items show drag-handles to make it clear you're able to drag & drop.
 - Some intro text has been added to help guide users. 
 
-TODO - Image of sort with a collapsed and non-collapsed book, showing expanded menu controls for a page.
+![Screenshot of the BookStack sort view for a book, featuring a collapsed book and a dropdown menu providing move actions for a page](/images/2023/01/book_sort.png)
 
 ### Code Block Additions
 
 Since v22.11 a few new code languages have been added for code-highlighting and code-editor support:
 
 - Scheme
-- SQL variants:
-   - MySQL
-   - MSSQL
-   - PostgreSQL
-   - SQLite
-- Twig
-- Smarty
+- SQL variants: MySQL, MSSQL, PostgreSQL, SQLite
+- Twig (PHP Templating Engine)
+- Smarty (PHP Templating Engine)
 
-TODO - Image of code editor with one of these used?
+![Screenshot of the BookStack code editor, showing "Twig" templating code being correctly highlighted](/images/2023/01/twig_code.png)
 
 ### OIDC Auth ID Configuration Option
 

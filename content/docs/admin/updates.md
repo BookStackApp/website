@@ -39,6 +39,11 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.01 or higher
+
+**Permission Changes** - There have been changes to the permission system which can affect how permissions apply and therefore could lead to changes in provided abilities upon update. This is only really relevant to complex permission scenarios that have only been possible since BookStack v22.10. Please see the [Permission System Changes section of the v23.01 blogpost](/blog/bookstack-release-v23-01/#permission-system-changes) for more details on this.
+
+**Database Upgrade Time** - Changes to the permission system have required permissions to be regenerated upon update. Due to this, the `php artisan migrate` upgrade step may take extra time to run, especially where there's a lot of content and/or roles in the system.
 
 #### Updating to v22.10 or higher
 

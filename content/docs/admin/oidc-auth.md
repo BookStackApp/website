@@ -122,6 +122,25 @@ OIDC_DUMP_USER_DETAILS=false
 Further to this, details of any BookStack errors encountered can be found by following
 our [general debugging documentation](/docs/admin/debugging/).
 
+### Using a Different ID Claim
+
+By default, BookStack will use the `sub` claim as a unique identifier to match up a user
+between BookStack and the identify provider.
+For the vast majority of use-cases, this is fine since this claim is part of the 
+OIDC standard.
+
+In some very select scenarios, you may want to use a different claim as the unique identifier.
+This can be done by setting an `OIDC_EXTERNAL_ID_CLAIM` option in your `.env` like shown below,
+where the value of the option is the name of the claim:
+
+```bash
+# Configure a custom ID Token claim to be used as the
+# "External Authentication ID" within BookStack.
+OIDC_EXTERNAL_ID_CLAIM=upn
+```
+
+Note that changing this with existing BookStack OIDC users, without changing their "External Authentication ID" values,
+may cause issues upon future login since their existing store ID in BookStack may no longer align.
 
 ### Group Sync
 

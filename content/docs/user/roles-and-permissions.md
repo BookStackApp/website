@@ -47,3 +47,22 @@ in a single action where required.
 When custom content level permissions are active and affecting the currently viewed item, you'll see an indicator within the details sidebar section. If you have permission to edit the active content level permissions, this acts as a link which will take you to the relevant permissions view, even if applied to a parent chapter or book.
 
 ![Content level permissions indicator for a page showing "Book Permissions Active"](/images/docs/user/permissions-active-indicator.png)
+
+### Advanced Permission Logic
+
+With all the different permission options in BookStack, the scenarios and logic can become quite complex as these combine & stack.
+To help make sense of permission control interplay, below are some general high-level rules that BookStack follows.
+Within the below, "content permissions" refers to those set directly on shelves, books, chapters and pages.
+
+There are three main levels of permission, which have different levels of specificity. <br>
+**From least specific to most specific**:
+
+1. Role permissions (Edited via the "Roles" interface).
+2. Content "Other Users" permissions (Edited via the "Permissions" view for an item).
+3. Role-specific content permissions (Also edited via the "Permissions" view for an item).
+
+With those levels in in mind:
+
+- Most specific permission application (as above) take priority and can deny less specific permissions.
+- Parent role-specific content permissions, that may be inherited ("Other Users" Inheriting checkbox active), are considered to essentially be applied on the item they are inherited to unless a lower level has its own permission rule for that specific role.
+- Where both grant and deny exist at the same specificity, we side towards grant.

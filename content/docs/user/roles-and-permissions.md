@@ -58,11 +58,11 @@ There are three main levels of permission, which have different levels of specif
 **From least specific to most specific**:
 
 1. Role permissions (Edited via the "Roles" interface).
-2. Content "Other Users" permissions (Edited via the "Permissions" view for an item).
+2. Content "Everyone Else" permissions (Edited via the "Permissions" view for an item).
 3. Role-specific content permissions (Also edited via the "Permissions" view for an item).
 
 With those levels in in mind:
 
 - Most specific permission application (as above) take priority and can deny less specific permissions.
-- Parent role-specific content permissions, that may be inherited ("Other Users" Inheriting checkbox active), are considered to essentially be applied on the item they are inherited to unless a lower level has its own permission rule for that specific role.
+- Parent role-specific content permissions, that may be inherited ("Everyone Else" Inheriting checkbox active), are considered to essentially be applied on the item they are inherited to unless a lower level has its own permission rule for that specific role.
 - Where both grant and deny exist at the same specificity, we side towards grant.

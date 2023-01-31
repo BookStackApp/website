@@ -2,32 +2,31 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.01"
-date = 2023-01-31T12:00:00Z
+date = 2023-01-31T11:45:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/snow-doggo-tadeusz-lakota.jpg"
 slug = "bookstack-release-v23-01"
 draft = false
 +++
 
-To start off our releases for the year we have v23.01 which adds many user experience enhancements and 
-options while also making subtle back-end further changes to permissions.
+To start off our releases for the year we have BookStack v23.01 which adds many user experience enhancements &
+options while also making subtle further back-end changes to permissions.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v23.01)
 
 **Upgrade Notices**
 
-- **Permission Changes** - There have been changes to the permission system which can affect how permissions apply and therefore could lead to changes in provided abilities upon update. This is only really relevant to complex permission scenarios that have only been possible since BookStack v22.10. Please see the [Permission System Changes](#permission-system-changes) section below for more details on this.
-- **Database Upgrade Time** - Changes to the permission system have required permissions to be regenerated upon update. Due to this, the `php artisan migrate` upgrade step may take extra time to run, especially where there's a lot of content and/or roles in the system.
+- **Permission Changes** - There have been changes to the permission system which can affect how permissions apply and therefore could lead to changes in provided abilities upon upgrade. This is only really relevant to complex permission scenarios that have only been possible since BookStack v22.10. Please see the [Permission System Changes](#permission-system-changes) section below for more details on this.
+- **Database Upgrade Time** - Changes to the permission system have required permissions to be regenerated upon upgrade. Due to this, the `php artisan migrate` upgrade step may take extra time to run, especially where there are a lot of content and/or roles in the system.
 
-TODO - YouTube
-<!-- {{<yt 9Oz6-YOeiuU>}} -->
+{{<yt W7I2Hlcj1QA>}}
 
 ### App Icon Control
 
 We have a new customization setting!
-This addition allows the upload and easy setting of a custom application icon that will be used
-by browsers as the icon for a tab, or often by mobile devices to use as an "App" icon when creating a
+This addition allows the upload and easy use of a custom application icon that will be utilized
+by browsers as the tab icon, or often by mobile devices to use as an "App" icon when creating a
 webpage shortcut.
 
 ![Screenshot of an "Application Icon" setting with a preview image showing a cat](/images/2023/01/app_icon_setting.png)
@@ -39,7 +38,7 @@ across different browsers, devices and platforms.
 
 ![A row of mobile app icons, with a BookStack-labelled cat icon in the centre](/images/2023/01/mobile_app_icon.webp)
 
-While you could already hack-in a custom icon via various means, this should it much easier and accessible
+While you could already hack-in a custom icon via various means, this should make it much easier and accessible
 to those that don't want to hack about with code or web-servers.
 
 ### New Color Scheme Controls
@@ -57,7 +56,7 @@ so hopefully this will be quite a welcome addition to address that concern.
 A more subtle addition to the color controls is a new "Default Link Color" option.
 Links and actions within the interface would previously use the primary color, but this could be problematic
 since the primary color was also used for many non-text focused use-cases such as the header banner and other decorations
-which made choosing a color, which worked across all these areas, difficult to achieve.
+which made choosing a color, which worked well across all these areas, difficult to achieve.
 Splitting these out now provides a little more control to get the right look with great usability.
 
 ![Screenshot of a page view in BookStack, showing different colors between the actions sidebar and header banner](/images/2023/01/app_link_color_usage.png)
@@ -69,22 +68,22 @@ auto-copied across to ensure minimal change upon system update, although you can
 ### Book Sorting Experience Upgrades
 
 The book sort interface has received a fair bit of attention to make the experience more pleasant than ever.
-The changes here were primary to ensure usability via screen-reader and keyboard-only-use, but such changes can
-have a positive impact to all users. Changes include:
+The changes here were primarily to ensure usability via screen-reader and keyboard-only-use, but such changes can
+have a positive impact to all. Changes include:
 
-- Sort items will now show up & down buttons to allow quick sorting without drag+drag.
+- Sort items will now show up & down buttons to allow quick sorting without drag+drop.
 - A new menu on sort-items provides a range contextual actions such as "Move to Next Book" or "Move to Previous Chapter".
-- Multi-select and drag, once previously available, has now been fixed.
+- Multi-select and drag, once previously available but since broken, has now been fixed.
 - The "Other books" sidebar is now sticky on desktop, meaning you don't need to scroll back up to find this box when sorting long books.
-- The book sort boxes are now collapsible, which can useful when sorting multiple large books. 
+- The "book" sort boxes are now collapsible, which is useful when sorting multiple large books. 
 - Sort items show drag-handles to make it clear you're able to drag & drop.
 - Some intro text has been added to help guide users. 
 
 ![Screenshot of the BookStack sort view for a book, featuring a collapsed book and a dropdown menu providing move actions for a page](/images/2023/01/book_sort.png)
 
-### Code Block Additions
+### Code Language Additions
 
-Since v22.11 a few new code languages have been added for code-highlighting and code-editor support:
+Since the original v22.11 release a few new code languages have been added for code-highlighting and code-editor support:
 
 - Scheme
 - SQL variants: MySQL, MSSQL, PostgreSQL, SQLite
@@ -138,7 +137,28 @@ but the changes here were required due to current inconsistent handling.
 A humongous heap of thanks once again to all the below people that have helped translate BookStack 
 text since the original v22.11 release:
 
-- user - *language*
+- RandomUser0815 - *German Informal*
+- Matthias Mai (schnapsidee) - *German; German Informal*
+- 10935336 - *Chinese Simplified*
+- Naoto Ishikawa (na3shkw) - *Japanese*
+- Maciej Lebiest (Szwendacz) - *Polish*
+- m0uch0 - *Spanish*
+- Pafzedog - *French*
+- Angelos Chouvardas (achouvardas) - *Greek*
+- Xabi (xabikip) - *Basque*
+- David Furman (thefourCraft) - *Hebrew*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Jan Mitrof (jan.kachlik) - *Czech*
+- Martin Sebek (sebekmartin) - *Czech*
+- Adrian Ocneanu (aocneanu) - *Romanian*
+- sdhadi - *Persian*
+- scureza - *Italian*
+- SmokingCrop - *Dutch*
+- rndrss - *Portuguese, Brazilian*
+- Eduardo Castanho (EduardoCastanho) - *Portuguese*
+- VIET NAM VPS (vietnamvps) - *Vietnamese*
+- rirac294 - *Russian*
+- m4tthi4s - *French*
 
 ### Next Steps
 

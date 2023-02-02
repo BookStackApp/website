@@ -39,6 +39,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.01.1 or higher
+
+**Security** - v23.01.1 patches a vulnerability in PDF generation that could be used to make server-side requests or run potential other PHP code.
+
 #### Updating to v23.01 or higher
 
 **Permission Changes** - There have been changes to the permission system which can affect how permissions apply and therefore could lead to changes in provided abilities upon update. This is only really relevant to complex permission scenarios that have only been possible since BookStack v22.10. Please see the [Permission System Changes section of the v23.01 blogpost](/blog/bookstack-release-v23-01/#permission-system-changes) for more details on this.

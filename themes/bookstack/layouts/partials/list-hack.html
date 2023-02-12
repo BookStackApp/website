@@ -1,0 +1,12 @@
+{{ $baseurl := .Site.BaseURL }}
+<a href="{{ .RelPermalink }}" class="hack-box {{ .Section }}">
+    <div class="hack-header">
+        <h2 class="hack-title">{{ .Title }}</h2>
+    </div>
+    <section class="hack-excerpt">
+        <p>{{ .Summary }} <span class="read-more">&raquo;</span></p>
+    </section>
+    <div class="hack-meta">
+        Last Tested On {{ .Params.tested }}
+    </div>
+</a>

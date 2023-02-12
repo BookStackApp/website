@@ -6,12 +6,13 @@
 {{ end }}
 {{ $type := .Get "type" }}
 {{ $md := printf "```%s\n%s\n```" $ext (readFile $file) }}
+{{ $mdLen := len (split $md "\n") }}
 
 
 <div class="hack-file-wrapper">
 
     
-    <details>
+    <details {{if lt $mdLen 15}}open{{end}}>
         <summary class="hack-file-block">
             <div class="hack-file-block-filename">{{ $filename }}</div>
         

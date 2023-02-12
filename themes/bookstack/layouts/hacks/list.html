@@ -1,0 +1,49 @@
+{{ partial "header.html" . }}
+
+{{ $baseurl := .Site.BaseURL }}
+
+<div class="shaded primary">
+	<div class="container hero padded-vertical">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<h1 class="text-left">{{.Title}}</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-sm-8 col-sm-offset-2">
+
+			<p class="margins-vertical large">
+				This part of the site lists available "hacks" that can be applied to customize
+				BookStack or extend its functionality.
+				These hacks are not official supported and can cause instability, introduce issues and may conflict with future updates. Apply at your own risk!  
+			</p>
+
+			<div class="margins-vertical large text-left">
+				<a href="/hacks/applying/" target="_blank">Applying Hacks</a>
+				<span class="inline block margins-horizontal muted">|</span>
+				<a href="https://github.com/BookStackApp/hacks" target="_blank">Hacks Source Repo</a>
+			</div>
+
+			{{ $paginator := .Paginate (where .Pages "Params.Author" "!=" nil) }}
+
+			<div class="hack-box-list">
+			{{ range $paginator.Pages }}
+				{{ partial "list-hack" .}}
+			{{ end }}
+			</div>
+		
+
+			{{ partial "pagination" $paginator }}
+
+		</div>
+
+	</div>
+</div>
+
+{{ partial "footer.html" . }}

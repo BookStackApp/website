@@ -643,3 +643,56 @@ details[open] .hack-file-block-filename:before {
     width: 1.6em;
   }
 }
+
+.hack-box-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hack-box {
+  background-color: #FFF;
+  border: 1.5px solid #e2e2e2;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: #222;
+  margin-bottom: 1rem;
+  min-width: 180px;
+  flex-basis: 320px;
+  flex-grow: 1;
+  h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0 1rem;
+  }
+  .hack-excerpt {
+    display: -webkit-box;
+    padding: 0 1rem;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: .5rem;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .hack-meta {
+    padding: 0 1rem;
+    font-size: .9rem;
+    color: #444;
+    margin-top: auto;
+  }
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.15);
+    color: #000;
+    h2 {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+}

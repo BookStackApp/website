@@ -19,16 +19,12 @@
           <li><a href="/hacks/applying/">Applying Hacks</a></li>
           <li><a href="https://github.com/BookStackApp/hacks">Hacks Source Repo</a></li>
         </ul>
-        <div>
-          <h4>Latest Hacks</h4>
-        </div>
+      </div>
+      <div>
+        <h4>Other Hacking</h4>
         <ul>
-        <ul>
-          {{ range first 8 ( where .Site.RegularPages "Section" "hacks") }}
-            {{ if .Params.Date }}
-            <li><a href="{{.Permalink}}">{{ .Title }}</a></li>
-            {{ end }}
-          {{ end }}
+          <li><a href="/docs/admin/hacking-bookstack/">All Hacking Methods</a></li>
+          <li><a href="https://github.com/BookStackApp/api-scripts">Example API Scripts</a></li>
         </ul>
       </div>
       <div class="sidebar-inner mobile">
@@ -55,7 +51,7 @@
 
       <h1>{{.Title}}</h1>
 
-      {{ if .Params.Date }}
+      {{ if .Params.Tested }}
       <ul class="hack-meta">
         {{ $author := .Params.Author }}
         <li><strong>Author:</strong> <a href="https://github.com/{{ strings.TrimLeft "@" $author }}" target="_blank">{{ $author }}</a></li>
@@ -66,6 +62,21 @@
       {{ end }}
 
       {{.Content}}
+
+
+      {{ if .Params.Tested }}
+      <hr>
+
+      <h4>Latest Hacks</h4>
+
+      <div class="hack-box-list">
+        {{ range first 5 ( where .Site.RegularPages "Section" "hacks") }}
+        {{ if .Params.Date }}
+          {{ partial "list-hack" .}}
+        {{ end }}
+      {{ end }}
+      </div>
+      {{ end }}
 
     </main>
   </div>

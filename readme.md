@@ -11,12 +11,16 @@ The "extended" version of hugo must be used (Has support for certain features li
 * Docs - `content/docs`
 * Theme - `themes/bookstack`
 
+### Hacks
+
+The website also contains a repository of customization hacks which can be found at [the /hacks](https://www.bookstackapp.com/hacks/) part of the site. 
+These are managed via a [separate "Hacks" repo](https://github.com/BookStackApp/hacks) which is part of this repository as a git submodule. A symlink is then used to point the `content/hacks` directory to the `hacks/content` directory, where `hacks` is the submodule location.
+
 ### Theme
 
 The theme is custom made with snippets taken from the [hugo capser theme](https://github.com/vjeantet/hugo-theme-casper).
 
 SCSS is used for the styling. Install NPM dependencies via `npm install` or `yarn` then you can use `npm run build` to build the css and site once or `npm run dev` to watch for changes.
-
 
 ### Search
 

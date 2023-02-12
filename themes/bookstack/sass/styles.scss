@@ -585,6 +585,7 @@ iframe[src^="https://www.youtube-nocookie.com"],
   border: 1.5px solid #e2e2e2;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
   border-radius: 4px;
+  margin-bottom: 1rem;
   .chroma {
     margin: -1px;
   }
@@ -660,7 +661,6 @@ details[open] .hack-file-block-filename:before {
   display: flex;
   flex-direction: column;
   color: #222;
-  margin-bottom: 1rem;
   min-width: 180px;
   flex-basis: 320px;
   flex-grow: 1;

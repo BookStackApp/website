@@ -70,7 +70,7 @@
       <h4>Latest Hacks</h4>
 
       <div class="hack-box-list">
-        {{ range first 5 ( where .Site.RegularPages "Section" "hacks") }}
+        {{ range first 4 ( where .Site.RegularPages "Section" "hacks") }}
         {{ if .Params.Date }}
           {{ partial "list-hack" .}}
         {{ end }}

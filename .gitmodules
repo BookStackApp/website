@@ -1,0 +1,3 @@
+[submodule "hacks"]
+	path = hacks
+	url = git@github.com:BookStackApp/hacks.git

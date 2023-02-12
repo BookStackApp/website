@@ -252,9 +252,9 @@ p.neg, p .neg, span.neg, .text-neg {
 }
 
 p.muted, p .muted, span.muted, .text-muted {
-	color: lighten($text-dark, 26%);
+	color: lighten($text-dark, 13%);
     &.small, .small {
-      color: lighten($text-dark, 42%);
+      color: lighten($text-dark, 28%);
     }
 }
 

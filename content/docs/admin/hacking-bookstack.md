@@ -13,6 +13,12 @@ _**Note: Customisation options on this page are not deemed to be stable or offic
 
 ---
 
+### BookStack Hacks Directory
+
+This website has a directory of available hacks [which can be found here](/hacks/).
+These make use of the [Custom HTML Head Option](#custom-html-head-option), [Visual Theme System](#visual-theme-system) and [Logical Theme System](#logical-theme-system) options listed below.
+
+---
 
 ### BookStack API
 
@@ -29,6 +35,7 @@ BookStack has a built-in REST API for external interaction and consumption of yo
 
 Within the settings area you'll find a 'Custom HTML head content' setting. You can use this to add in any custom JavaScript or CSS content which enables you to override default BookStack functionality and styles.
 
+You can find examples of custom HTML Head customizations on the [hacks part of this site](/hacks/).
 
 ---
 
@@ -39,6 +46,7 @@ Documentation for this system is contained within [the project repo here](https:
 
 _**Note: The files that can be override using the theme system are not deemed to be stable. BookStack core files may change on any release causing changes in behaviour to your overrides. Theme overrides are not officially supported in any way.**_
 
+You can find examples visual theme system customizations on the [hacks part of this site](/hacks/).
 
 ---
 
@@ -49,6 +57,8 @@ This works by hooking into specific events where you can then perform custom act
 Documentation for this system is contained within [the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md).
 
 _**Note: Only the API described in the logical-theme-system document is considered stable & supported. Any usage of other application classes is regarded as unstable and unsupported.**_
+
+You can find examples of logical theme system customizations on the [hacks part of this site](/hacks/).
 
 ---
 

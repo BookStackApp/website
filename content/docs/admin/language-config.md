@@ -24,6 +24,7 @@ APP_LANG=fr
 The value of the `APP_LANG` variable must be a valid locale code matching one of the following options:
 
 * Arabic - `ar`
+* Basque - `eu`
 * Bosnian - `bs`
 * Bulgarian - `bg`
 * Catalan - `ca`

@@ -45,7 +45,7 @@ MAIL_FROM_NAME=BookStack
 
 #### Sendmail
 
-The `sendmail` drivers uses the sendmail application on the host system. It will call `/usr/sbin/sendmail -bs`.
+The `sendmail` drivers uses the sendmail application on the host system. By default it will call `/usr/sbin/sendmail -bs` although this is configurable.
 
 To enable this option you can set the following in your `.env` file:
 
@@ -57,6 +57,9 @@ MAIL_FROM=noreply@yourdomain.tld
 
 # The "from" name used for outgoing email
 MAIL_FROM_NAME=BookStack
+
+# The command to use for calling sendmail
+MAIL_SENDMAIL_COMMAND="/usr/sbin/sendmail -bs"
 ```
 
 #### Debugging Email

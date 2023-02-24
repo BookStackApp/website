@@ -39,6 +39,29 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.02 or higher
+
+**PHP Version Requirement Change** - The minimum required version of PHP has changed from 7.4 to 8.0.2. This should not be a concern for those that are using common containers. Installations via our Ubuntu 22.04 install script are already using PHP 8.1 and therefore they don't need to be upgraded at this time.
+
+For installs that have used our Ubuntu 18.04 and Ubuntu 20.04 install scripts, PHP can generally be upgraded to 8.2 using the below commands:
+
+*Warning: If you run other applications on this machine, PHP applications in particular, then those may be affected by these changes also.*
+
+```bash
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install -y php8.2 php8.2-curl php8.2-mbstring php8.2-ldap php8.2-xml php8.2-zip php8.2-gd php8.2-mysql libapache2-mod-php8.2
+sudo a2dismod php7.2 php7.4 php7.3 php8.0 php8.1
+sudo a2enmod php8.2
+sudo systemctl restart apache2
+```
+
+You may also need to [update composer](#updating-composer) to be compatible with php8.2.
+
+**Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return type has changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types.
+
 #### Updating to v23.01.1 or higher
 
 **Security** - v23.01.1 patches a vulnerability in PDF generation that could be used to make server-side requests or run potential other PHP code.
@@ -94,10 +117,7 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 #### Updating to v21.12.3 or higher
 
-**Composer Version Requirement Change** - Composer v2.0 or greater is now required to install or update BookStack. 
-You can check your composer version by running `composer -V`. 
-You can often update composer by running `sudo composer self-update` (Or you may be prompted to run `sudo composer self-update --2`).
-If you're using a system-supplied composer package you may need to first uninstall that (eg. `sudo apt remove composer`) then follow the [composer download documentation](https://getcomposer.org/download/) to get the latest version. Take notice of the `sudo mv composer.phar /usr/local/bin/composer` command shown in the documentation to install composer globally for easier usage.
+**Composer Version Requirement Change** - Composer v2.0 or greater is now required to install or update BookStack. See the ["Updating Composer"](#updating-composer) section of this page below.
 
 #### Updating to v21.12.1 or higher
 
@@ -304,3 +324,12 @@ The v0.13 release contained some new features and updates which change the requi
   - On Ubuntu 16.04 this can be installed via `sudo apt install php7.0-tidy`.
   - On Ubuntu 14.04 (Using the default PHP option) this can be installed via `sudo apt-get install php5-tidy`.
 * Page attachments will be stored in the `storage/uploads` folder (Unless you use Amazon S3). This folder will be created on update. Ensure your webserver has write permissions for this folder.
+
+---
+
+### Updating Composer
+
+You can check your current composer version by running `composer -V`. 
+You can often update composer by running `sudo composer self-update` (Or you may be prompted to run `sudo composer self-update --2`).
+
+If you're using a system-supplied composer package you may need to first uninstall that (eg. `sudo apt remove composer`) then follow the [composer download documentation](https://getcomposer.org/download/) to get the latest version. Take notice of the `sudo mv composer.phar /usr/local/bin/composer` command shown in the documentation to install composer globally for easier usage.

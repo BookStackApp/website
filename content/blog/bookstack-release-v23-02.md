@@ -9,6 +9,9 @@ slug = "bookstack-release-v23-02"
 draft = false
 +++
 
+BookStack v23.02 is here, acting primarily as a maintenance release to
+upgrade the underlying framework while optimizing things and making
+a few other additions.
 
 * [Update instructions](https://www.bookstackapp.com/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v23.02)
@@ -18,7 +21,8 @@ TODO - Required docs updates
 
 **Upgrade Notices**
 
-- **Thing** - info
+- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 7.4 to PHP 8.0.2 in this release. Please see the [version-specific update instructions](/docs/admin/updates/#updating-to-v2302-or-higher) for this release for guidance on updating PHP. 
+- **Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return type has changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types.
 
 <!-- {{<yt W7I2Hlcj1QA>}} -->
 

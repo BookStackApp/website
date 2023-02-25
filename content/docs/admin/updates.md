@@ -45,7 +45,7 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 For installs that have used our Ubuntu 18.04 and Ubuntu 20.04 install scripts, PHP can generally be upgraded to 8.2 using the below commands:
 
-*Warning: If you run other applications on this machine, PHP applications in particular, then those may be affected by these changes also.*
+*Warning: If you run other applications on this machine, PHP applications in particular, then those may also be affected by these changes.*
 
 ```bash
 sudo apt update
@@ -58,7 +58,7 @@ sudo a2enmod php8.2
 sudo systemctl restart apache2
 ```
 
-You may also need to [update composer](#updating-composer) to be compatible with php8.2.
+You may also need to [update composer](#updating-composer) to be compatible with PHP 8.2.
 
 **Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return type has changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types.
 

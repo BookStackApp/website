@@ -18,8 +18,8 @@ a few other additions.
 
 **Upgrade Notices**
 
-- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 7.4 to PHP 8.0.2 in this release. Please see the [version-specific update instructions](/docs/admin/updates/#updating-to-v2302-or-higher) for this release for guidance on updating PHP. 
-- **Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return type has changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types.
+- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 7.4 to PHP 8.0.2 in this release. Please see the [v23.02 version-specific update instructions](/docs/admin/updates/#updating-to-v2302-or-higher) for guidance on updating PHP. 
+- **Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return types have changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types if using this logical theme system event.
 
 <!-- {{<yt W7I2Hlcj1QA>}} -->
 
@@ -38,16 +38,17 @@ This adds list, create, read, update & delete endpoints allowing
 integration and automation of role management where desired, working
 in support with the existing user API endpoints.
 
-TODO - Image of role endpoints in docs?
+![List of REST api endpoints from the BookStack REST API docs](/images/2023/02/rest-api-endpoints.png)
+
 
 ### Shelf Book Sort Enhancements
 
 The shelf edit view has received more attention to generally improve
 the user experience of managing books on the shelf, with the primary
-aim of making the interface usable via keyboard & screen-reader use, 
+aim of making the interface usable via keyboard & screen-reader, 
 much like the book sort additions in the last release.
 
-TODO - Image of shelf book edit with dropdown sort menu
+![Shelf edit view showing book sorting actions](/images/2023/02/shelves-edit-form-books-sort.png)
 
 Also added to the view is a new dropdown menu containing quick
 sort actions so you can quickly sort by common categories such
@@ -64,6 +65,8 @@ could be desired, so this can now be configured like so:
 ```bash
 MAIL_SENDMAIL_COMMAND="/my/path/to/sendmail -bs"
 ```
+
+[Sendmail configuration documentation](/docs/admin/email-webhooks/#sendmail).
 
 ### System Performance Improvements
 
@@ -89,7 +92,9 @@ and, while this was used in the vast majority of scenarios, there
 could be certain edge-cases you'd still see the default BookStack favicon.
 
 To help with this, BookStack will now also generate a `favicon.ico` file
-(if permissions allow) using your custom supplied icon file.
+(if file permissions allow) using your custom supplied icon file.
+
+![Preview of a cat image used as a custom tab icon image](/images/2023/02/favicon-preview.png)
 
 ### Translations
 
@@ -97,7 +102,22 @@ Once again a big thanks to our brilliant translators that help keep
 the language text of BookStack up-to-date. All those listed
 below have contributed translations since the last feature release:
 
-- User - *Language*
+- Ole Aldric (Swoy) - *Norwegian Bokmal*
+- VIET NAM VPS (vietnamvps) - *Vietnamese*
+- Eduardo Castanho (EduardoCastanho) - *Portuguese*
+- toras9000 - *Japanese*
+- scureza - *Italian*
+- Statium - *Russian*
+- 10935336 - *Chinese Simplified*
+- sdhadi - *Persian*
+- Indrek Haav (IndrekHaav) - *Estonian*
+- Jan Mitrof (jan.kachlik) - *Czech*
+- pathab - *German*
+- m0uch0 - *Spanish*
+- Éric Gaspar (erga) - *French*
+- Gábor Marton (dodver) - *Hungarian*
+- MichelSchoon85 - *Dutch*
+- Andrii Bodnar (andrii-bodnar) - *Ukrainian*
 
 
 ### Customization Hacks
@@ -106,6 +126,21 @@ Although not part of this release, during the last month I deployed the new [/ha
 where you can find different kinds of unsupported customizations that can be applied to BookStack.
 
 You can [find more information in this blogpost](/blog/hacks-on-the-site/).
+
+### LinuxServer Docker Guide & YouTube Monetization
+
+Another thing I've worked on in the past month is a video guide to common management operations
+when running BookStack in a docker based setup using a [linuxserver.io docker container](https://docs.linuxserver.io/images/docker-bookstack) setup. This covers updating, backing-up, restoring, running comments and other bits.
+I've been wanting to make this for a while since I'm often supporting users that have this setup so now I'll 
+be able to point to the video to save time in writing out detailed guidance.
+
+{{<yt 6A8hLuQTkKQ>}}
+
+Also on the YouTube side of things, I've now met the threshold to become a "YouTube Partner" so I can now
+earn from my videos, which I've enabled to act as an additional (yet minimal) passive income avenue
+to support work on BookStack. This looks like it'd maybe provide about £20 per month right now, but every little helps
+and this should slowly increase as the channel gets more subscribers.
+I have only enabled skippable ads though to keep interruption minimal.
 
 ### Next Steps
 
@@ -127,7 +162,20 @@ implementation proposal discussions.
 
 **Released in v23.02**
 
-TODO
+* Added user roles API endpoints. ([#4051](https://github.com/BookStackApp/BookStack/pull/4051), [#4034](https://github.com/BookStackApp/BookStack/issues/4034))
+* Added configuration option for the sendmail command. ([#4001](https://github.com/BookStackApp/BookStack/issues/4001))
+* Added sort actions and accessible controls to the shelf book management interface. ([#4049](https://github.com/BookStackApp/BookStack/pull/4049), [#4031](https://github.com/BookStackApp/BookStack/issues/4031), [#2050](https://github.com/BookStackApp/BookStack/issues/2050))
+* Updated framework to Laravel 9. ([#4021](https://github.com/BookStackApp/BookStack/pull/4021), [#3123](https://github.com/BookStackApp/BookStack/issues/3123))
+* Updated project minimum supported PHP version from 7.4 to 8.0.2. ([#4029](https://github.com/BookStackApp/BookStack/issues/4029))
+* Updated the URL length limit for link attachments to 2k characters. ([#4044](https://github.com/BookStackApp/BookStack/issues/4044))
+* Updated app icon handling to generate favicon.ico file where possible. ([#4032](https://github.com/BookStackApp/BookStack/pull/4032))
+* Updated setting loading to be more efficient. ([#4062](https://github.com/BookStackApp/BookStack/pull/4062))
+* Updated test handling with cleaner centralized filed/image handling. ([#3995](https://github.com/BookStackApp/BookStack/issues/3995))
+* Updated translations with latest Crowdin changes. ([#4025](https://github.com/BookStackApp/BookStack/pull/4025))
+* Fixed issue where uploaded images would not show in the gallery for draft pages. ([#4028](https://github.com/BookStackApp/BookStack/issues/4028))
+* Fixed issue with increasing WYSIWYG editor lag as pages grow. ([#3981](https://github.com/BookStackApp/BookStack/issues/3981))
+* Fixed potential pluralization issues in some languages. ([#4040](https://github.com/BookStackApp/BookStack/issues/4040))
+* Fixed slow response time when saving page due to URL parsing and handling. ([#3932](https://github.com/BookStackApp/BookStack/issues/3932))
 
 **Released in v23.01.1**
 

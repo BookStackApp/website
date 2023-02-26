@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.02"
-date = 2023-02-26T11:45:00Z
+date = 2023-02-26T11:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cow-aj-wallace.jpg"
 slug = "bookstack-release-v23-02"
@@ -21,7 +21,7 @@ a few other additions.
 - **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 7.4 to PHP 8.0.2 in this release. Please see the [v23.02 version-specific update instructions](/docs/admin/updates/#updating-to-v2302-or-higher) for guidance on updating PHP. 
 - **Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return types have changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types if using this logical theme system event.
 
-<!-- {{<yt W7I2Hlcj1QA>}} -->
+{{<yt pn9GnHWyQ_g>}}
 
 ### Framework Update
 

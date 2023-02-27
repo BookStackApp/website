@@ -18,7 +18,7 @@ a few other additions.
 
 **Upgrade Notices**
 
-- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 7.4 to PHP 8.0.2 in this release. Please see the [v23.02 version-specific update instructions](/docs/admin/updates/#updating-to-v2302-or-higher) for guidance on updating PHP. 
+- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 7.4 to PHP 8.2 in this release. Please see the [v23.02 version-specific update instructions](/docs/admin/updates/#updating-to-v2302-or-higher) for guidance on updating PHP. 
 - **Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return types have changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types if using this logical theme system event.
 
 {{<yt pn9GnHWyQ_g>}}

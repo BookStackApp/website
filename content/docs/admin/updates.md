@@ -41,7 +41,7 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 #### Updating to v23.02 or higher
 
-**PHP Version Requirement Change** - The minimum required version of PHP has changed from 7.4 to 8.0.2. This should not be a concern for those that are using common containers. Installations via our Ubuntu 22.04 install script are already using PHP 8.1 and therefore they don't need to be upgraded at this time.
+**PHP Version Requirement Change** - The minimum required version of PHP has changed from 7.4 to 8.2. This should not be a concern for those that are using common containers. Installations via our Ubuntu 22.04 install script are already using PHP 8.1 and therefore they don't need to be upgraded at this time.
 
 For installs that have used our Ubuntu 18.04 and Ubuntu 20.04 install scripts, PHP can generally be upgraded to 8.2 using the below commands:
 

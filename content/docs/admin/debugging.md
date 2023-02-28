@@ -16,6 +16,7 @@ This page details how you can find out more information about errors you may fac
     - [Blank White Screen on Access](#blank-white-screen-on-access)
     - [No Styles and Large Icons on Access](#no-styles-and-large-icons-on-access)
     - [Failing Database or Auth System Credentials](#failing-database-or-auth-system-credentials)
+    - [Dynamic Elements Not Working](#dynamic-elements-not-working)
     - [Broken Links or No Images After APP_URL Change](#broken-links-or-no-images-after-app_url-change)
 - [Submitting Issues](#submitting-issues)
 
@@ -69,6 +70,16 @@ special characters being handled different in the `.env` configuration. Ensure t
 ```txt
 DB_PASSWORD="hunter#2@"
 ```
+
+##### Dynamic Elements Not Working
+
+If certain dynamic elements, like dropdown menus or section tabs, are not working it often indicates that there
+may be other scripts interfering with BookStack's JavaScript code.
+
+- Check that the `APP_URL` option is set in your `.env` file and ensure it matches the URL you're accessing BookStack on (Including the "https://" or "http://" component).
+- If using Cloudflare, with it's DNS proxy feature, ensure that ["Rocket Loader" is disabled](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/enable/).
+- Check your "Custom HTML Head Content" customization setting and, if existing, temporarily remove any code in this setting to ensure it's not interfering. 
+- Use your browser developer tools to check the development console, and see if any errors exist.
 
 ##### Broken Links or No Images After APP_URL Change
 

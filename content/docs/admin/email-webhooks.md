@@ -30,7 +30,7 @@ MAIL_DRIVER=smtp
 # Host, Port & Encryption mechanism to use
 MAIL_HOST=smtp.provider.tld
 MAIL_PORT=465
-MAIL_ENCRYPTION=tls
+MAIL_ENCRYPTION=ssl
 
 # Authentication details for your SMTP service
 MAIL_USERNAME=user@provider.tld

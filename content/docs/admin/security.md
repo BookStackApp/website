@@ -105,7 +105,15 @@ depends on permissions you have set up at a role level and page level.
 
 If you are using Amazon S3 for file storage then access will depend on your S3 permission
 settings. Unlike images, BookStack will not automatically attempt to make uploaded attachments
-publically accessible.  
+publicly accessible.  
+
+---
+
+### Filesystem Permissions
+
+It's usually a good idea to limit the file and folder access privileges for the user/group used to run the application PHP, which is typically the user/group for PHP or the running web-server processes. Limiting permissions can help avoid a range of potential vulnerability exploits.
+
+Details on required [filesystem permissions can be found here](/docs/admin/filesystem-permissions/).
 
 ---
 

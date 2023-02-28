@@ -28,7 +28,9 @@ php artisan config:clear
 php artisan view:clear
 ```
 
-Check the below list for the version you are updating to for any additional instructions.
+Check the below [Version Specific Instructions](#version-specific-instructions) list for the version you are updating to for any additional instructions.
+
+When running update commands, your command line user will need permission to handle the required files and folders in the BookStack installation folder. You can find more details about [required filesystem permissions here](/docs/admin/filesystem-permissions/).
 
 ---
 

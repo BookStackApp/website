@@ -28,9 +28,10 @@ To get up and running with SMTP you will need to add, or set, the following vari
 MAIL_DRIVER=smtp
 
 # Host, Port & Encryption mechanism to use
+# Valid encryption values are: tls, ssl, null
 MAIL_HOST=smtp.provider.tld
-MAIL_PORT=465
-MAIL_ENCRYPTION=ssl
+MAIL_PORT=587
+MAIL_ENCRYPTION=tls
 
 # Authentication details for your SMTP service
 MAIL_USERNAME=user@provider.tld

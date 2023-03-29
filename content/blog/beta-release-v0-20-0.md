@@ -57,7 +57,7 @@ Previously images could not be secured behind authentication like page content i
 
 Some initial work for support custom views and themes has been added. BookStack is built on Laravel and therefore uses [blade template files](https://laravel.com/docs/5.5/blade) for rendering page content. This new system allows you to selectively override any blade view file that BookStack uses without altering any original BookStack code.
 
-***Note that this feature is very early-on in it's implementation and using it in a production environment is not advised at this time.***
+***Note that this feature is very early-on in its implementation and using it in a production environment is not advised at this time.***
 
 After updating, You'll find a `themes` folder in the top-folder-level of your BookStack install. Within this folder you can create a folder, 'my-custom-theme' for example, to house your view overrides. Within your `.env` file you can then set `APP_THEME=my-custom-theme`. When loading a view BookStack will then look in your specified theme folder before then defaulting to the stock BookStack views. The view will need to match the name and folder structure as those within the `resources/views/` directory.
 

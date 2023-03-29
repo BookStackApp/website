@@ -111,7 +111,7 @@ performing the copy has permission to edit those shelves (Since they'd effective
 
 Within the WYSIWYG editor it's always been tricky to edit code blocks on mobile, since it's usually done via a double-click
 which is often not possible on mobile browsers. This wasn't much of a problem before since the code editor popup was 
-very mobile unfriendly anyway but, with recent improvements to editing code its now more likely that users may edit code 
+very mobile unfriendly anyway but, with recent improvements to editing code it's now more likely that users may edit code 
 on such devices.
 
 To help access code blocks for edit, a toolbar will now show when a code block is selected with an action that will 

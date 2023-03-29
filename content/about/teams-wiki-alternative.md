@@ -19,7 +19,7 @@ These also have the ability to map BookStack user roles to auth system groups fo
 
 BookStack is built to be self-hosted and it can be done so without needing a great deal of resources.
 It's fundamentally a modern PHP application using MySQL as a datastore. 
-It can easily be ran on a 1GB RAM VM, and it's resource usage scales with system activity. 
+It can easily be ran on a 1GB RAM VM, and its resource usage scales with system activity. 
 
 ##### WYSIWYG Editor Experience, Markdown for Power Users
 

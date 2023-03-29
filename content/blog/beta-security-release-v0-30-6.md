@@ -20,7 +20,7 @@ You should upgrade to this released as soon as possible if you make use of page-
 
 ### Impact
 
-If a chapter was visible to a user, but all of it's pages were made not visible, then the details of these pages could be visible. Within the BookStack interface, the names of the pages and preview content could be seen. If the parent book was exported then this would include the content of the pages that had been restricted.
+If a chapter was visible to a user, but all of its pages were made not visible, then the details of these pages could be visible. Within the BookStack interface, the names of the pages and preview content could be seen. If the parent book was exported then this would include the content of the pages that had been restricted.
 
 ### Patches
 

@@ -189,7 +189,7 @@ since the initial v21.05 release:
 * Improved audit log user select list stability. ([#2863](https://github.com/BookStackApp/BookStack/issues/2863))
 * Fixed incorrect styling of favourites sidebar when using a non-default homepage option. ([#2783](https://github.com/BookStackApp/BookStack/issues/2783))
 * Fixed issue where empty HTML comments could cause errors. ([#2804](https://github.com/BookStackApp/BookStack/issues/2804))
-* Extracted not found text into it's own view for easier overridding ([58117bc](https://github.com/BookStackApp/BookStack/commit/58117bcf2d91b72620de3e34b0daa705da519f5e))
+* Extracted not found text into its own view for easier overridding ([58117bc](https://github.com/BookStackApp/BookStack/commit/58117bcf2d91b72620de3e34b0daa705da519f5e))
 * Fixed issue where translations system may attempt to load from the root directory when a theme was not in use. ([#2836](https://github.com/BookStackApp/BookStack/issues/2836))
 * Fixed issue where user profile pages item "View All" links used ids hence did not link to proper searches. ([#2857](https://github.com/BookStackApp/BookStack/issues/2857))
 

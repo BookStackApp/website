@@ -61,7 +61,7 @@ Previously BookStack would kind of respond to work on smaller devices but a lot 
 The header has now been updated to properly collapse down on mobile to reduce used vertical space.
 The old side drawer, containing extra details of the current view, has instead changed to a tabbed interface to save on precious horizontal space.
 
-The editing experience has been reworked to ensure its usable on mobile:
+The editing experience has been reworked to ensure it's usable on mobile:
 
 *v0.25 on the left, v0.26 on the right.*
 

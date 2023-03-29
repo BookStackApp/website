@@ -9,7 +9,7 @@ draft = false
 date = 2022-07-12T14:25:00Z
 +++
 
-Another year goes by with BookStack now being 7 years in development from it's
+Another year goes by with BookStack now being 7 years in development from its
 original commit on the 12th of July 2015. In this post we'll continue the yearly
 tradition of reviewing the figures while exploring how this year has proved different
 to the years before it.

@@ -218,7 +218,7 @@ systemctl restart apache2
 
 #### Updating to v0.30.6, v0.30.7 or higher
 
-**Security** - v0.30.6 and v0.30.7 both address issues where page content could be visible to those without permission. If a chapter was visible to a user, but all of it's pages were made not visible, then the details of these pages could be visible. Within the BookStack interface, the names of the pages and preview content could be seen. If the parent book was exported then this would include the content of the pages that had been restricted. If using BookStack v0.30.6, then all non-visible page content could be visible in plaintext exports. Please see the blog release pages for more details: [v0.30.6](/blog/beta-release-v0-30-6/), [v0.30.7](/blog/beta-release-v0-30-7/).
+**Security** - v0.30.6 and v0.30.7 both address issues where page content could be visible to those without permission. If a chapter was visible to a user, but all of its pages were made not visible, then the details of these pages could be visible. Within the BookStack interface, the names of the pages and preview content could be seen. If the parent book was exported then this would include the content of the pages that had been restricted. If using BookStack v0.30.6, then all non-visible page content could be visible in plaintext exports. Please see the blog release pages for more details: [v0.30.6](/blog/beta-release-v0-30-6/), [v0.30.7](/blog/beta-release-v0-30-7/).
 
 #### Updating to v0.30.5 or higher
 

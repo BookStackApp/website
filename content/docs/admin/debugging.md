@@ -77,7 +77,7 @@ If certain dynamic elements, like dropdown menus or section tabs, are not workin
 may be other scripts interfering with BookStack's JavaScript code.
 
 - Check that the `APP_URL` option is set in your `.env` file and ensure it matches the URL you're accessing BookStack on (Including the "https://" or "http://" component).
-- If using Cloudflare, with it's DNS proxy feature, ensure that ["Rocket Loader" is disabled](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/enable/).
+- If using Cloudflare, with its DNS proxy feature, ensure that ["Rocket Loader" is disabled](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/enable/).
 - Check your "Custom HTML Head Content" customization setting and, if existing, temporarily remove any code in this setting to ensure it's not interfering. 
 - Use your browser developer tools to check the development console, and see if any errors exist.
 

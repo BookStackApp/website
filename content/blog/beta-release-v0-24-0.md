@@ -59,7 +59,7 @@ With this release it's now possible to configure, per authentication option, if 
 
 This release brings quite a notable addition to BookStack's language support. Thanks to [@kmoj86](https://github.com/BookStackApp/BookStack/pull/945) Arabic is now a language choice. This is the first right-to-left language in BookStack so some functionality has been added to support right-to-left text.
 
-The WYSIWYG editor will now default it's text direction based on your language setting. In addition, If a right-to-left language is in use then additional toolbar options will show to provide control over text direction:
+The WYSIWYG editor will now default its text direction based on your language setting. In addition, If a right-to-left language is in use then additional toolbar options will show to provide control over text direction:
 
 ![wysiwyg_rtl_support.png](/images/2018/09/wysiwyg_rtl_support.png)
 

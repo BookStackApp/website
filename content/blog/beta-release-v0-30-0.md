@@ -210,7 +210,7 @@ to the below languages by the following fantastic Crowdin & GitHub members:
 * Added warning wording around role system permissions to indicate what permissions could allow privilege escalation. ([#2105](https://github.com/BookStackApp/BookStack/issues/2105))
 * Added the ability to log login failures to a file. Thanks to [@benrubson](https://github.com/BookStackApp/BookStack/pull/1881). ([#1881](https://github.com/BookStackApp/BookStack/pull/1881), [#728](https://github.com/BookStackApp/BookStack/issues/728))
 * Updated Simplified Chinese translations. Thanks to [@Honvid](https://github.com/BookStackApp/BookStack/pull/2157). ([#2157](https://github.com/BookStackApp/BookStack/pull/2157))
-* Updated WYSIWYG editor css to put editor in it's own layer to improve degraded dark mode performance. ([#2154](https://github.com/BookStackApp/BookStack/issues/2154))
+* Updated WYSIWYG editor css to put editor in its own layer to improve degraded dark mode performance. ([#2154](https://github.com/BookStackApp/BookStack/issues/2154))
 * Updated Czech translations. Thanks to [@jakubboucek](https://github.com/BookStackApp/BookStack/pull/2238). ([#2238](https://github.com/BookStackApp/BookStack/pull/2238))
 * Updated permission system so that the permission map table does not contain ID's since database limits could be met in scenarios where permissions were automatically refreshed on a frequent basis. ([#2091](https://github.com/BookStackApp/BookStack/issues/2091))
 * Updated to role table in the database to remove a redundant name field which fixes issue where changing a role name would not change the name used to match with LDAP groups. ([#2032](https://github.com/BookStackApp/BookStack/issues/2032))

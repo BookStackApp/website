@@ -126,7 +126,7 @@ These are hashed using the standard Laravel hashing methods which use the Bcrypt
 
 ### JavaScript in Page Content
 
-By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform it's own JavaScript escaping. This option will also alter the [CSP rules](#content-security-policy-csp) set by BookStack.
+By default, JavaScript tags within page content is escaped when rendered. This can be turned off by setting `ALLOW_CONTENT_SCRIPTS=true` in your `.env` file. Note that even if you disable this escaping the WYSIWYG editor may still perform its own JavaScript escaping. This option will also alter the [CSP rules](#content-security-policy-csp) set by BookStack.
 
 ***This option disables some fundamental cross-site-scripting protections. Only use this option on secure instances, where only very trusted users can edit content***
 

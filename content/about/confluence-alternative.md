@@ -19,7 +19,7 @@ Tired of seeing placeholder content while your pages load? Tired of managing blo
 
 ##### WYSIWYG Editing Experience
 
-BookStack uses a WYSWIYG editor at it's core, with a range of essential formatting options and features. No scary mark-up language. Ideal for mixed-skill environments.
+BookStack uses a WYSWIYG editor at its core, with a range of essential formatting options and features. No scary mark-up language. Ideal for mixed-skill environments.
 
 ##### Standard Content Storage Format
 

@@ -19,7 +19,7 @@ removal of the Google Plus API.
 
 ### Google Sign-in Changes
 
-Google [have announced](https://developers.google.com/+/api-shutdown) the shut-down of Google+ API's which is what BookStack was using for it's Google authentication option.
+Google [have announced](https://developers.google.com/+/api-shutdown) the shut-down of Google+ API's which is what BookStack was using for its Google authentication option.
 The API's are due to be shut down on March the 7th, With API failures starting from January the 28th.
 
 In this release the API calls made no longer make use of the Google+ API so all you'll need to do is to update your BookStack instance to continue using the Google sign-in option. You should be able to continue using the same OAuth credentials as before.

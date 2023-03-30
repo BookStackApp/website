@@ -43,7 +43,7 @@ loses access in an effort to reduce costs. Nor would you want to promote insecur
 (such as user account sharing) to meet user limits.
 
 Speaking of insecure practices, we don't charge extra for advanced authentication features
-like many paid services do. Once something is added to the core code-base, its available
+like many paid services do. Once something is added to the core code-base, it's available
 to all. Features like SAML2, LDAP and multi-factor-auth are baked into the platform.
 
 ### Customize to Requirements

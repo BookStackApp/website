@@ -91,7 +91,7 @@ making your life easier in the process.
 I added to the project out of curiosity a few years ago and have since left active
 after getting a surprising amount of value back. Code Climate provides code quality
 analysis, highlighting potential maintainability issues in code. 
-I don't follow it's guidance religiously but it's proved useful to get a feel
+I don't follow its guidance religiously but it's proved useful to get a feel
 when particular files might be getting out of control. 
 
 CodeClimate is not open source but it does provide free services to Open Source

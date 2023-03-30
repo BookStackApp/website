@@ -37,7 +37,7 @@ pages and options so it must be inferior right? But I thought about the question
 * When does a traffic spike occur?
 
 Plausible answers all of these, and it does so directly, in an easy and beautiful UI.
-It's simplicity actually makes it better for the questions I need answered since I no longer
+Its simplicity actually makes it better for the questions I need answered since I no longer
 need to navigate through the slow, confusing interface that Google Analytics presents.
 It's all just there in a single view.
 

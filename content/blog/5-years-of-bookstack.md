@@ -68,7 +68,7 @@ Growth since January 2016:
 
 #### Thoughts
 
-I've always kept an eye on GitHub stars, so its satisfying to hit the 5k mark at the same time as hitting 5 years. The GitHub stars have been slowly accelerating. The [first 1k](https://www.bookstackapp.com/blog/1k-stars-and-v0-19-0/) took about 2 years & 3 months to accrue, whereas we hit 4k only in February this year.
+I've always kept an eye on GitHub stars, so it's satisfying to hit the 5k mark at the same time as hitting 5 years. The GitHub stars have been slowly accelerating. The [first 1k](https://www.bookstackapp.com/blog/1k-stars-and-v0-19-0/) took about 2 years & 3 months to accrue, whereas we hit 4k only in February this year.
 
 For me, The two most surprising figures are the docker pulls and the discord member count. 45 million is just a staggering number of docker pulls to imagine. I know there's a massive amount of automation in that area leading to such an inflated figure but I still double take when seeing it.
 

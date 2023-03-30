@@ -19,7 +19,7 @@ These services are primarily intended to service business BookStack users that n
 of guaranteed, and/or official, support offering to make BookStack viable in their environment.
 Our plans offer an outlet for the IT team of a company to contact directly with an assurance of official support.
 
-Over the last couple of years I have heard multiple accounts of management discounting BookStack due to it's
+Over the last couple of years I have heard multiple accounts of management discounting BookStack due to its
 lack of obvious income routes, skeptical the project may disappear at any moment.
 Upon that I have received an increasing amount of enquiries regarding provision of support, in addition to requests for deeper
 hands-on-help via video calls. 

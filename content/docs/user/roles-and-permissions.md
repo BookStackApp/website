@@ -15,7 +15,7 @@ In addition, you'll see a range of "Asset Permissions" which are the default abi
 
 ### Assigning Roles
 
-Roles can be assigned to users an admin user editing a user's profile in the "Settings > Users" area of the BookStack interface. Here multiple roles can be assigned to a user, in which case the permissions will stack and the user will receive any ability if any of the roles is provided that specific ability.
+Roles can be assigned to a user, by an admin, via editing a user's profile in the "Settings > Users" area of the BookStack interface. Here multiple roles can be assigned to a user, in which case the permissions will stack and the user will receive any ability if any of the roles is provided that specific ability.
 
 Keep in mind that certain mechanisms within BookStack do have the ability to alter the roles of a user. These include:
 

@@ -183,11 +183,21 @@ sudo ./installation-ubuntu-18.04.sh
 
 This is a collection of guides created by awesome members of the BookStack community:
 
+* [Debian 11 with PHP 8.2 by @armando-femat](https://jardin.icamole.fr/books/bookstack/page/installation)
+* [Sample Docker Swarm Stack by @neuroforgede](https://github.com/neuroforgede/bookstack-docker-swarm)
+
+In addition to written guides, there are a bunch [community videos on YouTube](https://www.youtube.com/playlist?list=PLLIji4SLo6EiAUI5X3amBSB99HpabUqsS)
+in addition to the [guides on the official BookStack channel](https://www.youtube.com/playlist?list=PLLIji4SLo6EidqlySHJNGyQ_rLpMY3nmE).
+
+#### Old Guides
+
+The below are community guides that are no longer current, due to using old operating systems or installing out-of-date dependencies, 
+but they are still listed here as a useful resource:
+
 * [RHEL 8 Install (Oracle/Alma Linux) by @xhark](https://github.com/blogmotion/bm-bookstack-install/) - [french guide](https://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
-* [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)
 * [Debian 11 Install by Othman Alikhan](https://gist.github.com/OthmanAlikhan/322f83a77c15dfd1c91a2afe0b6a6fc2)
-* [Sample Docker Swarm Stack by @neuroforgede](https://github.com/neuroforgede/bookstack-docker-swarm)
+* [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)
 
 ---
 
@@ -207,6 +217,7 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [YunoHost](https://install-app.yunohost.org/?app=bookstack) - A Debian-based distribution that automates personal web server installation.
 - [Elestio](https://elest.io/open-source/bookstack) - Managed hosting in common cloud services or on-premise.
 - [Nexxwave](https://www.nexxwave.eu/app-hosting/bookstack) - Managed application hosting in the EU.
+
 ---
 
 <a name="ha"></a>

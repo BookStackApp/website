@@ -6,7 +6,7 @@ image = "/images/blog-cover-images/flowers-tim-gouw.jpg"
 author = "Dan Brown"
 slug = "project-update-march-23"
 draft = false
-date = 2023-03-31T08:00:00Z
+date = 2023-03-31T07:20:00Z
 +++
 
 There's no new feature release for BookStack this month, due to various distractions

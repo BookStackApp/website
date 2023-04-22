@@ -13,9 +13,17 @@ When used, BookStack will attempt to match the OIDC user to an existing BookStac
 based on the "External Authentication ID" value stored against the Bookstack user. 
 If this match cannot be made, BookStack will effectively auto-register that user to 
 provide a seamless access experience. They will be given the default role set under the
-"Default user role after registration" option in the application settings. 
+"Default user role after registration" option in the application settings.
 
-[A video guide for setting up OIDC can be found here](https://www.youtube.com/watch?v=TJQ4NJrMvkw).
+{{<toc>}}
+
+### Video Guides
+
+We have a range of videos available that can help show, for a range of identity platforms, the exact steps required to set-up a BookStack OpenID Connect authentication integration:
+
+- [General setup guide (Using Okta as an example)](https://www.youtube.com/watch?v=TJQ4NJrMvkw)
+- [Azure Active Directory OIDC Guide](https://www.youtube.com/watch?v=CL5kMFkopHY)
+- [Authentik BookStack OIDC Guide](https://www.youtube.com/watch?v=M1_WPhR4hRc)
 
 ### Requirements & Limitations
 

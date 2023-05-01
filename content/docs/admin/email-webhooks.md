@@ -9,9 +9,7 @@ aliases = ["email-config"]
 Within BookStack email is used in various ways relating to user management & authentication. 
 Outgoing webhooks are available as a mechanism to extend BookStack or notify in an event-driven manner.
 
-- [Email Configuration](#email-configuration)
-- [Outgoing Webhooks](#outgoing-webhooks)
-- [Async Action Handling](#async-action-handling)
+{{<toc>}}
 
 ---
 
@@ -42,12 +40,19 @@ MAIL_FROM=noreply@yourdomain.tld
 
 # The "from" name used for outgoing email
 MAIL_FROM_NAME=BookStack
+```
 
+##### SSL Certificate Verification
+
+In some cases your SMTP server may be using a private/self-signed certificate that would usually fail SSL/TSL verification.
+In these cases its common for that certificate (Or its CA) to be added to the BookStack's host trusted certificate database.
+If that's not possible, you can alternatively disable SSL/TLS certificate verification by adding this setting to your `.env` file:
+
+```bash
 # Verify SSL/TLS certificates during SMTP sending
-# This option is set to 'true' by default.
-# Set to 'false' to ignore SSL/TLS cert verification.
-# Using 'false' can make you vulnerable to MITM attacks.
-MAIL_VERIFY_SSL=true
+# WARNING: Disabling verification using a 'false' value 
+# can make you vulnerable to MITM attacks
+MAIL_VERIFY_SSL=false
 ```
 
 #### Sendmail

@@ -5,7 +5,7 @@ date = "2017-08-22"
 type = "admin-doc"
 +++
 
-You may find you want to customise BookStack to use custom branding or you may just not like the default blue theme. Customising the branding of BookStack is super simple and can be done through the "Settings > Customization" area of BookStack. Here you can change the application name, logo and the core colours used. Additional ways to customise are listed below:
+You may want to customise BookStack to use custom branding, or you may just not like the default blue theme. Customising the branding of BookStack is super simple and can be done within the "Settings > Customization" area of the interface. Here you can change the application name, logo and the core colours used. Additional ways to customise are listed below:
 
 {{<toc>}}
 
@@ -40,15 +40,15 @@ body, button, input, select, label, textarea {
 </style>
 ```
 
-Note that this won't change anything in the settings screen for stability purposes.
+Note that this won't change anything while viewing the settings screen, for stability purposes.
 
 ### Changing Code Block Themes
 
-When inserting code into a page or when using the Markdown editor, the text you enter is highlighted by the [CodeMirror library](https://codemirror.net/).
+When inserting code into a page, or when using the Markdown editor, the text you enter is highlighted by the [CodeMirror library](https://codemirror.net/).
 For those that'd prefer a different colour scheme for code blocks, we do provide a custom `library-cm6::configure-theme` JavaScript event 
-that provides a couple of methods that allow registration of CodeMirror UI and syntax highlight themes.
+which provides a couple of methods that allow registration of CodeMirror UI and syntax highlighting themes.
 
-You can find more information, along with an example, [in our JavaScript public events documentation here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md#library-cm6configure-theme).
+You can find more information, along with an example, in our [JavaScript public events documentation here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md#library-cm6configure-theme).
 
 ### Default Light/Dark Mode
 

@@ -15,10 +15,10 @@ Within BookStack you may find that you want to include the same block of content
 
 Here are some things to consider when reusing page content via include tags:
 
-- Permissions are enforced upon includes, so content will only be included from pages that the current user has permission to view.
-- This works up to three levels of nesting, to ensure system performance and to prevent issues of recursion.
-- Included content won't be shown within content preview text/snippets.
-- Included content won't be indexed as searchable content for a page.
+- Permissions are enforced upon includes, so content will only be included from pages that the current user has permission to view. Includes are not obvious nor transparent when viewing a page so it could be easy for a user to externally share content, containing permission-controlled included content, with a non-privileged user without thinking about what permission controls may be in use.
+- Includes work with up to three levels of nesting, limited to ensure system performance and to prevent recursion issues.
+- Included content won't be indexed as searchable content for pages they're included into.
+- Included content won't be shown within content preview text or snippets.
 
 ### Include Tags
 

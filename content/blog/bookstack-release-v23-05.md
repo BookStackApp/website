@@ -67,7 +67,7 @@ File upload handling has been revamped in a few key areas, specifically the imag
 The new experience switches out our previous usage of the [dropzone.js](https://www.dropzone.dev/) library with a much more lightweight 
 custom implementation to provide a more "BookStack" integrated feel, which we'll be able to better utilize in the future:
 
-TODO - Image upload from image manager here, maybe show error?
+![A screenshot of the BookStack image manager, showing a failed upload containing an error message in red text](/images/2023/05/image-upload-error.png)
 
 This new format for image uploads has the added benefit of now showing errors in a clearer and more accessible format.
 
@@ -76,7 +76,7 @@ The styles of the image manager have been tidied and tightened to provide a clea
 The attachment management panel has had a more extensive overhaul, replacing the previous tabbed-based interface
 with a simpler layout that requires less clicks for common upload actions.
 
-TODO - Image of attachment manager here.
+![A view of the attachments area of BookStack with an example uploaded file of a cat](/images/2023/05/attachment-upload.png)
 
 ### Code Block Updating to CodeMirror 6
 
@@ -84,7 +84,7 @@ Within BookStack all code syntax highlighting and code editing, including that o
 After being released last year, I started work to upgrade from CodeMirror 5 to 6 in August of last year, but quickly found this update was essentially a rebuild of the library requiring a lot of work on the BookStack side of things.
 This release cycle I put my head down and spent a lot of time on this so that, as of BookStack v23.05, all such code blocks are now using CodeMirror 6.
 
-TODO - image of CM6 codeblcok?
+![A simple code block within page content, display code syntax highlighting](/images/2023/05/codemirror-6-block.png)
 
 This will hopefully not impact most users, while it should bring us better mobile support while keeping us up-to-date on our libraries.
 This does have some significant impacts to those that had applied customizations, since it changes some of the "Editor Events" we previously had,
@@ -95,7 +95,7 @@ See the upgrade notices at the top of the blogpost for more details.
 
 This release brings two new sets of endpoints to the API, helping to fill gaps and empower our API users to achieve all actions possible via the UI.
 
-TODO - Image of endpoints
+![List of the image gallery and content permission API endpoints](/images/2023/05/image-permissions-api-endpoints.png)
 
 The first set are image gallery APIs, which allow the management of page content images much like within the image manager when editing pages. 
 This will be welcome to those that have wanted to handle images in a much more granular way via the API, outside of using the base64-encoded-in-content approach.
@@ -118,7 +118,7 @@ Thanks to [@jasonF1000](https://github.com/BookStackApp/BookStack/pull/4192) for
 Another new coding language gets highlighting support in this release, with
 the lucky language being clojure:
 
-TODO - Image of clojure code
+![BookStack WYSIWYG code editor showing Clojure syntax highlighting](/images/2023/05/clojure-code-syntax.png)
 
 ### OIDC ID Token Logical Theme Event
 

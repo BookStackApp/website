@@ -33,7 +33,7 @@ BookStack has a built-in REST API for external interaction and consumption of yo
 
 ### Custom HTML Head Option
 
-Within the customization settings area you'll find a "Custom HTML head content" setting. You can use this to add in any custom JavaScript or CSS content which enables you to override default BookStack functionality and styles.
+Within the "Settings > Customization" view within BookStack you'll find a "Custom HTML Head Content" setting. You can use this to add in any custom JavaScript or CSS content which enables you to override default BookStack functionality and styles.
 
 You can find examples of custom HTML Head customizations on the [hacks part of this site](/hacks/).
 
@@ -62,15 +62,15 @@ You can find examples of logical theme system customizations on the [hacks part 
 
 ---
 
-### BookStack JavaScript Public Events
-
 <a id="bookstack-editor-events" data-info="Anchor here for backwards compatibility of existing links"></a>
 
+### BookStack JavaScript Public Events
+
 To allow customization of the JavaScript libraries & components used, BookStack emits events as part of their lifecycle
-so that you can define listeners to hook into these events. These can often be used by adding custom scripts to the 
+so that you can define listeners to hook into these events. These can often be used by adding scripts to the 
 [custom HTML head content option](#custom-html-head-option).
 
-You can find details of a listing of all events [within the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md).
+You can find details and a listing of all events [within the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md).
 
 ---
 

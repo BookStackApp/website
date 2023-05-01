@@ -41,6 +41,20 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.05 or higher
+
+**Page Include Tags** - Nesting is now allowed for [include tags](https://www.bookstackapp.com/docs/user/reusing-page-content/#include-tags), up to 3 levels of depth. You may now see more content loaded for pages which previously had unparsed nested include tags.
+
+**SAML2** - Single LogOut (SLO) requests will now include a "session_index" for the current user. This technically brings BookStack's implementation closer to the spec, and is not expected to cause issues, but if using SLO it may be wise to check your identity provider behavior remains the same as before during logout.
+
+**Custom Code Block Themes** - Due to a change of library, the method of defining custom codeblock themes has significantly changed, and "window.CodeTheme" code is no longer used. Refer to our ["Changing Code Block Themes"](https://www.bookstackapp.com/docs/admin/visual-customisation/#changing-code-block-themes) documentation for further information.
+
+**Editor Event - editor-markdown::setup** - This event no longer contains "codeMirrorInstance" in the event data. It instead has a "cmEditorView" property. [See the event docs for more details](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md#editor-markdownsetup).
+
+**Editor Event - editor-markdown-cm::pre-init** - This event has been renamed to "editor-markdown-cm6::pre-init" and no longer contains "config" in the event data. It instead has a "editorViewConfig" property. [See the event docs for more details](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md#editor-markdown-cm6pre-init).
+
+**Upload Timeouts** - The use of "window.uploadTimeout" has been removed as a way to control upload timeouts. This would previously only be used in certain cases. Instead, if required, timeouts can usually be enforced at the web-server level.
+
 #### Updating to v23.02 or higher
 
 **PHP Version Requirement Change** - The minimum required version of PHP has changed from 7.4 to 8.0.2. This should not be a concern for those that are using common containers. Installations via our Ubuntu 22.04 install script are already using PHP 8.1 and therefore they don't need to be upgraded at this time.

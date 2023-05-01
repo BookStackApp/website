@@ -5,10 +5,9 @@ date = "2017-08-22"
 type = "admin-doc"
 +++
 
-You may find you want to customise BookStack to use custom branding or you may just not like the default blue theme. Customising the branding of BookStack is super simple and can be done through the settings interface under 'App Settings'. Here you can change the application name, logo and the core colours used.
-Changing the app name will simply update the name displayed in the header and browser tab.
-Changing the logo updates the logo shown in the header. This can be removed if you only want to display the chosen name.
-Changing the app color will update the color of the header, links and the majority of buttons within the system.
+You may find you want to customise BookStack to use custom branding or you may just not like the default blue theme. Customising the branding of BookStack is super simple and can be done through the "Settings > Customization" area of BookStack. Here you can change the application name, logo and the core colours used. Additional ways to customise are listed below:
+
+{{<toc>}}
 
 ### Changing Fonts
 
@@ -45,19 +44,24 @@ Note that this won't change anything in the settings screen for stability purpos
 
 ### Changing Code Block Themes
 
-When inserting code into a page or when using the Markdown editor, the text you enter is highlighted by a default codemirror colour scheme.
-If you'd prefer a different colour scheme for code blocks this can be overridden. BookStack uses CodeMirror to render code blocks. You can [try out different themes here](https://codemirror.net/demo/theme.html#base16-light). Once you've chosen a theme note down the name.
+When inserting code into a page or when using the Markdown editor, the text you enter is highlighted by the [CodeMirror library](https://codemirror.net/).
+For those that'd prefer a different colour scheme for code blocks, we do provide a custom `library-cm6::configure-theme` JavaScript event 
+that provides a couple of methods that allow registration of CodeMirror UI and syntax highlight themes.
 
-In BookStack settings, Find the 'Custom HTML head content' setting and add the following code:
+You can find more information, along with an example, [in our JavaScript public events documentation here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md#library-cm6configure-theme).
 
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/theme/cobalt.min.css"/>
-<script>window.codeTheme='cobalt';</script>
+### Default Light/Dark Mode
+
+By default, BookStack will be presented in "light mode". Users can toggle their light/dark mode preference
+using one of the buttons either found on the homepage view, or within the header bar user dropdown menu.
+
+If you'd instead like your instance to be presented in "dark mode" by default, you can add the following option to your `.env` file:
+
+```bash
+# Use dark mode by default
+# Will be overridden by any existing user/session preference.
+APP_DEFAULT_DARK_MODE=true
 ```
-
-In the above example we are setting the theme to `cobalt`. Change `cobalt` to the name of your desired theme on both of the above lines.
-The first lines adds the required theme styles, Fetched from [cdnjs](https://cdnjs.com/) whom generously host all CodeMirror files.
-The second line then sets the theme name which will be picked up when code blocks are rendered.
 
 ### Default Book View
 

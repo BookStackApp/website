@@ -33,7 +33,7 @@ BookStack has a built-in REST API for external interaction and consumption of yo
 
 ### Custom HTML Head Option
 
-Within the settings area you'll find a 'Custom HTML head content' setting. You can use this to add in any custom JavaScript or CSS content which enables you to override default BookStack functionality and styles.
+Within the customization settings area you'll find a "Custom HTML head content" setting. You can use this to add in any custom JavaScript or CSS content which enables you to override default BookStack functionality and styles.
 
 You can find examples of custom HTML Head customizations on the [hacks part of this site](/hacks/).
 
@@ -62,29 +62,15 @@ You can find examples of logical theme system customizations on the [hacks part 
 
 ---
 
-### BookStack Editor Events
+### BookStack JavaScript Public Events
 
-For the core underlying libraries, used in the BookStack page editors, we emit some custom events as part of their lifecycle.
-You can listen for these events to hook in and alter their configs or to gain a reference to the underlying editor instance.
-The below code sample shows the events available; Log out the `detail` property of events, as per the below example, to understand what is passed with the events:
+<a id="bookstack-editor-events" data-info="Anchor here for backwards compatibility of existing links"></a>
 
-```html
-<script>
-	// TinyMCE WYSIWYG editor events
-	window.addEventListener('editor-tinymce::pre-init', event => console.log('TINYMCE-PRE_INIT', event.detail));
-	window.addEventListener('editor-tinymce::setup', event => console.log('TINYMCE-SETUP', event.detail));
+To allow customization of the JavaScript libraries & components used, BookStack emits events as part of their lifecycle
+so that you can define listeners to hook into these events. These can often be used by adding custom scripts to the 
+[custom HTML head content option](#custom-html-head-option).
 
-	// CodeMirror / Markdown-it Markdown editor events
-	window.addEventListener('editor-markdown-cm::pre-init', event => console.log('MARKDOWN-CODEMIRROR-PRE_INIT', event.detail));
-	window.addEventListener('editor-markdown::setup', event => console.log('MARKDOWN-EDITOR-SETUP', event.detail));
-
-	// Diagrams.net configure event
-	// Reference: https://www.diagrams.net/doc/faq/configure-diagram-editor
-	// If using a custom diagrams.net instance, via the `DRAWIO` option, you will need to ensure
-	// this your URL has the `configure=1` query parameter.
-	window.addEventListener('editor-drawio::configure', event => console.log('DIAGRAMS.NET-CONFIGURE', event.detail));
-</script>
-```
+You can find details of a listing of all events [within the project repo here](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md).
 
 ---
 

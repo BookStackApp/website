@@ -228,19 +228,3 @@ Apache does not have any built-in limits which you will need to change but somet
 php_value upload_max_filesize 10M
 php_value post_max_size 10M
 ```
-
----
-
-### File Upload Timeout
-
-File uploads in BookStack use a JavaScript library which has a default upload timeout of 60 seconds. This means that if the file that you are uploading does not upload completely to the server within 60 seconds, the system will timeout. 
-
-To modify this timeout, in BookStack settings, Find the 'Custom HTML head content' setting and add the below code. Note that this does not change any server-side upload limits, Your websever may still impose an upload limit.
-
-```html
-<script>
-    // Set the file upload timeout to 120 seconds.
-    // You can change '120' to be the number of seconds you want the timeout to be. 
-    window.uploadTimeout = 120 * 1000;
-</script>
-```

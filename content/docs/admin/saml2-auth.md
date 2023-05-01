@@ -88,7 +88,8 @@ You'll likely need to provide some details of your BookStack service-provider to
 BookStack uses the following formats/bindings for communication with the IdP:
 
 * NameIDFormat: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`
-* ACS/SLO Binding: `urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST`
+* Login/ACS Binding: `urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST`
+* Logout/SLO Binding: `urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect`
 
 Here's a minimal example of configuring a BookStack service provider for a SimpleSAMLphp IdP:
 

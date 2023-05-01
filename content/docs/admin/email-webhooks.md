@@ -42,6 +42,12 @@ MAIL_FROM=noreply@yourdomain.tld
 
 # The "from" name used for outgoing email
 MAIL_FROM_NAME=BookStack
+
+# Verify SSL/TLS certificates during SMTP sending
+# This option is set to 'true' by default.
+# Set to 'false' to ignore SSL/TLS cert verification.
+# Using 'false' can make you vulnerable to MITM attacks.
+MAIL_VERIFY_SSL=true
 ```
 
 #### Sendmail

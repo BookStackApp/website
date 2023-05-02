@@ -25,7 +25,7 @@ to help with admin operations.
 - **Editor Event - editor-markdown-cm::pre-init** - This event has been renamed to "editor-markdown-cm6::pre-init" and no longer contains "config" in the event data. It instead has a "editorViewConfig" property. [See the event docs for more details](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/javascript-public-events.md#editor-markdown-cm6pre-init).
 - **Upload Timeouts** - The use of "window.uploadTimeout" has been removed as a way to control upload timeouts. This would previously only be used in certain cases. Instead, if required, timeouts can usually be enforced at the web-server level.
 
-TODO - Video Link
+{{<yt tvjxieqtCrw>}}
 
 ### New System CLI (Early Alpha)
 

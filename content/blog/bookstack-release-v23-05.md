@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.05"
-date = 2023-05-02T11:00:00Z
+date = 2023-05-03T10:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/bird-ray-hennessy.jpg"
 slug = "bookstack-release-v23-05"

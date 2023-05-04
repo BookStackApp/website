@@ -60,6 +60,9 @@ In the WYSIWYG editor you can force an ID by going into the source code view and
 
 In the markdown editor you can simply insert HTML with an ID to ensure it does not change:
 
+#### Finding the source of reused content?
+If you would like to edit the content from `{{@5}}`, you can find the content by adding the number behind site/link/
+like this: [https://demo.bookstackapp.com/link/5](https://demo.bookstackapp.com/link/5)
 ```
 # Old Content
 Copyright BookStack Enterprises 2020

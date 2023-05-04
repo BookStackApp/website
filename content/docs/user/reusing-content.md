@@ -60,13 +60,20 @@ In the WYSIWYG editor you can force an ID by going into the source code view and
 
 In the markdown editor you can simply insert HTML with an ID to ensure it does not change:
 
-#### Finding the source of reused content?
-If you would like to edit the content from `{{@5}}`, you can find the content by adding the number behind site/link/
-like this: [https://demo.bookstackapp.com/link/5](https://demo.bookstackapp.com/link/5)
-```
+```markdown
 # Old Content
 Copyright BookStack Enterprises 2020
 
 # Revised with ID
 <p id="bkmrk-include-copyright-text">Copyright BookStack Enterprises 2020</p>
 ```
+
+### Locating Include Tag Target
+
+In some cases, you may come across an include tag and want to locate the page that the tag is targeting to include content from.
+You can do this by making use of BookStack page direct links, which follow the format `<base_url>/link/<page_id>`.
+Take the numeric ID (Located after the `@` but before the `#` if existing) from the include tag then use it as the `<page_id>`
+in that described URL format and you'll be taken to the source page.
+
+As an example if you had the include tag `{{@5#bkmrk-chapter-a}}`, you'd go to the URL path `/link/5`.
+A full example URL, using our demo instance, would be: [https://demo.bookstackapp.com/link/5](https://demo.bookstackapp.com/link/5)

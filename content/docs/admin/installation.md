@@ -11,7 +11,6 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Shared Hosting](#shared)
 * [Manual](#manual)
 * [Docker](#docker)
-* [Deploy on Easypanel](#easypanel)
 * [Ubuntu 22.04 Script](#ubuntu-2204)
 * [Ubuntu 20.04 Script](#ubuntu-2004)
 * [Ubuntu 18.04 Script](#ubuntu-1804)
@@ -94,25 +93,6 @@ Community docker setups are available for those that would prefer to use a conta
 
 * [GitHub Repository](https://github.com/solidnerd/docker-bookstack)
 * [Docker Hub page](https://hub.docker.com/r/solidnerd/bookstack/)
-
----
-
-<a name="easypanel"></a>
-
-## Deploy on Easypanel
-
-**Deploying BookStack on Easypanel**
-
-[Easypanel](https://easypanel.io) it's a modern server control panel. You can use it to deploy BookStack on your own server.
-
-[![Deploy to Easypanel](https://easypanel.io/img/deploy-on-easypanel-40-outline.svg)](https://easypanel.io/docs/templates/bookstack)
-
-### Instructions
-
-1. Create a VM that runs Ubuntu on your cloud provider.
-2. Install Easypanel using the instructions from the website.
-3. Create a new project.
-4. Install BookStack using the dedicated template.
 
 ---
 
@@ -237,6 +217,7 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [YunoHost](https://install-app.yunohost.org/?app=bookstack) - A Debian-based distribution that automates personal web server installation.
 - [Elestio](https://elest.io/open-source/bookstack) - Managed hosting in common cloud services or on-premise.
 - [Nexxwave](https://www.nexxwave.eu/app-hosting/bookstack) - Managed application hosting in the EU.
+- [Easypanel](https://easypanel.io) it's a modern server control panel. You can use it to deploy BookStack on your own server.
 
 ---
 

@@ -242,3 +242,4 @@ For a "High Availability" BookStack setup you'll likely need to consider the fol
 - A simplistic health-check endpoint can be found at the `/status` URI.
   - This performs basic checks on subsystems.
   - This should return a HTTP error status code (>=400) on any failure otherwise a 200 status code.
+  - 

@@ -25,10 +25,19 @@ To get up and running with SMTP you will need to add, or set, the following vari
 ```bash
 MAIL_DRIVER=smtp
 
-# Host, Port & Encryption mechanism to use
-# Valid encryption values are: tls, ssl, null
+# SMTP server host address
 MAIL_HOST=smtp.provider.tld
+
+# SMTP server port
+# Using port 465 will force connections to be via TLS
 MAIL_PORT=587
+
+# Connection encryption to use
+# Valid values are: tls, null
+# Using 'tls' forces TLS to be used.
+# Using 'null' will not force TLS but STARTTLS will still 
+# be attempted if announced as supported by your SMTP server.
+# Using port 465 above will also force connections to be via TLS.
 MAIL_ENCRYPTION=tls
 
 # Authentication details for your SMTP service
@@ -42,11 +51,12 @@ MAIL_FROM=noreply@yourdomain.tld
 MAIL_FROM_NAME=BookStack
 ```
 
-##### SSL Certificate Verification
+##### Connection TLS/SSL Certificate Verification
 
-In some cases your SMTP server may be using a private/self-signed certificate that would usually fail SSL/TSL verification.
+In some cases your SMTP server may be using a private/self-signed TLS/SSL certificate that would usually fail certificate verification.
 In these cases its common for that certificate (Or its CA) to be added to the BookStack's host trusted certificate database.
-If that's not possible, you can alternatively disable SSL/TLS certificate verification by adding this setting to your `.env` file:
+If that's not possible, you can alternatively disable SSL/TLS certificate verification for mail sending
+ by adding this setting to your `.env` file:
 
 ```bash
 # Verify SSL/TLS certificates during SMTP sending

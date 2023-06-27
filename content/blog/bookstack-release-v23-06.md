@@ -56,11 +56,55 @@ This may be something we expand upon in the future there proves a need.
 
 ### Revamped Image Manager
 
-TODO
+While we've recently made a few changes to the BookStack image manager, the general structure has 
+long remained the same which has been particularly problematic on mobile devices, since it was 
+only built for desktop.
+
+In this release the design and underlying structure has been revamped to modernise things while
+addressing a set of known existing issues:
+
+TODO - Image of image manager
+
+The search and filters have been condensed to a single row by default to leave more space for images.
+The images now have no overlay by default until hovered or focused upon, which keeps things less busy.
+The overlay text that does show has been simplified for easier reading.
+When an image is selected some metadata regarding the image will now show in the sidebar, which includes
+the uploader, uploaded date and what page it was originally uploaded to.
+Most significantly, the layout is now mobile responsive, switching to a tabbed interface on mobile:
+
+TODO - Image of mobile manager
+
+While making these changes, I've paid attention to accessibility and tested everything using a screen
+reader to ensure all reads sensibly and is navigable via keyboard.
+
+As one extra bonus feature, it's now possible to replace an image:
+
+TODO - Image of replace option
+
+This allows you to replace an existing image in the system, so that it'd update in all locations where that 
+image is used which is particularly handy if an evolving image is shared across many pages.
 
 ### Accessible Page Content Popup
 
-TODO
+The page content popup in BookStack provides any easy way to link to certain page sections, 
+to edit starting at a certain section, or a means to grab the include syntax. Unfortunately this
+did not work well for screen-reader and keyboard only usage due to the type of text selection 
+required and the focus handling implemented in BookStack.
+
+In v23.06, a new methods has been added to achieve accessible use of the content popup.
+At the end of the page content sits a new "Enter section select mode" button, which is only
+visible via focus. Selecting this button makes all content blocks within the page content
+focusable, and focus will be placed on the page title.
+You can then press "Enter" upon focus of any page content block, to show the popup for that section,
+and focus will be placed into the popup for immediate usage.
+The popup has been updated to be accessible friendly, with proper focus handling and labelling.
+The popup will now also sit in the correct place in the document, so that it can be tabbed to/from between
+block of content when showing.
+
+TODO - Image of popup in select mode
+
+From my own testing, all abilities of the popup are now accessible but, not being a daily screen-reader
+user myself, I appreciate if the implementation feels awkward so I'm open to feedback on this.
 
 ### System CLI Updates
 
@@ -75,6 +119,7 @@ TODO
 TODO - raw Page HTML
 TODO - Descriptions
 TODO - Fixed inconsitencies including response codes , Thanks to devdot (in addition to other bits).
+TODO - Replace image?
 
 ### Translations
 

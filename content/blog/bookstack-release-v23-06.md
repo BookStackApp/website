@@ -241,6 +241,7 @@ formatting that the ".docx" format supports, but it does make a good attempt and
 * Updated JsonDebugException to use the "Responsable" interface. Thanks to [@devdot](https://github.com/BookStackApp/BookStack/pull/4318). ([#4318](https://github.com/BookStackApp/BookStack/pull/4318))
 * Updated shelf permissions view to not show the non-used "create" permission. ([#2690](https://github.com/BookStackApp/BookStack/issues/2690))
 * Updated translations with latest Crowdin changes. ([#4256](https://github.com/BookStackApp/BookStack/pull/4256))
+* Updated WYSIWYG editor library from TinyMCE 6.3.1 to 6.5.1.
 * Fixed API chapter update not using "book_id" parameter. ([#4272](https://github.com/BookStackApp/BookStack/issues/4272))
 * Fixed API returns responses to return 404 instead of 500 on not found. Thanks to [@devdot](https://github.com/BookStackApp/BookStack/pull/4921). ([#4290](https://github.com/BookStackApp/BookStack/issues/4290), [#4291](https://github.com/BookStackApp/BookStack/issues/4291))
 * Fixed created/updated times not showing using the Romanian language. ([#4297](https://github.com/BookStackApp/BookStack/issues/4297))
@@ -249,6 +250,7 @@ formatting that the ".docx" format supports, but it does make a good attempt and
 * Fixed incorrect times in Users list API. ([#4325](https://github.com/BookStackApp/BookStack/issues/4325))
 * Fixed misaligned case-sensitive sorting in shelves. ([#4341](https://github.com/BookStackApp/BookStack/issues/4341))
 * Fixed misaligned date and time format returned by the image gallery API. ([#4294](https://github.com/BookStackApp/BookStack/issues/4294))
+* Fixed growing table rows in the WYSIWYG when using Firefox. ([#4337](https://github.com/BookStackApp/BookStack/issues/4337))
 
 **Released in v23.05.2**
 

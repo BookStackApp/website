@@ -9,6 +9,9 @@ slug = "bookstack-release-v23-06"
 draft = false
 +++
 
+TODO - Check post text
+TODO - Check doc updates
+
 Today we have BookStack v23.06 which aims to improve how comments are displayed & used,
 while bringing us a revamp to the image manager among many other fixes and improvements.
 
@@ -18,9 +21,12 @@ while bringing us a revamp to the image manager among many other fixes and impro
 
 **Upgrade Notices**
 
-TODO
+TODO - Add these to updates page
 
-- **Title** - Detail
+- **Email Configuration** - If you've configured mail with `MAIL_ENCRYPTION=ssl` it's advised to test sending (via the option in maintenance) after updating to v23.06 since support for SSL has been dropped for email sending, but we'll now force TLS to be required when this option is set instead.
+- **Font Customization** - The technique for customizing fonts has changed to be simpler, less fragile and more flexible. If customizing fonts it's advised to update to the new method as shown in our updated documentation on [changing fonts](/docs/admin/visual-customisation/#changing-fonts).
+- **Guest User Account** - Previously custom roles could be given to the "Guest" user account but permissions for those roles would not fully apply. That's been changed in v23.06 so additional role permissions fully apply but, as a precaution to prevent unexpected additional
+grant of permissions upon upgrade, any additional roles assigned to the "Guest" user will be removed upon upgrade. If needed, simply re-assign any desired custom guest user roles after updating.
 
 TODO - Video
 

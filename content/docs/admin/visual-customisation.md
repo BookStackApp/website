@@ -11,36 +11,36 @@ You may want to customise BookStack to use custom branding, or you may just not 
 
 ### Changing Fonts
 
-To change fonts you can make use of the 'Custom HTML head content' setting to add some CSS to alter fonts used.
-Copy the code below and alter the font names to your desired fonts. Then paste this into the 'Custom HTML head content' box
-in the admin settings of BookStack.
+To change fonts you can make use of the "Custom HTML Head Content" customization setting to add some CSS to alter fonts used.
+Copy the code below into this setting and alter the font names to your desired fonts:
 
 ```html
 <style>
-body, button, input, select, label, textarea {
-  font-family: "Roboto", sans-serif;
-}
-.CodeMirror, pre, #markdown-editor-input, .editor-toolbar, .code-base {
-  font-family: monospace;
-}
+  body {
+    --font-body: 'Noto Serif', serif;
+    --font-heading: 'Roboto', sans-serif;
+    --font-code: 'Source Code Pro', monospace;
+  }
 </style>
 ```
 
-Here's an example of using the 'Lato' font from [Google Web Fonts](https://fonts.google.com):
+Here's an example of using the 'Lato' font from [Google Web Fonts](https://fonts.google.com) as the main body text font:
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <style>
-body, button, input, select, label, textarea {
-  font-family: 'Lato', sans-serif;
-}
-.CodeMirror, pre, #markdown-editor-input, .editor-toolbar, .code-base {
-  font-family: monospace;
-}
+  body {
+    --font-body: 'Lato', serif;
+  }
 </style>
 ```
 
-Note that this won't change anything while viewing the settings screen, for stability purposes.
+Some addition notes to consider on setting custom fonts:
+
+- Changes won't apply to the main `/settings` pages of BookStack, since custom HTML head content is not applied here.
+- If a heading font is not set via `--font-heading`, then the `--font-body` value will be used as a fallback.
+- This system simply makes use of normal [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var).
+- These fonts won't apply to PDF exports, where font availability and usage is more limited.
 
 ### Changing Code Block Themes
 

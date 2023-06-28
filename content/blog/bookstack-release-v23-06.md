@@ -108,22 +108,62 @@ user myself, I appreciate if the implementation feels awkward so I'm open to fee
 
 ### System CLI Updates
 
-TODO
+Within the v23.05 patch releases a host of updates have been applied to the BookStack System CLI
+we added in the last release. These updates fix a few restore bugs, improve CLI output
+and add support for usage when symlinks are used, which is particularly common in 
+some docker-based environments.
+
+To support usage of the CLI, I've recently added a [BookStack System CLI page](https://www.bookstackapp.com/docs/admin/system-cli/)
+to our admin documentation to fully detail usage of this CLI.
 
 ### Updated Colors & Font Customization
 
-TODO
+A few parts of the underlying BookStack CSS styling code has been updated to use
+CSS variables, particularly for status colors (info, success, failure/danger & warning states)
+and for fonts. For fonts, this changes and simplifies how fonts can be configured via "Custom HTML Head Content", 
+with the overriding CSS now looking something like this:
 
-### API Updates
+```html
+<style>
+    body {
+      --font-body: 'Noto Serif', serif;
+      --font-heading: 'Roboto', sans-serif;
+      --font-code: 'Source Code Pro', monospace;
+    }
+</style>
+```
 
-TODO - raw Page HTML
-TODO - Descriptions
-TODO - Fixed inconsitencies including response codes , Thanks to devdot (in addition to other bits).
-TODO - Replace image?
+As shown, it's now possible to define a different font for headings if desired.
+Our [documentation for this](/docs/admin/visual-customisation/#changing-fonts) has been updated to reflect
+the new advised approach.
+
+Additionally, dark mode now has different status colors by default, to make them better fit the dark theme:
+
+TODO - Image of status colors in dark mode
+
+### REST API Updates
+
+The API has received a variety of enhancements in this release.
+First up is that "Image Gallery - Update" endpoint now allows you to provide an image file in the request 
+via an `image` parameter, which will replace the existing image file for the image being updated, which
+aligns with the newly added ability to replace an image within the BookStack user interface.
+
+The "Pages - Read" endpoint will now include a `raw_html` parameter, which contains the raw HTML stored in
+the BookStack database, without pre-display processing. This is useful in cases you want original HTML
+for editor usage, or the HTML without page content includes being parsed.
+
+The descriptions of the endpoints in the API docs have been improved, with support for multi-paragraph 
+descriptions, so more complex endpoints are now described with a bit more structure instead of being a 
+long solid single paragraph.
+
+Lastly, quite a few inconsistencies in API data, responses or documentation have been cleaned up in this release.
+A particular thanks to [@devdot](https://github.com/devdot) who has helped in this area, in addition to making
+a few PRs this release cycle to clean up a lot of my existing messy or inconsistent code.
 
 ### Translations
 
-TODO
+A new release means a new round of thanks to the below wise translators who work wonders with words.
+Thanks to all listed below that have provided translations since the original v23.05 release.
 
 - Username - *Language*
 

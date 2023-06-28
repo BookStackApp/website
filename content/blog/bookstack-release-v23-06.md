@@ -38,7 +38,7 @@ tracking any of those conversations chains particularly problematic.
 
 As of this release, comments will now be shown in an organised thread-like manner to make conversations much easier to read:
 
-TOOD - Image of threading
+![A view of 6 comments between 3 users, nested at different depths, at 4 visual levels](/images/2023/06/comment-threads.png)
 
 Up to four levels of depth will be visually shown, with comments at this depth and beyond including an 
 "In reply to #id" linked marker to reflect what they're responding to.
@@ -54,7 +54,7 @@ editing your content, but this has required you to open a separate tab to view t
 
 To help make comments easier to access, v23.06 makes comments accessible via the editor sidebar:
 
-TOOD - Image of comments in editor
+![The BookStack editor view with a "Comments" section showing on the right, containing mulitple user comments](/images/2023/06/editor-comments.png)
 
 Here you'll find a full list of comments as you would when viewing a page, with the above new threaded
 capabilities included, although this is a read-only list so there's no controls to reply/edit/create comments. 
@@ -69,7 +69,7 @@ only built for desktop.
 In this release the design and underlying structure has been revamped to modernise things while
 addressing a set of known existing issues:
 
-TODO - Image of image manager
+![The BookStack image manager view, showing a grid of 12 images with one selected, with details showing for the selected image on the right](/images/2023/06/updated-image-manager.png)
 
 The search and filters have been condensed to a single row by default to leave more space for images.
 The images now have no overlay by default until hovered or focused upon, which keeps things less busy.
@@ -78,14 +78,14 @@ When an image is selected some metadata regarding the image will now show in the
 the uploader, uploaded date and what page it was originally uploaded to.
 Most significantly, the layout is now mobile responsive, switching to a tabbed interface on mobile:
 
-TODO - Image of mobile manager
+<img src="/images/2023/06/mobile-image-manager.png" alt='A mobile width view of the BookStack image manager, showing "Image List" and "Image Details" tabs at the top, and a two-column grid of images in the main content' width="300">
 
 While making these changes, I've paid attention to accessibility and tested everything using a screen
 reader to ensure all reads sensibly and is navigable via keyboard.
 
 As one extra bonus feature, it's now possible to replace an image:
 
-TODO - Image of replace option
+![Cropped view of the BookStack image manager, focused on the "Replace Image" option](/images/2023/06/image-replacements.png)
 
 This allows you to replace an existing image in the system, so that it'd update in all locations where that 
 image is used which is particularly handy if an evolving image is shared across many pages.
@@ -107,7 +107,7 @@ The popup has been updated to be accessible friendly, with proper focus handling
 The popup will now also sit in the correct place in the document, so that it can be tabbed to/from between
 block of content when showing.
 
-TODO - Image of popup in select mode
+![A popup box over a focused heading within BookStack page content](/images/2023/06/accessible-popup.png)
 
 From my own testing, all abilities of the popup are now accessible but, not being a daily screen-reader
 user myself, I appreciate if the implementation feels awkward so I'm open to feedback on this.
@@ -145,7 +145,7 @@ the new advised approach.
 
 Additionally, dark mode now has different status colors by default, to make them better fit the dark theme:
 
-TODO - Image of status colors in dark mode
+![A warning notification in dark mode, showing a muted red highlight](/images/2023/06/warning-dark-mode.png)
 
 ### REST API Updates
 

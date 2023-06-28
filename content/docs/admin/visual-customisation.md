@@ -11,7 +11,7 @@ You may want to customise BookStack to use custom branding, or you may just not 
 
 ### Changing Fonts
 
-To change fonts you can make use of the "Custom HTML Head Content" customization setting to add some CSS to alter fonts used.
+To change fonts you can make use of the "Custom HTML Head Content" customization setting by adding custom CSS to alter fonts used.
 Copy the code below into this setting and alter the font names to your desired fonts:
 
 ```html
@@ -30,17 +30,18 @@ Here's an example of using the 'Lato' font from [Google Web Fonts](https://fonts
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <style>
   body {
-    --font-body: 'Lato', serif;
+    --font-body: 'Lato', sans-serif;
   }
 </style>
 ```
 
-Some addition notes to consider on setting custom fonts:
+Some additional notes to consider when setting custom fonts:
 
 - Changes won't apply to the main `/settings` pages of BookStack, since custom HTML head content is not applied here.
 - If a heading font is not set via `--font-heading`, then the `--font-body` value will be used as a fallback.
-- This system simply makes use of normal [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var).
+- This system simply makes use of normal [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var), and the values are used for the standard [CSS font-family](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family) property.
 - These fonts won't apply to PDF exports, where font availability and usage is more limited.
+- The font used for `--font-code`, if set, should be a monospace font.
 
 ### Changing Code Block Themes
 

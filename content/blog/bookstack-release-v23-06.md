@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.06"
-date = 2023-06-26T18:26:51Z
+date = 2023-06-30T18:26:51Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cows-field-loriane-magnenat.webp"
 slug = "bookstack-release-v23-06"
@@ -23,7 +23,7 @@ while also providing a revamp to the image manager among many other fixes and im
 - **Guest User Account** - Previously custom roles could be given to the "Guest" user account but permissions for those roles would not fully apply. That's been changed in v23.06 so additional role permissions fully apply but, as a precaution to prevent unexpected additional
 grant of permissions upon upgrade, any additional roles assigned to the "Guest" user will be removed upon update migration. If needed, simply re-assign any desired custom guest user roles after updating.
 
-TODO - Video
+{{<yt qaUN9GtHMVw>}}
 
 ### Comment Threading
 

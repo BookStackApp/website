@@ -41,6 +41,14 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.06 or higher
+
+**Email Configuration** - If you've configured mail with `MAIL_ENCRYPTION=ssl` it's advised to test sending (via the button in "Settings > Maintenance") after updating to v23.06 since support for SSL has been dropped for email sending, but we instead now force TLS to be required when this option is set.
+
+**Font Customization** - The technique for customizing fonts has changed to be simpler, less fragile and more flexible. If customizing fonts it's advised to update to the new method as shown in our updated documentation on [changing fonts](/docs/admin/visual-customisation/#changing-fonts).
+
+**Guest User Account** - Previously custom roles could be given to the "Guest" user account but permissions for those roles would not fully apply. That's been changed in v23.06 so additional role permissions fully apply but, as a precaution to prevent unexpected additional grant of permissions upon upgrade, any additional roles assigned to the "Guest" user will be removed upon update migration. If needed, simply re-assign any desired custom guest user roles after updating.
+
 #### Updating to v23.05 or higher
 
 **Page Include Tags** - Nesting is now allowed for [include tags](https://www.bookstackapp.com/docs/user/reusing-page-content/#include-tags), up to 3 levels of depth. You may now see more content loaded for pages which previously had unparsed nested include tags.

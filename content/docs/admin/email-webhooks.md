@@ -34,6 +34,7 @@ MAIL_PORT=587
 
 # Connection encryption to use
 # Valid values are: tls, null
+# Using 'tls' forces TLS to be used.
 # Using 'null' will not force TLS but STARTTLS will still 
 # be attempted if announced as supported by your SMTP server.
 # Using port 465 above will also force connections to be via TLS.

@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.06"
-date = 2023-06-30T18:26:51Z
+date = 2023-06-30T10:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cows-field-loriane-magnenat.webp"
 slug = "bookstack-release-v23-06"

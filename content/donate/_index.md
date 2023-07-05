@@ -14,7 +14,7 @@ Donations provide financial support to keep time & focus on the project to help 
 Currently, donations can be provided directly to the creator of BookStack in a couple of different ways:
 
 - [GitHub Sponsors](https://github.com/sponsors/ssddanbrown) - Requires GitHub account.
-- [Ko-fi](https://ko-fi.com/ssddanbrown) - Supports payment via PayPal or by card.
+- [Ko-fi](https://ko-fi.com/ssddanbrown) - Supports payment via PayPal or by card (Stripe).
 
 
 #### How are donations used?
@@ -31,7 +31,7 @@ Donations are an appreciated bonus and can be a straight-forward way to support 
 #### Do I receive anything for my donation?
 
 Apart from our gratitude, there are no material rewards for donations unless stated within our donation options.
-For example, some of the GitHub monthly sponsor options offer public display of a company's sponsorship on our website and GitHub repo.
+For example, some of the monthly sponsor options offer public display of a company's sponsorship on our website and GitHub repo.
 
 If you could benefit from receiving assured technical support, our [support plans](/support) offer a way to support the project while gaining such support benefits.
 

@@ -18,7 +18,7 @@ while also providing a revamp to the image manager among many other fixes and im
 
 **Upgrade Notices**
 
-- **Email Configuration** - If you've configured mail with `MAIL_ENCRYPTION=ssl` it's advised to test sending (via the button in "Settings > Maintenance") after updating to v23.06 since support for SSL has been dropped for email sending, but we instead now force TLS to be required when this option is set.
+- **Email Configuration** - If you've configured mail with `MAIL_ENCRYPTION=ssl` it's advised to test sending (via the button in "Settings > Maintenance") after updating to v23.06 since support for SSL has been dropped for email sending, but we instead now force TLS to be required when this option is set. - *Edit: Further changes were made to this [in v23.06.1](/docs/admin/updates/#updating-to-v23061-or-higher)*
 - **Font Customization** - The technique for customizing fonts has changed to be simpler, less fragile and more flexible. If customizing fonts it's advised to update to the new method as shown in our updated documentation on [changing fonts](/docs/admin/visual-customisation/#changing-fonts).
 - **Guest User Account** - Previously custom roles could be given to the "Guest" user account but permissions for those roles would not fully apply. That's been changed in v23.06 so additional role permissions fully apply but, as a precaution to prevent unexpected additional
 grant of permissions upon upgrade, any additional roles assigned to the "Guest" user will be removed upon update migration. If needed, simply re-assign any desired custom guest user roles after updating.

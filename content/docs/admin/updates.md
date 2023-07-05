@@ -41,9 +41,13 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.06.1 or higher
+
+**Email Configuration (TLS)** - Due to issues experienced in v23.06, `MAIL_ENCRYPTION=ssl` or `MAIL_ENCRYPTION=tls` will now simply ensure that TLS or STARTTLS are used, rather than forcing full TLS to be used. Our [email documentation](https://www.bookstackapp.com/docs/admin/email-webhooks/) has been updated to reflect this.
+
 #### Updating to v23.06 or higher
 
-**Email Configuration** - If you've configured mail with `MAIL_ENCRYPTION=ssl` it's advised to test sending (via the button in "Settings > Maintenance") after updating to v23.06 since support for SSL has been dropped for email sending, but we instead now force TLS to be required when this option is set.
+**Email Configuration** - If you've configured mail with `MAIL_ENCRYPTION=ssl` it's advised to test sending (via the button in "Settings > Maintenance") after updating to v23.06 since support for SSL has been dropped for email sending, but we instead now force TLS to be required when this option is set.  - *Note - this was amended further in v23.06.1 [(see above)](#updating-to-v23061-or-higher)*
 
 **Font Customization** - The technique for customizing fonts has changed to be simpler, less fragile and more flexible. If customizing fonts it's advised to update to the new method as shown in our updated documentation on [changing fonts](/docs/admin/visual-customisation/#changing-fonts).
 

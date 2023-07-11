@@ -46,5 +46,5 @@ sudo chmod -R 755 /var/www/bookstack
 sudo chmod -R 775 /var/www/bookstack/storage /var/www/bookstack/bootstrap/cache /var/www/bookstack/public/uploads
 
 # Limit the .env file to only be readable by the user and group, and only writable by the user.
-sudo chmod -R 640 /var/www/bookstack/.env
+sudo chmod 640 /var/www/bookstack/.env
 ```

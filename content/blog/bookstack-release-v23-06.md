@@ -23,7 +23,7 @@ while also providing a revamp to the image manager among many other fixes and im
 - **Guest User Account** - Previously custom roles could be given to the "Guest" user account but permissions for those roles would not fully apply. That's been changed in v23.06 so additional role permissions fully apply but, as a precaution to prevent unexpected additional
 grant of permissions upon upgrade, any additional roles assigned to the "Guest" user will be removed upon update migration. If needed, simply re-assign any desired custom guest user roles after updating.
 
-{{<yt qaUN9GtHMVw>}}
+{{<pt 69eAVo8iNHPYs4n4UTT3Nb>}}
 
 ### Comment Threading
 

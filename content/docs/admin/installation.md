@@ -183,7 +183,7 @@ sudo ./installation-ubuntu-18.04.sh
 
 This is a collection of guides created by awesome members of the BookStack community:
 
-* [Debian 11 with PHP 8.2 by @armando-femat](https://jardin.icamole.fr/books/bookstack/page/installation)
+* [Debian 11 with PHP 8.2 by @armando-femat](https://jardin.icamole.site/books/bookstack/page/installation)
 * [Sample Docker Swarm Stack by @neuroforgede](https://github.com/neuroforgede/bookstack-docker-swarm)
 
 In addition to written guides, there are a bunch [community videos on YouTube](https://www.youtube.com/playlist?list=PLLIji4SLo6EiAUI5X3amBSB99HpabUqsS)

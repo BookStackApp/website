@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Security Release v23.01.1"
 date = 2023-02-02T12:25:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/fence-bird-james-wainscoat.jpg"
+image = "/images/blog-cover-images/unsplash/fence-bird-james-wainscoat.jpg"
 slug = "bookstack-release-v23-01-1"
 draft = false
 +++

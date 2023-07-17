@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Security Release v21.10.2"
 date = 2021-10-28T15:00:08Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/lock-chepe-nicoli.jpg"
+image = "/images/blog-cover-images/unsplash/lock-chepe-nicoli.jpg"
 slug = "bookstack-release-v21-10-2"
 draft = false
 +++

@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "Seven Years of BookStack"
-image = "/images/blog-cover-images/mountain-river-hendrik-cornelissen.jpg"
+image = "/images/blog-cover-images/unsplash/mountain-river-hendrik-cornelissen.jpg"
 author = "Dan Brown"
 slug = "7-years-of-bookstack"
 draft = false

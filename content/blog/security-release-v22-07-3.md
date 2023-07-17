@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Security Release v22.07.3"
 date = 2022-08-11T12:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/fence-birds-bonnie-kittle.jpg"
+image = "/images/blog-cover-images/unsplash/fence-birds-bonnie-kittle.jpg"
 slug = "bookstack-release-v22-07-3"
 draft = false
 +++

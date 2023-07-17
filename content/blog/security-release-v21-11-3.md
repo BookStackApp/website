@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Security Release v21.11.3"
 date = 2021-12-15T13:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/door-lock-lucas-santos.jpg"
+image = "/images/blog-cover-images/unsplash/door-lock-lucas-santos.jpg"
 slug = "bookstack-release-v21-11-3"
 draft = false
 +++

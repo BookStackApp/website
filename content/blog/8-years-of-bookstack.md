@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "Eight Years of BookStack"
-image = "/images/blog-cover-images/balmoral-valley-martin-bennie.jpg"
+image = "/images/blog-cover-images/unsplash/balmoral-valley-martin-bennie.jpg"
 author = "Dan Brown"
 slug = "8-years-of-bookstack"
 draft = false

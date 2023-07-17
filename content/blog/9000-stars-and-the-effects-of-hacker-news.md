@@ -4,7 +4,7 @@ tags = ["News"]
 title = "Reaching 9000 Stars & The Effects of Hacker News"
 date = 2022-04-05T10:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/mountain-stars-martin-jernberg.jpg"
+image = "/images/blog-cover-images/unsplash/mountain-stars-martin-jernberg.jpg"
 slug = "9000-stars-and-the-effects-of-hacker-news"
 draft = false
 +++

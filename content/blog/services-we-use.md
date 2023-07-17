@@ -4,7 +4,7 @@ tags = ["Open Source", "Services"]
 title = "The Services We Use"
 date = 2021-10-15T16:39:32Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/zebra-herd-the_bracketeer.jpg"
+image = "/images/blog-cover-images/unsplash/zebra-herd-the_bracketeer.jpg"
 slug = "services-we-use"
 draft = false
 +++

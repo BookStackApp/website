@@ -4,7 +4,7 @@ tags = ["News"]
 title = "Reaching 10k GitHub Stars & A look at first sharing BookStack"
 date = 2022-09-15T12:15:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/space-stars-shot-by-cerqueira.jpg"
+image = "/images/blog-cover-images/unsplash/space-stars-shot-by-cerqueira.jpg"
 slug = "10k-stars-and-a-look-back-at-first-sharing"
 draft = false
 +++

@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "Five Years of BookStack"
-image = "/images/blog-cover-images/mountains-jerry-zhang.jpg"
+image = "/images/blog-cover-images/unsplash/mountains-jerry-zhang.jpg"
 author = "Dan Brown"
 slug = "5-years-of-bookstack"
 draft = false

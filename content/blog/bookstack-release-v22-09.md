@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v22.09"
 date = 2022-09-08T11:30:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/sheep-mountain-luke-ellis-craven.jpg"
+image = "/images/blog-cover-images/unsplash/sheep-mountain-luke-ellis-craven.jpg"
 slug = "bookstack-release-v22-09"
 draft = false
 +++

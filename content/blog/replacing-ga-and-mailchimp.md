@@ -4,7 +4,7 @@ date = 2021-01-05T18:44:52Z
 categories = ["News"]
 tags = ["News"]
 author = "Dan Brown"
-image = "/images/blog-cover-images/penguin-steffen-triekel.jpg"
+image = "/images/blog-cover-images/unsplash/penguin-steffen-triekel.jpg"
 draft = false
 +++
 

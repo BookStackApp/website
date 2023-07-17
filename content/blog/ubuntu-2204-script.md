@@ -4,7 +4,7 @@ tags = ["News"]
 title = "Ubuntu 22.04 BookStack Install Script Now Available"
 date = 2022-04-21T15:30:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/jellyfish-ruthlaine-tan.jpg"
+image = "/images/blog-cover-images/unsplash/jellyfish-ruthlaine-tan.jpg"
 slug = "ubuntu-2204-script"
 draft = false
 +++

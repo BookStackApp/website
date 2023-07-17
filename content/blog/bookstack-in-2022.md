@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "BookStack in 2022"
-image = "/images/blog-cover-images/winter-atle-mo.jpg"
+image = "/images/blog-cover-images/unsplash/winter-atle-mo.jpg"
 author = "Dan Brown"
 slug = "bookstack-in-2022"
 draft = false

@@ -4,7 +4,7 @@ tags = ["Open Source"]
 title = "Contributing to BookStack (And Open Source)"
 date = 2022-02-12T20:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/lions-joel-herzog.jpg"
+image = "/images/blog-cover-images/unsplash/lions-joel-herzog.jpg"
 slug = "contributing-to-open-source"
 draft = false
 +++

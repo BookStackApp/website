@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v22.03"
 date = 2022-03-30T12:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/spring-bird-brian-breeden.jpg"
+image = "/images/blog-cover-images/unsplash/spring-bird-brian-breeden.jpg"
 slug = "bookstack-release-v22-03"
 draft = false
 +++

@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "BookStack in 2021"
-image = "/images/blog-cover-images/robin-alfred-kenneally.jpg"
+image = "/images/blog-cover-images/unsplash/robin-alfred-kenneally.jpg"
 author = "Dan Brown"
 slug = "bookstack-in-2021"
 draft = false

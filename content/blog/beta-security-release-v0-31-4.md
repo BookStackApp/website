@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "Beta Security Release v0.31.4"
 date = 2021-01-16T18:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/gate-masaaki-komori.jpg"
+image = "/images/blog-cover-images/unsplash/gate-masaaki-komori.jpg"
 slug = "beta-release-v0-31-4"
 draft = false
 +++

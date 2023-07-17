@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Security Release v21.10.1"
 date = 2021-10-27T11:30:08Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/lock-muhammad-zaqy-al-fattah.jpg"
+image = "/images/blog-cover-images/unsplash/lock-muhammad-zaqy-al-fattah.jpg"
 slug = "bookstack-release-v21-10-1"
 draft = false
 +++

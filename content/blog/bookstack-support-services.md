@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "Introducing BookStack Support Services"
-image = "/images/blog-cover-images/dog-woods-jamie-street.jpg"
+image = "/images/blog-cover-images/unsplash/dog-woods-jamie-street.jpg"
 author = "Dan Brown"
 slug = "bookstack-support-services"
 draft = false

@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v21.04"
 date = 2021-04-09T20:20:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/spring-arno-smit.jpg"
+image = "/images/blog-cover-images/unsplash/spring-arno-smit.jpg"
 slug = "bookstack-release-v21-04"
 draft = false
 +++

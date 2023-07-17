@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v22.02"
 date = 2022-02-26T12:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/blossom-tegethoff.jpg"
+image = "/images/blog-cover-images/unsplash/blossom-tegethoff.jpg"
 slug = "bookstack-release-v22-02"
 draft = false
 +++

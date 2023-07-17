@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v23.01"
 date = 2023-01-31T11:45:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/snow-doggo-tadeusz-lakota.jpg"
+image = "/images/blog-cover-images/unsplash/snow-doggo-tadeusz-lakota.jpg"
 slug = "bookstack-release-v23-01"
 draft = false
 +++

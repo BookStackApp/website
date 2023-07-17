@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v21.12"
 date = 2021-12-22T16:45:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/reindeer-joe-green.jpg"
+image = "/images/blog-cover-images/unsplash/reindeer-joe-green.jpg"
 slug = "bookstack-release-v21-12"
 draft = false
 +++

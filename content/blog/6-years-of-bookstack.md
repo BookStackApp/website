@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "Six Years of BookStack"
-image = "/images/blog-cover-images/mountains-jonatan-pie.jpg"
+image = "/images/blog-cover-images/unsplash/mountains-jonatan-pie.jpg"
 author = "Dan Brown"
 slug = "6-years-of-bookstack"
 draft = false

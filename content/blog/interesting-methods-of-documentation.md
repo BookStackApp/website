@@ -4,7 +4,7 @@ tags = ["Documentation"]
 title = "A Look at Some Interesting Documentation Methods"
 date = 2022-08-25T12:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/writing-rafael-leao.jpg"
+image = "/images/blog-cover-images/unsplash/writing-rafael-leao.jpg"
 slug = "interesting-methods-of-documentation"
 draft = false
 +++

@@ -2,7 +2,7 @@
 categories = ["News"]
 tags = ["News"]
 title = "BookStack Project Update for March 2023"
-image = "/images/blog-cover-images/flowers-tim-gouw.jpg"
+image = "/images/blog-cover-images/pexels/flowers-tim-gouw.jpg"
 author = "Dan Brown"
 slug = "project-update-march-23"
 draft = false

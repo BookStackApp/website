@@ -4,7 +4,7 @@ tags = ["News"]
 title = "Customization Hacks on the BookStack Site"
 date = 2023-02-15T17:30:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/stump-yves-alarie.jpg"
+image = "/images/blog-cover-images/unsplash/stump-yves-alarie.jpg"
 slug = "hacks-on-the-site"
 draft = false
 +++

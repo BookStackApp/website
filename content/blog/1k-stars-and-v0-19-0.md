@@ -4,7 +4,7 @@ tags = ["Releases", "News"]
 title = "1000 Stars and Beta Release v0.19"
 date = 2017-12-10T17:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/stars-kristopher-roller.jpg"
+image = "/images/blog-cover-images/unsplash/stars-kristopher-roller.jpg"
 description = "Another BookStack milestone with 1000 GitHub stars. In addition we have v0.19 bringing Book cover images along with other nice additions"
 draft = false
 +++

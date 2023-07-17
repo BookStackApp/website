@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v23.02"
 date = 2023-02-26T11:00:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/cow-aj-wallace.jpg"
+image = "/images/blog-cover-images/unsplash/cow-aj-wallace.jpg"
 slug = "bookstack-release-v23-02"
 draft = false
 +++

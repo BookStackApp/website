@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "BookStack Release v21.11"
 date = 2021-11-16T10:04:45Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/autumn-road-sebastian_unrau.jpg"
+image = "/images/blog-cover-images/unsplash/autumn-road-sebastian_unrau.jpg"
 slug = "bookstack-release-v21-11"
 draft = false
 +++

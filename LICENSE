@@ -1,3 +1,11 @@
+All files within this repo are provided under the MIT license below EXCEPT
+from those in directories with their own license files. Specifically:
+
+- static/images/blog-cover-images/unsplash
+- static/images/blog-cover-images/pexels
+
+---
+
 The MIT License (MIT)
 
 Copyright (c) 2020 Dan Brown

@@ -4,7 +4,7 @@ tags = ["Releases"]
 title = "Beta Security Release v0.31.5"
 date = 2021-02-02T21:30:00Z
 author = "Dan Brown"
-image = "/images/blog-cover-images/lock-markus-spiske.jpg"
+image = "/images/blog-cover-images/unsplash/lock-markus-spiske.jpg"
 slug = "beta-release-v0-31-5"
 draft = false
 +++

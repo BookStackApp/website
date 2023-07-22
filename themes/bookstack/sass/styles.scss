@@ -11,6 +11,7 @@
 @import "header";
 @import "blog";
 @import "photoswipe";
+@import "pagefind";
 
 .md-margin-top {
   margin-top: $-xxl*1.4;
@@ -384,6 +385,22 @@ input[type="text"].doc-search-input {
   }
 }
 
+.header-search-section {
+  position: relative;
+}
+
+#site-search-results {
+  position: absolute;
+  background-color: #FFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0, 0.1);
+  max-width: 420px;
+  max-height: 80vh;
+  left: -60px;
+  color: #444;
+}
+
 .youtube-embed-wrap {
   margin-bottom: 1rem;
 }
@@ -431,18 +448,6 @@ iframe[src^="https://www.youtube-nocookie.com"],
 .youtube-embed-wrap a img {
   object-fit: cover;
   width: 100%;
-}
-
-.meilisearch-autocomplete .docs-searchbar-footer {
-  font-size: 0.8rem;
-}
-.meilisearch-autocomplete .docs-searchbar-footer-logo,
-.meilisearch-autocomplete .docs-searchbar-footer {
-  vertical-align: top !important;
-}
-
-.meilisearch-autocomplete .docs-searchbar-suggestion--subcategory-column {
-  color: #53555a !important;
 }
 
 .price-table {

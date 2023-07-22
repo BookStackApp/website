@@ -58,7 +58,7 @@
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
 
-    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/styles.css?v={{ now.Format "2006-01-02T15:04:05" }}" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css?v={{ now.Format "2006-01-02T15:04:05" }}" />
 
     {{ if .Site.Params.RSSLink}}
         <link href="{{.Site.Params.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
@@ -74,13 +74,21 @@
 
     <link rel="canonical" href="{{ .Permalink }}" />
 
+    <!-- Analytics & Search -->
     <script async defer data-domain="bookstackapp.com" src="https://analytics.bookstackapp.com/js/plausible.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}libs/docs-searchbar.min.css" />
-
-    {{ if .Site.Params.customHeaderPartial }}
-        {{ partial .Site.Params.customHeaderPartial . }}
-    {{ end }}
+    <script src="/_pagefind/pagefind-modular-ui.js" type="text/javascript"></script>    
+    <script type="module">
+      if (window.PagefindModularUI) {
+        const instance = new PagefindModularUI.Instance();
+        instance.add(new PagefindModularUI.Input({
+            inputElement: "#site-search"
+        }));
+        instance.add(new PagefindModularUI.ResultList({
+            containerElement: "#site-search-results",
+            showImages: false,
+        }));
+      }
+  </script>
 </head>
 <body class="nav-closed">
 
@@ -94,7 +102,8 @@
           <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
       </div>
       <div class="header-search-section">
-        <input type="text" placeholder="Search site" class="doc-search-input">
+        <input type="text" id="site-search" placeholder="Search site" class="doc-search-input">
+        <div id="site-search-results"></div>
       </div>
       <div class="main-nav">
           <div class="nav-dropdown-wrap">

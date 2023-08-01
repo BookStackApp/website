@@ -154,6 +154,8 @@ APP_URL=http://mybookstackurl.com
 
 ### AzureAD (Microsoft)
 
+***Note:** If you intend all users to access your instance via Azure, then using an alternative primary authentication option like [OIDC](/docs/admin/oidc-auth/) or [SAML 2.0](/docs/admin/saml2-auth/) will provide a better user experience while having more features like auto-login and group sync. A video guide for setting up [OIDC with AzureAD can be found here](https://foss.video/w/n67qNijhf8BdTRQys8SDYf).*
+
 1. Login to your your azure portal and navigate to the 'Azure Activity Directory' area.
 2. Under 'Manage > App registrations' select 'New application registration'.
 3. Enter a name ('BookStack'). Set the 'Redirect URI' to the "Web" platform with the value set to the following, replacing 'https://example.com/' with your base BookStack url: 

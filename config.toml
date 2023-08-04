@@ -31,7 +31,7 @@ assetDir = "static"
     endLevel = 3
 
 [permalinks]
-  post = "/blog/:slug/"
+  blog = "/blog/:slugorfilename"
 
 [params]
   blogCover = "/images/cover.jpg"

@@ -7,7 +7,7 @@ type = "admin-doc"
 
 BookStack can be configured to utilise a SAML 2.0 based authentication provider as a solution for users to log-in, log-out and self-register within BookStack. This replaces the default email & password authentication mechanism within BookStack. When enabled, BookStack will attempt to match the SAML user to an existing BookStack user based on a stored external id attribute otherwise, if not found, BookStack will effectively auto-register that user to provide a seamless access experience.
 
-[A video guide for setting up SAML2 can be found here](https://www.youtube.com/watch?v=szweYsAow88).
+[A video guide for setting up SAML2 can be found here](https://foss.video/w/jJGmXS8sK244YFgogAz8LP).
 
 ### BookStack Configuration
 

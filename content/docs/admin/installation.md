@@ -103,7 +103,7 @@ Community docker setups are available for those that would prefer to use a conta
 A script to install BookStack on a fresh instance of Ubuntu 22.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 8.0 & PHP 8.1 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
 - [Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-22.04.sh)
-- [Video guide](https://www.youtube.com/watch?v=wq78komr9rs)
+- [Video guide](https://foss.video/w/emk5bMzhRdk4qzDoq3R6xe)
 
 #### Running the Script
 
@@ -132,7 +132,7 @@ Permissions for the BookStack installation files & folders will be set based upo
 A script to install BookStack on a fresh instance of Ubuntu 20.04 is available. This script is ONLY FOR A FRESH OS, it will install Apache, MySQL 8.0 & PHP 8.2 and could OVERWRITE any existing web setup on the machine. It also does not set up mail settings or configure system security so you will have to do those separately. You can use the script as a reference if you're installing on a non-fresh machine.
 
 - [Link to installation script](https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-20.04.sh)
-- [Video guide](https://www.youtube.com/watch?v=ShqUjt33uOs)
+- [Video guide](https://foss.video/w/59udkzBf8ftVPWutkBcuyM)
 
 #### Running the Script
 
@@ -187,7 +187,8 @@ This is a collection of guides created by awesome members of the BookStack commu
 * [Sample Docker Swarm Stack by @neuroforgede](https://github.com/neuroforgede/bookstack-docker-swarm)
 
 In addition to written guides, there are a bunch [community videos on YouTube](https://www.youtube.com/playlist?list=PLLIji4SLo6EiAUI5X3amBSB99HpabUqsS)
-in addition to the [guides on the official BookStack channel](https://www.youtube.com/playlist?list=PLLIji4SLo6EidqlySHJNGyQ_rLpMY3nmE).
+in addition to the guides on the official [BookStack YouTube channel](https://www.youtube.com/c/BookStackApp)
+or [BookStack PeerTube channel](https://foss.video/c/bookstack/).
 
 #### Old Guides
 

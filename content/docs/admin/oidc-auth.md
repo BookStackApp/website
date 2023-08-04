@@ -21,9 +21,9 @@ provide a seamless access experience. They will be given the default role set un
 
 We have a range of videos available that can help show, for a range of identity platforms, the exact steps required to set-up a BookStack OpenID Connect authentication integration:
 
-- [General setup guide (Using Okta as an example)](https://www.youtube.com/watch?v=TJQ4NJrMvkw)
-- [Azure Active Directory OIDC Guide](https://www.youtube.com/watch?v=CL5kMFkopHY)
-- [Authentik BookStack OIDC Guide](https://www.youtube.com/watch?v=M1_WPhR4hRc)
+- [General setup guide (Using Okta as an example)](https://foss.video/w/1b6sc98un7ugGv98v9UaRC)
+- [Azure Active Directory OIDC Guide](https://foss.video/w/n67qNijhf8BdTRQys8SDYf)
+- [Authentik BookStack OIDC Guide](https://foss.video/w/a744K8GxFF1LqBFSadAsuV)
 
 ### Requirements & Limitations
 

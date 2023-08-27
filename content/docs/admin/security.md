@@ -27,7 +27,7 @@ the database used for BookStack data.
 4. Check that you've set the `APP_URL` option in your `.env` file so that system generated URLs cannot be manipulated.
 5. Within BookStack, go through the settings to ensure registration and public access settings are as you expect.
 6. Review the user roles in the settings area.
-7. Read the below to further understand the security for images & attachments.
+7. Read the below to further understand the security for specific functionality and features.
 
 ---
 
@@ -217,6 +217,42 @@ To enable untrusted server side requests, you need to define the `ALLOW_UNTRUSTE
 ```bash
 ALLOW_UNTRUSTED_SERVER_FETCHING=true
 ```
+
+Note that this is not connected to the `ALLOWED_SSR_HOSTS` setting at all.
+`ALLOW_UNTRUSTED_SERVER_FETCHING` is used for typically "untrusted" scenarios/functionality
+whereas `ALLOWED_SSR_HOSTS` is used for typically "trusted" user scenarios/functionality 
+(where admin-level permissions are required).
+
+---
+
+### Server Side Request Allow List
+
+There is some functionality in BookStack, like webhooks for example, that is typically only
+accessible by trusted (admin-level) users.
+In some cases, those admin users may not be trusted to the level where they can freely make server
+side requests. In such scenarios, you can define a `ALLOWED_SSR_HOSTS` option in your `.env` file
+to limit the hosts that can be called for such typically trusted functionality:
+
+```bash
+# Allow all hosts (Default)
+ALLOWED_SSR_HOSTS="*"
+
+# Allow a single host
+ALLOWED_SSR_HOSTS="https://example.com"
+
+# Allow multiple hosts via space-separated entries
+ALLOWED_SSR_HOSTS="https://example.com https://example.org"
+
+# Use '*' as wildcards and/or define required paths
+ALLOWED_SSR_HOSTS="https://*.example.com https://example.org/bookstack/"
+```
+
+Values will be compared prefix-matched, case-insensitive, against called SSR urls.
+
+Note that this is not connected to the `ALLOW_UNTRUSTED_SERVER_FETCHING` setting at all.
+`ALLOW_UNTRUSTED_SERVER_FETCHING` is used for typically "untrusted" scenarios/functionality
+whereas `ALLOWED_SSR_HOSTS` is used for typically "trusted" user scenarios/functionality 
+(where admin-level permissions are required).
 
 ---
 

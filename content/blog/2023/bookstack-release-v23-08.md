@@ -34,7 +34,7 @@ To provide some high-level user control, there's a new "Notification Preferences
 view which can be accessed via the "Preferences" option in the header bar user 
 dropdown:
 
-TODO - Image of notifications preferences with preferences option
+![A view in BookStack titled "Notification Preferences", with three option checkbox. The "Preferences" option is also shown in the top-left header bar user menu](/images/2023/08/notification_preferences.png)
 
 Within here are three new user preferences:
 
@@ -48,12 +48,12 @@ watching or ignoring. Watching or ignoring allows content-specific control of no
 that may work in addition to, or override, your global notification preferences.
 You can watch any book, chapter or page via the new "Watch" action:
 
-TODO - Image of watch action.
+![A view of the actions for a page in BookStack, focused on a "Watch" action with eye icon](/images/2023/08/watch_action.png)
 
 By default this will watch for both new pages and page changes. This can be changed
 via the watch options menu, found by selecting the watch status in the details:
 
-TODO - Image of watch menu
+<img width="420" src="/images/2023/08/watch_options.png" alt='A view within the details for a page in BookStack, showing various options for watching the page, including "Ignore", "All Page Updates" and "All Page Updates & Comments"'>
 
 This provides various different levels of watching of content, in addition to the ability
 to ignore any notification events if things are getting too noisy within a particular book,
@@ -64,12 +64,12 @@ those have their own watch preferences set to override the parent watch status.
 When a page or chapter has active watch preferences from a parent item, this will be reflected
 in the details of that item:
 
-TODO - Image of parent watch
+![A view within the details for a page in BookStack, highlight an eye icon next to the text "Watching via parent book"](/images/2023/08/watch_parent_detail.png)
 
 Notifications are sent upon relevant activity, and will include a few details
 in addition to a link to the relevant content:
 
-TODO - Image of notification
+![Screenshot of a notification email for a comment, including page name, commenter name and comment text, along with a linked CTA button to view the comment](/images/2023/08/comment_notification_example.png)
 
 Page update notifications are somewhat debounced, meaning that the system will avoid
 sending notifications if re-updated by the same author within a time window. This is
@@ -79,7 +79,7 @@ The ability to receive and manage notifications is handled via a new role permis
 For a stable upgrade path, this permission will only be provided to the default
 "Admin" user role upon upgrade, so you'll need to assign it to other roles where desired:
 
-TODO - Image of notifications permission
+![A view of the "System Permissions" part of the BookStack role edit form, highlighting the new "Receive & manage notifications" option](/images/2023/08/receive_notifications_role_permission.png)
 
 An important consideration of this system is performance. Having to send out emails
 upon certain common actions does require extra time, making these actions slow.
@@ -103,7 +103,7 @@ they're sent back to BookStack. If they then save on the BookStack server-side s
 the browser version will be cleared. If the save process fails, the browser stored image will
 remain and you'll get a prompt when you next try to edit/create a drawing:
 
-TODO - Image of prompt
+![A popup prompt in BookStack titled "Unsaved Drawing Found", asking if we'd like to restore and edit a found unsaved drawing](/images/2023/08/unsaved_drawing_prompt.png)
 
 You can confirm via this prompt to then restore the browser-saved image into diagrams.net
 for continued editing and re-attempt of saving.

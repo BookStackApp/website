@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.08"
-date = 2023-08-29T12:00:00Z
+date = 2023-08-30T12:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/deer_dan_brown.jpg"
 slug = "bookstack-release-v23-08"
@@ -28,11 +28,85 @@ TODO - Video:
 
 ### Content Notification System
 
-TODO
+It's now possible to be notified via email upon page changes within BookStack!
+Alongside this you can also be notified upon new comments to pages.
+To provide some high-level user control, there's a new "Notification Preferences"
+view which can be accessed via the "Preferences" option in the header bar user 
+dropdown:
+
+TODO - Image of notifications preferences with preferences option
+
+Within here are three new user preferences:
+
+- Notify upon changes to pages I own
+- Notify upon comments on pages I own
+- Notify upon replies to my comments
+
+These options represent global defaults for notifications.
+Upon those options, the "Notification Preferences" view also lists all the items you're
+watching or ignoring. Watching or ignoring allows content-specific control of notifications
+that may work in addition to, or override, your global notification preferences.
+You can watch any book, chapter or page via the new "Watch" action:
+
+TODO - Image of watch action.
+
+By default this will watch for both new pages and page changes. This can be changed
+via the watch options menu, found by selecting the watch status in the details:
+
+TODO - Image of watch menu
+
+This provides various different levels of watching of content, in addition to the ability
+to ignore any notification events if things are getting too noisy within a particular book,
+chapter or page.
+
+Like much other functionality, watch preferences cascade from books to chapters to pages unless
+those have their own watch preferences set to override the parent watch status.
+When a page or chapter has active watch preferences from a parent item, this will be reflected
+in the details of that item:
+
+TODO - Image of parent watch
+
+Notifications are sent upon relevant activity, and will include a few details
+in addition to a link to the relevant content:
+
+TODO - Image of notification
+
+Page update notifications are somewhat debounced, meaning that the system will avoid
+sending notifications if re-updated by the same author within a time window. This is
+to prevent an attack of emails from an enthusiastically updating author.
+
+The ability to receive and manage notifications is handled via a new role permission.
+For a stable upgrade path, this permission will only be provided to the default
+"Admin" user role upon upgrade, so you'll need to assign it to other roles where desired:
+
+TODO - Image of notifications permission
+
+An important consideration of this system is performance. Having to send out emails
+upon certain common actions does require extra time, making these actions slow.
+It is however possible for emails to be sent asynchronously to avoid significant
+added delay with a little extra setup. Consult our ["Async Action Handling" Email & Webhooks](/docs/admin/email-webhooks/#async-action-handling) documentation for guidance on this.
+
 
 ### Drawing Save Safety Net
 
-TODO
+When editing or creating a drawing within BookStack, via the diagrams.net integration, 
+BookStack will wait until you save the drawing before then uploading the drawing data
+to the system for storage. This process works in most cases but, from the drawing start
+time to the point of save, various things can change or go wrong resulting in the drawing
+failing to save. As an example, going offline or your user login session timing out could
+result in a lost drawing. This could be especially frustrating where hours have been spent
+on a drawing.
+
+To help avoid the frustration of lost drawing effort, we've added a safety net to the save
+process. Now when drawings are saved, they'll first be saved into the browser before 
+they're sent back to BookStack. If they then save on the BookStack server-side successfully,
+the browser version will be cleared. If the save process fails, the browser stored image will
+remain and you'll get a prompt when you next try to edit/create a drawing:
+
+TODO - Image of prompt
+
+You can confirm via this prompt to then restore the browser-saved image into diagrams.net
+for continued editing and re-attempt of saving.
 
 ### API - Set Page/Chapter Ordering in Books
 

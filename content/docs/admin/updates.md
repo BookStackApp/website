@@ -41,6 +41,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.08 or higher
+
+**Security - Webhooks** - In scenarios where admins users are not trusted, webhooks could potentially be used maliciously. This update adds a control for such functionality. Please read [our documentation for the new `ALLOWED_SSR_HOSTS` option](/docs/admin/security/#server-side-request-allow-list) if this may be a concern for your instance.
+
 #### Updating to v23.06.2 or higher
 
 **Shelf Create Permissions** - If you upgraded specifically to v23.06 or v23.06.1, then create permissions for bookshelves would have been removed upon upgrade. If you made use of these via the "Copy Permissions to Books" action, or CLI command, then you will need to re-apply these permissions where required. If you jumped right over v23.06 and v23.06.1, then no permissions were removed.

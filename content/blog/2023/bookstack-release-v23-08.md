@@ -18,7 +18,7 @@ a notification system for content, but as usual there are a few other improvemen
 
 **Upgrade Notices**
 
-- **Security - Webhooks** - In scenarios where admins users are not trusted, webhooks could potentially be used maliciously. This update adds a control for such functionality. Please read [our documentation for the new `ALLOWED_SSR_HOSTS` option](/docs/admin/security/#server-side-request-allow-list) if this may be a concern for your instance.
+- **Security - Webhooks** - In scenarios where admin users are not trusted, webhooks could potentially be used maliciously. This update adds a control for such functionality. Please read [our documentation for the new `ALLOWED_SSR_HOSTS` option](/docs/admin/security/#server-side-request-allow-list) if this may be a concern for your instance.
 
 Note that [v23.06.1](/docs/admin/updates/#updating-to-v23061-or-higher) and [v23.06.2](/docs/admin/updates/#updating-to-v23062-or-higher) also had version specific upgrade notices that should be considered
 if not already read and/or upgraded to those.

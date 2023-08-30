@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.08"
-date = 2023-08-30T12:00:00Z
+date = 2023-08-30T11:43:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/deer_dan_brown.jpg"
 slug = "bookstack-release-v23-08"

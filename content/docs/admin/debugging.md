@@ -40,7 +40,7 @@ If using an alternative hosting method, such as docker container, please refer t
 
 _**NOTE: When debugging is enabled it's possible for visitors to see private credentials used in the BookStack or server configuration. Ensure debugging is only enabled when your instance is not accessible by others. Remember to disable debugging before restoring access.**_
 
-To enable full error displaying edit the `.env` file, in the application root directory, and find the line `APP_DEBUG=false`. Change this to `APP_DEBUG=true` and the errors will be displayed in full with details of where it occurred. Remember to revert this change once you have found the issue so that the detailed error information is hidden from visitors.
+To enable full error displaying edit the `.env` file, in the application root directory, and add or update the `APP_DEBUG` option to `APP_DEBUG=true`. Errors will now be displayed in full with details of where it occurred. Remember to revert this change once you have found the issue so that the detailed error information is hidden from visitors.
 
 ### Common Issues & Resolutions
 

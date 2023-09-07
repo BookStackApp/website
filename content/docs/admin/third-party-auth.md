@@ -78,10 +78,10 @@ APP_URL=http://mybookstackurl.com
 
 1. While logged in, open up your [GitHub developer applications](https://github.com/settings/developers).
 2. Click 'Register new application'.
-3. Enter an application name ('BookStack' or your custom set name), A link to your app instance under 'Homepage URL' and an 'Authorization callback URL' of the url that your BookStack instance is hosted on then click 'Register application'.
+3. Enter an application name ('BookStack' or your custom set name) and a link to your app instance under 'Homepage URL'. The 'Authorization callback URL' can be the root (homepage) URL for your BookStack instance. Once those details are set, select 'Register application'.
 4. A 'Client ID' and a 'Client Secret' value will be shown. Add these two values to the to the `GITHUB_APP_ID` and `GITHUB_APP_SECRET` variables, replacing the default false value, in the '.env' file found in the BookStack root folder.
 5. Set the 'APP_URL' environment variable to be the same domain as you entered in step 3.
-6. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their Github account.
+6. All done! Users should now be able to link their social accounts in their account profile pages and also register/login using their GitHub account.
 
 ---
 
@@ -180,6 +180,8 @@ APP_URL=http://mybookstackurl.com
 ---
 
 ### Okta
+
+***Note:** If you intend all users to access your instance via Okta, then using an alternative primary authentication option like [OIDC](/docs/admin/oidc-auth/) or [SAML 2.0](/docs/admin/saml2-auth/) will provide a better user experience while having more features like auto-login and group sync.*
 
 1. Login to Okta and, once logged in, Note the current URL. This is used for the 'BASE_URL' in step 6.
 2. Navigate to the Admin panel then 'Applications' then select 'Add Application'. Then select 'Create New App' on the left.

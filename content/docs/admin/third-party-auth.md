@@ -136,9 +136,9 @@ APP_URL=http://mybookstackurl.com
 
 ### Slack
 
-1. Go to the [Slack apps page](https://api.slack.com/apps) and select 'Create New App'.
-2. Enter an app name ('BookStack login' or something custom), select your team then continue.
-3. You should see your client ID and secret. Copy these details and add them as new variables in your `.env` file like so:
+1. Go to the [Slack apps page](https://api.slack.com/apps) and select 'Create An App', then 'From scratch' when prompted.
+2. Enter an app name ('BookStack login' or something custom) and your workspace then select "Create App".
+3. Within an "App Credentials" section, you should find your client ID and secret. Copy these details and add them as new variables in your `.env` file like so:
 ```bash
 # Replace the below (including '{}' braces) with your slack CLIENT_ID and CLIENT_SECRET
 SLACK_APP_ID={CLIENT_ID}
@@ -147,7 +147,7 @@ SLACK_APP_SECRET={CLIENT_SECRET}
 # APP_URL Needs to be set to your BookStack base url
 APP_URL=http://mybookstackurl.com
 ```
-4. In your slack app go to 'OAuth & Permissions' and enter your BookStack base URL into the 'Redirect URL(s)' input then save.
+4. In your slack app go to 'OAuth & Permissions', find the 'Redirect URLs' section then 'Add New Redirect URL'. Enter your BookStack base URL then 'Add' before pressing 'Save URLs'.
 5. All done! Users should now be able to link their Slack account in their account profile pages and also register/login using their Slack account.
 
 ---

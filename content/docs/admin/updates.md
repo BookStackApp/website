@@ -20,12 +20,10 @@ php artisan migrate
 
 This first command will update the repository that was created in the installation. The second will install the PHP dependencies using `composer`. The third will then update the database with any required changes.
 
-In addition, Clearing the system caches is also recommended:
+In addition, clearing all the caches used by system is also recommended:
 
 ```bash
-php artisan cache:clear
-php artisan config:clear
-php artisan view:clear
+php artisan optimize:clear
 ```
 
 Check the below [Version Specific Instructions](#version-specific-instructions) list for the version you are updating to for any additional instructions.

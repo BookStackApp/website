@@ -67,6 +67,23 @@
       {{ if .Params.Tested }}
       <hr>
 
+      <h4>Request an Update</h4>
+
+      <div class="row">
+        <div class="col col-md-8">
+          <p>
+            Hack not working on the latest version of BookStack? <br>
+            You can request this hack to be updated & tested for a small one-time fee. <br>
+            This helps keeps these hacks updated & maintained in a sustainable manner.
+          </p>
+        </div>
+        <div class="col col-md-4 text-center">
+          <a href="https://bookstack-hacks.httpfunctions.com?hack_id={{ .File.ContentBaseName }}&hack_name={{.Title}}" class="button" target="_blank">Request Update</a>
+        </div>
+      </div>
+
+      <hr>
+
       <h4>Latest Hacks</h4>
 
       <div class="hack-box-list">

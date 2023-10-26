@@ -19,9 +19,7 @@ along with many other additions & improvements.
 
 **Upgrade Notices**
 
-TODO - Add to updates page
-
-- **URL Changes** - Many of the URLs related to user details & preferences have changed in this release with the addition of the "My Account" area. If you have documented these links you may need to update your documentation.
+- **User Detail/Preference Changes** - Many of the URLs, paths and interfaces for user-self management has changed in this release. You may need to update any documentation or user guidance you may have surrounding users updating their own details or preferences.
 
 TODO - Video
 <!-- {{<pt oMVSWxsayhfL7rjtzJLqNF>}} -->
@@ -35,13 +33,13 @@ Additionally that "Edit Profile" was located in the application users settings w
 
 To address this, in this release there's a new central "My Account" area accessed via the header user dropdown menu:
 
-TODO - Screenshot of my account area, with dropdown in view
+![View of a "My Account > Profile Details" view with various user detail inputs, while also showing the user profile dropdown menu in the top right with the "My Account" option selected](/images/2023/10/user_my_account_view.png)
 
 The "My Account" area combines the pre-existing preference views, with end-user specific "Profile Details" and "Access & Security" views
 to contain all user self-management within one neatly organised area.
 The "Access & Security" view bundles the existing password, MFA and API token controls:
 
-TODO - Screenshot of "Access & Security" area
+![View of my account > Access and Security view with change password, MFA, and API Tokens sections](/images/2023/10/access_security_view.png)
 
 These changes should now provide a much more intuitive end-user experience when it comes to finding account options.
 
@@ -55,20 +53,20 @@ abilities can now be managed via "My Account".
 When third-party/social login options are in use, admin users will not be able to see what external
 accounts users have connected to their BookStack profile. This was previously only visible to the user which they applied to.
 
-TODO - Image of social acccounts for non-current user
+![View of the social accounts for a user, showing GitHub as connected, and Slack as Disconnected](/images/2023/10/user_social_accounts.png)
 
 Lastly, the "External Authentication ID" field will now always display on this form, even if using just normal email & password authentication.
 This is to make it easier to manage and set-up external authentication accounts when required, negating the awkward need to swap
 active system authentication system  when attempting to set this up.
 
-TODO - Image of external auth id field
+!["Edit User" form focused on a "External Authentication ID" section and form field](/images/2023/10/user_external_auth_field.png)
 
 ### Editor Design Update
 
 During this release cycle I started making some minor improvements to the editor UI, but this soon
 turned into a much more significant design update:
 
-TODO - Image of editor 
+![The BookStack WYSIWYG page editor interface, built into white "card" style background with a fixed width, with a smaller thin toolbar on the right in a similar card style with a vertical list of icons](/images/2023/10/editor_design_update.png)
 
 The new design is now closer aligned to the page display view, to be less jarring when switching
 from viewing to editing and to provide a more consistent experience.
@@ -79,7 +77,7 @@ On the smallest mobile sizes you'll actually now have more space for editing.
 Of course these changes also apply when using the markdown editor. 
 Here's a view of the markdown editor, with the sidebar toolbox open:
 
-TODO - Image of markdown + toolbox
+![BookStack markdown editor interface with the sidebar toolbox open displaying various comments for the current page](/images/2023/10/markdown_editor_design.png)
 
 ### Refresh Avatar Command
 
@@ -102,7 +100,7 @@ A thanks to [@MarcHagen](https://github.com/BookStackApp/BookStack/pull/4560) fo
 This version of BookStack introduces basic PWA (Progressive Web App) functionality through the use of an added PWA manifest endpoint.
 In practice, this will allow the easier usage of BookStack as a "contained" application on some platforms, with the correct name and icon set.
 
-TODO - Image of usage on iOS as contained app?
+<img alt="A screenshot of a Safari browser window with no standard browser controls, with the titlebar color matching the BookStack UI" src="/images/2023/10/pwa_example.png" width="420">
 
 Thanks to [@GamerClassN7](https://github.com/BookStackApp/BookStack/pull/4430) for working to provide the code for this functionality.
 
@@ -124,16 +122,16 @@ As an example, adding a `<theme_folder>/layouts/parts/header-links-start.blade.p
 
 Would result in:
 
-TODO - Image of above customization
+![A view of the BookStack header bar with an added "Tags" link placed before "Shelves"](/images/2023/10/header_customization_example.png)
 
 ### Editor Entity Search Prefill
 
 This is a relatively minor feature but an example of a neat user experience optimisation,
 [recommended by @aswgxf](https://github.com/BookStackApp/BookStack/issues/4571).
 In the editor, when linking to another item in the system via the selector (commonly via the `Ctrl+Shift+K` shortcut)
-we'll now pre-pill the search box with the text that was selected (if any) in the editor:
+we'll now pre-fill the search box with the text that was selected (if any) in the editor:
 
-TODO - Image, or video? Webm?
+<video src="/images/2023/10/editor_link_selector_prefill.webm" controls muted></video>
 
 ### Logical Theme System Error Handling
 
@@ -144,7 +142,7 @@ not clear to users which lead to unknown errors which many raised support querie
 To help in such scenarios, extra error handling has been added to help indicate when logical theme system
 code fails to load.
 
-TODO - Image of error handled
+![The BookStack debug view with the message "Failed loading theme functions file at "functions.php" with error: Class "BookStack\Biscuit" not found](/images/2023/10/custom_theme_error_handling.png)
 
 This won't catch all error scenarios of code within your `functions.php`, but it should help indicate issues
 in the most common of scenarios upon changes from updates.
@@ -156,10 +154,10 @@ Various limits and software configurations can lead to images failing to upload.
 Previously in BookStack we didn't always handle these in the best way. 
 Failed uploads could respond with vague error messages, while potentially preventing the gallery from loading afterwards.
 
-In this release cycle, I've spent a good while emaulating and testing common cases to better address these common cases.
+In this release cycle, I've spent a good while emulating and testing common cases to better address these common cases.
 Here's an extreme example to demonstrate the new messaging that can appear:
 
-TODO - Image of image manager with failed messages
+![The BookStack image gallery view showing an three different types of errors. One within the image gallery list. One for a failed upload. And one for a specific selected image.](/images/2023/10/image_upload_handling.png)
 
 In particular, the tricky issue to handle here has been handling memory-limit events. 
 When these are triggered, the application goes straight into a shutdown-like mode which makes it difficult to catch

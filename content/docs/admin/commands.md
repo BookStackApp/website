@@ -69,6 +69,26 @@ php artisan bookstack:reset-mfa --email=john@example.com
 php artisan bookstack:reset-mfa --id=5
 ```
 
+### Refresh User Avatars
+
+This will re-fetch avatar images for users in the system.
+By default avatars are fetched from [Gravatar](https://gravatar.com/) unless an alternative avatar system [has been configured](/docs/admin/other-config/#custom-user-avatar-fetching).
+
+*Note: This will **not** load avatars from any connected authentication system.*
+
+```bash
+# Refresh avatar for just the user of the given email
+php artisan bookstack:refresh-avatar --email=user@example.com
+# Or the user of the given id
+php artisan bookstack:refresh-avatar --id=101
+
+# Refresh avatars for all users without avatars already assigned
+php artisan bookstack:refresh-avatar --users-without-avatars
+
+# Refresh avatars for all users in the system
+php artisan bookstack:refresh-avatar --all
+```
+
 ### Delete All Activity History
 
 This will clear all tracked activities in the system. Note: Some areas of the interface rely on this data, including the Audit Log and any "Recent Activity" lists.

@@ -3,12 +3,13 @@ from those in directories with their own license files. Specifically:
 
 - static/images/blog-cover-images/unsplash
 - static/images/blog-cover-images/pexels
+- static/images/blog-cover-images/cc-by-2
 
 ---
 
 The MIT License (MIT)
 
-Copyright (c) 2020 Dan Brown
+Copyright (c) 2023 Dan Brown
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

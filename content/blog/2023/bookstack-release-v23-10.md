@@ -19,6 +19,8 @@ along with many other additions & improvements.
 
 **Upgrade Notices**
 
+TODO - Add to updates page
+
 - **URL Changes** - Many of the URLs related to user details & preferences have changed in this release with the addition of the "My Account" area. If you have documented these links you may need to update your documentation.
 
 TODO - Video
@@ -63,49 +65,146 @@ TODO - Image of external auth id field
 
 ### Editor Design Update
 
-TODO
+During this release cycle I started making some minor improvements to the editor UI, but this soon
+turned into a much more significant design update:
+
+TODO - Image of editor 
+
+The new design is now closer aligned to the page display view, to be less jarring when switching
+from viewing to editing and to provide a more consistent experience.
+The existence of sidebar editor toolbox is now more obvious.
+Care has been taken to ensure these design changes don't reduce usability or access to existing options.
+On the smallest mobile sizes you'll actually now have more space for editing.
+
+Of course these changes also apply when using the markdown editor. 
+Here's a view of the markdown editor, with the sidebar toolbox open:
+
+TODO - Image of markdown + toolbox
 
 ### Refresh Avatar Command
 
-TODO
+We have a new [command](/docs/admin/commands/) for this release.
+This one allows the refreshing of user avatar images from the configured avatar
+service ([Gravatar](https://gravatar.com/) by default).
+There are options to do this for a single user, for all users, or just for users without avatars assigned:
 
-Thanks to [@MarcHagen](https://github.com/BookStackApp/BookStack/pull/4560)
 
-[Command in docs](/docs/admin/commands/#refresh-user-avatars)
+```bash
+# Refresh avatars for all users without avatars already assigned
+php artisan bookstack:refresh-avatar --users-without-avatars
+```
 
+You can find more details about [this command in our docs here](/docs/admin/commands/#refresh-user-avatars).
+A thanks to [@MarcHagen](https://github.com/BookStackApp/BookStack/pull/4560) for submitting the code for this functionality.
 
 ### Basic PWA Support
 
-TODO
+This version of BookStack introduces basic PWA (Progressive Web App) functionality through the use of an added PWA manifest endpoint.
+In practice, this will allow the easier usage of BookStack as a "contained" application on some platforms, with the correct name and icon set.
 
-Thanks to [@GamerClassN7](https://github.com/BookStackApp/BookStack/pull/4430)
+TODO - Image of usage on iOS as contained app?
+
+Thanks to [@GamerClassN7](https://github.com/BookStackApp/BookStack/pull/4430) for working to provide the code for this functionality.
 
 ### Visual Theme System Header Partials
 
-TODO
+When it comes to customising your BookStack instance, the header bar can be a popular target for tweaks and additions.
+Previously the template code was mostly stored in a single large template file, requiring a lot to override and support for minor changes
+using our [visual theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/visual-theme-system.md).
+As of v23.10, the header bar has been split out into more specific template files, to allow more targeted tweaking.
+The main links, logo, search-box, and user dropdown menu are now each their own template.
+
+Additionally, we've added a blank `layouts/parts/header-links-start.blade.php` template that can specifically be used to 
+add extra links to the header, since this was a common customization desire.
+As an example, adding a `<theme_folder>/layouts/parts/header-links-start.blade.php` of:
+
+```php
+<a href="{{ url('/tags') }}">@icon('tag')<span>Tags</span></a>
+```
+
+Would result in:
+
+TODO - Image of above customization
 
 ### Editor Entity Search Prefill
 
-TODO
+This is a relatively minor feature but an example of a neat user experience optimisation,
+[recommended by @aswgxf](https://github.com/BookStackApp/BookStack/issues/4571).
+In the editor, when linking to another item in the system via the selector (commonly via the `Ctrl+Shift+K` shortcut)
+we'll now pre-pill the search box with the text that was selected (if any) in the editor:
+
+TODO - Image, or video? Webm?
+
+### Logical Theme System Error Handling
+
+Within the v23.06 release I made a lot of changes to the location and paths of classes within the BookStack codebase.
+These changes caused many usages of the logical theme system to break, which is expected, but many of those issues were
+not clear to users which lead to unknown errors which many raised support queries for.
+
+To help in such scenarios, extra error handling has been added to help indicate when logical theme system
+code fails to load.
+
+TODO - Image of error handled
+
+This won't catch all error scenarios of code within your `functions.php`, but it should help indicate issues
+in the most common of scenarios upon changes from updates.
+
+### Image Upload Error Handling Improvements
+
+Image uploads are a common source of potential issues for a system like BookStack.
+Various limits and software configurations can lead to images failing to upload.
+Previously in BookStack we didn't always handle these in the best way. 
+Failed uploads could respond with vague error messages, while potentially preventing the gallery from loading afterwards.
+
+In this release cycle, I've spent a good while emaulating and testing common cases to better address these common cases.
+Here's an extreme example to demonstrate the new messaging that can appear:
+
+TODO - Image of image manager with failed messages
+
+In particular, the tricky issue to handle here has been handling memory-limit events. 
+When these are triggered, the application goes straight into a shutdown-like mode which makes it difficult to catch
+these errors in a typical error handling manner. Instead we have to reserve some extra memory, 
+then hook into that shutdown handling event so we can customise the application response with something friendlier.
 
 ### Fixes & Cleanup
 
-TODO
+Much of the focus of this release cycle was upon code-cleanup and bug-fixing.
+I've been going back over parts of the codebase and addressing inconsistencies that have been on my mind for a while.
+If interested, examples include:
+
+- [Language handling cleanup](https://github.com/BookStackApp/BookStack/pull/4555/files)
+- [Guest user handling cleanup](https://github.com/BookStackApp/BookStack/pull/4554/files)
+- [HTTP calling cleanup](https://github.com/BookStackApp/BookStack/pull/4525/files)
+- [Mixed-entity endpoint alignment](https://github.com/BookStackApp/BookStack/commit/2fbf5527c70d5d3eadb2767ca5301ad05f7f28c8)
+
+See the [full list of changes below](/blog/bookstack-release-v23-10/#full-list-of-changes) for a complete view of all the changes made.
 
 ### Translations
 
-TODO
+A new language enters with this BookStack release. The new addition is Uzbek!
+Thanks to [@mrmuminov](https://github.com/BookStackApp/BookStack/pull/4527) for contributing this language addition.
 
-Added Uzbek
+Upon the new language, once again a massive thanks to all the phenomenal polylingual professionals below
+that have contributed translation text since the last feature release: 
 
 - Name - *Language - x words*
 
+TODO
 
 *\* Word counts are those tracked by Crowdin, indicating original EN words translated.*
 
 ### Next Steps
 
-TODO
+As mentioned in the last "Next Steps", my focus now will be on how we handle free-text inputs within the system.
+Specifically these relate to comments and descriptions for shelves, books and pages.
+It's been long requested to have a few more formatting options and features within descriptions, whereas we've always
+had markdown support in comments but that's not been clear to users. 
+I'd be assessing the use of a simplistic WYSIWYG solution to unify these inputs, and attempting to find a balance and fit of options to include.
+
+Beyond that, there's a pending pull request to add OIDC RP-initiated logout, so I'll likely dive into that for the next release.
+On the subject of auth, there have been more requests for hardware tokens for MFA usage. I'd quite like to dig into this to gain
+experience of the WebAuthN spec, although I'm not too sure how (if) the growing popularity of passkeys fit into this picture.
+If that's your area of expertise, I'd love to hear your input in response [to my comment here](https://github.com/BookStackApp/BookStack/issues/3912#issuecomment-1781212350).
 
 ### Full List of Changes
 

@@ -205,7 +205,7 @@ After updating these values ensure you restart your webserver and also PHP if us
 
 #### NGINX
 
-By default NGINX has a limit of 1MB on file uploads. To change this you will need to set the `client_max_body_size` variable. You can do this either in the http block in your `nginx.conf` file or in the server block set up for BookStack. Here's an example of increasing the limit it 10MB in the http block:
+By default NGINX has a limit of 1MB on file uploads. To change this you will need to set the `client_max_body_size` variable. You can do this either in the http block in your `nginx.conf` file or in the server block set up for BookStack. Here's an example of increasing the limit to 100MB in the http block:
 
 ```nginx
 http {

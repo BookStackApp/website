@@ -43,7 +43,7 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 #### Updating to v23.10 or higher
 
-**User Detail/Preference Changes** - Many of the URLs, paths and interfaces for user-self management has changed in this release. You may need to update any documentation or user guidance you may have surrounding users updating their own details or preferences.
+**User Detail/Preference Changes** - Many of the URLs, paths and interfaces for user-self management have changed in this release. You may need to update any documentation or user guidance you may have surrounding users updating their own details or preferences.
 
 #### Updating to v23.08 or higher
 

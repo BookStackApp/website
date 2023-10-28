@@ -9,27 +9,27 @@ slug = "bookstack-release-v23-10"
 draft = false
 +++
 
-This October maintenance release brings with it a little more than originally planned, 
+This October maintenance release brings with it more than originally planned, 
 with a significant revamp of user self-management in addition to an updated editor design,
 along with many other additions & improvements.
 
 * [Update instructions](/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v23.10)
 
+TODO - Regen translation list, order by word count
 
 **Upgrade Notices**
 
-- **User Detail/Preference Changes** - Many of the URLs, paths and interfaces for user-self management has changed in this release. You may need to update any documentation or user guidance you may have surrounding users updating their own details or preferences.
+- **User Detail/Preference Changes** - Many of the URLs, paths and interfaces for user-self management have changed in this release. You may need to update any documentation or user guidance you may have surrounding users updating their own details or preferences.
 
-TODO - Video
-<!-- {{<pt oMVSWxsayhfL7rjtzJLqNF>}} -->
+{{<pt 4YtVndveEVE6GuuGPV3Yn1>}}
 
 ### My Account Area
 
 With the added options over the years, user self-management was getting rather fractured within the 
 user interface with some options within "Preferences", but with many other options (including some which could be considered preferences)
-within the "Edit Profile" view. 
-Additionally that "Edit Profile" was located in the application users settings which was acting dual-purpose for admin and end-user usage.
+part of the "Edit Profile" view. 
+Additionally that "Edit Profile" form was located in the application users settings acted dual-purpose for admin & end-user usage.
 
 To address this, in this release there's a new central "My Account" area accessed via the header user dropdown menu:
 
@@ -50,12 +50,12 @@ to be targeted on admin use.
 Access to these views is now limited to just those with role permission to "Manage Users", since all other required end-user
 abilities can now be managed via "My Account".
 
-When third-party/social login options are in use, admin users will not be able to see what external
+When third-party/social login options are in use, admin users will now be able to see what external
 accounts users have connected to their BookStack profile. This was previously only visible to the user which they applied to.
 
 ![View of the social accounts for a user, showing GitHub as connected, and Slack as Disconnected](/images/2023/10/user_social_accounts.png)
 
-Lastly, the "External Authentication ID" field will now always display on this form, even if using just normal email & password authentication.
+Lastly, the "External Authentication ID" field will now always display on this form, even if using the standard email & password authentication.
 This is to make it easier to manage and set-up external authentication accounts when required, negating the awkward need to swap
 active system authentication system  when attempting to set this up.
 
@@ -69,8 +69,8 @@ turned into a much more significant design update:
 ![The BookStack WYSIWYG page editor interface, built into white "card" style background with a fixed width, with a smaller thin toolbar on the right in a similar card style with a vertical list of icons](/images/2023/10/editor_design_update.png)
 
 The new design is now closer aligned to the page display view, to be less jarring when switching
-from viewing to editing and to provide a more consistent experience.
-The existence of sidebar editor toolbox is now more obvious.
+between viewing & editing, and to provide a more consistent experience.
+The existence of the editor sidebar toolbox is now more obvious.
 Care has been taken to ensure these design changes don't reduce usability or access to existing options.
 On the smallest mobile sizes you'll actually now have more space for editing.
 
@@ -128,7 +128,7 @@ Would result in:
 
 This is a relatively minor feature but an example of a neat user experience optimisation,
 [recommended by @aswgxf](https://github.com/BookStackApp/BookStack/issues/4571).
-In the editor, when linking to another item in the system via the selector (commonly via the `Ctrl+Shift+K` shortcut)
+In the editor, when linking to another item in the system via the selector (commonly accessed using the `Ctrl+Shift+K` shortcut)
 we'll now pre-fill the search box with the text that was selected (if any) in the editor:
 
 <video src="/images/2023/10/editor_link_selector_prefill.webm" controls muted></video>
@@ -137,7 +137,7 @@ we'll now pre-fill the search box with the text that was selected (if any) in th
 
 Within the v23.06 release I made a lot of changes to the location and paths of classes within the BookStack codebase.
 These changes caused many usages of the logical theme system to break, which is expected, but many of those issues were
-not clear to users which lead to unknown errors which many raised support queries for.
+not clear to users, leading to unknown errors and many raised support queries.
 
 To help in such scenarios, extra error handling has been added to help indicate when logical theme system
 code fails to load.
@@ -145,7 +145,7 @@ code fails to load.
 ![The BookStack debug view with the message "Failed loading theme functions file at "functions.php" with error: Class "BookStack\Biscuit" not found](/images/2023/10/custom_theme_error_handling.png)
 
 This won't catch all error scenarios of code within your `functions.php`, but it should help indicate issues
-in the most common of scenarios upon changes from updates.
+in the most common of scenarios upon changes from BookStack updates.
 
 ### Image Upload Error Handling Improvements
 
@@ -154,7 +154,7 @@ Various limits and software configurations can lead to images failing to upload.
 Previously in BookStack we didn't always handle these in the best way. 
 Failed uploads could respond with vague error messages, while potentially preventing the gallery from loading afterwards.
 
-In this release cycle, I've spent a good while emulating and testing common cases to better address these common cases.
+In this release cycle, I've spent a good while emulating and testing common cases so we can better address them.
 Here's an extreme example to demonstrate the new messaging that can appear:
 
 ![The BookStack image gallery view showing an three different types of errors. One within the image gallery list. One for a failed upload. And one for a specific selected image.](/images/2023/10/image_upload_handling.png)
@@ -183,11 +183,37 @@ A new language enters with this BookStack release. The new addition is Uzbek!
 Thanks to [@mrmuminov](https://github.com/BookStackApp/BookStack/pull/4527) for contributing this language addition.
 
 Upon the new language, once again a massive thanks to all the phenomenal polylingual professionals below
-that have contributed translation text since the last feature release: 
+that have contributed translation text since the last feature release:
 
-- Name - *Language - x words*
-
-TODO
+- Jan Mitrof (jan.kachlik) - *Czech - 474 words*
+- Indrek Haav (IndrekHaav) - *Estonian - 347 words*
+- m0uch0 - *Spanish - 456 words*
+- scureza - *Italian - 427 words*
+- link1183 - *French - 448 words*
+- Maciej Lebiest (Szwendacz) - *Polish - 370 words*
+- sdhadi - *Persian - 468 words*
+- toras9000 - *Japanese - 930 words*
+- Sascha (Man-in-Black) - *German - 318 words*
+- Matthias Mai (schnapsidee) - *German Informal - 326 words*
+- 10935336 - *Chinese Simplified - 618 words*
+- Éric Gaspar (erga) - *French - 424 words*
+- Tomislav Kraljević (tomislav.kraljevic) - *Croatian - 329 words*
+- Martin Sebek (sebekmartin) - *Czech - 135 words*
+- Mohammadreza Madadi (madadi.efl) - *Persian - 165 words*
+- Renan (rfpe) - *Portuguese, Brazilian - 135 words*
+- SmokingCrop - *Dutch - 110 words*
+- Marco (cdrfun) - *German Informal; German - 72 words*
+- Guttorm Hveem (guttormhveem) - *Norwegian Nynorsk - 70 words*
+- David Bauer (davbauer) - *German - 64 words*
+- H.-H. Peng (Hsins) - *Chinese Traditional - 109 words*
+- Igor V Belousov (biv) - *Russian - 27 words*
+- ZZnOB (zznobzz) - *Russian - 36 words*
+- rupus - *Swedish - 22 words*
+- Jøran Haugli (haugli92) - *Norwegian Bokmal - 7 words*
+- TWME - *Chinese Traditional - 14 words*
+- developernecsys - *Norwegian Nynorsk - 4 words*
+- xuan LI (xuanli233) - *Chinese Simplified - 8 words*
+- Konstantin Kovacheli (kkovacheli) - *Ukrainian - 2 words*
 
 *\* Word counts are those tracked by Crowdin, indicating original EN words translated.*
 
@@ -196,12 +222,12 @@ TODO
 As mentioned in the last "Next Steps", my focus now will be on how we handle free-text inputs within the system.
 Specifically these relate to comments and descriptions for shelves, books and pages.
 It's been long requested to have a few more formatting options and features within descriptions, whereas we've always
-had markdown support in comments but that's not been clear to users. 
+had markdown support in comments but hasn't been clear to users. 
 I'd be assessing the use of a simplistic WYSIWYG solution to unify these inputs, and attempting to find a balance and fit of options to include.
 
 Beyond that, there's a pending pull request to add OIDC RP-initiated logout, so I'll likely dive into that for the next release.
 On the subject of auth, there have been more requests for hardware tokens for MFA usage. I'd quite like to dig into this to gain
-experience of the WebAuthN spec, although I'm not too sure how (if) the growing popularity of passkeys fit into this picture.
+experience of the WebAuthN spec, although I'm not too sure how, or if, the growing popularity of passkeys fit into this picture.
 If that's your area of expertise, I'd love to hear your input in response [to my comment here](https://github.com/BookStackApp/BookStack/issues/3912#issuecomment-1781212350).
 
 ### Full List of Changes

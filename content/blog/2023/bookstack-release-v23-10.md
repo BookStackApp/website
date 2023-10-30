@@ -16,8 +16,6 @@ along with many other additions & improvements.
 * [Update instructions](/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v23.10)
 
-TODO - Regen translation list, order by word count
-
 **Upgrade Notices**
 
 - **User Detail/Preference Changes** - Many of the URLs, paths and interfaces for user-self management have changed in this release. You may need to update any documentation or user guidance you may have surrounding users updating their own details or preferences.
@@ -185,34 +183,34 @@ Thanks to [@mrmuminov](https://github.com/BookStackApp/BookStack/pull/4527) for 
 Upon the new language, once again a massive thanks to all the phenomenal polylingual professionals below
 that have contributed translation text since the last feature release:
 
-- Jan Mitrof (jan.kachlik) - *Czech - 474 words*
-- Indrek Haav (IndrekHaav) - *Estonian - 347 words*
-- m0uch0 - *Spanish - 456 words*
-- scureza - *Italian - 427 words*
-- link1183 - *French - 448 words*
-- Maciej Lebiest (Szwendacz) - *Polish - 370 words*
-- sdhadi - *Persian - 468 words*
 - toras9000 - *Japanese - 930 words*
-- Sascha (Man-in-Black) - *German - 318 words*
-- Matthias Mai (schnapsidee) - *German Informal - 326 words*
 - 10935336 - *Chinese Simplified - 618 words*
+- Jan Mitrof (jan.kachlik) - *Czech - 474 words*
+- sdhadi - *Persian - 468 words*
+- m0uch0 - *Spanish - 456 words*
+- link1183 - *French - 448 words*
+- scureza - *Italian - 427 words*
 - Éric Gaspar (erga) - *French - 424 words*
+- Maciej Lebiest (Szwendacz) - *Polish - 370 words*
+- Indrek Haav (IndrekHaav) - *Estonian - 347 words*
 - Tomislav Kraljević (tomislav.kraljevic) - *Croatian - 329 words*
-- Martin Sebek (sebekmartin) - *Czech - 135 words*
+- Matthias Mai (schnapsidee) - *German Informal - 326 words*
+- Sascha (Man-in-Black) - *German - 318 words*
 - Mohammadreza Madadi (madadi.efl) - *Persian - 165 words*
+- Martin Sebek (sebekmartin) - *Czech - 135 words*
 - Renan (rfpe) - *Portuguese, Brazilian - 135 words*
 - SmokingCrop - *Dutch - 110 words*
+- H.-H. Peng (Hsins) - *Chinese Traditional - 109 words*
 - Marco (cdrfun) - *German Informal; German - 72 words*
 - Guttorm Hveem (guttormhveem) - *Norwegian Nynorsk - 70 words*
 - David Bauer (davbauer) - *German - 64 words*
-- H.-H. Peng (Hsins) - *Chinese Traditional - 109 words*
-- Igor V Belousov (biv) - *Russian - 27 words*
 - ZZnOB (zznobzz) - *Russian - 36 words*
+- Igor V Belousov (biv) - *Russian - 27 words*
 - rupus - *Swedish - 22 words*
-- Jøran Haugli (haugli92) - *Norwegian Bokmal - 7 words*
 - TWME - *Chinese Traditional - 14 words*
-- developernecsys - *Norwegian Nynorsk - 4 words*
 - xuan LI (xuanli233) - *Chinese Simplified - 8 words*
+- Jøran Haugli (haugli92) - *Norwegian Bokmal - 7 words*
+- developernecsys - *Norwegian Nynorsk - 4 words*
 - Konstantin Kovacheli (kkovacheli) - *Ukrainian - 2 words*
 
 *\* Word counts are those tracked by Crowdin, indicating original EN words translated.*

@@ -41,6 +41,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.10.3 or higher
+
+**Security** - v23.10.3 addresses a vulnerability relating to image handling which could be exploited, by users with the ability to create/edit/update page content, to perform server-side requests or read the contents of files on the server system.
+
 #### Updating to v23.10 or higher
 
 **User Detail/Preference Changes** - Many of the URLs, paths and interfaces for user-self management have changed in this release. You may need to update any documentation or user guidance you may have surrounding users updating their own details or preferences.

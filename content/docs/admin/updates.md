@@ -43,7 +43,7 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 #### Updating to v23.10.3 or higher
 
-**Security** - v23.10.3 addresses a vulnerability relating to image handling which could be exploited, by users with the ability to create/edit/update page content, to perform server-side requests or read the contents of files on the server system.
+**Security** - v23.10.3 addresses a vulnerability relating to image handling which could be exploited, by users with the ability to create/edit/update page content, to perform server-side requests or read the contents of files on the server system. Additionally, this update addresses a lack of permission check in some image creation actions.
 
 #### Updating to v23.10 or higher
 

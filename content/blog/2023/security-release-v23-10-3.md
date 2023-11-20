@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Security Release v23.10.3"
-date = 2023-11-20T12:00:00Z
+date = 2023-11-20T14:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/unsplash/fence-squirrel-mitchell-orr.jpg"
 slug = "bookstack-release-v23-10-3"
@@ -12,6 +12,7 @@ draft = false
 BookStack v23.10.3 has been released.
 This is a security release that addresses a vulnerability in image handling which could be
 exploited to perform server-side requests or read the contents of files on the server system.
+Additionally, this update addresses a lack of permission check in some image creation actions.
 
 Upgrade is strongly advised where untrusted users have permission to create/edit/update page
 content in your instance.

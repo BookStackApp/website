@@ -14,6 +14,7 @@ Below you can find details on how to install BookStack on your own hosting. Ther
 * [Ubuntu 22.04 Script](#ubuntu-2204)
 * [Ubuntu 20.04 Script](#ubuntu-2004)
 * [Ubuntu 18.04 Script](#ubuntu-1804)
+* [AlmaLinux 9 Installation Script](#almalinux-9-installation-script)
 * [Community Guides](#community)
 * [Other Hosting Options](#other)
 * [High Availability](#ha)
@@ -173,6 +174,20 @@ chmod a+x installation-ubuntu-18.04.sh
 
 # Run the script with admin permissions
 sudo ./installation-ubuntu-18.04.sh
+```
+
+## AlmaLinux 9 Installation Script
+
+```bash
+
+# Download the script
+wget https://raw.githubusercontent.com/safesploit/bookstack/main/bookstack-alma9-php80.sh
+
+# Make it executable
+chmod a+x bookstack-alma9-php80.sh
+
+# Run the script with admin permissions
+sudo ./bookstack-alma9-php80.sh
 ```
 
 ---

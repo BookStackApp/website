@@ -68,6 +68,12 @@ OIDC_CLIENT_SECRET=def456
 # Must start with 'https://'
 OIDC_ISSUER=https://instance.authsystem.example.com
 
+# The "end session" (RP-initiated logout) URL to call during BookStack logout.
+# By default this is false which disables RP-initiated logout.
+# Setting to "true" will enable logout if found as supported by auto-discovery.
+# Otherwise, this can be set as a specific URL endpoint.
+OIDC_END_SESSION_ENDPOINT=false
+
 # Enable auto-discovery of endpoints and token keys.
 # As per the standard, expects the service to serve a 
 # `<issuer>/.well-known/openid-configuration` endpoint.
@@ -92,9 +98,18 @@ A user in BookStack will be linked to an OIDC provided account via the `sub` cla
 If the value of this ID changes in the identity provider it can be updated in BookStack, 
 by an admin, by changing the "External Authentication ID" field on the user's profile.
 
-### Callback URL
+### Authentication System Configuration
 
-Should your OIDC provider require a callback URL, the following can be used: `https://example.com/oidc/callback`.
+With OIDC you don't often need to configure much specifically for BookStack.
+Most often, you'll just need to ensure any callback/redirect URIs are set as below:
+
+- **Login Callback/Redirect URI:** `https://example.com/oidc/callback`
+- **Logout Callback/Redirect URIs:**
+  - `https://example.com`
+  - `https://example.com/login`
+  - `https://example.com/login?prevent_auto_init=true`
+  - *Only one URL will actually be used but it depends upon specific configuration set. Some systems will allow you to instead use a wildcard like `https://example.com/*`.*
+
 Change `https://example.com` to be the base URL of your BookStack instance.
 
 ### Switching to OIDC with Existing Users

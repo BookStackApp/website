@@ -27,38 +27,131 @@ TODO - Copy to updates page
 Video - TODO
 <!-- {{<pt 4YtVndveEVE6GuuGPV3Yn1>}} -->
 
-### WYSIWYG Description Field Editor
+### WYSIWYG Editor for Descriptions
 
-TODO
+In BookStack we have description fields for chapters, books and shelves which allow a little bit of explanation and context to be provided for those items.
+These have always been simple plaintext fields, but as of v23.12 you'll now see a simple WYSIWYG input box instead with a few formatting controls:
+
+TODO - Image of description field
+
+Formatting options include, and are limited to: bold, italic, links, bullet lists and numbered lists.
+The formatting is purposefully limited here to keep main content within pages, but allow a little formatting along with linking to relevant pages where required.
+Since links can now be placed within descriptions, references to other items will now be tracked via the existing reference system:
+
+TODO - Image of page references, references by a shelf, chapter and book.
+
+For API users, new `description_html` fields now exist on responses and requests to interact with this field in a HTML-aware manner, otherwise the pre-existing `description` fields will continue to work as before.
 
 ### Default Template For New Book Pages
 
-TODO
-Thanks to [@lennertdaniels](https://github.com/BookStackApp/BookStack/pull/3918).
+We've long since supported page [templates](/docs/user/page-templates/) within BookStack but to be used the user would have to access the relevant sidebar menu within the page editor, leading to them being easy to miss. Additionally, it would be a common desire to use a template for all pages created within a certain context.
+In this release, a new option for books allows you to set a default page template:
 
-### OIDC RP-Initated Logout
+TODO - Image of option
 
-TODO
-Thanks to [@joancyho](https://github.com/BookStackApp/BookStack/pull/4467)
+When set, this template page will be used as the default content for all new pages within that book, preventing the need to select the template within the editor each time you create something new. Note though, this is still permission controlled so the template will only be used if the page creator has view access to the template assigned.
+
+A big thanks to [@lennertdaniels](https://github.com/BookStackApp/BookStack/pull/3918) for performing the initial implementation work to move this forward within BookStack!
+
+### OIDC RP-Initiated Logout
+
+OpenID-Connect authentication in BookStack allows for easy login via an external system, but so far it's lacked any kind of logout support.
+That changes in this release thanks for efforts by [@joancyho](https://github.com/BookStackApp/BookStack/pull/4467) to introduce OIDC RP-Initiated logout support.
+This official [complementary part of the OIDC spec](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) allows an application like BookStack to request logout of the external authentication system as part of the application's logout flow.
+
+BookStack's support of this includes the use of autodiscovery to learn the logout endpoint.
+If you want to use RP-initiated logout you'll need to configure a `OIDC_END_SESSION_ENDPOINT` option for BookStack:
+
+```bash
+# Set to true to enable logout via a URL found via auto-discovery:
+OIDC_END_SESSION_ENDPOINT=true
+
+# Or configure a specific URL to be used for RP-initiated logout:
+OIDC_END_SESSION_ENDPOINT="https://instance.authsystem.example.com/logout"
+
+# Or disable RP-initiated logout (default):
+OIDC_END_SESSION_ENDPOINT=false
+```
+
+It's likely you'll need to also configure logout/sign-out URIs on your OIDC authentication system for your BookStack application instance.
+Our [OIDC documentation](/docs/admin/oidc-auth/#authentication-system-configuration) has been updated with details of these URIs.
 
 ### Page Context in Email Notifications
 
-TODO
-Thanks to [@Man-in-Black](https://github.com/BookStackApp/BookStack/pull/4629).
+A couple of releases ago we added email notifications for certain page activities, and these notifications would include
+a name and link for the page interacted upon. Sometimes though, it may not be clear where the activity has occurred from the 
+page name alone since it could be a page name used multiple times, or lacking context without knowing where that page is located.
+To help add that context, notifications will now reflect the page parent book, and chapter if within:
+
+TODO - Image of notification with page parent context including chapter
+
+A big thanks to [@Man-in-Black](https://github.com/BookStackApp/BookStack/pull/4629) for contributing this functionality.
 
 ### Friendlier Buttons
 
-TODO
+For a long time BookStack has used buttons with forced upper-case text, the design of which was getting a bit long in the tooth
+while potentially coming across somewhat angry via their shouty appearance.
+For this release, the design of buttons has been tweaked a little to better fit them into the current design, rounding the corners
+a little more, tweaking the shadows upon hover and, most importantly, using the casing from the source translation text:
 
-### Logical Theme System Event to Register Routes
+TODO - Image of buttons
 
-TODO
+In most cases buttons will now appear as Title Case, although this can now change to suit different languages as needed as it's not forced
+by design.
+
+### Logical Theme System Events to Register Routes
+
+This release I've added a couple of new events to the [logical theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md)
+to allow easier registration of custom web routes/endpoints where desired. As an example of these:
+
+```php
+<?php
+
+use BookStack\Theming\ThemeEvents;
+use BookStack\Facades\Theme;
+use Illuminate\Routing\Router;
+
+// Register a custom "/counter" endpoint which increments each time accessed
+Theme::listen(ThemeEvents::ROUTES_REGISTER_WEB, function (Router $router) {
+
+    $router->get('/counter', function () {
+        $count = session()->get('counter', 0) + 1;
+        session()->put('counter', $count);
+        return "Count: {$count}";
+    });
+});
+
+// Register a custom "/counter-auth" endpoint which increments each time accessed
+// like above but only if the user is logged in (or public access is enabled).
+Theme::listen(ThemeEvents::ROUTES_REGISTER_WEB_AUTH, function (Router $router) {
+
+    $router->get('/counter-auth', function () {
+        $count = session()->get('secret-counter', 0) + 1;
+        session()->put('secret-counter', $count);
+        return "Count Authed: {$count}";
+    });
+});
+```
+
+It was possible to register such routes previously, but you had to register them in a very specific way
+using internally named middleware, in the right order, otherwise you'd have issues with session & user access.
+These new events are intended to make this much simpler.
 
 ### Rebuilt Page Include Engine
 
-TODO
+When [reusing page content](/docs/user/reusing-page-content/) BookStack has always processed include tags via quite
+a simple find/replace approach, which worked well for the most part but could lead to technically invalid syntax in some
+cases due to nested paragraphs and other oddities, which may cause unpredictable issues in how pages would display
+with include tags.
+
+In this release, the engine for page include tags has been rebuilt to specifically be more content aware
+avoiding invalid structure where possible by smartly splitting existing blocks or moving included content to
+appropriate locations if needed.
 
 ### Translations
+
+One again a big thanks to all the exceptionally eloquent experts in language who've contributed
+translations since our last feature release:
 
 TODO
 
@@ -68,7 +161,7 @@ TODO
 
 ### Next Steps
 
-Now we have a simpler WYSIWYG editor, as implemented for descriptions in this release, I'll probably be looking to carry this across to the comments system to provide that with simple WYSIWYG editing, although this will require some breaking changes to the currently supported markdown content of this input. Not sure what other features I'll focus on just yet. 
+Now we have a simpler WYSIWYG editor, as implemented for descriptions in this release, I'll probably be looking to carry this across to the comments system to provide that with simple WYSIWYG editing, although this will require some breaking changes to the currently supported markdown content of this input. Upon that, over the initial few weeks of this year I'd like to explore some of the new PHP-ecosystem technologies like roadrunner and/or FrankenPHP to understand their potential benefit to BookStack.
 
 Over the next few days I'll be putting together a "BookStack in 2023" blogpost, like [done previous years](https://www.bookstackapp.com/blog/bookstack-in-2022/) to look back and assess the progress of the project over the last year.
 

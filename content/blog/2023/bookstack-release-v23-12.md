@@ -18,6 +18,8 @@ for description inputs and default page templates within books, among some other
 
 **Upgrade Notices**
 
+TODO - Copy to updates page
+
 - **Page Includes** - The way page include content is fetched & merged has changed significantly in this release,
    which may in some cases alter how included content appears on the page.
 - **Prior Security Release** - Prior version v23.10.3 was a security release. If you missed this before, further details about that [can be found here](/blog/bookstack-release-v23-10-3/).
@@ -66,7 +68,9 @@ TODO
 
 ### Next Steps
 
-TODO
+Now we have a simpler WYSIWYG editor, as implemented for descriptions in this release, I'll probably be looking to carry this across to the comments system to provide that with simple WYSIWYG editing, although this will require some breaking changes to the currently supported markdown content of this input. Not sure what other features I'll focus on just yet. 
+
+Over the next few days I'll be putting together a "BookStack in 2023" blogpost, like [done previous years](https://www.bookstackapp.com/blog/bookstack-in-2022/) to look back and assess the progress of the project over the last year.
 
 ### Full List of Changes
 

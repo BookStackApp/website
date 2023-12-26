@@ -10,7 +10,9 @@ can easily be reused when editing and creating pages.
 This can be super useful when you need to create many pages following
 a similar format.
 
-## Creating a Page Template
+{{<toc>}}
+
+### Creating a Page Template
 
 A page template in BookStack is simply a normal page that has been marked as a template.
 Start by creating/editing the page you want to use as a template.
@@ -23,7 +25,7 @@ If you don't see that checkbox, you likely lack the "Manage page templates" role
 
 Note: Visibility of page templates are controlled via visibility of the page itself. If a user lacks permission to view the page marked as a template, it will not show as an available template for them.
 
-## Using Page Templates
+### Using Page Templates
 
 Page templates can be accessed when creating or editing a page.
 Within the editor sidebar you should see a templates tab.
@@ -41,3 +43,14 @@ There are multiple ways to add a template into a page:
 
 Keep in mind that using a template simply copies its content at time-of-use, it is not
 a "live" connection to the template page, and updating the template page won't affect pages that have previously used it as a template.
+
+### Default Page Templates
+
+If you'd like to always start a new page with a specific template, this can be configured at a per-book level using the
+"Default Page Template" option when editing a book:
+
+![Dragging a template into the page editor](/images/docs/user/templates-default-book.png)
+
+With this option set, the selected template will be used to pre-fill the contents of any new page created within that book.
+Like with other template usages, access to the template will be controlled by permissions.
+If a user creates a page with the book, but does not have access to view the template page, it will not be used to pre-fill the contents of the new page.

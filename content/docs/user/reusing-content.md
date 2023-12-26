@@ -77,3 +77,12 @@ in that described URL format and you'll be taken to the source page.
 
 As an example if you had the include tag `{{@5#bkmrk-chapter-a}}`, you'd go to the URL path `/link/5`.
 A full example URL, using our demo instance, would be: [https://demo.bookstackapp.com/link/5](https://demo.bookstackapp.com/link/5)
+
+### Technical Include Logic
+
+BookStack attempts to be smart with includes, to properly handle different content types and to be somewhat compliant with HTML rules.
+Below are some of the decisions BookStack will make when parsing includes:
+
+- If targeting a specific section to include, BookStack will fetch and includes the inner contents of that section in most cases, apart from when the section needs to be used as a whole in which case the entire block will be used as a whole. Examples of this include tables, lists and code blocks.
+- If including whole blocks, whole pages, or ranges of content, BookStack will attempt to structure the content to avoid nested paragraphs which are invalid in HTML and can cause issues when browsers attempt to automatically fix. This will be attempted in a location accurate manner if reasonable, although in some cases content may be moved to before/after the section it's included within.
+- IDs of content sections will be de-duplicated after includes are parsed, which may result in existing page content IDs dynamically changing after page content load.

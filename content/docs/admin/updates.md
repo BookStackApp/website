@@ -41,6 +41,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v23.12 or higher
+
+**Page Includes** - The way page include content is fetched & merged has changed significantly in this release, which in some cases may alter how included content appears on the page.
+
 #### Updating to v23.10.3 or higher
 
 **Security** - v23.10.3 addresses a vulnerability relating to image handling which could be exploited, by users with the ability to create/edit/update page content, to perform server-side requests or read the contents of files on the server system. Additionally, this update addresses a lack of permission check in some image creation actions.

@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v23.12"
-date = 2023-12-28T11:43:00Z
+date = 2023-12-29T12:10:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cc-by-sa-4/mountains-milan-bališin.jpg"
 slug = "bookstack-release-v23-12"
@@ -23,8 +23,7 @@ in addition to some other additional gifts.
    which in some cases may alter how included content appears on the page.
 - **Prior Security Release** - Prior version v23.10.3 was a security release. If you missed this before, further details about that [can be found on the blog here](/blog/bookstack-release-v23-10-3/).
 
-Video - TODO
-<!-- {{<pt 4YtVndveEVE6GuuGPV3Yn1>}} -->
+{{<pt 4gCUZhHumJDLTtSbGQzXzU>}}
 
 ### WYSIWYG Editor for Descriptions
 

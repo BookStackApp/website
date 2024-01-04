@@ -137,7 +137,7 @@ so I'm now able to earn a little bit of bonus revenue from these videos.
 Money isn't really the target though, as it's very far from covering the effort in making this content.
 These videos are really about building this extra resource and community hub, while providing
 a means for me to celebrate and emphasise work being done for the project.
-While many dunk on YouTube comments as typically being a toxic place, In generally the feedback I get is 
+While many dunk on YouTube comments as typically being a toxic place, the feedback I get is 
 wonderfully wholesome which feeds my motivation for the project.
 
 As you can see from the other stats, we've generally had good growth overall, even as

@@ -6,7 +6,7 @@ image = "/images/blog-cover-images/cc-by-4/winter-gardens-scott-wylie.jpg"
 author = "Dan Brown"
 slug = "bookstack-in-2023"
 draft = false
-date = 2024-01-03T12:00:00Z
+date = 2024-01-04T12:00:00Z
 +++
 
 As we enter into 2024 I thought we'd once again look back over the past year to 
@@ -15,7 +15,38 @@ supporting working, including the current funding seen throughout 2023.
 
 ### Project Funding
 
-TODO
+With 2023 now complete that marks another completely year where I've been focusing on BookStack
+instead of being employed elsewhere. Looking back to [my 2022 post](https://www.bookstackapp.com/blog/bookstack-in-2022/)
+I had totalled about £15k of funding, with the rest of my living costs being paid for via personal savings.
+
+For 2023 I'm pleased to say funding has increased to about £25.8k across our revenue streams!
+While this excludes most taxes and costs, this marks a substantial increase and exceeds
+the £24k target set out in my [7 years of BookStack post](https://www.bookstackapp.com/blog/7-years-of-bookstack/#working-on-bookstack-full-time--financial-stability).
+Here's a breakdown of this funding:
+
+![Monthly stacked bar chart revenue for 2023, split between sources: GitHub sponsors, Support Services & Ko-Fi. Most bars are between £1500 and £2000, although three spike just beyond £3000](/images/2024/01/bookstack_2023_income.png)
+
+[GitHub sponsors](https://github.com/sponsors/ssddanbrown) has been relatively stable throughout the year, with a little fluctuation due to one-off donations and sponsors dropping in/out, and the december spike reflecting up-front sponsorship payment.
+Usage of [Ko-Fi](https://ko-fi.com/ssddanbrown) has increased during 2023, with a current monthly recurring membership of £127 between donators and sponsors, with frequent one-off donations in various sizes.
+
+The biggest growth factor by far has been through the support services.
+As you can see, I've had monthly income through support services to help bolster income.
+The lack of services reflected in December is due to how I report on these figures. Services were purchased in this month, but they'd be reflected in Jan 24 numbers.
+Renewal of support services upon those purchase last year has been healthy which, when combined with new subscriptions, has resulted in a stable 
+revenue source that's really helped stabalise and boost income.
+
+I can't thank enough all those that have donated, sponsored, or purchased support offerings.
+It's incredible to me that I'm able to pretty much cover my living costs, while building and sharing
+an open source project, without needing to gate or lock features behind paywalls & barriers, and without 
+having money dictate the direction of the project.
+
+Now that I had a stable income source, as I was no longer burning 
+through savings, I could now adopt a cat again so a thanks also from this 
+handsome little lion named Ben who I adopted at the start of December:
+
+<img src="/images/2024/01/ben.jpg" width="320">
+
+Ben will take a primarily motivational role on the BookStack project, while also acting as our chief mouser.
 
 ### New Features & Enhancements
 
@@ -55,6 +86,19 @@ The below list summarizes many of the most significant additions and changes mad
   - Added logical theme events
   - Added more customization-focused partial views
 
+Looking across what has been achieved I'm really quite happy with the balance between new features & systems,
+and improvements to existing features & systems.
+I'm always trying to keep a focus on building upon, and improving, the platform for our existing user
+base instead of chasing a wider audience via new features, and I think we're keeping to that focus well.
+
+The overhaul of permissions logic stands out in that list as a particular pain-point to work on due to 
+the logical complexity involved, but I'm happy I spent the time to get that in order rather than 
+leaving in unpredictable logic.
+
+Some favourites for me, although they're minor, are the overhauls to sorting and image management.
+This work involved updating older interfaces so digging in to refresh these in a meaningful way, with
+a much bigger focus on accessibility, was pretty enjoyable to get into while resulting in 
+clear visual benefits to the user, unlike most time spent working on back-end improvements.
 
 ### Website Usage & Audience Reach
 
@@ -142,13 +186,50 @@ Due to these issues, I didn't feel I could celebrate or share the article as tha
 Instead I emailed the site to notify them of the inaccuracies, with advised changes, although I had to follow that up [with a Tweet](https://twitter.com/bookstack_app/status/1722457925900280074) a few days later to prompt some action. It was then promptly updated using the text from our website.
 
 
-### Hacks Site?
+### Hacks Site
 
-http://localhost:1313/blog/hacks-on-the-site/
+[Earlier in the year](https://www.bookstackapp.com/blog/hacks-on-the-site/) I set-up the [BookStack hacks site](https://www.bookstackapp.com/hacks/)
+as a means to publish potentially useful hacks & customiziations for easy re-use.
+So far this has been a useful resource to point folks to when required, although at the same time there have been a few cases
+of folks relying on these hacks without the knowledge to maintain them, requiring them to need support in some cases,
+even though we clearly mark them as risky and unsupported.
+
+There's a tricky tension in these hacks, as it provides functionality we can't or don't want to support in the official project,
+but people may inherently assume official support since they're listed on our site.
+Warnings are there to help prevent this, but they are not a solid defence. 
+
+Within the last few months, I added a method to pay for hacks to be updated, as a potential means to keep them updated
+for current BookStack versions in a way that's sustainable and worthwhile.
+Though this may further feed into the above issue and increase that tension.
+I've had one purchase through this so far, for which they required further support in use/application.
+
+For now, I'll keep steadily growing & maintaining the hacks site as I've been doing so far, but I'm going to keep an close
+eye on how this is used and its support impact, assessing potential options to ease/improve that tension.
 
 ### Going into 2024
 
-TODO
+Looking to start of 2024 I'd like to take a step back and try out some newer technologies in the PHP space
+to see how they can impact or benefit BookStack users. These are newer PHP server projects 
+like roadrunner and FrankenPHP.
+
+I'd like to make some improvements to our site and docs this year, particularly around documenting
+common tasks that are often discussed in support, alongside higher level information about the project
+which is often requested in our community channels. Just details like how the project is managed,
+the vision for future changes, thoughts on growth, our view on providing hosting services for BookStack.
+I'm thinking this might be under a new "governance" part of the site.
+
+In terms of my personal plan, I intend to keep working on the project as my primary full-time job,
+especially now that I'm in the bounds of being somewhat financially stable.
+Over the next year I'd like to become a little more open and active to outreach and community building.
+As an example, I was invited to be on a podcast which I've yet to accept because that kind of
+thing makes me really nervous as a super introvert, but I think it'd be fun to do while helpful for the project.
+
+Otherwise, as we go into the next year I just want to thank everyone that's supported me and the project
+over the last year. That's not limited to just financial support, that includes all the contributors,
+translators, community members, folks recommending us on Reddit & other channels, those getting 
+involved in discussions on GitHub, those making articles and videos about BookStack. All these kinds
+of things really do help in both supporting the project directly or providing motivation to those 
+working on the project. Thanks.
 
 ---
   

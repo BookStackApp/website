@@ -219,6 +219,7 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [Elestio](https://elest.io/open-source/bookstack) - Managed hosting in common cloud services or on-premise.
 - [Nexxwave](https://www.nexxwave.eu/app-hosting/bookstack) - Managed application hosting in the EU.
 - [Easypanel](https://easypanel.io/docs/templates/bookstack) - It's a modern server control panel. You can use it to deploy BookStack on your own server.
+- [RepoCloud](https://repocloud.io/details/?app_id=68) - 1-click deployments and affordable cloud hosting for US and EU regions.
 
 ---
 

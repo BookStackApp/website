@@ -13,9 +13,11 @@ Below is a list of search functions within BookStack:
 * **Book/Chapter Search Bar** - When viewing a book or chapter a search bar can be found in the top of the left sidebar. These searches will look across all child items.
 * **Move & Link Selection** - When choosing to move a page/chapter or when selecting a page/chapter/book to link to within the editor the most popular items are shown but you also have the ability to search.
 
+{{<toc>}}
+
 ---
 
-## Advanced Search Syntax
+### Advanced Search Syntax
 
 All of the above search locations within BookStack share the ability to use advanced search syntax. An easy way to see this syntax in action is to use the global search in BookStack then play with the search filters which will update the search term with the below syntax. Below are details of the different types of syntax that can be used:
 
@@ -66,7 +68,7 @@ All of the above search locations within BookStack share the ability to use adva
 
 ---
 
-## Available Filters
+### Available Filters
 
 Filters are set advanced search features that can be used in your search term. The below table shows all the filters available in BookStack and how they can be used.
 
@@ -182,7 +184,7 @@ Filters are set advanced search features that can be used in your search term. T
 
 ---
 
-## Search Examples
+### Search Examples
 
 Below are some examples of using the above syntax and filters with descriptions:
 

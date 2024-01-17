@@ -54,7 +54,7 @@ The value of the `APP_LANG` variable must be a valid locale code matching one of
 * Russian - `ru`
 * Slovak - `sk`
 * Slovenian - `sl`
-* Spanish - `es_ES`
+* Spanish - `es`
 * Argentinian Spanish - `es_AR`
 * Swedish - `sv`
 * Turkish - `tr`

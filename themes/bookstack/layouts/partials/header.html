@@ -33,7 +33,7 @@
     {{ end }}
 
     <title>
-      {{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
+      {{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }}{{ .Site.Title }}
     </title>
 
     {{ $description := .Site.Params.Description }}

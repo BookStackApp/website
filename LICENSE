@@ -7,11 +7,19 @@ from those in directories with their own license files. Specifically:
 - static/images/blog-cover-images/cc-by-sa-4
 - static/images/blog-cover-images/cc-by-4
 
+The following library files are also under a different license and copyright:
+(Full License and copyright stated within these files):
+
+- search/webidx.pl (BSD 3-Clause)
+- themes/bookstack/static/libs/webidx.js (BSD 3-Clause)
+- themes/bookstack/static/libs/sql-wasm.js (MIT)
+- themes/bookstack/static/libs/photoswipe.min.js (MIT)
+
 ---
 
 The MIT License (MIT)
 
-Copyright (c) 2023 Dan Brown
+Copyright (c) 2024 Dan Brown
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

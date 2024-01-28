@@ -33,8 +33,15 @@ The script to build the index is located at `search/webidx.pl`, and can be ran v
 npm run build:search
 ```
 
-Note: you may need to install some dependencies to run the script see the `search/webidx.pl` for more information.
+**Note:** you may need to install some dependencies to run the script see the `search/webidx.pl` for more information.
 
-The above command will build the sqlite index database to `static/search.db`, intended to be deployed to production. In production use, this should be served with compression active to significantly reduce transfer size.
+The above command will build the sqlite index database to `static/search.db`, intended to be deployed to production. There is also a `npm run build:search:compress` command to compress the database file using brotli and gzip (requires both to be installed). In production use, these compressed files should be deployed then served from their compressed state where possible. Here's relevant config for nginx:
+
+```nginx
+location ~* \.(db)$ {
+  brotli_static on;
+  gzip_static on;
+}
+```
 
 Much of the search UI handling logic can be found in our `themes/bookstack/static/js/scripts.js` file.

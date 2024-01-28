@@ -24,14 +24,17 @@ SCSS is used for the styling. Install NPM dependencies via `npm install` or `yar
 
 ### Search
 
-Search is handled via [Meilisearch](https://www.meilisearch.com/). A nightly scrape runs to index the site pages for search.
-This is all docker-based, and the configuration used can be found in the `search/` directory of this repo.
-Note, for localhost usage with a port, `"allowed_domains": ["localhost"],` should be added to the scraper config.json. [[ref](https://github.com/meilisearch/docs-scraper/issues/103#issuecomment-810736674)].
+Search is performed using [webidx](https://github.com/gbxyz/webidx), which essentially builds a sqlite database search index, that is then loaded to browser upon search then queried locally in-browser via [sql.js](https://github.com/sql-js/sql.js).
 
-Relevant Projects:
+This files required are all in this repo, and hacked to suit our use-case.
+The script to build the index is located at `search/webidx.pl`, and can be ran via the npm script
 
-- [Meilisearch](https://github.com/meilisearch/meilisearch) - The search engine used.
-- [docs-scraper](https://github.com/meilisearch/docs-scraper) - Used to scrape the site to index.
-- [docs-searchbar.js](https://github.com/meilisearch/docs-searchbar.js) - The JS implementation used for the site search bar.
-  - I copy in the latest CDN dist files into this project.
-  - I edit the JS file to remove the "Powered by Meilisearch" logo to prevent external requests.
+```bash
+npm run build:search
+```
+
+Note: you may need to install some dependencies to run the script see the `search/webidx.pl` for more information.
+
+The above command will build the sqlite index database to `static/search.db`, intended to be deployed to production. In production use, this should be served with compression active to significantly reduce transfer size.
+
+Much of the search UI handling logic can be found in our `themes/bookstack/static/js/scripts.js` file.

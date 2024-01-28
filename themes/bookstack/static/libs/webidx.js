@@ -2,7 +2,7 @@
 // BSD 3-Clause License
 // Copyright (c) 2024, Gavin Brown
 // Full license: https://github.com/gbxyz/webidx/blob/a28a984d38fd546d1bec4d6a4a5a47ab86cb08f8/LICENSE
-// Modified since copied.
+// Note: File has been modified since originally copied.
 
 window.webidx = {};
 const webidx = window.webidx;
@@ -190,61 +190,4 @@ webidx.query = function (query) {
 
 webidx.regExpQuote = function (str) {
   return str.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
-};
-
-webidx.displayResults = function (pages, params) {
-  var callback = params.resultCallback ?? webidx.displayDialog;
-  callback(pages, params);
-};
-
-webidx.displayDialog = function (pages, params) {
-  var dialog = document.createElement('dialog');
-  dialog.classList.add('webidx-results-dialog')
-
-  dialog.appendChild(document.createElement('h2')).appendChild(document.createTextNode('Search Results'));
-
-  if (pages.length < 1) {
-    dialog.appendChild(document.createElement('p')).appendChild(document.createTextNode('Nothing found.'));
-
-  } else {
-    var ul = dialog.appendChild(document.createElement('ul'));
-
-    pages.forEach(function(page) {
-      var titleText = page.title;
-
-      if (params.titleSuffix) {
-        titleText = titleText.replace(new RegExp(webidx.regExpQuote(params.titleSuffix)+'$'), '');
-      }
-
-      if (params.titlePrefix) {
-        titleText = titleText.replace(new RegExp('^' + webidx.regExpQuote(params.titleSuffix)), '');
-      }
-
-      var li = ul.appendChild(document.createElement('li'));
-      var a = li.appendChild(document.createElement('a'));
-      a.setAttribute('href', page.url);
-      a.appendChild(document.createTextNode(titleText));
-      li.appendChild(document.createElement('br'));
-
-      var span = li.appendChild(document.createElement('span'));
-      span.classList.add('webidx-page-url');
-      span.appendChild(document.createTextNode(page.url));
-    });
-  }
-
-  var form = dialog.appendChild(document.createElement('form'));
-  form.setAttribute('method', 'dialog');
-
-  var button = form.appendChild(document.createElement('button'));
-  button.setAttribute('autofocus', true);
-  button.appendChild(document.createTextNode('Close'));
-
-  document.body.appendChild(dialog);
-
-  dialog.addEventListener('close', function() {
-    dialog.parentNode.removeChild(dialog);
-  });
-
-  dialog.showModal();
-  dialog.scrollTop = 0;
 };

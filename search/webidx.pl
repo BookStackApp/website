@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# This perl script builds an sqlite search index for this site.
+
 # Taken from https://github.com/gbxyz/webidx/tree/main
 # BSD 3-Clause License
 # Copyright (c) 2024, Gavin Brown

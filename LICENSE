@@ -13,6 +13,7 @@ The following library files are also under a different license and copyright:
 - search/webidx.pl (BSD 3-Clause)
 - themes/bookstack/static/libs/webidx.js (BSD 3-Clause)
 - themes/bookstack/static/libs/sql-wasm.js (MIT)
+- themes/bookstack/static/libs/sql-wasm.wasm (MIT)
 - themes/bookstack/static/libs/photoswipe.min.js (MIT)
 
 ---

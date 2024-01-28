@@ -12,7 +12,7 @@ webidx.search = async function (params) {
     //
     // initialise sql.js
     //
-    webidx.sql = await window.initSqlJs({locateFile: file => `https://sql.js.org/dist/${file}`});
+    webidx.sql = await window.initSqlJs({locateFile: file => `/libs/${file}`});
   }
 
   if (webidx.hasOwnProperty('db')) {

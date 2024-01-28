@@ -4,3 +4,4 @@ node_modules
 .hugo_build.lock
 .DS_Store
 /search/data
+/static/search.db

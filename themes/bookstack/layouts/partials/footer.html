@@ -54,20 +54,8 @@
         </div>
     </footer>
 
-
-    <script src="{{.Site.BaseURL}}libs/docs-searchbar.min.js"></script>
-    <script>
-        const searchInputSelector = '.doc-search-input,.blog-search-input';
-        if (document.querySelector(searchInputSelector) !== null) {
-            docsSearchBar({
-                hostUrl: 'https://search.bookstackapp.com',
-                apiKey: 'd36e621d5d924807a14c435b542aa98fd11d0c91df2526e128ecb19e617ba381',
-                indexUid: 'docs',
-                inputSelector: searchInputSelector,
-                debug: false, // Set debug to true if you want to inspect the dropdown
-            })
-        }
-    </script>
+    <script src="{{.Site.BaseURL}}libs/sql-wasm.js"></script>
+    <script src="{{.Site.BaseURL}}libs/webidx.js"></script>
 
     <script src="{{.Site.BaseURL}}js/script.js"></script>
 </body>

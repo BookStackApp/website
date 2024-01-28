@@ -9,17 +9,18 @@
     "build:css:watch": "sass ./themes/bookstack/sass:./themes/bookstack/static/css --watch",
     "build:hugo:prod": "hugo",
     "build:hugo:watch": "hugo serve -DF",
-    "build": "npm-run-all --sequential build:css:prod build:hugo:prod",
+    "build:search": "./search/webidx.pl public ./static/search.db",
+    "build": "npm-run-all --sequential build:css:prod build:hugo:prod build:search",
     "serve": "npm-run-all build:hugo:watch",
     "dev": "npm-run-all --parallel build:hugo:watch build:css:watch",
     "deploy:server": "rsync -avx --delete --exclude '.git/' --exclude 'node_modules/' --exclude 'search/data/' ./ bs-site:/var/www/bookstackapp.com/",
-    "deploy": "npm-run-all --sequential build:css:prod build:hugo:prod deploy:server",
+    "deploy": "npm-run-all --sequential build:css:prod build:hugo:prod build:search deploy:server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dan Brown",
   "license": "MIT",
   "devDependencies": {
     "npm-run-all": "^4.1.5",
-    "sass": "^1.63.6"
+    "sass": "^1.70.0"
   }
 }

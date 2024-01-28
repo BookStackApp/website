@@ -33,7 +33,7 @@
     {{ end }}
 
     <title>
-      {{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
+      {{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }}{{ .Site.Title }}
     </title>
 
     {{ $description := .Site.Params.Description }}
@@ -76,8 +76,6 @@
 
     <script async defer data-domain="bookstackapp.com" src="https://analytics.bookstackapp.com/js/plausible.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}libs/docs-searchbar.min.css" />
-
     {{ if .Site.Params.customHeaderPartial }}
         {{ partial .Site.Params.customHeaderPartial . }}
     {{ end }}
@@ -94,7 +92,11 @@
           <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
       </div>
       <div class="header-search-section">
-        <input type="text" placeholder="Search site" class="doc-search-input">
+        <form id="site-search-form">
+          <input id="site-search-input" type="search" placeholder="Search site" value="">
+          <dialog>
+          </dialog>
+        </form>
       </div>
       <div class="main-nav">
           <div class="nav-dropdown-wrap">

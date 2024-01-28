@@ -2,9 +2,10 @@
 // BSD 3-Clause License
 // Copyright (c) 2024, Gavin Brown
 // Full license: https://github.com/gbxyz/webidx/blob/a28a984d38fd546d1bec4d6a4a5a47ab86cb08f8/LICENSE
+// Modified since copied.
 
 window.webidx = {};
-webidx = window.webidx;
+const webidx = window.webidx;
 
 webidx.search = async function (params) {
   if (!webidx.sql) {
@@ -15,33 +16,42 @@ webidx.search = async function (params) {
   }
 
   if (webidx.hasOwnProperty('db')) {
-    webidx.displayResults(webidx.query(params.query), params);
-
+    return webidx.query(params.query);
+  } else if (webidx.loadingPromise) {
+    await webidx.loadingPromise;
+    await new Promise((res, rej) => setTimeout(res, 10));
+    return webidx.query(params.query);
   } else {
-    webidx.loadDB(params);
+    webidx.loadingPromise = webidx.loadDB(params);
 
+    webidx.loadingPromise.then(() => {
+      webidx.loadingPromise = null;
+    });
+
+    return webidx.loadingPromise
   }
 };
 
 webidx.loadDB = function (params) {
-  var xhr = new XMLHttpRequest();
+  return new Promise((res, rej) => {
+    var xhr = new XMLHttpRequest();
 
-  xhr.open('GET', params.dbfile);
-  xhr.timeout = params.timeout ?? 5000;
-  xhr.responseType = 'arraybuffer';
+    xhr.open('GET', params.dbfile);
+    xhr.timeout = params.timeout ?? 5000;
+    xhr.responseType = 'arraybuffer';
 
-  xhr.ontimeout = function() {
-    if (params.hasOwnProperty('errorCallback')) {
-      params.errorCallback('Unable to load index, please refresh the page.');
-    }
-  };
+    xhr.ontimeout = function() {
+      rej('Unable to load index, please refresh the page.');
+    };
 
-  xhr.onload = function() {
-    webidx.initializeDB(this.response);
-    webidx.displayResults(webidx.query(params.query), params);
-  };
+    xhr.onload = function() {
+      webidx.initializeDB(this.response);
+      const results = webidx.query(params.query);
+      res(results);
+    };
 
-  xhr.send();
+    xhr.send();
+  });
 };
 
 webidx.initializeDB = function (arrayBuffer) {

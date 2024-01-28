@@ -1,4 +1,4 @@
 ---
-title: "BookStack Blog"
+title: "Admin Documentation"
 type: "admin-doc"
 ---

@@ -56,7 +56,7 @@ my $db = DBI->connect('dbi:SQLite:dbname='.$dbfile, '', '', {
 #
 # a list of words we want to exclude
 #
-my @common = qw(be and of a in to it i for he on do at but from that not by or as can who get if my as up so me the are we was is);
+my @common = qw(be and of a in to it i for he on do at but from that not by or as can who get if my as up so me the are we was is you this with an when want our there has);
 
 #
 # this is a map of filename => page title
@@ -229,15 +229,17 @@ sub index_html {
         # start tag handler
         #
         'start_h' => [sub {
-            #
-            # add the alt attributes of images, and any title attributes found
-            #
-            $text .= " ".$_[1]->{'alt'} if (lc('img') eq $_[0]);
-            $text .= " ".$_[1]->{'title'} if (defined($_[1]->{'title'}));
-
             $currtag = $_[0];
             if ('main' eq $currtag) {
                 $inmain = 1;
+            }
+
+            if ($inmain) {
+                #
+                # add the alt attributes of images, and any title attributes found
+                #
+                $text .= " ".$_[1]->{'alt'} if (lc('img') eq $_[0]);
+                $text .= " ".$_[1]->{'title'} if (defined($_[1]->{'title'}));
             }
         }, qq{tag,attr}],
 

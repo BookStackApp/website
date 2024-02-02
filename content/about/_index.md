@@ -5,9 +5,10 @@ layout: "single"
 type: "about"
 ---
 
+TODO - Move to a FAQ page instead of about?
 TODO - Add to footer
-TODO - List /about/* pages?
-TODO - Link to other relevant pages? (GitHub/Donate/Support)?
+TODO - List /about/* pages? *Might not be needed*
+TODO - Link to other relevant pages? (GitHub/Donate/Support)? *Might not be needed*
 
 {{<toc>}}
 
@@ -39,6 +40,10 @@ with the core simple user experience.
 BookStack aims to be free (both monetarily & in liberty) and open source, focusing on the core use-case
 and audience that's it's built for instead of expanding to a wider, or more financially fruitful, audience.
 
+BookStack aims to be "batteries-included", with core functionality designed to be built-in
+rather than taking a more flexible plugin approach, to ensure the platform components
+remain supported and integrated together.
+
 In regard to development, BookStack aims for a relaxed, open, positive & stable approach.
 The platform should evolve & improve steadily & stable over time, with a focus on
 stability, maintainability and forward-compatibility instead of chasing new
@@ -51,85 +56,234 @@ There are also a [significant amount](https://github.com/BookStackApp/BookStack/
 of community members who work to translate the BookStack interface into many other languages.
 Upon that, there are many other folks in our community that help with contributing code, reporting & managing issues, 
 provide input, or just get involved within our communities.
- 
-### How is the project organised?
 
-TODO
+Outside of the official project itself, there are many other satellite community projects and offerings, most of which all
+support the core platform in some sort of way. These are things like user guides, systems to package BookStack
+for other platforms, and API libraries & tools.
+ 
+### How is work for the project organised?
+
+BookStack is primarily organised via the [project on GitHub](https://github.com/BookStackApp/BookStack).
+This is here the code is hosted, where code is contributed, and where the issue list is managed.
+The issue list comprises of feature requests, bug reports, requests to contribute, requests for support and more.
+For translations, we use the [Crowdin platform](https://crowdin.com/project/bookstack) as a tool for this, 
+which has automated syncs with the GitHub project.
+
+Beyond those core development paths we also communicate, and take input from, our various communities
+like the [BookStack discord server](https://discord.com/channels/578552496637739008/1060598935074381854)
+and the [BookStack subreddit](https://www.reddit.com/r/BookStack/).
 
 ### How are features & additions decided upon?
 
-TODO
+We strongly focus on our existing user-base when deciding the path of development.
+This often means improving existing features, and new features that work to our original core goals,
+rather than adding new exciting shiny features that will get us a larger audience, user-base or income.
+
+The project gets many requests with many different ideas, but over time we've learnt
+that increasing the scope wider blurs the focus on our core goals while disproportionately 
+impacting maintainability, which is a very important factor for a project like this.
+Rather than putting in effort to make the platform suit new users, we instead put the
+effort into making the platform better for the existing people it works well for.
+This usually has a long-term affect of attracting new users anyway.
+
+Ultimately, it's a balance of what's maintainable, what's in demand from our existing users,
+and what fits the project's goals. The maintainability aspect is not just about code, 
+but also the impact on long-term sustainability and the impact on community management & support. 
 
 ### What versions of BookStack do you support?
 
-TODO
+We typically only support the latest version of BookStack.
+Usually every couple of months we release a "Feature Release", which can 
+often be followed by patch (minor) versions to that feature release.
+We don't look to patch older versions.
+
+We don't have aim to have major big new releases that are painful to migrate to.
+We instead try to retain a steady update pace, with a focus on avoiding breaking changes
+and allowing easy forward compatibility.
 
 ### What license is the project provided under?
 
-TODO
+The BookStack source code is under [the MIT license](https://github.com/BookStackApp/BookStack/blob/development/LICENSE).
+This is an open source license which allows any type of use, modification, and distribution.
+The only requirements are that you retain attribution to the project (it's license and copyright in particular)
+in all copies or substantial portions of the Software.
+This doesn't mean you have to keep our name/logo/link on your instance at all, you just need to meet the above
+when sharing/re-distributing the code.
 
-### What is the approach to updates & long-term development?
-
-TODO
+BookStack makes use of many other projects, either directly or indirectly, of which will have their own licenses and copyrights.
+We ensure that the libraries used/included are under a license compatible with BookStack's MIT license.
+Most of the directly used projects are [listed in our readme here](https://github.com/BookStackApp/BookStack/tree/development#-attribution).
+BookStack uses the [npm](https://docs.npmjs.com/about-npm) and [composer](https://getcomposer.org/) dependency manager tools
+which can be used to gain a full listing of used libraries.
 
 ### Is feature X planned to be added?
 
-TODO
+Probably not is the most likely answer. If it hasn't been added by this point, there may not be the demand
+for such a feature or there could be reasons it has not already been implemented.
+You may be able to find prior request or history for the feature in [our issue list](https://github.com/BookStackApp/BookStack/issues?q=is%3Aissue).
+Note though, if an issue is open that does not indicate intent to implement. 
+A relaxed approach is often taken to issues, allow many to stay open to gain feedback, support or ideas.
+
+### But feature X would be really simple to implement, why not just build it?
+
+Adding almost any feature can be quite simple on its own.
+It's very different matter to officially implement support a feature on a longer-life, open source project like this.
+Complexity often compounds, as we have to think: How does this fit in with other features? 
+What about accessibility? What about forward compatibility? What about future plans? What about common customizations?
+What about other languages? What about testing coverage? What about ease of hosting? What about RTL display?
+What about community support impact? What about platform fit?...
+
+Throwing new things in, to add to that complexity, is a route to a maintainability & sustainability nightmare.
+It's much better we take time to assess and consider things, to meet our goals of steady and stable evolution.
+
+### If a feature is not wanted, why not just add it as an option?
+
+This often seems like an easy answer, but options can compound to impede future maintainability via complexity.
+This isn't just about the code, but also about user experience complexity, and community support complexity.
+Often there are better approaches, or the need for an option may point to a more fundamental need or issue.
+Therefore we will strongly avoid adding new options (especially user-interface options) if possible.
+
+For hackers, we do alternatively look to expose options for customization and hacking for those that really desire it, 
+and have the skills to support their desires.
 
 ### How is the project funded?
 
-TODO
+The project is mainly funded through donations, sponsorships, and official support offerings.
+Donations and sponsorships make up about half of the funding, with support offerings making up the other half,
+although the support offerings side is growing.
+
+Details about donations can be found [on our donations page](/donate/).
+Sponsorships are available at different levels via these donation methods, and gain your
+companies' logo and link placed on our homepage and project readme.
+
+Details about our support offerings can be found [on our support page](https://www.bookstackapp.com/support/).
+These offerings, in addition to any other commercial offerings we may provide in future, 
+are provided via a UK Ltd company, [HTTP Functions Ltd](https://www.httpfunctions.com/) is led by the
+creator and lead maintainer of BookStack, Dan.
+Providing these via a company compartmentalises those commercial activities, while also somewhat insulating
+from the core project itself from the influence of commercial users.
+
+This funding currently helps cover Dan's living costs to keep working on the project as his main focus.
 
 ### Will the project accept investment?
 
-TODO
+No. We do want money to become a core focus, goal, driver or concern for the project.
+Investment is often in the desire for growth, gain and return.
+This can put pressures on a project which can affect decisions and impede original goals.
+We'd much rather be smaller and naturally grow steadily, as we believe that's better
+long term for us and our users.
 
-### Do you provide an official managed hosted service?
+### Would you consider an official partnership with other businesses?
 
-TODO
+Typically not, especially for commercial offerings much for the reasons in the answer above,
+and because most of these are somewhat exclusive and we try to be fairly neutral when it
+comes to possible services/offerings/projects related to BookStack.
+
+That said, there could be opportunity in some non-exclusive partnership and collaboration
+with other companies where it doesn't have the mentioned impacts, especially with 
+other "smaller" self-funded open source projects & businesses like ours.
+
+### Do you provide an official managed hosting service?
+
+We do not, and we don't intend to.
+Many existing companies offer such services, and will have much better skills and capabilities to support
+such a service. We instead take a position of being agnostic to hosting services, platforms and methods,
+so we can keep focused on the core platform.
+
+If interested in the services offered by others, you can find some options in 
+the ["Other Hosting Options" part of our install page](https://www.bookstackapp.com/docs/admin/installation/#other)
+otherwise [our sponsors](https://www.bookstackapp.com/#sponsors) are often hosting providers with BookStack
+offerings, although none of these are officially vetter or endorsed by the BookStack project.
 
 ### What services do you officially provide?
 
-TODO
+We provide support services which you can read about [on our support page](https://www.bookstackapp.com/support/).
+In addition, we do provide services for updating "hacks" (unofficial & unsupported customizations) on our site.
+These services are provided via [HTTP Functions Ltd](https://www.httpfunctions.com/).
 
 ### Are there other versions/editions of BookStack?
 
-TODO
+No, we don't provide custom, or enterprise versions of BookStack.
+Our efforts are focused on a single, open and free version.
+Official features should not be locked or limited unnecessarily.
+There's no intent to change this.
 
 ### Can others provide services/offerings for BookStack?
 
-TODO
+Sure! Our license allows that, and we believe that more services and infrastructure
+around the project is key to a healthy wider community and open source ecosystem.
+There's no requirement to contribute or pay back, although it is appreciated.
+I just ask the following:
+
+- If you offer hosting services, please ensure you're able to keep customer instances reasonably up-to-date (or provide users the means to do so).
+- Please don't infer an "official" affiliation, or misrepresent your relation, with the BookStack project in any way to users.
+- You can use the name and logo to refer to BookStack, but please respect the "BookStack" trademark. For example, don't use it for other software, or use it in a way that could appear as an official BookStack service/offering, and don't use the logo by itself as your own logo.
+- Please don't defer your customers to the BookStack community support offerings for things that should be managed/addressed at a infrastructure/hosting level (Basically don't overload our support with things you should be supporting).
 
 ### Can we pay for the implementation of specific features?
 
-TODO
+No. Money should not be a driver or incentive for decisions made for the core project.
+Those without money should have as much influence in the evolution of the platform as those without money.
+
+We get offered this a lot, and we have previously offered some quotes for features that had been validated
+to meet the scope of the project via our core process, but it's usually a time consuming & awkward business dance to actually
+get to an agreed scope and figure, so we've only had time consumed via this.
 
 ### Would BookStack integrate with X platform?
 
-TODO
+We focus on provide abstract APIs and methods where possible, or look to use widely accepted standard where it makes sense.
+Generally we won't build to specific external platforms within the scope of the core project.
+We do support a range of specific OAuth providers, but we've stopped expanding support for these,
+aiming to use firmer standards or options for custom extension where desired.
+
+If looking to build a custom integration for your instance, our [REST API](/docs/admin/hacking-bookstack/#bookstack-api) is a good place to start,
+with [our api-scripts repository](https://github.com/BookStackApp/api-scripts) holding a range of 
+examples in various languages.
 
 ### Do you offer pre-sales support/calls?
 
-TODO
+No. These are usually desired by very large companies, and can often be very time consuming and non-productive
+due to the abstract level of scale and business-specific process talked about.
+We are not trying to sell you the software. It's free to take and assess as you need.
 
-### Would you consider partnership/sponsorship with other businesses?
+If pre-sales support or consultancy is required, then our ["Enterprise Support Plan"](/support/) includes 
+10 hours of video/call support & advice which could be used for this purpose.
 
-TODO
+### How can we receive project news & updates?
 
-### How can we receive project updates?
+The best route for this is [our blog](/blog/). On that page you'll find an RSS feed and a link to sign up
+for blog updates by email. 
+We also have a [security-specific update email list here](https://updates.bookstackapp.com/signup/bookstack-security-updates),
+which will be sent upon release of new important security updates.
 
-TODO
+Otherwise, you can [find us on the fediverse/Mastodon here](https://fosstodon.org/@bookstack).
+We also publish a range of update and guide videos, which can be found on both [Peertube](https://foss.video/c/bookstack/videos)
+and [YouTube](https://www.youtube.com/c/BookStackApp).
 
 ### How can we contact you?
 
-TODO
+You can find us via any of the various communities we have:
+
+- [On Mastodon](https://fosstodon.org/@bookstack)
+- [Our Discord](https://discord.gg/ztkBqR2)
+- [The Github Project](https://github.com/BookStackApp/BookStack)
+- [Our Subreddit](https://www.reddit.com/r/bookstack)
+
+If you need to get hold of Dan personally, he has links to his personal social pages [on his homepage](https://danb.me/).
+His email can be seen [on his GitHub profile](https://github.com/ssddanbrown), when logged in.
 
 ### How can I get involved with the project?
 
-TODO
+You can join one of our communities and let us know!
+We can then guide you to the right place or to any relevant existing documentation & guidance we might have.
+It's not just about code either, there are many ways to help out. [See our blogpost here](/blog/contributing-to-open-source/)
+about all the different ways you can get involved.
 
-### Do you accept mentoring?
+### Do you provide mentoring?
 
-TODO
-
-
+We don't provide any kind of official mentoring program.
+That said, if you're wanting to contribute and put in the effort, we're happy to spend some time
+to help guide and hand-hold through the development & contribution process.
+It's rare there's anything easy and pre-accepted in the GitHub issue list to pick-up and work on,
+but we can help find or put aside potential things to help with, depending on your goals
+and skill-set.

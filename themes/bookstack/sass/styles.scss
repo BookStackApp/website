@@ -640,6 +640,26 @@ iframe[src^="https://www.youtube-nocookie.com"],
   }
 }
 
+.dual-column-dual-level-toc {
+  columns: 2;
+  list-style: none;
+  margin: 0;
+  > li {
+    break-inside: avoid;
+  }
+  > li > a {
+    color: $text-dark;
+    font-weight: bold;
+  }
+  > li > ul {
+    margin-bottom: 1rem;
+  }
+
+  @include smaller-than($s) {
+    columns: 1;
+  }
+}
+
 .hack-meta {
   list-style: none;
   margin: 0;

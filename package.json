@@ -11,11 +11,11 @@
     "build:hugo:watch": "hugo serve -DF",
     "build:search": "./search/webidx.pl public ./static/search.db",
     "build:search:compress": "brotli -fZk ./static/search.db && gzip -fk9 ./static/search.db",
-    "build": "npm-run-all --sequential build:css:prod build:hugo:prod build:search",
+    "build": "npm-run-all --sequential build:css:prod build:search build:hugo:prod",
     "serve": "npm-run-all build:hugo:watch",
     "dev": "npm-run-all --parallel build:hugo:watch build:css:watch",
     "deploy:server": "rsync -avx --delete --exclude '.git/' --exclude 'node_modules/' --exclude 'search/data/' ./ bs-site:/var/www/bookstackapp.com/",
-    "deploy": "npm-run-all --sequential build:css:prod build:hugo:prod build:search build:search:compress deploy:server",
+    "deploy": "npm-run-all --sequential build:css:prod build:search build:search:compress build:hugo:prod deploy:server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dan Brown",

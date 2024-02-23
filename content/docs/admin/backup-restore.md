@@ -50,7 +50,7 @@ are shown relative to the root BookStack folder.
 * `.env` - File, contains important configuration information.
 * `public/uploads` - Folder, contains any uploaded images.
 * `storage/uploads` - Folder, contains uploaded page attachments.
-* `themes/` - Folder, contains any configured [visual/logical themes](/docs/admin/hacking-bookstack/#visual-theme-system).
+* `themes` - Folder, contains any configured [visual/logical themes](/docs/admin/hacking-bookstack/#visual-theme-system).
 
 Alternatively you could backup up your whole BookStack folder but only the above
 contain important instance-specific data by default.
@@ -59,7 +59,7 @@ The following command will create a compressed archive of the above folders and
 files:
 
 ```bash
-tar -czvf bookstack-files-backup.tar.gz .env public/uploads storage/uploads
+tar -czvf bookstack-files-backup.tar.gz .env public/uploads storage/uploads themes
 ```
 
 The resulting file (`bookstack-files-backup.tar.gz`) will contain all your file

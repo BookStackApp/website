@@ -218,8 +218,8 @@ _**Note: These are not tested, vetted nor supported by the official BookStack pr
 - [YunoHost](https://install-app.yunohost.org/?app=bookstack) - A Debian-based distribution that automates personal web server installation.
 - [Elestio](https://elest.io/open-source/bookstack) - Managed hosting in common cloud services or on-premise.
 - [Nexxwave](https://www.nexxwave.eu/app-hosting/bookstack) - Managed application hosting in the EU.
-- [Easypanel](https://easypanel.io/docs/templates/bookstack) - It's a modern server control panel. You can use it to deploy BookStack on your own server.
-- [K&T Host](https://www.knthost.com/bookstack) - Managed BookStack hosting with high availability. 
+- [Easypanel](https://easypanel.io/docs/templates/bookstack) - A modern server control panel. You can use it to deploy BookStack on your own server.
+- [K&T Host](https://www.knthost.com/bookstack) - US based managed BookStack hosting with a focus on high availability.
 
 ---
 

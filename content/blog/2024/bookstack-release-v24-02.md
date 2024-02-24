@@ -9,14 +9,20 @@ slug = "bookstack-release-v24-12"
 draft = false
 +++
 
-Intro
+For our first feature release of 2024 we have a variety enhancements to enjoy, many
+building upon the work from the previous release, and many others addressing some 
+common pain-points in BookStack.
 
 * [Update instructions](/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v24.02)
 
 **Upgrade Notices**
 
-- **Notice** - Text
+TODO - Add security notice for v23.12.3.
+
+- **Comments** - The ability to use markdown content in comments has been removed in this release, replaced by a WYSWIYG editor. This was a fairly hidden feature though so was not commonly utilised. Existing markdown comments will remain although formatting may be lost if old markdown comments are edited.
+- **Commands** - The "Regenerate Comment Content" command has been removed in this release as this action is now redundant.
+- **OIDC Authentication** - Proof Key for Code Exchange (PKCE) support has been added to BookStack OIDC authentication. This should not affect existing OIDC use, but you may want to enforce PKCE to be required for BookStack on your authentication system, if supported, for extra security.
 
 TODO - Video
 <!-- {{<pt 4gCUZhHumJDLTtSbGQzXzU>}} -->
@@ -39,24 +45,59 @@ TODO
 
 TODO
 
-### OIDC PKCE Support
+### OIDC Authentication PKCE Support
 
-TODO
+Proof Key for Code Exchange (PKCE) is a mechanism that can be added to the OAuth/OIDC authentication flow
+to help protect against a range of potential attacks via an extra layer of checks against the credentials
+gained and used by a client application like BookStack.
+
+In v24.02 we now support PKCE for the the OIDC authentication flow. This is active by default, and will be used
+on all OIDC login flows without any additional BookStack configuration needed.
+OIDC authentication systems that support PKCE will be able to detect and use this for extra security.
+Some authentication systems also provide the option to make PKCE mandatory, which if provided you may
+want to enable to harden security further in this area.
 
 ### Auth Pre-Register Logical Theme Event
 
-TODO
+A new `AUTH_PRE_REGISTER` event is now available for use via the
+[logical theme system](https://github.com/BookStackApp/BookStack/blob/development/dev/docs/logical-theme-system.md).
+This event runs just before a user is created through any self-registration events
+(including auto-registration events for third-party/saml/ldap/oidc authentication)
+and its return value can be used to indicate of the registration should be allowed.
+A `false` return value will stop the registration, and return the user to the login screen.
+Here's an example use of this logical theme event:
+
+```php
+<?php
+
+use BookStack\Theming\ThemeEvents;
+use BookStack\Facades\Theme;
+
+Theme::listen(ThemeEvents::AUTH_PRE_REGISTER, function (string $authSystem, array $userData) {
+    return str_starts_with($userData['email'], 'barry');
+});
+```
+
+This arbitrary example will only allow registration if the user's email address begins with 'barry'.
+There's a lot of better ways this could be used though, to add custom logic that BookStack does not support 
+by default. For example, you could cross-reference the user against a file, you could check against another API,
+or even force disable this kind of registration completely by simply returning `false`.
 
 ### Back-end changes
 
-TODO
+There have been some significant changes this release cycle in regards to how the majority
+of data is queried out from the database. This was mostly a code & data organisation
+change but some performance optimization was performed alongside these changes.
 
-- Query changes
-- Redirect handling
+There have also been changes to how redirects and session history tracking are performed
+which should help avoid some edge cases where users could be redirected to 
+unexpected places, like to uploaded images.
 
 ### Translations
 
-TODO
+A big thanks again to all our terrific tireless translators who provide their time to help
+translate text for the BookStack interface. Here's those that have contributed since 
+the initial v23.12 release:
 
 - Name - *Language - x words*
 
@@ -65,7 +106,20 @@ TODO
 
 ### Next Steps
 
-TODO
+Our next release will be focused on updating the framework used by BookStack, from Laravel 9
+to Laravel 10. This will require an update of requirements, specifically to the minimum
+PHP version, which will jump from PHP 8.0 to PHP 8.1. Therefore we'll also be dedicating 
+effort to updating install scripts and to guidance for updating PHP, to support this change.
+
+Upon that, I'd like to address the options provided for PDF rendering.
+Right now we provide DOMPDF by default, which works great via just PHP and is license-compatible
+for BookStack, while also documenting a way to use WKHTMLtoPDF which offers more advanced
+rendering but has security & technical considerations. WKHTMLtoPDF is also no longer
+maintained nor developed, and is dropping out of operating system software repositories,
+so it's time to look at filling that gap.
+My current idea is to support a generic, command-calling-based, interface which can then be 
+configured for a variety of PDF rendering solutions, with some guidance in the BookStack
+docs to make this easy to configure.
 
 ### Full List of Changes
 

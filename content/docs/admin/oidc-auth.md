@@ -33,6 +33,7 @@ Listed below are some considerations to keep in mind in regard to BookStack's OI
 - Discovery covers fetching the auth & token endpoints, in addition to parsing any keys at the JWKS URI,
   from the `<issuer>/.well-known/openid-configuration` endpoint.
   - Issuer discovery is not supported.
+- RP-initiated logout is supported if enabled, but any other logout mechanisms are not supported.
 
 ### BookStack Configuration
 
@@ -111,6 +112,9 @@ Most often, you'll just need to ensure any callback/redirect URIs are set as bel
   - *Only one URL will actually be used but it depends upon specific configuration set. Some systems will allow you to instead use a wildcard like `https://example.com/*`.*
 
 Change `https://example.com` to be the base URL of your BookStack instance.
+
+Since v24.02 BookStack will make use of Proof Key for Code Exchange (PKCE) during authentication. 
+If your authentication system provides the option, you should enforce PKCE to be required for extra security.
 
 ### Switching to OIDC with Existing Users
 

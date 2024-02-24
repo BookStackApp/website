@@ -160,15 +160,6 @@ This can be useful upon upgrade of old content, or when manually adding content 
 php artisan bookstack:regenerate-references
 ```
 
-### Regenerate Comment Content
-
-Comments are created and stored in Markdown but also rendered to HTML on save.
-This command will regenerate the stored HTML content for all comments using the original Markdown content.
-
-```bash
-php artisan bookstack:regenerate-comment-content
-```
-
 ### Delete Users
 
 Delete all users from the system that are not original "admin" or system-level users.

@@ -19,6 +19,7 @@ common pain-points in BookStack.
 **Upgrade Notices**
 
 TODO - Add security notice for v23.12.3.
+TODO - Copy to updates page.
 
 - **Comments** - The ability to use markdown content in comments has been removed in this release, replaced by a WYSWIYG editor. This was a fairly hidden feature though so was not commonly utilised. Existing markdown comments will remain although formatting may be lost if old markdown comments are edited.
 - **Commands** - The "Regenerate Comment Content" command has been removed in this release as this action is now redundant.
@@ -29,21 +30,74 @@ TODO - Video
 
 ### Simple WYSIWYG comment editor
 
-TODO
+Last feature release [we added](https://www.bookstackapp.com/blog/bookstack-release-v23-12/#wysiwyg-editor-for-descriptions)
+a simple WYSIWYG editor for shelf, book and chapter descriptions. In this release we've
+updated comments to now also use this editor:
+
+TODO - Image of comments editor
+
+Formatting in comments was previously possible via markdown but this was little known and not really
+intuitive for the mixed-skill environment we target, so this should make things much more accessible.
+This does mean some previously supported markdown formats are no longer supported, but those comments 
+will still remain as-is, unless edited in which case they might lose unsupported formatting while editing.
 
 ### Default Page Templates for Chapters
 
-TODO
+Building on the default page template option we added to books in the last release,
+the same functionality has been carried across for chapters in this release.
+So it's now possible to set a default page template at the chapter level which
+will be used as the default content for new pages, when a page is created
+within that specific chapter:
 
-Thanks to [@Man-in-Black](https://github.com/BookStackApp/BookStack/pull/4750).
+TODO - Image of chapter template selection
+
+New pages will use the chapter-level template if set, or otherwise look to
+use the book-level template if set there.
+
+A shout-out to [@Man-in-Black](https://github.com/BookStackApp/BookStack/pull/4750) for developing
+out the implementation for this feature.
 
 ### WYSIWYG Table Improvements
 
-TODO
+Tables are a fairly complex type of content supported by our WYSIWYG editor, especially
+with all the options and variations that can apply to them. It's easy for sizing & formatting
+to go wrong, or become somewhat "stuck", while it's difficult to reset these kinds of options.
+In this release, we've focused on a whole range of improvements to make it easier to handle 
+these kinds of scenarios.
+
+TODO - Image of table menu
+
+Within the table toolbar menu, there are now a couple of extra options: "Clear table formatting" which
+makes it easy to reset all sizing and formatting across the whole table in a single click.
+"Resize to contents" which resets all fixed sizes across the tables, allowing it to automatically scale 
+back to the contents. 
+
+Multi-table-cell selection has been enhanced, so that clear-formatting & text-direction controls
+will now properly apply across the whole selection range. We've also addressed an issue with
+scrollbars clogging up the view in such selections in certain browsers.
+
+Lastly, enabling a header row has been made easier. Previously, this required navigating multiple
+levels of menus but instead you'll now see a "Toggle header row" button in the table toolbar
+when focused on the first table row:
+
+TODO - Table header toggle button
 
 ### Improved Video Attachment Support
 
-TODO
+While we don't have video-specific media management in BookStack, some users would upload videos
+via attachments then embed them into the page, which had the advantage that access to videos would
+be controlled by access to the page they're uploaded to. 
+While this could work, video ideally needs to be served in a way that can be streamed, otherwise
+the browser would attempt to download the whole video in one go, and things like timeline scrubbing
+would not work. 
+
+In this release we've added "Range request" support that allows browsers to fetch video in a 
+stream-supporting manner, while still being behind BookStack's permission control management.
+Going further, to help the process of embedding, adding an attachment link 
+(or drag and dropping the attachment into the editor) for a video will directly insert that as a
+video embed rather than a standard link:
+
+TODO - Embed preview/animation
 
 ### OIDC Authentication PKCE Support
 

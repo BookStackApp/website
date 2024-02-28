@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v24.02"
-date = 2024-02-29T12:10:00Z
+date = 2024-02-28T12:45:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cc-by-sa-2/burnieside-steven-brown.jpg"
 slug = "bookstack-release-v24-02"
@@ -23,8 +23,7 @@ common pain-points in BookStack.
 - **Commands** - The "Regenerate Comment Content" command has been removed in this release since this action is now redundant.
 - **OIDC Authentication** - Proof Key for Code Exchange (PKCE) support has been added to BookStack OIDC authentication. This should not affect existing OIDC use but you may want to enforce PKCE to be required for BookStack on your authentication system, if supported, for extra security.
 
-TODO - Video
-<!-- {{<pt 4gCUZhHumJDLTtSbGQzXzU>}} -->
+{{<pt 8w3F4aWqH3MProMwyQBf2d>}}
 
 ### Simple WYSIWYG comment editor
 
@@ -154,9 +153,38 @@ A big thanks again to all our terrific tireless translators who provide their ti
 translate text for the BookStack interface. Here's those that have contributed since 
 the initial v23.12 release:
 
-- Name - *Language - x words*
-
-TODO
+- algernon19 - *Hungarian - 3386 words*
+- renge - *Korean - 2030 words*
+- Ivan Krstic (ikrstic) - *Serbian (Cyrillic) - 1831 words*
+- TheGatesDev (thegatesdev) - *Dutch - 889 words*
+- Martins Pilsetnieks (pilsetnieks) - *Latvian - 849 words*
+- toras9000 - *Japanese - 680 words*
+- Irdi (irdiOL) - *Albanian - 542 words*
+- KateBarber - *Welsh - 355 words*
+- 10935336 - *Chinese Simplified - 341 words*
+- Show - *Russian - 283 words*
+- xBahamut - *Portuguese, Brazilian - 263 words*
+- Vanja Cvelbar (b100w11) - *Slovenian - 214 words*
+- Pavle Knežević (pavleknezzevic) - *Serbian (Cyrillic) - 213 words*
+- m0uch0 - *Spanish - 182 words*
+- Sascha (Man-in-Black) - *German; German Informal - 179 words*
+- Guttorm Hveem (guttormhveem) - *Norwegian Nynorsk - 179 words*
+- scureza - *Italian - 178 words*
+- Hsin-Hsiang Peng (Hsins) - *Chinese Traditional - 141 words*
+- bendem - *French - 103 words*
+- sdhadi - *Persian - 98 words*
+- Jøran Haugli (haugli92) - *Norwegian Bokmal - 84 words*
+- Twister (theuncles75) - *Hebrew - 80 words*
+- Honza Nagy (honza.nagy) - *Czech - 79 words*
+- Jan Picka (polipones) - *Czech - 69 words*
+- asd20752 - *Norwegian Bokmal - 68 words*
+- Kasper Alsøe (zeonos) - *Danish - 62 words*
+- sultani - *Persian - 61 words*
+- diogoalex991 - *Portuguese - 47 words*
+- Eduard Ereza Martínez (Ereza) - *Catalan - 25 words*
+- Martin Sebek (sebekmartin) - *Czech - 20 words*
+- Ehsan Sadeghi (ehsansadeghi) - *Persian - 11 words*
+- ka_picit - *Danish - 6 words*
 
 *\* Word counts are those tracked by Crowdin, indicating original EN words translated.*
 

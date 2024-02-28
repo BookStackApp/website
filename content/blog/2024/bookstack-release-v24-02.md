@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v24.02"
-date = 2024-02-28T12:45:00Z
+date = 2024-02-28T13:36:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cc-by-sa-2/burnieside-steven-brown.jpg"
 slug = "bookstack-release-v24-02"

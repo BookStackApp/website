@@ -41,6 +41,14 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v24.02 or higher
+
+**Comments** - The ability to use markdown content in comments has been removed in this release, replaced by a WYSIWYG editor. Markdown in comments was a fairly hidden feature though so was not commonly utilised. Existing markdown comments will remain although formatting may be lost if old markdown comments are edited.
+
+**Commands** - The "Regenerate Comment Content" command has been removed in this release since this action is now redundant.
+
+**OIDC Authentication** - Proof Key for Code Exchange (PKCE) support has been added to BookStack OIDC authentication. This should not affect existing OIDC use but you may want to enforce PKCE to be required for BookStack on your authentication system, if supported, for extra security.
+
 #### Updating to v23.12.3 or higher
 
 **Security** - v23.12.3 addresses a vulnerability in PDF generation that could be exploited, by users with the ability to create/edit/update page content, to perform blind server-side-request forgery.

@@ -7,8 +7,7 @@ type = "admin-doc"
 
 While BookStack does not currently have a built-in way to backup and restore content,
 it can usually be done via the command line with relative ease.
-
-Please note the below commands are based on using Ubuntu. If you are using a
+The below commands are based on using Ubuntu. If you are using a
 different operating system you may have to alter these commands to suit.
 
 ---

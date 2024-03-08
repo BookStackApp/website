@@ -184,6 +184,7 @@ sudo ./installation-ubuntu-18.04.sh
 This is a collection of guides created by awesome members of the BookStack community:
 
 * [Debian 11 with PHP 8.2 by @armando-femat](https://jardin.icamole.site/books/bookstack/page/installation)
+* [RedHat 8.9 with PHP 8.1 (Rocky, Alma, Oracle, etc.) by @xhark](https://github.com/blogmotion/bm-bookstack-install/) - [french guide](https://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [Sample Docker Swarm Stack by @neuroforgede](https://github.com/neuroforgede/bookstack-docker-swarm)
 
 In addition to written guides, there are a bunch [community videos on YouTube](https://www.youtube.com/playlist?list=PLLIji4SLo6EiAUI5X3amBSB99HpabUqsS)
@@ -195,7 +196,6 @@ or [BookStack PeerTube channel](https://foss.video/c/bookstack/).
 The below are community guides that are no longer current, due to using old operating systems or installing out-of-date dependencies, 
 but they are still listed here as a useful resource:
 
-* [RHEL 8 Install (Oracle/Alma Linux) by @xhark](https://github.com/blogmotion/bm-bookstack-install/) - [french guide](https://blogmotion.fr/internet/bookstack-script-installation-centos-8-18255)
 * [CentOS 7 Install by Deviant Engineer](https://deviant.engineer/2017/02/bookstack-centos7/)
 * [Debian 11 Install by Othman Alikhan](https://gist.github.com/OthmanAlikhan/322f83a77c15dfd1c91a2afe0b6a6fc2)
 * [Fedora 27 Install by Jared Busch](https://mangolassi.it/topic/16471/install-bookstack-on-fedora-27/)

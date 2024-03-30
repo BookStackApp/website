@@ -72,7 +72,7 @@ The following shortcuts are available in the WYSIWYG Editor:
     </tr>
     <tr>
       <td><code>Ctrl+9</code> / <code>Cmd+9</code></td>
-      <td>Callout <br>(Keep pressing to toggle through styles)</td>
+      <td>Callout (Keep pressing to toggle through styles info, success, warning, danger)</td>
     </tr>
     <tr>
       <td>
@@ -80,6 +80,10 @@ The following shortcuts are available in the WYSIWYG Editor:
         <code>Ctrl+P</code> / <code>Cmd+P</code>
       </td>
       <td>Ordered List <br> Bullet List</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl+K</code> / <code>Cmd+K</code></td>
+      <td>Insert Link</td>
     </tr>
     <tr>
       <td><code>Ctrl+Shift+K</code> / <code>Cmd+Shift+K</code></td>

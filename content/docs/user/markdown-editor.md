@@ -76,7 +76,7 @@ The following shortcuts are available in the Markdown Editor:
     </tr>
     <tr>
       <td><code>Ctrl+9</code> / <code>Cmd+9</code></td>
-      <td>Callout (Info)</td>
+      <td>Callout (Keep pressing to toggle through styles info, success, warning, danger)</td>
     </tr>
     <tr>
       <td>
@@ -91,11 +91,11 @@ The following shortcuts are available in the Markdown Editor:
     </tr>
     <tr>
       <td><code>Ctrl+Shift+K</code> / <code>Cmd+Shift+K</code></td>
-      <td>Show link selector</td>
+      <td>Link to BookStack content</td>
     </tr>
     <tr>
       <td><code>Ctrl+Shift+I</code> / <code>Cmd+Shift+I</code></td>
-      <td>Insert Image</td>
+      <td>Insert Image via URL</td>
     </tr>
   </tbody>
 </table>

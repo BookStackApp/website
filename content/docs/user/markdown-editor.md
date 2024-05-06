@@ -6,6 +6,7 @@ type = "user-doc"
 +++
 
 If you prefer to write in a simpler format, a Markdown editor is available in BookStack. Markdown compatibility generally follows that of [CommonMark](https://commonmark.org/), along with a few extensions including tables and task-lists.
+This is an alternative to the default [WYSIWYG Editor](/docs/user/wysiwyg-editor/).
 
 
 ### Switching to the Markdown Editor
@@ -76,7 +77,7 @@ The following shortcuts are available in the Markdown Editor:
     </tr>
     <tr>
       <td><code>Ctrl+9</code> / <code>Cmd+9</code></td>
-      <td>Callout (Keep pressing to toggle through styles info, success, warning, danger)</td>
+      <td>Callout <br> <small><em>(Keep pressing to toggle through styles)</em></small></td>
     </tr>
     <tr>
       <td>

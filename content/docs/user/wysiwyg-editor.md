@@ -7,6 +7,8 @@ type = "user-doc"
 
 The default editor in BookStack is a 'What You See Is What You Get' (WYSIWYG) editor.
 The usage of this editor is similar to typical word-processing applications such as Word or Google Docs.
+For those that would prefer it, there is an alternative [Markdown Editor](/docs/user/markdown-editor/)
+which can be set as default or switched to where permissions allow.
 
 ### Editor Shortcuts
 
@@ -72,7 +74,7 @@ The following shortcuts are available in the WYSIWYG Editor:
     </tr>
     <tr>
       <td><code>Ctrl+9</code> / <code>Cmd+9</code></td>
-      <td>Callout <br>(Keep pressing to toggle through styles)</td>
+      <td>Callout <br> <small><em>(Keep pressing to toggle through styles)</em></small></td>
     </tr>
     <tr>
       <td>
@@ -80,6 +82,10 @@ The following shortcuts are available in the WYSIWYG Editor:
         <code>Ctrl+P</code> / <code>Cmd+P</code>
       </td>
       <td>Ordered List <br> Bullet List</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl+K</code> / <code>Cmd+K</code></td>
+      <td>Insert Link</td>
     </tr>
     <tr>
       <td><code>Ctrl+Shift+K</code> / <code>Cmd+Shift+K</code></td>

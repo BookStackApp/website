@@ -48,3 +48,22 @@ sudo chmod -R 775 /var/www/bookstack/storage /var/www/bookstack/bootstrap/cache 
 # Limit the .env file to only be readable by the user and group, and only writable by the user.
 sudo chmod 640 /var/www/bookstack/.env
 ```
+
+When using SELinux, you may still encounter access denied errors: you may additionally need to add a type label to your install files.
+
+The following assumes your webserver uses the `httpd_sys_content_t` for readonly files and `httpd_sys_rw_content_t` for read-write files.
+
+```bash
+# Set the httpd_sys_content_t type on all bookstack files
+semanage fcontext -a -t httpd_sys_content_t    '/var/www/bookstack(/.*)?'
+
+# Also set the httpd_sys_rw_content_t type on all directories that will need need read-write access
+semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/bookstack/storage(/.*)?'
+semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/bookstack/bootstrap/cache(/.*)?'
+semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/bookstack/public/uploads(/.*)?'
+
+# Apply the changes
+restorecon -R /var/www/bookstack
+```
+
+

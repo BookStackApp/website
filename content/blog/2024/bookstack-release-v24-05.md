@@ -9,19 +9,24 @@ slug = "bookstack-release-v24-05"
 draft = false
 +++
 
-Todo - Doc Updates
-
-Todo
+For this month we have a new BookStack feature release! This is mainly focused on updating
+the core underlying framework and some accompanying code, but that work comes with a sprinkling
+of extra additions and tweaks too.
 
 * [Update instructions](/docs/admin/updates)
 * [GitHub release page](https://github.com/BookStackApp/BookStack/releases/tag/v24.05)
 
 **Upgrade Notices**
 
-Todo
 Todo - Copy to updates page
+Todo - PHP Update notes on updates page - See https://github.com/BookStackApp/BookStack/issues/4893
 
-- **Item** - Note
+- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 8.0.2 to PHP 8.1 in this release. Please see the [v24.05 version-specific update instructions](/docs/admin/updates/#updating-to-v2405-or-higher) for guidance on updating PHP.
+- **Composer Version Requirement Change** - The minimum supported composer version has changed from v2.0 to v2.2 in this release. Please see the ["Updating Composer" section](/docs/admin/updates/#updating-composer) of our updates page for guidance on updating.
+- **LDAP** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause ant issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
+- **PDF Exports** - The `WKHTMLTOPDF` option is now considered deprecated, with the alternative being the newly added `EXPORT_PDF_COMMAND` which is detailed in [our documentation here](https://www.bookstackapp.com/docs/admin/pdf-rendering/#pdf-export-command). The `WKHTMLTOPDF` option will though remain supported for a number of feature releases though to avoid unexpected breaking changes.
+- **OIDC** - The OIDC "userinfo" endpoint may now be called in very rare scenarios where not all expected claims were being properly provided in the user ID Token, which could alter the details used for new users on access, and the groups obtained for user group/role sync, but only in edge case scenarios where functionality was not matching configuration before the update.
+- **Page Content** - Text links in page content will now be underlined by default for accessibility. Refer to [the release blogpost](https://www.bookstackapp.com/blog/bookstack-release-v24-05/#change-to-default-link-styles) for an simple customization to override & revert this if desired.
 
 TODO - Video
 <!-- {{<pt 8w3F4aWqH3MProMwyQBf2d>}} -->

@@ -33,11 +33,9 @@ LDAP_DN="cn=serviceaccount,ou=People,dc=example,dc=org"
 LDAP_PASS="my#super#secret#password543"
 
 # A filter to use when searching for users
-# The user-provided user-name used to replace any occurrences of '${user}'
-# If you're setting this option via other means, such as within a docker-compose.yml,
-# you may need escape the $, often using $$ or \$ instead.
-# Note: This option cannot be used with the docker-compose.yml `env_file` option.
-LDAP_USER_FILTER=(&(uid=${user}))
+# The user-provided user-name used to replace any occurrences of '{user}'.
+# (Also supported via '${user}' for backwards compatibility.
+LDAP_USER_FILTER=(&(uid={user}))
 
 # Set the LDAP version to use when connecting to the server
 # Should be set to 3 in most cases.
@@ -69,6 +67,14 @@ LDAP_THUMBNAIL_ATTRIBUTE=jpegphoto
 # Defaults to 'false'.
 LDAP_START_TLS=false
 
+# Certificate Authority Certificates to use for LDAP TLS connections.
+# Generally not needed if using a publicly trusted certificates.
+# Value should be a path to a specific CA certificate in pem format,
+# or a directory path where certificates are named via hashes, as
+# can be managed by a utility like "c_rehash".
+# Defaults to 'false'.
+#LDAP_TLS_CA_CERT=/etc/ldap/certs
+
 # If you need to allow untrusted LDAPS certificates, add the below and uncomment (remove the #)
 # Only set this option if debugging or you're absolutely sure it's required for your setup.
 # If using php-fpm, you may want to restart it after changing this option to avoid instability.
@@ -91,7 +97,7 @@ BookStack does work with active directory over LDAP. You will likely need to set
 depending on your setup and how you manage users in the system. You will still need to follow the setup instructions above.
 
 ```bash
-LDAP_USER_FILTER=(&(sAMAccountName=${user}))
+LDAP_USER_FILTER=(&(sAMAccountName={user}))
 LDAP_VERSION=3
 LDAP_ID_ATTRIBUTE=BIN;objectGUID
 # Change the below to true if your AD server supports TLS and if your

@@ -9,6 +9,8 @@ slug = "bookstack-release-v24-05"
 draft = false
 +++
 
+Todo - Doc Updates
+
 Todo
 
 * [Update instructions](/docs/admin/updates)
@@ -17,20 +19,107 @@ Todo
 **Upgrade Notices**
 
 Todo
+Todo - Copy to updates page
 
 - **Item** - Note
 
 TODO - Video
 <!-- {{<pt 8w3F4aWqH3MProMwyQBf2d>}} -->
 
-### Feature
 
-TODO
+### Framework & PHP Requirement Update
 
+The core aim of this release was to update the core framework BookStack uses from
+[Laravel](https://laravel.com/) 9 to 10 to help us stay on modern and supported dependencies.
+This requires a bump to the minimum version of PHP we support, from 8.0 to 8.1.
+This is something we typically do on a yearly basis, and keeps somewhat inline with the official
+support lifetime of PHP versions, where PHP 8.0 stopped being officially supported late last year.
+
+Apart from the PHP requirement change, this should not really have any affect to normal BookStack use
+but it ensures we're keeping things maintained and on a modern codebase.
+
+### Command-based PDF Export Option
+
+By default in BookStack we use a PHP-based PDF renderer ([DomPDF](https://github.com/dompdf/dompdf))
+and have long provided a more accurate alternative via [wkhtmltopdf](https://www.bookstackapp.com/docs/admin/pdf-rendering/#using-wkhtmltopdf).
+Unfortunately, wkhtmltopdf has become somewhat deprecated and is therefore dropping out of system repositories.
+Additionally, there were security considerations when using wkhtmltopdf in BookStack.
+
+As an alternative to we've now added a generic command-based option for BookStack.
+Since PDF rendering can be a complex element, with different solutions having different strengths and weaknesses,
+we didn't want to support a specific new PDF renderer, but instead provide an interface that could be 
+used with many external options. This option allows you to define a command, which will take an input HTML
+file argument, and an output PDF file argument, which BookStack will then call during an export.
+Existing solutions can then be directly called via this, or wrapped to work with this command-based interface.
+
+Right now we have a couple of examples in our documentation, but these are marked unsafe due to security concerns.
+In the future we'd like to expand upon, and potentially build/maintain, some safer alternative examples.
+
+TODO - Link to docs page above
+
+### Change to Default Link Styles
+
+Within page content links are now underlined by default.
+
+TODO - Image of link
+
+We generally try to avoid change that can affect core user content within BookStack, but this
+has been done to improve default accessibility by providing an additional indicator of a link upon
+just the color, which may not be easy to identify to all.
+
+If you'd prefer your links to remain non-underlined you can easily override this change by adding the following
+to your "Custom HTML Head Content" customization setting:
+
+TODO - Code here
+
+### OIDC Userinfo Endpoint Support
+
+When OIDC authentication was in use, BookStack would previously only read claims direction from the supplied
+user ID token. While this worked fine in most cases, some auth platforms would only provide certain details 
+via the userinfo endpoint. In this release we add wider support of the OIDC spec by making use of the userinfo 
+endpoint where needed. If not all details are in the token, BookStack will call & use the userinfo endpoint data.
+This means existing OIDC use-cases should remain speedy and unaffected, with extra calls only being made during 
+authentication when needed.
+
+The userinfo endpoint will be fetched via autodiscovery if enabled, otherwise it can also be defined via env options 
+using an `OIDC_USERINFO_ENDPOINT` option. Our [OIDC documentation](/docs/admin/oidc-auth/) has been updated to include this.
+
+Thanks to [@LukeShu](https://github.com/BookStackApp/BookStack/pull/4726) for starting the implementation of this one.
+
+### Simple Registration Honeypot
+
+For instances with open registration, spam can be a problem. While we don't want get deep into the ever moving scope
+of spam prevention, this release adds a simple honeypot field to the registration to hopefully help at least
+filter some of the simplest spam bots out.
+
+Thanks to [@nesges](https://github.com/BookStackApp/BookStack/pull/4970) for contributing this addition.
+
+### Audit Log API Endpoint
+
+We continue to expand the capabilities of the API in this release with the addition of a 
+list API endpoint for the audit log. This endpoint provides much the same data you'd be able
+to access when visiting the in-app Audit Log as an administrator. The endpoint requires
+the API user to have both "Manage app settings" and "Manage users" role permission since
+audit log data may contain sensitive information, and is unfiltered by item-level permissions.
+
+This addition should be helpful to those that need external insight into BookStack activities, 
+and those that like to standardise & centralise such audit data.
+
+### LDAP Custom TLS CA Cert Option
+
+When using LDAP along with TLS, to encrypt connections, it could be common that custom
+certificates are used by the authentication platform. Such custom certificates could then throw
+errors due to not being issues by a trusted/known authority. While custom certificates could technically be configured 
+via openldap, the methods/steps needed for this are not clear nor obvious.
+In this release, we now support a `LDAP_TLS_CA_CERT` option that can be set so BookStack will use a
+certain CA certificate, or a directory of many CA certificates.
+
+You can find further details of this option in our [updated LDAP documentation](https://www.bookstackapp.com/docs/admin/ldap-auth/).
 
 ### Translations
 
-TODO
+A big thanks once again to all the wonderful word weavers below that have helped translate BookStack
+since that last feature release:
 
 - Name - *LAng - x words*
 
@@ -38,7 +127,16 @@ TODO
 
 ### Next Steps
 
-Todo
+In BookStack the default WYSIWYG page editor (and recent description/comment editor) is powered by library
+called TinyMCE. They've recently [changed the project](https://github.com/tinymce/tinymce/discussions/9496)
+to a GPLv2+ license which is incompatible with our MIT license for the project as a working whole.
+This is quite a big deal for us since it's such a core part of the project.
+I've opened a BookStack [discussion for this here](https://github.com/BookStackApp/BookStack/issues/4908).
+Over the next release cycle I'll be diving into this further to get a better idea of what route we'll take.
+
+Last month we had the release of Ubuntu 24.04, for which we quickly published a [new install script](/docs/admin/installation/#ubuntu-2404),
+but to accompany this I'd like to record a new video guide, perhaps going a little bit deeper this time into topics like updates
+and other general maintenance tasks. 
 
 ### Full List of Changes
 

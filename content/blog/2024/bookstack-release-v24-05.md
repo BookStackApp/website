@@ -124,7 +124,13 @@ You can find further details of this option in our [updated LDAP documentation](
 
 ### Licenses Page
 
-TODO
+For this release we've built a more formal standard process in how we record and provide license & attribution information for BookStack as its dependencies.
+These records are updated during development & release, and are tracked as part of the codebase.
+
+Within the application you can visit the `/licenses` URL, which is also referenced below the app version in "Settings", at which you'll
+find a new licenses page that provides full license detail for BookStack and all known dependencies (including those used for development):
+
+![Screenshot of a new BookStack license page. The text on the page details the license information for BookStack, as well as the projects and libraries that are used within BookStack.](/images/2024/05/licenses-page.png)
 
 ### Translations
 
@@ -192,6 +198,7 @@ and other general maintenance tasks.
 * Added OIDC userinfo endpoint support. Thanks to [@LukeShu](https://github.com/BookStackApp/BookStack/pull/4726). ([#4955](https://github.com/BookStackApp/BookStack/pull/4955), [#4726](https://github.com/BookStackApp/BookStack/pull/4726), [#3873](https://github.com/BookStackApp/BookStack/issues/3873))
 * Added simple registration form honeypot. Thanks to [@nesges](https://github.com/BookStackApp/BookStack/pull/4970). ([#4970](https://github.com/BookStackApp/BookStack/pull/4970))
 * Added Scala to list of supported languages in code blocks. ([#4953](https://github.com/BookStackApp/BookStack/issues/4953))
+* Added licenses page supported by licenses list building process. ([#4907](https://github.com/BookStackApp/BookStack/pull/4907))
 * Updated content links to be underlined by default for accessibility. ([#4939](https://github.com/BookStackApp/BookStack/issues/4939))
 * Updated dev Dockerfile with improvements. Thanks to [@C0rn3j](https://github.com/BookStackApp/BookStack/pull/4895). ([#4895](https://github.com/BookStackApp/BookStack/pull/4895))
 * Updated included images with extra compression to save data. Thanks to [@C0rn3j](https://github.com/BookStackApp/BookStack/pull/4904). ([#4904](https://github.com/BookStackApp/BookStack/pull/4904))

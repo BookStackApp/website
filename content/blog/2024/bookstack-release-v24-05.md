@@ -19,14 +19,13 @@ of extra additions and tweaks too.
 **Upgrade Notices**
 
 Todo - Copy to updates page
-Todo - PHP Update notes on updates page - See https://github.com/BookStackApp/BookStack/issues/4893
 
-- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 8.0.2 to PHP 8.1 in this release. Please see the [v24.05 version-specific update instructions](/docs/admin/updates/#updating-to-v2405-or-higher) for guidance on updating PHP.
-- **Composer Version Requirement Change** - The minimum supported composer version has changed from v2.0 to v2.2 in this release. Please see the ["Updating Composer" section](/docs/admin/updates/#updating-composer) of our updates page for guidance on updating.
-- **LDAP** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause ant issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
-- **PDF Exports** - The `WKHTMLTOPDF` option is now considered deprecated, with the alternative being the newly added `EXPORT_PDF_COMMAND` which is detailed in [our documentation here](https://www.bookstackapp.com/docs/admin/pdf-rendering/#pdf-export-command). The `WKHTMLTOPDF` option will though remain supported for a number of feature releases though to avoid unexpected breaking changes.
-- **OIDC** - The OIDC "userinfo" endpoint may now be called in very rare scenarios where not all expected claims were being properly provided in the user ID Token, which could alter the details used for new users on access, and the groups obtained for user group/role sync, but only in edge case scenarios where functionality was not matching configuration before the update.
+- **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 8.0.2 to PHP 8.1 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-php) for guidance on updating PHP.
+- **Composer Version Requirement Change** - The minimum supported composer version has changed from v2.0 to v2.2 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-composer) for guidance on updating Composer.
 - **Page Content** - Text links in page content will now be underlined by default for accessibility. Refer to [the release blogpost](https://www.bookstackapp.com/blog/bookstack-release-v24-05/#change-to-default-link-styles) for an simple customization to override & revert this if desired.
+- **PDF Exports** - The `WKHTMLTOPDF` option is now considered deprecated, with the alternative being the newly added `EXPORT_PDF_COMMAND` which is detailed in [our documentation here](https://www.bookstackapp.com/docs/admin/pdf-rendering/#pdf-export-command). The `WKHTMLTOPDF` option will though remain supported for a number of feature releases though to avoid unexpected breaking changes.
+- **OIDC Authentication** - The OIDC "userinfo" endpoint may now be called in very rare scenarios where not all expected claims were being properly provided in the user ID Token, which could alter the details used for new users on access, and the groups obtained for user group/role sync, but only in edge case scenarios where functionality was not matching configuration before the update.
+- **LDAP Authentication** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause ant issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
 
 TODO - Video
 <!-- {{<pt 8w3F4aWqH3MProMwyQBf2d>}} -->
@@ -57,16 +56,14 @@ used with many external options. This option allows you to define a command, whi
 file argument, and an output PDF file argument, which BookStack will then call during an export.
 Existing solutions can then be directly called via this, or wrapped to work with this command-based interface.
 
-Right now we have a couple of examples in our documentation, but these are marked unsafe due to security concerns.
-In the future we'd like to expand upon, and potentially build/maintain, some safer alternative examples.
-
-TODO - Link to docs page above
+Right now we have [just one example in our documentation](/docs/admin/pdf-rendering/#example-weasyprint-command-option), and this is marked unsafe due to security concerns.
+In the near future I'd like to expand upon, and potentially build/maintain, some safer alternative examples.
 
 ### Change to Default Link Styles
 
 Within page content links are now underlined by default.
 
-TODO - Image of link
+![Bullet list of links about types of cat, with all links blue and underlined](/images/2024/05/page-links.png)
 
 We generally try to avoid change that can affect core user content within BookStack, but this
 has been done to improve default accessibility by providing an additional indicator of a link upon
@@ -75,7 +72,11 @@ just the color, which may not be easy to identify to all.
 If you'd prefer your links to remain non-underlined you can easily override this change by adding the following
 to your "Custom HTML Head Content" customization setting:
 
-TODO - Code here
+```html
+<style>
+  .page-content a { text-decoration: none; }
+</style>
+```
 
 ### OIDC Userinfo Endpoint Support
 
@@ -121,12 +122,49 @@ certain CA certificate, or a directory of many CA certificates.
 
 You can find further details of this option in our [updated LDAP documentation](https://www.bookstackapp.com/docs/admin/ldap-auth/).
 
+### Licenses Page
+
+TODO
+
 ### Translations
 
 A big thanks once again to all the wonderful word weavers below that have helped translate BookStack
 since that last feature release:
 
-- Name - *LAng - x words*
+- Michele Bastianelli (makoblaster) - *Italian - 1971 words*
+- Tim (thegatesdev) - *Many Languages - 1655 words*
+- jespernissen - *Danish - 587 words*
+- johnroyer - *Chinese Traditional - 554 words*
+- Ivan Krstic (ikrstic) - *Serbian (Cyrillic) - 441 words*
+- Vanja Cvelbar (b100w11) - *Slovenian - 263 words*
+- Andrey (avmaksimov) - *Russian - 262 words*
+- Maciej Lebiest (Szwendacz) - *Polish - 218 words*
+- Vitaliy (gviabcua) - *Ukrainian - 200 words*
+- daniel chou (chou0214) - *Chinese Traditional - 186 words*
+- Igor V Belousov (biv) - *Russian - 183 words*
+- cracrayol - *French - 182 words*
+- toras9000 - *Japanese - 169 words*
+- CapuaSC - *Dutch - 158 words*
+- SmokingCrop - *Dutch - 158 words*
+- Gonzalo Loyola (AlFcl) - *Spanish, Argentina; Spanish - 152 words*
+- David Bauer (davbauer) - *German - 141 words*
+- Jøran Haugli (haugli92) - *Norwegian Bokmal - 125 words*
+- Guardian75 - *German Informal - 97 words*
+- m0uch0 - *Spanish - 80 words*
+- grobert63 - *French - 78 words*
+- 10935336 - *Chinese Simplified - 73 words*
+- scureza - *Italian - 45 words*
+- MaximMaximS - *Czech - 45 words*
+- Jaroslav Kobližek (foretix) - *Czech - 43 words*
+- zygimantus - *Lithuanian - 35 words*
+- wusst. (Supporti) - *German - 34 words*
+- Antti-Jussi Nygård (ajnyga) - *Finnish - 29 words*
+- mr-kanister - *German - 26 words*
+- damian-klima - *Slovak - 24 words*
+- crow_ - *Latvian - 9 words*
+- JocelynDelalande - *French - 8 words*
+- Jan (JW-CH) - *German Informal - 2 words*
+- Timo B (lommes) - *German Informal - 2 words*
 
 *\* Word counts are those tracked by Crowdin, indicating original EN words translated.*
 

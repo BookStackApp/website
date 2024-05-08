@@ -26,3 +26,33 @@ table {
     font-weight: normal;
   }
 }
+
+details {
+  border: 1px solid #DDD;
+  margin-bottom: 1em;
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.1);
+}
+details > summary {
+  margin-top: -1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: -1rem;
+  font-weight: bold;
+  background-color: #f8f8f8;
+  padding: $-xs 1rem;
+  cursor: pointer;
+}
+details[open] > summary {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #DDD;
+}
+details > summary + * {
+  margin-top: .2em;
+}
+details:after {
+  content: '';
+  display: block;
+  clear: both;
+}

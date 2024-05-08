@@ -11,6 +11,8 @@ As an alternative you can instead define a command to make use of external PDF r
 
 {{<toc>}}
 
+---
+
 ### Export Page Size
 
 By default PDF exports are generated at an A4 size. If you'd prefer exports to be generated at "US Letter" standard sizes
@@ -20,6 +22,8 @@ you can specify this within your `.env` like so:
 # US Letter
 EXPORT_PAGE_SIZE=letter
 ```
+
+---
 
 ### PDF Export Command
 
@@ -56,6 +60,8 @@ This option uses [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/) 
 ```bash
 EXPORT_PDF_COMMAND="weasyprint {input_html_path} {output_pdf_path}"
 ```
+
+---
 
 ### Using wkhtmltopdf
 

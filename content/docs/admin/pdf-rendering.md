@@ -55,7 +55,7 @@ Below you can find some examples using this for specific PDF generation options.
 
 **Warning:** This is option is not considered secure due to potential filesystem/network access.
 
-This option uses [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/) to generate PDF exports.
+This example uses [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/) to generate PDF exports.
 
 ```bash
 EXPORT_PDF_COMMAND="weasyprint {input_html_path} {output_pdf_path}"
@@ -65,7 +65,7 @@ EXPORT_PDF_COMMAND="weasyprint {input_html_path} {output_pdf_path}"
 
 ### Using wkhtmltopdf
 
-**Note:** As of BookStack v24.05 this option is not considered deprecated, due to the diminishing support of wkhtmltopdf.
+**Note:** As of BookStack v24.05 this option is considered deprecated, due to the diminishing support of wkhtmltopdf.
 You can instead use the more flexible [PDF Export Command](#pdf-export-command) option detailed above.
 
 Pre-compiled binaries for wkhtmltopdf can be found on the downloads page of [their website](http://wkhtmltopdf.org/downloads.html).

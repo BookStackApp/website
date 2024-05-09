@@ -4,7 +4,7 @@ date = "2024-05-08"
 type = "admin-doc"
 +++
 
-While we try to ensure a fairly slow, steady and stable path for BookStack updates, requirements do change
+While we try to ensure a fairly steady & stable path for BookStack updates, requirements do change
 as software develops & moves on. In particular, the minimum required version of PHP will increase
 about once per year. Every so often we also may require a new minimum version of composer to be used
 for BookStack. This page details the common steps required to update these both.
@@ -19,7 +19,7 @@ You can usually check your installed PHP version by running `php -v` but in some
 <details>
 <summary>Updating to PHP 8.3 on most Debian & Ubuntu based systems using Apache</summary>
 
-The commands below provide an example of how PHP can be updated to the latest version (8.3) on most Debian & Ubuntu based systems
+The commands below provide an example of how PHP can be updated to the PHP 8.3 on most Debian & Ubuntu based systems
 that are running PHP via Apache using mod-php.
 
 **Warnings:** 

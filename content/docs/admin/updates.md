@@ -43,7 +43,17 @@ the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
 #### Updating to v24.05 or higher
 
-TODO - 
+**PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 8.0.2 to PHP 8.1 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-php) for guidance on updating PHP.
+
+**Composer Version Requirement Change** - The minimum supported composer version has changed from v2.0 to v2.2 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-composer) for guidance on updating Composer.
+
+**Page Content** - Text links in page content will now be underlined by default for accessibility. Refer to [the release blogpost](https://www.bookstackapp.com/blog/bookstack-release-v24-05/#change-to-default-link-styles) for an simple customization to override & revert this if desired.
+
+**PDF Exports** - The `WKHTMLTOPDF` option is now considered deprecated, with the alternative being the newly added `EXPORT_PDF_COMMAND` which is detailed in [our documentation here](https://www.bookstackapp.com/docs/admin/pdf-rendering/#pdf-export-command). The `WKHTMLTOPDF` option will though remain supported for a number of feature releases though to avoid unexpected breaking changes.
+
+**OIDC Authentication** - The OIDC "userinfo" endpoint may now be called in very rare scenarios where not all expected claims were being properly provided in the user ID Token, which could alter the details used for new users on access, and the groups obtained for user group/role sync, but only in edge case scenarios where functionality was not matching configuration before the update.
+
+**LDAP Authentication** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause any issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
 
 #### Updating to v24.02 or higher
 

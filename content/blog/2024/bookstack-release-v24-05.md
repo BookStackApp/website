@@ -2,14 +2,14 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Release v24.05"
-date = 2024-05-10T13:36:00Z
+date = 2024-05-11T13:36:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cc-by-sa-3/seven-sisters-cliffs-david-iliff.jpg"
 slug = "bookstack-release-v24-05"
 draft = false
 +++
 
-For this month we have a new BookStack feature release! This is mainly focused on updating
+Today we release a new BookStack feature update that's mainly focused on updating
 the core underlying framework and some accompanying code, but that work comes with a sprinkling
 of extra additions and tweaks too.
 
@@ -18,14 +18,12 @@ of extra additions and tweaks too.
 
 **Upgrade Notices**
 
-Todo - Copy to updates page
-
 - **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 8.0.2 to PHP 8.1 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-php) for guidance on updating PHP.
 - **Composer Version Requirement Change** - The minimum supported composer version has changed from v2.0 to v2.2 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-composer) for guidance on updating Composer.
 - **Page Content** - Text links in page content will now be underlined by default for accessibility. Refer to [the release blogpost](https://www.bookstackapp.com/blog/bookstack-release-v24-05/#change-to-default-link-styles) for an simple customization to override & revert this if desired.
 - **PDF Exports** - The `WKHTMLTOPDF` option is now considered deprecated, with the alternative being the newly added `EXPORT_PDF_COMMAND` which is detailed in [our documentation here](https://www.bookstackapp.com/docs/admin/pdf-rendering/#pdf-export-command). The `WKHTMLTOPDF` option will though remain supported for a number of feature releases though to avoid unexpected breaking changes.
 - **OIDC Authentication** - The OIDC "userinfo" endpoint may now be called in very rare scenarios where not all expected claims were being properly provided in the user ID Token, which could alter the details used for new users on access, and the groups obtained for user group/role sync, but only in edge case scenarios where functionality was not matching configuration before the update.
-- **LDAP Authentication** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause ant issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
+- **LDAP Authentication** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause any issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
 
 TODO - Video
 <!-- {{<pt 8w3F4aWqH3MProMwyQBf2d>}} -->
@@ -35,7 +33,7 @@ TODO - Video
 
 The core aim of this release was to update the core framework BookStack uses from
 [Laravel](https://laravel.com/) 9 to 10 to help us stay on modern and supported dependencies.
-This requires a bump to the minimum version of PHP we support, from 8.0 to 8.1.
+This requires a bump to the minimum version of PHP BookStack supports, from 8.0 to 8.1.
 This is something we typically do on a yearly basis, and keeps somewhat inline with the official
 support lifetime of PHP versions, where PHP 8.0 stopped being officially supported late last year.
 
@@ -49,7 +47,7 @@ and have long provided a more accurate alternative via [wkhtmltopdf](https://www
 Unfortunately, wkhtmltopdf has become somewhat deprecated and is therefore dropping out of system repositories.
 Additionally, there were security considerations when using wkhtmltopdf in BookStack.
 
-As an alternative to we've now added a generic command-based option for BookStack.
+As an alternative we've now added a generic command-based option for BookStack.
 Since PDF rendering can be a complex element, with different solutions having different strengths and weaknesses,
 we didn't want to support a specific new PDF renderer, but instead provide an interface that could be 
 used with many external options. This option allows you to define a command, which will take an input HTML
@@ -63,7 +61,7 @@ In the near future I'd like to expand upon, and potentially build/maintain, some
 
 Within page content links are now underlined by default.
 
-![Bullet list of links about types of cat, with all links blue and underlined](/images/2024/05/page-links.png)
+![Bullet list of links about types of cats, with all links blue and underlined](/images/2024/05/page-links.png)
 
 We generally try to avoid change that can affect core user content within BookStack, but this
 has been done to improve default accessibility by providing an additional indicator of a link upon
@@ -185,13 +183,12 @@ Over the next release cycle I'll be diving into this further to get a better ide
 
 Last month we had the release of Ubuntu 24.04, for which we quickly published a [new install script](/docs/admin/installation/#ubuntu-2404),
 but to accompany this I'd like to record a new video guide, perhaps going a little bit deeper this time into topics like updates
-and other general maintenance tasks. 
+and other general maintenance tasks.
 
 ### Full List of Changes
 
 **Released in v24.05**
 
-* Updated app framework from Laravel 9 to 10. ([#4903](https://github.com/BookStackApp/BookStack/pull/4903))
 * Added new command-based PDF export option. ([#4969](https://github.com/BookStackApp/BookStack/pull/4969), [#4732](https://github.com/BookStackApp/BookStack/issues/4732))
 * Added Audit Log API list endpoint. ([#4987](https://github.com/BookStackApp/BookStack/pull/4987), [#4316](https://github.com/BookStackApp/BookStack/issues/4316))
 * Added LDAP option to provide a custom CA cert. Thanks to [@mmoore2012](https://github.com/BookStackApp/BookStack/pull/4913). ([#4985](https://github.com/BookStackApp/BookStack/pull/4985), [#4913](https://github.com/BookStackApp/BookStack/pull/4913))
@@ -199,6 +196,7 @@ and other general maintenance tasks.
 * Added simple registration form honeypot. Thanks to [@nesges](https://github.com/BookStackApp/BookStack/pull/4970). ([#4970](https://github.com/BookStackApp/BookStack/pull/4970))
 * Added Scala to list of supported languages in code blocks. ([#4953](https://github.com/BookStackApp/BookStack/issues/4953))
 * Added licenses page supported by licenses list building process. ([#4907](https://github.com/BookStackApp/BookStack/pull/4907))
+* Updated app framework from Laravel 9 to 10. ([#4903](https://github.com/BookStackApp/BookStack/pull/4903))
 * Updated content links to be underlined by default for accessibility. ([#4939](https://github.com/BookStackApp/BookStack/issues/4939))
 * Updated dev Dockerfile with improvements. Thanks to [@C0rn3j](https://github.com/BookStackApp/BookStack/pull/4895). ([#4895](https://github.com/BookStackApp/BookStack/pull/4895))
 * Updated included images with extra compression to save data. Thanks to [@C0rn3j](https://github.com/BookStackApp/BookStack/pull/4904). ([#4904](https://github.com/BookStackApp/BookStack/pull/4904))

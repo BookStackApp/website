@@ -95,7 +95,7 @@ OIDC_AUTH_ENDPOINT=https://instance.authsystem.example.com/v1/authorize
 OIDC_TOKEN_ENDPOINT=https://instance.authsystem.example.com/v1/token
 
 # Full URL to the OIDC userinfo endpoint
-# Won't be used if all required tokens are provided in the ID token.
+# Won't be used if all required claims are provided in the ID token.
 OIDC_USERINFO_ENDPOINT=https://instance.authsystem.example.com/v1/userinfo
 ```
 

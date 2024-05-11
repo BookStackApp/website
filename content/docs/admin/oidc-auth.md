@@ -29,7 +29,7 @@ We have a range of videos available that can help show, for a range of identity 
 
 Listed below are some considerations to keep in mind in regard to BookStack's OIDC implementation:
 
-- Only RS256 is currently supported as a token signing algorithm, Token encryption is not supported.
+- Only RS256 is currently supported as a token signing algorithm, Token encryption is not supported. This applies to both ID tokens and userinfo responses.
 - Discovery covers fetching the auth & token endpoints, in addition to parsing any keys at the JWKS URI,
   from the `<issuer>/.well-known/openid-configuration` endpoint.
   - Issuer discovery is not supported.
@@ -93,6 +93,10 @@ OIDC_AUTH_ENDPOINT=https://instance.authsystem.example.com/v1/authorize
 
 # Full URL to the OIDC token endpoint
 OIDC_TOKEN_ENDPOINT=https://instance.authsystem.example.com/v1/token
+
+# Full URL to the OIDC userinfo endpoint
+# Won't be used if all required claims are provided in the ID token.
+OIDC_USERINFO_ENDPOINT=https://instance.authsystem.example.com/v1/userinfo
 ```
 
 A user in BookStack will be linked to an OIDC provided account via the `sub` claim.

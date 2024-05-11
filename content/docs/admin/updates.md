@@ -41,6 +41,20 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v24.05 or higher
+
+**PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 8.0.2 to PHP 8.1 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-php) for guidance on updating PHP.
+
+**Composer Version Requirement Change** - The minimum supported composer version has changed from v2.0 to v2.2 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-composer) for guidance on updating Composer.
+
+**Page Content** - Text links in page content will now be underlined by default for accessibility. Refer to [the release blogpost](https://www.bookstackapp.com/blog/bookstack-release-v24-05/#change-to-default-link-styles) for an simple customization to override & revert this if desired.
+
+**PDF Exports** - The `WKHTMLTOPDF` option is now considered deprecated, with the alternative being the newly added `EXPORT_PDF_COMMAND` which is detailed in [our documentation here](https://www.bookstackapp.com/docs/admin/pdf-rendering/#pdf-export-command). The `WKHTMLTOPDF` option will though remain supported for a number of feature releases though to avoid unexpected breaking changes.
+
+**OIDC Authentication** - The OIDC "userinfo" endpoint may now be called in very rare scenarios where not all expected claims were being properly provided in the user ID Token, which could alter the details used for new users on access, and the groups obtained for user group/role sync, but only in edge case scenarios where functionality was not matching configuration before the update.
+
+**LDAP Authentication** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause any issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
+
 #### Updating to v24.02 or higher
 
 **Comments** - The ability to use markdown content in comments has been removed in this release, replaced by a WYSIWYG editor. Markdown in comments was a fairly hidden feature though so was not commonly utilised. Existing markdown comments will remain although formatting may be lost if old markdown comments are edited.
@@ -118,7 +132,7 @@ sudo a2enmod php8.2
 sudo systemctl restart apache2
 ```
 
-You may also need to [update composer](#updating-composer) to be compatible with PHP 8.2.
+You may also need to [update composer](/docs/admin/updating-php#updating-composer) to be compatible with PHP 8.2.
 
 **Logical Theme System Event Change** - The `commonmark_environment_configure` event argument and return type has changed. Please [see the event definition](https://github.com/BookStackApp/BookStack/blob/b88b1bef2c0cf74627c5122b656dfabc2d5f23ee/app/Theming/ThemeEvents.php#L63-L71) to understand the new types.
 
@@ -177,7 +191,7 @@ You may also need to [update composer](#updating-composer) to be compatible with
 
 #### Updating to v21.12.3 or higher
 
-**Composer Version Requirement Change** - Composer v2.0 or greater is now required to install or update BookStack. See the ["Updating Composer"](#updating-composer) section of this page below.
+**Composer Version Requirement Change** - Composer v2.0 or greater is now required to install or update BookStack. See the ["Updating Composer"](/docs/admin/updating-php#updating-composer) section of this page below.
 
 #### Updating to v21.12.1 or higher
 
@@ -384,12 +398,3 @@ The v0.13 release contained some new features and updates which change the requi
   - On Ubuntu 16.04 this can be installed via `sudo apt install php7.0-tidy`.
   - On Ubuntu 14.04 (Using the default PHP option) this can be installed via `sudo apt-get install php5-tidy`.
 * Page attachments will be stored in the `storage/uploads` folder (Unless you use Amazon S3). This folder will be created on update. Ensure your webserver has write permissions for this folder.
-
----
-
-### Updating Composer
-
-You can check your current composer version by running `composer -V`. 
-You can often update composer by running `sudo composer self-update` (Or you may be prompted to run `sudo composer self-update --2`).
-
-If you're using a system-supplied composer package you may need to first uninstall that (eg. `sudo apt remove composer`) then follow the [composer download documentation](https://getcomposer.org/download/) to get the latest version. Take notice of the `sudo mv composer.phar /usr/local/bin/composer` command shown in the documentation to install composer globally for easier usage.

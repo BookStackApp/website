@@ -25,8 +25,7 @@ of extra additions and tweaks too.
 - **OIDC Authentication** - The OIDC "userinfo" endpoint may now be called in very rare scenarios where not all expected claims were being properly provided in the user ID Token, which could alter the details used for new users on access, and the groups obtained for user group/role sync, but only in edge case scenarios where functionality was not matching configuration before the update.
 - **LDAP Authentication** - The `LDAP_USER_FILTER` BookStack option now uses `{user}` as a placeholder instead of `${user}` by default. The older `${user}` placeholder format is still supported but you may want to use the new format instead. This should not cause any issues on existing instances, unless `{user}` was used as a literal part of your user filter which would be very unlikely.
 
-TODO - Video
-<!-- {{<pt 8w3F4aWqH3MProMwyQBf2d>}} -->
+{{<pt hfo6x4Bkw6j1eRqcYpMQYC>}}
 
 
 ### Framework & PHP Requirement Update
@@ -105,6 +104,30 @@ list API endpoint for the audit log. This endpoint provides much the same data y
 to access when visiting the in-app Audit Log as an administrator. The endpoint requires
 the API user to have both "Manage app settings" and "Manage users" role permission since
 audit log data may contain sensitive information, and is unfiltered by item-level permissions.
+Here's an example of what this API data looks like:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "type": "bookshelf_create",
+      "detail": "",
+      "user_id": 1,
+      "loggable_id": 1,
+      "loggable_type": "bookshelf",
+      "ip": "124.4.x.x",
+      "created_at": "2021-09-29T12:32:02.000000Z",
+      "user": {
+        "id": 1,
+        "name": "Admins",
+        "slug": "admins"
+      }
+    }
+  ],
+  "total": 6088
+}
+```
 
 This addition should be helpful to those that need external insight into BookStack activities, 
 and those that like to standardise & centralise such audit data.
@@ -119,6 +142,7 @@ In this release, we now support a `LDAP_TLS_CA_CERT` option that can be set so B
 certain CA certificate, or a directory of many CA certificates.
 
 You can find further details of this option in our [updated LDAP documentation](https://www.bookstackapp.com/docs/admin/ldap-auth/).
+Thanks to [@mmoore2012](https://github.com/BookStackApp/BookStack/pull/4913) for providing an initial implementation for this.
 
 ### Licenses Page
 

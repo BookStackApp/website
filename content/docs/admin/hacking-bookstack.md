@@ -97,3 +97,26 @@ As an example of usage, pages with the tag `Priority: Critical` could have their
 .tag-pair-priority-critical .page-content { color: red; }
 </style>
 ```
+
+---
+
+### Export Classes
+
+When PDF or HTML exports are performed in BookStack, the underlying templates define classes to allow customization of styling in specific scenarios.
+For context, PDF exports are rendered via a conversion from HTML to PDF, so CSS styling can be applied for these but support may depend on the underlying PDF conversion engine.
+The classes are applied to the `<body>` element, and are as follows:
+
+- `export` - All HTML/PDF exports
+- `export-format-pdf` - PDF exports
+- `export-format-html` - HTML exports
+- `export-engine-dompdf` - PDF exports using the default DomPDF rendering engine
+- `export-engine-wkhtml` - PDF exports using the default DomPDF rendering engine
+- `export-engine-command` - PDF exports using the command-based PDF rendering option
+
+As an example usage, you could define the following custom style code to make paragraph text red only in PDF exports created via the default DomPDF renderer:
+
+```html
+<style>
+.export-format-pdf.export-engine-dompdf p { color: red; }
+</style>
+```

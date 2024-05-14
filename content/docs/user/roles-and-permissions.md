@@ -7,6 +7,8 @@ slug = "roles-and-permissions"
 
 Within BookStack the abilities of a user are controlled by the roles assigned to them and the permissions provided to those roles. A user can be assigned multiple roles, in which case the permissions will stack and the user will receive any ability if any of the roles is provided that specific ability.
 
+{{<toc>}}
+
 ### Managing Roles
 
 Roles can be created and edited by an admin user by navigating to "Settings > Roles" within the BookStack interface. A set of default roles are provided in a fresh BookStack instance for common use cases.

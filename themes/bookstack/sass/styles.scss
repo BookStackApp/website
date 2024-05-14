@@ -694,10 +694,16 @@ iframe[src^="https://www.youtube-nocookie.com"],
   .chroma {
     margin: -1px;
   }
+  details {
+    margin: 0;
+    box-shadow: none;
+    border: 0;
+  }
   summary {
     list-style: none;
     font-size: .9rem;
     cursor: pointer;
+    background-color: transparent;
   }
   summary::-webkit-details-marker {
     display: none;

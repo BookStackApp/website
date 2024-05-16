@@ -197,8 +197,12 @@ examples in various languages.
 
 No. Money should not be a driver or incentive for decisions made for the core project.
 Those without money should have as much influence in the evolution of the platform as those with money.
+Additionally, the implementation of a feature is rarely the largest cost.
+Maintenance & support has much more of an impact, and is a forever ongoing cost to the project.
+We don't want to have additional financial incentives involved that may entice us to stretch the project out beyond a
+reasonably maintainable state.
 
-We get offered this a lot, and we have previously offered some quotes for features that had been validated
+We get offered payment to build features often, and we have previously offered some quotes for features that had been validated
 to meet the scope of the project via our core process, but it's usually a time consuming & awkward business dance to actually
 get to an agreed scope and figure, so we've only had time consumed via this, and therefore has not been worth
 the added complications or concerns.

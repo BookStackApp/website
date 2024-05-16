@@ -8,7 +8,52 @@ Below are many of the common questions we get asked in relation to the wider org
 and governance of the BookStack project.
 
 
-<ul id="toc" class="dual-column-dual-level-toc"><li><a href="#origins-goals--organisation" class="toc-header-h2">Origins, Goals &amp; Organisation</a><ul><li><a href="#how-did-bookstack-start" class="toc-header-h3">How did BookStack start?</a></li><li><a href="#what-are-the-core-goals-of-bookstack" class="toc-header-h3">What are the core goals of BookStack?</a></li><li><a href="#who-works-on-bookstack" class="toc-header-h3">Who works on BookStack?</a></li><li><a href="#how-is-work-for-the-project-organised" class="toc-header-h3">How is work for the project organised?</a></li><li><a href="#what-versions-of-bookstack-do-you-support" class="toc-header-h3">What versions of BookStack do you support?</a></li><li><a href="#what-license-is-the-project-provided-under" class="toc-header-h3">What license is the project provided under?</a></li></ul></li><li><a href="#feature-development" class="toc-header-h2">Feature Development</a><ul><li><a href="#how-are-features--additions-decided-upon" class="toc-header-h3">How are features &amp; additions decided upon?</a></li><li><a href="#is-feature-x-planned-to-be-added" class="toc-header-h3">Is feature X planned to be added?</a></li><li><a href="#but-feature-x-would-be-really-simple-to-implement-why-not-just-build-it" class="toc-header-h3">But feature X would be really simple to implement, why not just build it?</a></li><li><a href="#if-a-feature-is-not-wanted-why-not-just-add-it-as-an-option" class="toc-header-h3">If a feature is not wanted, why not just add it as an option?</a></li><li><a href="#would-bookstack-integrate-with-x-platform" class="toc-header-h3">Would BookStack integrate with X platform?</a></li><li><a href="#can-we-pay-for-the-implementation-of-specific-features" class="toc-header-h3">Can we pay for the implementation of specific features?</a></li></ul></li><li><a href="#funding--partnerships" class="toc-header-h2">Funding &amp; Partnerships</a><ul><li><a href="#how-is-the-project-funded" class="toc-header-h3">How is the project funded?</a></li><li><a href="#will-the-project-accept-investment" class="toc-header-h3">Will the project accept investment?</a></li><li><a href="#would-you-consider-an-official-partnership-with-other-businesses" class="toc-header-h3">Would you consider an official partnership with other businesses?</a></li></ul></li><li><a href="#services" class="toc-header-h2">Services</a><ul><li><a href="#do-you-provide-an-official-managed-hosting-service" class="toc-header-h3">Do you provide an official managed hosting service?</a></li><li><a href="#what-services-do-you-officially-provide" class="toc-header-h3">What services do you officially provide?</a></li><li><a href="#are-there-other-versionseditions-of-bookstack" class="toc-header-h3">Are there other versions/editions of BookStack?</a></li><li><a href="#can-others-provide-servicesofferings-for-bookstack" class="toc-header-h3">Can others provide services/offerings for BookStack?</a></li><li><a href="#do-you-offer-pre-sales-supportcalls" class="toc-header-h3">Do you offer pre-sales support/calls?</a></li></ul></li><li><a href="#communications--involvement" class="toc-header-h2">Communications &amp; Involvement</a><ul><li><a href="#how-can-we-receive-project-news--updates" class="toc-header-h3">How can we receive project news &amp; updates?</a></li><li><a href="#how-can-we-contact-you" class="toc-header-h3">How can we contact you?</a></li><li><a href="#how-can-i-get-involved-with-the-project" class="toc-header-h3">How can I get involved with the project?</a></li><li><a href="#do-you-provide-mentoring" class="toc-header-h3">Do you provide mentoring?</a></li></ul></li></ul>
+<ul id="toc" class="dual-column-dual-level-toc">
+<li><a href="#origins-goals--organisation" class="toc-header-h2">Origins, Goals &amp; Organisation</a>
+    <ul>
+    <li><a href="#how-did-bookstack-start" class="toc-header-h3">How did BookStack start?</a></li>
+    <li><a href="#what-are-the-core-goals-of-bookstack" class="toc-header-h3">What are the core goals of BookStack?</a></li>
+    <li><a href="#who-works-on-bookstack" class="toc-header-h3">Who works on BookStack?</a></li>
+    <li><a href="#how-is-work-for-the-project-organised" class="toc-header-h3">How is work for the project organised?</a></li>
+    <li><a href="#what-versions-of-bookstack-do-you-support" class="toc-header-h3">What versions of BookStack do you support?</a></li>
+    <li><a href="#what-license-is-the-project-provided-under" class="toc-header-h3">What license is the project provided under?</a></li>
+    </ul>
+</li>
+<li><a href="#feature-development" class="toc-header-h2">Feature Development</a>
+    <ul>
+    <li><a href="#how-are-features--additions-decided-upon" class="toc-header-h3">How are features &amp; additions decided upon?</a></li>
+    <li><a href="#is-feature-x-planned-to-be-added" class="toc-header-h3">Is feature X planned to be added?</a></li>
+    <li><a href="#but-feature-x-would-be-really-simple-to-implement-why-not-just-build-it" class="toc-header-h3">But feature X would be really simple to implement, why not just build it?</a></li>
+    <li><a href="#if-a-feature-is-not-wanted-why-not-just-add-it-as-an-option" class="toc-header-h3">If a feature is not wanted, why not just add it as an option?</a></li>
+    <li><a href="#would-bookstack-integrate-with-x-platform" class="toc-header-h3">Would BookStack integrate with X platform?</a></li>
+    <li><a href="#can-we-pay-for-the-implementation-of-specific-features" class="toc-header-h3">Can we pay for the implementation of specific features?</a></li>
+    <li><a href="#can-we-get-our-own-or-pay-other-developers-to-contribute-the-features-we-want" class="toc-header-h3">Can we get our own, or pay other, developers to contribute the features we want?</a></li>
+    </ul>
+</li>
+<li><a href="#funding--partnerships" class="toc-header-h2">Funding &amp; Partnerships</a>
+    <ul>
+    <li><a href="#how-is-the-project-funded" class="toc-header-h3">How is the project funded?</a></li>
+    <li><a href="#will-the-project-accept-investment" class="toc-header-h3">Will the project accept investment?</a></li>
+    <li><a href="#would-you-consider-an-official-partnership-with-other-businesses" class="toc-header-h3">Would you consider an official partnership with other businesses?</a></li>
+    </ul>
+</li>
+<li><a href="#services" class="toc-header-h2">Services</a>
+    <ul>
+    <li><a href="#do-you-provide-an-official-managed-hosting-service" class="toc-header-h3">Do you provide an official managed hosting service?</a></li>
+    <li><a href="#what-services-do-you-officially-provide" class="toc-header-h3">What services do you officially provide?</a></li>
+    <li><a href="#are-there-other-versionseditions-of-bookstack" class="toc-header-h3">Are there other versions/editions of BookStack?</a></li>
+    <li><a href="#can-others-provide-servicesofferings-for-bookstack" class="toc-header-h3">Can others provide services/offerings for BookStack?</a></li>
+    <li><a href="#do-you-offer-pre-sales-supportcalls" class="toc-header-h3">Do you offer pre-sales support/calls?</a></li>
+    </ul>
+</li>
+<li><a href="#communications--involvement" class="toc-header-h2">Communications &amp; Involvement</a>
+    <ul>
+    <li><a href="#how-can-we-receive-project-news--updates" class="toc-header-h3">How can we receive project news &amp; updates?</a></li>
+    <li><a href="#how-can-we-contact-you" class="toc-header-h3">How can we contact you?</a></li>
+    <li><a href="#how-can-i-get-involved-with-the-project" class="toc-header-h3">How can I get involved with the project?</a></li>
+    <li><a href="#do-you-provide-mentoring" class="toc-header-h3">Do you provide mentoring?</a></li>
+    </ul>
+</li></ul>
 
 <!-- <script type="module">
     // This is a dev script to just help automatically build out the TOC for this page.
@@ -206,6 +251,19 @@ We get offered payment to build features often, and we have previously offered s
 to meet the scope of the project via our core process, but it's usually a time consuming & awkward business dance to actually
 get to an agreed scope and figure, so we've only had time consumed via this, and therefore has not been worth
 the added complications or concerns.
+
+### Can we get our own, or pay other, developers to contribute the features we want?
+
+While we accept many code contributions we likely won't accept feature contributions unless you've opened
+a line of discussion up with the project, and had BookStack maintainers confirm that an idea/scope would be accepted.
+As touched on in the previous answer above, implementation is rarely the real cost of a new feature
+and we don't want the direction of the platform to be directed by those with the most money (in this case,
+those that are able to pay developers to implement the features they want).
+
+It could seem like contributing the code for new features would be "doing the work for us", but quite often
+it results in the core interesting coding logic being done, leaving us with testing, responsibility & maintenance long-term.
+To be clear, we're happy to be getting others involved in contributing to the project, but we just don't like to have
+feature contributions lead the direction & scope of the project.
 
 ---
 

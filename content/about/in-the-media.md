@@ -8,6 +8,7 @@ where you can find more detail or insight regarding the project.
 
 ### Articles & Blogposts
 
+- [May 2024 - blog.admin-intelligence.de](https://blog.admin-intelligence.de/bookstack-eine-moderne-alternative-zu-klassischen-wiki-systemen/) - BookStack: Eine moderne Alternative zu klassischen Wiki-Systemen
 - [Apr 2024 - drwho.virtadpt.net](https://drwho.virtadpt.net/archive/2024-04-03/technomancer-tools-bookstack/) - Technomancer Tools: Bookstack
 - [Nov 2023 - laravel-news.com](https://laravel-news.com/bookstack-documentation-wiki-software) - BookStack is a simple and free Wiki software Written in Laravel
 - [Mar 2023 - noted.lol](https://noted.lol/dev-debrief-bookstack/) - Dev Debrief #1: An Interview With the Developer of Bookstack

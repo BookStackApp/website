@@ -2,7 +2,7 @@
 categories = ["Releases"]
 tags = ["Releases"]
 title = "BookStack Security Release v24.05.1"
-date = 2024-05-21T11:00:00Z
+date = 2024-05-21T10:00:00Z
 author = "Dan Brown"
 image = "/images/blog-cover-images/cc-by-sa-4/padlocks-dietmar-rabich.jpg"
 slug = "bookstack-release-v24-05-1"

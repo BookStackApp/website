@@ -41,6 +41,10 @@ This is primarily a list of breaking changes & security notices.
 Details of updates can be found on [our blog](https://www.bookstackapp.com/blog/) or via 
 the [GitHub releases page](https://github.com/BookStackApp/BookStack/releases).
 
+#### Updating to v24.05.1 or higher
+
+**Security** - v24.05.1 adds extra rate-limiting to some forms that are accessible without authentication, while also implementing changes to prevent methods that could be used to indicate if specific user emails exist in the system.
+
 #### Updating to v24.05 or higher
 
 **PHP Version Requirement Change** - The minimum supported PHP version has changed from PHP 8.0.2 to PHP 8.1 in this release. Please see our ["Updating PHP & Composer" documentation page](https://www.bookstackapp.com/docs/admin/updating-php/#updating-php) for guidance on updating PHP.

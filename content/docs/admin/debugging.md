@@ -20,6 +20,8 @@ This page details how you can find out more information about errors you may fac
     - [Broken Links or No Images After APP_URL Change](#broken-links-or-no-images-after-app_url-change)
 - [Submitting Issues](#submitting-issues)
 
+---
+
 ### Error Log File
 
 On a common installation, an error log can be found at the path `storage/logs/laravel.log`, relative to the top-level folder of your BookStack installation files. 
@@ -36,11 +38,15 @@ You will likely need privileged access to read these files. For example `sudo ta
 
 If using an alternative hosting method, such as docker container, please refer to the documentation provided by that method/container.
 
+---
+
 ### Debug View
 
 _**NOTE: When debugging is enabled it's possible for visitors to see private credentials used in the BookStack or server configuration. Ensure debugging is only enabled when your instance is not accessible by others. Remember to disable debugging before restoring access.**_
 
 To enable full error displaying edit the `.env` file, in the application root directory, and add or update the `APP_DEBUG` option to `APP_DEBUG=true`. Errors will now be displayed in full with details of where it occurred. Remember to revert this change once you have found the issue so that the detailed error information is hidden from visitors.
+
+---
 
 ### Common Issues & Resolutions
 
@@ -50,7 +56,7 @@ The below lists some of the common issues we see, when it comes to installing & 
 
 A completely blank screen, when attempting to access your BookStack instance, is commonly due to system/folder permission issues.
 Check that webserver user has read/write access to the `bootstrap/cache`, `storage` and `public/uploads` folders within your BookStack install.
-On a common Ubuntu install this can usually be done by running `sudo chown -R www-data:www-data bootstrap/cache storage public/uploads` from within the BookStack install folder.
+On a common Ubuntu install this can usually be done by running `sudo chown -R www-data:www-data bootstrap/cache storage public/uploads` from within the BookStack install folder. We have further guidance on filesystem permissions [on our page here](/docs/admin/filesystem-permissions/).
 
 If you don't believe this is due to permissions, and you have nothing in the `storage/logs/laravel.log` file as detailed above, you'd next want to look at your webserver error logs which can commonly be found within `/var/log/nginx/` or `/var/logs/apache2/`.
 
@@ -95,6 +101,8 @@ php artisan bookstack:update-url <oldUrl> <newUrl>
 # Example:
 php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
 ```
+
+---
 
 ### Submitting Issues
 

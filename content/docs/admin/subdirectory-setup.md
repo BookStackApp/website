@@ -41,6 +41,11 @@ The next step is to alter your Apache configuration to serve any requests to you
 
 Within the `<VirtualHost>` tags of this file you'll need to add the below additional configuration. Note, the `<VirtualHost>` tags should already exist and the `...` parts represent existing rules. You should only need to copy the middle section:
 
+> [!TIP]
+> Make sure that DocumentRoot does not point to the path where you installed BookStack in.
+> This is the case, if you used the install script.
+> You may comment out DocumentRoot, create a new folder and define a path like /var/www/other-site
+
 ```apache
 <VirtualHost *:80>
 

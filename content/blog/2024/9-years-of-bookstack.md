@@ -39,29 +39,32 @@ The kind support from such folks has helped to assure a stable income source for
 
 Currently I donate to open source services & libraries I use to help build BookStack, but this is rather minimal (~£100 per month)
 since I somewhat put it on pause a few years ago when leaving my last job to work on BookStack full time.
-Since I'm due to more than cover my living costs, later this year I plan to re-assess this element to scale this up again to help
-support & sustain the other project's we rely upon.
+Now that I'm due to more than cover my living costs, later this year I plan to re-assess this element to scale this up again to help
+support & sustain the other projects we rely upon.
 
-### Project Status Update
+### Project Status Update: New Editor
 
 Right now my main efforts are in [attempting to build](https://github.com/BookStackApp/BookStack/pull/5058) an new editor
-for pages (and descriptions/comments) to replace our existing WYSIWYG editor, based upon TinyMCE,
+for pages (and description/comment inputs) to replace our existing WYSIWYG editor, based upon TinyMCE,
 which [changed licenses](https://github.com/BookStackApp/BookStack/issues/4908) earlier this year.
 
 This new editor is built using [lexical](https://lexical.dev/) as a foundation, but every part of the UI is custom-built.
 So far this is going okay, but there's still a fair way to go. 
-My aim is to match the existing WYSIWYG editor in both functionality and general UI to start with, and then we can improve & build
+My aim is to initially match the existing WYSIWYG editor in both functionality and general UI, and then we can improve & build
 upon this in future when things are stable to fully take advantage of the control and features that we'd gain from this new editor.
 There ultimately will be an element of breaking change, especially in lesser trodden edge-case scenarios, but I want to make this minimal.
 
 My plan is to introduce the editor as an additional non-default editor option in alpha status, then switch that to beta status after
-a round of feedback and fixes (still non-default), then change the default to the new editor once things are stable
+a round of feedback and fixes (still non-default), then change the default WYSIWYG option to the new editor once things are stable
 (leaving the old editor as an option for a few releases) before eventually removing the old editor after a few releases
 of stable overlap.
 
-If you'd like to see the progress so far, I show off the current state in my video here:
+If you'd like to see the progress so far, I show off the current state in my video here (starting at around 3:30):
 
-TODO - Video
+{{<pt 8yJ38pNM8STzpyRJhV2fz4>}}
+
+The work on the editor for an initial release will take a while longer though so I'll probably look to extend out the current feature release further than usual with some extra
+patch releases.
 
 ### On the Tech over Tea Podcast
 
@@ -81,7 +84,7 @@ The below figures were collected at the time of writing *(8th July 2024)*, with 
 
 #### GitHub Figures
 
-- [14,310 GitHub stars](https://github.com/BookStackApp/BookStack/stargazers) <strong style="color: green;">+2,494</strong>github
+- [14,310 GitHub stars](https://github.com/BookStackApp/BookStack/stargazers) <strong style="color: green;">+2,494</strong>
 - [1,810 forks on GitHub](https://github.com/BookStackApp/BookStack/network/members) <strong style="color: green;">+266</strong>
 - 5,106 GitHub issues and PRs opened <strong style="color: green;">+728</strong>
 - 3,669 GitHub issues closed (<strong style="color: green;">+488</strong>), 540 currently open (<strong style="color: green;">+139</strong>)
@@ -97,6 +100,7 @@ The below figures were collected at the time of writing *(8th July 2024)*, with 
 - [3,553 Discord members](https://discord.gg/ztkBqR2) <strong style="color: green;">+414</strong>
 - [1,562 Subreddit members](https://www.reddit.com/r/BookStack/) <strong style="color: green;">+588</strong>
 - [2,188 YouTube channel subscribers](https://www.youtube.com/c/BookStackApp) <strong style="color: green;">+778</strong>
+- [40 PeerTube channel followers](https://foss.video/c/bookstack/videos) <strong style="color: green;">+40</strong>
 - [620 Twitter Followers](https://twitter.com/bookstack_app) <strong style="color: green;">+123</strong>
 - [556 Mastodon Followers](https://fosstodon.org/@bookstack) <strong style="color: green;">+321</strong>
 
@@ -125,9 +129,9 @@ Main bookstackapp.com site only, Averaged over last 90 days:
 
 Like last year, no major surprises here really.
 It's good to see continued steady growth in general across most of these figures,
-even though I've out very little effort into any kind of marketing & outreach in the last
+even though I've put very little effort into any kind of marketing & outreach in the last
 year. I was concerned these may slip, as BookStack becomes a more mature/stable project which
-doesn't make headlines via big new additions or from being a new option, but growth has retained which is great.
+doesn't make headlines via big new additions or from being a newly launched project, but growth has retained which is great.
 
 ### Further Reading
 

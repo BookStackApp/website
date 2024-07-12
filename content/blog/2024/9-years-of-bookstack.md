@@ -6,7 +6,7 @@ image = "/images/blog-cover-images/cc-by-sa-4/dartmoor-herbythyme.jpg"
 author = "Dan Brown"
 slug = "9-years-of-bookstack"
 draft = false
-date = 2024-07-12T12:00:00Z
+date = 2024-07-12T11:00:00Z
 +++
 
 Today the BookStack project becomes 9 years old! Like [last year's post](/blog/8-years-of-bookstack/), and the years before it,

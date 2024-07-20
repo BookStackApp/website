@@ -54,6 +54,9 @@ TWITCH_AUTO_CONFIRM_EMAIL=true
 
 ### Google
 
+***Note:** If you intend all users to access your instance via Google Workspace, then using an alternative primary authentication option like [OIDC](/docs/admin/oidc-auth/) or [SAML 2.0](/docs/admin/saml2-auth/) will provide a better user experience while having more features like auto-login and group sync (group sync only available via SAML2 due to Google limitations).*
+
+
 1. Open the [Google Developers Console](https://console.developers.google.com/).
 2. Create a new project (May have to wait a short while for it to be created).
 3. In 'API and Services' go to the 'OAuth consent screen' section and enter a product name ('BookStack' or your custom set name) along with any other required details until you can save your consent screen.

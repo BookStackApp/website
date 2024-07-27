@@ -33,18 +33,13 @@ Before following this, ensure you have apache installed along with PHP & ensure 
 sudo a2enmod rewrite
 ``` 
 
-First, You will need to choose a folder to install BookStack into. This should be a separate directory from where your main website is being served from since you don't want to risk exposing any of the private BookStack files.
+First, You will need to choose a folder to install BookStack into. This must be a separate directory from where your main website is being served from since you don't want to risk exposing any of the private BookStack files.
 By default Apache on Ubuntu serves from the `/var/www/html` directory. In this example, we'll use `/var/www/bookstack` to store our BookStack install. If you use a different path ensure you change that path in the below steps.
 Create this directory and follow the standard [BookStack install steps](/docs/admin/installation) to install BookStack into this folder. Once complete, following our example directory above, you should end up with a `.env` file in the `/var/www/bookstack` folder.
 
 The next step is to alter your Apache configuration to serve any requests to your sub-path from our chosen folder. To do this you'll need to find and edit the Apache virtual-host config for your website. By default, this is often found at `/etc/apache2/sites-available/000-default.conf`. To edit this file you'll likely have to open it with admin permissions (using `sudo`). 
 
 Within the `<VirtualHost>` tags of this file you'll need to add the below additional configuration. Note, the `<VirtualHost>` tags should already exist and the `...` parts represent existing rules. You should only need to copy the middle section:
-
-> [!TIP]
-> Make sure that DocumentRoot does not point to the path where you installed BookStack in.
-> This is the case, if you used the install script.
-> You may comment out DocumentRoot, create a new folder and define a path like /var/www/other-site
 
 ```apache
 <VirtualHost *:80>
@@ -81,6 +76,8 @@ Within the `<VirtualHost>` tags of this file you'll need to add the below additi
 
 </VirtualHost>
 ``` 
+
+***Note:** Your BookStack installation must be in a directory **not** served by the web server via any other means. If the "DocumentRoot" of any configured host/site on the server points to, or includes, your BookStack installation folder (or a folder within it) then this will not work as expected and may introduce security issues.*
 
 On line 6 in the above, beginning with `Alias`, You'll need to change `"/bookstack"` path to be the web 'subdirectory' you want to serve BookStack on. For example, If you wanted to serve BookStack on `https://example.com/docs` this would be `"/docs"`. Any instances of `/var/www/bookstack` in the above will need to be changed to the folder you installed BookStack in. The `/public` part of these paths should remain.
 
